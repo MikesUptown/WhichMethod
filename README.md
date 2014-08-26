@@ -1,7 +1,7 @@
 About This Project
 ===========
 
-WhichMethod is a research study of <a href="http://www.healthsolutions.org/.com" target="_blank">Public Health Solutions</a> in New York City.
+WhichMethod is a research study of <a href="http://www.healthsolutions.org" target="_blank">Public Health Solutions</a> in New York City.
 
 The decision-making process of choosing a contraceptive method is complex, particularly for young women and women with low educational attainment. This intervention addresses this decision-making gap, by helping women of all literacy levels engage in the process of choosing a contraceptive method, thus reducing their risk of unintended pregnancy.
 
