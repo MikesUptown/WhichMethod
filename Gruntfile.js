@@ -1,4 +1,4 @@
-// Generated on 2014-08-26 using generator-angular-fullstack 2.0.12
+// Generated on 2014-09-03 using generator-angular-fullstack 2.0.13
 'use strict';
 
 module.exports = function (grunt) {
@@ -95,19 +95,6 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/{app,components}/*',
           '<%= yeoman.client %>/{app,components}/**/*.jade'],
         tasks: ['jade']
-      },
-      coffee: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.{coffee,litcoffee,coffee.md}',
-          '!<%= yeoman.client %>/{app,components}/**/*.spec.{coffee,litcoffee,coffee.md}'
-        ],
-        tasks: ['newer:coffee', 'injector:scripts']
-      },
-      coffeeTest: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.spec.{coffee,litcoffee,coffee.md}'
-        ],
-        tasks: ['karma']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -329,7 +316,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'whichmethodApp',
+        module: 'contraceptionApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
@@ -423,12 +410,10 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'coffee',
         'jade',
         'sass',
       ],
       test: [
-        'coffee',
         'jade',
         'sass',
       ],
@@ -442,7 +427,6 @@ module.exports = function (grunt) {
         }
       },
       dist: [
-        'coffee',
         'jade',
         'sass',
         'imagemin',
@@ -504,26 +488,6 @@ module.exports = function (grunt) {
           ],
           dest: '.tmp',
           ext: '.html'
-        }]
-      }
-    },
-
-    // Compiles CoffeeScript to JavaScript
-    coffee: {
-      options: {
-        sourceMap: true,
-        sourceRoot: ''
-      },
-      server: {
-        files: [{
-          expand: true,
-          cwd: 'client',
-          src: [
-            '{app,components}/**/*.coffee',
-            '!{app,components}/**/*.spec.coffee'
-          ],
-          dest: '.tmp',
-          ext: '.js'
         }]
       }
     },

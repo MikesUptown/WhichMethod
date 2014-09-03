@@ -9,7 +9,7 @@
     "registerSocketsFile": "server/config/socketio.js",
     "socketsNeedle": "// Insert sockets below",
     "filters": {
-      "coffee": true,
+      "js": true,
       "jade": true,
       "sass": true,
       "uirouter": true,
@@ -41,6 +41,7 @@
     "controllerTemplates": "",
     "decoratorTemplates": "",
     "providerTemplates": "",
-    "routeTemplates": ""
+    "routeTemplates": "",
+    "moduleName": ""
   }
 }

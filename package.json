@@ -1,5 +1,5 @@
 {
-  "name": "whichmethod",
+  "name": "contraception",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
@@ -36,7 +36,6 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-coffee": "^0.10.1",
     "grunt-contrib-jade": "^0.11.0",
     "grunt-google-cdn": "~0.4.0",
     "grunt-newer": "~0.7.0",
