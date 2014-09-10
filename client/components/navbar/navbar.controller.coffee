@@ -3,9 +3,9 @@
 angular.module 'whichmethodApp'
 .controller 'NavbarCtrl', ($scope, $location, Auth) ->
   $scope.menu = [
-    title: 'Home'
-    link: '/'
-  ]
+     title: 'WhichMethod' 
+    link: '/' 
+  ] 
   $scope.isCollapsed = true
   $scope.isLoggedIn = Auth.isLoggedIn
   $scope.isAdmin = Auth.isAdmin

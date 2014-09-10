@@ -3,8 +3,8 @@
 angular.module('contraceptionApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
+      'title': 'WhichMethod',
+      // 'link': '/'
     }];
 
     $scope.isCollapsed = true;
