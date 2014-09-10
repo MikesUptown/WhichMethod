@@ -29,7 +29,7 @@
       "uirouter"
     ],
     "extensions": [
-      "coffee",
+      "js",
       "jade",
       "scss"
     ],
