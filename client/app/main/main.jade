@@ -39,9 +39,9 @@
                   a(href='#') Separated link
                 // li
                   a(href='#') One more separated link
-// /Carousel
-      ================================================== 
-#myCarousel.carousel.slide(data-ride='carousel')
+// /Carousel ================================================== 
+// /<<<<<<< HEAD
+// /#myCarousel.carousel.slide(data-ride='carousel')
   Indicators
   ol.carousel-indicators
     li.active(data-target='#myCarousel', data-slide-to='0')
@@ -54,56 +54,63 @@
       .container
         .carousel-caption
           h1 Take our private contraceptive survey.
-          p
-            // | Note: If you're viewing this page via a code file://
-            // | URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+// /=======
+carousel#myCarousel()
+
+  // /slide(ng-repeat="slide in slides" active="slide.active")
+      img(src="{{slide.image}}")
+  slide
+    // /img(src='assets/images/phs_couple.jpg', alt='First slide')
+    .carousel-caption
+      h1 Take our private contraceptive survey.
+// />>>>>>> a35e316d3252e189dce31186b152c3760fef0320
+          // /p
+            // /| Note: If you're viewing this page via a code file://
+            // /| URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due // /to web browser security rules.
           p
             a.btn.btn-lg.btn-primary(href='#', role='button') Start WhichMethod Survey
-    .item
-      // img(src='assets/images/phs_couple.jpg', alt='Second slide')
-      .container
-        .carousel-caption
-          h1 Get immediate, tailorized feedback.
-          p
-            // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-          p
-            a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
-    .item
-      // img(src='assets/images/yeoman.png', alt='Third slide')
-      .container
-        .carousel-caption
-          h1 Take survey anywhere, on any device.
-          p
-            // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-          p
-            a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
-    .item
-      // img(src='assets/images/yeoman.png', alt='Fourth slide')
-      .container
-        .carousel-caption
-          h1 Link to healthcare & family planning services.
-          p
-            // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-          p
-            a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
-  a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
-    span.glyphicon.glyphicon-chevron-left
-  a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
-    span.glyphicon.glyphicon-chevron-right
-// /.carousel
-// Marketing messaging and featurettes
-      ================================================== 
+
+   slide
+    // /img(src='assets/images/phs_couple.jpg', alt='Second slide')
+    .container
+      .carousel-caption
+        // /h1 Get immediate, tailorized feedback.
+        // /p
+          // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        // /p
+          a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+
+   slide
+    // /img(src='assets/images/yeoman.png', alt='Third slide')
+    .carousel-caption
+      // /h1 Take survey anywhere, on any device.
+      // /p
+        // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      // /p
+        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+
+
+  // slide
+    // /img(src='assets/images/yeoman.png', alt='Fourth slide')
+    .carousel-caption
+      h1 Link to healthcare & family planning services.
+      // /p
+        // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      // /p
+        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+
+// Marketing messaging and featurettes================================================== 
 // Wrap the rest of the page in another container to center all the content.
 .container.marketing
   // Three columns of text below the carousel
   .row
     .col-lg-4
       img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-      h2 What is WhichMethod
+      h2 What is WhichMethod?
       p
         | Users receive individually-tailored feedback about contraceptive methods that are a best fit (both effective and medically appropriate) given their responses.
       p
-        a.btn.btn-default(href='#', role='button') View details »
+        a.btn.btn-default(href='#', role='button') More info »
     // /.col-lg-4
     .col-lg-4
       img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
@@ -111,7 +118,7 @@
       p
         |  Public Health Solutions is a nonprofit organization that develops, implements and advocates dynamic solutions to prevent disease and improve community health.
       p
-        a.btn.btn-default(href='#', role='button') View details »
+        a.btn.btn-default(href='#', role='button') More info »
     // /.col-lg-4
     .col-lg-4
       img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
@@ -119,7 +126,7 @@
       p
         | The interactive contraceptive assessment is available in both Spanish and English and includes approximately 50 questions on contraceptive history, preferences and priorities, and medical history.
       p
-        a.btn.btn-default(href='#', role='button') View details »
+        a.btn.btn-default(href='#', role='button') More info »
     // /.col-lg-4
   // /.row
   // START THE FEATURETTES
@@ -136,7 +143,7 @@
   hr.featurette-divider
   .row.featurette
     .col-md-5
-      img.featurette-image.img-responsive(src='assets/images/girl_bronx.jpg', alt='Generic placeholder image')
+      img.featurette-image.img-responsive(src='assets/images/latina_physician.png', alt='Generic placeholder image')
     .col-md-5
       h2.featurette-heading
         | Link to healthcare. 
