@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: servey', function () {
+describe('Directive: survey', function () {
 
   // load the directive's module
   beforeEach(module('contraceptionApp'));
@@ -13,8 +13,8 @@ describe('Directive: servey', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<servey></servey>');
+    element = angular.element('<survey></survey>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the servey directive');
+    expect(element.text()).toBe('this is the survey directive');
   }));
 });
