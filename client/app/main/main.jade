@@ -39,31 +39,13 @@
                   a(href='#') Separated link
                 // li
                   a(href='#') One more separated link
-// /Carousel ================================================== 
-// /<<<<<<< HEAD
-// /#myCarousel.carousel.slide(data-ride='carousel')
-  Indicators
-  ol.carousel-indicators
-    li.active(data-target='#myCarousel', data-slide-to='0')
-    li(data-target='#myCarousel', data-slide-to='1')
-    li(data-target='#myCarousel', data-slide-to='2')
-  .carousel-inner
-    .item.active
-      // img(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
-      // img(src='assets/images/girl_bronx.jpg', alt='First slide')
-      .container
-        .carousel-caption
-          h1 Take our private contraceptive survey.
-// /=======
-carousel#myCarousel()
+//Carousel ================================================== 
 
-  // /slide(ng-repeat="slide in slides" active="slide.active")
-      img(src="{{slide.image}}")
+carousel#myCarousel()
   slide
-    // /img(src='assets/images/phs_couple.jpg', alt='First slide')
+    img(src='assets/images/phs_couple.jpg', alt='First slide')
     .carousel-caption
       h1 Take our private contraceptive survey.
-// />>>>>>> a35e316d3252e189dce31186b152c3760fef0320
           // /p
             // /| Note: If you're viewing this page via a code file://
             // /| URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due // /to web browser security rules.
@@ -71,7 +53,7 @@ carousel#myCarousel()
             a.btn.btn-lg.btn-primary(href='#', role='button') Start WhichMethod Survey
 
    slide
-    // /img(src='assets/images/phs_couple.jpg', alt='Second slide')
+    img(src='assets/images/phs_couple.jpg', alt='Second slide')
     .container
       .carousel-caption
         // /h1 Get immediate, tailorized feedback.
@@ -81,7 +63,7 @@ carousel#myCarousel()
           a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
 
    slide
-    // /img(src='assets/images/yeoman.png', alt='Third slide')
+    img(src='assets/images/yeoman.png', alt='Third slide')
     .carousel-caption
       // /h1 Take survey anywhere, on any device.
       // /p
@@ -90,8 +72,8 @@ carousel#myCarousel()
         a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
 
 
-  // slide
-    // /img(src='assets/images/yeoman.png', alt='Fourth slide')
+  slide
+    img(src='assets/images/yeoman.png', alt='Fourth slide')
     .carousel-caption
       h1 Link to healthcare & family planning services.
       // /p
