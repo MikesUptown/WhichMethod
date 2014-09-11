@@ -3,10 +3,14 @@
 angular.module('contraceptionApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('login', {
-        url: '/login',
-        templateUrl: 'app/account/login/login.html',
-        controller: 'LoginCtrl'
+      .state('main.login', {
+        url: 'login',
+        views:{
+          login:{
+            templateUrl: 'app/account/login/login.html',
+            controller: 'LoginCtrl'
+          }
+        }
       })
       .state('signup', {
         url: '/signup',

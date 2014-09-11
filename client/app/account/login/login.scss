@@ -3,3 +3,19 @@
 
 $btnText:                           #fff;
 $btnTextAlt:                        #000;
+
+.loginView{
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-top:-200px;
+  margin-left:-200px;
+  width:400px;
+  // height:400px;
+  background:white;
+  z-index:100;
+}
+
+.loginContainer{
+  padding:20px;
+}
