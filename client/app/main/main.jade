@@ -7,13 +7,13 @@ div(ng-include='"components/navbar/navbar.html"')
 //-     .navbar.navbar-inverse.navbar-static-top(role='navigation')
 //-       .container
 //-         .navbar-header
-//-           div(ng-include='"components/navbar/navbar.html"')
-//-           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+//-        div(ng-include='"components/navbar/navbar.html"')
+//-            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 //-             span.sr-only Toggle navigation
 //-             span.icon-bar
 //-             span.icon-bar
 //-             span.icon-bar
-//-           // /a.navbar-brand(href='#') WhichMethod
+//-         a.navbar-brand(href='#') WhichMethod
 //-         .navbar-collapse.collapse
 //-           ul.nav.navbar-nav
 //-             // li.active
@@ -45,36 +45,36 @@ div(ng-include='"components/navbar/navbar.html"')
 
 carousel#myCarousel()
   slide
-    img(src='assets/images/phs_couple.jpg', alt='First slide')
+    img(src='assets/images/girl_bronx.jpg', alt='First slide')
     .carousel-caption
-      h1 Take our private contraceptive survey.
-          // /p
-            // /| Note: If you're viewing this page via a code file://
-            // /| URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due // /to web browser security rules.
+      h1 Take WhichMethod survey.
           p
-            a.btn.btn-lg.btn-primary(href='servey', role='button') Start WhichMethod Survey
+            | Access WhichMethod on your computer or any mobile device and get immediate, 
+            customized contraceptive recommendations.
+          p
+            a.btn.btn-lg.btn-primary(href='signup', role='button') Start WhichMethod Survey
 
    slide
-    img(src='assets/images/phs_couple.jpg', alt='Second slide')
+    //- img(src='assets/images/phs_couple.jpg', alt='Second slide')
     .container
       .carousel-caption
-        // /h1 Get immediate, tailorized feedback.
-        // /p
+        h1 Get immediate, tailorized feedback.
+         p
           // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-        // /p
-          a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        p
+          a.btn.btn-lg.btn-primary(href='#', role='button') Start WhichMethod Survey
 
-   slide
-    img(src='assets/images/yeoman.png', alt='Third slide')
+   // slide
+    img(src='assets/images/woman_mobile-phone.png', alt='Third slide')
     .carousel-caption
-      // /h1 Take survey anywhere, on any device.
+      h1 Take survey anywhere, on any device.
       // /p
         // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-      // /p
-        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+      p
+        a.btn.btn-lg.btn-primary(href='#', role='button') Start WhichMethod Survey
 
 
-  slide
+  //- slide
     img(src='assets/images/yeoman.png', alt='Fourth slide')
     .carousel-caption
       h1 Link to healthcare & family planning services.
@@ -98,7 +98,7 @@ carousel#myCarousel()
     // /.col-lg-4
     .col-lg-4
       img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-      h2 Who is sponsoring this?
+      h2 Why it matters?
       p
         |  Public Health Solutions is a nonprofit organization that develops, implements and advocates dynamic solutions to prevent disease and improve community health.
       p
@@ -123,7 +123,7 @@ carousel#myCarousel()
       p.lead
         | The decision-making process of choosing a contraceptive method isn't easy. WhichMethod addresses this decision-making by helping women get more involved in the process of choosing a contraceptive method.
     .col-md-5
-      img.featurette-image.img-responsive(src='assets/images/girl_bronx.jpg', alt='Generic placeholder image')
+      img.featurette-image.img-responsive(src='assets/images/whichmethod_latina.png', alt='Generic placeholder image')
   hr.featurette-divider
   .row.featurette
     .col-md-5
@@ -135,16 +135,16 @@ carousel#myCarousel()
       p.lead
         | For young women who are unconnected to health care we provide links to family planning services at our collaborating clinical partners in the community.
   // hr.featurette-divider
-   .row.featurette
-    .col-md-7
-      h2.featurette-heading
-        | And lastly, this one.
-        span.text-muted Checkmate.
-      p.lead
-        | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-    .col-md-5
-      img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
-  hr.featurette-divider
+  //  .row.featurette
+  //  .col-md-7
+  //    h2.featurette-heading
+  //      | And lastly, this one.
+  //      span.text-muted Checkmate.
+  //    p.lead
+  //      | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+  //  .col-md-5
+  //    img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+  // hr.featurette-divider
   // /END THE FEATURETTES
   // FOOTER
   footer
