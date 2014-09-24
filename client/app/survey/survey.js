@@ -3,10 +3,10 @@
 angular.module('contraceptionApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('servey', {
-        url: '/servey',
-        templateUrl: 'app/servey/servey.html',
-        controller: 'ServeyCtrl',
+      .state('survey', {
+        url: '/survey',
+        templateUrl: 'app/survey/survey.html',
+        controller: 'SurveyCtrl',
         authenticate: true
       });
   });
