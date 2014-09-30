@@ -3,7 +3,7 @@
 angular.module('contraceptionApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'WhichMethod',
+      'title': 'WhichMethod Logo',
       // 'link': '/'
     }];
 
