@@ -2,159 +2,97 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .loginView(ui-view="login")
 
-//- .navbar-wrapper
-//-   .container
-//-     .navbar.navbar-inverse.navbar-static-top(role='navigation')
-//-       .container
-//-         .navbar-header
-//-           div(ng-include='"components/navbar/navbar.html"')
-//-           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-//-             span.sr-only Toggle navigation
-//-             span.icon-bar
-//-             span.icon-bar
-//-             span.icon-bar
-//-           // /a.navbar-brand(href='#') WhichMethod
-//-         .navbar-collapse.collapse
-//-           ul.nav.navbar-nav
-//-             // li.active
-//-               a(href='#') Home
-//-             // li
-//-               a(href='#about') About
-//-             // li
-//-               a(href='#contact') Contact
-//-             li.dropdown
-//-               a.dropdown-toggle(href='#', data-toggle='dropdown-menu')
-//-                 | Main Menu
-//-                 span.caret
-//-               ul.dropdown-menu(role='menu')
-//-                 li
-//-                   a(href='#') List of Providers
-//-                 li
-//-                   a(href='#') Community Partners
-//-                 li
-//-                   a(href='#') Sample Recommendations
-//-                 li
-//-                   a(href='#') Contact Us
-//-                 // li.divider
-//-                 // li.dropdown-header Nav header
-//-                 // li
-//-                   a(href='#') Separated link
-//-                 // li
-//-                   a(href='#') One more separated link
-//Carousel ================================================== 
+div(main)
+       // .navbar.navbar-inverse.navbar-fixed-top
+        form.navbar-form.navbar-left
+        .form-group
+        input.form-control(type='text', placeholder='Email')
+        .form-group
+        input.form-control(type='password', placeholder='Password')
+        button.btn.btn-success(type='submit') Sign in
 
-carousel#myCarousel()
-  slide
-    img(src='assets/images/phs_couple.jpg', alt='First slide')
-    .carousel-caption
-      h1 Take our private contraceptive survey.
-          // /p
-            // /| Note: If you're viewing this page via a code file://
-            // /| URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due // /to web browser security rules.
-          p
-            a.btn.btn-lg.btn-primary(href='survey', role='button') Start WhichMethod Survey
 
-   slide
-    img(src='assets/images/phs_couple.jpg', alt='Second slide')
+      //.container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Project name
+          .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#') Home
+            li
+              a(href='#about') About
+            li
+              a(href='#contact') Contact
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Dropdown
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Action
+                li
+                  a(href='#') Another action
+                li
+                  a(href='#') Something else here
+                li.divider
+                li.dropdown-header Nav header
+                li
+                  a(href='#') Separated link
+                li
+                  a(href='#') One more separated link
+          form.navbar-form.navbar-right
+            .form-group
+              input.form-control(type='text', placeholder='Email')
+            .form-group
+              input.form-control(type='password', placeholder='Password')
+            button.btn.btn-success(type='submit') Sign in
+        //
+          /.navbar-collapse 
+    //
+       Main jumbotron for a primary marketing message or call to action 
+    .jumbotron(fullscreen)
+      .container
+        h1 WhichMethod
+        p
+          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        p
+          a.btn.btn-success.btn-lg(href='signup') Start survey »
+          
     .container
-      .carousel-caption
-        // /h1 Get immediate, tailorized feedback.
-        // /p
-          // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-        // /p
-          a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
-
-   slide
-    img(src='assets/images/yeoman.png', alt='Third slide')
-    .carousel-caption
-      // /h1 Take survey anywhere, on any device.
-      // /p
-        // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-      // /p
-        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
-
-
-  slide
-    img(src='assets/images/yeoman.png', alt='Fourth slide')
-    .carousel-caption
-      h1 Link to healthcare & family planning services.
-      // /p
-        // | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-      // /p
-        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
-
-// Marketing messaging and featurettes================================================== 
-// Wrap the rest of the page in another container to center all the content.
-.container.marketing
-  // Three columns of text below the carousel
-  .row
-    .col-lg-4
-      img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-      h2 What is WhichMethod?
-      p
-        | Users receive individually-tailored feedback about contraceptive methods that are a best fit (both effective and medically appropriate) given their responses.
-      p
-        a.btn.btn-default(href='#', role='button') More info »
-    // /.col-lg-4
-    .col-lg-4
-      img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-      h2 Who is sponsoring this?
-      p
-        |  Public Health Solutions is a nonprofit organization that develops, implements and advocates dynamic solutions to prevent disease and improve community health.
-      p
-        a.btn.btn-default(href='#', role='button') More info »
-    // /.col-lg-4
-    .col-lg-4
-      img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', style='width: 140px; height: 140px;')
-      h2 What happens at log in?
-      p
-        | The interactive contraceptive assessment is available in both Spanish and English and includes approximately 50 questions on contraceptive history, preferences and priorities, and medical history.
-      p
-        a.btn.btn-default(href='#', role='button') More info »
-    // /.col-lg-4
-  // /.row
-  // START THE FEATURETTES
-  hr.featurette-divider
-  .row.featurette
-    .col-md-7
-      h2.featurette-heading
-        | Get contraceptive recommendations. 
-        span.text-muted Save & share recommendations.
-      p.lead
-        | The decision-making process of choosing a contraceptive method isn't easy. WhichMethod addresses this decision-making by helping women get more involved in the process of choosing a contraceptive method.
-    .col-md-5
-      img.featurette-image.img-responsive(src='assets/images/girl_bronx.jpg', alt='Generic placeholder image')
-  hr.featurette-divider
-  .row.featurette
-    .col-md-5
-      img.featurette-image.img-responsive(src='assets/images/latina_physician.png', alt='Generic placeholder image')
-    .col-md-5
-      h2.featurette-heading
-        | Link to healthcare. 
-        span.text-muted Access local clinics in the community.
-      p.lead
-        | For young women who are unconnected to health care we provide links to family planning services at our collaborating clinical partners in the community.
-  // hr.featurette-divider
-   .row.featurette
-    .col-md-7
-      h2.featurette-heading
-        | And lastly, this one.
-        span.text-muted Checkmate.
-      p.lead
-        | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-    .col-md-5
-      img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
-  hr.featurette-divider
-  // /END THE FEATURETTES
-  // FOOTER
-  footer
-    p.pull-right
-      a(href='#') Back to top
-    p
-      | © 2014 Public Health Solutions  ·  
-      a(href='#') Privacy  
-      |   ·
-      a(href='#') Terms  
-      |   ·
-      a(href='#') Providers  
-   // /.container
+      //
+         Example row of columns 
+      .row
+        .col-lg-4
+          h3 Step 1: Sign up today
+          p.text-justify.center-block
+            | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          // p
+            a.btn.btn-default(href='#') View details »
+        .col-lg-4
+          h3 Step 2: Take the survey
+          p.text-justify.center-block
+            | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          // p
+            a.btn.btn-default(href='#') View details »
+        .col-lg-4
+          h3 Step 3: Get recommendations
+          p.text-justify.center-block
+            | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          // p
+            a.btn.btn-default(href='#') View details »
+      hr
+      footer
+        p &copy; Public Health Solutions 2014
+    //
+       /container 
+    //
+       Bootstrap core JavaScript
+    //  ==================================================
+    //
+       Placed at the end of the document so the pages load faster 
+    // script(src='client/bower_components/jquery/dist/jquery.js')
+    // script(src='client/bower_components/bootstrap/dist/js/bootstrap.min.js')
