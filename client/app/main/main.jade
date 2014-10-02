@@ -2,28 +2,7 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .loginView(ui-view="login")
 
-doctype html
-html(lang='en')
-head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    link(rel='shortcut icon', href='#{pathToAssets}/assets/ico/favicon.png')
-    title Jumbotron Template for Bootstrap
-    //
-       Bootstrap core CSS 
-    link(href='bower_components/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
-    //
-       Custom styles for this template 
-    // link(href='#{pathToSelectedTemplateWithinBootstrap}/jumbotron.css', rel='stylesheet')
-    link(href='bower_components/bootstrap/dist/css/jumbotron.css', rel='stylesheet')
-    //
-       HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries 
-    //if lt IE 9
-      script(src='#{pathToAssets}/assets/js/html5shiv.js')
-      script(src='#{pathToAssets}/assets/js/respond.min.js')
-  body
+div(main)
        // .navbar.navbar-inverse.navbar-fixed-top
         form.navbar-form.navbar-left
         .form-group
@@ -31,6 +10,7 @@ head
         .form-group
         input.form-control(type='password', placeholder='Password')
         button.btn.btn-success(type='submit') Sign in
+
 
       //.container
         .navbar-header
@@ -74,7 +54,7 @@ head
           /.navbar-collapse 
     //
        Main jumbotron for a primary marketing message or call to action 
-    .jumbotron
+    .jumbotron(fullscreen)
       .container
         h1 WhichMethod
         p
@@ -114,5 +94,5 @@ head
     //  ==================================================
     //
        Placed at the end of the document so the pages load faster 
-    script(src='client/bower_components/jquery/dist/jquery.js')
-    script(src='client/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // script(src='client/bower_components/jquery/dist/jquery.js')
+    // script(src='client/bower_components/bootstrap/dist/js/bootstrap.min.js')
