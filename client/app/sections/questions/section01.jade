@@ -1,8 +1,8 @@
 header#header.info()
 
   |{{questions.q1}}
-
-  |{{questions.q7}}
+  |{{questions.q2}}
+  |{{questions.q3}}
 
 
   h2 WhichMethod_01    
@@ -13,163 +13,12 @@ header#header.info()
       div
         input(ng-model='questions.q1.answer', ng-change="saveAnswers()" type='text', tabindex='1')
     
-
-    li#foli128.notranslate
-      label#title128.desc(for='Field128')
-        | Q2. How tall are you?
+        | Q2. How much do you weigh?
       div
-        input#Field128.field.text.nospin.medium(name='Field128', type='text', value='', tabindex='2', onkeyup='')
-    li#foli130.notranslate
-      label#title130.desc(for='Field130')
+        input(ng-model='questions.q2.answer', ng-change="saveAnswers()" type='text', tabindex='1')
 
-
-        | Q3. How much do you weigh?
+        | Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
       div
-        input#Field130.field.text.nospin.medium(name='Field130', type='text', value='', tabindex='3', onkeyup='')
-    li#foli117.notranslate
-      fieldset
-        legend#title117.desc
-
-
-          | Q4. What is your race or ethnicity?
-        //if lt IE 8
-          label#title117.desc
-            | Q4. What is your race or ethnicity?
-        div
-          input#radioDefault_117(name='Field117', type='hidden', value='')
-          span
-            input#Field117_0.field.radio(name='Field117', type='radio', value='Latino, Hispanic or Chicano', tabindex='4', checked='checked')
-            label.choice(for='Field117_0')
-              | Latino, Hispanic or Chicano
-          span
-            input#Field117_1.field.radio(name='Field117', type='radio', value='Black or African American', tabindex='5')
-            label.choice(for='Field117_1')
-              | Black or African American
-          span
-            input#Field117_2.field.radio(name='Field117', type='radio', value='White', tabindex='6')
-            label.choice(for='Field117_2')
-              | White
-          span
-            input#Field117_3.field.radio(name='Field117', type='radio', value='Asian', tabindex='7')
-            label.choice(for='Field117_3')
-              | Asian
-          span
-            input#Field117_4.field.radio(name='Field117', type='radio', value='Native Hawaiian or Other Pacific Islander', tabindex='8')
-            label.choice(for='Field117_4')
-              | Native Hawaiian or Other Pacific Islander
-          span
-            input#Field117_5.field.radio(name='Field117', type='radio', value='American Indian or Alaska Native', tabindex='9')
-            label.choice(for='Field117_5')
-              | American Indian or Alaska Native
-          span
-            input#Field117_6.field.radio(name='Field117', type='radio', value='Other', tabindex='10')
-            label.choice(for='Field117_6')
-              | Other
-          span
-            input#Field117_7.field.radio(name='Field117', type='radio', value='I don\'t know', tabindex='11')
-            label.choice(for='Field117_7')
-              | I don't know
-          span
-            input#Field117_8.field.radio(name='Field117', type='radio', value='I don\'t want to answer this question', tabindex='12')
-            label.choice(for='Field117_8')
-              | I don't want to answer this question
-    li#foli131.notranslate
-      fieldset
-        legend#title131.desc
-
-
-          | Q5. Were you born in the United States or in another country?
-        //if lt IE 8
-          label#title131.desc
-            | Q5. Were you born in the United States or in another country?
-        div
-          input#radioDefault_131(name='Field131', type='hidden', value='')
-          span
-            input#Field131_0.field.radio(name='Field131', type='radio', value='United States', tabindex='13', checked='checked')
-            label.choice(for='Field131_0')
-              | United States
-          span
-            input#Field131_1.field.radio(name='Field131', type='radio', value='Another country', tabindex='14')
-            label.choice(for='Field131_1')
-              | Another country
-          span
-            input#Field131_2.field.radio(name='Field131', type='radio', value='I don\'t know', tabindex='15')
-            label.choice(for='Field131_2')
-              | I don't know
-          span
-            input#Field131_3.field.radio(name='Field131', type='radio', value='I don\'t want to answer this question', tabindex='16')
-            label.choice(for='Field131_3')
-              | I don't want to answer this question
-    li#foli132.notranslate
-      fieldset
-        legend#title132.desc
-
-
-          | Q6. What is the highest level of education you have completed?
-        //if lt IE 8
-          label#title132.desc
-            | Q6. What is the highest level of education you have completed?
-        div
-          input#radioDefault_132(name='Field132', type='hidden', value='')
-          span
-            input#Field132_0.field.radio(name='Field132', type='radio', value='Less than high school', tabindex='17', checked='checked')
-            label.choice(for='Field132_0')
-              | Less than high school
-          span
-            input#Field132_1.field.radio(name='Field132', type='radio', value='High school graduate or GED', tabindex='18')
-            label.choice(for='Field132_1')
-              | High school graduate or GED
-          span
-            input#Field132_2.field.radio(name='Field132', type='radio', value='Some college but not degree', tabindex='19')
-            label.choice(for='Field132_2')
-              | Some college but not degree
-          span
-            input#Field132_3.field.radio(name='Field132', type='radio', value='2-year college degree or Associate\'s Degree', tabindex='20')
-            label.choice(for='Field132_3')
-              | 2-year college degree or Associate's Degree
-          span
-            input#Field132_4.field.radio(name='Field132', type='radio', value='4-year college degree, BA or BS', tabindex='21')
-            label.choice(for='Field132_4')
-              | 4-year college degree, BA or BS
-          span
-            input#Field132_5.field.radio(name='Field132', type='radio', value='Graduate or professional school', tabindex='22')
-            label.choice(for='Field132_5')
-              | Graduate or professional school
-          span
-            input#Field132_6.field.radio(name='Field132', type='radio', value='I don\'t know', tabindex='23')
-            label.choice(for='Field132_6')
-              | I don't know
-          span
-            input#Field132_7.field.radio(name='Field132', type='radio', value='I don\'t want to answer this question', tabindex='24')
-            label.choice(for='Field132_7')
-              | I don't want to answer this question
-    li#foli133.notranslate
-      fieldset
-        
-        legend#title133.desc
-          | How often do you smoke cigarettes or cigars or use smokeless tobacco?
-        div
-          input#radioDefault_133(name='Field133', type='hidden', value='')
-        
-          span
-            input#Field133_0.field.radio(ng-model='questions.q7.answer' value='1' name='Field133', type='radio', tabindex='25', checked='checked')
-            label.choice(for='Field133_0')
-              | I do not use tobacco
-          span
-            input#Field133_1.field.radio(ng-model='questions.q7.answer' value='2' name='Field133', type='radio', tabindex='26')
-            label.choice(for='Field133_1')
-              | I use tobacco less than once a day
-          span
-            input#Field133_2.field.radio(ng-model='questions.q7.answer' value='3' name='Field133', type='radio', tabindex='27')
-            label.choice(for='Field133_2')
-              | I use tobacco daily
-          span
-            input#Field133_3.field.radio(ng-model='questions.q7.answer' value='999' name='Field133', type='radio', tabindex='28')
-            label.choice(for='Field133_3')
-              | I don't know
-          span
-            input#Field133_4.field.radio(ng-model='questions.q7.answer' value='777'  name='Field133', type='radio', tabindex='29')
-            label.choice(for='Field133_4')
-              | I don't want to answer this question
+        input(ng-model='questions.q3.answer', ng-change="saveAnswers()" type='text', tabindex='1')
 
 //-     // end of first set of questions 01
