@@ -16,12 +16,13 @@ angular.module('contraceptionApp')
       q7:{
         options: [1,2,3,999,777],
 
+
         nextQuestion: function(){
           var option = this.answer
           // if(options= something)
           // return q9
-
         },
+
 
         ranking: function(){
           var option = this.answer
@@ -36,6 +37,8 @@ angular.module('contraceptionApp')
         }
       },
 
+
+
       q8:{
         ranking:function(){
           var option = this.answer
@@ -45,9 +48,6 @@ angular.module('contraceptionApp')
             // ranking[pop]=ranking[pop] + 1
 
           }
-
-
-
         }
       }
 

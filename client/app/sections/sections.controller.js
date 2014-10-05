@@ -27,7 +27,7 @@ angular.module('contraceptionApp')
 
       $scope.questions.q7.ranking()
 
-      console.log($scope.ranking)
+      console.log(questionService.ranking)
 
 
     }
