@@ -9,23 +9,29 @@ angular.module('contraceptionApp')
     $scope.ranking = questionService.ranking
 
 
-    $scope.$watch('questions',function(nq,oq){
-      if(nq!=oq)
-        $scope.saveAnswers()
+    // $scope.$watch('questions',function(nq,oq){
+    //   if(nq!=oq)
+    //     $scope.saveAnswers()
 
-    }, true)
+    // }, true)
 
+    $scope.currentQuestion='q1'
 
     $scope.saveAnswers = function(){
 
       console.log("Answer Saved!")
       $scope.updateRanking()
 
+      $scope.currentQuestion = $scope.questions[$scope.currentQuestion].nextQuestion()
+
     }
 
     $scope.updateRanking = function(){
 
-      $scope.questions.q7.ranking()
+      for(var q in $scope.questions){
+        if($scope.questions[q].ranking)
+          $scope.questions[q].ranking()
+      }
 
       console.log(questionService.ranking)
 
