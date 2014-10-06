@@ -29,7 +29,7 @@ angular.module('contraceptionApp')
         btl : {n:0,p:0},
         vas : {n:0,p:0},
         implanon : {n:0,p:0},
-        bf : {n:0,p:0}
+        bf : {n:0,p:0},
       }
     }
     initRanking();
@@ -64,10 +64,7 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
-          if(option>=200)
             return 'q3'
-          else
-            return 'q7'
         },
 
         ranking: function(){
@@ -88,7 +85,7 @@ angular.module('contraceptionApp')
 
 
         nextQuestion: function(){
-          return 'q7'
+          return 'q4'
         },
 
         ranking: function(){
@@ -110,7 +107,9 @@ angular.module('contraceptionApp')
         nextQuestion: function(){
           var option = this.answer
             if(options == 0)
-              return q4a
+              return 'q4a'
+            else
+              return 'q5'
         },
 
         ranking: function(){
@@ -138,14 +137,14 @@ angular.module('contraceptionApp')
           switch(option){
             case"3":
             if(questions.q4.answer == 0){
-              ranking['ocp'].n=+1
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=+1
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
+              ranking['ocp'].p+=1
+              ranking['pop'].p+=1
+              ranking['ortho-evra'].p+=1
+              ranking['nuvaring'].p+=1
+              ranking['depo'].p+=1
               ranking['mirena'].p+=1
-              ranking['fam'].n=-1
-              ranking['implanon'].n=+1
+              ranking['fam'].n-=1
+              ranking['implanon'].p=+1
             }
           }
 
@@ -165,14 +164,14 @@ angular.module('contraceptionApp')
         switch(option){
           case"3":
           if(questions.q5.answer == 1){
-            ranking['ocp'].n=+1
-            ranking['pop'].n=+1
-            ranking['ortho-evra'].n=+1
-            ranking['nuvaring'].n=+1
-            ranking['depo'].n=+1
-            ranking['mirena'].n=+1
-            ranking['implanon'].n=+1
-            ranking['paragard'].n=-2
+            ranking['ocp'].p+=1
+            ranking['pop'].p+=1
+            ranking['ortho-evra'].p+=1
+            ranking['nuvaring'].p+=1
+            ranking['depo'].p+=1
+            ranking['mirena'].p+=1
+            ranking['implanon'].p+=1
+            ranking['paragard'].n-=2
           }
         }
       }
@@ -184,19 +183,21 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
+          if(options == 0)
+              return 'q7'
         },
       ranking: function(){
         var option = this.answer
         switch(option){
           case"3":
           if(questions.q6.answer == 1){
-            ranking['ocp'].n=+1
-            ranking['pop'].n=+1
-            ranking['ortho-evra'].n=+1
-            ranking['nuvaring'].n=+1
-            ranking['depo'].n=+1
-            ranking['mirena'].n=+1
-            ranking['implanon'].n=+1
+            ranking['ocp'].p+=1
+            ranking['pop'].p+=1
+            ranking['ortho-evra'].p+=1
+            ranking['nuvaring'].p+=1
+            ranking['depo'].p+=1
+            ranking['mirena'].p+=1
+            ranking['implanon'].p+=1
           }
         }
       }
@@ -208,21 +209,22 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
-          return 'q7'
+          if(options == 0)
+            return 'q8'
         },
       ranking: function(){
         var option = this.answer
         switch(option){
           case"3":
           if(questions.q7.answer == 1){
-            ranking['ocp'].n=+1
-            ranking['pop'].n=+1
-            ranking['ortho-evra'].n=+1
-            ranking['nuvaring'].n=+1
-            ranking['depo'].n=+1
-            ranking['paragard'].n=-2
-            ranking['mirena'].n=+1
-            ranking['implanon'].n=+1
+            ranking['ocp'].p+=1
+            ranking['pop'].p+=1
+            ranking['ortho-evra'].p+=1
+            ranking['nuvaring'].p+=1
+            ranking['depo'].p+=1
+            ranking['paragard'].n-=2
+            ranking['mirena'].p+=1
+            ranking['implanon'].p+=1
           }
         }
       }
@@ -234,18 +236,20 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
+          if(options == 0)
+            return 'q9'
         },
         ranking: function(){
           var option = this.answer
           switch(option){
             case"3":
             if(questions.q8.answer == 1){
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=-3
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking[implanon].n=+1
+              ranking['pop'].p+=1
+              ranking['ortho-evra'].n-=3
+              ranking['nuvaring'].p+=1
+              ranking['depo'].p+=1
+              ranking['mirena'].p+=1
+              ranking[implanon].p+=1
             }
           }
         }
@@ -256,19 +260,21 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
+          if(options == 0)
+              return 'q10'
         },
         ranking: function(){
           var option = this.answer
           switch(option){
             case"3":
             if(questions.q9.answer == 1){
-              ranking['ocp'].n=+1
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=+1
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking['implanon'].n=+1
+              ranking['ocp'].p+=1
+              ranking['pop'].p+=1
+              ranking['ortho-evra'].p+=1
+              ranking['nuvaring'].p+=1
+              ranking['depo'].p+=1
+              ranking['mirena'].p+=1
+              ranking['implanon'].p+=1
             }
           }
         }
@@ -279,19 +285,21 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer
+          if(options == 0)
+            return 'q11'
         },
         ranking: function(){
           var option = this.answer
           switch(option){
             case"3":
             if(questions.q10.answer == 1){
-              ranking['ocp'].n=+1
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=+1
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking['implanon'].n=+1
+              ranking['ocp'].p+=1
+              ranking['pop'].p+=1
+              ranking['ortho-evra'].p+=1
+              ranking['nuvaring'].p+=1
+              ranking['depo'].p+=1
+              ranking['mirena'].p+=1
+              ranking['implanon'].p+=1
             }
           }
         }
@@ -308,10 +316,10 @@ angular.module('contraceptionApp')
           switch(option){
             case"3":
             if (questions.q11.answer == 1) {
-              ranking['pop'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking['implanon'].n=+1
+              ranking['pop'].p=+1
+              ranking['depo'].p=+1
+              ranking['mirena'].p=+1
+              ranking['implanon'].p=+1
             }
           }
         }
@@ -329,13 +337,13 @@ angular.module('contraceptionApp')
           switch(option){
             case"3":
             if (questions.q12.answer == 1) {
-              ranking['ocp'].n=+1
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=+1
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking['implanon'].n=+1
+              ranking['ocp'].p=+1
+              ranking['pop'].p=+1
+              ranking['ortho-evra'].p=+1
+              ranking['nuvaring'].p=+1
+              ranking['depo'].p=+1
+              ranking['mirena'].p=+1
+              ranking['implanon'].p=+1
             };
           }
         }
@@ -352,22 +360,22 @@ angular.module('contraceptionApp')
           switch(option){
             case"3":
             if (questions.q13.answer == 1){
-              ranking['ocp'].n=+1
-              ranking['pop'].n=+1
-              ranking['ortho-evra'].n=+1
-              ranking['nuvaring'].n=+1
-              ranking['depo'].n=+1
-              ranking['mirena'].n=+1
-              ranking['implanon'].n=+1
+              ranking['ocp'].p=+1
+              ranking['pop'].p=+1
+              ranking['ortho-evra'].p=+1
+              ranking['nuvaring'].p=+1
+              ranking['depo'].p=+1
+              ranking['mirena'].p=+1
+              ranking['implanon'].p=+1
             }
             else if (questions.q13.answer == 2) {
-                ranking['ocp'].n=+1
-                ranking['pop'].n=+1
-                ranking['ortho-evra'].n=+1
-                ranking['nuvaring'].n=+1
-                ranking['depo'].n=+1
-                ranking['mirena'].n=+1
-                ranking['implanon'].n=+1
+                ranking['ocp'].p=+1
+                ranking['pop'].p=+1
+                ranking['ortho-evra'].p=+1
+                ranking['nuvaring'].p=+1
+                ranking['depo'].p=+1
+                ranking['mirena'].p=+1
+                ranking['implanon'].p=+1
             };
           }
         }
@@ -388,21 +396,3 @@ angular.module('contraceptionApp')
 
   });
 
-
-
-    //           ranking:function(){
-    //       var option = this.answer
-    //       if(option==0){
-    //         ranking[pop].p += 1
-    //         ranking[orthoevra].p +=1
-    //         // ranking[pop]=ranking[pop] + 1
-
-    //       }
-
-
-
-    //     }
-    //   }
-
-
-    // }
