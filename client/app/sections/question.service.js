@@ -4,10 +4,19 @@ angular.module('contraceptionApp')
   .factory('questionService', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
   
-    var ranking={
-      abstinence : {n:0,p:0},
-      pop : {n:0,p:0}
+    var ranking={}
+
+
+    function initRanking(){
+      ranking={
+        abstinence : {n:0,p:0},
+        pop : {n:0,p:0},
+        vas : {n:0,p:0},
+        implanon : {n:0,p:0},
+        // fill out the rest
+      }
     }
+    initRanking();
 
     var questions = {
 
@@ -20,14 +29,14 @@ angular.module('contraceptionApp')
         },
 
         ranking: function(){
-          var option = this.answer
-          switch(option){
-            case"3":
-              if(questions.q1.answer<18){
-                ranking[''].n=999
-              if(questions.q1.answer<21){
-                ranking['implanon'].n=-3
-            }
+          // questions.q1.answer is the same as this.answer
+          var answer = this.answer
+      
+          if(answer<18){
+            ranking['vas'].n -= 999
+          if(answer<21){
+            ranking['implanon'].n -=3
+        
             }
           }
         }
@@ -47,13 +56,12 @@ angular.module('contraceptionApp')
 
         ranking: function(){
           var option = this.answer
-          switch(option){
-            case"3":
+          
             if(questions.q2.answer>=200){
-              ranking['ortho-evra'].n= -2
+              ranking['ortho-evra'].n -= 2
             if(questions.q2.answer>=250){
               ranking['depo'].n= -2
-            }
+            
             }
           }
         }
@@ -119,7 +127,7 @@ angular.module('contraceptionApp')
               ranking['ortho-evra'].n=+1
               ranking['nuvaring'].n=+1
               ranking['depo'].n=+1
-              ranking['mirena'].n=+1
+              ranking['mirena'].p+=1
               ranking['fam'].n=-1
               ranking['implanon'].n=+1
             }
@@ -353,7 +361,11 @@ angular.module('contraceptionApp')
 
     return {
       questions: questions,
-      ranking: ranking
+      ranking: ranking,
+      initRanking: initRanking,
+      getRanking: function(){
+        return ranking
+      }
 
     }
 

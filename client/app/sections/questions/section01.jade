@@ -3,9 +3,9 @@ header#header.info()
   div
     |ranking: {{ranking}}
 
-  |{{questions.q1}}
-  |{{questions.q2}}
-  |{{questions.q3}}
+  //- |{{questions.q1}}
+  //- |{{questions.q2}}
+  //- |{{questions.q3}}
 
 
   h2 WhichMethod_01    
@@ -14,14 +14,15 @@ header#header.info()
       label
         | Q1. How old are you?
       div
-        input(ng-model='questions.q1.answer', type='text', tabindex='1')
+        input( ng-model='questions.q1.answer', type='text', tabindex='1')
 
     
-    li(ng-show="questions.q2.answer !=undefined || currentQuestion == 'q2'")
+    //- li(ng-show="questions.q2.answer !=undefined || currentQuestion == 'q2'")
+    li
       label
         | Q2. How much do you weigh?
       div
-        input(ng-model='questions.q2.answer' type='text', tabindex='1')
+        input(ng-disabled="currentQuestion == 'q2'" ng-model='questions.q2.answer' type='text', tabindex='1')
 
     li(ng-show="questions.q3.answer !=undefined || currentQuestion == 'q3'")
       label
@@ -36,28 +37,26 @@ header#header.info()
       fieldset
         legend.desc
           | How often do you smoke cigarettes or cigars or use smokeless tobacco?
-        div
-          input(name='Field133', type='hidden', value='')
-        
+        div        
           span
-            input.radio(ng-model='questions.q7.answer' value='1' name='Field133', type='radio', tabindex='25', checked='checked')
-            label.choice(for='Field133_0')
+            input.radio(ng-model='questions.q7.answer' value='1'  type='radio', tabindex='25', checked='checked')
+            label.choice
               | I do not use tobacco
           span
-            input.field.radio(ng-model='questions.q7.answer' value='2' name='Field133', type='radio', tabindex='26')
-            label.choice(for='Field133_1')
+            input.field.radio(ng-model='questions.q7.answer' value='2'  type='radio')
+            label.choice
               | I use tobacco less than once a day
           span
-            input.field.radio(ng-model='questions.q7.answer' value='3' name='Field133', type='radio', tabindex='27')
-            label.choice(for='Field133_2')
+            input.field.radio(ng-model='questions.q7.answer' value='3'  type='radio')
+            label.choice
               | I use tobacco daily
           span
-            input.field.radio(ng-model='questions.q7.answer' value='999' name='Field133', type='radio', tabindex='28')
-            label.choice(for='Field133_3')
+            input.field.radio(ng-model='questions.q7.answer' value='999' type='radio')
+            label.choice
               | I don't know
           span
-            input.field.radio(ng-model='questions.q7.answer' value='777'  name='Field133', type='radio', tabindex='29')
-            label.choice(for='Field133_4')
+            input.field.radio(ng-model='questions.q7.answer' value='777' type='radio')
+            label.choice
               | I don't want to answer this question
   
     input(type="submit", ng-click="saveAnswers()", value="Submit") 

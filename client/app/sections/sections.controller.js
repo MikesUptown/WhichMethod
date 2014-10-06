@@ -28,12 +28,15 @@ angular.module('contraceptionApp')
 
     $scope.updateRanking = function(){
 
+      questionService.initRanking()
+
       for(var q in $scope.questions){
         if($scope.questions[q].ranking)
           $scope.questions[q].ranking()
       }
 
-      console.log(questionService.ranking)
+      $scope.ranking = questionService.getRanking()
+      console.log($scope.ranking)
 
 
     }
