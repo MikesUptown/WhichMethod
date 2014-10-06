@@ -10,10 +10,26 @@ angular.module('contraceptionApp')
     function initRanking(){
       ranking={
         abstinence : {n:0,p:0},
+        ocp : {n:0,p:0},
         pop : {n:0,p:0},
+        ortho-evra : {n:0,p:0},
+        nuvaring : {n:0,p:0},
+        depo : {n:0,p:0},
+        mcondom : {n:0,p:0},
+        fcondom : {n:0,p:0},
+        ccap : {n:0,p:0},
+        diaph : {n:0,p:0},
+        ec : {n:0,p:0},
+        paragard : {n:0,p:0},
+        mirena : {n:0,p:0},
+        withd : {n:0,p:0},
+        sperm : {n:0,p:0},
+        sponge : {n:0,p:0},
+        fam : {n:0,p:0},
+        btl : {n:0,p:0},
         vas : {n:0,p:0},
         implanon : {n:0,p:0},
-        // fill out the rest
+        bf : {n:0,p:0}
       }
     }
     initRanking();
