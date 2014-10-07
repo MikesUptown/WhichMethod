@@ -5,7 +5,7 @@ angular.module('contraceptionApp')
 
     $scope.startServey = function(){
 
-      if(Auth.isLoggedIn)
+      if(Auth.isLoggedIn())
         $location.url('/questions/intro/1')
       else
         $location.url('/signup')
