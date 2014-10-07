@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SectionsCtrl', function ($scope, questionService) {
+  .controller('SectionsCtrl', function ($scope, questionService, $state) {
 
     //QUESTION LOGIC GOES HERE
 
@@ -23,6 +23,10 @@ angular.module('contraceptionApp')
       $scope.updateRanking()
 
       $scope.currentQuestion = $scope.questions[$scope.currentQuestion].nextQuestion()
+
+      if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
+        $state.go('.', {type:'intro',id:2})
+      }
 
     }
 

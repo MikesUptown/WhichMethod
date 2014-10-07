@@ -16,7 +16,7 @@ angular.module('contraceptionApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/questions/intro/1');
         })
         .catch( function(err) {
           err = err.data;

@@ -3,11 +3,22 @@
 angular.module('contraceptionApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('sections', {
-        url: '/section/:id',
+
+      .state('sections',{
+        url:'/questions',
+        abstract:true,
+        controller: 'SectionsCtrl',
+        template: "<ui-view/>"
+      })
+
+      .state('sections.questions', {
+        url: '/:type/:id',
         templateUrl:  function (stateParams){
+          if(stateParams.type == 'intro')
+            return '/app/sections/intropages/intro' + stateParams.id + '.html';
+          else
             return '/app/sections/questions/section0' + stateParams.id + '.html';
           },
-        controller: 'SectionsCtrl'
+        // controller: 'SectionsCtrl'
       });
   });

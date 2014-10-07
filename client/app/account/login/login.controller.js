@@ -15,7 +15,7 @@ angular.module('contraceptionApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/survey');
+          $location.path('/questions/section/1');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

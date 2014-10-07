@@ -26,7 +26,17 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           // a(href='/login') Log In
           // a(href='/login') Log in
           a.button.btn.btn-success.navbar-btn(href='/login') Log in
-          
+        
+        li(ng-show='isLoggedIn()')
+          p.navbar-text Hello {{ getCurrentUser().name }}
+
+        //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
+          a(href='/settings')
+            span.glyphicon.glyphicon-cog
+
+        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
+          a.button.btn.(href='', ng-click='logout()') Logout
+
     // button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
         | About
         span.caret
