@@ -8,47 +8,63 @@ header#header.info()
   //- |{{questions.q3}}
 
 
-  h3 WhichMethod_section_01    
+  h3 WhichMethod_section_02    
   ul
      li(ng-show="questions.q1.answer !=undefined || currentQuestion == 'q1'")
       label
         | Q1. How old are you?
       div
         input(ng-disabled="currentQuestion == 'q1'" ng-model='questions.q1.answer' type='text', tabindex='1')
+        span
+          input.field.radio(ng-model='questions.q1.answer' value='999' type='radio')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(ng-model='questions.q1.answer' value='777' type='radio')
+          label.choice
+            | I don't want to answer this question 
 
-    
      li(ng-show="questions.q2.answer !=undefined || currentQuestion == 'q2'")
       label
         | Q2. How much do you weigh?
       div
         input(ng-disabled="currentQuestion == 'q2'" ng-model='questions.q2.answer' type='text', tabindex='1')
+        span
+          input.field.radio(ng-model='questions.q2.answer' value='999' type='radio')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(ng-model='questions.q2.answer' value='777' type='radio')
+          label.choice
+            | I don't want to answer this question
 
       li(ng-show="questions.q3.answer !=undefined || currentQuestion == 'q3'")
-        label
+      label
           | Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
-        div        
+      div        
+        input(ng-disabled="current questions == 'q3'" ng-model='questions.q3.answer' type='radio', tabindex='1')
+        span
+          input.field.radio(ng-model='questions.q3.answer' value='999' type='radio')
+          label.choice
+            | I do not use tobacco
           span
-            input.radio(ng-model='questions.q3.answer' value='1'  type='radio', tabindex='25', checked='checked')
+            input.field.radio(ng-model='questions.q3.answer' value='1'  type='radio')
             label.choice
-              | I do not use tobacco
-          span
-            input.field.radio(ng-model='questions.q3.answer' value='2'  type='radio')
-            label.choice
-              | I use tobacco less than once a day
+            | I use tobacco less than once a day
           span
             input.field.radio(ng-model='questions.q3.answer' value='3'  type='radio')
             label.choice
-              | I use tobacco daily
+            | I use tobacco daily
           span
             input.field.radio(ng-model='questions.q3.answer' value='999' type='radio')
             label.choice
-              | I don't know
+            | I don't know
           span
             input.field.radio(ng-model='questions.q3.answer' value='777' type='radio')
             label.choice
-              | I don't want to answer this question
+            | I don't want to answer this question
   
-          input(type="submit", ng-click="saveAnswers()", value="Submit")
+      input(type="submit", ng-click="saveAnswers()", value="Continue")
 
 
 //-     // end of first set of questions 01

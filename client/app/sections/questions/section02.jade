@@ -15,6 +15,9 @@ header#header.info
 //-  |{{questions.q12}}
 //-  |{{questions.q13}}
 
+      div
+        input(ng-disabled="currentQuestion == 'q1'" ng-model='questions.q1.answer' type='text', tabindex='1')
+
   h2 WhichMethod_02
         ul
           li
@@ -22,7 +25,19 @@ header#header.info
 
                 | Q4. When you are not using birth control, do you have regular monthly periods?
               div
-                input(ng-model='questions.q4.answer', ng-change="saveAnswers()" type='text', tabindex='1')
+                input(ng-disabled="currentQuestion == 'q4'", ng-model='questions.q4.answer' type='text', tabindex='1')
+                span
+                  input#Field1024.field.checkbox(name='Field1024', type='checkbox', value='Yes', tabindex='1')
+                  label.choice(for='Field1024') Yes
+                span
+                  input#Field1025.field.checkbox(name='Field1025', type='checkbox', value='No', tabindex='2')
+                  label.choice(for='Field1025') No
+                span
+                  input#Field1026.field.checkbox(name='Field1026', type='checkbox', value='I don\'t know', tabindex='3')
+                  label.choice(for='Field1026') I don't know
+                span
+                  input#Field1027.field.checkbox(name='Field1027', type='checkbox', value='I don\'t want to answer this question', tabindex='4')
+                  label.choice(for='Field1027') I don't want to answer this question
 
                 | Q4a. Do you have three or fewer periods per year?
               div
@@ -65,3 +80,255 @@ header#header.info
                 input(ng-model='questions.q13.answer', ng-change="saveAnswers()" type='text', tabindex='1')
 
 //-   //this ends the second set of questions 02
+
+//- //this is new
+header#header.info
+    h2 WhichMethod_02
+      div
+    ul
+      li#foli1024.notranslate
+        fieldset
+          legend#title1024.desc
+            | Q8. When you are not using birth control, do you have regular monthly periods?
+          //if lt IE 8
+            label#title1024.desc
+              | Q8. When you are not using birth control, do you have regular monthly periods?
+          div
+            
+      li#foli1125.notranslate
+        fieldset
+          legend#title1125.desc
+            | Do you have three or fewer periods per year?
+          //if lt IE 8
+            label#title1125.desc
+              | Do you have three or fewer periods per year?
+          div
+            span
+              input#Field1125.field.checkbox(name='Field1125', type='checkbox', value='Yes', tabindex='5')
+              label.choice(for='Field1125') Yes
+            span
+              input#Field1126.field.checkbox(name='Field1126', type='checkbox', value='No', tabindex='6')
+              label.choice(for='Field1126') No
+            span
+              input#Field1127.field.checkbox(name='Field1127', type='checkbox', value='I don\'t know', tabindex='7')
+              label.choice(for='Field1127') I don't know
+            span
+              input#Field1128.field.checkbox(name='Field1128', type='checkbox', value='I don\'t want to answer this question', tabindex='8')
+              label.choice(for='Field1128') I don't want to answer this question
+      li#foli1239.notranslate
+        fieldset
+          legend#title1239.desc
+            | Q8.a Do you have three or fewer periods per year?
+          //if lt IE 8
+            label#title1239.desc
+              | Q8.a Do you have three or fewer periods per year?
+          div
+            input#radioDefault_1239(name='Field1239', type='hidden', value='')
+            span
+              input#Field1239_0.field.radio(name='Field1239', type='radio', value='Yes', tabindex='9', checked='checked')
+              label.choice(for='Field1239_0')
+                | Yes
+            span
+              input#Field1239_1.field.radio(name='Field1239', type='radio', value='No', tabindex='10')
+              label.choice(for='Field1239_1')
+                | No
+            span
+              input#Field1239_2.field.radio(name='Field1239', type='radio', value='I don\'t know', tabindex='11')
+              label.choice(for='Field1239_2')
+                | I don't know
+            span
+              input#Field1239_3.field.radio(name='Field1239', type='radio', value='I don\'t want to answer', tabindex='12')
+              label.choice(for='Field1239_3')
+                | I don't want to answer
+      li#foli120.notranslate
+        fieldset
+          legend#title120.desc
+            | Q9. When you are not using birth control, do you have very heavy periods?
+          //if lt IE 8
+            label#title120.desc
+              | Q9. When you are not using birth control, do you have very heavy periods?
+          div
+            span
+              input#Field120.field.checkbox(name='Field120', type='checkbox', value='Yes', tabindex='13')
+              label.choice(for='Field120') Yes
+            span
+              input#Field121.field.checkbox(name='Field121', type='checkbox', value='No', tabindex='14')
+              label.choice(for='Field121') No
+            span
+              input#Field122.field.checkbox(name='Field122', type='checkbox', value='I don\'t know', tabindex='15')
+              label.choice(for='Field122') I don't know
+            span
+              input#Field123.field.checkbox(name='Field123', type='checkbox', value='I don\'t want to answer this question', tabindex='16')
+              label.choice(for='Field123') I don't want to answer this question
+      li#foli921.notranslate
+        fieldset
+          legend#title921.desc
+            | Q10. When you are not using birth control, do you have periods that last longer than 7 days?
+          //if lt IE 8
+            label#title921.desc
+              | Q10. When you are not using birth control, do you have periods that last longer than 7 days?
+          div
+            span
+              input#Field921.field.checkbox(name='Field921', type='checkbox', value='Yes', tabindex='17')
+              label.choice(for='Field921') Yes
+            span
+              input#Field922.field.checkbox(name='Field922', type='checkbox', value='No', tabindex='18')
+              label.choice(for='Field922') No
+            span
+              input#Field923.field.checkbox(name='Field923', type='checkbox', value='I don\'t know', tabindex='19')
+              label.choice(for='Field923') I don't know
+            span
+              input#Field924.field.checkbox(name='Field924', type='checkbox', value='I don\'t want to answer this question', tabindex='20')
+              label.choice(for='Field924') I don't want to answer this question
+      li#foli821.notranslate
+        fieldset
+          legend#title821.desc
+            | Q11. When you are not using birth control, do you have painful periods or bad cramps?
+          //if lt IE 8
+            label#title821.desc
+              | Q11. When you are not using birth control, do you have painful periods or bad cramps?
+          div
+            span
+              input#Field821.field.checkbox(name='Field821', type='checkbox', value='Yes', tabindex='21')
+              label.choice(for='Field821') Yes
+            span
+              input#Field822.field.checkbox(name='Field822', type='checkbox', value='No', tabindex='22')
+              label.choice(for='Field822') No
+            span
+              input#Field823.field.checkbox(name='Field823', type='checkbox', value='I don\'t know', tabindex='23')
+              label.choice(for='Field823') I don't know
+            span
+              input#Field824.field.checkbox(name='Field824', type='checkbox', value='I don\'t want to answer this question', tabindex='24')
+              label.choice(for='Field824') I don't want to answer this question
+      li#foli721.notranslate
+        fieldset
+          legend#title721.desc
+            | Q12. When you are not using birth control, do you have breast tenderness during your period?
+          //if lt IE 8
+            label#title721.desc
+              | Q12. When you are not using birth control, do you have breast tenderness during your period?
+          div
+            span
+              input#Field721.field.checkbox(name='Field721', type='checkbox', value='Yes', tabindex='25')
+              label.choice(for='Field721') Yes
+            span
+              input#Field722.field.checkbox(name='Field722', type='checkbox', value='No', tabindex='26')
+              label.choice(for='Field722') No
+            span
+              input#Field723.field.checkbox(name='Field723', type='checkbox', value='I don\'t know', tabindex='27')
+              label.choice(for='Field723') I don't know
+            span
+              input#Field724.field.checkbox(name='Field724', type='checkbox', value='I don\'t want to answer this question', tabindex='28')
+              label.choice(for='Field724') I don't want to answer this question
+      li#foli621.notranslate
+        fieldset
+          legend#title621.desc
+            | Q13. When you are not using birth control, do you have depression or anxiety during your period?
+          //if lt IE 8
+            label#title621.desc
+              | Q13. When you are not using birth control, do you have depression or anxiety during your period?
+          div
+            span
+              input#Field621.field.checkbox(name='Field621', type='checkbox', value='Yes', tabindex='29')
+              label.choice(for='Field621') Yes
+            span
+              input#Field622.field.checkbox(name='Field622', type='checkbox', value='No', tabindex='30')
+              label.choice(for='Field622') No
+            span
+              input#Field623.field.checkbox(name='Field623', type='checkbox', value='I don\'t know', tabindex='31')
+              label.choice(for='Field623') I don't know
+            span
+              input#Field624.field.checkbox(name='Field624', type='checkbox', value='I don\'t want to answer this question', tabindex='32')
+              label.choice(for='Field624') I don't want to answer this question
+      li#foli521.notranslate
+        fieldset
+          legend#title521.desc
+            | Q14. When you are not using birth control, do you have bloating or fluid retention during your period?
+          //if lt IE 8
+            label#title521.desc
+              | Q14. When you are not using birth control, do you have bloating or fluid retention during your period?
+          div
+            span
+              input#Field521.field.checkbox(name='Field521', type='checkbox', value='Yes', tabindex='33')
+              label.choice(for='Field521') Yes
+            span
+              input#Field522.field.checkbox(name='Field522', type='checkbox', value='No', tabindex='34')
+              label.choice(for='Field522') No
+            span
+              input#Field523.field.checkbox(name='Field523', type='checkbox', value='I don\'t know', tabindex='35')
+              label.choice(for='Field523') I don't know
+            span
+              input#Field524.field.checkbox(name='Field524', type='checkbox', value='I don\'t want to answer this question', tabindex='36')
+              label.choice(for='Field524') I don't want to answer this question
+      li#foli421.notranslate
+        fieldset
+          legend#title421.desc
+            | Q15. When you are not using birth control, do you have bad headaches with your period?
+          //if lt IE 8
+            label#title421.desc
+              | Q15. When you are not using birth control, do you have bad headaches with your period?
+          div
+            span
+              input#Field421.field.checkbox(name='Field421', type='checkbox', value='Yes', tabindex='37')
+              label.choice(for='Field421') Yes
+            span
+              input#Field422.field.checkbox(name='Field422', type='checkbox', value='No', tabindex='38')
+              label.choice(for='Field422') No
+            span
+              input#Field423.field.checkbox(name='Field423', type='checkbox', value='I don\'t know', tabindex='39')
+              label.choice(for='Field423') I don't know
+            span
+              input#Field424.field.checkbox(name='Field424', type='checkbox', value='I don\'t want to answer this question', tabindex='40')
+              label.choice(for='Field424') I don't want to answer this question
+      li#foli321.notranslate
+        fieldset
+          legend#title321.desc
+            | Q16. When you are not using birth control, do you have significant PMS (premenstrual syndrome)?
+          //if lt IE 8
+            label#title321.desc
+              | Q16. When you are not using birth control, do you have significant PMS (premenstrual syndrome)?
+          div
+            span
+              input#Field321.field.checkbox(name='Field321', type='checkbox', value='Yes', tabindex='41')
+              label.choice(for='Field321') Yes
+            span
+              input#Field322.field.checkbox(name='Field322', type='checkbox', value='No', tabindex='42')
+              label.choice(for='Field322') No
+            span
+              input#Field323.field.checkbox(name='Field323', type='checkbox', value='I don\'t know', tabindex='43')
+              label.choice(for='Field323') I don't know
+            span
+              input#Field324.field.checkbox(name='Field324', type='checkbox', value='I don\'t want to answer this question', tabindex='44')
+              label.choice(for='Field324') I don't want to answer this question
+        p#instruct321.instruct
+          small
+            | Premenstrual syndrome (known as PMS) involves a variety of physical, mental, and behavioral symptoms tied to a woman's menstrual cycle. By definition, symptoms occur during the days before a woman's period starts. They usually go away after the first day or two after flow.
+      li#foli1022.notranslate
+        fieldset
+          legend#title1022.desc
+            | How often do these symptoms cause you to miss work or school?
+          //if lt IE 8
+            label#title1022.desc
+              | How often do these symptoms cause you to miss work or school?
+          div
+            input#radioDefault_1022(name='Field1022', type='hidden', value='')
+            span
+              input#Field1022_0.field.radio(name='Field1022', type='radio', value='Rarely/Never', tabindex='45', checked='checked')
+              label.choice(for='Field1022_0')
+                | Rarely/Never
+            span
+              input#Field1022_1.field.radio(name='Field1022', type='radio', value='Sometimes', tabindex='46')
+              label.choice(for='Field1022_1')
+                | Sometimes
+            span
+              input#Field1022_2.field.radio(name='Field1022', type='radio', value='Almost every month', tabindex='47')
+              label.choice(for='Field1022_2')
+                | Almost every month
+            span
+              input#Field1022_3.field.radio(name='Field1022', type='radio', value='I don\'t know', tabindex='48')
+              label.choice(for='Field1022_3')
+                | I don't know
+            span
+              input#Field1022_4.field.radio(name='Field1022', type='radio', value='I don\'t want to answer this question', tabindex='49')
+              label.choice(for='Field1022_4')
+                | I don't want to answer this question
