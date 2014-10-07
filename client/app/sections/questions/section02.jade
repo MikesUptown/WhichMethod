@@ -1,19 +1,10 @@
+div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+  method: {{key}} pos: {{value.p}} neg: {{value.n}}
+
+
 header#header.info
 
-  div
-    |ranking: {{ranking}}
 
-//-  |{{questions.q4}}
-//-  |{{questions.q4a}}
-//-  |{{questions.q5}}
-//-  |{{questions.q6}}
-//-  |{{questions.q7}}
-//-  |{{questions.q8}}
-//-  |{{questions.q9}}
-//-  |{{questions.q10}}
-//-  |{{questions.q11}}
-//-  |{{questions.q12}}
-//-  |{{questions.q13}}
 
       div
         input(ng-disabled="currentQuestion == 'q1'" ng-model='questions.q1.answer' type='text', tabindex='1')

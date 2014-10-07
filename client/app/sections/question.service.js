@@ -90,7 +90,7 @@ angular.module('contraceptionApp')
         ranking: function(){
 
           //what does option mean
-          var option = this.answer
+          var answer = this.answer
 
           //WHY DID YOU KEEP THIS switch in here? 
           // switch(option){
@@ -101,12 +101,13 @@ angular.module('contraceptionApp')
           // need to ask them about these:
           // is it =0 -=999 or =-999
           // double check this!
+          if(answer==3){
             if(questions.q1.answer>35){
               ranking['ocp'].n-=999
               ranking['ortho-evra'].n-=999
               ranking['nuvaring'].n-=999
             }
-          // }
+          }
         }
       },
 

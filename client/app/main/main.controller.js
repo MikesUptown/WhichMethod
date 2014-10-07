@@ -10,9 +10,6 @@ angular.module('contraceptionApp')
       else
         $location.url('/signup')
 
-
-
-
     }
 
   });

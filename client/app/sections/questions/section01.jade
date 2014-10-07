@@ -1,7 +1,8 @@
 header#header.info()
 
-  div
-    |ranking: {{ranking}}
+  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+    method: {{key}} pos: {{value.p}} neg: {{value.n}}
+
 
   //- |{{questions.q1}}
   //- |{{questions.q2}}
