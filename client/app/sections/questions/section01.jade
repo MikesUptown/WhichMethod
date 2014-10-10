@@ -4,12 +4,8 @@ header#header.info()
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 
-  //- |{{questions.q1}}
-  //- |{{questions.q2}}
-  //- |{{questions.q3}}
 
-
-  h3 WhichMethod_section_02    
+  h3 WhichMethod_section_01 
   ul
      li(ng-show="currentQuestion == 'q1'")
       label
@@ -50,12 +46,11 @@ header#header.info()
         div        
           //- input(ng-disabled="current questions == 'q3'" ng-model='questions.q3.answer' type='radio', tabindex='1')
           span
-            span
               input.field.radio(ng-model='questions.q3.answer' value='1'  type='radio')
               label.choice
                 | I do not use tobacco
             span
-              input.field.radio(ng-model='questions.q3.answer' value='1'  type='radio')
+              input.field.radio(ng-model='questions.q3.answer' value='2'  type='radio')
               label.choice
                 | I use tobacco less than once a day
             span

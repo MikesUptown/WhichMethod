@@ -1,35 +1,40 @@
-body#public
-#container.ltr
+header#header.info()
 
-          h2 WhichMethod_03
-          div
-        ul
-          li#foli1375.notranslate
-            fieldset
-              legend#title1375.desc
-                | Q18. How would you describe your current sexual relationship? Would you say that...
-              //if lt IE 8
-                label#title1375.desc
-                  | Q18. How would you describe your current sexual relationship? Would you say that...
-              div
-                span
-                  input#Field1375.field.checkbox(name='Field1375', type='checkbox', value='your partner and you only have sex with each other', tabindex='1')
-                  label.choice(for='Field1375') your partner and you only have sex with each other
-                span
-                  input#Field1376.field.checkbox(name='Field1376', type='checkbox', value='your partner or you have sex with other people as well', tabindex='2')
-                  label.choice(for='Field1376') your partner or you have sex with other people as well
-                span
-                  input#Field1377.field.checkbox(name='Field1377', type='checkbox', value='you are not sure about your partner\'s sexual activity outside your relationship', tabindex='3')
-                  label.choice(for='Field1377') you are not sure about your partner's sexual activity outside your relationship
-                span
-                  input#Field1378.field.checkbox(name='Field1378', type='checkbox', value='you currently are not having sex', tabindex='4')
-                  label.choice(for='Field1378') you currently are not having sex
-                span
-                  input#Field1379.field.checkbox(name='Field1379', type='checkbox', value='I don\'t know', tabindex='5')
-                  label.choice(for='Field1379') I don't know
-                span
-                  input#Field1380.field.checkbox(name='Field1380', type='checkbox', value='I don\'t want to answer this question', tabindex='6')
-                  label.choice(for='Field1380') I don't want to answer this question
+  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+    method: {{key}} pos: {{value.p}} neg: {{value.n}}
+
+  
+
+  h3 WhichMethod_03
+  ul
+    li(ng-show="currentQuestion == 'q18'")
+      label
+        | Q18. How would you describe your current sexual relationship? Would you say that...
+      div
+        span
+          input.field.checkbox(name='Field1375', type='checkbox', value='your partner and you only have sex with each other', tabindex='1')
+          label.choice
+            | your partner and you only have sex with each other
+        span
+          input.field.checkbox(name='Field1376', type='checkbox', value='your partner or you have sex with other people as well', tabindex='2')
+            label.choice
+            | your partner or you have sex with other people as well
+        span
+          input.field.checkbox(name='Field1377', type='checkbox', value='you are not sure about your partner\'s sexual activity outside your relationship', tabindex='3')
+          label.choice
+            | you are not sure about your partner's sexual activity outside your relationship
+        span
+          input.field.checkbox(name='Field1378', type='checkbox', value='you currently are not having sex', tabindex='4')
+          label.choice
+            | you currently are not having sex
+        span
+          input.field.checkbox(name='Field1379', type='checkbox', value='I don\'t know', tabindex='5')
+          label.choice
+            | I don't know
+        span
+          input.field.checkbox(name='Field1380', type='checkbox', value='I don\'t want to answer this question', tabindex='6')
+          label.choice
+            | I don't want to answer this question
 
 
           li#foli1577.notranslate

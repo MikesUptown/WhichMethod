@@ -117,11 +117,12 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-            if(options == 0)
-              return 'q4a'
-            else
-              return 'q5'
+          return 'q4a'
+          // var option = this.answer
+            // if(options == 0)
+            //   return 'q4a'
+            // else
+            //   return 'q5'
         },
 
         ranking: function(){
@@ -143,14 +144,15 @@ angular.module('contraceptionApp')
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q5'
+          // var option = this.answer
         },
 
         ranking: function(){
           var option = this.answer
           // switch(option){
           //   case"3":
-          if(questions.q4.answer == 0){
+          if(questions.q4a.answer == 0){
             ranking['ocp'].p+=1
             ranking['pop'].p+=1
             ranking['ortho-evra'].p+=1
@@ -160,8 +162,6 @@ angular.module('contraceptionApp')
             ranking['fam'].n-=1
             ranking['implanon'].p=+1
           }
-        
-
         }
       },
 
@@ -170,7 +170,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q6'
+          // var option = this.answer
         },
 
       ranking: function(){
@@ -188,7 +189,6 @@ angular.module('contraceptionApp')
             ranking['paragard'].n-=2
           }
         }
-      
       },
 
 
@@ -196,8 +196,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+          // var option = this.answer
+          // if(options == 0)
               return 'q7'
         },
         ranking: function(){
@@ -222,8 +222,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+          // var option = this.answer
+          // if(options == 0)
             return 'q8'
         },
         ranking: function(){
@@ -248,8 +248,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+          // var option = this.answer
+          // if(options == 0)
             return 'q9'
         },
         ranking: function(){
@@ -272,8 +272,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+          // var option = this.answer
+          // if(options == 0)
               return 'q10'
         },
         ranking: function(){
@@ -297,8 +297,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+          // var option = this.answer
+          // if(options == 0)
             return 'q11'
         },
         ranking: function(){
@@ -322,7 +322,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q12'
+          // var option = this.answer
         },
         ranking: function(){
           var option = this.answer
@@ -343,7 +344,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q13'
+          // var option = this.answer
         },
         ranking: function(){
           var option = this.answer
