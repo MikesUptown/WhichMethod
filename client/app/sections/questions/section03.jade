@@ -3,497 +3,427 @@ header#header.info()
   div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
-  
+
 
   h3 WhichMethod_03
   ul
-    li(ng-show="currentQuestion == 'q18'")
+
       label
-        | Q18. How would you describe your current sexual relationship? Would you say that...
+        | Q14. How would you describe your current sexual relationship? Would you say that...
       div
         span
-          input.field.checkbox(name='Field1375', type='checkbox', value='your partner and you only have sex with each other', tabindex='1')
+          input.field.radio(ng-model='questions.q14.answer' value='0' type='radio')
           label.choice
             | your partner and you only have sex with each other
         span
-          input.field.checkbox(name='Field1376', type='checkbox', value='your partner or you have sex with other people as well', tabindex='2')
-            label.choice
+          input.field.radio(ng-model='questions.q14.answer' value='1' type='radio')
+          label.choice
             | your partner or you have sex with other people as well
         span
-          input.field.checkbox(name='Field1377', type='checkbox', value='you are not sure about your partner\'s sexual activity outside your relationship', tabindex='3')
+          input.field.radio(ng-model='questions.q14.answer' value='2' type='radio')
           label.choice
             | you are not sure about your partner's sexual activity outside your relationship
         span
-          input.field.checkbox(name='Field1378', type='checkbox', value='you currently are not having sex', tabindex='4')
+          input.field.radio(ng-model='questions.q14.answer' value='3' type='radio')
           label.choice
             | you currently are not having sex
         span
-          input.field.checkbox(name='Field1379', type='checkbox', value='I don\'t know', tabindex='5')
+          input.field.radio(ng-model='questions.q14.answer' value='999' type='radio')
           label.choice
             | I don't know
         span
-          input.field.checkbox(name='Field1380', type='checkbox', value='I don\'t want to answer this question', tabindex='6')
+          input.field.radio(ng-model='questions.q14.answer' value='777' type='radio')
           label.choice
             | I don't want to answer this question
 
 
-          li#foli1577.notranslate
-            fieldset
-              legend#title1577.desc
-                | Q19. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once. Type answer in number keypad.
-              //if lt IE 8
-                label#title1577.desc
-                  | Q19. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once. Type answer in number keypad.
-              div
-                input#radioDefault_1577(name='Field1577', type='hidden', value='')
-                span
-                  input#Field1577_0.field.radio(name='Field1577', type='radio', value='', tabindex='7', checked='checked')
-                  label.choice(for='Field1577_0')
-                span
-                  input#Field1577_1.field.radio(name='Field1577', type='radio', value='I don\'t know', tabindex='8')
-                  label.choice(for='Field1577_1')
-                    | I don't know
-                span
-                  input#Field1577_2.field.radio(name='Field1577', type='radio', value='I don\'t want to answer this question', tabindex='9')
-                  label.choice(for='Field1577_2')
-                    | I don't want to answer this question
+      label
+        | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once. 
+      div
+        span
+          input.field.radio(ng-model='questions.q15.answer' type='text')
+          label.choice
+            | Type answer in number keypad.
+        span
+          input.field.radio(ng-model='questions.q15.answer' value='999' type='radio')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(ng-model='questions.q15.answer' value='777' type='radio')
+          label.choice
+            | I don't want to answer this question
 
 
-          li#foli1241.notranslate
-            fieldset
-              legend#title1241.desc
-                | Q20. Have you ever had an unplanned pregnancy?
-              //if lt IE 8
-                label#title1241.desc
-                  | Q20. Have you ever had an unplanned pregnancy?
-              div
-                input#radioDefault_1241(name='Field1241', type='hidden', value='')
-                span
-                  input#Field1241_0.field.radio(name='Field1241', type='radio', value='Yes', tabindex='10', checked='checked')
-                  label.choice(for='Field1241_0')
-                    | Yes
-                span
-                  input#Field1241_1.field.radio(name='Field1241', type='radio', value='No', tabindex='11')
-                  label.choice(for='Field1241_1')
-                    | No
-                span
-                  input#Field1241_2.field.radio(name='Field1241', type='radio', value='I don\'t know', tabindex='12')
-                  label.choice(for='Field1241_2')
-                    | I don't know
-                span
-                  input#Field1241_3.field.radio(name='Field1241', type='radio', value='I don\'t want to answer this question', tabindex='13')
-                  label.choice(for='Field1241_3')
-                    | I don't want to answer this question
+        label
+          | Q16. Have you ever had an unplanned pregnancy?
+        div
+          span
+            input.field.radio(ng-model='questions.q16.answer' value='1' type='radio')
+            label.choice
+              | Yes
+          span
+            input.field.radio(ng-model='questions.q16.answer' value='0' type='radio')
+            label.choice
+              | No
+          span
+            input.field.radio(ng-model='questions.q16.answer' value='999' type='radio')
+            label.choice
+              | I don't know
+          span
+            input.field.radio(ng-model='questions.q16.answer' value='777' type='radio')
+            label.choice
+              | I don't want to answer this question
 
 
-          li#foli1580.notranslate
-            fieldset
-              legend#title1580.desc
-                | Q20a. How many unplanned pregnancies have you had?
-              //if lt IE 8
-                label#title1580.desc
-                  | Q20a. How many unplanned pregnancies have you had?
-              div
-                input#radioDefault_1580(name='Field1580', type='hidden', value='')
-                span
-                  input#Field1580_0.field.radio(name='Field1580', type='radio', value='', tabindex='14', checked='checked')
-                  label.choice(for='Field1580_0')
-                span
-                  input#Field1580_1.field.radio(name='Field1580', type='radio', value='I don\'t know', tabindex='15')
-                  label.choice(for='Field1580_1')
-                    | I don't know
-                span
-                  input#Field1580_2.field.radio(name='Field1580', type='radio', value='I don\'t want to answer this question', tabindex='16')
-                  label.choice(for='Field1580_2')
-                    | I don't want to answer this question
+
+          label
+            | Q16a. How many unplanned pregnancies have you had?
+          div
+            span
+              input.field.radio(ng-model='questions.q16a.answer' type='text')
+              label.choice
+                | Type answer in number keypad. 
+            span
+              input.field.radio(ng-model='questions.q16a.answer' value='999' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q16a.answer' value='777' type='radio')
+              label.choice
+                | I don't want to answer this question
 
 
-          li#foli1244.notranslate
-            fieldset
-              legend#title1244.desc
-                | Q20.b ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
-              //if lt IE 8
-                label#title1244.desc
-                  | Q20.b ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
-              div
-                span
-                  input#Field1244.field.checkbox(name='Field1244', type='checkbox', value='Yes', tabindex='17')
-                  label.choice(for='Field1244') Yes
-                span
-                  input#Field1245.field.checkbox(name='Field1245', type='checkbox', value='No', tabindex='18')
-                  label.choice(for='Field1245') No
-                span
-                  input#Field1246.field.checkbox(name='Field1246', type='checkbox', value='I don\'t know', tabindex='19')
-                  label.choice(for='Field1246') I don't know
-                span
-                  input#Field1247.field.checkbox(name='Field1247', type='checkbox', value='I don\'t want to answer this question', tabindex='20')
-                  label.choice(for='Field1247') I don't want to answer this question
+          label
+            | Q16b. ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
+          div
+            span
+              input.field.radio(ng-model='questions.q16b.answer' value='1' type='radio')
+              label.choice
+                | Yes
+            span
+              input.field.radio(ng-model='questions.q16b.answer' value='0' type='radio')
+              label.choice
+                | No
+            span
+              input.field.radio(ng-model='questions.q16b.answer' value='999' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q16b.answer' value='777' type='radio')
+              label.choice 
+                | I don't want to answer this question
 
 
-          li#foli1344.notranslate
-            fieldset
-              legend#title1344.desc
-                | Q20.i. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-              //if lt IE 8
-                label#title1344.desc
-                  | Q20.i. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-              div
-                input#radioDefault_1344(name='Field1344', type='hidden', value='')
-                span
-                  input#Field1344_0.field.radio(name='Field1344', type='radio', value='First Choice', tabindex='21', checked='checked')
-                  label.choice(for='Field1344_0')
-                    | First Choice
-                span
-                  input#Field1344_1.field.radio(name='Field1344', type='radio', value='Second Choice', tabindex='22')
-                  label.choice(for='Field1344_1')
-                    | Second Choice
-                span
-                  input#Field1344_2.field.radio(name='Field1344', type='radio', value='Third Choice', tabindex='23')
-                  label.choice(for='Field1344_2')
-                    | Third Choice
+          label
+            | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          div
+            span
+              input.field.radio(ng-model='questions.q16bi.answer' value='0' type='radio')
+              label.choice
+                | First Choice
+            span
+              input.field.radio(ng-model='questions.q16bi.answer' value='1' type='radio')
+              label.choice
+                | Second Choice
+            span
+              input.field.radio(ng-model='questions.q16bi.answer' value='2' type='radio')
+              label.choice
+                | Third Choice
 
 
-          li#foli1345.notranslate
-            fieldset
-              legend#title1345.desc
-                | Q21. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
-              //if lt IE 8
-                label#title1345.desc
-                  | Q21. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
-              div
-                input#radioDefault_1345(name='Field1345', type='hidden', value='')
-                span
-                  input#Field1345_0.field.radio(name='Field1345', type='radio', value='', tabindex='24', checked='checked')
-                  label.choice(for='Field1345_0')
-                span
-                  input#Field1345_1.field.radio(name='Field1345', type='radio', value='', tabindex='25', checked='checked')
-                  label.choice(for='Field1345_1')
-                span
-                  input#Field1345_2.field.radio(name='Field1345', type='radio', value='', tabindex='26', checked='checked')
-                  label.choice(for='Field1345_2')
+          label
+            | Q17. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
+          div
+            span
+              input.field.radio(ng-model='questions.q17.answer' value ='0' type='radio')
+              label.choice
+                | First Choice
+            span
+              input.field.radio(ng-model='questions.q17.answer' value='1' type='radio')
+              label.choice
+                | Second Choice
+            span
+              input.field.radio(ng-model='questions.q17.answer' value='2' type='radio')
+              label.choice
+                | Third Choice
 
 
-          li#foli1582.notranslate
-            fieldset
-              legend#title1582.desc
-                | Q22. Have you EVER used any method of birth control?
-              //if lt IE 8
-                label#title1582.desc
-                  | Q22. Have you EVER used any method of birth control?
-              div
-                input#radioDefault_1582(name='Field1582', type='hidden', value='')
-                span
-                  input#Field1582_0.field.radio(name='Field1582', type='radio', value='Yes', tabindex='27', checked='checked')
-                  label.choice(for='Field1582_0')
-                    | Yes
-                span
-                  input#Field1582_1.field.radio(name='Field1582', type='radio', value='No', tabindex='28')
-                  label.choice(for='Field1582_1')
-                    | No
-                span
-                  input#Field1582_2.field.radio(name='Field1582', type='radio', value='I don\'t know', tabindex='29')
-                  label.choice(for='Field1582_2')
-                    | I don't know
-                span
-                  input#Field1582_3.field.radio(name='Field1582', type='radio', value='I don\'t want to answer this question', tabindex='30')
-                  label.choice(for='Field1582_3')
-                    | I don't want to answer this question
+          label
+            | Q18. Have you EVER used any method of birth control?
+          div
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='1' type='radio')
+              label.choice
+                | Yes
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='0' type='radio')
+              label.choice
+                | No
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='999' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='777' type='radio')
+              label.choice
+                | I don't want to answer this question
 
 
-          li#foli1583.notranslate
-            fieldset
-              legend#title1583.desc
-                | Q22.a. Are you using birth control now?
-              //if lt IE 8
-                label#title1583.desc
-                  | Q22.a. Are you using birth control now?
-              div
-                input#radioDefault_1583(name='Field1583', type='hidden', value='')
-                span
-                  input#Field1583_0.field.radio(name='Field1583', type='radio', value='Yes', tabindex='31', checked='checked')
-                  label.choice(for='Field1583_0')
-                    | Yes
-                span
-                  input#Field1583_1.field.radio(name='Field1583', type='radio', value='No', tabindex='32')
-                  label.choice(for='Field1583_1')
-                    | No
-                span
-                  input#Field1583_2.field.radio(name='Field1583', type='radio', value='I don\'t know', tabindex='33')
-                  label.choice(for='Field1583_2')
-                    | I don't know
-                span
-                  input#Field1583_3.field.radio(name='Field1583', type='radio', value='I don\'t want to answer this question', tabindex='34')
-                  label.choice(for='Field1583_3')
-                    | I don't want to answer this question
+          label
+            | Q18a. Are you using birth control now?
+          div
+            span
+              input.field.radio(ng-model='questions.q18a.answer' value ='1' type='radio')
+              label.choice
+                | Yes
+            span
+              input.field.radio(ng-model='questions.q18a.answer' value ='0' type='radio')
+              label.choice
+                | No
+            span
+              input.field.radio(ng-model='questions.q18a.answer' value ='999' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q18a.answer' value ='777' type='radio')
+              label.choice
+                | I don't want to answer this question
 
 
-          li#foli1587.notranslate
-            fieldset
-              legend#title1587.desc
-                | Q22a.i. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-              //if lt IE 8
-                label#title1587.desc
-                  | Q22a.i. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-              div
-                input#radioDefault_1587(name='Field1587', type='hidden', value='')
-                span
-                  input#Field1587_0.field.radio(name='Field1587', type='radio', value='', tabindex='35', checked='checked')
-                  label.choice(for='Field1587_0')
-                span
-                  input#Field1587_1.field.radio(name='Field1587', type='radio', value='', tabindex='36', checked='checked')
-                  label.choice(for='Field1587_1')
-                span
-                  input#Field1587_2.field.radio(name='Field1587', type='radio', value='', tabindex='37', checked='checked')
-                  label.choice(for='Field1587_2')
+          label
+            | Q18ai. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          div
+            span
+              input.field.radio(ng-model='questions.q18ai.answer' value ='0' type='radio')
+              label.choice
+                | option 1
+            span
+              input.field.radio(ng-model='questions.q18ai.answer' value ='0' type='radio')
+              label.choice
+                | option 2
+            span
+              input.field.radio(ng-model='questions.q18ai.answer' value ='0' type='radio')
+              label.choice
+                | option 3
 
 
-          li#foli1349.notranslate
-            fieldset
-              legend#title1349.desc
-                | Q23. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
-              //if lt IE 8
-                label#title1349.desc
-                  | Q23. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
-              div
-                input#radioDefault_1349(name='Field1349', type='hidden', value='')
-                span
-                  input#Field1349_0.field.radio(name='Field1349', type='radio', value='Yes', tabindex='38', checked='checked')
-                  label.choice(for='Field1349_0')
-                    | Yes
-                span
-                  input#Field1349_1.field.radio(name='Field1349', type='radio', value='No', tabindex='39')
-                  label.choice(for='Field1349_1')
-                    | No
-                span
-                  input#Field1349_2.field.radio(name='Field1349', type='radio', value='I don\'t know', tabindex='40')
-                  label.choice(for='Field1349_2')
-                    | I don't know
-                span
-                  input#Field1349_3.field.radio(name='Field1349', type='radio', value='I don\'t want to answer this question', tabindex='41')
-                  label.choice(for='Field1349_3')
-                    | I don't want to answer this question
+          label
+            | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
+          div
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='1' type='radio')
+              label.choice
+                | Yes
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='0' type='radio')
+              label.choice
+                | No
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='999' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q18.answer' value ='777' type='radio')
+              label.choice
+                | I don't want to answer this question
 
 
-          li#foli1350.notranslate
-            fieldset
-              legend#title1350.desc
-                | Q23.a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
-              //if lt IE 8
-                label#title1350.desc
-                  | Q23.a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
-              div
-                input#radioDefault_1350(name='Field1350', type='hidden', value='')
-                span
-                  input#Field1350_0.field.radio(name='Field1350', type='radio', value='', tabindex='42', checked='checked')
-                  label.choice(for='Field1350_0')
-                span
-                  input#Field1350_1.field.radio(name='Field1350', type='radio', value='', tabindex='43', checked='checked')
-                  label.choice(for='Field1350_1')
-                span
-                  input#Field1350_2.field.radio(name='Field1350', type='radio', value='', tabindex='44', checked='checked')
-                  label.choice(for='Field1350_2')
+          label
+            | Q19a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
+           div
+            span
+              input.field.radio(ng-model='questions.q19a.answer' value ='0' type='radio')
+              label.choice
+                | option 1
+            span
+              input.field.radio(ng-model='questions.q19a.answer' value ='0' type='radio')
+              label.choice
+                | option 2
+            span
+              input.field.radio(ng-model='questions.q19a.answer' value ='0' type='radio')
+              label.choice
+                | option 3
 
 
-          li#foli1351.notranslate
-            fieldset
-              legend#title1351.desc
-                | Q23.a.i. What problems did you have while using:
-              //if lt IE 8
-                label#title1351.desc
-                  | Q23.a.i. What problems did you have while using:
-              div
-                input#radioDefault_1351(name='Field1351', type='hidden', value='')
-                span
-                  input#Field1351_0.field.radio(name='Field1351', type='radio', value='I didn\'t like the changes to my body', tabindex='45', checked='checked')
-                  label.choice(for='Field1351_0')
-                span
-                  input#Field1351_1.field.radio(name='Field1351', type='radio', value='I had problems getting the birth control', tabindex='46')
-                  label.choice(for='Field1351_1')
-                    | I had problems getting the birth control
-                span
-                  input#Field1351_2.field.radio(name='Field1351', type='radio', value='I didn\'t use it right', tabindex='47')
-                  label.choice(for='Field1351_2')
-                    | I didn't use it right
-                span
-                  input#Field1351_3.field.radio(name='Field1351', type='radio', value='I got pregnant', tabindex='48')
-                  label.choice(for='Field1351_3')
-                    | I got pregnant
-                span
-                  input#Field1351_4.field.radio(name='Field1351', type='radio', value='I developed health problems', tabindex='49')
-                  label.choice(for='Field1351_4')
-                    | I developed health problems
-                span
-                  input#Field1351_5.field.radio(name='Field1351', type='radio', value='I didn\'t like my periods', tabindex='50')
-                  label.choice(for='Field1351_5')
-                    | I didn't like my periods
-                span
-                  input#Field1351_6.field.radio(name='Field1351', type='radio', value='My partner didn\'t like it', tabindex='51')
-                  label.choice(for='Field1351_6')
-                    | My partner didn't like it
-                span
-                  input#Field1351_7.field.radio(name='Field1351', type='radio', value='None of these problems', tabindex='52')
-                  label.choice(for='Field1351_7')
-                    | None of these problems
-                span
-                  input#Field1351_8.field.radio(name='Field1351', type='radio', value='I don\'t know', tabindex='53')
-                  label.choice(for='Field1351_8')
-                    | I don't know
-                span
-                  input#Field1351_9.field.radio(name='Field1351', type='radio', value='I don\'t want to answer this question', tabindex='54')
-                  label.choice(for='Field1351_9')
-                    | I don't want to answer this question
+          label
+            | Q19ai. What problems did you have while using:
+          div
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I didn't like the changes to my body
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I had problems getting the birth control
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I didn't use it right
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I got pregnant
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I developed health problems
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I didn't like my periods
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | My partner didn't like it
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | None of these problems
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='0' type='radio')
+              label.choice
+                | I don't want to answer this question
 
 
-          li#foli1353.notranslate
-            fieldset
-              legend#title1353.desc
-                | Q24. How soon do you want to get pregnant? In...
-              //if lt IE 8
-                label#title1353.desc
-                  | Q24. How soon do you want to get pregnant? In...
-              div
-                input#radioDefault_1353(name='Field1353', type='hidden', value='')
-                span
-                  input#Field1353_0.field.radio(name='Field1353', type='radio', value='Less than one year', tabindex='55', checked='checked')
-                  label.choice(for='Field1353_0')
-                    | Less than one year
-                span
-                  input#Field1353_1.field.radio(name='Field1353', type='radio', value='In one to three years', tabindex='56')
-                  label.choice(for='Field1353_1')
-                    | In one to three years
-                span
-                  input#Field1353_2.field.radio(name='Field1353', type='radio', value='In three or more years', tabindex='57')
-                  label.choice(for='Field1353_2')
-                    | In three or more years
-                span
-                  input#Field1353_3.field.radio(name='Field1353', type='radio', value='Not sure when but definitely want to have a baby', tabindex='58')
-                  label.choice(for='Field1353_3')
-                    | Not sure when but definitely want to have a baby
-                span
-                  input#Field1353_4.field.radio(name='Field1353', type='radio', value='Never', tabindex='59')
-                  label.choice(for='Field1353_4')
-                    | Never
-                span
-                  input#Field1353_5.field.radio(name='Field1353', type='radio', value='I don\'t know', tabindex='60')
-                  label.choice(for='Field1353_5')
-                    | I don't know
-                span
-                  input#Field1353_6.field.radio(name='Field1353', type='radio', value='I don\'t want to answer this question', tabindex='61')
-                  label.choice(for='Field1353_6')
-                    | I don't want to answer this question
+          label
+            | Q20. When would you like to become pregnant? In...
+            div
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='1' type='radio')
+                label.choice
+                  | Less than one year
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='2' type='radio')
+                label.choice
+                  | In one to three years
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='3' type='radio')
+                label.choice
+                  | In three or more years
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='4' type='radio')
+                label.choice
+                  | Not sure when but definitely want to have a baby
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='5' type='radio')
+                label.choice
+                  | Never
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='777' type='radio')
+                label.choice
+                  | I don't know
+              span
+                input.field.radio(ng-model='questions.q20.answer' value ='999' type='radio')
+                label.choice
+                  | I don't want to answer this question
 
 
-          li#foli1354.notranslate
-            fieldset
-              legend#title1354.desc
-                | Q25. What is most important to you when choosing a birth control method? Please select the three most important to you
-              //if lt IE 8
-                label#title1354.desc
-                  | Q25. What is most important to you when choosing a birth control method? Please select the three most important to you
-              div
-                input#radioDefault_1354(name='Field1354', type='hidden', value='')
-                span
-                  input#Field1354_0.field.radio(name='Field1354', type='radio', value='Easy to use', tabindex='62', checked='checked')
-                  label.choice(for='Field1354_0')
-                    | Easy to use
-                span
-                  input#Field1354_1.field.radio(name='Field1354', type='radio', value='Safe with breast feeding', tabindex='63')
-                  label.choice(for='Field1354_1')
-                    | Safe with breast feeding
-                span
-                  input#Field1354_2.field.radio(name='Field1354', type='radio', value='Inexpensive', tabindex='64')
-                  label.choice(for='Field1354_2')
-                    | Inexpensive
-                span
-                  input#Field1354_3.field.radio(name='Field1354', type='radio', value='Very effective', tabindex='65')
-                  label.choice(for='Field1354_3')
-                    | Very effective
-                span
-                  input#Field1354_4.field.radio(name='Field1354', type='radio', value='Able to get pregnant quickly after stopping use of method', tabindex='66')
-                  label.choice(for='Field1354_4')
-                    | Able to get pregnant quickly after stopping use of method
-                span
-                  input#Field1354_5.field.radio(name='Field1354', type='radio', value='Not very many side-effects', tabindex='67')
-                  label.choice(for='Field1354_5')
-                    | Not very many side-effects
-                span
-                  input#Field1354_6.field.radio(name='Field1354', type='radio', value='No hormones', tabindex='68')
-                  label.choice(for='Field1354_6')
-                    | No hormones
-                span
-                  input#Field1354_7.field.radio(name='Field1354', type='radio', value='Effective long term meaning three months or longer', tabindex='69')
-                  label.choice(for='Field1354_7')
-                    | Effective long term meaning three months or longer
-                span
-                  input#Field1354_8.field.radio(name='Field1354', type='radio', value='Do not need to interrupt sexual activity', tabindex='70')
-                  label.choice(for='Field1354_8')
-                    | Do not need to interrupt sexual activity
-                span
-                  input#Field1354_9.field.radio(name='Field1354', type='radio', value='Able to give regular monthly periods', tabindex='71')
-                  label.choice(for='Field1354_9')
-                    | Able to give regular monthly periods
-                span
-                  input#Field1354_10.field.radio(name='Field1354', type='radio', value='Gives fewer or no periods', tabindex='72')
-                  label.choice(for='Field1354_10')
-                    | Gives fewer or no periods
-                span
-                  input#Field1354_11.field.radio(name='Field1354', type='radio', value='Decreases symptoms from period', tabindex='73')
-                  label.choice(for='Field1354_11')
-                    | Decreases symptoms from period
-                span
-                  input#Field1354_12.field.radio(name='Field1354', type='radio', value='I don\'t know', tabindex='74')
-                  label.choice(for='Field1354_12')
-                    | I don't know
-                span
-                  input#Field1354_13.field.radio(name='Field1354', type='radio', value='I don\'t want to answer this question', tabindex='75')
-                  label.choice(for='Field1354_13')
-                    | I don't want to answer this question
+          label
+            | Q21. What is most important to you when choosing a birth control method? Please select the three most important to you
+            div
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Easy to use
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Safe with breast feeding
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Inexpensive
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Very effective
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Able to get pregnant quickly after stopping use of method
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Not very many side-effects
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | No hormones
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Effective long term meaning three months or longer
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Do not need to interrupt sexual activity
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Able to give regular monthly periods
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Gives fewer or no periods
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | Decreases symptoms from period
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | I don't know
+              span
+                input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio')
+                label.choice
+                  | I don't want to answer this question
 
 
-          li#foli1355.notranslate
-            fieldset
-              legend#title1355.desc
-                | Q26. How often do you want to actively do something for your birth control? You may choose more than one answer.
-              //if lt IE 8
-                label#title1355.desc
-                  | Q26. How often do you want to actively do something for your birth control? You may choose more than one answer.
-              div
-                input#radioDefault_1355(name='Field1355', type='hidden', value='')
-                span
-                  input#Field1355_0.field.radio(name='Field1355', type='radio', value='Every time you have sex', tabindex='76', checked='checked')
-                  label.choice(for='Field1355_0')
-                    | Every time you have sex
-                span
-                  input#Field1355_1.field.radio(name='Field1355', type='radio', value='Every day', tabindex='77')
-                  label.choice(for='Field1355_1')
-                    | Every day
-                span
-                  input#Field1355_2.field.radio(name='Field1355', type='radio', value='Once a week', tabindex='78')
-                  label.choice(for='Field1355_2')
-                    | Once a week
-                span
-                  input#Field1355_3.field.radio(name='Field1355', type='radio', value='Once a month', tabindex='79')
-                  label.choice(for='Field1355_3')
-                    | Once a month
-                span
-                  input#Field1355_4.field.radio(name='Field1355', type='radio', value='Every three months', tabindex='80')
-                  label.choice(for='Field1355_4')
-                    | Every three months
-                span
-                  input#Field1355_5.field.radio(name='Field1355', type='radio', value='Longer than every three months', tabindex='81')
-                  label.choice(for='Field1355_5')
-                    | Longer than every three months
-                span
-                  input#Field1355_6.field.radio(name='Field1355', type='radio', value='Permanent method', tabindex='82')
-                  label.choice(for='Field1355_6')
-                    | Permanent method
-                span
-                  input#Field1355_7.field.radio(name='Field1355', type='radio', value='I don\'t know', tabindex='83')
-                  label.choice(for='Field1355_7')
-                    | I don't know
-                span
-                  input#Field1355_8.field.radio(name='Field1355', type='radio', value='I don\'t want to answer this question', tabindex='84')
-                  label.choice(for='Field1355_8')
-                    | I don't want to answer this question
+          label
+            | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
+          div
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Every time you have sex
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Every day
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Once a week
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Once a month
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Every three months
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Longer than every three months
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | Permanent method
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | I don't know
+              span
+                input.field.radio(ng-model='questions.q22.answer' value ='0' type='radio')
+                label.choice
+                  | I don't want to answer this question
 
     // this ends the third set of questions 03
+
+          //- li(ng-show="currentQuestion == 'q18'")

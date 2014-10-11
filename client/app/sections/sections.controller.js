@@ -28,6 +28,10 @@ angular.module('contraceptionApp')
         $state.go('.', {type:'intro',id:2})
       }
 
+      if( $scope.currentQuestion == 'q13' && ($state.params.type == 'section' && $state.params.id == 2 )){
+        $state.go('.', {type:'intro',id:3})
+      }
+
     }
 
     $scope.updateRanking = function(){
