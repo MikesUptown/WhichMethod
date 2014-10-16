@@ -6,6 +6,11 @@ angular.module('contraceptionApp')
   
     var ranking={}
 
+    //last question in each section
+    var sectionEnd=[
+      'q3','q13','q22'
+    ]
+
 
     function initRanking(){
       ranking={
@@ -63,7 +68,6 @@ angular.module('contraceptionApp')
         options: [999,777],
 
         nextQuestion: function(){
-          var option = this.answer
             return 'q3'
         },
 
@@ -117,16 +121,15 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          return 'q4a'
-          // var option = this.answer
-            // if(options == 0)
-            //   return 'q4a'
-            // else
-            //   return 'q5'
+          var answer = this.answer
+            if(answer == 0)
+              return 'q4a'
+            else
+              return 'q5'
         },
 
         ranking: function(){
-          var option = this.answer
+          var answer = this.answer
           // please read up on switch and what it does
           // switch(option){
           //   case"3":
@@ -144,15 +147,13 @@ angular.module('contraceptionApp')
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          return 'q5'
-          // var option = this.answer
+          var answer = this.answer
         },
 
         ranking: function(){
-          var option = this.answer
-          // switch(option){
-          //   case"3":
-          if(questions.q4a.answer == 0){
+          var answer = this.answer
+
+          if(questions.q4.answer == 0){
             ranking['ocp'].p+=1
             ranking['pop'].p+=1
             ranking['ortho-evra'].p+=1
@@ -162,6 +163,8 @@ angular.module('contraceptionApp')
             ranking['fam'].n-=1
             ranking['implanon'].p=+1
           }
+        
+
         }
       },
 
@@ -170,8 +173,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          return 'q6'
-          // var option = this.answer
+          var option = this.answer
         },
 
       ranking: function(){
@@ -189,6 +191,7 @@ angular.module('contraceptionApp')
             ranking['paragard'].n-=2
           }
         }
+      
       },
 
 
@@ -196,8 +199,8 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
-          // if(options == 0)
+          var option = this.answer
+          if(option == 0)
               return 'q7'
         },
         ranking: function(){
@@ -222,12 +225,12 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
-          // if(options == 0)
+          var option = this.answer
+          if(options == 0)
             return 'q8'
         },
         ranking: function(){
-          var option = this.answer
+          var answer = this.answer
         // switch(option){
         //   case"3":
           if(questions.q7.answer == 1){
@@ -248,12 +251,12 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
-          // if(options == 0)
+          var answer = this.answer
+          if(answer == 0)
             return 'q9'
         },
         ranking: function(){
-          var option = this.answer
+          var answer = this.answer
           // switch(option){
           //   case"3":
             if(questions.q8.answer == 1){
@@ -272,12 +275,12 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
-          // if(options == 0)
+          var answer = this.answer
+          if(answer == 0)
               return 'q10'
         },
         ranking: function(){
-          var option = this.answer
+          var answer = this.answer
           // switch(option){
           //   case"3":
             if(questions.q9.answer == 1){
@@ -297,12 +300,12 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
-          // if(options == 0)
+          var answer = this.answer
+          if(answer == 0)
             return 'q11'
         },
         ranking: function(){
-          var option = this.answer
+          var answer = this.answer
           // switch(option){
           //   case"3":
             if(questions.q10.answer == 1){
@@ -322,8 +325,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          return 'q12'
-          // var option = this.answer
+          var option = this.answer
         },
         ranking: function(){
           var option = this.answer
@@ -344,8 +346,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          return 'q13'
-          // var option = this.answer
+          var option = this.answer
         },
         ranking: function(){
           var option = this.answer
@@ -402,6 +403,7 @@ angular.module('contraceptionApp')
       questions: questions,
       ranking: ranking,
       initRanking: initRanking,
+      sectionEnd: sectionEnd,
       getRanking: function(){
         return ranking
       }

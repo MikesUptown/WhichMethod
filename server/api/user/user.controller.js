@@ -20,6 +20,37 @@ exports.index = function(req, res) {
   });
 };
 
+exports.updateUser = function(req, res) {
+  
+  var userId = req.user._id;
+  
+  if(req.user._id !=userId){
+    res.send(403);
+    return;
+  }
+
+  var answers = req.body.answers;
+  var currentQuestion = String(req.body.currentQuestion);
+  var currentSection = String(req.body.currentSection);
+
+  console.log(answers)
+
+
+  User.findById(userId, function (err, user) {
+
+    user.answers = answers
+    user.currentQuestion = currentQuestion
+    user.currentSection = currentSection
+
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      res.send(200);
+    });
+
+  });
+
+};
+
 /**
  * Creates a new user
  */

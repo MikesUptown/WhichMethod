@@ -6,9 +6,9 @@ angular.module('contraceptionApp')
 
       .state('sections',{
         url:'/questions',
-        abstract:true,
+        // abstract:true,
         controller: 'SectionsCtrl',
-        template: "<ui-view/>"
+        templateUrl: "/app/sections/sections.html"
       })
 
       .state('sections.questions', {

@@ -1,36 +1,79 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SectionsCtrl', function ($scope, questionService, $state) {
+  .controller('SectionsCtrl', function ($scope, questionService, $state, Auth, User) {
 
     //QUESTION LOGIC GOES HERE
 
     $scope.questions = questionService.questions
     $scope.ranking = questionService.ranking
+    var sectionEnd = questionService.sectionEnd
 
 
-    // $scope.$watch('questions',function(nq,oq){
-    //   if(nq!=oq)
-    //     $scope.saveAnswers()
 
-    // }, true)
+    var currentUser = Auth.getCurrentUser().$promise.then(function(user){
+      currentUser = user;
+      initUser()
 
-    $scope.currentQuestion='q1'
+    });
+
+    function initUser(){
+      if(currentUser.currentQuestion)
+        $scope.currentQuestion=currentUser.currentQuestion
+      else
+        $scope.currentQuestion='q1'
+      
+
+      if(currentUser.currentSection)
+        $scope.currentSection = currentUser.currentSection
+      else
+        $scope.currentSection=1
+
+      for(var i = 0;i<currentUser.answers.length;i++){
+        var q = currentUser.answers[i]
+        $scope.questions[q.question].answer = q.answer
+      }
+    }
+
+
+
 
     $scope.saveAnswers = function(){
 
       console.log("Answer Saved!")
       $scope.updateRanking()
 
+      var isEnd = sectionEnd.indexOf($scope.currentQuestion)
+
+      if( isEnd > -1  ){
+        // if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
+          $state.go('.', {type:'intro',id:isEnd+2})
+        // }
+      }
+
       $scope.currentQuestion = $scope.questions[$scope.currentQuestion].nextQuestion()
 
-      if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
-        $state.go('.', {type:'intro',id:2})
+      updateUser()
+
+    }
+
+    function updateUser(){
+
+      var answers=[]
+      for(var q in $scope.questions){
+        var question = $scope.questions[q]
+        if(question.answer != undefined)
+          answers.push({
+            question: q, 
+            answer: question.answer
+          })
       }
 
-      if( $scope.currentQuestion == 'q13' && ($state.params.type == 'section' && $state.params.id == 2 )){
-        $state.go('.', {type:'intro',id:3})
-      }
+      currentUser.answers = answers
+      currentUser.currentQuestion = $scope.currentQuestion
+      currentUser.currentSection = $scope.currentSection
+
+      currentUser.$save()
 
     }
 
@@ -45,8 +88,42 @@ angular.module('contraceptionApp')
 
       $scope.ranking = questionService.getRanking()
       console.log($scope.ranking)
+    }
 
+    $scope.back = function(){
 
+      $scope.questions[$scope.currentQuestion].answer = undefined
+      for(var i in $scope.questions){
+        var q = $scope.questions[i]
+        if(q.nextQuestion() == $scope.currentQuestion){
+          $scope.currentQuestion = i
+          break
+        }
+      }
+      updateUser()
+
+      var isEnd = sectionEnd.indexOf($scope.currentQuestion)
+
+      if( isEnd > -1  ){
+        // if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
+          $state.go('.', {type:'question',id:isEnd+1})
+        // }
+      }
+
+    }
+
+    $scope.resetUserData = function(){
+      currentUser.answers = []
+      currentUser.currentQuestion = 'q1'
+      currentUser.currentSection = 1
+      $scope.currentSection = 1
+      $scope.currentQuestion = 'q1'
+      for(var q in $scope.questions){
+        var question = $scope.questions[q]
+        question.answer = undefined
+      }
+      currentUser.$save()
+      $state.go('.', {type:'intro',id:1})
     }
 
   });

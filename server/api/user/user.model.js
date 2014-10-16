@@ -13,7 +13,14 @@ var UserSchema = new Schema({
   },
   hashedPassword: String,
   provider: String,
-  salt: String
+  salt: String,
+  currentQuestion: String,
+  currentSection: Number,
+  answers: [{
+    question: String,
+    answer: Number
+  }]
+
 });
 
 /**
@@ -36,7 +43,9 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'currentQuestion':this.currentQuestion,
+      'answers':this.answers,
     };
   });
 
