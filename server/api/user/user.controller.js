@@ -20,14 +20,39 @@ exports.index = function(req, res) {
   });
 };
 
+
+exports.convertGuest = function(req,res){
+
+  var userId=req.user._id;
+
+  var newName = String(req.body.name);
+  var email = String(req.body.email);
+  var pass = String(req.body.password);
+
+  console.log(newName)
+  console.log(email)
+  console.log(pass)
+  User.findById(userId, function (err, user) {
+
+    user.name = newName;
+    user.email = email;
+    user.password = pass;
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      res.send(200);
+    });
+  })
+
+}
+
 exports.updateUser = function(req, res) {
   
   var userId = req.user._id;
   
-  if(req.user._id !=userId){
-    res.send(403);
-    return;
-  }
+  // if(req.user._id !=userId){
+  //   res.send(403);
+  //   return;
+  // }
 
   var answers = req.body.answers;
   var currentQuestion = String(req.body.currentQuestion);
@@ -38,12 +63,17 @@ exports.updateUser = function(req, res) {
 
   User.findById(userId, function (err, user) {
 
+    console.log(user)
+
     user.answers = answers
     user.currentQuestion = currentQuestion
     user.currentSection = currentSection
 
     user.save(function(err) {
-      if (err) return validationError(res, err);
+      if (err) {
+        console.log(err)
+        return validationError(res, err);
+      }
       res.send(200);
     });
 

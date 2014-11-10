@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, $rootScope) {
     $scope.menu = [{
       'title': 'WhichMethod Logo',
       // 'link': '/'
     }];
+
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
