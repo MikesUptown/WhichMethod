@@ -8,10 +8,10 @@ angular.module('contraceptionApp')
     $scope.questions = questionService.questions
     $scope.ranking = questionService.ranking
     var sectionEnd = questionService.sectionEnd
+    var currentUser 
 
 
-
-    var currentUser = Auth.getCurrentUser().$promise.then(function(user){
+    User.get(function(user){
       currentUser = user;
       initUser()
 
@@ -48,6 +48,8 @@ angular.module('contraceptionApp')
       if( isEnd > -1  ){
         // if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
           $state.go('.', {type:'intro',id:isEnd+2})
+          $scope.currentSection++;
+
         // }
       }
 
@@ -73,7 +75,7 @@ angular.module('contraceptionApp')
       currentUser.currentQuestion = $scope.currentQuestion
       currentUser.currentSection = $scope.currentSection
 
-      currentUser.$save()
+      User.save(currentUser)
 
     }
 
@@ -107,6 +109,7 @@ angular.module('contraceptionApp')
       if( isEnd > -1  ){
         // if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
           $state.go('.', {type:'question',id:isEnd+1})
+          $scope.currentSection--
         // }
       }
 
@@ -122,7 +125,7 @@ angular.module('contraceptionApp')
         var question = $scope.questions[q]
         question.answer = undefined
       }
-      currentUser.$save()
+      User.save(currentUser)
       $state.go('.', {type:'intro',id:1})
     }
 

@@ -173,7 +173,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q6'
         },
 
       ranking: function(){
@@ -199,8 +199,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(option == 0)
+
               return 'q7'
         },
         ranking: function(){
@@ -225,8 +224,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
-          if(options == 0)
+
             return 'q8'
         },
         ranking: function(){
@@ -251,8 +249,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer
-          if(answer == 0)
+
             return 'q9'
         },
         ranking: function(){
@@ -275,8 +272,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer
-          if(answer == 0)
+
               return 'q10'
         },
         ranking: function(){
@@ -300,8 +296,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer
-          if(answer == 0)
+
             return 'q11'
         },
         ranking: function(){
@@ -325,7 +320,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q11';
         },
         ranking: function(){
           var option = this.answer
@@ -346,7 +341,7 @@ angular.module('contraceptionApp')
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          return 'q12';
         },
         ranking: function(){
           var option = this.answer

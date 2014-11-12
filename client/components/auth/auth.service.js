@@ -71,6 +71,20 @@ angular.module('contraceptionApp')
           }.bind(this)).$promise;
       },
 
+
+
+      registerGuest:function(user, callback){
+        var cb = callback || angular.noop;
+        
+        return User.convertGuest({ id: currentUser._id }, user, 
+        function(user) {
+          currentUser = User.get();
+          return cb(user);
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
+
       /**
        * Change password
        *
