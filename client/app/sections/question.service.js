@@ -393,7 +393,9 @@ angular.module('contraceptionApp')
       }
     }
 
+ 
 
+    
     return {
       questions: questions,
       ranking: ranking,
