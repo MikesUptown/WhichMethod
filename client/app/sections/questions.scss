@@ -1,42 +1,35 @@
 html {
 background: #808080
 }
-
-body {
+body{
 margin:17px 0 15px 0;
 padding:25px;
 text-align:left;
 font-size:large;
 font-family: Tahoma, Arial, Verdana, sans-serif; 
 }
-
-article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object,output {
+article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object,output{
 display:block
 }
-
-#container {
+#container{
 text-align:left;
 background:#fff;
 border: 1px solid
-
 #ccc;
 -webkit-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
 -moz-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
 -o-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
 box-shadow:rgba(0,0,0,0.2) 0px 0px 5px
 }
-
-#container {
+#container{
 margin:0 auto 10px auto;width:640px
 }
-
 form.wufoo {
 margin:20px 14px 0 0px;
 padding:0 0 20px 0;
 position:relative 
 }
-
-#logo {
+#logo{
 margin:0;
 padding:0;
 min-height:0;
@@ -44,76 +37,65 @@ background-color:#dedede;
 text-indent:-9000px;
 text-decoration:none 
 }
-
-#logo a {
+#logo a{
 min-height:40px;
 height:40px;
 display:block;
 background:url(../images/wflogo.png) no-repeat left top;
 overflow:hidden 
 }
-
-* html #logo a {
+* html #logo a{
 _background-image:none;
 _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/wflogo.png", sizingMethod="crop")
 }
-
-img,a img {
+img,a img{
 border: none;
 -ms-interpolation-mode:bicubic
 }
-
-.hide,.cloak div,.cloak span,.likert.cloak tbody,.likert.cloak thead {
+.hide,.cloak div,.cloak span,.likert.cloak tbody,.likert.cloak thead{
 display:none !important 
 }
-
-.likert.cloak table {
+.likert.cloak table{
 border:none
 }
-
 /* ----- Logo ----- */
-
+/*
 #logo a {
 	background-image:url('../images/themes/logos/none.png'); 
 	min-height:0;
 	height:40px;
 }
-* html #logo a {/* IE6 png Support */
+* html #logo a {
 	background-image: none;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/themes/logos/none.png", sizingMethod="crop");
 }
-
+*/
 /* ----- Backgrounds ----- */
+
 html{
-	background-image:none;	background-color:#999999;
+	background-image:none; background-color:#999999;
 }
 #logo{
-	background-image:none;	background-color:#660000;
+	background-image:none; background-color:#660000;
 }
-
-#container, html.embed {
+#container, html.embed{
 	background-color:#996666;
 }
-
-.safari .wufoo select.select {
+.safari .wufoo select.select{
 	font-size:100% !important;
 }
-
-.safari .wufoo input.file {
+.safari .wufoo input.file{
 	background:none;
 	border:none;
 }
-
-.wufoo li.focused {
+.wufoo li.focused{
 	background-color:#cccccc;
 }
-
-.wufoo .instruct {
+.wufoo .instruct{
 	background-color:#F5F5F5;
 }
-
 /* ----- Borders ----- */
-
+/*
 #container{
 	border:1px solid #cccccc;
 }
@@ -141,8 +123,9 @@ html{
 .wufoo li.section.scrollText{
 	border-color:#855959;
 }
-
+*/
 /* ----- Typography ----- */
+/*
 .wufoo .info h2{
 	font-size:160%;
 	font-family:inherit;
@@ -171,7 +154,6 @@ html{
 	font-weight:normal;
 	color:#444444;
 }
-
 .wufoo label.desc, .wufoo legend.desc{
 	font-size:110%;
 	font-family:inherit;
@@ -179,7 +161,6 @@ html{
 	font-weight:bold;
 	color:#444444;
 }
-
 .wufoo label.choice{
 	font-size:100%;
 	font-family:inherit;
@@ -187,14 +168,15 @@ html{
 	font-weight:normal;
 	color:#444444;
 }
-.wufoo input.text, .wufoo textarea.textarea, .wufoo input.file, .wufoo select.select {
+.wufoo input.text, .wufoo textarea.textarea, .wufoo input.file, .wufoo select.select{
 	font-style:normal;
 	font-weight:normal;
 	color:#333333;
 	font-size:100%;
 }
-
+*/
 /* Custom Fonts Break Dropdown Selection in IE */
+/*
 .wufoo input.text, .wufoo textarea.textarea, .wufoo input.file { 
 	font-family:inherit;
 }
@@ -205,8 +187,9 @@ html{
 	color:#444444;
 }
 .safari .wufoo input.file { 
-
+*/
 /* Webkit */
+/*
 	font-size:100%;
 	font-family:inherit;
 	color:#444444;
@@ -224,23 +207,23 @@ li.leftThird small, li.middleThird small, li.rightThird small,
 .iphone small{
 	color:#444444 !important;
 }
-
+*/
 /* ----- Button Styles ----- */
-
+/*
 .wufoo input.btTxt {
 
 }
-
+*/
 /* ----- Highlight Styles ----- */
-
+/*
 .wufoo li.focused label.desc, .wufoo li.focused legend.desc,
 .wufoo li.focused div, .wufoo li.focused span, .wufoo li.focused div label, .wufoo li.focused span label,
 .safari .wufoo li.focused input.file{ 
 	color:#000000;
 }
-
+*/
 /* ----- Confirmation ----- */
-
+/*
 .confirm h2{
 	font-family:inherit;
 	color:#444444;
@@ -253,9 +236,9 @@ a.powertiny b, a.powertiny em {
 .embed a.powertiny b, .embed a.powertiny em {
 	color:#e6e6e6 !important;
 }
-
+*/
 /* ----- Pagination ----- */
-
+/*
 .pgStyle1 var, .pgStyle2 var, .pgStyle2 em, .page1 .pgStyle2 var, .pgStyle1 b, .wufoo .buttons .marker{
 	font-family:inherit;
 	color:#444444;
@@ -280,9 +263,9 @@ a.powertiny b, a.powertiny em {
 .buttons button, .buttons button:hover {
 	color:#FFFFFF;
 }
-
+*/
 /* Likert Backgrounds */
-
+/*
 .likert table {
 	background-color:#996666;
 }
@@ -294,9 +277,9 @@ a.powertiny b, a.powertiny em {
 .likert tbody tr.alt td, .likert tbody tr.alt th {
 	background-color:#936262;
 }
-
+*/
 /* Likert Borders */
-
+/*
 .likert table, .likert th, .likert td {
 	border-color:#855959;
 }
@@ -304,9 +287,9 @@ a.powertiny b, a.powertiny em {
 .likert td {
 	border-left:1px solid #7a5252;
 }
-
+*/
 /* Likert Typography */
-
+/*
 .likert caption, .likert thead td, .likert tbody th label {
 	color:#444444;
 	font-family:inherit;
@@ -320,9 +303,9 @@ a.powertiny b, a.powertiny em {
 .likert caption, .likert tbody th label {
 	font-size:110%;
 }
-
+*/
 /* Likert Hover */
-
+/*
 .likert tbody tr:hover td, .likert tbody tr:hover th, .likert tbody tr:hover label {
 	background-color:#cccccc;
 	color:#000000;
@@ -330,9 +313,9 @@ a.powertiny b, a.powertiny em {
 .likert tbody tr:hover td {
 	border-left:1px solid #a3a3a3;
 }
-
+*/
 /* ----- Running Total ----- */
-
+/*
 .wufoo #lola {
 	background:#8a5c5c;
 }
@@ -348,9 +331,9 @@ a.powertiny b, a.powertiny em {
 .wufoo #lola tfoot th {
 	color:#696969;
 }
-
+*/
 /* ----- Report Styles ----- */
-
+/*
 .wufoo .wfo_graph h3 {
 	font-size:110%;
 	font-family:inherit;
@@ -368,9 +351,9 @@ a.powertiny b, a.powertiny em {
 .wufoo .footer span {
 	color:#444444;
 }
-
+*/
 /* ----- Number Widget ----- */
-
+/*
 .wfo_number{
 	background-color:#936262;
 	border-color:#855959;
@@ -378,9 +361,9 @@ a.powertiny b, a.powertiny em {
 .wfo_number strong, .wfo_number em{
 	color:#FFFFFF;
 }
-
+*/
 /* ----- Chart Widget Border and Background Colors ----- */
-
+/*
 #widget, #widget body {
 	background:#996666;
 }
@@ -408,9 +391,9 @@ a.powertiny b, a.powertiny em {
 .fc tbody tr.alt td, .fc tbody tr.alt th, .fc tbody td.alt {
 	background-color:#936262;
 }
-
+*/
 /* ----- Chart Widget Typography Colors ----- */
-
+/*
 .fc caption, .fcNav, .fcNav a {
 	color:#444444;
 }
@@ -431,9 +414,9 @@ a.powertiny b, a.powertiny em {
 .fc .cards tbody td a span {
 	color:#7d7d7d;
 }
-
+*/
 /* ----- Chart Widget Hover Colors ----- */
-
+/*
 .fc tbody tr:hover td, .fc tbody tr:hover th,
 .fc tfoot tr:hover td, .fc tfoot tr:hover th {
 	background-color:#cccccc;
@@ -443,9 +426,9 @@ a.powertiny b, a.powertiny em {
 .fc tfoot tr:hover th div, .fc tfoot tr:hover td, .fc tfoot tr:hover var {
 	color:#000000;
 }
-
+*/
 /* ----- Payment Summary ----- */
-
+/*
 .invoice thead th, 
 .invoice tbody th, .invoice tbody td,
 .invoice tfoot th,
@@ -470,13 +453,13 @@ a.powertiny b, a.powertiny em {
 #shipSection, #invoiceSection {
 	border-top:1px dotted #cccccc;
 }
-
+*/
 /* Drop Shadows */
 
 /* - - - Local Fonts - - - */
 
 /* - - - Responsive - - - */
-
+/*
 @media only screen and (max-width: 480px) {
 	html {
 		background-color:#996666;
@@ -486,10 +469,11 @@ a.powertiny b, a.powertiny em {
 		color:#e6e6e6 !important;
 	}
 }
+*/
 
 /* - - - Custom Theme - - - */
 
-
+/*
 .wufoo{
 font-family:"Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;letter-spacing:.01em
 }
@@ -591,7 +575,8 @@ form li.complex div span.full{
 margin:0 
 }
 
-form li.complex div span.left,form li.complex div span.right{margin:0;width:48%
+form li.complex div span.left,form li.complex div span.right{
+margin:0;width:48%
 }
 
 form li.complex div span.full input,form li.complex div span.full select,form li.complex div span.left input,form li.complex div span.right input,form li.complex div span.left select,form li.complex div span.right select{
@@ -819,8 +804,7 @@ form li.buttons{
 width:auto !important;position:relative;clear:both;padding:10px 1% 10px 1%
 }
 form li.buttons input{
-font-size:100%;margin-right:5px}input.btTxt
-{
+font-size:100%;margin-right:5px}input.btTxt{
 padding:0 7px;width:auto;overflow:visible
 }
 .safari input.btTxt{
@@ -857,13 +841,14 @@ float:right
 padding-left:23%
 }
 .leftLabel .buttons div,.rightLabel 
-.buttons div{float:none;margin:0 0 0 20px
+.buttons div{
+float:none;margin:0 0 0 20px
 }
 .leftLabel p.instruct,.rightLabel p.instruct{
 width:28%;margin-left:5px
 }
-.leftLabel .altInstruct .instruct,.rightLabel .altInstruct .instruct
-{margin-left:31% !important;padding-left:15px;width:65%
+.leftLabel .altInstruct .instruct,.rightLabel .altInstruct .instruct{
+margin-left:31% !important;padding-left:15px;width:65%
 }
 .noI form li,.altInstruct form li{
 width:auto !important
@@ -897,9 +882,11 @@ clear:none !important;float:right
 }
 li.leftHalf .small,li.rightHalf .small,li.leftHalf .medium,li.rightHalf .medium,li.leftThird .small,li.middleThird .small,li.rightThird .small,li.leftThird .medium,li.middleThird .medium,li.rightThird .medium,li.leftFourth .medium,li.middleFourth .medium,li.rightFourth .medium,li.leftFourth .small,li.middleFourth .small,li.rightFourth .small,li.leftFifth .medium,li.middleFifth .medium,li.rightFifth .medium,li.leftFifth .small,li.middleFifth .small,li.rightFifth .small{width:100% !important
 }
-form li.leftHalf,form li.leftThird,form li.leftFourth,form li.leftFifth{clear:left !important;float:left
+form li.leftHalf,form li.leftThird,form li.leftFourth,form li.leftFifth{
+clear:left !important;float:left
 }
-* html form li.middleFourth{margin-left:1% !important
+* html form li.middleFourth{
+margin-left:1% !important
 }
 * html form li.middleFifth{
 margin-left:1% !important
@@ -1009,7 +996,8 @@ vertical-align:top;text-align:center
 .nopagelabel td.t{
 display:none
 }
-.nopagelabel .pgStyle1 var,.circle6 var,.circle7 var{width:24px;height:24px;line-height:24px;font-size:90%;margin:0 auto 7px auto;float:none;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px
+.nopagelabel .pgStyle1 var,.circle6 var,.circle7 var{
+width:24px;height:24px;line-height:24px;font-size:90%;margin:0 auto 7px auto;float:none;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px
 }
 .nopagelabel .pgStyle1 var{
 margin-bottom:0
@@ -1072,7 +1060,9 @@ form li.error{
 display:block !important;background-color:#FFDFDF !important;margin-bottom:3px !important
 }
 form li label.error,form li input.error{
-color:#DF0000 !important;font-weight:bold !important}form li input.error{
+color:#DF0000 !important;font-weight:bold !important
+}
+form li input.error{
 background:#fff !important;border:2px solid #DF0000 !important
 }
 form li.error label,form li.error span.symbol{
@@ -1171,3 +1161,4 @@ right:auto;left:0;padding:15px 0 0 10px
 .rtl #errorLi *{
 text-align:center
 }
+*/
