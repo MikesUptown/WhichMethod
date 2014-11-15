@@ -16,6 +16,10 @@ describe('Controller: SectionsCtrl', function () {
   }));
 
   it('should ...', function () {
+    var a = [];
+    a[0] = 123;
+    console.log(SectionsCtrl);
+    console.log(JSON.stringify(scope.questions));
     expect(1).toEqual(1);
   });
 });
