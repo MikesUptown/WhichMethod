@@ -14,11 +14,11 @@ angular.module('contraceptionApp')
       .state('sections.questions', {
         url: '/:type/:id',
         templateUrl:  function (stateParams){
-          if(stateParams.type == 'intro')
+          if(stateParams.type === 'intro')
             return '/app/sections/intropages/intro' + stateParams.id + '.html';
           else
             return '/app/sections/questions/section0' + stateParams.id + '.html';
-          },
+          }
         // controller: 'SectionsCtrl'
       });
   });
@@ -44,8 +44,8 @@ function disableSubmitButton() {
 function initializeFocus(){
   var fields = getElementsByClassName(document, "*", "field");
   
-  for(i = 0; i < fields.length; i++) {
-    if(fields[i].type == 'radio' || fields[i].type == 'checkbox') {
+  for(var i = 0; i < fields.length; i++) {
+    if(fields[i].type === 'radio' || fields[i].type === 'checkbox') {
       fields[i].onclick = function() {highlight(this, 4);};
       fields[i].onfocus = function() {highlight(this, 4);};
     }
@@ -59,15 +59,15 @@ function initializeFocus(){
 }
 
 function highlight(el, depth){
-  if(depth == 2){var fieldContainer = el.parentNode.parentNode;}
-  if(depth == 3){var fieldContainer = el.parentNode.parentNode.parentNode;}
-  if(depth == 4){var fieldContainer = el.parentNode.parentNode.parentNode.parentNode;}
+  if(depth === 2){var fieldContainer = el.parentNode.parentNode;}
+  if(depth === 3){var fieldContainer = el.parentNode.parentNode.parentNode;}
+  if(depth === 4){var fieldContainer = el.parentNode.parentNode.parentNode.parentNode;}
   
   addClassName(fieldContainer, 'focused', true);
   var focusedFields = getElementsByClassName(document, "*", "focused");
   
   for(i = 0; i < focusedFields.length; i++) {
-    if(focusedFields[i] != fieldContainer){
+    if(focusedFields[i] !== fieldContainer){
       removeClassName(focusedFields[i], 'focused');
     }
   }
@@ -78,7 +78,7 @@ function ifInstructs(){
   if(container){
     removeClassName(container,'noI');
     var instructs = getElementsByClassName(document,"*","instruct");
-    if(instructs == ''){
+    if(instructs === ''){
       addClassName(container,'noI',true);
     }
     if(container.offsetWidth <= 450){
@@ -88,8 +88,8 @@ function ifInstructs(){
 }
 
 function showRangeCounters(){
-  counters = getElementsByClassName(document, "em", "currently");
-  for(i = 0; i < counters.length; i++) {
+  var counters = getElementsByClassName(document, "em", "currently");
+  for(var i = 0; i < counters.length; i++) {
     counters[i].style.display = 'inline';
   }
 }
@@ -110,7 +110,7 @@ function validateRange(ColumnId, RangeType) {
         var words = val.split(" ");
         var used = 0;
         for(i =0; i < words.length; i++) {
-          if(words[i].replace(/\s+$/,"") != "") used++;
+          if(words[i].replace(/\s+$/,"") !== "") used++;
         }
         msg.innerHTML = used;
         break;
@@ -126,7 +126,7 @@ function validateRange(ColumnId, RangeType) {
 
 //http://www.robertnyman.com/2005/11/07/the-ultimate-getelementsbyclassname/
 function getElementsByClassName(oElm, strTagName, strClassName){
-  var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+  var arrElements = (strTagName === "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
   var arrReturnElements = new Array();
   strClassName = strClassName.replace(/\-/g, "\\-");
   var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$)");
@@ -137,7 +137,7 @@ function getElementsByClassName(oElm, strTagName, strClassName){
       arrReturnElements.push(oElement);
     } 
   }
-  return (arrReturnElements)
+  return (arrReturnElements);
 }
 
 //http://www.bigbold.com/snippets/posts/show/2630
@@ -147,7 +147,7 @@ function addClassName(objElement, strClass, blnMayAlreadyExist){
       if ( blnMayAlreadyExist ){
          var strClassUpper = strClass.toUpperCase();
          for ( var i = 0; i < arrList.length; i++ ){
-            if ( arrList[i].toUpperCase() == strClassUpper ){
+            if ( arrList[i].toUpperCase() === strClassUpper ){
                arrList.splice(i, 1);
                i--;
              }
@@ -167,7 +167,7 @@ function removeClassName(objElement, strClass){
       var arrList = objElement.className.split(' ');
       var strClassUpper = strClass.toUpperCase();
       for ( var i = 0; i < arrList.length; i++ ){
-         if ( arrList[i].toUpperCase() == strClassUpper ){
+         if ( arrList[i].toUpperCase() === strClassUpper ){
             arrList.splice(i, 1);
             i--;
          }
@@ -178,12 +178,14 @@ function removeClassName(objElement, strClass){
 
 //http://ejohn.org/projects/flexible-javascript-events/
 function addEvent( obj, type, fn ) {
-  if ( obj.attachEvent ) {
-    obj["e"+type+fn] = fn;
-    obj[type+fn] = function() { obj["e"+type+fn]( window.event ) };
-    obj.attachEvent( "on"+type, obj[type+fn] );
-  } 
-  else{
-    obj.addEventListener( type, fn, false );  
+  if (typeof obj !== "undefined") {
+      if ( obj.attachEvent ) {
+        obj["e"+type+fn] = fn;
+        obj[type+fn] = function() { obj["e"+type+fn]( window.event ); };
+        obj.attachEvent( "on"+type, obj[type+fn] );
+      }
+      else{
+        obj.addEventListener( type, fn, false );  
+      }
   }
 }
