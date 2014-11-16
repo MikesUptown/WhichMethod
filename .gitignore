@@ -11,3 +11,4 @@ npm-debug.log
 karma_html/
 coverage/
 test-results.xml
+*.swp
