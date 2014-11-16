@@ -57,10 +57,9 @@ angular.module('contraceptionApp')
       
           if(answer<18){
             ranking['vas'].n -= 999
+          }
           if(answer<21){
             ranking['implanon'].n -=3
-        
-            }
           }
         }
       },

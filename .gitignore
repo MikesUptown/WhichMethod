@@ -8,5 +8,5 @@ dist
 /server/config/local.env.js
 *.log
 karma_html/
-nbproject/
-
+/nbproject/private/
+*.swp
