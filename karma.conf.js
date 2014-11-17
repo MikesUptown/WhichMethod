@@ -37,6 +37,10 @@ module.exports = function(config) {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
       '**/*.coffee': 'coffee',
+      'client/app/sections/**/*.js' : ['coverage'],
+      'client/app/sections/**/*.jade' : ['coverage'],
+      'client/app/sections/questions/**/*.js' : ['coverage'],
+      'client/app/sections/questions/**/*.jade' : ['coverage'],
     },
 
     ngHtml2JsPreprocessor: {
@@ -73,8 +77,16 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
 
 
+    // Reporters
+    reporters: [ 'progress', 'junit', 'html'],
+    coverageReporter: {
+        type : 'html',
+        dir : 'coverage/'
+    },
+
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
+
   });
 };

@@ -6,6 +6,12 @@ angular.module('contraceptionApp')
       id: '@_id'
     },
     {
+      convertGuest: {
+        method: 'PUT',
+        params: {
+          controller:'guest'
+        }
+      },
       changePassword: {
         method: 'PUT',
         params: {

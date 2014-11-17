@@ -12,9 +12,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
       ul.nav.navbar-nav
         li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
 
-          <a ng-href="">
-            <img ng-src="assets/images/which_method_logo.png"/>
-          </a> 
+        <img ng-src="assets/images/which_method_logo.png"/>
 
         li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
           a(href='/admin') Admin
@@ -23,7 +21,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
           // a(href='/signup') Sign up
           // a.btn.btn-primary.btn-xs(href='/signup') Sign up
-          a.button.btn.btn-success.navbar-btn(href='/signup') Sign up
+          a.button.btn.btn-success.navbar-btn(href='/signup') Sign Up
 
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           // a(href='/login') Log In
@@ -33,12 +31,16 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-show='isLoggedIn()')
           p.navbar-text Hello {{ getCurrentUser().name }}
 
+        li(ng-show='isLoggedIn()')
+          a.button.btn.btn-success.navbar-btn(ng-click="$root.showSettings=!$root.showSettings") Settings
+
+
         //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
           a(href='/settings')
             span.glyphicon.glyphicon-cog
 
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-          a.button.btn(href='', ng-click='logout()') Logout
+          a.button.btn.btn-success.navbar-btn(href='', ng-click='logout()') Logout
 
     // button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
         | About

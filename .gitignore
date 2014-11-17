@@ -6,3 +6,8 @@ public
 client/bower_components
 dist
 /server/config/local.env.js
+*.log
+test-results.xml
+karma_html/
+/nbproject/private/
+*.swp

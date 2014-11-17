@@ -5,6 +5,37 @@ angular.module('contraceptionApp')
     $scope.user = {};
     $scope.errors = {};
 
+    function randomString(length) {
+      var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      var result = '';
+      for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+      return result;
+    }
+
+    $scope.guestSignin = function(){
+
+      var name = 'guest'
+      var rnd = randomString(5)
+      var email = rnd + '@guest.com'
+      var pass = 'guest'
+
+      Auth.createUser({
+        name: name,
+        email: email,
+        password: pass
+      })
+      .then( function() {
+        // Account created, redirect to home
+        $location.path('/questions/intro/1');
+      })
+      .catch( function(err) {
+        err = err.data;
+        $scope.errors = {};
+        console.log(err)
+      })
+
+    }
+
     $scope.register = function(form) {
       $scope.submitted = true;
 
