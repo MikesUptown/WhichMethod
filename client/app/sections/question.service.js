@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 angular.module('contraceptionApp')
   .factory('questionService', function () {
@@ -115,8 +115,6 @@ angular.module('contraceptionApp')
         }
       },
 
-
-
       q4:{
         options: [1,0,999,777],
 
@@ -139,7 +137,6 @@ angular.module('contraceptionApp')
             // is this correct?
             ranking['fam'].n=-3
           }
-          
         }
       },
 
@@ -341,7 +338,6 @@ angular.module('contraceptionApp')
         }
       },
 
-
       q12:{
         options: [1,0,999,777],
 
@@ -397,8 +393,7 @@ angular.module('contraceptionApp')
         }
       }
     }
-
-
+    
     return {
       questions: questions,
       ranking: ranking,
