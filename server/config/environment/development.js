@@ -6,7 +6,7 @@ module.exports = {
   // MongoDB connection options
   mongo: {
     //uri: process.env.MONGOLAB_URI
-    uti: 'mongodb://localhost/whichmethod-dev'
+    uri: 'mongodb://localhost/whichmethod-dev'
   },
 
   seedDB: true
