@@ -1,16 +1,41 @@
  
 //- div(ng-include='"components/navbar/navbar.html"')
 
-#navigation_bar(style='')
-#introduction
-     .outer_container
-       .inner_container
-        h1 Welcome to WhichMethod
-        p
-          | In this first set of questions you will be asked some general questions about yourself and your medical history.
-        .button
-          a(href='', title='') SAVE
-        .button
-          a(href='/questions/section/1', title='') CONTINUE
-#plays_index
-#plays.outer_container
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", type="text/css", href="css/landing.css")
+    title Which Method: Landing Page 01
+  body
+    header
+      #logo
+        a(href="landing_01.html")
+          img.logo_img(src="images/which_method_logo.png", alt="")
+      // logo
+      #menu
+        a.btn_01(href="#") Log out
+      // menu
+      | g
+    section
+      #main_wrapper
+        #main_content
+          img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
+          p.main_title
+            span Section 01
+          p.content_01 "We"re going to start by asking you a few questions about yourself.
+          p.content_02 Please enter your responses below"
+          a.btn_02(href="#") Save
+          a.btn_03(href="#") Continue &#62;&#62;
+        // main_content
+      // main_wrapper
+    footer
+      p.footer &#169; Public Health Solution 2014
+
+
+
+
+
+
+
+
