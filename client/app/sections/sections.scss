@@ -6,6 +6,179 @@
   cursor:pointer;
 }
 
+
+
+/*New CSS for the Landing Page*/
+body{
+  margin: auto;
+}
+
+header{
+  width: 100%;
+  height: 110px;
+  /*border: solid;*/
+}
+
+#logo{
+  width: 150px;
+  margin-top: 22px;
+  margin-left: 60px;
+}
+.logo_img{
+  width: 100%;
+}
+
+#menu{
+  float: right;
+  margin-right: 110px;
+  margin-top: -50px;
+  width: 48px;
+  height: 35px;
+}
+
+.btn_01 {
+  width: 100%;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 10px;
+  text-decoration:none;
+  /*text-shadow:0px 1px 0px #2f6627;*/
+  /*border: solid;*/
+}
+.btn_01:hover {
+  background-color:#FCC000;
+}
+.btn_01:active {
+  position:relative;
+  top:1px;
+}
+
+section{
+  width: 100%;
+  height: 480px;
+  background-color: #986698;
+}
+#main_content{
+  margin: auto; width:80%;  
+  position: relative
+}
+.main_img{
+  width: 100%; 
+  height: 480px;
+  position:absolute; 
+}
+.main_title{
+  top: 0px; 
+  left:40px; 
+  width: 240px;
+  position:absolute; 
+  font-family: helvetica;
+  font-size: 48px;
+  color: #ffffff;
+}
+.content_01{
+  top: 140px; 
+  left:40px; 
+  width: 680px;
+  position:absolute; 
+  font-family: helvetica;
+  font-size: 20px;
+  color: #ffffff;
+  background-color:#986698; 
+  padding: 5px;
+}
+.content_02{
+  top: 172px; 
+  left:40px; 
+  width: 340px;
+  position:absolute; 
+  font-family: helvetica;
+  font-size: 20px;
+  color: #ffffff;
+  background-color:#986698; 
+  padding: 5px;
+
+}
+
+.btn_02 {
+  top: 380px; 
+  right:200px; 
+  position:absolute; 
+  width: 35px;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 30px;
+  text-decoration:none;
+}
+.btn_02:hover {background-color:#FCC000;}
+.btn_02:active {position:relative; top:1px;}
+
+.btn_03 {
+  top: 380px; 
+  right:50px; 
+  position:absolute; 
+  width: 80px;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 30px;
+  text-decoration:none;
+}
+.btn_03:hover {background-color:#FCC000;}
+.btn_03:active {position:relative; top:1px;}
+
+footer{
+  width: 100%;
+  height: 110px;
+  /*border: solid;*/
+}
+.footer{
+  width: 200px;
+  font-family:helvetica;
+  font-size:14px;
+  margin-left: 125px;
+  /*border: solid;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* this begins css for landing pages */
+
+
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
