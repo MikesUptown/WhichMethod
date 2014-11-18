@@ -12,7 +12,7 @@ To run the tests:
 
 ```bash
    cd ~/git/WhichMethod
-   ./node_modules/karma/bin/karma start
+   grunt karma
 ```
 
 Results are stored in the karma_html directory and also in the jUnit format
