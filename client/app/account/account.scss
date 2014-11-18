@@ -10,7 +10,7 @@ $btnTextAlt:                        #000;
   left:50%;
   // margin-top:-200px;
   // margin-left:-200px;
-  @include transition3d(-50%,-50%,0);
+  @include translate3d(-50%,-50%,0);
   width:400px;
   // height:400px;
   background:white;

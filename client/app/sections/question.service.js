@@ -118,11 +118,8 @@ angular.module('contraceptionApp')
         }
       },
 
-<<<<<<< HEAD
-=======
 
     // When you are not using birth control, do you have regular monthly periods?
->>>>>>> b579750e027f13a5883c7e26b206f9ea271503ec
       q4:{
         options: [1,0,999,777],
 
@@ -358,10 +355,8 @@ angular.module('contraceptionApp')
         }
       },
 
-<<<<<<< HEAD
-=======
+
     // When you are not using birth control, do you have significant PMS?
->>>>>>> b579750e027f13a5883c7e26b206f9ea271503ec
       q12:{
         options: [1,0,999,777],
 
@@ -415,12 +410,7 @@ angular.module('contraceptionApp')
   //               ranking['implanon'].p=+1
   //           };
           
-<<<<<<< HEAD
-        }
-      }
-    }
-    
-=======
+
   //       }
   //     }
   //   },
@@ -1640,7 +1630,7 @@ angular.module('contraceptionApp')
   //     }
   //   },
     };
->>>>>>> b579750e027f13a5883c7e26b206f9ea271503ec
+
     return {
       questions: questions,
       ranking: ranking,
