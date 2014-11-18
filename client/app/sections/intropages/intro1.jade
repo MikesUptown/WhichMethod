@@ -11,7 +11,9 @@ html
     header
       #logo
         a(href="landing_01.html")
-          img.logo_img(src="images/which_method_logo.png", alt="")
+          img.logo_img(src="assets/images/which_method_logo.png", alt="")
+          // <img ng-src="assets/images/which_method_logo.png" alt=""/>
+          img(ng-src='assets/images/which_method_logo.png', alt='')
       // logo
       #menu
         a.btn_01(href="#") Log out
@@ -23,8 +25,8 @@ html
           img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
           p.main_title
             span Section 01
-          p.content_01 "We"re going to start by asking you a few questions about yourself.
-          p.content_02 Please enter your responses below"
+          p.content_01 We're going to start by asking you a few questions about yourself
+          p.content_02 Please enter your responses below
           a.btn_02(href="#") Save
           a.btn_03(href="#") Continue &#62;&#62;
         // main_content

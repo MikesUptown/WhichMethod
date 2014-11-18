@@ -1,16 +1,33 @@
-
+ 
 //- div(ng-include='"components/navbar/navbar.html"')
 
-#navigation_bar(style='')
-#introduction
-    .outer_container
-      .inner_container
-        h1 Section 2
-        p
-          | Many birth control methods change your periods as part of the normal way that they work. This is not harmful to your body, but you many not like the changes.
-        .button
-          a(href='', title='') SAVE
-        .button
-          a(href='/questions/section/4', title='') CONTINUE
-#plays_index
-#plays.outer_container
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", type="text/css", href="css/landing.css")
+    title Which Method: Landing Page 04
+  body
+    header
+      #logo
+        a(href="landing_04.html")
+          img.logo_img(src="images/which_method_logo.png", alt="")
+      // logo
+      #menu
+        a.btn_01(href="#") Log out
+      // menu
+      | g
+    section
+      #main_wrapper
+        #main_content
+          img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
+          p.main_title
+            span Section 04
+          p.content_01 Many birth control methods change your periods as part of the normal way that they work.
+          p.content_02 This is not harmful to your body, but you may or may not like the changes.
+          a.btn_02(href="#") SAVE
+          a.btn_03(href="/questions/section/4", title='') CONTINUE
+        // main_content
+      // main_wrapper
+    footer
+      p.footer &#169; Public Health Solution 2014
