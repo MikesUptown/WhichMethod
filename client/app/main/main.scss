@@ -35,6 +35,10 @@ h3 {
     color: #FF7F50;
 }
 
+.text-justify.center-block {
+  background-color: #999999;
+}
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -69,6 +73,10 @@ body {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+}
+
+.navbar-static-top {
+  background-color: #A1A1A1;
 }
 
 .jumbotron {
