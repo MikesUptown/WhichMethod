@@ -1,160 +1,120 @@
-body#public
-#container.ltr
+header#header.info()
 
-        header#header.info
-          h2 WhichMethod_04
-          div
-        ul
-          li#foli119.notranslate
-            fieldset
+  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+    method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
-              legend#title119.desc
-                | Q27. Would you be okay with regular, scheduled bleeding?
-              //if lt IE 8
-                label#title119.desc
-                  | Q27. Would you be okay with regular, scheduled bleeding?
-              div
-                input#radioDefault_119(name='Field119', type='hidden', value='')
-                span
-                  input#Field119_0.field.radio(name='Field119', type='radio', value='Yes', tabindex='1', checked='checked')
-                  label.choice(for='Field119_0')
-                    | Yes
-                span
-                  input#Field119_1.field.radio(name='Field119', type='radio', value='No', tabindex='2')
-                  label.choice(for='Field119_1')
-                    | No
-                span
-                  input#Field119_2.field.radio(name='Field119', type='radio', value='I don\'t know', tabindex='3')
-                  label.choice(for='Field119_2')
-                    | I don't know
-                span
-                  input#Field119_3.field.radio(name='Field119', type='radio', value='I don\'t want to answer this question', tabindex='4')
-                  label.choice(for='Field119_3')
-                    | I don't want to answer this question
+  h2 WhichMethod_04
+  ul
+
+      label
+        | Q27. Would you be okay with regular, scheduled bleeding?
+      div
+        span
+          input#Field119_0.field.radio(name='Field119', type='radio', value='Yes', tabindex='1', checked='checked')
+          label.choice(for='Field119_0')
+            | Yes
+        span
+          input#Field119_1.field.radio(name='Field119', type='radio', value='No', tabindex='2')
+          label.choice(for='Field119_1')
+            | No
+        span
+          input#Field119_2.field.radio(name='Field119', type='radio', value='I don\'t know', tabindex='3')
+          label.choice(for='Field119_2')
+            | I don't know
+        span
+          input#Field119_3.field.radio(name='Field119', type='radio', value='I don\'t want to answer this question', tabindex='4')
+          label.choice(for='Field119_3')
+            | I don't want to answer this question
 
 
-          li#foli120.notranslate
-            fieldset
-              legend#title120.desc
-                | Q28. Would you be okay with unscheduled bleeding and/or spotting?
-              //if lt IE 8
-                label#title120.desc
-                  | Q28. Would you be okay with unscheduled bleeding and/or spotting?
-              div
-                span
-                  input#Field120.field.checkbox(name='Field120', type='checkbox', value='Yes', tabindex='5')
-                  label.choice(for='Field120') Yes
-                span
-                  input#Field121.field.checkbox(name='Field121', type='checkbox', value='No', tabindex='6')
-                  label.choice(for='Field121') No
-                span
-                  input#Field122.field.checkbox(name='Field122', type='checkbox', value='I don\'t know', tabindex='7')
-                  label.choice(for='Field122') I don't know
-                span
-                  input#Field123.field.checkbox(name='Field123', type='checkbox', value='I don\'t want to answer this question', tabindex='8')
-                  label.choice(for='Field123') I don't want to answer this question
+      label
+        | Q28. Would you be okay with unscheduled bleeding and/or spotting?
+      div
+        span
+          input#Field120.field.checkbox(name='Field120', type='checkbox', value='Yes', tabindex='5')
+          label.choice(for='Field120') Yes
+        span
+          input#Field121.field.checkbox(name='Field121', type='checkbox', value='No', tabindex='6')
+          label.choice(for='Field121') No
+        span
+          input#Field122.field.checkbox(name='Field122', type='checkbox', value='I don\'t know', tabindex='7')
+          label.choice(for='Field122') I don't know
+        span
+          input#Field123.field.checkbox(name='Field123', type='checkbox', value='I don\'t want to answer this question', tabindex='8')
+          label.choice(for='Field123') I don't want to answer this question
           li#foli221.notranslate
             fieldset
               legend#title221.desc
 
-
-                | Q29. Would you be okay with no bleeding at all?
-              //if lt IE 8
-                label#title221.desc
-                  | Q29. Would you be okay with no bleeding at all?
-              div
-                input#radioDefault_221(name='Field221', type='hidden', value='')
-                span
-                  input#Field221_0.field.radio(name='Field221', type='radio', value='Yes', tabindex='9', checked='checked')
-                  label.choice(for='Field221_0')
-                    | Yes
-                span
-                  input#Field221_1.field.radio(name='Field221', type='radio', value='No', tabindex='10')
-                  label.choice(for='Field221_1')
-                    | No
-                span
-                  input#Field221_2.field.radio(name='Field221', type='radio', value='I don\'t know', tabindex='11')
-                  label.choice(for='Field221_2')
-                    | I don't know
-                span
-                  input#Field221_3.field.radio(name='Field221', type='radio', value='I don\'t want to answer this question', tabindex='12')
-                  label.choice(for='Field221_3')
-                    | I don't want to answer this question
+      label
+        | Q29. Would you be okay with no bleeding at all?
+      div
+        span
+          input#Field221_0.field.radio(name='Field221', type='radio', value='Yes', tabindex='9', checked='checked')
+          label.choice(for='Field221_0')
+            | Yes
+        span
+          input#Field221_1.field.radio(name='Field221', type='radio', value='No', tabindex='10')
+          label.choice(for='Field221_1')
+            | No
+        span
+          input#Field221_2.field.radio(name='Field221', type='radio', value='I don\'t know', tabindex='11')
+          label.choice(for='Field221_2')
+            | I don't know
+        span
+          input#Field221_3.field.radio(name='Field221', type='radio', value='I don\'t want to answer this question', tabindex='12')
+          label.choice(for='Field221_3')
+            | I don't want to answer this question
 
 
-          li#foli222.notranslate
-            fieldset
-              legend#title222.desc
-                | Q30. Do you need a birth control method which you can keep private?
-              //if lt IE 8
-                label#title222.desc
-                  | Q30. Do you need a birth control method which you can keep private?
-              div
-                input#radioDefault_222(name='Field222', type='hidden', value='')
-                span
-                  input#Field222_0.field.radio(name='Field222', type='radio', value='Yes', tabindex='13', checked='checked')
-                  label.choice(for='Field222_0')
-                    | Yes
-                span
-                  input#Field222_1.field.radio(name='Field222', type='radio', value='No', tabindex='14')
-                  label.choice(for='Field222_1')
-                    | No
+      label
+        | Q30. Do you need a birth control method which you can keep private?
+      div
+        span
+          input#Field222_0.field.radio(name='Field222', type='radio', value='Yes', tabindex='13', checked='checked')
+          label.choice(for='Field222_0')
+            | Yes
+        span
+          input#Field222_1.field.radio(name='Field222', type='radio', value='No', tabindex='14')
+          label.choice(for='Field222_1')
+            | No
 
 
-          li#foli223.notranslate
-            fieldset
-              legend#title223.desc
-                | Q30.a. Do you want to keep it private from your boyfriend/girlfriend/partner?
-              //if lt IE 8
-                label#title223.desc
-                  | Q30.a. Do you want to keep it private from your boyfriend/girlfriend/partner?
-              div
-                input#radioDefault_223(name='Field223', type='hidden', value='')
-                span
-                  input#Field223_0.field.radio(name='Field223', type='radio', value='Yes', tabindex='15', checked='checked')
-                  label.choice(for='Field223_0')
-                    | Yes
-                span
-                  input#Field223_1.field.radio(name='Field223', type='radio', value='No', tabindex='16')
-                  label.choice(for='Field223_1')
-                    | No
+      label
+        | Q30.a. Do you want to keep it private from your boyfriend/girlfriend/partner?
+      div
+        span
+          input#Field223_0.field.radio(name='Field223', type='radio', value='Yes', tabindex='15', checked='checked')
+          label.choice(for='Field223_0')
+            | Yes
+        span
+          input#Field223_1.field.radio(name='Field223', type='radio', value='No', tabindex='16')
+          label.choice(for='Field223_1')
+            | No
+
+      label
+        | Q30.b. Do you want to keep it private from your family or your friends?
+      div
+        span
+          input#Field224_0.field.radio(name='Field224', type='radio', value='Yes', tabindex='17', checked='checked')
+          label.choice(for='Field224_0')
+            | Yes
+        span
+          input#Field224_1.field.radio(name='Field224', type='radio', value='No', tabindex='18')
+          label.choice(for='Field224_1')
+            | No
 
 
-          li#foli224.notranslate
-            fieldset
-              legend#title224.desc
-                | Q30.b. Do you want to keep it private from your family or your friends?
-              //if lt IE 8
-                label#title224.desc
-                  | Q30.b. Do you want to keep it private from your family or your friends?
-              div
-                input#radioDefault_224(name='Field224', type='hidden', value='')
-                span
-                  input#Field224_0.field.radio(name='Field224', type='radio', value='Yes', tabindex='17', checked='checked')
-                  label.choice(for='Field224_0')
-                    | Yes
-                span
-                  input#Field224_1.field.radio(name='Field224', type='radio', value='No', tabindex='18')
-                  label.choice(for='Field224_1')
-                    | No
-
-
-          li#foli225.notranslate
-            fieldset
-              legend#title225.desc
-                | Q31. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
-              //if lt IE 8
-                label#title225.desc
-                  | Q31. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
-              div
-                input#radioDefault_225(name='Field225', type='hidden', value='')
-                span
-                  input#Field225_0.field.radio(name='Field225', type='radio', value='Yes', tabindex='19', checked='checked')
-                  label.choice(for='Field225_0')
-                    | Yes
-                span
-                  input#Field225_1.field.radio(name='Field225', type='radio', value='No', tabindex='20')
-                  label.choice(for='Field225_1')
-                    | No
+      label
+        | Q31. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
+      div
+        span
+          input#Field225_0.field.radio(name='Field225', type='radio', value='Yes', tabindex='19', checked='checked')
+          label.choice(for='Field225_0')
+            | Yes
+        span
+          input#Field225_1.field.radio(name='Field225', type='radio', value='No', tabindex='20')
+          label.choice(for='Field225_1')
+            | No
 
     // this is the end of the 4th section of questions 04

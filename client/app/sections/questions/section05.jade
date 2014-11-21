@@ -1,10 +1,10 @@
-body#public
-#container.ltr
+header#header.info()
 
-        header#header.info
-          h2 WhichMethod_05
-          div
-        ul
+  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+    method: {{key}} pos: {{value.p}} neg: {{value.n}}
+
+  h2 WhichMethod_05
+  ul
           li#foli119.notranslate
             fieldset
               legend#title119.desc
