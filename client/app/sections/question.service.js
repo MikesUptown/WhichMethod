@@ -152,12 +152,14 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var answer = this.answer;
+          // CHECK THIS !!
+          return 'q5';
         },
 
         ranking: function(){
           var answer = this.answer;
 
-          if(questions.q4.answer === 0){
+          if(questions.q4a.answer === 0){
             ranking['ocp'].p+=1;
             ranking['pop'].p+=1;
             ranking['ortho-evra'].p+=1;
