@@ -31,19 +31,19 @@ header#header.info()
         | Q28. Would you be okay with unscheduled bleeding and/or spotting?
       div
         span
-          input.field.checkbox(ng-model='questions.q28.answer', value='Yes', type='checkbox')
+          input.field.radio(ng-model='questions.q28.answer', value='Yes', type='radio')
           label.choice
             | Yes
         span
-          input.field.checkbox(ng-model='questions.q28.answer', value='No', type='checkbox')
+          input.field.radio(ng-model='questions.q28.answer', value='No', type='radio')
           label.choice
             | No
         span
-          input.field.checkbox(ng-model='questions.q28.answer', value='I don\'t know', type='checkbox')
+          input.field.radio(ng-model='questions.q28.answer', value='I don\'t know', type='radio')
           label.choice
             | I don't know
         span
-          input.field.checkbox(ng-model='questions.q28.answer', value='I don\'t want to answer this question', type='checkbox')
+          input.field.radio(ng-model='questions.q28.answer', value='I don\'t want to answer this question', type='radio')
           label.choice
             | I don't want to answer this question
 
@@ -51,19 +51,19 @@ header#header.info()
         | Q29. Would you be okay with no bleeding at all?
       div
         span
-          input.field.radio(name='Field221', type='radio', value='Yes', tabindex='9', checked='checked')
+          input.field.radio(ng-model='questions.q29.answer', value='Yes', type='radio')
           label.choice
             | Yes
         span
-          input.field.radio(name='Field221', type='radio', value='No', tabindex='10')
+          input.field.radio(ng-model='questions.q29.answer', value='No', type='radio')
           label.choice
             | No
         span
-          input.field.radio(name='Field221', type='radio', value='I don\'t know', tabindex='11')
+          input.field.radio(ng-model='questions.q29.answer', value='I don\'t know', type='radio')
           label.choice
             | I don't know
         span
-          input.field.radio(name='Field221', type='radio', value='I don\'t want to answer this question', tabindex='12')
+          input.field.radio(ng-model='questions.q29.answer', value='I don\'t want to answer this question', type='radio')
           label.choice
             | I don't want to answer this question
 
@@ -72,11 +72,11 @@ header#header.info()
         | Q30. Do you need a birth control method which you can keep private?
       div
         span
-          input.field.radio(name='Field222', type='radio', value='Yes', tabindex='13', checked='checked')
+          input.field.radio(ng-model='questions.q30.answer', value='Yes', type='radio')          
           label.choice
             | Yes
         span
-          input.field.radio(name='Field222', type='radio', value='No', tabindex='14')
+          input.field.radio(ng-model='questions.q30.answer', value='No', type='radio')
           label.choice
             | No
 
@@ -85,11 +85,11 @@ header#header.info()
         | Q30.a. Do you want to keep it private from your boyfriend/girlfriend/partner?
       div
         span
-          input.field.radio(name='Field223', type='radio', value='Yes', tabindex='15', checked='checked')
+          input.field.radio(ng-model='questions.q30.a.answer',value='Yes', type='radio')
           label.choice
             | Yes
         span
-          input.field.radio(name='Field223', type='radio', value='No', tabindex='16')
+          input.field.radio(ng-model='questions.q30.a.answer',value='No', type='radio')
           label.choice
             | No
 
@@ -97,11 +97,11 @@ header#header.info()
         | Q30.b. Do you want to keep it private from your family or your friends?
       div
         span
-          input.field.radio(name='Field224', type='radio', value='Yes', tabindex='17', checked='checked')
+          input.field.radio(ng-model='questions.q30.b.answer', value='Yes', type='radio')
           label.choice
             | Yes
         span
-          input.field.radio(name='Field224', type='radio', value='No', tabindex='18')
+          input.field.radio(ng-model='questions.q30.b.answer', value='No', type='radio')
           label.choice
             | No
 
@@ -110,11 +110,11 @@ header#header.info()
         | Q31. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
       div
         span
-          input.field.radio(name='Field225', type='radio', value='Yes', tabindex='19', checked='checked')
+          input.field.radio(ng-model='questions.q31.answer', value='Yes', type='radio')
           label.choice
             | Yes
         span
-          input.field.radio(name='Field225', type='radio', value='No', tabindex='20')
+          input.field.radio(ng-model='questions.q31.answer', value='No', type='radio')
           label.choice
             | No
 
