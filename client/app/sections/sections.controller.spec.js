@@ -116,16 +116,26 @@ describe('Controller: SectionsCtrl', function () {
 
   it('q4a: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, fam-=1, implanon+=1, if answer is 0 ...', function () {
     var prevOcp = scope.ranking['ocp'].p;
+    var prevPop = scope.ranking['pop'].p;
+    var prevOrtho = scope.ranking['ortho-evra'].p;
     var prevNuva = scope.ranking['nuvaring'].p;
+    var prevDepo = scope.ranking['depo'].p;
+    var prevMirena = scope.ranking['mirena'].p;
     var prevFam = scope.ranking['fam'].n;
+    var prevImplanon = scope.ranking['implanon'].p;
 
     scope.questions.q4a.answer = 0;
 
     scope.questions.q4a.ranking();
 
     expect(scope.ranking['ocp'].p).toEqual(prevOcp + 1);
+    expect(scope.ranking['pop'].p).toEqual(prevPop + 1);
+    expect(scope.ranking['ortho-evra'].p).toEqual(prevOrtho + 1);
     expect(scope.ranking['nuvaring'].p).toEqual(prevNuva + 1);
+    expect(scope.ranking['depo'].p).toEqual(prevDepo + 1);
+    expect(scope.ranking['mirena'].p).toEqual(prevMirena + 1);
     expect(scope.ranking['fam'].n).toEqual(prevFam-1);
+    expect(scope.ranking['implanon'].p).toEqual(prevImplanon + 1);
   });
 
 
