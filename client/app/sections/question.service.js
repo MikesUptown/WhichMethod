@@ -384,63 +384,56 @@ angular.module('contraceptionApp')
           };
           
         }
-      }
+      },
 
-  //   // How often do these symptoms cause you to miss work or school?
-  //     q13:{
-  //       options: [0,1,2,999,777,888],
+    // How often do these symptoms cause you to miss work or school?
+      q13:{
+        options: [0,1,2,999,777,888],
 
-  //       nextQuestion: function(){
-  //         var option = this.answer
-  //       },
-  //       ranking: function(){
-  //         var option = this.answer
-  //         // switch(option){
-  //         //   case"3":
-  //           if (questions.q13.answer == 1){
-  //             ranking['ocp'].p=+1
-  //             ranking['pop'].p=+1
-  //             ranking['ortho-evra'].p=+1
-  //             ranking['nuvaring'].p=+1
-  //             ranking['depo'].p=+1
-  //             ranking['mirena'].p=+1
-  //             ranking['implanon'].p=+1
-  //           }
-  //           else if (questions.q13.answer == 2) {
-  //               ranking['ocp'].p=+1
-  //               ranking['pop'].p=+1
-  //               ranking['ortho-evra'].p=+1
-  //               ranking['nuvaring'].p=+1
-  //               ranking['depo'].p=+1
-  //               ranking['mirena'].p=+1
-  //               ranking['implanon'].p=+1
-  //           };
+        nextQuestion: function(){
+          return 'q14';
+        },
+        ranking: function(){
+          if (questions.q13.answer == 1){
+            ranking['ocp'].p=+1
+            ranking['pop'].p=+1
+            ranking['ortho-evra'].p=+1
+            ranking['nuvaring'].p=+1
+            ranking['depo'].p=+1
+            ranking['mirena'].p=+1
+            ranking['implanon'].p=+1
+          }
+          else if (questions.q13.answer == 2) {
+              ranking['ocp'].p=+1
+              ranking['pop'].p=+1
+              ranking['ortho-evra'].p=+1
+              ranking['nuvaring'].p=+1
+              ranking['depo'].p=+1
+              ranking['mirena'].p=+1
+              ranking['implanon'].p=+1
+          };
+        }
+      },
+
+    // The next set of questions is about your sexual behavior. By sex, I mean vaginal sex. Please remember that your answers
+    // strictly confidential. How would you describe your current sexual relationship?
+      q14:{
+        options: [0,1,2,3,999,777],
+
+        nextQuestion: function(){
+          var option = this.answer
+        },
+        ranking: function(){
+          var option = this.answer
+          // switch(option){
+          //   case"3":
+            if (questions.q14.answer == 2){
+              ranking['paragard'].n-=1
+              ranking['mirena'].n-=999
+            }
           
-
-  //       }
-  //     }
-  //   },
-
-  //   // The next set of questions is about your sexual behavior. By sex, I mean vaginal sex. Please remember that your answers
-  //   // strictly confidential. How would you describe your current sexual relationship?
-  //     q14:{
-  //       options: [0,1,2,3,999,777],
-
-  //       nextQuestion: function(){
-  //         var option = this.answer
-  //       },
-  //       ranking: function(){
-  //         var option = this.answer
-  //         // switch(option){
-  //         //   case"3":
-  //           if (questions.q14.answer == 2){
-  //             ranking['paragard'].n-=1
-  //             ranking['mirena'].n-=999
-  //           }
-          
-  //       }
-  //     }
-  //   },
+        }
+      },
 
   //     // During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male partner,
   //     // even those you had sex with only once.
