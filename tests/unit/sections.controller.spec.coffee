@@ -222,3 +222,151 @@ describe 'Controller: SectionsCtrl', ->
 		scope.questions.q7.answer = 1
 		nextQ = scope.questions.q7.nextQuestion()
 		expect(nextQ).toBe undefined
+
+
+	# q8
+	# -----
+	it 'q8: should set pop+=1, ortho-evra-=3, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].n
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q8.answer = 1
+		scope.questions.q8.ranking()
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].n).toBe (prevOrtho - 3)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q8: should set nextQuestion = q9 if answer = 0 ...', ->
+		scope.questions.q8.answer = 0
+		nextQ = scope.questions.q8.nextQuestion()
+		expect(nextQ).toBe 'q9'
+
+	it 'CHECK THIS! q8: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q8.answer = 1
+		nextQ = scope.questions.q8.nextQuestion()
+		expect(nextQ).toBe undefined
+
+
+	# q9
+	# -----
+	it 'q9: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q9.answer = 1
+		scope.questions.q9.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q9: should set nextQuestion = q10 if answer = 0 ...', ->
+		scope.questions.q9.answer = 0
+		nextQ = scope.questions.q9.nextQuestion()
+		expect(nextQ).toBe 'q10'
+
+	it 'CHECK THIS! q9: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q9.answer = 1
+		nextQ = scope.questions.q9.nextQuestion()
+		expect(nextQ).toBe undefined
+
+
+	# q10
+	# -----
+	it 'q10: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q10.answer = 1
+		scope.questions.q10.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q10: should set nextQuestion = q11 if answer = 0 ...', ->
+		scope.questions.q10.answer = 0
+		nextQ = scope.questions.q10.nextQuestion()
+		expect(nextQ).toBe 'q11'
+
+	it 'CHECK THIS! q10: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q10.answer = 1
+		nextQ = scope.questions.q10.nextQuestion()
+		expect(nextQ).toBe undefined
+
+
+	# q11
+	# -----
+	it 'q11: should set pop+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevPop = scope.ranking['pop'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q11.answer = 1
+		scope.questions.q11.ranking()
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q11: should set nextQuestion = q12 if answer = 0 ...', ->
+		scope.questions.q11.answer = 0
+		nextQ = scope.questions.q11.nextQuestion()
+		expect(nextQ).toBe 'q12'
+
+	it 'CHECK THIS! q11: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q11.answer = 1
+		nextQ = scope.questions.q11.nextQuestion()
+		expect(nextQ).toBe undefined
+
+
+	# q12
+	# -----
+	it 'q12: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q12.answer = 1
+		scope.questions.q12.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q12: should set nextQuestion = q13 if answer = 0 ...', ->
+		scope.questions.q12.answer = 0
+		nextQ = scope.questions.q12.nextQuestion()
+		expect(nextQ).toBe 'q13'
+
+	it 'CHECK THIS! q12: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q12.answer = 1
+		nextQ = scope.questions.q12.nextQuestion()
+		expect(nextQ).toBe undefined
+

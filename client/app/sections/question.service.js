@@ -275,7 +275,7 @@ angular.module('contraceptionApp')
               ranking['nuvaring'].p+=1;
               ranking['depo'].p+=1;
               ranking['mirena'].p+=1;
-              ranking[implanon].p+=1;
+              ranking['implanon'].p+=1;
             }
           }
         
@@ -342,6 +342,8 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer;
+          if (option === 0)
+            return 'q12';
         },
         ranking: function(){
           var option = this.answer;
@@ -364,6 +366,8 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer;
+          if (option === 0)
+            return 'q13';
         },
         ranking: function(){
           var option = this.answer;
