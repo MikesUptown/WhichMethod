@@ -121,7 +121,6 @@ describe 'Controller: SectionsCtrl', ->
 		prevImplanon = scope.ranking['implanon'].p
 		scope.questions.q4a.answer = 0
 		scope.questions.q4a.ranking()
-		scope.questions.q4a.answer = 0
 		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
 		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
 		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
@@ -135,3 +134,91 @@ describe 'Controller: SectionsCtrl', ->
 		nextQ = scope.questions.q4a.nextQuestion()
 		expect(nextQ).toBe 'q5'
 
+	# q5
+	# -----
+	it 'q5: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, paragard-=2, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		prevPara = scope.ranking['paragard'].n
+		scope.questions.q5.answer = 1
+		scope.questions.q5.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking['paragard'].n).toBe (prevPara - 2)
+
+	it 'q5: should set nextQuestion = q6 ...', ->
+		nextQ = scope.questions.q5.nextQuestion()
+		expect(nextQ).toBe 'q6'
+
+	# q6
+	# -----
+	it 'q6: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q6.answer = 1
+		scope.questions.q6.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q6: should set nextQuestion = q7 if answer = 0 ...', ->
+		scope.questions.q6.answer = 0
+		nextQ = scope.questions.q6.nextQuestion()
+		expect(nextQ).toBe 'q7'
+
+	it 'CHECK THIS! q6: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q6.answer = 1
+		nextQ = scope.questions.q6.nextQuestion()
+		expect(nextQ).toBe undefined
+
+
+	# q7
+	# -----
+	it 'q7: should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, paragard-=2, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking['ocp'].p
+		prevPop = scope.ranking['pop'].p
+		prevOrtho = scope.ranking['ortho-evra'].p
+		prevNuva = scope.ranking['nuvaring'].p
+		prevDepo = scope.ranking['depo'].p
+		prevPara = scope.ranking['paragard'].n
+		prevMirena = scope.ranking['mirena'].p
+		prevImplanon = scope.ranking['implanon'].p
+		scope.questions.q7.answer = 1
+		scope.questions.q7.ranking()
+		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
+		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
+		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
+		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
+		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
+		expect(scope.ranking['paragard'].n).toBe (prevPara - 2)
+		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
+		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+
+	it 'q7: should set nextQuestion = q7 if answer = 0 ...', ->
+		scope.questions.q7.answer = 0
+		nextQ = scope.questions.q7.nextQuestion()
+		expect(nextQ).toBe 'q8'
+
+	it 'CHECK THIS! q7: should set nextQuestion = UNDEFINED if answer = 1 ...', ->
+		scope.questions.q7.answer = 1
+		nextQ = scope.questions.q7.nextQuestion()
+		expect(nextQ).toBe undefined

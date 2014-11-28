@@ -235,7 +235,7 @@ angular.module('contraceptionApp')
 
         nextQuestion: function(){
           var option = this.answer;
-          if(options === 0)
+          if(option === 0)
             return 'q8';
         },
         ranking: function(){
