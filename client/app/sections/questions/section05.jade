@@ -27,165 +27,146 @@ header#header.info()
             | I don't want to answer this question
 
 
-          li#foli121.notranslate
-            fieldset
-              legend#title121.desc
-                | Q32.a. Was your baby born less than 3 weeks ago?
-              //if lt IE 8
-                label#title121.desc
-                  | Q32.a. Was your baby born less than 3 weeks ago?
-              div
-                input#radioDefault_121(name='Field121', type='hidden', value='')
-                span
-                  input#Field121_0.field.radio(name='Field121', type='radio', value='Yes', tabindex='5', checked='checked')
-                  label.choice(for='Field121_0')
-                    | Yes
-                span
-                  input#Field121_1.field.radio(name='Field121', type='radio', value='No', tabindex='6')
-                  label.choice(for='Field121_1')
-                    | No
-                span
-                  input#Field121_2.field.radio(name='Field121', type='radio', value='I don\'t know', tabindex='7')
-                  label.choice(for='Field121_2')
-                    | I don't know
-                span
-                  input#Field121_3.field.radio(name='Field121', type='radio', value='I don\'t want to answer this question', tabindex='8')
-                  label.choice(for='Field121_3')
-                    | I don't want to answer this question
-          li#foli122.notranslate
-            fieldset
-              legend#title122.desc
-                | Q32.b. Are you breastfeeding a child now?
-              //if lt IE 8
-                label#title122.desc
-                  | Q32.b. Are you breastfeeding a child now?
-              div
-                input#radioDefault_122(name='Field122', type='hidden', value='')
-                span
-                  input#Field122_0.field.radio(name='Field122', type='radio', value='Yes', tabindex='9', checked='checked')
-                  label.choice(for='Field122_0')
-                    | Yes
-                span
-                  input#Field122_1.field.radio(name='Field122', type='radio', value='No', tabindex='10')
-                  label.choice(for='Field122_1')
-                    | No
-                span
-                  input#Field122_2.field.radio(name='Field122', type='radio', value='I don\'t know', tabindex='11')
-                  label.choice(for='Field122_2')
-                    | I don't know
-                span
-                  input#Field122_3.field.radio(name='Field122', type='radio', value='I don\'t want to answer this question', tabindex='12')
-                  label.choice(for='Field122_3')
-                    | I don't want to answer this question
-          li#foli123.notranslate
-            fieldset
-              legend#title123.desc
-                | Q33. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
-              //if lt IE 8
-                label#title123.desc
-                  | Q33. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
-              div
-                input#radioDefault_123(name='Field123', type='hidden', value='')
-                span
-                  input#Field123_0.field.radio(name='Field123', type='radio', value='Yes', tabindex='13', checked='checked')
-                  label.choice(for='Field123_0')
-                    | Yes
-                span
-                  input#Field123_1.field.radio(name='Field123', type='radio', value='No', tabindex='14')
-                  label.choice(for='Field123_1')
-                    | No
-                span
-                  input#Field123_2.field.radio(name='Field123', type='radio', value='I don\'t know', tabindex='15')
-                  label.choice(for='Field123_2')
-                    | I don't know
-                span
-                  input#Field123_3.field.radio(name='Field123', type='radio', value='I don\'t want to answer this question', tabindex='16')
-                  label.choice(for='Field123_3')
-                    | I don't want to answer this question
-            p#instruct123.instruct
-              small
-                | High blood pressure (HBP) or hypertension means high pressure (tension) in the arteries. Arteries are vessels that carry blood from the pumping heart to all the tissues and organs of the body. High blood pressure does not mean excessive emotional tension, although emotional tension and stress can temporarily increase blood pressure.
-          li#foli124.notranslate
-            fieldset
-              legend#title124.desc
-                | Q33.a. Are you taking medicine for high blood pressure now?
-              //if lt IE 8
-                label#title124.desc
-                  | Q33.a. Are you taking medicine for high blood pressure now?
-              div
-                input#radioDefault_124(name='Field124', type='hidden', value='')
-                span
-                  input#Field124_0.field.radio(name='Field124', type='radio', value='Yes', tabindex='17', checked='checked')
-                  label.choice(for='Field124_0')
-                    | Yes
-                span
-                  input#Field124_1.field.radio(name='Field124', type='radio', value='No', tabindex='18')
-                  label.choice(for='Field124_1')
-                    | No
-                span
-                  input#Field124_2.field.radio(name='Field124', type='radio', value='I don\'t know', tabindex='19')
-                  label.choice(for='Field124_2')
-                    | I don't know
-                span
-                  input#Field124_3.field.radio(name='Field124', type='radio', value='I don\'t want to answer this question', tabindex='20')
-                  label.choice(for='Field124_3')
-                    | I don't want to answer this question
+    li#32a(ng-show="currentQuestion == 'q32a'")
+      label
+          | Q32a. Was your baby born less than 3 weeks ago?
+        div
+        span
+          input.field.radio(name='Field121', type='radio', value='Yes', tabindex='5', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field121', type='radio', value='No', tabindex='6')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field121', type='radio', value='I don\'t know', tabindex='7')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field121', type='radio', value='I don\'t want to answer this question', tabindex='8')
+          label.choice
+            | I don't want to answer this question
+
+    li#32b(ng-show="currentQuestion == 'q32b'")
+      label
+            | Q32b. Are you breastfeeding a child now?
+        div
+        span
+          input.field.radio(name='Field122', type='radio', value='Yes', tabindex='9', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field122', type='radio', value='No', tabindex='10')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field122', type='radio', value='I don\'t know', tabindex='11')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field122', type='radio', value='I don\'t want to answer this question', tabindex='12')
+          label.choice
+            | I don't want to answer this question
+
+
+    li#33(ng-show="currentQuestion == 'q33'")
+      label
+            | Q33. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
+        div
+        span
+          input.field.radio(name='Field123', type='radio', value='Yes', tabindex='13', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field123', type='radio', value='No', tabindex='14')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field123', type='radio', value='I don\'t know', tabindex='15')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field123', type='radio', value='I don\'t want to answer this question', tabindex='16')
+          label.choice
+            | I don't want to answer this question
+
+
+    li#33a(ng-show="currentQuestion == 'q33a'")
+      label
+            | Q33.a. Are you taking medicine for high blood pressure now?
+        div
+        span
+          input.field.radio(name='Field124', type='radio', value='Yes', tabindex='17', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field124', type='radio', value='No', tabindex='18')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field124', type='radio', value='I don\'t know', tabindex='19')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field124', type='radio', value='I don\'t want to answer this question', tabindex='20')
+          label.choice
+            | I don't want to answer this question
+
+
             p#instruct124.instruct
               small
                 | High blood pressure (HBP) or hypertension means high pressure (tension) in the arteries. Arteries are vessels that carry blood from the pumping heart to all the tissues and organs of the body. High blood pressure does not mean excessive emotional tension, although emotional tension and stress can temporarily increase blood pressure.
-          li#foli125.notranslate
-            fieldset
-              legend#title125.desc
-                | Q34. Has a doctor, nurse, or other health professional EVER told you that you had blood clots,  also called clot in a vein or DVT?
-              //if lt IE 8
-                label#title125.desc
-                  | Q34. Has a doctor, nurse, or other health professional EVER told you that you had blood clots,  also called clot in a vein or DVT?
-              div
-                input#radioDefault_125(name='Field125', type='hidden', value='')
-                span
-                  input#Field125_0.field.radio(name='Field125', type='radio', value='Yes', tabindex='21', checked='checked')
-                  label.choice(for='Field125_0')
-                    | Yes
-                span
-                  input#Field125_1.field.radio(name='Field125', type='radio', value='No', tabindex='22')
-                  label.choice(for='Field125_1')
-                    | No
-                span
-                  input#Field125_2.field.radio(name='Field125', type='radio', value='I don\'t know', tabindex='23')
-                  label.choice(for='Field125_2')
-                    | I don't know
-                span
-                  input#Field125_3.field.radio(name='Field125', type='radio', value='I don\'t want to answer this question', tabindex='24')
-                  label.choice(for='Field125_3')
-                    | I don't want to answer this question
+
+          
+     li#34(ng-show="currentQuestion == 'q34'")
+      label
+          | Q34. Has a doctor, nurse, or other health professional EVER told you that you had blood clots,  also called clot in a vein or DVT?
+        div
+        span
+          input.field.radio(name='Field125', type='radio', value='Yes', tabindex='21', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field125', type='radio', value='No', tabindex='22')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field125', type='radio', value='I don\'t know', tabindex='23')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field125', type='radio', value='I don\'t want to answer this question', tabindex='24')
+          label.choice
+            | I don't want to answer this question
+
+
             p#instruct125.instruct
               small
                 | Deep venous thrombosis (DVT) is a condition in which a blood clot forms in a vein that is deep inside the body. DVT mainly affects the veins in the lower leg and thigh.
-          li#foli126.notranslate
-            fieldset
-              legend#title126.desc
-                | Q35. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
-              //if lt IE 8
-                label#title126.desc
-                  | Q35. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
-              div
-                input#radioDefault_126(name='Field126', type='hidden', value='')
-                span
-                  input#Field126_0.field.radio(name='Field126', type='radio', value='Yes', tabindex='25', checked='checked')
-                  label.choice(for='Field126_0')
-                    | Yes
-                span
-                  input#Field126_1.field.radio(name='Field126', type='radio', value='No', tabindex='26')
-                  label.choice(for='Field126_1')
-                    | No
-                span
-                  input#Field126_2.field.radio(name='Field126', type='radio', value='I don\'t know', tabindex='27')
-                  label.choice(for='Field126_2')
-                    | I don't know
-                span
-                  input#Field126_3.field.radio(name='Field126', type='radio', value='I don\'t want to answer this question', tabindex='28')
-                  label.choice(for='Field126_3')
-                    | I don't want to answer this question
+
+     li#35(ng-show="currentQuestion == 'q35'")
+      label
+          | Q35. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
+        div
+        span
+          input.field.radio(name='Field126', type='radio', value='Yes', tabindex='25', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field126', type='radio', value='No', tabindex='26')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field126', type='radio', value='I don\'t know', tabindex='27')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field126', type='radio', value='I don\'t want to answer this question', tabindex='28')
+          label.choice
+            | I don't want to answer this question
+
+
             p#instruct126.instruct
               small
                 | A pulmonary embolus is a blockage of an artery in the lungs by fat, air, blood clot, or tumor cells.
