@@ -128,13 +128,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer;
-          if(answer === 0) { return 'q4a'; }
+          if(this.answer === 0) { return 'q4a'; }
           else { return 'q5'; }
         },
 
         ranking: function(){
-          if(questions.q4.answer === 0){
+          if(this.answer === 0){
             ranking.ocp.n=-999;
             ranking.nuvaring.n=-999;
             ranking.fam.n=-3;
@@ -154,7 +153,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if(questions.q4a.answer === 0){
+          if(this.answer === 0){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -179,7 +178,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if(questions.q5.answer === 1){
+          if(this.answer === 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -203,7 +202,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q7';
         },
         ranking: function(){
-          if(questions.q6.answer === 1){
+          if(this.answer === 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -227,7 +226,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q8';
           },
         ranking: function(){
-          if(questions.q7.answer === 1){
+          if(this.answer === 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -251,7 +250,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q9';
           },
         ranking: function(){
-          if(questions.q8.answer === 1){
+          if(this.answer === 1){
             ranking.pop.p+=1;
             ranking['ortho-evra'].n-=3;
             ranking.nuvaring.p+=1;
@@ -274,7 +273,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q10';
           },
         ranking: function(){
-          if(questions.q9.answer === 1){
+          if(this.answer === 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -298,7 +297,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q11';
           },
         ranking: function(){
-          if(questions.q10.answer === 1){
+          if(this.answer === 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
@@ -321,7 +320,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q12';
           },
         ranking: function(){
-          if (questions.q11.answer === 1) {
+          if (this.answer === 1) {
             ranking.pop.p=+1;
             ranking.depo.p=+1;
             ranking.mirena.p=+1;
@@ -341,7 +340,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q13';
           },
         ranking: function(){
-          if (questions.q12.answer === 1) {
+          if (this.answer === 1) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking['ortho-evra'].p=+1;
@@ -364,7 +363,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q14';
         },
         ranking: function(){
-          if (questions.q13.answer === 1){
+          if (this.answer === 1){
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking['ortho-evra'].p=+1;
@@ -373,7 +372,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.mirena.p=+1;
             ranking.implanon.p=+1;
           }
-          else if (questions.q13.answer === 2) {
+          else if (this.answer === 2) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking['ortho-evra'].p=+1;
@@ -396,7 +395,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q15';
         },
         ranking: function(){
-            if (questions.q14.answer === 2){
+            if (this.answer === 2){
               ranking.paragard.n-=1;
               ranking.mirena.n-=999;
             }

@@ -437,12 +437,39 @@ describe 'Controller: SectionsCtrl', ->
 	# q16a
 	# How many unplanned pregnancies have you had?
 	# -----
-	it 'q16a:flow_q20 should set nextQuestion = q16b if answer is 1 ...', ->
-		scope.questions.q16.answer = 1
-		nextQ = scope.questions.q16.nextQuestion()
-		expect(nextQ).toBe 'q16a'
+	it 'q16a:flow_q20a should set nextQuestion = q16b ...', ->
+		scope.questions.q16a.answer = 1
+		nextQ = scope.questions.q16a.nextQuestion()
+		expect(nextQ).toBe 'q16b'
 
-	it 'q16:flow_q20 should set nextQuestion = q16a if answer is not 1 ...', ->
-		scope.questions.q16.answer = 0
-		nextQ = scope.questions.q16.nextQuestion()
+
+	# q16b
+	# Were you using any method of birth control or doing anything to prevent from getting pregnant the (first) time you had an unplanned pregnancy?
+	# -----
+	it 'q16b:flow_q20b should set nextQuestion = q16bi if answer is 1 ...', ->
+		scope.questions.q16b.answer = 1
+		nextQ = scope.questions.q16b.nextQuestion()
+		expect(nextQ).toBe 'q16bi'
+
+	it 'q16b:flow_q20b should set nextQuestion = q17 if answer is not 1 ...', ->
+		scope.questions.q16b.answer = 0
+		nextQ = scope.questions.q16b.nextQuestion()
 		expect(nextQ).toBe 'q17'
+
+
+	# q16bi
+	# The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using
+	# -----
+	it 'q16bi:flow_q20bi should set nextQuestion = q17 ...', ->
+		scope.questions.q16bi.answer = 0
+		nextQ = scope.questions.q16bi.nextQuestion()
+		expect(nextQ).toBe 'q17'
+
+
+	# q17
+	# Now I'm going to ask you about different birth control methods that you might be interested in using now. I will show you four screens that have different birth control methods. You can choose as many methods as you would like
+	# -----
+	it 'q17:flow_q21 should set nextQuestion = q18 ...', ->
+		scope.questions.q17.answer = 0
+		nextQ = scope.questions.q17.nextQuestion()
+		expect(nextQ).toBe 'q18'
