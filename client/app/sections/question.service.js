@@ -393,7 +393,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [0,1,2,3,999,777],
 
         nextQuestion: function(){
-          // TODO
+          return 'q15';
         },
         ranking: function(){
             if (questions.q14.answer === 2){
@@ -403,26 +403,24 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
       },
 
-  //     // During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male partner,
-  //     // even those you had sex with only once.
-  //     q15:{
-  //       options: [999,777],
 
-  //       nextQuestion: function(){
-  //         var option = this.answer
-  //       },
-  //       ranking: function(){
-  //         // if answer is greater than 10 && less than 555
-  //         var answer = this.answer
+      /**
+       * q15:q19_vaginalSexCount:[ During the last 12 months how many men, if any, have you had sexual intercourse with? ]
+       */
+      q15:{
+        options: [999,777],
 
-  //         if(answer>10 && <555){
-  //           ranking.paragard.n-=999
-  //           ranking.mirena.n-=999
+        nextQuestion: function() {
+          return 'q16';
+        },
 
-  //           }
-  //         }
-  //     }
-  //   },
+        ranking: function(){
+          if(this.answer > 10 && this.answer < 555) {
+            ranking.paragard.n-=999;
+            ranking.mirena.n-=999;
+          }
+        }
+      },
 
   //     // Have you ever had an unplanned pregnancy.
   //     q16:{

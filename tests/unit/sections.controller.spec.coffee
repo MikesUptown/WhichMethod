@@ -190,8 +190,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q6:q10_period7days should set nextQuestion = q7 if answer = 0 ...', ->
-		scope.questions.q6.answer = 0
+	it 'q6:q10_period7days should set nextQuestion = q7 ...', ->
 		nextQ = scope.questions.q6.nextQuestion()
 		expect(nextQ).toBe 'q7'
 
@@ -218,8 +217,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q7:q11_cramps should set nextQuestion = q7 if answer = 0 ...', ->
-		scope.questions.q7.answer = 0
+	it 'q7:q11_cramps should set nextQuestion = q7 ...', ->
 		nextQ = scope.questions.q7.nextQuestion()
 		expect(nextQ).toBe 'q8'
 
@@ -243,8 +241,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q8:q12_tenderBreasts should set nextQuestion = q9 if answer = 0 ...', ->
-		scope.questions.q8.answer = 0
+	it 'q8:q12_tenderBreasts should set nextQuestion = q9 ...', ->
 		nextQ = scope.questions.q8.nextQuestion()
 		expect(nextQ).toBe 'q9'
 
@@ -270,8 +267,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q9:q13_depression should set nextQuestion = q10 if answer = 0 ...', ->
-		scope.questions.q9.answer = 0
+	it 'q9:q13_depression should set nextQuestion = q10 ...', ->
 		nextQ = scope.questions.q9.nextQuestion()
 		expect(nextQ).toBe 'q10'
 
@@ -297,8 +293,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q10:q14_bloating should set nextQuestion = q11 if answer = 0 ...', ->
-		scope.questions.q10.answer = 0
+	it 'q10:q14_bloating should set nextQuestion = q11 ...', ->
 		nextQ = scope.questions.q10.nextQuestion()
 		expect(nextQ).toBe 'q11'
 
@@ -318,8 +313,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q11:q15_headaches should set nextQuestion = q12 if answer = 0 ...', ->
-		scope.questions.q11.answer = 0
+	it 'q11:q15_headaches should set nextQuestion = q12 ...', ->
 		nextQ = scope.questions.q11.nextQuestion()
 		expect(nextQ).toBe 'q12'
 
@@ -345,8 +339,7 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
-	it 'q12:q16_PMS should set nextQuestion = q13 if answer = 0 ...', ->
-		scope.questions.q12.answer = 0
+	it 'q12:q16_PMS should set nextQuestion = q13 ...', ->
 		nextQ = scope.questions.q12.nextQuestion()
 		expect(nextQ).toBe 'q13'
 
@@ -391,6 +384,37 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
 
 	it 'q13:q17_missSchWork should set nextQuestion = q14 ...', ->
-		scope.questions.q13.answer = 0
 		nextQ = scope.questions.q13.nextQuestion()
 		expect(nextQ).toBe 'q14'
+
+
+	# q14
+	# How would you describe your current sexual relationship?
+	# -----
+	it 'q14:q18_SexualRel should set paragard-=1, mirena-=999, if answer is 2 ...', ->
+		prevPara = scope.ranking['paragard'].n
+		prevMirena = scope.ranking['mirena'].n
+		scope.questions.q14.answer = 2
+		scope.questions.q14.ranking()
+		expect(scope.ranking['paragard'].n).toBe (prevPara - 1)
+		expect(scope.ranking['mirena'].n).toBe (prevMirena - 999)
+
+	it 'q14:q18_SexualRel should set nextQuestion = q15 ...', ->
+		nextQ = scope.questions.q14.nextQuestion()
+		expect(nextQ).toBe 'q15'
+
+
+	# q15
+	# During the last 12 months how many men, if any, have you had sexual intercourse with?
+	# -----
+	it 'q15:q19_vaginalSexCount should set paragard-=999, mirena-=999, if answer > 10 ...', ->
+		prevPara = scope.ranking['paragard'].n
+		prevMirena = scope.ranking['mirena'].n
+		scope.questions.q15.answer = 15
+		scope.questions.q15.ranking()
+		expect(scope.ranking['paragard'].n).toBe (prevPara - 999)
+		expect(scope.ranking['mirena'].n).toBe (prevMirena - 999)
+
+	it 'q15:q19_vaginalSexCount should set nextQuestion = q16 ...', ->
+		nextQ = scope.questions.q15.nextQuestion()
+		expect(nextQ).toBe 'q16'
