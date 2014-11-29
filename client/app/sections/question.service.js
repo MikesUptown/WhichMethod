@@ -497,163 +497,143 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-  //     // Have you EVER used any method of birth control?
-  //     q18:{
-  //       options: [1,0,999,777],
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q18a'
-  //         else
-  //           return 'q20'
+      /**
+       * q18:flow_22:[ Have you EVER used any method of birth control? ]
+       */
+      q18:{
+        options: [1,0,999,777],
 
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  //     // Are you using birth control now?
-  //     q18a:{
-  //       options: [1,0,999,777,888],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q18ai'
-  //         else
-  //           return 'q19'
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  //     // What birth control method are you using now? I will show you four screens that have different birth
-  //     // control methods. Please choose ALL the methods your are using now?
-  //     q18ai:{
-  //       options: [ ],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   },     
-
-  //     // Have you EVER used a birth control method that you didn't like, that didn't work, or that
-  //     // you had other problems with?
-  //     q19:{
-  //       options: [1,0,999,777,888],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q19a'
-  //         else
-  //           return 'q19ai'
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  //     // What method did you have a problem with? I will show you 4 screens that have different birth control methods.
-  //     // Please select ALL the birth contorl methods below that you have had a problem with. If you did not have a problem
-  //     // with any of these methods press the arrow key to go to the next screen
-  //     q19a:{
-  //       options: [1,0,999,777],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q18a'
-  //         else
-  //           return 'q20'
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  //     // What problems did you have while using___?
-  //     q19ai:{
-  //       options: [999,777],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //           return 'q20'
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q18a'; }
+          else { return 'q20'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
 
-  //     // When would you like to become pregnant, in..l.?
-  //     q20:{
-  //       options: [1,2,3,4,5,777,999],
+      /**
+       * q18a:flow_22a:[ Are you using birth control now? ]
+       */
+      q18a:{
+        options: [1,0,999,777,888],
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //           return 'q21'
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  //     // What is most important when choosing a birth control method? Please select the three most important to you?
-  //     q21:{
-  //       options: [1,0,999,777],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //           return 'q22'
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q18ai'; }
+          else { return 'q19'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
 
-  //   // Please select on this timeline how often you want to think about and take action for you birth control method?
-  //   q22:{
-  //     options: [],
+      /**
+       * q18ai:flow_22ai:[ What birth control method are you using now? I will show you four screens that have different birth control methods. Please choose ALL the methods your are using now? ]
+       */
+      q18ai:{
+        options: [ ],
 
-  //     nextQuestion: function(){
-  //       var answer = this.answer
-  //         return 'q23'
+        nextQuestion: function(){
+          return 'q19';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //       }
-  //   }
-  // }, 
+      // 
+      /**
+       * q19:flow_23:[ Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with? ]
+       */
+      q19:{
+        options: [1,0,999,777,888],
+
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q19a'; }
+          else { return 'q20'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+      /**
+       * q19a:flow_23a:[ What method did you have a problem with? I will show you 4 screens  ]
+       */
+      q19a:{
+        options: [1,0,999,777],
+
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q19ai'; }
+          else { return 'q20'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+      /**
+       * q19ai:flow_23ai:[ What problems did you have while using ___ ? ]
+       */
+      q19ai:{
+        options: [999,777],
+
+        nextQuestion: function(){
+          return 'q20';
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+      /**
+       * q20:flow_q24:[ When would you like to become pregnant (in years)? ]
+       */
+      q20:{
+        options: [1,2,3,4,5,777,999],
+
+        nextQuestion: function(){
+          return 'q21';
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+      /**
+       * q21:flow_q25:[ What is most important when choosing a birth control method? Please select the three most important to you? ]
+       */
+      q21:{
+        options: [1,0,999,777],
+
+        nextQuestion: function(){
+          return 'q22';
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+      /**
+       * q22:flow_q26:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
+       */
+      q22:{
+        options: [],
+        nextQuestion: function(){
+          return 'q23';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
   // // Would you be okay with regular scheduled bleeding?
   // q23:{

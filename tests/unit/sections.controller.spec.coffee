@@ -461,7 +461,6 @@ describe 'Controller: SectionsCtrl', ->
 	# The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using
 	# -----
 	it 'q16bi:flow_q20bi should set nextQuestion = q17 ...', ->
-		scope.questions.q16bi.answer = 0
 		nextQ = scope.questions.q16bi.nextQuestion()
 		expect(nextQ).toBe 'q17'
 
@@ -470,6 +469,101 @@ describe 'Controller: SectionsCtrl', ->
 	# Now I'm going to ask you about different birth control methods that you might be interested in using now. I will show you four screens that have different birth control methods. You can choose as many methods as you would like
 	# -----
 	it 'q17:flow_q21 should set nextQuestion = q18 ...', ->
-		scope.questions.q17.answer = 0
 		nextQ = scope.questions.q17.nextQuestion()
 		expect(nextQ).toBe 'q18'
+
+
+	# q18
+	# Have you EVER used any method of birth control?
+	# -----
+	it 'q18:flow_q22 should set nextQuestion = q18a if answer is 1 ...', ->
+		scope.questions.q18.answer = 1
+		nextQ = scope.questions.q18.nextQuestion()
+		expect(nextQ).toBe 'q18a'
+
+	it 'q18:flow_q22 should set nextQuestion = q20 if answer is not 1 ...', ->
+		scope.questions.q18.answer = 0
+		nextQ = scope.questions.q18.nextQuestion()
+		expect(nextQ).toBe 'q20'
+
+
+	# q18a
+	# Are you using birth control now?
+	# -----
+	it 'q18a:flow_q22a should set nextQuestion = q18ai if answer is 1 ...', ->
+		scope.questions.q18a.answer = 1
+		nextQ = scope.questions.q18a.nextQuestion()
+		expect(nextQ).toBe 'q18ai'
+
+	it 'q18a:flow_q22a should set nextQuestion = q19 if answer is not 1 ...', ->
+		scope.questions.q18a.answer = 0
+		nextQ = scope.questions.q18a.nextQuestion()
+		expect(nextQ).toBe 'q19'
+
+
+	# q18ai
+	# What birth control method are you using now? I will show you four screens that have different birth control methods. Please choose ALL the methods your are using now?
+	# -----
+	it 'q18ai:flow_q22ai should set nextQuestion = q19 ...', ->
+		nextQ = scope.questions.q18ai.nextQuestion()
+		expect(nextQ).toBe 'q19'
+
+
+	# q19
+	# Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with?
+	# -----
+	it 'q19:flow_q23 should set nextQuestion = q19a if answer is 1 ...', ->
+		scope.questions.q19.answer = 1
+		nextQ = scope.questions.q19.nextQuestion()
+		expect(nextQ).toBe 'q19a'
+
+	it 'q19:flow_q23 should set nextQuestion = q20 if answer is not 1 ...', ->
+		scope.questions.q19.answer = 0
+		nextQ = scope.questions.q19.nextQuestion()
+		expect(nextQ).toBe 'q20'
+
+
+	# q19a
+	# hat method did you have a problem with? I will show you 4 screens 
+	# -----
+	it 'q19a:flow_q23a should set nextQuestion = q19ai if answer is 1 ...', ->
+		scope.questions.q19a.answer = 1
+		nextQ = scope.questions.q19a.nextQuestion()
+		expect(nextQ).toBe 'q19ai'
+
+	it 'q19a:flow_q23a should set nextQuestion = q20 if answer is not 1 ...', ->
+		scope.questions.q19a.answer = 0
+		nextQ = scope.questions.q19a.nextQuestion()
+		expect(nextQ).toBe 'q20'
+
+
+	# q19ai
+	# What problems did you have while using ___ ?
+	# -----
+	it 'q19ai:flow_q23ai should set nextQuestion = q20 ...', ->
+		nextQ = scope.questions.q19ai.nextQuestion()
+		expect(nextQ).toBe 'q20'
+
+
+	# q20
+	# When would you like to become pregnant (in years)?
+	# -----
+	it 'q20:flow_q24 should set nextQuestion = q21 ...', ->
+		nextQ = scope.questions.q20.nextQuestion()
+		expect(nextQ).toBe 'q21'
+
+
+	# q21
+	# What is most important when choosing a birth control method? Please select the three most important to you?
+	# -----
+	it 'q21:flow_q25 should set nextQuestion = q22 ...', ->
+		nextQ = scope.questions.q21.nextQuestion()
+		expect(nextQ).toBe 'q22'
+
+
+	# q22
+	# Please select on this timeline how often you want to think about and take action for you birth control method?
+	# -----
+	it 'q22:flow_q26 should set nextQuestion = q23 ...', ->
+		nextQ = scope.questions.q22.nextQuestion()
+		expect(nextQ).toBe 'q23'
