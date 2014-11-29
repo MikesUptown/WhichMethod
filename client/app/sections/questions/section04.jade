@@ -5,7 +5,7 @@ header#header.info()
 
   h2 WhichMethod_04
   ul
-
+     li#q27(ng-show="currentQuestion == 'q27'")
       label
         | Q27. Would you be okay with regular, scheduled bleeding?
       div
@@ -27,6 +27,7 @@ header#header.info()
             | I don't want to answer this question
 
 
+     li#q28(ng-show="currentQuestion == 'q28'")
       label
         | Q28. Would you be okay with unscheduled bleeding and/or spotting?
       div
@@ -47,6 +48,8 @@ header#header.info()
           label.choice
             | I don't want to answer this question
 
+
+     li#q29(ng-show="currentQuestion == 'q29'")
       label
         | Q29. Would you be okay with no bleeding at all?
       div
@@ -68,6 +71,7 @@ header#header.info()
             | I don't want to answer this question
 
 
+     li#q30(ng-show="currentQuestion == 'q30'")
       label
         | Q30. Do you need a birth control method which you can keep private?
       div
@@ -81,8 +85,9 @@ header#header.info()
             | No
 
 
+     li#q30a(ng-show="currentQuestion == 'q30a'")
       label
-        | Q30.a. Do you want to keep it private from your boyfriend/girlfriend/partner?
+        | Q30a. Do you want to keep it private from your boyfriend/girlfriend/partner?
       div
         span
           input.field.radio(ng-model='questions.q30.a.answer',value='Yes', type='radio')
@@ -93,8 +98,9 @@ header#header.info()
           label.choice
             | No
 
+     li#q30b(ng-show="currentQuestion == 'q30b'")
       label
-        | Q30.b. Do you want to keep it private from your family or your friends?
+        | Q30b. Do you want to keep it private from your family or your friends?
       div
         span
           input.field.radio(ng-model='questions.q30.b.answer', value='Yes', type='radio')
@@ -106,6 +112,7 @@ header#header.info()
             | No
 
 
+     li#q31(ng-show="currentQuestion == 'q31'")
       label
         | Q31. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
       div
