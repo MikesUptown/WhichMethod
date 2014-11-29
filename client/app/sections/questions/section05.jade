@@ -5,31 +5,28 @@ header#header.info()
 
   h2 WhichMethod_05
   ul
-          li#foli119.notranslate
-            fieldset
-              legend#title119.desc
-                | Q32. Have you had a baby in the last 6 months?
-              //if lt IE 8
-                label#title119.desc
-                  | Q32. Have you had a baby in the last 6 months?
-              div
-                input#radioDefault_119(name='Field119', type='hidden', value='')
-                span
-                  input#Field119_0.field.radio(name='Field119', type='radio', value='Yes', tabindex='1', checked='checked')
-                  label.choice(for='Field119_0')
-                    | Yes
-                span
-                  input#Field119_1.field.radio(name='Field119', type='radio', value='No', tabindex='2')
-                  label.choice(for='Field119_1')
-                    | No
-                span
-                  input#Field119_2.field.radio(name='Field119', type='radio', value='I don\'t know', tabindex='3')
-                  label.choice(for='Field119_2')
-                    | I don't know
-                span
-                  input#Field119_3.field.radio(name='Field119', type='radio', value='I don\'t want to answer this question', tabindex='4')
-                  label.choice(for='Field119_3')
-                    | I don't want to answer this question
+     li#q32(ng-show="currentQuestion == 'q32'")
+      label
+        | Q32. Have you had a baby in the last 6 months?
+      div
+        span
+          input.field.radio(ng-model='questions.q32.answer' value='Yes', type='radio')
+          label.choice
+            | Yes
+        span
+          input.field.radio(ng-model='questions.q32.answer',  value='No', type='radio')
+          label.choice
+            | No
+        span
+          input.field.radio(ng-model='questions.q32.answer',  value='I don\'t know', type='radio')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(ng-model='questions.q32.answer',  value='I don\'t want to answer this question', type='radio')
+          label.choice
+            | I don't want to answer this question
+
+
           li#foli121.notranslate
             fieldset
               legend#title121.desc
