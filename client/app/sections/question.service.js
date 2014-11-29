@@ -1,19 +1,31 @@
-'use strict'; 
+'use strict';
 
-angular.module('contraceptionApp')
-  .factory('questionService', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  
-    var ranking={};
+/**
+ * Factory for QuestionService
+ * AngularJS will instantiate this singleton
+ */
+angular.module('contraceptionApp').factory('questionService', function () {
 
-    //last question in each section
-    var sectionEnd=[
+    /**
+     * Values for each contraception type, updated by 
+     * answers to questions
+     */
+    var ranking = { };
+
+    /**
+     * The last question in each section
+     */
+    var sectionEnd = [
       'q3','q13','q22'
     ];
 
 
-    function initRanking(){
-      ranking={
+    /**
+     * Initialize (zeroize) the rankings
+     * Invoked at construction
+     */
+    function initRanking() {
+      ranking = {
         abstinence : {n:0,p:0},
         ocp : {n:0,p:0},
         pop : {n:0,p:0},
@@ -36,57 +48,60 @@ angular.module('contraceptionApp')
         implanon : {n:0,p:0},
         bf : {n:0,p:0}
       };
-    };
+    }
     initRanking();
 
+
+    /**
+     * The questions and the behavior of each
+     */
     var questions = {
 
-    // How old are you?
 
+      /** 
+       * q1:q1_age:[ How old are you? ]
+       */
       q1:{
         options: [999,777],
 
         nextQuestion: function(){
-          // var option = this.answer
           return 'q2';
         },
 
         ranking: function(){
-          // questions.q1.answer is the same as this.answer
-          var answer = this.answer;
-      
-          if(answer<18){
-            ranking['vas'].n -= 999;
+          if (this.answer < 18) {
+            ranking.vas.n -= 999;
           }
-          if(answer<21){
-            ranking['implanon'].n -=3;
+          if (this.answer < 21) {
+            ranking.implanon.n -= 3;
           }
         }
       },
 
-    // How much do you weigh? Please enter our weight in the number keyboard.
+      /** 
+       * q2:q3_weight:[ How much do you weigh? Please enter your weight in the number keyboard. ]
+       */
       q2:{
         options: [999,777],
 
         nextQuestion: function(){
-            return 'q3';
+          return 'q3';
         },
 
         ranking: function(){
-          var option = this.answer;
-          
-            if(questions.q2.answer>=200){
-              ranking['ortho-evra'].n -= 2;
-            if(questions.q2.answer>=250){
-              ranking['depo'].n -=2;
-            
-            }
+          if(this.answer>=200){
+            ranking['ortho-evra'].n -= 2;
+          }
+          if(this.answer>=250){
+            ranking.depo.n -= 2;
           }
         }
       },
 
 
-    // How often do you smoke cigarettes or cigars or use smokeless tobacco?
+      /** 
+       * q3:q7_smoke:[ How often do you smoke cigarettes or cigars or use smokeless tobacco? ]
+       */
       q3:{
         options: [1,2,3,999,777,888],
 
@@ -95,298 +110,253 @@ angular.module('contraceptionApp')
         },
 
         ranking: function(){
-
-          //what does option mean
-          var answer = this.answer;
-
-          //WHY DID YOU KEEP THIS switch in here? 
-          // switch(option){
-            // case "3":
-
-          //check the docs! what question do you need to check against?
-
-          // need to ask them about these:
-          // is it =0 -=999 or =-999
-          // double check this!
-          if(answer===3){
-            if(questions.q1.answer>35){
-              ranking['ocp'].n-=999;
-              ranking['ortho-evra'].n-=999;
-              ranking['nuvaring'].n-=999;
+          if (this.answer === 3) {
+            if(questions.q1.answer > 35) {
+              ranking.ocp.n -= 999;
+              ranking['ortho-evra'].n -= 999;
+              ranking.nuvaring.n -= 999;
             }
           }
         }
       },
 
 
-    // When you are not using birth control, do you have regular monthly periods?
+      /**
+       * q4:q8_regularPeriod:[ When you are not using birth control, do you have regular monthly periods? ]
+       */
       q4:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
           var answer = this.answer;
-            if(answer === 0)
-              return 'q4a';
-            else
-              return 'q5';
+          if(answer === 0) { return 'q4a'; }
+          else { return 'q5'; }
         },
 
         ranking: function(){
-          var answer = this.answer;
-          // please read up on switch and what it does
-          // switch(option){
-          //   case"3":
           if(questions.q4.answer === 0){
-            ranking['ocp'].n=-999;
-            ranking['nuvaring'].n=-999;
-            // is this correct?
-            ranking['fam'].n=-3;
+            ranking.ocp.n=-999;
+            ranking.nuvaring.n=-999;
+            ranking.fam.n=-3;
           }
         }
       },
 
 
-    // Do you have three or fewer periods per year?
+      /**
+       * q4a:q8a_periodFrequency:[ Do you have three or fewer periods per year? ]
+       */
       q4a:{
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          var answer = this.answer;
-          // CHECK THIS !!
           return 'q5';
         },
 
         ranking: function(){
-          var answer = this.answer;
-
           if(questions.q4a.answer === 0){
-            ranking['ocp'].p+=1;
-            ranking['pop'].p+=1;
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
-            ranking['nuvaring'].p+=1;
-            ranking['depo'].p+=1;
-            ranking['mirena'].p+=1;
-            ranking['fam'].n-=1;
-            ranking['implanon'].p=+1;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.fam.n-=1;
+            ranking.implanon.p=+1;
           }
-        
-
         }
       },
 
-    // When you are not using birth control, do you have very heavy periods?
+
+      /**
+       * q5:q9_heavyPeriod:[ When you are not using birth control, do you have very heavy periods? ]
+       */
       q5:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer;
           return 'q6';
         },
 
-      ranking: function(){
-        var option = this.answer;
-        // switch(option){
-        //   case"3":
+        ranking: function(){
           if(questions.q5.answer === 1){
-            ranking['ocp'].p+=1;
-            ranking['pop'].p+=1;
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
-            ranking['nuvaring'].p+=1;
-            ranking['depo'].p+=1;
-            ranking['mirena'].p+=1;
-            ranking['implanon'].p+=1;
-            ranking['paragard'].n-=2;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
+            ranking.paragard.n-=2;
           }
         }
-      
       },
 
-    // When you are not using birth control, do you have periods which last longer than 7 days?
+
+      /**
+       * q6:q10_period7days:[ When you are not using birth control, do you have periods which last longer than 7 days? ]
+       */
       q6:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer;
-          if(option === 0)
-              return 'q7';
+          return 'q7';
         },
         ranking: function(){
-          var option = this.answer;
-        // switch(option){
-        //   case"3":
           if(questions.q6.answer === 1){
-            ranking['ocp'].p+=1;
-            ranking['pop'].p+=1;
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
-            ranking['nuvaring'].p+=1;
-            ranking['depo'].p+=1;
-            ranking['mirena'].p+=1;
-            ranking['implanon'].p+=1;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
           }
         }
-      
+        
       },
 
-    // When you are not using birth control, do you have painful periods or bad cramps
-    // during your period?
 
+      /**
+       * q7:q11_cramps:[ When you are not using birth control, do you have painful periods or bad cramps during your period? ]
+       */
       q7:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer;
-          if(option === 0)
             return 'q8';
-        },
+          },
         ranking: function(){
-          var answer = this.answer;
-        // switch(option){
-        //   case"3":
           if(questions.q7.answer === 1){
-            ranking['ocp'].p+=1;
-            ranking['pop'].p+=1;
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
             ranking['ortho-evra'].p+=1;
-            ranking['nuvaring'].p+=1;
-            ranking['depo'].p+=1;
-            ranking['paragard'].n-=2;
-            ranking['mirena'].p+=1;
-            ranking['implanon'].p+=1;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.paragard.n-=2;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
           }
         }
       },
 
-    // When you are not using birth control, do you have breast
-    // tenderness during your period?
+      
+      /**
+       * q8:q12_tenderBreasts:[ When you are not using birth control, do you have breast tenderness during your period? ]
+       */
       q8:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer;
-          if(answer === 0)
             return 'q9';
-        },
+          },
         ranking: function(){
-          var answer = this.answer;
-          // switch(option){
-          //   case"3":
-            if(questions.q8.answer === 1){
-              ranking['pop'].p+=1;
-              ranking['ortho-evra'].n-=3;
-              ranking['nuvaring'].p+=1;
-              ranking['depo'].p+=1;
-              ranking['mirena'].p+=1;
-              ranking['implanon'].p+=1;
-            }
+          if(questions.q8.answer === 1){
+            ranking.pop.p+=1;
+            ranking['ortho-evra'].n-=3;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
           }
-        
+        }
+          
       },
 
-    // When you are not using birth control, do you have depression or anxiety during your period?
+
+      /**
+       * q9:q13_depression:[ When you are not using birth control, do you have depression or anxiety during your period? ]
+       */
       q9:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer;
-          if(answer === 0)
-              return 'q10';
-        },
+            return 'q10';
+          },
         ranking: function(){
-          var answer = this.answer;
-          // switch(option){
-          //   case"3":
-            if(questions.q9.answer === 1){
-              ranking['ocp'].p+=1;
-              ranking['pop'].p+=1;
-              ranking['ortho-evra'].p+=1;
-              ranking['nuvaring'].p+=1;
-              ranking['depo'].p+=1;
-              ranking['mirena'].p+=1;
-              ranking['implanon'].p+=1;
-            }
+          if(questions.q9.answer === 1){
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
+            ranking['ortho-evra'].p+=1;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
           }
-        
+        }
+          
       },
 
-
-    // When you are no using birth control, do you have bleeding or flouid retention
-    // during your period?
+      
+      /**
+       * q10:q14_bloating:[ When you are no using birth control, do you have bleeding or flouid retention during your period? ]
+       */
       q10:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var answer = this.answer;
-          if(answer === 0)
             return 'q11';
-        },
+          },
         ranking: function(){
-          var answer = this.answer;
-          // switch(option){
-          //   case"3":
-            if(questions.q10.answer === 1){
-              ranking['ocp'].p+=1;
-              ranking['pop'].p+=1;
-              ranking['ortho-evra'].p+=1;
-              ranking['nuvaring'].p+=1;
-              ranking['depo'].p+=1;
-              ranking['mirena'].p+=1;
-              ranking['implanon'].p+=1;
-            }
+          if(questions.q10.answer === 1){
+            ranking.ocp.p+=1;
+            ranking.pop.p+=1;
+            ranking['ortho-evra'].p+=1;
+            ranking.nuvaring.p+=1;
+            ranking.depo.p+=1;
+            ranking.mirena.p+=1;
+            ranking.implanon.p+=1;
           }
-        
+        }
       },
 
 
-    // When you are not using birth control, do you have bad headaches with your period?
+      /**
+       * q11:q15_headaches:[ When you are not using birth control, do you have bad headaches with your period? ]
+       */
       q11:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer;
-          if (option === 0)
             return 'q12';
-        },
+          },
         ranking: function(){
-          var option = this.answer;
-          // switch(option){
-          //   case"3":
           if (questions.q11.answer === 1) {
-            ranking['pop'].p=+1;
-            ranking['depo'].p=+1;
-            ranking['mirena'].p=+1;
-            ranking['implanon'].p=+1;
+            ranking.pop.p=+1;
+            ranking.depo.p=+1;
+            ranking.mirena.p=+1;
+            ranking.implanon.p=+1;
           }
-          
         }
       },
 
 
-    // When you are not using birth control, do you have significant PMS?
+      /**
+       * q12:q16_PMS:[ When you are not using birth control, do you have significant PMS? ]
+       */
       q12:{
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          var option = this.answer;
-          if (option === 0)
             return 'q13';
-        },
+          },
         ranking: function(){
-          var option = this.answer;
-          // switch(option){
-          //   case"3":
           if (questions.q12.answer === 1) {
-            ranking['ocp'].p=+1;
-            ranking['pop'].p=+1;
+            ranking.ocp.p=+1;
+            ranking.pop.p=+1;
             ranking['ortho-evra'].p=+1;
-            ranking['nuvaring'].p=+1;
-            ranking['depo'].p=+1;
-            ranking['mirena'].p=+1;
-            ranking['implanon'].p=+1;
-          };
-          
+            ranking.nuvaring.p=+1;
+            ranking.depo.p=+1;
+            ranking.mirena.p=+1;
+            ranking.implanon.p=+1;
+          }
         }
       },
 
-    // How often do these symptoms cause you to miss work or school?
+
+      /**
+       * q13:q17_missSchWork:[ How often do these symptoms cause you to miss work or school? ]
+       */
       q13:{
         options: [0,1,2,999,777,888],
 
@@ -394,45 +364,43 @@ angular.module('contraceptionApp')
           return 'q14';
         },
         ranking: function(){
-          if (questions.q13.answer == 1){
-            ranking['ocp'].p=+1
-            ranking['pop'].p=+1
-            ranking['ortho-evra'].p=+1
-            ranking['nuvaring'].p=+1
-            ranking['depo'].p=+1
-            ranking['mirena'].p=+1
-            ranking['implanon'].p=+1
+          if (questions.q13.answer === 1){
+            ranking.ocp.p=+1;
+            ranking.pop.p=+1;
+            ranking['ortho-evra'].p=+1;
+            ranking.nuvaring.p=+1;
+            ranking.depo.p=+1;
+            ranking.mirena.p=+1;
+            ranking.implanon.p=+1;
           }
-          else if (questions.q13.answer == 2) {
-              ranking['ocp'].p=+1
-              ranking['pop'].p=+1
-              ranking['ortho-evra'].p=+1
-              ranking['nuvaring'].p=+1
-              ranking['depo'].p=+1
-              ranking['mirena'].p=+1
-              ranking['implanon'].p=+1
-          };
+          else if (questions.q13.answer === 2) {
+            ranking.ocp.p=+1;
+            ranking.pop.p=+1;
+            ranking['ortho-evra'].p=+1;
+            ranking.nuvaring.p=+1;
+            ranking.depo.p=+1;
+            ranking.mirena.p=+1;
+            ranking.implanon.p=+1;
+          }
         }
       },
 
-    // The next set of questions is about your sexual behavior. By sex, I mean vaginal sex. Please remember that your answers
-    // strictly confidential. How would you describe your current sexual relationship?
+
+      /**
+       * q14:q18_SexualRel:[ How would you describe your current sexual relationship? ]
+       */
       q14:{
         options: [0,1,2,3,999,777],
 
         nextQuestion: function(){
-          var option = this.answer
+          // TODO
         },
         ranking: function(){
-          var option = this.answer
-          // switch(option){
-          //   case"3":
-            if (questions.q14.answer == 2){
-              ranking['paragard'].n-=1
-              ranking['mirena'].n-=999
+            if (questions.q14.answer === 2){
+              ranking.paragard.n-=1;
+              ranking.mirena.n-=999;
             }
-          
-        }
+          }
       },
 
   //     // During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male partner,
@@ -446,11 +414,11 @@ angular.module('contraceptionApp')
   //       ranking: function(){
   //         // if answer is greater than 10 && less than 555
   //         var answer = this.answer
-      
+
   //         if(answer>10 && <555){
-  //           ranking['paragard'].n-=999
-  //           ranking['mirena'].n-=999
-        
+  //           ranking.paragard.n-=999
+  //           ranking.mirena.n-=999
+
   //           }
   //         }
   //     }
@@ -530,11 +498,11 @@ angular.module('contraceptionApp')
   //       ranking: function(){
   //         // if answer is greater than 10 && less than 555
   //         var answer = this.answer
-      
+
   //         if(answer>10 && <555){
-  //           ranking['paragard'].n-=999
-  //           ranking['mirena'].n-=999
-        
+  //           ranking.paragard.n-=999
+  //           ranking.mirena.n-=999
+
   //           }
   //         }
   //     }
@@ -1640,7 +1608,6 @@ angular.module('contraceptionApp')
       }
 
     };
-
-
-  });
+  }
+  );
 
