@@ -593,7 +593,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q20:flow_q24:[ When would you like to become pregnant (in years)? ]
+       * q20:q24_whenPregnant:flow_q24:[ When would you like to become pregnant (in years)? ]
        */
       q20:{
         options: [1,2,3,4,5,777,999],
@@ -635,116 +635,102 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-  // // Would you be okay with regular scheduled bleeding?
-  // q23:{
-  //   options: [1,0,999,777],
 
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q24'
+      /**
+       * q23:q27_schBleeding:[ Would you be okay with regular scheduled bleeding? ]
+       */
+      q23:{
+        options: [1,0,999,777],
 
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //       }
-  //   }
-  // }, 
-
-
-  // // Would you be okay with unscheduled bleeding and/or spotting?
-  // q24:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q25'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },   
-
-  // // Would you be okay with no bleeding at all?
-  // q25:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q26'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Do you need a birth control method which you can keep private?
-  // q26:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q26a'
-  //       else
-  //         return 'q27'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+        nextQuestion: function(){
+          return 'q24';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
 
-  // // Do you want to keep it private from your boyfriend/girlfriend/partner?
-  // q26a:{
-  //   options: [1,0,999,777,888],
+      /**
+       * q24:q28_unschBleeding:[ Would you be okay with unscheduled bleeding and/or spotting? ]
+       */
+      q24:{
+        options: [1,0,999,777],
 
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return '26b'
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+        nextQuestion: function(){
+          return 'q25';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  // // Do you want to keep it private from your family or your friends?
-  // q26b:{
-  //   options: [1,0,999,777,888],
+      // Would you be okay with no bleeding at all?
+      q25:{
+        options: [1,0,999,777],
 
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q27'
+        nextQuestion: function(){
+          return 'q26';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+      // Do you need a birth control method which you can keep private?
+      q26:{
+        options: [1,0,999,777],
+
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q26a'; }
+          else { return 'q27'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
 
-  // // Would it be OK for you to use a birth control method that you have to interrupt sexual activity to use?
-  // q27:{
-  //   options: [1,0,999,777],
+      // Do you want to keep it private from your boyfriend/girlfriend/partner?
+      q26a:{
+        options: [1,0,999,777,888],
+        nextQuestion: function(){
+          return '26b';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //   nextQuestion: function(){
-  //     var answer = this.answer
+      // Do you want to keep it private from your family or your friends?
+      q26b:{
+        options: [1,0,999,777,888],
+        nextQuestion: function(){
+          return 'q27';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
 
-  // // This begins the first question of the new section
+      // Would it be OK for you to use a birth control method that you have to interrupt sexual activity to use?
+      q27:{
+        options: [1,0,999,777],
+        nextQuestion: function(){
+          return 'q28';
+        },
+        ranking: function(){
+          return;
+        }
+      },
+
+
+  // *******************************************************
+  //
+  // This begins the first question of the new section
+  //
+  // *******************************************************
 
 
   // // Have you had a baby in the last 6 months?
@@ -1309,8 +1295,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //     }
   //   }, 
 
-
-  // // this begins a next section
+  // *******************************************************
+  //
+  // This begins the first question of the new section
+  //
+  // *******************************************************
 
   // // Do you have coarse, dark hairs on your face?
   // q52:{
