@@ -422,106 +422,81 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-  //     // Have you ever had an unplanned pregnancy.
-  //     q16:{
-  //       options: [1,0,999,777],
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q16a'
-  //         else
-  //           return 'q17'
+      /**
+       * q16:flow_q20:[ Have you ever had an unplanned pregnancy. ]
+       */
+      q16:{
+        options: [1,0,999,777],
 
-  //       },
-  //       ranking: function(){
+        nextQuestion: function(){
+          if (this.answer === 1) { return 'q16a'; }
+          else { return 'q17'; }
+        },
 
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   },    
+        ranking: function(){
+          return;
+        }
+      },
 
 
-  //     // How many unplanned pregnancies have you had. Enter number on keyboard.
-  //     q16a:{
-  //       options: [999,777,888],
+      /**
+       * q16a:flow_q20a:[ How many unplanned pregnancies have you had? ]
+       */
+      q16a:{
+        options: [999,777,888],
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q16a'
-  //         else
-  //           return 'q17'
+        nextQuestion: function(){
+          return 'q16b';
+        },
+        ranking: function(){
+          return;
+        }
+      },
+  
 
-  //       },
-  //       ranking: function(){
+      /**
+       * q16b:flow_q20b:[ Were you using any method of birth control or doing anything to prevent from getting pregnant the (first) time you had an unplanned pregnancy? ]
+       */
+      q16b:{
+        options: [1,0,999,777,888],
 
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-  //     // Were you using any method of birth control or doing anything to prevent from getting pregnant the (first) time you
-  //     // had an unplanned pregnancy?
-  //     q16b:{
-  //       options: [1,0,999,777,888],
+        nextQuestion: function(){
+          if(this.answer === 1) { return 'q16bi'; }
+          else { return 'q17'; }
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q16bi'
-  //         else
-  //           return 'q17'
+      /**
+       * q16bi:flow_q20bi:[ The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using ]
+       */
+      q16bi:{
+        options: [1,0,999,777,888],
 
-  //       },
-  //       ranking: function(){
-  //         // 
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   }, 
+        nextQuestion: function(){
+          return 'q17';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
-  //     // The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show
-  //     // you four screens that have different birth control methods. Please choose ALL the methods you were using
-  //     q16bi:{
-  //       options: [1,0,999,777,888],
+      /**
+       * q17:flow_q21:[ Now I'm going to ask you about different birth control methods that you might be interested in using now. I will show you four screens that have different birth control methods. You can choose as many methods as you would like ]
+       */
+      q17:{
+        options: [ ],
 
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-  //         if(answer == 1)
-  //           return 'q16bi'
-  //         else
-  //           return 'q17'
-
-  //       },
-  //       ranking: function(){
-  //         // if answer is greater than 10 && less than 555
-  //         var answer = this.answer
-
-  //         if(answer>10 && <555){
-  //           ranking.paragard.n-=999
-  //           ranking.mirena.n-=999
-
-  //           }
-  //         }
-  //     }
-  //   },
-
-  //     // Now I'm going to ask you about different birth control methods that you might be interested in using now.
-  //     // I will show you four screens that have different birth control methods. You can choose as many methods as you
-  //     // would like
-  //     q17:{
-  //       options: [ ],
-
-  //       nextQuestion: function(){
-  //         var answer = this.answer
-
-  //       },
-  //       ranking: function(){
-
-  //         var answer = this.answer
-  //         }
-  //     }
-  //   },
+        nextQuestion: function(){
+          return 'q18';
+        },
+        ranking: function(){
+          return;
+        }
+      },
 
   //     // Have you EVER used any method of birth control?
   //     q18:{

@@ -418,3 +418,31 @@ describe 'Controller: SectionsCtrl', ->
 	it 'q15:q19_vaginalSexCount should set nextQuestion = q16 ...', ->
 		nextQ = scope.questions.q15.nextQuestion()
 		expect(nextQ).toBe 'q16'
+
+
+	# q16
+	# During the last 12 months how many men, if any, have you had sexual intercourse with?
+	# -----
+	it 'q16:flow_q20 should set nextQuestion = q16a if answer is 1 ...', ->
+		scope.questions.q16.answer = 1
+		nextQ = scope.questions.q16.nextQuestion()
+		expect(nextQ).toBe 'q16a'
+
+	it 'q16:flow_q20 should set nextQuestion = q16a if answer is not 1 ...', ->
+		scope.questions.q16.answer = 0
+		nextQ = scope.questions.q16.nextQuestion()
+		expect(nextQ).toBe 'q17'
+
+
+	# q16a
+	# How many unplanned pregnancies have you had?
+	# -----
+	it 'q16a:flow_q20 should set nextQuestion = q16b if answer is 1 ...', ->
+		scope.questions.q16.answer = 1
+		nextQ = scope.questions.q16.nextQuestion()
+		expect(nextQ).toBe 'q16a'
+
+	it 'q16:flow_q20 should set nextQuestion = q16a if answer is not 1 ...', ->
+		scope.questions.q16.answer = 0
+		nextQ = scope.questions.q16.nextQuestion()
+		expect(nextQ).toBe 'q17'
