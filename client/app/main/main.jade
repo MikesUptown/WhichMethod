@@ -2,7 +2,7 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .loginView(ui-view="login")
 
-
+ 
 
 div(main)
        // .navbar.navbar-inverse.navbar-fixed-top
@@ -11,7 +11,7 @@ div(main)
         input.form-control(type='text', placeholder='Email')
         .form-group
         input.form-control(type='password', placeholder='Password')
-        button.btn.btn-success(type='submit') Sign in
+        button.btn.btn-success(type='submit') Sign up
 
 
       //.container
@@ -52,21 +52,29 @@ div(main)
             .form-group
               input.form-control(type='password', placeholder='Password')
             button.btn.btn-success(type='submit') Sign in
-        //
+
           /.navbar-collapse 
     //
        Main jumbotron for a primary marketing message or call to action 
     .jumbotron(fullscreen)
-      .container
-        h1 WhichMethod
-        p
+      .main_content
+
+        .title
+          h1 WhichMethod
+
+        .description 
           | The decision-making process of choosing a contraceptive method is complex and becoming even more so today. Our WhichMethod app is designed to give women the tools to make an informed decision about which method works best for you. WhichMethod helps women engage in the process of choosing a contraceptive method tailored to your everyday lifestyle. 
+<<<<<<< Updated upstream
         p
           a.btn.btn-warning.btn-lg(ng-click="startServey()") Get WhichMethod »
+=======
+        
+        .get_start 
+          //a.btn.btn-success.btn-lg(ng-click="startServey()") Get WhichMethod »
+          a.start_btn(ng-click="startServey()") Get WhichMethod »
+>>>>>>> Stashed changes
           
-    .container
-      //
-         Example row of columns 
+    .sub_content
       .row
         .col-lg-4
           h3 Step 1: Sign up today
@@ -74,12 +82,14 @@ div(main)
             | There are two ways to take enter WhichMethod: 1. as a Registered User; and 2. as a Guest User. As a Registered User you will need to Sign up and we will send you recommendations via email; as a Guest User you'll still receive recommendations; however, you will not receive them via your email address.
           // p
             a.btn.btn-default(href='#') View details »
+        
         .col-lg-4
           h3 Step 2: Take the survey
           p.text-justify.center-block
             | WhichMethod is an interactive contraception assessment that is available in both Spanish and English and includes approximately 50 questions about contraceptive history, preferences and priorities, and medical history and sexual risk factors.
           // p
             a.btn.btn-default(href='#') View details »
+          
         .col-lg-4
           h3 Step 3: Get recommendations
           p.text-justify.center-block
@@ -87,8 +97,9 @@ div(main)
           // p
             a.btn.btn-default(href='#') View details »
       hr
-      footer
-        p &copy;Public Health Solutions 2014 | About WhichMethod | Clinical Partners | Privacy Policy
+    
+    footer
+      p.lists &copy;Public Health Solutions 2014 | About WhichMethod | Clinical Partners | Privacy Policy
 
     //
        /container 
