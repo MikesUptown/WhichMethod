@@ -170,31 +170,29 @@ header#header.info()
             p#instruct126.instruct
               small
                 | A pulmonary embolus is a blockage of an artery in the lungs by fat, air, blood clot, or tumor cells.
-          li#foli127.notranslate
-            fieldset
-              legend#title127.desc
-                | Q36. Have you had surgery in the past three months?
-              //if lt IE 8
-                label#title127.desc
-                  | Q36. Have you had surgery in the past three months?
-              div
-                input#radioDefault_127(name='Field127', type='hidden', value='')
-                span
-                  input#Field127_0.field.radio(name='Field127', type='radio', value='Yes', tabindex='29', checked='checked')
-                  label.choice(for='Field127_0')
-                    | Yes
-                span
-                  input#Field127_1.field.radio(name='Field127', type='radio', value='No', tabindex='30')
-                  label.choice(for='Field127_1')
-                    | No
-                span
-                  input#Field127_2.field.radio(name='Field127', type='radio', value='I don\'t know', tabindex='31')
-                  label.choice(for='Field127_2')
-                    | I don't know
-                span
-                  input#Field127_3.field.radio(name='Field127', type='radio', value='I don\'t want to answer this question', tabindex='32')
-                  label.choice(for='Field127_3')
-                    | I don't want to answer this question
+
+     li#36(ng-show="currentQuestion == 'q36'")                
+      label
+            | Q36. Have you had surgery in the past three months?
+        div
+        span
+          input.field.radio(name='Field127', type='radio', value='Yes', tabindex='29', checked='checked')
+          label.choice
+            | Yes
+        span
+          input.field.radio(name='Field127', type='radio', value='No', tabindex='30')
+          label.choice
+            | No
+        span
+          input.field.radio(name='Field127', type='radio', value='I don\'t know', tabindex='31')
+          label.choice
+            | I don't know
+        span
+          input.field.radio(name='Field127', type='radio', value='I don\'t want to answer this question', tabindex='32')
+          label.choice
+            | I don't want to answer this question
+
+
           li#foli128.notranslate
             fieldset
               legend#title128.desc
