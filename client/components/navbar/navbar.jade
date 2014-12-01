@@ -29,7 +29,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           // a(href='/login') Log In
           // a(href='/login') Log in
-          a.button.btn-lg.btn-warning.navbar-btn(href='/login') Sign in
+          a.button.btn-lg.btn-warning.navbar-btn(href='/login') Sign IN
         
         li(ng-show='isLoggedIn()')
           p.navbar-text Hello {{ getCurrentUser().name }}
