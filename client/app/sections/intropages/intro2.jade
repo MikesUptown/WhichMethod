@@ -1,4 +1,4 @@
- 
+   
 //- div(ng-include='"components/navbar/navbar.html"')
 
 doctype html
@@ -11,22 +11,24 @@ html
     header
       #logo
         a(href="landing_02.html")
-          img.logo_img(src="images/which_method_logo.png", alt="")
-      // logo
+          img.logo_img(src="assets/images/which_method_logo.png", alt="")
+          //<img ng-src="assets/images/which_method_logo.png" alt=""/>
+          //img(ng-src='assets/images/which_method_logo.png', alt='')
+    
       #menu
-        a.btn_01(href="#") Log out
-      // menu
-      | g
+        a.logout_btn_01(href='#' ng-click='logout()') Log out
+      
+
     section
       #main_wrapper
         #main_content
-          img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
+          img.main_img(src="assets/images/girl_bronx.jpg", alt="Landing Page Main Image")
           p.main_title
             span Section 02
           p.content_01 The next set of questions are about your period.
           p.content_02 Please enter your responses below.
-          a.btn_02(href="#") Save
-          a.btn_03(href="#") Continue &#62;&#62;
+          a.save_btn_02(href="#") Save
+          a.continue_btn_03(href="#") Continue &#62;&#62;
         // main_content
       // main_wrapper
     footer
