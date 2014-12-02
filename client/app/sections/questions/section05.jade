@@ -5,9 +5,9 @@ header#header.info()
 
   h2 WhichMethod_05
   ul
-     li#q32(ng-show="currentQuestion == 'q32'")
+     li#q28(ng-show="currentQuestion == 'q28'")
       label
-        | Q32. Have you had a baby in the last 6 months?
+        | Q28. Have you had a baby in the last 6 months?
       div
         span
           input.field.radio(ng-model='questions.q32.answer' value='Yes', type='radio')
@@ -27,9 +27,9 @@ header#header.info()
             | I don't want to answer this question
 
 
-    li#32a(ng-show="currentQuestion == 'q32a'")
+    li#28a(ng-show="currentQuestion == 'q28a'")
       label
-          | Q32a. Was your baby born less than 3 weeks ago?
+          | Q28a. Was your baby born less than 3 weeks ago?
         div
         span
           input.field.radio(name='Field121', type='radio', value='Yes', tabindex='5', checked='checked')
@@ -48,9 +48,9 @@ header#header.info()
           label.choice
             | I don't want to answer this question
 
-    li#32b(ng-show="currentQuestion == 'q32b'")
+    li#28b(ng-show="currentQuestion == 'q28b'")
       label
-            | Q32b. Are you breastfeeding a child now?
+            | Q28b. Are you breastfeeding a child now?
         div
         span
           input.field.radio(name='Field122', type='radio', value='Yes', tabindex='9', checked='checked')
@@ -70,9 +70,9 @@ header#header.info()
             | I don't want to answer this question
 
 
-    li#33(ng-show="currentQuestion == 'q33'")
+    li#29(ng-show="currentQuestion == 'q29'")
       label
-            | Q33. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
+            | Q29. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
         div
         span
           input.field.radio(name='Field123', type='radio', value='Yes', tabindex='13', checked='checked')
@@ -92,9 +92,9 @@ header#header.info()
             | I don't want to answer this question
 
 
-    li#33a(ng-show="currentQuestion == 'q33a'")
+    li#29a(ng-show="currentQuestion == 'q29a'")
       label
-            | Q33.a. Are you taking medicine for high blood pressure now?
+            | Q29.a. Are you taking medicine for high blood pressure now?
         div
         span
           input.field.radio(name='Field124', type='radio', value='Yes', tabindex='17', checked='checked')
@@ -119,9 +119,9 @@ header#header.info()
                 | High blood pressure (HBP) or hypertension means high pressure (tension) in the arteries. Arteries are vessels that carry blood from the pumping heart to all the tissues and organs of the body. High blood pressure does not mean excessive emotional tension, although emotional tension and stress can temporarily increase blood pressure.
 
           
-     li#34(ng-show="currentQuestion == 'q34'")
+     li#30(ng-show="currentQuestion == 'q30'")
       label
-          | Q34. Has a doctor, nurse, or other health professional EVER told you that you had blood clots,  also called clot in a vein or DVT?
+          | Q30. Has a doctor, nurse, or other health professional EVER told you that you had blood clots,  also called clot in a vein or DVT?
         div
         span
           input.field.radio(name='Field125', type='radio', value='Yes', tabindex='21', checked='checked')
@@ -145,9 +145,9 @@ header#header.info()
               small
                 | Deep venous thrombosis (DVT) is a condition in which a blood clot forms in a vein that is deep inside the body. DVT mainly affects the veins in the lower leg and thigh.
 
-     li#35(ng-show="currentQuestion == 'q35'")
+     li#31(ng-show="currentQuestion == 'q31'")
       label
-          | Q35. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
+          | Q31. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
         div
         span
           input.field.radio(name='Field126', type='radio', value='Yes', tabindex='25', checked='checked')
@@ -171,9 +171,9 @@ header#header.info()
               small
                 | A pulmonary embolus is a blockage of an artery in the lungs by fat, air, blood clot, or tumor cells.
 
-     li#36(ng-show="currentQuestion == 'q36'")                
+     li#32(ng-show="currentQuestion == 'q32'")                
       label
-            | Q36. Have you had surgery in the past three months?
+            | Q32. Have you had surgery in the past three months?
         div
         span
           input.field.radio(name='Field127', type='radio', value='Yes', tabindex='29', checked='checked')
@@ -196,10 +196,10 @@ header#header.info()
           li#foli128.notranslate
             fieldset
               legend#title128.desc
-                | Q36.a. Is it hard moving around because of the surgery?
+                | Q32.a. Is it hard moving around because of the surgery?
               //if lt IE 8
                 label#title128.desc
-                  | Q36.a. Is it hard moving around because of the surgery?
+                  | Q32.a. Is it hard moving around because of the surgery?
               div
                 input#radioDefault_128(name='Field128', type='hidden', value='')
                 span
@@ -218,13 +218,15 @@ header#header.info()
                   input#Field128_3.field.radio(name='Field128', type='radio', value='I don\'t want to answer this question', tabindex='36')
                   label.choice(for='Field128_3')
                     | I don't want to answer this question
+
+
           li#foli129.notranslate
             fieldset
               legend#title129.desc
-                | Q37. Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
+                | Q33. Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
               //if lt IE 8
                 label#title129.desc
-                  | Q37. Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
+                  | Q33. Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
               div
                 input#radioDefault_129(name='Field129', type='hidden', value='')
                 span
@@ -243,13 +245,15 @@ header#header.info()
                   input#Field129_3.field.radio(name='Field129', type='radio', value='I don\'t want to answer this question', tabindex='40')
                   label.choice(for='Field129_3')
                     | I don't want to answer this question
+
+
           li#foli131.notranslate
             fieldset
               legend#title131.desc
-                | Q37.a. Have you had diabetes for more than 20 years?
+                | Q33.a. Have you had diabetes for more than 20 years?
               //if lt IE 8
                 label#title131.desc
-                  | Q37.a. Have you had diabetes for more than 20 years?
+                  | Q33.a. Have you had diabetes for more than 20 years?
               div
                 input#radioDefault_131(name='Field131', type='hidden', value='')
                 span
@@ -268,13 +272,15 @@ header#header.info()
                   input#Field131_3.field.radio(name='Field131', type='radio', value='I don\'t want to answer this question', tabindex='44')
                   label.choice(for='Field131_3')
                     | I don't want to answer this question
+
+
           li#foli195.notranslate
             fieldset
               legend#title195.desc
-                | Q37.a. Do you have problems with your kidneys, eyes or nerves because of diabetes?
+                | Q33.b. Do you have problems with your kidneys, eyes or nerves because of diabetes?
               //if lt IE 8
                 label#title195.desc
-                  | Q37.a. Do you have problems with your kidneys, eyes or nerves because of diabetes?
+                  | Q33.b. Do you have problems with your kidneys, eyes or nerves because of diabetes?
               div
                 input#radioDefault_195(name='Field195', type='hidden', value='')
                 span
@@ -293,13 +299,15 @@ header#header.info()
                   input#Field195_3.field.radio(name='Field195', type='radio', value='I don\'t want to answer this question', tabindex='48')
                   label.choice(for='Field195_3')
                     | I don't want to answer this question
+
+
           li#foli130.notranslate
             fieldset
               legend#title130.desc
-                | Q38. Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
+                | Q34. Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
               //if lt IE 8
                 label#title130.desc
-                  | Q38. Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
+                  | Q34. Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
               div
                 input#radioDefault_130(name='Field130', type='hidden', value='')
                 span
@@ -318,13 +326,15 @@ header#header.info()
                   input#Field130_3.field.radio(name='Field130', type='radio', value='I don\'t want to answer this question', tabindex='52')
                   label.choice(for='Field130_3')
                     | I don't want to answer this question
+
+
           li#foli132.notranslate
             fieldset
               legend#title132.desc
-                | Q39. Has a doctor, nurse, or other health prodessional EVER told you that you had a clotting disorder?
+                | Q35. Has a doctor, nurse, or other health prodessional EVER told you that you had a clotting disorder?
               //if lt IE 8
                 label#title132.desc
-                  | Q39. Has a doctor, nurse, or other health prodessional EVER told you that you had a clotting disorder?
+                  | Q35. Has a doctor, nurse, or other health prodessional EVER told you that you had a clotting disorder?
               div
                 input#radioDefault_132(name='Field132', type='hidden', value='')
                 span
@@ -343,13 +353,15 @@ header#header.info()
                   input#Field132_3.field.radio(name='Field132', type='radio', value='I don\'t want to answer this question', tabindex='56')
                   label.choice(for='Field132_3')
                     | I don't want to answer this question
+
+
           li#foli134.notranslate
             fieldset
               legend#title134.desc
-                | Q40. Do you have migraine headaches?
+                | Q36. Do you have migraine headaches?
               //if lt IE 8
                 label#title134.desc
-                  | Q40. Do you have migraine headaches?
+                  | Q36. Do you have migraine headaches?
               div
                 input#radioDefault_134(name='Field134', type='hidden', value='')
                 span
@@ -368,13 +380,15 @@ header#header.info()
                   input#Field134_3.field.radio(name='Field134', type='radio', value='I don\'t want to this question', tabindex='60')
                   label.choice(for='Field134_3')
                     | I don't want to this question
+
+
           li#foli135.notranslate
             fieldset
               legend#title135.desc
-                | Q40.a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
+                | Q36.a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
               //if lt IE 8
                 label#title135.desc
-                  | Q40.a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
+                  | Q36.a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
               div
                 input#radioDefault_135(name='Field135', type='hidden', value='')
                 span
@@ -393,13 +407,15 @@ header#header.info()
                   input#Field135_3.field.radio(name='Field135', type='radio', value='I don\'t want to answer this question', tabindex='64')
                   label.choice(for='Field135_3')
                     | I don't want to answer this question
+
+
           li#foli136.notranslate
             fieldset
               legend#title136.desc
-                | Q41. Has a doctor, nurse, or other health professional EVER told you that you had a molar pregnancy?
+                | Q37. Has a doctor, nurse, or other health professional EVER told you that you had a molar pregnancy?
               //if lt IE 8
                 label#title136.desc
-                  | Q41. Has a doctor, nurse, or other health professional EVER told you that you had a molar pregnancy?
+                  | Q37. Has a doctor, nurse, or other health professional EVER told you that you had a molar pregnancy?
               div
                 input#radioDefault_136(name='Field136', type='hidden', value='')
                 span
@@ -418,13 +434,15 @@ header#header.info()
                   input#Field136_3.field.radio(name='Field136', type='radio', value='I don\'t want to answer this question', tabindex='68')
                   label.choice(for='Field136_3')
                     | I don't want to answer this question
+
+
           li#foli137.notranslate
             fieldset
               legend#title137.desc
-                | Q42. Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
+                | Q38. Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
               //if lt IE 8
                 label#title137.desc
-                  | Q42. Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
+                  | Q38. Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
               div
                 input#radioDefault_137(name='Field137', type='hidden', value='')
                 span
@@ -443,13 +461,15 @@ header#header.info()
                   input#Field137_3.field.radio(name='Field137', type='radio', value='I don\'t want to answer this question', tabindex='72')
                   label.choice(for='Field137_3')
                     | I don't want to answer this question
+
+
           li#foli138.notranslate
             fieldset
               legend#title138.desc
-                | Q43. Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
+                | Q39. Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
               //if lt IE 8
                 label#title138.desc
-                  | Q43. Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
+                  | Q39. Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
               div
                 input#radioDefault_138(name='Field138', type='hidden', value='')
                 span
@@ -468,13 +488,15 @@ header#header.info()
                   input#Field138_3.field.radio(name='Field138', type='radio', value='I don\'t want to answer this question', tabindex='76')
                   label.choice(for='Field138_3')
                     | I don't want to answer this question
+
+
           li#foli139.notranslate
             fieldset
               legend#title139.desc
-                | Q44. Has a doctor, nurse, or other health professional EVER told you that you had toxic shock syndrome (TSS)?
+                | Q40. Has a doctor, nurse, or other health professional EVER told you that you had toxic shock syndrome (TSS)?
               //if lt IE 8
                 label#title139.desc
-                  | Q44. Has a doctor, nurse, or other health professional EVER told you that you had toxic shock syndrome (TSS)?
+                  | Q40. Has a doctor, nurse, or other health professional EVER told you that you had toxic shock syndrome (TSS)?
               div
                 input#radioDefault_139(name='Field139', type='hidden', value='')
                 span
@@ -493,13 +515,15 @@ header#header.info()
                   input#Field139_3.field.radio(name='Field139', type='radio', value='I don\'t want to answer this question', tabindex='80')
                   label.choice(for='Field139_3')
                     | I don't want to answer this question
+                    
+
           li#foli140.notranslate
             fieldset
               legend#title140.desc
-                | Q45. Has a doctor, nurse, or other health professional ever told you that you had high cholesterol?
+                | Q41. Has a doctor, nurse, or other health professional ever told you that you had high cholesterol?
               //if lt IE 8
                 label#title140.desc
-                  | Q45. Has a doctor, nurse, or other health professional ever told you that you had high cholesterol?
+                  | Q41. Has a doctor, nurse, or other health professional ever told you that you had high cholesterol?
               div
                 input#radioDefault_140(name='Field140', type='hidden', value='')
                 span
@@ -518,13 +542,15 @@ header#header.info()
                   input#Field140_3.field.radio(name='Field140', type='radio', value='I don\'t want to answer this question', tabindex='84')
                   label.choice(for='Field140_3')
                     | I don't want to answer this question
+
+
           li#foli141.notranslate
             fieldset
               legend#title141.desc
-                | Q46. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
+                | Q42. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
               //if lt IE 8
                 label#title141.desc
-                  | Q46. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
+                  | Q42. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
               div
                 input#radioDefault_141(name='Field141', type='hidden', value='')
                 span
@@ -543,13 +569,15 @@ header#header.info()
                   input#Field141_3.field.radio(name='Field141', type='radio', value='I don\'t want to answer this question', tabindex='88')
                   label.choice(for='Field141_3')
                     | I don't want to answer this question
+
+
           li#foli142.notranslate
             fieldset
               legend#title142.desc
-                | Q47. Has a doctor, nurse, or other health professional EVER told you that you had endometriosis?
+                | Q43. Has a doctor, nurse, or other health professional EVER told you that you had endometriosis?
               //if lt IE 8
                 label#title142.desc
-                  | Q47. Has a doctor, nurse, or other health professional EVER told you that you had endometriosis?
+                  | Q43. Has a doctor, nurse, or other health professional EVER told you that you had endometriosis?
               div
                 input#radioDefault_142(name='Field142', type='hidden', value='')
                 span
@@ -568,13 +596,15 @@ header#header.info()
                   input#Field142_3.field.radio(name='Field142', type='radio', value='I don\'t want to answer this question', tabindex='92')
                   label.choice(for='Field142_3')
                     | I don't want to answer this question
+
+
           li#foli143.notranslate
             fieldset
               legend#title143.desc
-                | Q48. Has a doctor, nurse, or other health professional EVER told you that you had cancer or a malignancy of any kind?
+                | Q44. Has a doctor, nurse, or other health professional EVER told you that you had cancer or a malignancy of any kind?
               //if lt IE 8
                 label#title143.desc
-                  | Q48. Has a doctor, nurse, or other health professional EVER told you that you had cancer or a malignancy of any kind?
+                  | Q44. Has a doctor, nurse, or other health professional EVER told you that you had cancer or a malignancy of any kind?
               div
                 input#radioDefault_143(name='Field143', type='hidden', value='')
                 span
@@ -593,10 +623,12 @@ header#header.info()
                   input#Field143_3.field.radio(name='Field143', type='radio', value='I don\'t want to answer this question', tabindex='96')
                   label.choice(for='Field143_3')
                     | I don't want to answer this question
+
+
           li#foli144.notranslate
             fieldset
               legend#title144.desc
-                | Q48.a. Have you ever had breast cancer, liver tumors or liver cancer?
+                | Q44.a. Have you ever had breast cancer, liver tumors or liver cancer?
               //if lt IE 8
                 label#title144.desc
                   | Q48.a. Have you ever had breast cancer, liver tumors or liver cancer?
@@ -618,13 +650,15 @@ header#header.info()
                   input#Field144_3.field.radio(name='Field144', type='radio', value='I don\'t want to answer this question', tabindex='100')
                   label.choice(for='Field144_3')
                     | I don't want to answer this question
+
+
           li#foli145.notranslate
             fieldset
               legend#title145.desc
-                | Q.48.b. Have you ever had endometrial cancer, ovarian cancer, or cervical cancer?
+                | Q.44.b. Have you ever had endometrial cancer, ovarian cancer, or cervical cancer?
               //if lt IE 8
                 label#title145.desc
-                  | Q.48.b. Have you ever had endometrial cancer, ovarian cancer, or cervical cancer?
+                  | Q.44.b. Have you ever had endometrial cancer, ovarian cancer, or cervical cancer?
               div
                 input#radioDefault_145(name='Field145', type='hidden', value='')
                 span
@@ -643,13 +677,15 @@ header#header.info()
                   input#Field145_3.field.radio(name='Field145', type='radio', value='I don\'t want to answer this question', tabindex='104')
                   label.choice(for='Field145_3')
                     | I don't want to answer this question
+
+
           li#foli146.notranslate
             fieldset
               legend#title146.desc
-                | Q49. Has a doctor, nurse, or other health professional EVER told you that you had a heart attack, also called a myocardial infarction, heart disease or vascular disease?
+                | Q45. Has a doctor, nurse, or other health professional EVER told you that you had a heart attack, also called a myocardial infarction, heart disease or vascular disease?
               //if lt IE 8
                 label#title146.desc
-                  | Q49. Has a doctor, nurse, or other health professional EVER told you that you had a heart attack, also called a myocardial infarction, heart disease or vascular disease?
+                  | Q45. Has a doctor, nurse, or other health professional EVER told you that you had a heart attack, also called a myocardial infarction, heart disease or vascular disease?
               div
                 input#radioDefault_146(name='Field146', type='hidden', value='')
                 span
@@ -668,13 +704,15 @@ header#header.info()
                   input#Field146_3.field.radio(name='Field146', type='radio', value='I don\'t want to answer this question', tabindex='108')
                   label.choice(for='Field146_3')
                     | I don't want to answer this question
+
+
           li#foli198.notranslate
             fieldset
               legend#title198.desc
-                | Q50. Has a doctor, nurse, or other health professional EVER told you that you had complicated valvular heart disease?
+                | Q46. Has a doctor, nurse, or other health professional EVER told you that you had complicated valvular heart disease?
               //if lt IE 8
                 label#title198.desc
-                  | Q50. Has a doctor, nurse, or other health professional EVER told you that you had complicated valvular heart disease?
+                  | Q46. Has a doctor, nurse, or other health professional EVER told you that you had complicated valvular heart disease?
               div
                 input#radioDefault_198(name='Field198', type='hidden', value='')
                 span
@@ -693,13 +731,15 @@ header#header.info()
                   input#Field198_3.field.radio(name='Field198', type='radio', value='I don\'t want to answer this question', tabindex='112')
                   label.choice(for='Field198_3')
                     | I don't want to answer this question
+
+
           li#foli178.notranslate
             fieldset
               legend#title178.desc
-                | Q51. Has a doctor, nurse, or other health professional EVER told you that you had liver or gallbladder problems?
+                | Q47. Has a doctor, nurse, or other health professional EVER told you that you had liver or gallbladder problems?
               //if lt IE 8
                 label#title178.desc
-                  | Q51. Has a doctor, nurse, or other health professional EVER told you that you had liver or gallbladder problems?
+                  | Q47. Has a doctor, nurse, or other health professional EVER told you that you had liver or gallbladder problems?
               div
                 input#radioDefault_178(name='Field178', type='hidden', value='')
                 span
@@ -718,13 +758,15 @@ header#header.info()
                   input#Field178_3.field.radio(name='Field178', type='radio', value='I don\'t want to answer this question', tabindex='116')
                   label.choice(for='Field178_3')
                     | I don't want to answer this question
+
+
           li#foli179.notranslate
             fieldset
               legend#title179.desc
-                | Q51.a. Has a doctor, nurse, or other health professional EVER told you that you had gallbladder disease or gallstones?
+                | Q47.a. Has a doctor, nurse, or other health professional EVER told you that you had gallbladder disease or gallstones?
               //if lt IE 8
                 label#title179.desc
-                  | Q51.a. Has a doctor, nurse, or other health professional EVER told you that you had gallbladder disease or gallstones?
+                  | Q47.a. Has a doctor, nurse, or other health professional EVER told you that you had gallbladder disease or gallstones?
               div
                 input#radioDefault_179(name='Field179', type='hidden', value='')
                 span
@@ -743,13 +785,15 @@ header#header.info()
                   input#Field179_3.field.radio(name='Field179', type='radio', value='I don\'t want to answer this question', tabindex='120')
                   label.choice(for='Field179_3')
                     | I don't want to answer this question
+
+
           li#foli183.notranslate
             fieldset
               legend#title183.desc
-                | Q51.b. Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis or active hepatitis?
+                | Q47.b. Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis or active hepatitis?
               //if lt IE 8
                 label#title183.desc
-                  | Q51.b. Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis or active hepatitis?
+                  | Q47.b. Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis or active hepatitis?
               div
                 input#radioDefault_183(name='Field183', type='hidden', value='')
                 span
@@ -768,13 +812,15 @@ header#header.info()
                   input#Field183_3.field.radio(name='Field183', type='radio', value='I don\'t want to answer this question', tabindex='124')
                   label.choice(for='Field183_3')
                     | I don't want to answer this question
+
+
           li#foli185.notranslate
             fieldset
               legend#title185.desc
-                | Q52. Has a doctor, nurse, or other health professional EVER told you that you had a seizure disorder or epilepsy?
+                | Q48. Has a doctor, nurse, or other health professional EVER told you that you had a seizure disorder or epilepsy?
               //if lt IE 8
                 label#title185.desc
-                  | Q52. Has a doctor, nurse, or other health professional EVER told you that you had a seizure disorder or epilepsy?
+                  | Q48. Has a doctor, nurse, or other health professional EVER told you that you had a seizure disorder or epilepsy?
               div
                 input#radioDefault_185(name='Field185', type='hidden', value='')
                 span
@@ -793,13 +839,15 @@ header#header.info()
                   input#Field185_3.field.radio(name='Field185', type='radio', value='I don\'t want to answer this question', tabindex='128')
                   label.choice(for='Field185_3')
                     | I don't want to answer this question
+
+
           li#foli187.notranslate
             fieldset
               legend#title187.desc
-                | Q53. Has a doctor, nurse, or other health professional EVER told you that you had sickle cell anemia?
+                | Q49. Has a doctor, nurse, or other health professional EVER told you that you had sickle cell anemia?
               //if lt IE 8
                 label#title187.desc
-                  | Q53. Has a doctor, nurse, or other health professional EVER told you that you had sickle cell anemia?
+                  | Q49. Has a doctor, nurse, or other health professional EVER told you that you had sickle cell anemia?
               div
                 input#radioDefault_187(name='Field187', type='hidden', value='')
                 span
@@ -818,13 +866,15 @@ header#header.info()
                   input#Field187_3.field.radio(name='Field187', type='radio', value='I don\'t want to answer this question', tabindex='132')
                   label.choice(for='Field187_3')
                     | I don't want to answer this question
+
+
           li#foli188.notranslate
             fieldset
               legend#title188.desc
-                | Q54. Has a doctor, nurse, or other health professional EVER told you that you had anemia, sometimes called low blood or tired blood?
+                | Q50. Has a doctor, nurse, or other health professional EVER told you that you had anemia, sometimes called low blood or tired blood?
               //if lt IE 8
                 label#title188.desc
-                  | Q54. Has a doctor, nurse, or other health professional EVER told you that you had anemia, sometimes called low blood or tired blood?
+                  | Q50. Has a doctor, nurse, or other health professional EVER told you that you had anemia, sometimes called low blood or tired blood?
               div
                 input#radioDefault_188(name='Field188', type='hidden', value='')
                 span
@@ -843,13 +893,15 @@ header#header.info()
                   input#Field188_3.field.radio(name='Field188', type='radio', value='I don\'t want to answer this question', tabindex='136')
                   label.choice(for='Field188_3')
                     | I don't want to answer this question
+
+
           li#foli190.notranslate
             fieldset
               legend#title190.desc
-                | Q55. Do you have severe acne?
+                | Q51. Do you have severe acne?
               //if lt IE 8
                 label#title190.desc
-                  | Q55. Do you have severe acne?
+                  | Q51. Do you have severe acne?
               div
                 input#radioDefault_190(name='Field190', type='hidden', value='')
                 span
@@ -868,13 +920,15 @@ header#header.info()
                   input#Field190_3.field.radio(name='Field190', type='radio', value='I don\'t want to answer this question', tabindex='140')
                   label.choice(for='Field190_3')
                     | I don't want to answer this question
+
+
           li#foli193.notranslate
             fieldset
               legend#title193.desc
-                | Q56. Do you have coarse, dark hairs on your face?
+                | Q52. Do you have coarse, dark hairs on your face?
               //if lt IE 8
                 label#title193.desc
-                  | Q56. Do you have coarse, dark hairs on your face?
+                  | Q52. Do you have coarse, dark hairs on your face?
               div
                 input#radioDefault_193(name='Field193', type='hidden', value='')
                 span

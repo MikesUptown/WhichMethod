@@ -725,7 +725,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-
+ 
   // *******************************************************
   //
   // This begins the first question of the new section
@@ -1295,12 +1295,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //     }
   //   }, 
 
-  // *******************************************************
-  //
-  // This begins the first question of the new section
-  //
-  // *******************************************************
-
   // // ADDING THIS QUESTION BACK IN
   // // Do you have severe acne?
   // q51:{
@@ -1333,6 +1327,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //     }
   //   },     
 
+
+  // *******************************************************
+  //
+  // This begins the first question of the new section
+  //
+  // *******************************************************
 
   // // Do you take dietary supplements or prescription medications regularly?
   // q53:{
