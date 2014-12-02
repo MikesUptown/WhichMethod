@@ -5,14 +5,15 @@ div(ng-include='"components/navbar/navbar.html"')
  
 
 div(main)
-       // .navbar.navbar-inverse.navbar-fixed-top
+
+      // .navbar.navbar-inverse.navbar-fixed-top
         form.navbar-form.navbar-left
         .form-group
         input.form-control(type='text', placeholder='Email')
         .form-group
         input.form-control(type='password', placeholder='Password')
         button.btn.btn-success(type='submit') Sign up
-
+ 
 
       //.container
         .navbar-header
@@ -64,15 +65,11 @@ div(main)
 
         .description 
           | The decision-making process of choosing a contraceptive method is complex and becoming even more so today. Our WhichMethod app is designed to give women the tools to make an informed decision about which method works best for you. WhichMethod helps women engage in the process of choosing a contraceptive method tailored to your everyday lifestyle. 
-<<<<<<< Updated upstream
-        p
-          a.btn.btn-warning.btn-lg(ng-click="startServey()") Get WhichMethod »
-=======
+
         
         .get_start 
           //a.btn.btn-success.btn-lg(ng-click="startServey()") Get WhichMethod »
           a.start_btn(ng-click="startServey()") Get WhichMethod »
->>>>>>> Stashed changes
           
     .sub_content
       .row
