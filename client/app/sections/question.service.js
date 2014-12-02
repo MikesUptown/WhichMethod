@@ -1301,6 +1301,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //
   // *******************************************************
 
+  // // ADDING THIS QUESTION BACK IN
+  // // Do you have severe acne?
+  // q51:{
+  //   options: [1,0,999,777],
+
+  //   nextQuestion: function(){
+  //     var answer = this.answer
+  //         return '--'
+
+  //       },
+  //       ranking: function(){
+  //       var answer = this.answer
+  //         }
+  //     }
+  //   },   
+
+
   // // Do you have coarse, dark hairs on your face?
   // q52:{
   //   options: [1,0,999,777],
