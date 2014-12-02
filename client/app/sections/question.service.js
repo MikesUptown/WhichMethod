@@ -725,7 +725,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-
+ 
   // *******************************************************
   //
   // This begins the first question of the new section
@@ -1295,11 +1295,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //     }
   //   }, 
 
-  // *******************************************************
-  //
-  // This begins the first question of the new section
-  //
-  // *******************************************************
+  // // ADDING THIS QUESTION BACK IN
+  // // Do you have severe acne?
+  // q51:{
+  //   options: [1,0,999,777],
+
+  //   nextQuestion: function(){
+  //     var answer = this.answer
+  //         return '--'
+
+  //       },
+  //       ranking: function(){
+  //       var answer = this.answer
+  //         }
+  //     }
+  //   },   
+
 
   // // Do you have coarse, dark hairs on your face?
   // q52:{
@@ -1316,6 +1327,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //     }
   //   },     
 
+
+  // *******************************************************
+  //
+  // This begins the first question of the new section
+  //
+  // *******************************************************
 
   // // Do you take dietary supplements or prescription medications regularly?
   // q53:{
