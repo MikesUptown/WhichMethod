@@ -22,12 +22,13 @@ div(ng-include='"components/navbar/navbar.html"')
             span.alabel {{key}}
             span.data {{value.number}} out of {{s.abandonded}} ({{value.percent}})
 
-  //- p
-  //-   | The delete user and user index api routes are restricted to users with the 'admin' role.
-  //- ul.list-group
-  //-   li.list-group-item(ng-repeat='user in users')
-  //-     strong {{user.name}} {{user.currentSection}} {{user.currentQuestion}}
-  //-     br
-  //-     span.text-muted {{user.email}}
-  //-     a.trash(ng-click='delete(user)')
-  //-       span.glyphicon.glyphicon-trash.pull-right
+  br
+  p
+    | ALL USERS
+  ul.list-group
+    li.list-group-item(ng-repeat='user in users')
+      strong {{user.name}} {{user.currentSection}} {{user.currentQuestion}}
+      br
+      span.text-muted {{user.email}}
+      a.trash(ng-click='delete(user)')
+        span.glyphicon.glyphicon-trash.pull-right

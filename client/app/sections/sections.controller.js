@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SectionsCtrl', function ($scope, questionService, $state, Auth, User) {
+  .controller('SectionsCtrl', function ($scope, questionService, $state, Auth, User,$location) {
 
     //QUESTION LOGIC GOES HERE
 
@@ -128,5 +128,11 @@ angular.module('contraceptionApp')
       User.save(currentUser)
       $state.go('.', {type:'intro',id:1})
     }
+
+
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
+    };
 
   });

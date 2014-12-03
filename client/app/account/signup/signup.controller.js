@@ -22,7 +22,8 @@ angular.module('contraceptionApp')
       Auth.createUser({
         name: name,
         email: email,
-        password: pass
+        password: pass,
+        zip:999,
       })
       .then( function() {
         // Account created, redirect to home
