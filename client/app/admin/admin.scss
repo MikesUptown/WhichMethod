@@ -1,1 +1,45 @@
 .trash { color:rgb(209, 91, 71); }
+
+
+.sAdminOuter{
+  // columns:2;
+// -webkit-column-count: 2; Chrome, Safari, Opera
+    // -moz-column-count: 2; /* Firefox */
+    // column-count: 2;
+    // display:flex;
+    // display:-moz-flex;
+    // width:100%;
+    // position:relative;
+
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.sectionA{
+  width:24.3%;
+  border:1px solid #dddddd;
+  border-radius:3px;
+  margin:.3%;
+  .inner{
+    padding:10px;
+  }
+  .heading{
+    padding:5px 10px;
+    border-bottom:1px solid #dddddd; 
+  }
+  .info{
+    clear:both;
+    .alabel{
+      float:left;
+    }
+    .data{
+      float:right;
+    }
+  }
+  // float:left;
+
+}

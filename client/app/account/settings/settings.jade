@@ -34,6 +34,13 @@ div(ng-include='"components/navbar/navbar.html"')
           p.help-block(ng-show='form.name.$error.required && submitted')
             | A name is required        
 
+        .form-group(ng-class='{ "has-success": form.zip.$valid && submitted,\
+        "has-error": form.zip.$invalid && submitted }')
+          label First 3 Digits of Zipcode
+          input.form-control(type='text', name='zip', ng-model='user.zip', required='')
+          p.help-block(ng-show='form.zip.$error.required && submitted')
+            | First 3 digits of zipcode required
+
         .form-group(ng-class='{ "has-success": form.email.$valid && submitted,\
         "has-error": form.email.$invalid && submitted }')
           label Email

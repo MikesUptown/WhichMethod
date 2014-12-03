@@ -1,5 +1,7 @@
-div(ng-include='"components/navbar/navbar.html"')
-.container
+//- div(ng-include='"components/navbar/navbar.html"')
+.loginContainer
+  a(href="/")
+    button.close &times;
   .row
     .col-sm-12
       h1 Sign up
@@ -11,6 +13,15 @@ div(ng-include='"components/navbar/navbar.html"')
           input.form-control(type='text', name='name', ng-model='user.name', required='')
           p.help-block(ng-show='form.name.$error.required && submitted')
             | A name is required
+
+        .form-group(ng-class='{ "has-success": form.zip.$valid && submitted,\
+        "has-error": form.zip.$invalid && submitted }')
+          label First 3 Digits of Zipcode
+          input.form-control(type='text', name='zip', ng-model='user.zip', required='',mongoose-error='')
+          p.help-block(ng-show='form.zip.$error.required && submitted')
+            | First 3 digits of zipcode required
+          p.help-block(ng-show='form.zip.$error.mongoose')
+            | {{ errors.zip }}
 
         .form-group(ng-class='{ "has-success": form.email.$valid && submitted,\
         "has-error": form.email.$invalid && submitted }')

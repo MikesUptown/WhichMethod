@@ -22,7 +22,8 @@ angular.module('contraceptionApp')
       Auth.createUser({
         name: name,
         email: email,
-        password: pass
+        password: pass,
+        zip:999,
       })
       .then( function() {
         // Account created, redirect to home
@@ -43,7 +44,8 @@ angular.module('contraceptionApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          zip: $scope.user.zip
         })
         .then( function() {
           // Account created, redirect to home

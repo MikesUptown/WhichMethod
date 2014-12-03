@@ -16,6 +16,7 @@ var UserSchema = new Schema({
   salt: String,
   currentQuestion: String,
   currentSection: Number,
+  zip: Number,
   answers: [{
     question: String,
     answer: Number
@@ -78,19 +79,35 @@ UserSchema
   }, 'Password cannot be blank');
 
 // Validate email is not taken
+// UserSchema
+//   .path('email')
+//   .validate(function(value, respond) {
+//     var self = this;
+//     this.constructor.findOne({email: value}, function(err, user) {
+//       if(err) throw err;
+//       if(user) {
+//         if(self.id === user.id) return respond(true);
+//         return respond(false);
+//       }
+//       respond(true);
+//     });
+// }, 'The specified email address is already in use.');
+
 UserSchema
-  .path('email')
-  .validate(function(value, respond) {
-    var self = this;
-    this.constructor.findOne({email: value}, function(err, user) {
-      if(err) throw err;
-      if(user) {
-        if(self.id === user.id) return respond(true);
-        return respond(false);
-      }
-      respond(true);
-    });
-}, 'The specified email address is already in use.');
+  .path('zip')
+  .validate(function(zip) {
+    return zip.length;
+  }, 'Zipcode cannot be blank');
+
+UserSchema
+  .path('zip')
+  .validate(function(zip) {
+    if((zip+'').length<3){
+      return false;
+    }
+    else return true;
+  }, 'Please enter 3 digits of your zipcode');
+
 
 var validatePresenceOf = function(value) {
   return value && value.length;
