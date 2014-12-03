@@ -11,7 +11,6 @@ header#header.info()
       label
         | Q4. When you are not using birth control, do you have regular monthly periods?
       div
-        //- input(ng-model='questions.q4.answer', type='radio')
         span
           input.field.radio(ng-model='questions.q4.answer' value='1' type='radio')
           label.choice
@@ -35,7 +34,6 @@ header#header.info()
       label
         | Q4a. Do you have three or fewer periods per year?
       div
-        //- input( ng-model='questions.q4a.answer' type='radio', tabindex='1')
         span
           input.field.radio(ng-model='questions.q4a.answer' value='Yes' type='radio')
           label.choice
@@ -59,7 +57,6 @@ header#header.info()
       label
         | Q5. When you are not using birth control, do you have very heavy periods?
       div
-        //- input( ng-model='questions.q5.answer' tabindex='1' type='radio')
         span
           input.field.radio(ng-model='questions.q5.answer' value='1' type='radio')
           label.choice
@@ -83,8 +80,7 @@ header#header.info()
       label
         | Q6. When you are not using birth control, do you have periods that last longer than 7 days?
       div
-        //- input( ng-model='questions.q6.answer' tabindex='1' type='radio')
-        span
+      span
           input.field.radio(ng-model='questions.q6.answer' value='1' type='radio')
           label.choice
             | Yes
