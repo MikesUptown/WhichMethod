@@ -1,8 +1,9 @@
 header#header.info()
 
-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
+  #container
   h2 WhichMethod_04
   ul
      li#q23(ng-show="currentQuestion == 'q23'")
