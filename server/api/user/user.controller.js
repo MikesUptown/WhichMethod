@@ -28,6 +28,7 @@ exports.convertGuest = function(req,res){
   var newName = String(req.body.name);
   var email = String(req.body.email);
   var pass = String(req.body.password);
+  var zip = String(req.body.zip);
 
   console.log(newName)
   console.log(email)
@@ -37,6 +38,7 @@ exports.convertGuest = function(req,res){
     user.name = newName;
     user.email = email;
     user.password = pass;
+    user.zip = zip;
     user.save(function(err) {
       if (err) return validationError(res, err);
       res.send(200);
@@ -88,6 +90,7 @@ exports.create = function (req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
+  console.log(newUser)
   newUser.save(function(err, user) {
     if (err) return validationError(res, err);
     var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });

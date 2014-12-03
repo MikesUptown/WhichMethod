@@ -15,6 +15,7 @@ angular.module('contraceptionApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password,
+          zip:$scope.user.zip,
           // oldpassword: 'guest'
         })
         .then( function() {

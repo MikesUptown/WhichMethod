@@ -13,9 +13,12 @@ angular.module('contraceptionApp')
           email: $scope.user.email,
           password: $scope.user.password
         })
-        .then( function() {
+        .then( function(user) {
           // Logged in, redirect to home
-          $location.path('/questions/section/1');
+          if($scope.user.email=="admin")
+            $location.path('/admin');
+          else
+            $location.path('/questions/section/1');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

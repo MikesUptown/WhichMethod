@@ -1,11 +1,33 @@
 div(ng-include='"components/navbar/navbar.html"')
 .container
-  p
-    | The delete user and user index api routes are restricted to users with the 'admin' role.
-  ul.list-group
-    li.list-group-item(ng-repeat='user in users')
-      strong {{user.name}}
-      br
-      span.text-muted {{user.email}}
-      a.trash(ng-click='delete(user)')
-        span.glyphicon.glyphicon-trash.pull-right
+
+  .sAdminOuter
+    .sectionA(ng-repeat="s in sections")
+      .heading.inner Section {{$index+1}}
+      .info.inner
+        div.h5 Section Totals:
+        .clearfix
+          span.alabel completion:
+          span.data {{s.completed}} out of {{users.length}} ({{s.cpercent}} )
+        //- .clearfix
+          //- span.alabel percentage:
+          //- span.data {{s.cpercent}} 
+        .clearfix
+          span.alabel abandonment:
+          span.data {{s.abandonded}} out of {{users.length}} ({{s.apercent}})
+        br
+        .clearfix 
+          div.h5 Abandonded on Question:
+          .clearfix.questions(ng-repeat="(key,value) in s.q")
+            span.alabel {{key}}
+            span.data {{value.number}} out of {{s.abandonded}} ({{value.percent}})
+
+  //- p
+  //-   | The delete user and user index api routes are restricted to users with the 'admin' role.
+  //- ul.list-group
+  //-   li.list-group-item(ng-repeat='user in users')
+  //-     strong {{user.name}} {{user.currentSection}} {{user.currentQuestion}}
+  //-     br
+  //-     span.text-muted {{user.email}}
+  //-     a.trash(ng-click='delete(user)')
+  //-       span.glyphicon.glyphicon-trash.pull-right
