@@ -1,5 +1,4 @@
-  
-.thing-form {
+.thing-form { 
     margin: 20px 0;
 }
 
@@ -21,8 +20,7 @@
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
-
-
+ 
 .footer {
     text-align: center;
     padding: 30px 0;
@@ -32,28 +30,168 @@
 
 h3 { 
     font-weight: bold;
-    color: #FF7F50;
+    /*color: #FF7F50;*/
 }
 
 .text-justify.center-block {
-  background-color: #999999;
+  background-color: #ffffff;
   /*border: solid;*/
 }
 
+.loginView{
+  background-color: #F7E8A9;
+  /*border: 1px solid;*/
+}
+
+.logout_btn_01 {
+  width: 70px;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 10px;
+  text-decoration:none;
+}
+.logout_btn_01:hover {
+  background-color:#FCC000;
+}
+.logout_btn_01:active {
+  position:relative;
+  top:1px;
+}
+.save_btn_02 {
+  top: 380px; 
+  right:200px; 
+  position:absolute; 
+  width: 90px;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 30px;
+  text-decoration:none;
+}
+.save_btn_02:hover {background-color:#FCC000;}
+.save_btn_02:active {position:relative; top:1px;}
+
+.continue_btn_03 {
+  top: 380px; 
+  right:50px; 
+  position:absolute; 
+  width: 140px;
+  background-color:#FFCD05;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #BCBCBC;
+  display:inline-block;
+  cursor:pointer;
+  color:#3A3A3A;
+  font-family:helvetica;
+  font-size:14px;
+  padding:10px 30px;
+  text-decoration:none;
+}
+.continue_btn_03:hover {background-color:#FCC000;}
+.continue_btn_03:active {position:relative; top:1px;}
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-
 body {
   background-color: #ffffff;
-  padding-bottom: 40px;
+  /*padding-bottom: 20px;*/
   color: #5a5a5a;
 }
 
-.container{
-  /*border:solid;*/
+/*Custom Navbar Stylying*/
+.ng-scope{
   /*background-color: #ffffff;*/
+}
+#navbar-main{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.main_logo{
+  width: 85%;
+}
+a.main_signin_btn{
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: #FFCD05;
+  color: #242424;
+}
+
+/*Main Content*/
+.container{
+  background-color: #ffffff;
+}
+.jumbotron {
+  margin-top: -20px;
+  background-color: #986698;
+}
+.main_content{
+  color: #000000;
+  padding: 10px;
+}
+.main_content h1{
+  font-family: helvetica;
+  color: #ffffff;
+}
+.description{
+  color: #242424;
+  font-size: 18px;
+  margin-top: 40px;
+}
+.get_start{
+  margin-top: 30px;
+}
+a.start_btn{
+  font-size: 18px;
+  background-color: #FFCD05;
+  padding: 10px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  cursor:pointer;
+  color: #242424;
+  text-decoration: none;
+}
+a.start_btn:hover{
+  color: #986698;
+}
+
+/*Sub Content*/
+.sub_content{
+  width: 90%;
+  margin: auto;
+}
+
+.col-lg-4 h2{
+  color: #484848;
+  border: solid;
+}
+
+/*Footer*/
+footer{
+  margin-top: 20px;
+}
+
+.lists{
+  width: 60%;
+  margin-left: 60px;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -91,10 +229,7 @@ body {
   /*background-color: #A1A1A1;*/
 }
 
-.jumbotron {
-  color: #986698;
-  background-color: #FF7F50;
-}
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -133,7 +268,7 @@ body {
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
-
+  background-color: #000000;
 }
 .marketing h2 {
   font-weight: normal;

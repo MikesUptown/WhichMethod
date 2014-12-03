@@ -1,4 +1,4 @@
- 
+   
 //- div(ng-include='"components/navbar/navbar.html"')
 
 doctype html
@@ -11,22 +11,24 @@ html
     header
       #logo
         a(href="landing_04.html")
-          img.logo_img(src="images/which_method_logo.png", alt="")
+          img.logo_img(src="assets/images/which_method_logo.png", alt="")
+          // <img ng-src="assets/images/which_method_logo.png" alt=""/>
+          //img(ng-src='assets/images/which_method_logo.png', alt='')
       // logo
       #menu
-        a.btn_01(href="#") Log out
+        a.logout_btn_01(href="#") Log out
       // menu
-      | g
+    
     section
       #main_wrapper
         #main_content
-          img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
+          img.main_img(src="assets/images/woman_mobile-phone.png", alt="Landing Page Main Image")
           p.main_title
             span Section 04
           p.content_01 Many birth control methods change your periods as part of the normal way that they work.
           p.content_02 This is not harmful to your body, but you may or may not like the changes.
-          a.btn_02(href="#") SAVE
-          a.btn_03(href="/questions/section/4", title='') CONTINUE
+          a.save_btn_02(href="#") SAVE
+          a.continue_btn_03(href="/questions/section/4", title='') CONTINUE
         // main_content
       // main_wrapper
     footer

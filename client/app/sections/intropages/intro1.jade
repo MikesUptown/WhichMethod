@@ -1,38 +1,36 @@
-  
-//- div(ng-include='"components/navbar/navbar.html"')
+
+//div(ng-include='"components/navbar/navbar.html"')
 
 doctype html
 html
   head
     meta(charset="UTF-8")
     link(rel="stylesheet", type="text/css", href="css/landing.css")
-    title Which Method: Landing Page 01
+    title Which Method: Section 01
   body
     header
       #logo
         a(href="landing_01.html")
           img.logo_img(src="assets/images/which_method_logo.png", alt="")
           // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-          img(ng-src='assets/images/which_method_logo.png', alt='')
-      // logo
+          //img(ng-src='assets/images/which_method_logo.png', alt='')
       #menu
-        a.btn_01(href="#") Log out
-      // menu
-      | g
+        a.logout_btn_01(href='#' ng-click='logout()') Log out
+
     section
       #main_wrapper
         #main_content
-          img.main_img(src="images/main_img.png", alt="Landing Page Main Image")
+          img.main_img(src="assets/images/woman_mobile-phone.png", alt="Landing Page Main Image")
           p.main_title
             span Section 01
           p.content_01 We're going to start by asking you a few questions about yourself
           p.content_02 Please enter your responses below
-          a.btn_02(href="#") Save
-          a.btn_03(href="#") Continue &#62;&#62;
+          a.save_btn_02(href="#") Save
+          a.continue_btn_03(href="/questions/section/1") Continue &#62;&#62;
         // main_content
       // main_wrapper
     footer
-      p.footer &#169; Public Health Solution 2014
+      p.footer &#169; Public Health Solutions 2014
 
 
 
