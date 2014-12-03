@@ -1,17 +1,17 @@
 header#header.info()
 
-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 
-
+  #container
   h3 WhichMethod_section_02
   ul
      li#q4(ng-show="currentQuestion == 'q4'")
       label
         | Q4. When you are not using birth control, do you have regular monthly periods?
       div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
+        //- input(ng-model='questions.q4.answer', type='radio')
         span
           input.field.radio(ng-model='questions.q4.answer' value='1' type='radio')
           label.choice

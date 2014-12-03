@@ -1,63 +1,52 @@
+/*
 html {
-background: #808080
-} 
-body{
+background: #808080;
+background-image: none;
+background-color: #4e0805;
+}
+
+body {
 margin:17px 0 15px 0;
 padding:25px;
 text-align:left;
 font-size:large;
 font-family: Tahoma, Arial, Verdana, sans-serif; 
 }
-/*
-article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object,output{
-display:block
+*/
+#container {
+border: 0 solid #ffffff;
 }
-#container{
+#container, html.embed {
+background-color: #fff4d4;
+}
+#container {
+margin: 0 auto 10px auto;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 10px;
+margin-left: auto;
+width: 640px;
+}
+#container {
 text-align:left;
-background:#fff;
+background: #fff4d4;
 border: 1px solid
 #ccc;
--webkit-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
--moz-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
--o-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px
 }
-#container{
-margin:0 auto 10px auto;width:640px
+/*
+#container, html.embed {
+background-color: #996666;
+}
+
+article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object,output{
+display:block
 }
 form.wufoo {
 margin:20px 14px 0 0px;
 padding:0 0 20px 0;
 position:relative 
 }
-#logo{
-margin:0;
-padding:0;
-min-height:0;
-background-color:#dedede;
-text-indent:-9000px;
-text-decoration:none 
-}
-#logo a{
-min-height:40px;
-height:40px;
-display:block;
-background:url(../images/wflogo.png) no-repeat left top;
-overflow:hidden 
-}
-* html #logo a{
-_background-image:none;
-_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/wflogo.png", sizingMethod="crop")
-}
-img,a img{
-border: none;
--ms-interpolation-mode:bicubic
-}
-.hide,.cloak div,.cloak span,.likert.cloak tbody,.likert.cloak thead{
-display:none !important 
-}
-.likert.cloak table{
-border:none
+
 }*/
 /* ----- Logo ----- */
 /*
@@ -79,9 +68,7 @@ border:none
 #logo{
 	background-image:none; background-color:#660000;
 }
-#container, html.embed{
-	background-color:#996666;
-}
+
 .safari .wufoo select.select{
 	font-size:100% !important;
 }
