@@ -1,8 +1,9 @@
 header#header.info()
 
-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
+//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
+  #container
   h2 WhichMethod_05
   ul
      li#q28(ng-show="currentQuestion == 'q28'")
@@ -47,6 +48,7 @@ header#header.info()
           input.field.radio(ng-model='questions.q28a.answer', value='I don\'t want to answer this question', type='radio')
           label.choice
             | I don't want to answer this question
+
 
     li#28b(ng-show="currentQuestion == 'q28b'")
       label
@@ -114,7 +116,7 @@ header#header.info()
             | I don't want to answer this question
 
 
-            p#instruct124.instruct
+            //- p#instruct124.instruct
               small
                 | High blood pressure (HBP) or hypertension means high pressure (tension) in the arteries. Arteries are vessels that carry blood from the pumping heart to all the tissues and organs of the body. High blood pressure does not mean excessive emotional tension, although emotional tension and stress can temporarily increase blood pressure.
 
@@ -141,7 +143,7 @@ header#header.info()
             | I don't want to answer this question
 
 
-            p#instruct125.instruct
+            //- p#instruct125.instruct
               small
                 | Deep venous thrombosis (DVT) is a condition in which a blood clot forms in a vein that is deep inside the body.   DVT mainly affects the veins in the lower leg and thigh.
 
@@ -167,7 +169,7 @@ header#header.info()
             | I don't want to answer this question
 
 
-            p#instruct126.instruct
+            //- p#instruct126.instruct
               small
                 | A pulmonary embolus is a blockage of an artery in the lungs by fat, air, blood clot, or tumor cells.
 
@@ -808,5 +810,5 @@ header#header.info()
           label.choice
             | I don't want to answer this question
 
+    input(type="button",ng-click="saveAnswers()",value="Continue") 
 
-    // this ends the 5th set of questions 05

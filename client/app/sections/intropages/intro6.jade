@@ -1,36 +1,25 @@
- 
-  
-//- div(ng-include='"components/navbar/navbar.html"')
-
-doctype html
-html
-  head
-    meta(charset="UTF-8")
-    link(rel="stylesheet", type="text/css", href="css/landing.css")
-    title Which Method: Landing Page 06
-  body
-    header
-      #logo
-        a(href="landing_06.html")
+header
+  #logo
+      a(href="landing_06.html")
           img.logo_img(src="assets/images/which_method_logo.png", alt="")
           // <img ng-src="assets/images/which_method_logo.png" alt=""/>
           //img(ng-src='assets/images/which_method_logo.png', alt='')
       // logo
-      #menu
+  #menu
         a.logout_btn_01(href="#") Log out
       // menu
   
-    section
-      #main_wrapper
-        #main_content
-          img.main_img(src="assets/images/woman_mobile-phone.png", alt="Landing Page Main Image")
-          p.main_title
-            span Section 06
-          p.content_01 The next set of questions are about your use of dietary supplements and prescription medications.
-          p.content_02 Please enter your responses below.
-          a.save_btn_02(href="#") SAVE
-          a.continue_btn_03(href="/questions/section/6", title='') CONTINUE
+section
+  #main_wrapper
+    #main_content
+      img.main_img(src="assets/images/woman_mobile-phone.png", alt="Landing Page Main Image")
+      p.main_title
+        span Section 06
+      p.content_01 The next set of questions are about your use of dietary supplements and prescription medications.
+      p.content_02 Please enter your responses below.
+      a.save_btn_02(href="#") SAVE
+      a.continue_btn_03(href="/questions/section/6", title='') CONTINUE
         // main_content
       // main_wrapper
-    footer
-      p.footer &#169; Public Health Solution 2014
+footer
+  p.footer &#169; Public Health Solutions 2014
