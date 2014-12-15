@@ -42,10 +42,10 @@ describe 'Controller: SectionsCtrl', ->
 	# Please enter your age into the number keyboard.
 	# -----
 	it 'q1:q1_age should set implanon=-3 if age is 18 ...', ->
-		prev = scope.ranking['implanon'].n;
+		prev = scope.ranking.implanon.n;
 		scope.questions.q1.answer = 18
 		scope.questions.q1.ranking()
-		expect(scope.ranking['implanon'].n).toBe (prev-3)
+		expect(scope.ranking.implanon.n).toBe (prev-3)
 
 	it 'q1:q1_age should set nextQuestion = q2 ...', ->
 		nextQ = scope.questions.q1.nextQuestion()
@@ -56,19 +56,19 @@ describe 'Controller: SectionsCtrl', ->
 	# Please enter your weight in the number keyboard.
 	# Please select either kilograms or pounds.
 	# -----
-	it 'q2:q3_weight should set ortho-evra=-2 if weight is 210 ...', ->
-		prev = scope.ranking['ortho-evra'].n;
+	it 'q2:q3_weight should set ortho_evra=-2 if weight is 210 ...', ->
+		prev = scope.ranking.ortho_evra.n;
 		scope.questions.q2.answer = 210
 		scope.questions.q2.ranking()
-		expect(scope.ranking['ortho-evra'].n).toBe (prev-2)
+		expect(scope.ranking.ortho_evra.n).toBe (prev-2)
 
-	it 'q2:q3_weight should set depo=-2, ortho-evra=-2 if weight is 260 ...', ->
-		prevOrtho = scope.ranking['ortho-evra'].n;
-		prevDepo = scope.ranking['depo'].n;
+	it 'q2:q3_weight should set depo=-2, ortho_evra=-2 if weight is 260 ...', ->
+		prevOrtho = scope.ranking.ortho_evra.n;
+		prevDepo = scope.ranking.depo.n;
 		scope.questions.q2.answer = 260
 		scope.questions.q2.ranking()
-		expect(scope.ranking['ortho-evra'].n).toBe (prevOrtho-2)
-		expect(scope.ranking['depo'].n).toBe (prevDepo-2)
+		expect(scope.ranking.ortho_evra.n).toBe (prevOrtho-2)
+		expect(scope.ranking.depo.n).toBe (prevDepo-2)
 
 	it 'q2:q3_weight should set nextQuestion = q3 ...', ->
 		nextQ = scope.questions.q2.nextQuestion()
@@ -77,16 +77,16 @@ describe 'Controller: SectionsCtrl', ->
 	# q3
 	# How often do you smoke cigarettes or cigars or use smokeless tobacco?
 	# -----
-	it 'q3:q7_smoke should set ocp=-999, ortho-evra=-999, nuvaring=-999 if answer is 3 and age > 30 ...', ->
-		prevOcp = scope.ranking['ocp'].n;
-		prevOrtho = scope.ranking['ortho-evra'].n;
-		prevNuva = scope.ranking['nuvaring'].n;
+	it 'q3:q7_smoke should set ocp=-999, ortho_evra=-999, nuvaring=-999 if answer is 3 and age > 30 ...', ->
+		prevOcp = scope.ranking.ocp.n;
+		prevOrtho = scope.ranking.ortho_evra.n;
+		prevNuva = scope.ranking.nuvaring.n;
 		scope.questions.q3.answer = 3
 		scope.questions.q1.answer = 36
 		scope.questions.q3.ranking()
-		expect(scope.ranking['ocp'].n).toBe (prevOcp-999)
-		expect(scope.ranking['ortho-evra'].n).toBe (prevOrtho-999)
-		expect(scope.ranking['nuvaring'].n).toBe (prevNuva-999)
+		expect(scope.ranking.ocp.n).toBe (prevOcp-999)
+		expect(scope.ranking.ortho_evra.n).toBe (prevOrtho-999)
+		expect(scope.ranking.nuvaring.n).toBe (prevNuva-999)
 
 	it 'q3:q7_smoke should set nextQuestion = q4 ...', ->
 		nextQ = scope.questions.q3.nextQuestion()
@@ -96,14 +96,14 @@ describe 'Controller: SectionsCtrl', ->
 	# When you are not using birth control, do you have regular monthly periods?
 	# -----
 	it 'q4:q8_regularPeriod should set ocp=-999, nuvaring=-999 fam=-3 if answer is 0 ...', ->
-		prevOcp = scope.ranking['ocp'].n;
-		prevNuva = scope.ranking['nuvaring'].n;
-		prevFam = scope.ranking['fam'].n;
+		prevOcp = scope.ranking.ocp.n;
+		prevNuva = scope.ranking.nuvaring.n;
+		prevFam = scope.ranking.fam.n;
 		scope.questions.q4.answer = 0
 		scope.questions.q4.ranking()
-		expect(scope.ranking['ocp'].n).toBe (prevOcp-999)
-		expect(scope.ranking['nuvaring'].n).toBe (prevNuva-999)
-		expect(scope.ranking['fam'].n).toBe (prevFam-3)
+		expect(scope.ranking.ocp.n).toBe (prevOcp-999)
+		expect(scope.ranking.nuvaring.n).toBe (prevNuva-999)
+		expect(scope.ranking.fam.n).toBe (prevFam-3)
 
 	it 'q4:q8_regularPeriod should set nextQuestion = q5 if answer is not 0 ...', ->
 		scope.questions.q4.answer = 1
@@ -118,25 +118,25 @@ describe 'Controller: SectionsCtrl', ->
 	# q4a
 	# Do you have three or fewer periods per year?
 	# -----
-	it 'q4a:q8a_periodFrequency should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, fam-=1, implanon+=1, if answer is 0 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevFam = scope.ranking['fam'].n
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q4a:q8a_periodFrequency should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, fam-=1, implanon+=1, if answer is 0 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevFam = scope.ranking.fam.n
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q4a.answer = 0
 		scope.questions.q4a.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['fam'].n).toBe (prevFam - 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.fam.n).toBe (prevFam - 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q4a:q8a_periodFrequency should set nextQuestion = q5 ...', ->
 		nextQ = scope.questions.q4a.nextQuestion()
@@ -145,25 +145,25 @@ describe 'Controller: SectionsCtrl', ->
 	# q5
 	# When you are not using birth control, do you have very heavy periods?
 	# -----
-	it 'q5:q9_heavyPeriod should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, paragard-=2, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
-		prevPara = scope.ranking['paragard'].n
+	it 'q5:q9_heavyPeriod should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, paragard-=2, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
+		prevPara = scope.ranking.paragard.n
 		scope.questions.q5.answer = 1
 		scope.questions.q5.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
-		expect(scope.ranking['paragard'].n).toBe (prevPara - 2)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
+		expect(scope.ranking.paragard.n).toBe (prevPara - 2)
 
 	it 'q5:q9_heavyPeriod should set nextQuestion = q6 ...', ->
 		nextQ = scope.questions.q5.nextQuestion()
@@ -172,23 +172,23 @@ describe 'Controller: SectionsCtrl', ->
 	# q6
 	# When you are not using birth control, do you have periods that last longer than 7 days?
 	# -----
-	it 'q6:q10_period7days should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q6:q10_period7days should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q6.answer = 1
 		scope.questions.q6.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q6:q10_period7days should set nextQuestion = q7 ...', ->
 		nextQ = scope.questions.q6.nextQuestion()
@@ -197,25 +197,25 @@ describe 'Controller: SectionsCtrl', ->
 	# q7
 	# When you are not using birth control, do you have painful periods or bad cramps?
 	# -----
-	it 'q7:q11_cramps should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, paragard-=2, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevPara = scope.ranking['paragard'].n
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q7:q11_cramps should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, paragard-=2, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevPara = scope.ranking.paragard.n
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q7.answer = 1
 		scope.questions.q7.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['paragard'].n).toBe (prevPara - 2)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.paragard.n).toBe (prevPara - 2)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q7:q11_cramps should set nextQuestion = q7 ...', ->
 		nextQ = scope.questions.q7.nextQuestion()
@@ -225,21 +225,21 @@ describe 'Controller: SectionsCtrl', ->
 	# q8
 	# When you are not using birth control, do you have breast tenderness during your period?
 	# -----
-	it 'q8:q12_tenderBreasts should set pop+=1, ortho-evra-=3, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].n
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q8:q12_tenderBreasts should set pop+=1, ortho_evra-=3, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.n
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q8.answer = 1
 		scope.questions.q8.ranking()
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].n).toBe (prevOrtho - 3)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.n).toBe (prevOrtho - 3)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q8:q12_tenderBreasts should set nextQuestion = q9 ...', ->
 		nextQ = scope.questions.q8.nextQuestion()
@@ -249,23 +249,23 @@ describe 'Controller: SectionsCtrl', ->
 	# q9
 	# When you are not using birth control, do you have depression or anxiety during your period?
 	# -----
-	it 'q9:q13_depression should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q9:q13_depression should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q9.answer = 1
 		scope.questions.q9.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q9:q13_depression should set nextQuestion = q10 ...', ->
 		nextQ = scope.questions.q9.nextQuestion()
@@ -275,23 +275,23 @@ describe 'Controller: SectionsCtrl', ->
 	# q10
 	# When you are not using birth control, do you have bloating or fluid retention during your period?
 	# -----
-	it 'q10:q14_bloating should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q10:q14_bloating should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q10.answer = 1
 		scope.questions.q10.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q10:q14_bloating should set nextQuestion = q11 ...', ->
 		nextQ = scope.questions.q10.nextQuestion()
@@ -302,16 +302,16 @@ describe 'Controller: SectionsCtrl', ->
 	# When you are not using birth control, do you have bad headaches with your period?
 	# -----
 	it 'q11:q15_headaches should set pop+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevPop = scope.ranking['pop'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+		prevPop = scope.ranking.pop.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q11.answer = 1
 		scope.questions.q11.ranking()
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q11:q15_headaches should set nextQuestion = q12 ...', ->
 		nextQ = scope.questions.q11.nextQuestion()
@@ -321,23 +321,23 @@ describe 'Controller: SectionsCtrl', ->
 	# q12
 	# When you are not using birth control, do you have significant PMS (premenstrual syndrome)?
 	# -----
-	it 'q12:q16_PMS should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q12:q16_PMS should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q12.answer = 1
 		scope.questions.q12.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q12:q16_PMS should set nextQuestion = q13 ...', ->
 		nextQ = scope.questions.q12.nextQuestion()
@@ -347,41 +347,41 @@ describe 'Controller: SectionsCtrl', ->
 	# q13
 	# How often do these symptoms cause you to miss work or school?
 	# -----
-	it 'q13:q17_missSchWork should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q13:q17_missSchWork should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 1 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q13.answer = 1
 		scope.questions.q13.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
-	it 'q13:q17_missSchWork should set ocp+=1, pop+=1, ortho-evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 2 ...', ->
-		prevOcp = scope.ranking['ocp'].p
-		prevPop = scope.ranking['pop'].p
-		prevOrtho = scope.ranking['ortho-evra'].p
-		prevNuva = scope.ranking['nuvaring'].p
-		prevDepo = scope.ranking['depo'].p
-		prevMirena = scope.ranking['mirena'].p
-		prevImplanon = scope.ranking['implanon'].p
+	it 'q13:q17_missSchWork should set ocp+=1, pop+=1, ortho_evra+=1, nuvaring+=1, depo+=1, mirena+=1, implanon+=1, if answer is 2 ...', ->
+		prevOcp = scope.ranking.ocp.p
+		prevPop = scope.ranking.pop.p
+		prevOrtho = scope.ranking.ortho_evra.p
+		prevNuva = scope.ranking.nuvaring.p
+		prevDepo = scope.ranking.depo.p
+		prevMirena = scope.ranking.mirena.p
+		prevImplanon = scope.ranking.implanon.p
 		scope.questions.q13.answer = 2
 		scope.questions.q13.ranking()
-		expect(scope.ranking['ocp'].p).toBe (prevOcp + 1)
-		expect(scope.ranking['pop'].p).toBe (prevPop + 1)
-		expect(scope.ranking['ortho-evra'].p).toBe (prevOrtho + 1)
-		expect(scope.ranking['nuvaring'].p).toBe (prevNuva + 1)
-		expect(scope.ranking['depo'].p).toBe (prevDepo + 1)
-		expect(scope.ranking['mirena'].p).toBe (prevMirena + 1)
-		expect(scope.ranking['implanon'].p).toBe (prevImplanon + 1)
+		expect(scope.ranking.ocp.p).toBe (prevOcp + 1)
+		expect(scope.ranking.pop.p).toBe (prevPop + 1)
+		expect(scope.ranking.ortho_evra.p).toBe (prevOrtho + 1)
+		expect(scope.ranking.nuvaring.p).toBe (prevNuva + 1)
+		expect(scope.ranking.depo.p).toBe (prevDepo + 1)
+		expect(scope.ranking.mirena.p).toBe (prevMirena + 1)
+		expect(scope.ranking.implanon.p).toBe (prevImplanon + 1)
 
 	it 'q13:q17_missSchWork should set nextQuestion = q14 ...', ->
 		nextQ = scope.questions.q13.nextQuestion()
@@ -392,12 +392,12 @@ describe 'Controller: SectionsCtrl', ->
 	# How would you describe your current sexual relationship?
 	# -----
 	it 'q14:q18_SexualRel should set paragard-=1, mirena-=999, if answer is 2 ...', ->
-		prevPara = scope.ranking['paragard'].n
-		prevMirena = scope.ranking['mirena'].n
+		prevPara = scope.ranking.paragard.n
+		prevMirena = scope.ranking.mirena.n
 		scope.questions.q14.answer = 2
 		scope.questions.q14.ranking()
-		expect(scope.ranking['paragard'].n).toBe (prevPara - 1)
-		expect(scope.ranking['mirena'].n).toBe (prevMirena - 999)
+		expect(scope.ranking.paragard.n).toBe (prevPara - 1)
+		expect(scope.ranking.mirena.n).toBe (prevMirena - 999)
 
 	it 'q14:q18_SexualRel should set nextQuestion = q15 ...', ->
 		nextQ = scope.questions.q14.nextQuestion()
@@ -408,12 +408,12 @@ describe 'Controller: SectionsCtrl', ->
 	# During the last 12 months how many men, if any, have you had sexual intercourse with?
 	# -----
 	it 'q15:q19_vaginalSexCount should set paragard-=999, mirena-=999, if answer > 10 ...', ->
-		prevPara = scope.ranking['paragard'].n
-		prevMirena = scope.ranking['mirena'].n
+		prevPara = scope.ranking.paragard.n
+		prevMirena = scope.ranking.mirena.n
 		scope.questions.q15.answer = 15
 		scope.questions.q15.ranking()
-		expect(scope.ranking['paragard'].n).toBe (prevPara - 999)
-		expect(scope.ranking['mirena'].n).toBe (prevMirena - 999)
+		expect(scope.ranking.paragard.n).toBe (prevPara - 999)
+		expect(scope.ranking.mirena.n).toBe (prevMirena - 999)
 
 	it 'q15:q19_vaginalSexCount should set nextQuestion = q16 ...', ->
 		nextQ = scope.questions.q15.nextQuestion()
