@@ -59,7 +59,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /** 
-       * q1:q1_age:[ How old are you? ]
+       * q1:[ How old are you? ]
        */
       q1:{
         options: [999,777],
@@ -71,15 +71,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
         ranking: function(){
           if (this.answer < 18) {
             ranking.vas.n -= 999;
+            ranking.btl.n -= 999;
           }
           if (this.answer < 21) {
-            ranking.implanon.n -= 3;
+            ranking.vas.n -= 3;
+            ranking.btl.n -= 3;
           }
         }
       },
 
       /** 
-       * q2:q3_weight:[ How much do you weigh? Please enter your weight in the number keyboard. ]
+       * q2:[ How much do you weigh? Please enter your weight in the number keyboard. ]
        */
       q2:{
         options: [999,777],
@@ -89,10 +91,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if(this.answer>=200){
+          if(this.answer>=200 && this.answer < 555){
             ranking.ortho_evra.n -= 2;
           }
-          if(this.answer>=250){
+          if(this.answer>=250 && this.answer < 555){
             ranking.depo.n -= 2;
           }
         }
@@ -100,7 +102,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /** 
-       * q3:q7_smoke:[ How often do you smoke cigarettes or cigars or use smokeless tobacco? ]
+       * q3:[ How often do you smoke cigarettes or cigars or use smokeless tobacco? ]
        */
       q3:{
         options: [1,2,3,999,777,888],
@@ -110,7 +112,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if (this.answer === 3) {
+          if (this.answer === 2 || this.answer === 3) {
             if(questions.q1.answer > 35) {
               ranking.ocp.n -= 999;
               ranking.ortho_evra.n -= 999;
@@ -122,7 +124,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q4:q8_regularPeriod:[ When you are not using birth control, do you have regular monthly periods? ]
+       * q4:[ When you are not using birth control, do you have regular monthly periods? ]
        */
       q4:{
         options: [1,0,999,777],
@@ -134,8 +136,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
         ranking: function(){
           if(this.answer === 0){
-            ranking.ocp.n=-999;
-            ranking.nuvaring.n=-999;
+            ranking.ocp.p+=1;
+            ranking.ortho_evra.p+=1;
+            ranking.nuvaring.p+=1;
             ranking.fam.n=-3;
           }
         }
@@ -143,7 +146,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q4a:q8a_periodFrequency:[ Do you have three or fewer periods per year? ]
+       * q4a:[ Do you have three or fewer periods per year? ]
        */
       q4a:{
         options: [1,0,999,777,888],
@@ -160,7 +163,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.nuvaring.p+=1;
             ranking.depo.p+=1;
             ranking.mirena.p+=1;
-            ranking.fam.n-=1;
+            ranking.fam.n-=3;
             ranking.implanon.p=+1;
           }
         }
@@ -168,7 +171,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q5:q9_heavyPeriod:[ When you are not using birth control, do you have very heavy periods? ]
+       * q5:[ When you are not using birth control, do you have very heavy periods? ]
        */
       q5:{
         options: [1,0,999,777],
@@ -193,7 +196,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q6:q10_period7days:[ When you are not using birth control, do you have periods which last longer than 7 days? ]
+       * q6:[ When you are not using birth control, do you have periods which last longer than 7 days? ]
        */
       q6:{
         options: [1,0,999,777],
@@ -217,7 +220,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q7:q11_cramps:[ When you are not using birth control, do you have painful periods or bad cramps during your period? ]
+       * q7:[ When you are not using birth control, do you have painful periods or bad cramps during your period? ]
        */
       q7:{
         options: [1,0,999,777],
@@ -241,7 +244,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       
       /**
-       * q8:q12_tenderBreasts:[ When you are not using birth control, do you have breast tenderness during your period? ]
+       * q8:[ When you are not using birth control, do you have breast tenderness during your period? ]
        */
       q8:{
         options: [1,0,999,777],
@@ -264,7 +267,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q9:q13_depression:[ When you are not using birth control, do you have depression or anxiety during your period? ]
+       * q9:[ When you are not using birth control, do you have depression or anxiety during your period? ]
        */
       q9:{
         options: [1,0,999,777],
@@ -288,7 +291,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       
       /**
-       * q10:q14_bloating:[ When you are no using birth control, do you have bleeding or flouid retention during your period? ]
+       * q10:[ When you are no using birth control, do you have bleeding or flouid retention during your period? ]
        */
       q10:{
         options: [1,0,999,777],
@@ -311,7 +314,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q11:q15_headaches:[ When you are not using birth control, do you have bad headaches with your period? ]
+       * q11:[ When you are not using birth control, do you have bad headaches with your period? ]
        */
       q11:{
         options: [1,0,999,777],
@@ -331,7 +334,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q12:q16_PMS:[ When you are not using birth control, do you have significant PMS? ]
+       * q12:[ When you are not using birth control, do you have significant PMS? ]
        */
       q12:{
         options: [1,0,999,777],
@@ -354,7 +357,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q13:q17_missSchWork:[ How often do these symptoms cause you to miss work or school? ]
+       * q13:[ How often do these symptoms cause you to miss work or school? ]
        */
       q13:{
         options: [0,1,2,999,777,888],
@@ -386,7 +389,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q14:q18_SexualRel:[ How would you describe your current sexual relationship? ]
+       * q14::[ How would you describe your current sexual relationship? ]
        */
       q14:{
         options: [0,1,2,3,999,777],
@@ -395,16 +398,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q15';
         },
         ranking: function(){
-            if (this.answer === 2){
+            if (this.answer === 2 || this.answer === 1){
               ranking.paragard.n-=1;
-              ranking.mirena.n-=999;
+              ranking.mirena.n-=1;
             }
           }
       },
 
 
       /**
-       * q15:q19_vaginalSexCount:[ During the last 12 months how many men, if any, have you had sexual intercourse with? ]
+       * q15:[ During the last 12 months how many men, if any, have you had sexual intercourse with? ]
        */
       q15:{
         options: [999,777],
@@ -473,7 +476,29 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q16bi:flow_q20bi:[ The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using ]
        */
       q16bi:{
-        options: [1,0,999,777,888],
+        options: {
+          'Birth Control'  : 1,
+          'Mini Pills'     : 2,
+          'Ortho Evra'     : 3,
+          'Nuva Ring'      : 4,
+          'Depo Provera'   : 5,
+          'Male Condom'    : 6,
+          'Diaphragm'      : 7,
+          'Female Condom'  : 8,
+          'Sponge'         : 9,
+          'Fam'            : 10,
+          'EC'             : 11,
+          'Paragard'       : 12,
+          'Mirena'         : 13,
+          'Withdrawal'     : 14,
+          'Spermicide'     : 15,
+          'Tubes Tied'     : 16,
+          'Vasectomy'      : 17,
+          'Implant'        : 18,
+          'Breast Feeding' : 19
+        },
+
+        selectedOptions: {},
 
         nextQuestion: function(){
           return 'q17';
