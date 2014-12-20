@@ -128,13 +128,13 @@ describe 'Controller: SectionsCtrl', ->
 		expect(scope.ranking.nuvaring.p).toBe (prevNuva+1)
 		expect(scope.ranking.fam.n).toBe (prevFam-3)
 
-	it 'q4: should set nextQuestion = q5 if answer is not 0 ...', ->
+	it 'q4: should set nextQuestion = q7 if answer is not 2 ...', ->
 		scope.questions.q4.answer = 1
 		nextQ = scope.questions.q4.nextQuestion()
-		expect(nextQ).toBe 'q5'
+		expect(nextQ).toBe 'q7'
 
-	it 'q4: should set nextQuestion = q4a if answer is 0 ...', ->
-		scope.questions.q4.answer = 0
+	it 'q4: should set nextQuestion = q4a if answer is 2 ...', ->
+		scope.questions.q4.answer = 2
 		nextQ = scope.questions.q4.nextQuestion()
 		expect(nextQ).toBe 'q4a'
 
@@ -454,13 +454,13 @@ describe 'Controller: SectionsCtrl', ->
 	# q16
 	# During the last 12 months how many men, if any, have you had sexual intercourse with?
 	# -----
-	it 'q16:flow_q20 should set nextQuestion = q16a if answer is 1 ...', ->
-		scope.questions.q16.answer = 1
+	it 'q16: should set nextQuestion = q16a if answer is 1 ...', ->
+		scope.questions.q16.selectedOption = { name: 'Yes', value : 1 }
 		nextQ = scope.questions.q16.nextQuestion()
 		expect(nextQ).toBe 'q16a'
 
-	it 'q16:flow_q20 should set nextQuestion = q16a if answer is not 1 ...', ->
-		scope.questions.q16.answer = 0
+	it 'q16: should set nextQuestion = q17 if answer is not 1 ...', ->
+		scope.questions.q16.selectedOption = { name: 'No', value : 0 }
 		nextQ = scope.questions.q16.nextQuestion()
 		expect(nextQ).toBe 'q17'
 

@@ -112,7 +112,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if (this.answer === 2 || this.answer === 3) {
+          if (this.answer == 2 || this.answer == 3) {
             if(questions.q1.answer > 35) {
               ranking.ocp.n -= 999;
               ranking.ortho_evra.n -= 999;
@@ -130,12 +130,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          if(this.answer === 0) { return 'q4a'; }
-          else { return 'q5'; }
+          if(this.answer == 2) { return 'q4a'; }
+          else { return 'q7'; }
         },
 
         ranking: function(){
-          if(this.answer === 0){
+          if(this.answer == 0){
             ranking.ocp.p+=1;
             ranking.ortho_evra.p+=1;
             ranking.nuvaring.p+=1;
@@ -156,7 +156,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if(this.answer === 0){
+          if(this.answer == 0){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -181,7 +181,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -205,7 +205,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q7';
         },
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -229,7 +229,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q8';
           },
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -253,7 +253,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q9';
           },
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.pop.p+=1;
             ranking.ortho_evra.n-=3;
             ranking.nuvaring.p+=1;
@@ -276,7 +276,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q10';
           },
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -300,7 +300,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q11';
           },
         ranking: function(){
-          if(this.answer === 1){
+          if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -323,7 +323,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q12';
           },
         ranking: function(){
-          if (this.answer === 1) {
+          if (this.answer == 1) {
             ranking.pop.p=+1;
             ranking.depo.p=+1;
             ranking.mirena.p=+1;
@@ -343,7 +343,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             return 'q13';
           },
         ranking: function(){
-          if (this.answer === 1) {
+          if (this.answer == 1) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking.ortho_evra.p=+1;
@@ -366,7 +366,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q14';
         },
         ranking: function(){
-          if (this.answer === 1){
+          if (this.answer == 1){
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking.ortho_evra.p=+1;
@@ -375,7 +375,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.mirena.p=+1;
             ranking.implanon.p=+1;
           }
-          else if (this.answer === 2) {
+          else if (this.answer == 2) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
             ranking.ortho_evra.p=+1;
@@ -398,7 +398,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q15';
         },
         ranking: function(){
-            if (this.answer === 2 || this.answer === 1){
+            if (this.answer == 2 || this.answer == 1){
               ranking.paragard.n-=1;
               ranking.mirena.n-=1;
             }
@@ -429,10 +429,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q16:flow_q20:[ Have you ever had an unplanned pregnancy. ]
        */
       q16:{
-        options: [1,0,999,777],
+        options: [
+          { name : 'Yes',                                  value : 1  },
+          { name : 'No',                                   value : 0  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+
+        selectedOption : { name: 'No', value : 0 },
 
         nextQuestion: function(){
-          if (this.answer === 1) { return 'q16a'; }
+          if (this.selectedOption.value == 1) { return 'q16a'; }
           else { return 'q17'; }
         },
 
@@ -464,7 +471,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q16bi'; }
+          if(this.answer == 1) { return 'q16bi'; }
           else { return 'q17'; }
         },
         ranking: function(){
@@ -580,7 +587,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q18a'; }
+          if(this.answer == 1) { return 'q18a'; }
           else { return 'q20'; }
         },
         ranking: function(){
@@ -596,7 +603,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q18ai'; }
+          if(this.answer == 1) { return 'q18ai'; }
           else { return 'q19'; }
         },
         ranking: function(){
@@ -627,7 +634,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777,888],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q19a'; }
+          if(this.answer == 1) { return 'q19a'; }
           else { return 'q20'; }
         },
         ranking: function(){
@@ -643,7 +650,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q19ai'; }
+          if(this.answer == 1) { return 'q19ai'; }
           else { return 'q20'; }
         },
         ranking: function(){
@@ -757,7 +764,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [1,0,999,777],
 
         nextQuestion: function(){
-          if(this.answer === 1) { return 'q26a'; }
+          if(this.answer == 1) { return 'q26a'; }
           else { return 'q27'; }
         },
         ranking: function(){

@@ -57,23 +57,9 @@ header#header.info()
         label
           | Q16. Have you ever had an unplanned pregnancy?
         div
-          span
-            input.field.radio(ng-model='questions.q16.answer' value='1' type='radio')
-            label.choice
-              | Yes
-          span
-            input.field.radio(ng-model='questions.q16.answer' value='0' type='radio')
-            label.choice
-              | No
-          span
-            input.field.radio(ng-model='questions.q16.answer' value='999' type='radio')
-            label.choice
-              | I don't know
-          span
-            input.field.radio(ng-model='questions.q16.answer' value='777' type='radio')
-            label.choice
-              | I don't want to answer this question
-
+          div(ng-repeat='option in questions.q16.options')
+            input(type="radio" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
+            label {{option.name}}
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
           label
@@ -117,18 +103,7 @@ header#header.info()
           label
             | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
           div
-            span
-              input.field.radio(ng-model='questions.q16bi.answer' value='0' type='radio')
-              label.choice
-                | First Choice
-            span
-              input.field.radio(ng-model='questions.q16bi.answer' value='1' type='radio')
-              label.choice
-                | Second Choice
-            span
-              input.field.radio(ng-model='questions.q16bi.answer' value='2' type='radio')
-              label.choice
-                | Third Choice
+            select(multiple, ng-multiple="true", ng-model="questions.q16bi.selectedOptions", ng-options="item.value as item.name for item in questions.q16bi.options")
 
      li#q17(ng-show="currentQuestion == 'q17'")
           label
