@@ -510,6 +510,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Male Condom',    value : 6  }
         ],
 
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+
         nextQuestion: function(){
           return 'q17';
         },

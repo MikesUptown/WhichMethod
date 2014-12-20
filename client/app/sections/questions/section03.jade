@@ -102,8 +102,9 @@ header#header.info()
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
           label
             | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-          div
-            select(multiple, ng-multiple="true", ng-model="questions.q16bi.selectedOptions", ng-options="item.value as item.name for item in questions.q16bi.options")
+          div(ng-repeat='option in questions.q16bi.options')
+            input(type='checkbox' ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
+            label {{option.name}}
 
      li#q17(ng-show="currentQuestion == 'q17'")
           label
