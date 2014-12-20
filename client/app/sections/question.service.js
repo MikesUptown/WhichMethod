@@ -476,29 +476,32 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q16bi:flow_q20bi:[ The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using ]
        */
       q16bi:{
-        options: {
-          'Birth Control'  : 1,
-          'Mini Pills'     : 2,
-          'Ortho Evra'     : 3,
-          'Nuva Ring'      : 4,
-          'Depo Provera'   : 5,
-          'Male Condom'    : 6,
-          'Diaphragm'      : 7,
-          'Female Condom'  : 8,
-          'Sponge'         : 9,
-          'Fam'            : 10,
-          'EC'             : 11,
-          'Paragard'       : 12,
-          'Mirena'         : 13,
-          'Withdrawal'     : 14,
-          'Spermicide'     : 15,
-          'Tubes Tied'     : 16,
-          'Vasectomy'      : 17,
-          'Implant'        : 18,
-          'Breast Feeding' : 19
-        },
+        options: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Mini Pills',     value : 2  },
+          { name : 'Ortho Evra',     value : 3  },
+          { name : 'Nuva Ring',      value : 4  },
+          { name : 'Depo Provera',   value : 5  },
+          { name : 'Male Condom',    value : 6  },
+          { name : 'Diaphragm',      value : 7  },
+          { name : 'Female Condom',  value : 8  },
+          { name : 'Sponge',         value : 9  },
+          { name : 'Fam',            value : 10 },
+          { name : 'EC',             value : 11 },
+          { name : 'Paragard',       value : 12 },
+          { name : 'Mirena',         value : 13 },
+          { name : 'Withdrawal',     value : 14 },
+          { name : 'Spermicide',     value : 15 },
+          { name : 'Tubes Tied',     value : 16 },
+          { name : 'Vasectomy',      value : 17 },
+          { name : 'Implant',        value : 18 },
+          { name : 'Breast Feeding', value : 19 }
+        ],
 
-        selectedOptions: {},
+        selectedOptions: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Male Condom',    value : 6  }
+        ],
 
         nextQuestion: function(){
           return 'q17';
