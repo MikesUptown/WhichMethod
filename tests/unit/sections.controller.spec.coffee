@@ -491,9 +491,14 @@ describe 'Controller: SectionsCtrl', ->
 	# q16bi
 	# The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using
 	# -----
-	it 'q16bi:flow_q20bi should set nextQuestion = q17 ...', ->
+	it 'q16bi: should set nextQuestion = q17 ...', ->
 		nextQ = scope.questions.q16bi.nextQuestion()
 		expect(nextQ).toBe 'q17'
+	it 'q16bi: should set ocp==3 if "Birth Control" ...', ->
+		prevOcp = scope.ranking.ocp.n
+		scope.selectedOptions = [{ name : 'Birth Control',  value : 1  }]
+		scope.questions.q16bi.ranking()
+		expect(scope.ranking.ocp.n).toBe (prevOcp - 3)
 
 
 	# q17

@@ -473,7 +473,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       },
 
       /**
-       * q16bi:flow_q20bi:[ The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using ]
+       * q16bi:[ The (first) time you had an unplanned preganancy, what method of birth control were you using? I will show you four screens that have different birth control methods. Please choose ALL the methods you were using ]
        */
       q16bi:{
         options: [
@@ -507,8 +507,55 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q17';
         },
         ranking: function(){
-          return;
-        }
+          var sel_len = this.selectedOptions.length;
+          for (var i = 0; i < sel_len; i++) {
+            this.rank(this.selectedOptions[i].name);
+          }
+        },
+        rank: function(bcname) {
+          switch (bcname)
+          {
+            case 'Birth Control':
+              ranking.ocp.n-=3;
+              break;
+            case 'Mini Pills':
+              break;
+            case 'Ortho Evra':
+              break;
+            case 'Nuva Ring':
+              break;
+            case 'Depo Provera':
+              break;
+            case 'Male Condom':
+              break;
+            case 'Diaphragm':
+              break;
+            case 'Female Condom':
+              break;
+            case 'Sponge':
+              break;
+            case 'Fam':
+              break;
+            case 'EC':
+              break;
+            case 'Paragard':
+              break;
+            case 'Mirena':
+              break;
+            case 'Withdrawal':
+              break;
+            case 'Spermicide':
+              break;
+            case 'Tubes Tied':
+              break;
+            case 'Vasectomy':
+              break;
+            case 'Implant':
+              break;
+            case 'Breast Feeding':
+              break;
+          }
+        },
       },
 
       /**
