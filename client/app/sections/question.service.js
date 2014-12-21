@@ -683,14 +683,25 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q20:q24_whenPregnant:flow_q24:[ When would you like to become pregnant (in years)? ]
+       * q20:[ When would you like to become pregnant (in years)? ]
        */
       q20:{
-        options: [1,2,3,4,5,777,999],
+        options: [
+          { value : 1, name : 'Less than one year' },
+          { value : 2, name : 'In one to three years' },
+          { value : 3, name : 'In three or more years' },
+          { value : 4, name : 'Not sure when but definitely want a baby' },
+          { value : 5, name : 'Never' },
+          { value : 777, name : "I don't know" },
+          { value : 999, name : "I don't want to answer this question" },
+        ],        
+
+        selectedOption : { name: 'No', value : 0 },
 
         nextQuestion: function(){
           return 'q21';
         },
+
         ranking: function(){
           return;
         }
