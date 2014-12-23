@@ -1,7 +1,7 @@
 header#header.info()
 //- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
-  #container  
+#container  
   h3 WhichMethod_03
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
@@ -174,81 +174,36 @@ header#header.info()
             | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
           div
             span
-              input.field.radio(ng-model='questions.q18.answer' value ='1' type='radio' name='q19')
+              input.field.radio(ng-model='questions.q19.answer' value ='1' type='radio' name='q19')
               label.choice
                 | Yes
             span
-              input.field.radio(ng-model='questions.q18.answer' value ='0' type='radio' name='q19')
+              input.field.radio(ng-model='questions.q19.answer' value ='0' type='radio' name='q19')
               label.choice
                 | No
             span
-              input.field.radio(ng-model='questions.q18.answer' value ='999' type='radio' name='q19')
+              input.field.radio(ng-model='questions.q19.answer' value ='999' type='radio' name='q19')
               label.choice
                 | I don't know
             span
-              input.field.radio(ng-model='questions.q18.answer' value ='777' type='radio' name='q19')
+              input.field.radio(ng-model='questions.q19.answer' value ='777' type='radio' name='q19')
               label.choice
                 | I don't want to answer this question
+
      li#q19a(ng-show="currentQuestion == 'q19a'")
           label
             | Q19a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
-           div
-            span
-              input.field.radio(ng-model='questions.q19a.answer' value ='1' type='radio' name='q19a')
-              label.choice
-                | option 1
-            span
-              input.field.radio(ng-model='questions.q19a.answer' value ='2' type='radio' name='q19a')
-              label.choice
-                | option 2
-            span
-              input.field.radio(ng-model='questions.q19a.answer' value ='3' type='radio' name='q19a')
-              label.choice
-                | option 3
+          div(ng-repeat='option in questions.q19a.options')
+            input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
+            label {{option.name}}
+   
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
           label
-            | Q19ai. What problems did you have while using:
-          div
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='1' type='radio' name='q19ai')
-              label.choice
-                | I didn't like the changes to my body
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='2' type='radio' name='q19ai')
-              label.choice
-                | I had problems getting the birth control
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='3' type='radio' name='q19ai')
-              label.choice
-                | I didn't use it right
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='4' type='radio' name='q19ai')
-              label.choice
-                | I got pregnant
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='5' type='radio' name='q19ai')
-              label.choice
-                | I developed health problems
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='6' type='radio' name='q19ai')
-              label.choice
-                | I didn't like my periods
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='7' type='radio' name='q19ai')
-              label.choice
-                | My partner didn't like it
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='8' type='radio' name='q19ai')
-              label.choice
-                | None of these problems
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='9' type='radio' name='q19ai')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='10' type='radio' name='q19ai')
-              label.choice
-                | I don't want to answer this question
+            | Q19ai. What problems did you have while using {{questions.q19ai.curBcProbName()}}
+          div(ng-repeat='option in questions.q19ai.options')
+            input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
+            label {{option.name}}
+
      li#q20(ng-show="currentQuestion == 'q20'")
           label
             | Q20. When would you like to become pregnant? In
@@ -256,6 +211,7 @@ header#header.info()
             div(ng-repeat='option in questions.q20.options')
               input(type="radio" name='q20' ng-model="questions.q20.selectedOption" value="{{option}}")
               label {{option.name}}
+
      li#q21(ng-show="currentQuestion == 'q21'")
           label
             | Q21. What is most important to you when choosing a birth control method? Please select the three most important to you

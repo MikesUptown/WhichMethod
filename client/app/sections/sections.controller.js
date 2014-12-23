@@ -7,6 +7,7 @@ angular.module('contraceptionApp')
 
     $scope.questions = questionService.questions
     $scope.ranking = questionService.ranking
+    $scope.problems = questionService.problems;
     var sectionEnd = questionService.sectionEnd
     var currentUser 
 
@@ -124,6 +125,15 @@ angular.module('contraceptionApp')
       for(var q in $scope.questions){
         var question = $scope.questions[q]
         question.answer = undefined
+      }
+
+      // reset the bc problems list
+      $scope.problems.curBcProbNum = 0;
+      while ($scope.problems.bcProblemList.length) { 
+        $scope.problems.bcProblemList.pop(); 
+      }
+      while ($scope.problems.problemsPerBc.length) { 
+        $scope.problems.problemsPerBc.pop(); 
       }
       User.save(currentUser)
       $state.go('.', {type:'intro',id:1})

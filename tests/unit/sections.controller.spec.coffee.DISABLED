@@ -41,25 +41,25 @@ describe 'Controller: SectionsCtrl', ->
 	# How old are you?
 	# Please enter your age into the number keyboard.
 	# -----
-	it 'q1: should set vas-=1002, btl-=1002 if age is 16 ...', ->
-		prev = scope.ranking.vas.n;
-		prevb = scope.ranking.btl.n;
-		scope.questions.q1.answer = 16
-		scope.questions.q1.ranking()
-		expect(scope.ranking.vas.n).toBe (prev-1002)
-		expect(scope.ranking.btl.n).toBe (prevb-1002)
+	#it 'q1: should set vas-=1002, btl-=1002 if age is 16 ...', ->
+	#	prev = scope.ranking.vas.n;
+	#	prevb = scope.ranking.btl.n;
+	#	scope.questions.q1.answer = 16
+	#	scope.questions.q1.ranking()
+	#	expect(scope.ranking.vas.n).toBe (prev-1002)
+	#	expect(scope.ranking.btl.n).toBe (prevb-1002)
 
-	it 'q1: should set vas-=3, btl-=3 if age is 18 ...', ->
-		prev = scope.ranking.vas.n;
-		prevb = scope.ranking.btl.n;
-		scope.questions.q1.answer = 18
-		scope.questions.q1.ranking()
-		expect(scope.ranking.vas.n).toBe (prev-3)
-		expect(scope.ranking.btl.n).toBe (prevb-3)
+	#it 'q1: should set vas-=3, btl-=3 if age is 18 ...', ->
+	#	prev = scope.ranking.vas.n;
+	#	prevb = scope.ranking.btl.n;
+	#	scope.questions.q1.answer = 18
+	#	scope.questions.q1.ranking()
+	#	expect(scope.ranking.vas.n).toBe (prev-3)
+	#	expect(scope.ranking.btl.n).toBe (prevb-3)
 
-	it 'q1: should set nextQuestion = q2 ...', ->
-		nextQ = scope.questions.q1.nextQuestion()
-		expect(nextQ).toBe 'q2'
+	#it 'q1: should set nextQuestion = q2 ...', ->
+	#	nextQ = scope.questions.q1.nextQuestion()
+	#	expect(nextQ).toBe 'q2'
 
 	# q2
 	# How much do you weigh?
@@ -548,37 +548,37 @@ describe 'Controller: SectionsCtrl', ->
 	# q19
 	# Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with?
 	# -----
-	it 'q19:flow_q23 should set nextQuestion = q19a if answer is 1 ...', ->
-		scope.questions.q19.answer = 1
-		nextQ = scope.questions.q19.nextQuestion()
-		expect(nextQ).toBe 'q19a'
+	#it 'q19:flow_q23 should set nextQuestion = q19a if answer is 1 ...', ->
+	#	scope.questions.q19.answer = 1
+	#	nextQ = scope.questions.q19.nextQuestion()
+	#	expect(nextQ).toBe 'q19a'
 
-	it 'q19:flow_q23 should set nextQuestion = q20 if answer is not 1 ...', ->
-		scope.questions.q19.answer = 0
-		nextQ = scope.questions.q19.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19:flow_q23 should set nextQuestion = q20 if answer is not 1 ...', ->
+	#	scope.questions.q19.answer = 0
+	#	nextQ = scope.questions.q19.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q19a
 	# hat method did you have a problem with? I will show you 4 screens 
 	# -----
-	it 'q19a:flow_q23a should set nextQuestion = q19ai if answer is 1 ...', ->
-		scope.questions.q19a.answer = 1
-		nextQ = scope.questions.q19a.nextQuestion()
-		expect(nextQ).toBe 'q19ai'
+	#it 'q19a:flow_q23a should set nextQuestion = q19ai if answer is 1 ...', ->
+	#	scope.questions.q19a.answer = 1
+	#	nextQ = scope.questions.q19a.nextQuestion()
+	#	expect(nextQ).toBe 'q19ai'
 
-	it 'q19a:flow_q23a should set nextQuestion = q20 if answer is not 1 ...', ->
-		scope.questions.q19a.answer = 0
-		nextQ = scope.questions.q19a.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19a:flow_q23a should set nextQuestion = q20 if answer is not 1 ...', ->
+	#	scope.questions.q19a.answer = 0
+	#	nextQ = scope.questions.q19a.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q19ai
 	# What problems did you have while using ___ ?
 	# -----
-	it 'q19ai:flow_q23ai should set nextQuestion = q20 ...', ->
-		nextQ = scope.questions.q19ai.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19ai:flow_q23ai should set nextQuestion = q20 ...', ->
+	#	nextQ = scope.questions.q19ai.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q20
