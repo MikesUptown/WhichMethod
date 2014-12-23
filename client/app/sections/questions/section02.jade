@@ -11,255 +11,79 @@ header#header.info()
       label
         | Q4. When you are not using birth control, do you have regular monthly periods?
       div
-        span
-          input.field.radio(ng-model='questions.q4.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q4.answer' value='2' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q4.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q4.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
-
+        div(ng-repeat='option in questions.q4.options')
+          input(type="radio" name='q4' ng-model="questions.q4.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
 
      li#q4a(ng-show="currentQuestion == 'q4a'")
       label
         | Q4a. Do you have three or fewer periods per year?
-      div
-        span
-          input.field.radio(ng-model='questions.q4a.answer' value='Yes' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q4a.answer' value='No' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q4a.answer' value='I don\'t know' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q4a.answer' value='I don\'t want to answer' type='radio')
-          label.choice
-            | I don't want to answer
-
-
+      div(ng-repeat='option in questions.q4a.options')
+        input(type="radio" name='q4a' ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
     
     li#q5(ng-show="currentQuestion == 'q5'")
       label
         | Q5. When you are not using birth control, do you have very heavy periods?
-      div
-        span
-          input.field.radio(ng-model='questions.q5.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q5.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q5.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q5.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
-
+      div(ng-repeat='option in questions.q5.options')
+        input(type="radio" name='q5' ng-model="questions.q5.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q6(ng-show="currentQuestion == 'q6'")
       label
         | Q6. When you are not using birth control, do you have periods that last longer than 7 days?
-      div
-      span
-          input.field.radio(ng-model='questions.q6.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q6.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q6.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q6.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
-
+      div(ng-repeat='option in questions.q6.options')
+        input(type="radio" name='q6' ng-model="questions.q6.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q7(ng-show="currentQuestion == 'q7'")
       label
         | Q7. When you are not using birth control, do you have painful periods or bad cramps?
-      div
-        //- input( ng-model='questions.q7.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q7.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q7.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q7.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q7.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
-
+      div(ng-repeat='option in questions.q7.options')
+        input(type="radio" name='q7' ng-model="questions.q7.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q8(ng-show="currentQuestion == 'q8'")
       label
         | Q8. When you are not using birth control, do you have breast tenderness during your period?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q8.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q8.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q8.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q8.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
-
+      div(ng-repeat='option in questions.q8.options')
+        input(type="radio" name='q8' ng-model="questions.q8.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q9(ng-show="currentQuestion == 'q9'")
       label
         | Q9. When you are not using birth control, do you have depression or anxiety during your period?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q9.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q9.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q9.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q9.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q9.options')
+        input(type="radio" name='q9' ng-model="questions.q9.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q10(ng-show="currentQuestion == 'q10'")
       label
         | Q10. When you are not using birth control, do you have bloating or fluid retention during your period?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q10.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q10.answer' value='0' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q10.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q10.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q10.options')
+        input(type="radio" name='q10' ng-model="questions.q10.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q11(ng-show="currentQuestion == 'q11'")
       label
         | Q11. When you are not using birth control, do you have bad headaches with your period?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q11.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q11.answer' value='2' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q11.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q11.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q11.options')
+        input(type="radio" name='q11' ng-model="questions.q11.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q12(ng-show="currentQuestion == 'q12'")
       label
         | Q12. When you are not using birth control, do you have significant PMS (premenstrual syndrome)?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q12.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q12.answer' value='2' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q12.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q12.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q12.options')
+        input(type="radio" name='q12' ng-model="questions.q12.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     li#q13(ng-show="currentQuestion == 'q13'")
       label
         | Q13. How often do these symptoms cause you to miss work or school?
-      div
-        //- input( ng-model='questions.q4.answer' tabindex='1' type='radio')
-        span
-          input.field.radio(ng-model='questions.q13.answer' value='1' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q13.answer' value='2' type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q13.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q13.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q13.options')
+        input(type="radio" name='q13' ng-model="questions.q13.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
 
     input(type="submit", ng-click="saveAnswers()", value="Continue")
 

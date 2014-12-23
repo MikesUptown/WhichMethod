@@ -61,7 +61,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
     }
 
 
-
     /**
      * The questions and the behavior of each
      */
@@ -75,19 +74,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : "I don't know",                         value : 999  },
           { name : "I don't want to answer this question", value : 777  },
         ],
-
         selectedOption : { },
-
         resetInputs: function(){
           this.selectedOption = {};
           this.textInput = undefined;
         },
-
         nextQuestion: function(){
           this.resetInputs();
           return 'q2';
         },
-
         ranking: function(){
           if (this.textInput != undefined && this.textInput != "")
           {
@@ -117,19 +112,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : "I don't know",                         value : 999  },
           { name : "I don't want to answer this question", value : 777  },
         ],
-
         selectedOption : { },
-
         resetInputs: function(){
           this.selectedOption = {};
           this.textInput = undefined;
         },
-
         nextQuestion: function(){
           this.resetInputs();
           return 'q3';
         },
-
         ranking: function(){
           if (this.textInput != undefined && this.textInput != "")
           {
@@ -161,13 +152,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : "I don't know",                         value : 999  },
           { name : "I don't want to answer this question", value : 777  },
         ],
-
         selectedOption : { },
-
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q4';
         },
-
         ranking: function(){
           this.answer = this.selectedOption.value;
           if (this.answer == 2 || this.answer == 3) {
@@ -185,15 +177,24 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q4:[ When you are not using birth control, do you have regular monthly periods? ]
        */
       q4:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 2) { return 'q4a'; }
           else { return 'q7'; }
         },
-
         ranking: function(){
-          if(this.answer == 0){
+          this.answer = this.selectedOption.value;
+          if(this.answer == 2){
             ranking.ocp.p+=1;
             ranking.ortho_evra.p+=1;
             ranking.nuvaring.p+=1;
@@ -207,14 +208,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q4a:[ Do you have three or fewer periods per year? ]
        */
       q4a:{
-        options: [1,0,999,777,888],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q5';
         },
-
         ranking: function(){
-          if(this.answer == 0){
+          this.answer = this.selectedOption.value;
+          if(this.answer == 2){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
             ranking.ortho_evra.p+=1;
@@ -232,13 +242,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q5:[ When you are not using birth control, do you have very heavy periods? ]
        */
       q5:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q6';
         },
-
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -257,12 +276,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q6:[ When you are not using birth control, do you have periods which last longer than 7 days? ]
        */
       q6:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q7';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -273,7 +302,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.implanon.p+=1;
           }
         }
-        
       },
 
 
@@ -281,12 +309,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q7:[ When you are not using birth control, do you have painful periods or bad cramps during your period? ]
        */
       q7:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q8';
-          },
+          this.resetInputs();
+          return 'q8';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -305,12 +343,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q8:[ When you are not using birth control, do you have breast tenderness during your period? ]
        */
       q8:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q9';
-          },
+          this.resetInputs();
+          return 'q9';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.pop.p+=1;
             ranking.ortho_evra.n-=3;
@@ -320,7 +368,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.implanon.p+=1;
           }
         }
-          
       },
 
 
@@ -328,12 +375,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q9:[ When you are not using birth control, do you have depression or anxiety during your period? ]
        */
       q9:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q10';
-          },
+          this.resetInputs();
+          return 'q10';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -344,7 +401,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
             ranking.implanon.p+=1;
           }
         }
-          
       },
 
       
@@ -352,12 +408,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q10:[ When you are no using birth control, do you have bleeding or flouid retention during your period? ]
        */
       q10:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q11';
-          },
+          this.resetInputs();
+          return 'q11';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -370,17 +436,26 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-
       /**
        * q11:[ When you are not using birth control, do you have bad headaches with your period? ]
        */
       q11:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q12';
-          },
+          this.resetInputs();
+          return 'q12';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if (this.answer == 1) {
             ranking.pop.p=+1;
             ranking.depo.p=+1;
@@ -395,12 +470,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q12:[ When you are not using birth control, do you have significant PMS? ]
        */
       q12:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-            return 'q13';
-          },
+          this.resetInputs();
+          return 'q13';
+        },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if (this.answer == 1) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
@@ -418,12 +503,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q13:[ How often do these symptoms cause you to miss work or school? ]
        */
       q13:{
-        options: [0,1,2,999,777,888],
-
+        options: [
+          { name : 'Rarely/Never', value : 0  },
+          { name : 'Sometimes', value : 1  },
+          { name : 'Almost every month', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q14';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if (this.answer == 1){
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
