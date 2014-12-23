@@ -42,7 +42,16 @@ angular.module('contraceptionApp')
 
     $scope.saveAnswers = function(){
 
-      $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].answer)
+      // $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].answer)
+
+      if($scope.questions[$scope.currentQuestion].selectedOption.value != null)
+        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].selectedOption)
+      else if($scope.questions[$scope.currentQuestion].textInput != null){
+        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].textInput)
+        $scope.questions[$scope.currentQuestion].textInput = parseInt($scope.questions[$scope.currentQuestion].textInput)
+
+      }
+
 
       console.log("Answer Saved!")
       $scope.updateRanking()
