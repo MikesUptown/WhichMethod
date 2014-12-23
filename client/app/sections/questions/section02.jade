@@ -20,7 +20,7 @@ header#header.info()
       div(ng-repeat='option in questions.q4a.options')
         input(type="radio" name='q4a' ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
-    
+
     li#q5(ng-show="currentQuestion == 'q5'")
       label
         | Q5. When you are not using birth control, do you have very heavy periods?

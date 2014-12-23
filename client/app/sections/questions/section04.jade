@@ -6,126 +6,55 @@ header#header.info()
 #container
   h2 WhichMethod_04
   ul
-     li#q23(ng-show="currentQuestion == 'q23'")
+    li#q23(ng-show="currentQuestion == 'q23'")
       label
         | Q23. Would you be okay with regular, scheduled bleeding?
-      div
-        span
-          input.field.radio(ng-model='questions.q23.answer' value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q23.answer' value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q23.answer'  value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q23.answer' value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q23.options')
+        input(type="radio" name='q23' ng-model='questions.q23.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#q24(ng-show="currentQuestion == 'q24'")
+    li#q24(ng-show="currentQuestion == 'q24'")
       label
         | Q24. Would you be okay with unscheduled bleeding and/or spotting?
-      div
-        span
-          input.field.radio(ng-model='questions.q24.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q24.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q24.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q24.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q24.options')
+        input(type="radio" name='q24' ng-model="questions.q24.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#q25(ng-show="currentQuestion == 'q25'")
+    li#q25(ng-show="currentQuestion == 'q25'")
       label
         | Q25. Would you be okay with no bleeding at all?
-      div
-        span
-          input.field.radio(ng-model='questions.q25.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q25.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q25.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q25.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q25.options')
+        input(type="radio" name='q25' ng-model="questions.q25.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#q26(ng-show="currentQuestion == 'q26'")
+    li#q26(ng-show="currentQuestion == 'q26'")
       label
         | Q26. Do you need a birth control method which you can keep private?
-      div
-        span
-          input.field.radio(ng-model='questions.q26.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q26.answer', value='No', type='radio')
-          label.choice
-            | No
+      div(ng-repeat='option in questions.q26.options')
+        input(type="radio" name='q26' ng-model="questions.q26.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#q26a(ng-show="currentQuestion == 'q26a'")
+    li#q26a(ng-show="currentQuestion == 'q26a'")
       label
         | Q26a. Do you want to keep it private from your boyfriend/girlfriend/partner?
-      div
-        span
-          input.field.radio(ng-model='questions.q26a.answer',value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q26a.answer',value='No', type='radio')
-          label.choice
-            | No
+      div(ng-repeat='option in questions.q26a.options')
+        input(type="radio" name='q26a' ng-model="questions.q26a.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-     li#q26b(ng-show="currentQuestion == 'q26b'")
+    li#q26b(ng-show="currentQuestion == 'q26b'")
       label
         | Q26b. Do you want to keep it private from your family or your friends?
-      div
-        span
-          input.field.radio(ng-model='questions.q26b.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q26b.answer', value='No', type='radio')
-          label.choice
-            | No
+      div(ng-repeat='option in questions.q26b.options')
+        input(type="radio" name='q26b' ng-model="questions.q26b.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#q27(ng-show="currentQuestion == 'q27'")
+    li#q27(ng-show="currentQuestion == 'q27'")
       label
         | Q27. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
-      div
-        span
-          input.field.radio(ng-model='questions.q27.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q27.answer', value='No', type='radio')
-          label.choice
-            | No
+      div(ng-repeat='option in questions.q27.options')
+        input(type="radio" name='q27' ng-model="questions.q27.selectedOption" ng-value="{{option}}")
+        label {{option.name}}
 
-    input(type='button',ng-click='saveAnswers',value='Continue')
+    input(type="button",ng-click="saveAnswers()",value="Continue")
 
 // this is the end of the 4th section of questions 04
