@@ -89,8 +89,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
 
+        clearSelections: function() {
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
+          }
+        },
+
+        saveSelections: function() {
+          problems.bcProblemList = this.selectedOptions.splice(0);
+        },
+
         nextQuestion: function(){
-          problems.bcProblemList.concat(this.selectedOptions);
+          this.saveSelections();
+          this.clearSelections();
           return 'q1a';
         },
 
@@ -103,22 +114,54 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q1a:[ What problems? ]
        */
       q1a:{
-        curBcProbTuple: function() {
+        curBcProbName : function() {
           var curBcNum = problems.curBcProbNum;
           var listLen = problems.bcProblemList.length;
           var curBcProbTuple = undefined;
           if (curBcNum < listLen)
           {
-            curBcProbTuple = problems.bcProblemList[curBcProbNum];
+            curBcProbTuple = problems.bcProblemList[curBcNum];
           }
-          return curBcProbTuple;
+          if (curBcProbTuple != undefined) {
+            return curBcProbTuple.name;
+          } else {
+            return '';
+          }
         },
         notDone: function() {
           return (problems.curBcProbNum < problems.bcProblemList.length);
         },
+        options: [
+          { name : 'Problem 1',  value : 1  },
+          { name : 'Problem 2',     value : 2  },
+        ],
+
+        selectedOptions: [],
+
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+
+        clearSelections: function() {
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
+          }
+        },
+
+        saveSelections: function() {
+          var curBcProbName = this.curBcProbName();
+          problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
+        },
+
         nextQuestion: function(){
+          this.saveSelections();
+          this.clearSelections();
           problems.curBcProbNum += 1;
-          if (notDone) { return 'q1a'; }
+          if (this.notDone()) { return 'q1a'; }
           else { return 'q1z'; }
         },
       },
@@ -1727,6 +1770,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       ranking: ranking,
       initRanking: initRanking,
       sectionEnd: sectionEnd,
+      problems: problems,
       getRanking: function(){
         return ranking;
       }
