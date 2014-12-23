@@ -41,25 +41,25 @@ describe 'Controller: SectionsCtrl', ->
 	# How old are you?
 	# Please enter your age into the number keyboard.
 	# -----
-	it 'q1: should set vas-=1002, btl-=1002 if age is 16 ...', ->
-		prev = scope.ranking.vas.n;
-		prevb = scope.ranking.btl.n;
-		scope.questions.q1.answer = 16
-		scope.questions.q1.ranking()
-		expect(scope.ranking.vas.n).toBe (prev-1002)
-		expect(scope.ranking.btl.n).toBe (prevb-1002)
+	#it 'q1: should set vas-=1002, btl-=1002 if age is 16 ...', ->
+	#	prev = scope.ranking.vas.n;
+	#	prevb = scope.ranking.btl.n;
+	#	scope.questions.q1.answer = 16
+	#	scope.questions.q1.ranking()
+	#	expect(scope.ranking.vas.n).toBe (prev-1002)
+	#	expect(scope.ranking.btl.n).toBe (prevb-1002)
 
-	it 'q1: should set vas-=3, btl-=3 if age is 18 ...', ->
-		prev = scope.ranking.vas.n;
-		prevb = scope.ranking.btl.n;
-		scope.questions.q1.answer = 18
-		scope.questions.q1.ranking()
-		expect(scope.ranking.vas.n).toBe (prev-3)
-		expect(scope.ranking.btl.n).toBe (prevb-3)
+	#it 'q1: should set vas-=3, btl-=3 if age is 18 ...', ->
+	#	prev = scope.ranking.vas.n;
+	#	prevb = scope.ranking.btl.n;
+	#	scope.questions.q1.answer = 18
+	#	scope.questions.q1.ranking()
+	#	expect(scope.ranking.vas.n).toBe (prev-3)
+	#	expect(scope.ranking.btl.n).toBe (prevb-3)
 
-	it 'q1: should set nextQuestion = q2 ...', ->
-		nextQ = scope.questions.q1.nextQuestion()
-		expect(nextQ).toBe 'q2'
+	#it 'q1: should set nextQuestion = q2 ...', ->
+	#	nextQ = scope.questions.q1.nextQuestion()
+	#	expect(nextQ).toBe 'q2'
 
 	# q2
 	# How much do you weigh?

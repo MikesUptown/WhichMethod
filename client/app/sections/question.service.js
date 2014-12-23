@@ -51,17 +51,82 @@ angular.module('contraceptionApp').factory('questionService', function () {
     }
     initRanking();
 
+    /**
+     * Global to hold problem list
+     */
+    var problems = {
+      curBcProbNum : 0,
+      bcProblemList : [],
+      problemsPerBc : [],
+    }
+
+
 
     /**
      * The questions and the behavior of each
      */
     var questions = {
 
-
       /** 
-       * q1:[ How old are you? ]
+       * q1:[ What birth control gave you problems ]
        */
       q1:{
+        options: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Mini Pills',     value : 2  },
+          { name : 'Ortho Evra',     value : 3  },
+          { name : 'Nuva Ring',      value : 4  },
+          { name : 'Depo Provera',   value : 5  },
+        ],
+
+        selectedOptions: [],
+
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+
+        nextQuestion: function(){
+          problems.bcProblemList.concat(this.selectedOptions);
+          return 'q1a';
+        },
+
+        ranking: function(){
+          return;
+        }
+      },
+
+      /**
+       * q1a:[ What problems? ]
+       */
+      q1a:{
+        curBcProbTuple: function() {
+          var curBcNum = problems.curBcProbNum;
+          var listLen = problems.bcProblemList.length;
+          var curBcProbTuple = undefined;
+          if (curBcNum < listLen)
+          {
+            curBcProbTuple = problems.bcProblemList[curBcProbNum];
+          }
+          return curBcProbTuple;
+        },
+        notDone: function() {
+          return (problems.curBcProbNum < problems.bcProblemList.length);
+        },
+        nextQuestion: function(){
+          problems.curBcProbNum += 1;
+          if (notDone) { return 'q1a'; }
+          else { return 'q1z'; }
+        },
+      },
+
+      /** 
+       * q1z:[ How old are you? ]
+       */
+      q1z:{
         options: [999,777],
 
         nextQuestion: function(){
