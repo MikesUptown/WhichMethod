@@ -16,7 +16,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      * The last question in each section
      */
     var sectionEnd = [
-      'q3','q13','q22','q27','q52'
+      'q3','q13','q22','q27','q52','q53h'
     ];
 
 
@@ -2267,151 +2267,141 @@ angular.module('contraceptionApp').factory('questionService', function () {
       },
 
 
+// *******************************************************
+//
+// This begins the first question of the new section
+//
+// *******************************************************
+
+      // Do you take dietary supplements or prescription medications regularly?
+      q53:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q53a'; }
+          else { return 'q54a'; }
+        }
+      },
+
+      // Do you take St. John's wort?
+      q53a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q53b';
+        }
+      },
+
+      // Do you take Rifampin, Rihadin or Rinactana?
+      q53b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q53c';
+        }
+      },
+
+      // Do you take any of these seizure medications?
+      q53c:{
+        options: [
+          { value : 1, name : 'Phenytoin or Dilantin' },
+          { value : 2, name : 'Carbamazepine or Tegretol' },
+          { value : 3, name : 'Primadone or Mysoline' },
+          { value : 4, name : 'Topiramate or Topamax' },
+          { value : 5, name : 'Oxycarbazepine or Trileptal' },
+          { value : 777, name : "I don't know" },
+          { value : 999, name : "I don't want to answer this question" },
+        ],
+        selectedOptions: [ ],
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q53h';
+        },
+        ranking: function(){
+          this.answer = 0;
+          return;
+        }
+      },
+
+      // Do you take Griseofulvin, Fulvicin or Grisactin?
+      q53h:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q54a';
+        }
+      },
+
+
+
   // *******************************************************
   //
   // This begins the first question of the new section
   //
   // *******************************************************
 
-  // // Do you take dietary supplements or prescription medications regularly?
-  // q53:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q53a'
-  //       else
-  //         return 'q54a'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take St. John's wort?
-  // q53a:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53b'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take Rifampin, Rihadin or Rinactana?
-  // q53b:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53c'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take Phinanytoin or Dilantin?
-  // q53c:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53d'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take Carbamazepine or Tegretol?
-  // q53d:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53e'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take Primadone or Mysoline?
-  // q53e:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53f'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Do you take Topiramate or Topamax?
-  // q53f:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53g'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-
-  // // Do you take Oxycarbazepine or Trileptal?
-  // q53g:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53h'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-
-  // // Do you take Griseofulvin, Fulvicin or Grisactin?
-  // q53h:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q54a'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
 
   // // The birth control pill requires that you take a pill every single day
   // // Could you remember to take a pill every single day?

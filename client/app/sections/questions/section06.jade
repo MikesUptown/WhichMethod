@@ -6,119 +6,39 @@ header#header.info()
 #container
   h2 WhichMethod_06
   ul
-     li#57(ng-show="currentQuestion == 'q57'")
+    li#53(ng-show="currentQuestion == 'q53'")
       label
-        | Q57. Do you take dietary supplements or prescription medications regularly?
-      div
-        span
-          input.field.radio(ng-model='questions.q57.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q57.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q57.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q57.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+        | Q53. Do you take dietary supplements or prescription medications regularly?
+      div(ng-repeat='option in questions.q53.options')
+        input(type="radio" name='q53' ng-model='questions.q53.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#57a(ng-show="currentQuestion == 'q57a'")
+    li#53a(ng-show="currentQuestion == 'q53a'")
       label
-        | Q57a. Do you take St. John's wort?
-      div
-        span
-          input.field.radio(ng-model='questions.q57a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q57a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q57a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q57a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+        | Q53a. Do you take St. John's wort?
+      div(ng-repeat='option in questions.q53a.options')
+        input(type="radio" name='q53a' ng-model='questions.q53a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-
-     li#57b(ng-show="currentQuestion == 'q57b'")
+    li#53b(ng-show="currentQuestion == 'q53b'")
       label
-        | Q57b. Do you take Rifampin, Rifadin or Rimactane?
-      div
-        span
-          input.field.radio(ng-model='questions.q57b.answer', value='Yes' type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q57b.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q57b.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q57b.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+        | Q53b. Do you take Rifampin, Rifadin or Rimactane?
+      div(ng-repeat='option in questions.q53b.options')
+        input(type="radio" name='q53b' ng-model='questions.q53b.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#57c(ng-show="currentQuestion == 'q57c'")
+    li#53c(ng-show="currentQuestion == 'q53c'")
       label
-        | Q57c. Do you take any of these medications for seizure disorders or epilepsy?
-      div
-        span
-          input.field.radio(ng-model='questions.q57c.answer', value='Phenytoin or Dilantin', type='radio')
-          label.choice
-            | Phenytoin or Dilantin
-        span
-          input.field.radio(ng-model='questions.q57c.answer', value='Carbamazepine or Tegretol', type='radio')
-          label.choice
-            | Carbamazepine or Tegretol
-        span
-          input.field.radio(ng-model='questions.q57c.answer', value='Primadone or Mysoline', type='radio')
-          label.choice
-            | Primadone or Mysoline
-        span
-          input.field.radio(ng-model='questions.q57c.answer', value='Topiramate or Topamax', type='radio')
-          label.choice
-            | Topiramate or Topamax
-        span
-          input.field.radio(ng-model='questions.q57c.answer', value='Oxycarbazepine or Trileptal', type='radio')
-          label.choice
-            | Oxycarbazepine or Trileptal
+        | Q53c. Do you take any of these medications for seizure disorders or epilepsy?
+      div(ng-repeat='option in questions.q53c.options')
+        input(type='checkbox' ng-checked="questions.q53c.selectedOptions.indexOf(option) != -1" ng-click="questions.q53c.toggleCheck(option)")
+        label {{option.name}}
 
-
-     li#57h(ng-show="currentQuestion == 'q57h'")
+    li#53h(ng-show="currentQuestion == 'q53h'")
       label
-        | Q57.h. Do you take Griseofulvin, Fulvicin or Grisactin?
-      div
-        span
-          input.field.radio(ng-model='questions.q57h.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q57h.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q57h.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q57h.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+        | Q53.h. Do you take Griseofulvin, Fulvicin or Grisactin?
+      div(ng-repeat='option in questions.q53h.options')
+        input(type="radio" name='q53h' ng-model='questions.q53h.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-    input(type="button",ng-click="saveAnswers()",value="Continue") 
-
+    input(type="button",ng-click="saveAnswers()",value="Continue")
