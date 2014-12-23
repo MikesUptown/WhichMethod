@@ -1,7 +1,7 @@
 header#header.info()
 //- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
-#container  
+#container
   h3 WhichMethod_03
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
@@ -13,7 +13,7 @@ header#header.info()
 
      li#q15(ng-show="currentQuestion == 'q15'")
       label
-        | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once. 
+        | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
       div
         input(ng-model='questions.q15.textInput' type='text')
         div(ng-repeat='option in questions.q15.options')
@@ -90,7 +90,7 @@ header#header.info()
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
           label {{option.name}}
-   
+
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
           | Q19ai. What problems did you have while using {{questions.q19ai.curBcProbName()}}

@@ -1,12 +1,12 @@
 header#header.info()
 
-//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px; margin 10px; padding:20px; font-size:12px; background: #eee") 
+//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px; margin 10px; padding:20px; font-size:12px; background: #eee")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 
 
 #container
-  h3 WhichMethod_section_01 
+  h3 WhichMethod_section_01
   ul
     li#q1(ng-show="currentQuestion == 'q1'")
       label
@@ -34,7 +34,7 @@ header#header.info()
             input(type="radio" name='q3' ng-model="questions.q3.selectedOption" ng-value="{{option}}")
             label.choice {{option.name}}
 
-    
+
     input(type="button", ng-click="saveAnswers()", value="Continue")
 
 
