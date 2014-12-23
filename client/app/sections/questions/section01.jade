@@ -1,10 +1,18 @@
-header#header.info()
+header
+  #logo
+    a(href="landing_01.html")
+      img.logo_img(src="assets/images/which_method_logo.png", alt="")
+      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
+      //img(ng-src='assets/images/which_method_logo.png', alt='')
+  #menu
+    a.logout_btn_01( ng-click='logout()') Log out
 
 //-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px; margin 10px; padding:20px; font-size:12px; background: #eee") 
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 
   #container
+   #survey-body
   h3 WhichMethod_section_01 
   ul
      li#q1(ng-show="currentQuestion == 'q1'")
@@ -19,10 +27,7 @@ header#header.info()
         span
           input.field.radio(ng-model='questions.q1.answer' value='777' type='radio')
           label.choice
-            | I don't want to answer this question 
-
-     
-
+            | I don't want to answer this question
 
      li#q2(ng-show="currentQuestion == 'q2'")
       label
@@ -37,8 +42,6 @@ header#header.info()
           input.field.radio(ng-model='questions.q2.answer' value='777' type='radio')
           label.choice
             | I don't want to answer this question
-
-
 
       li#q3(ng-show="currentQuestion == 'q3'")
         label
