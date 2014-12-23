@@ -7,311 +7,118 @@ header#header.info()
      li#q14(ng-show="currentQuestion == 'q14'")
       label
         | Q14. How would you describe your current sexual relationship? Would you say that...
-      div
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='0' type='radio' name='q14')
-          label.choice
-            | your partner and you only have sex with each other
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='1' type='radio' name='q14')
-          label.choice
-            | your partner or you have sex with other people as well
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='2' type='radio' name='q14')
-          label.choice
-            | you are not sure about your partner's sexual activity outside your relationship
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='3' type='radio' name='q14')
-          label.choice
-            | you currently are not having sex
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='999' type='radio' name='q14')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q14.answer' value='777' type='radio' name='q14')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q14.options')
+        input(type="radio" name='q14' ng-model="questions.q14.selectedOption" ng-value="{{option}}")
+        label.choice {{option.name}}
+
      li#q15(ng-show="currentQuestion == 'q15'")
       label
         | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once. 
       div
-        span
-          input.field.radio(ng-model='questions.q15.answer' type='text')
-          label.choice
-            | Type answer in number keypad.
-        span
-          input.field.radio(ng-model='questions.q15.answer' value='999' type='radio' name='q15')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q15.answer' value='777' type='radio' name='q15')
-          label.choice
-            | I don't want to answer this question
+        input(ng-model='questions.q15.textInput' type='text')
+        div(ng-repeat='option in questions.q15.options')
+          input(type="radio" name='q15' ng-model="questions.q15.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
      li#q16(ng-show="currentQuestion == 'q16'")
         label
           | Q16. Have you ever had an unplanned pregnancy?
-        div
-          div(ng-repeat='option in questions.q16.options')
-            input(type="radio" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
-            label {{option.name}}
+        div(ng-repeat='option in questions.q16.options')
+          input(type="radio" name='q16' ng-model="questions.q16.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
      li#q16a(ng-show="currentQuestion == 'q16a'")
-          label
-            | Q16a. How many unplanned pregnancies have you had?
-          div
-            span
-              input.field.radio(ng-model='questions.q16a.answer' type='text')
-              label.choice
-                | Type answer in number keypad. 
-            span
-              input.field.radio(ng-model='questions.q16a.answer' value='999' type='radio' name='q16a')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q16a.answer' value='777' type='radio' name='q16a')
-              label.choice
-                | I don't want to answer this question
+        label
+          | Q16a. How many unplanned pregnancies have you had?
+        input(ng-model='questions.q16a.textInput' type='text')
+        div(ng-repeat='option in questions.q16a.options')
+          input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
      li#q16b(ng-show="currentQuestion == 'q16b'")
-          label
-            | Q16b. ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
-          div
-            span
-              input.field.radio(ng-model='questions.q16b.answer' value='1' type='radio' name='q16b')
-              label.choice
-                | Yes
-            span
-              input.field.radio(ng-model='questions.q16b.answer' value='0' type='radio' name='q16b')
-              label.choice
-                | No
-            span
-              input.field.radio(ng-model='questions.q16b.answer' value='999' type='radio' name='q16b')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q16b.answer' value='777' type='radio' name='q16b')
-              label.choice 
-                | I don't want to answer this question
+        label
+          | Q16b. ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
+        div(ng-repeat='option in questions.q16b.options')
+          input(type="radio" name='q16b' ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
+          label {{option.name}}
+
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
-          label
-            | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-          div(ng-repeat='option in questions.q16bi.options')
-            input(type='checkbox' ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
-            label {{option.name}}
+        label
+          | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using?
+        div(ng-repeat='option in questions.q16bi.options')
+          input(type='checkbox' ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
+          label {{option.name}}
+
      li#q17(ng-show="currentQuestion == 'q17'")
-          label
-            | Q17. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
-          div
-            span
-              input.field.radio(ng-model='questions.q17.answer' value ='0' type='radio' name='q17')
-              label.choice
-                | First Choice
-            span
-              input.field.radio(ng-model='questions.q17.answer' value='1' type='radio' name='q17')
-              label.choice
-                | Second Choice
-            span
-              input.field.radio(ng-model='questions.q17.answer' value='2' type='radio' name='q17')
-              label.choice
-                | Third Choice
+        label
+          | Q17. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
+        div(ng-repeat='option in questions.q17.options')
+          input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
+          label {{option.name}}
+
      li#q18(ng-show="currentQuestion == 'q18'")
-          label
-            | Q18. Have you EVER used any method of birth control?
-          div
-            span
-              input.field.radio(ng-model='questions.q18.answer' value ='1' type='radio' name='q18')
-              label.choice
-                | Yes
-            span
-              input.field.radio(ng-model='questions.q18.answer' value ='0' type='radio' name='q18')
-              label.choice
-                | No
-            span
-              input.field.radio(ng-model='questions.q18.answer' value ='999' type='radio' name='q18')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q18.answer' value ='777' type='radio' name='q18')
-              label.choice
-                | I don't want to answer this question
+        label
+          | Q18. Have you EVER used any method of birth control?
+        div(ng-repeat='option in questions.q18.options')
+          input(type="radio" name='q18' ng-model="questions.q18.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
      li#q18a(ng-show="currentQuestion == 'q18a'")
-          label
-            | Q18a. Are you using birth control now?
-          div
-            span
-              input.field.radio(ng-model='questions.q18a.answer' value ='1' type='radio' name='q18a')
-              label.choice
-                | Yes
-            span
-              input.field.radio(ng-model='questions.q18a.answer' value ='0' type='radio' name='q18a')
-              label.choice
-                | No
-            span
-              input.field.radio(ng-model='questions.q18a.answer' value ='999' type='radio' name='q18a')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q18a.answer' value ='777' type='radio' name='q18a')
-              label.choice
-                | I don't want to answer this question
+        label
+          | Q18a. Are you using birth control now?
+        div(ng-repeat='option in questions.q18a.options')
+          input(type="radio" name='q18a' ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
-          label
-            | Q18ai. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
-          div
-            span
-              input.field.radio(ng-model='questions.q18ai.answer' value ='1' type='radio' name='q18ai')
-              label.choice
-                | option 1
-            span
-              input.field.radio(ng-model='questions.q18ai.answer' value ='2' type='radio' name='q18ai')
-              label.choice
-                | option 2
-            span
-              input.field.radio(ng-model='questions.q18ai.answer' value ='3' type='radio' name='q18ai')
-              label.choice
-                | option 3
+        label
+          | Q18ai. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+        div(ng-repeat='option in questions.q18ai.options')
+          input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
+          label {{option.name}}
+
      li#q19(ng-show="currentQuestion == 'q19'")
-          label
-            | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
-          div
-            span
-              input.field.radio(ng-model='questions.q19.answer' value ='1' type='radio' name='q19')
-              label.choice
-                | Yes
-            span
-              input.field.radio(ng-model='questions.q19.answer' value ='0' type='radio' name='q19')
-              label.choice
-                | No
-            span
-              input.field.radio(ng-model='questions.q19.answer' value ='999' type='radio' name='q19')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q19.answer' value ='777' type='radio' name='q19')
-              label.choice
-                | I don't want to answer this question
+        label
+          | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
+        div(ng-repeat='option in questions.q19.options')
+          input(type="radio" name='q19' ng-model="questions.q19.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
-          label
-            | Q19a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
-          div(ng-repeat='option in questions.q19a.options')
-            input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
-            label {{option.name}}
+        label
+          | Q19a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
+        div(ng-repeat='option in questions.q19a.options')
+          input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
+          label {{option.name}}
    
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
-          label
-            | Q19ai. What problems did you have while using {{questions.q19ai.curBcProbName()}}
-          div(ng-repeat='option in questions.q19ai.options')
-            input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
-            label {{option.name}}
+        label
+          | Q19ai. What problems did you have while using {{questions.q19ai.curBcProbName()}}
+        div(ng-repeat='option in questions.q19ai.options')
+          input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
+          label {{option.name}}
 
      li#q20(ng-show="currentQuestion == 'q20'")
-          label
-            | Q20. When would you like to become pregnant? In
-          div
-            div(ng-repeat='option in questions.q20.options')
-              input(type="radio" name='q20' ng-model="questions.q20.selectedOption" value="{{option}}")
-              label {{option.name}}
+        label
+          | Q20. When would you like to become pregnant? In
+        div(ng-repeat='option in questions.q20.options')
+          input(type="radio" name='q20' ng-model="questions.q20.selectedOption" value="{{option}}")
+          label {{option.name}}
 
      li#q21(ng-show="currentQuestion == 'q21'")
-          label
-            | Q21. What is most important to you when choosing a birth control method? Please select the three most important to you
-          div
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='0' type='radio' name='q21')
-              label.choice
-                | Easy to use
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='1' type='radio' name='q21')
-              label.choice
-                | Safe with breast feeding
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='2' type='radio' name='q21')
-              label.choice
-                | Inexpensive
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='3' type='radio' name='q21')
-              label.choice
-                | Very effective
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='4' type='radio' name='q21')
-              label.choice
-                | Able to get pregnant quickly after stopping use of method
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='5' type='radio' name='q21')
-              label.choice
-                | Not very many side-effects
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='6' type='radio' name='q21')
-              label.choice
-                | No hormones
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='7' type='radio' name='q21')
-              label.choice
-                | Effective long term meaning three months or longer
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='8' type='radio' name='q21')
-              label.choice
-                | Do not need to interrupt sexual activity
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='9' type='radio' name='q21')
-              label.choice
-                | Able to give regular monthly periods
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='10' type='radio' name='q21')
-              label.choice
-                | Gives fewer or no periods
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='11' type='radio' name='q21')
-              label.choice
-                | Decreases symptoms from period
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='12' type='radio' name='q21')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q21.answer' value ='13' type='radio' name='q21')
-              label.choice
-                | I don't want to answer this question
+        label
+          | Q21. What is most important to you when choosing a birth control method? Please select the three most important to you
+        div(ng-repeat='option in questions.q21.options')
+          input(type='checkbox' ng-checked="questions.q21.selectedOptions.indexOf(option) != -1" ng-click="questions.q21.toggleCheck(option)")
+          label {{option.name}}
+
      li#q22(ng-show="currentQuestion == 'q22'")
-          label
-            | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
-          div
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='1' type='radio' name='q22')
-                label.choice
-                  | Every time you have sex
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='2' type='radio' name='q22')
-                label.choice
-                  | Every day
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='3' type='radio' name='q22')
-                label.choice
-                  | Once a week
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='4' type='radio' name='q22')
-                label.choice
-                  | Once a month
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='5' type='radio' name='q22')
-                label.choice
-                  | Every three months
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='6' type='radio' name='q22')
-                label.choice
-                  | Longer than every three months
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='7' type='radio' name='q22')
-                label.choice
-                  | Permanent method
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='8' type='radio' name='q22')
-                label.choice
-                  | I don't know
-              span
-                input.field.radio(ng-model='questions.q22.answer' value ='9' type='radio' name='q22')
-                label.choice
-                  | I don't want to answer this question
+        label
+          | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
+        div(ng-repeat='option in questions.q22.options')
+          input(type="radio" name='q22' ng-model="questions.q22.selectedOption" value="{{option}}")
+          label {{option.name}}
+
     input(type="button",ng-click="saveAnswers()",value="Continue")
 
 // this ends the third set of questions 03

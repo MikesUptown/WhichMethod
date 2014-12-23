@@ -546,17 +546,29 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q14::[ How would you describe your current sexual relationship? ]
        */
       q14:{
-        options: [0,1,2,3,999,777],
-
+        options: [
+          { name : "your partner and you only have sex with each other", value : 0  },
+          { name : "your partner or you have sex with other people as well", value : 1  },
+          { name : "you are not sure about your partner's sexual activity outside your relationship", value : 2  },
+          { name : "you are not currently having sex", value : 3 },
+          { name : "I don't know", value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q15';
         },
         ranking: function(){
-            if (this.answer == 2 || this.answer == 1){
-              ranking.paragard.n-=1;
-              ranking.mirena.n-=1;
-            }
+          this.answer = this.selectedOption.value;
+          if (this.answer == 2 || this.answer == 1){
+            ranking.paragard.n-=1;
+            ranking.mirena.n-=1;
           }
+        }
       },
 
 
@@ -564,16 +576,32 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q15:[ During the last 12 months how many men, if any, have you had sexual intercourse with? ]
        */
       q15:{
-        options: [999,777],
-
-        nextQuestion: function() {
+        options: [
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+          this.textInput = undefined;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
           return 'q16';
         },
-
         ranking: function(){
-          if(this.answer > 10 && this.answer < 555) {
-            ranking.paragard.n-=999;
-            ranking.mirena.n-=999;
+          if (this.textInput != undefined && this.textInput != "")
+          {
+            this.answer = this.textInput;
+            if(this.answer > 10 && this.answer < 555) {
+              ranking.paragard.n-=999;
+              ranking.mirena.n-=999;
+            }
+          } else {
+            if (this.selectedOption != undefined)
+            {
+              this.answer = this.selectedOption.value;
+            }
           }
         }
       },
@@ -589,15 +617,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : "I don't know",                         value : 999  },
           { name : "I don't want to answer this question", value : 777  },
         ],
-
-        selectedOption : { name: 'No', value : 0 },
-
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+          this.textInput = undefined;
+        },
         nextQuestion: function(){
-          if (this.selectedOption.value == 1) { return 'q16a'; }
+          this.resetInputs();
+          if (this.answer == 1) { return 'q16a'; }
           else { return 'q17'; }
         },
 
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -607,13 +639,29 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q16a:flow_q20a:[ How many unplanned pregnancies have you had? ]
        */
       q16a:{
-        options: [999,777,888],
-
+        options: [
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+          this.textInput = undefined;
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q16b';
         },
         ranking: function(){
-          return;
+          if (this.textInput != undefined && this.textInput != "")
+          {
+            this.answer = this.textInput;
+          } else {
+            if (this.selectedOption != undefined)
+            {
+              this.answer = this.selectedOption.value;
+            }
+          }
         }
       },
   
@@ -622,13 +670,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q16b:flow_q20b:[ Were you using any method of birth control or doing anything to prevent from getting pregnant the (first) time you had an unplanned pregnancy? ]
        */
       q16b:{
-        options: [1,0,999,777,888],
-
+        options: [
+          { name : 'Yes',                                  value : 1  },
+          { name : 'No',                                   value : 0  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 1) { return 'q16bi'; }
           else { return 'q17'; }
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -658,12 +716,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Implant',        value : 18 },
           { name : 'Breast Feeding', value : 19 }
         ],
-
-        selectedOptions: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Male Condom',    value : 6  }
-        ],
-
+        selectedOptions: [ ],
         toggleCheck: function(option) {
           if (this.selectedOptions.indexOf(option) == -1) {
             this.selectedOptions.push(option);
@@ -671,13 +724,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
           }
         },
-
+        resetInputs: function(){
+          while (this.selectedOptions.length) { 
+            this.selectedOptions.pop(); 
+          }
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q17';
         },
         ranking: function(){
-          var sel_len = this.selectedOptions.length;
-          for (var i = 0; i < sel_len; i++) {
+          this.answer = 0;
+          var selLength = this.selectedOptions.length;
+          for (var i = 0; i < selLength; i++) {
             this.rank(this.selectedOptions[i].name);
           }
         },
@@ -728,17 +787,98 @@ angular.module('contraceptionApp').factory('questionService', function () {
       },
 
       /**
-       * q17:flow_q21:[ Now I'm going to ask you about different birth control methods that you might be interested in using now. I will show you four screens that have different birth control methods. You can choose as many methods as you would like ]
+       * q17:[ Now I'm going to ask you about different birth control methods that you might be interested in using now. I will show you four screens that have different birth control methods. You can choose as many methods as you would like ]
        */
       q17:{
-        options: [ ],
-
+        options: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Mini Pills',     value : 2  },
+          { name : 'Ortho Evra',     value : 3  },
+          { name : 'Nuva Ring',      value : 4  },
+          { name : 'Depo Provera',   value : 5  },
+          { name : 'Male Condom',    value : 6  },
+          { name : 'Diaphragm',      value : 7  },
+          { name : 'Female Condom',  value : 8  },
+          { name : 'Sponge',         value : 9  },
+          { name : 'Fam',            value : 10 },
+          { name : 'EC',             value : 11 },
+          { name : 'Paragard',       value : 12 },
+          { name : 'Mirena',         value : 13 },
+          { name : 'Withdrawal',     value : 14 },
+          { name : 'Spermicide',     value : 15 },
+          { name : 'Tubes Tied',     value : 16 },
+          { name : 'Vasectomy',      value : 17 },
+          { name : 'Implant',        value : 18 },
+          { name : 'Breast Feeding', value : 19 }
+        ],
+        selectedOptions: [ ],
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        resetInputs: function(){
+          while (this.selectedOptions.length) { 
+            this.selectedOptions.pop(); 
+          }
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q18';
         },
         ranking: function(){
-          return;
-        }
+          this.answer = 0;
+          var selLength = this.selectedOptions.length;
+          for (var i = 0; i < selLength; i++) {
+            this.rank(this.selectedOptions[i].name);
+          }
+        },
+        rank: function(bcname) {
+          switch (bcname)
+          {
+            case 'Birth Control':
+              ranking.ocp.n-=3;
+              break;
+            case 'Mini Pills':
+              break;
+            case 'Ortho Evra':
+              break;
+            case 'Nuva Ring':
+              break;
+            case 'Depo Provera':
+              break;
+            case 'Male Condom':
+              break;
+            case 'Diaphragm':
+              break;
+            case 'Female Condom':
+              break;
+            case 'Sponge':
+              break;
+            case 'Fam':
+              break;
+            case 'EC':
+              break;
+            case 'Paragard':
+              break;
+            case 'Mirena':
+              break;
+            case 'Withdrawal':
+              break;
+            case 'Spermicide':
+              break;
+            case 'Tubes Tied':
+              break;
+            case 'Vasectomy':
+              break;
+            case 'Implant':
+              break;
+            case 'Breast Feeding':
+              break;
+          }
+        },
       },
 
 
@@ -746,13 +886,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q18:flow_22:[ Have you EVER used any method of birth control? ]
        */
       q18:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 1) { return 'q18a'; }
           else { return 'q20'; }
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -762,13 +912,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q18a:flow_22a:[ Are you using birth control now? ]
        */
       q18a:{
-        options: [1,0,999,777,888],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 1) { return 'q18ai'; }
           else { return 'q19'; }
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -778,14 +938,95 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q18ai:flow_22ai:[ What birth control method are you using now? I will show you four screens that have different birth control methods. Please choose ALL the methods your are using now? ]
        */
       q18ai:{
-        options: [ ],
-
+        options: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Mini Pills',     value : 2  },
+          { name : 'Ortho Evra',     value : 3  },
+          { name : 'Nuva Ring',      value : 4  },
+          { name : 'Depo Provera',   value : 5  },
+          { name : 'Male Condom',    value : 6  },
+          { name : 'Diaphragm',      value : 7  },
+          { name : 'Female Condom',  value : 8  },
+          { name : 'Sponge',         value : 9  },
+          { name : 'Fam',            value : 10 },
+          { name : 'EC',             value : 11 },
+          { name : 'Paragard',       value : 12 },
+          { name : 'Mirena',         value : 13 },
+          { name : 'Withdrawal',     value : 14 },
+          { name : 'Spermicide',     value : 15 },
+          { name : 'Tubes Tied',     value : 16 },
+          { name : 'Vasectomy',      value : 17 },
+          { name : 'Implant',        value : 18 },
+          { name : 'Breast Feeding', value : 19 }
+        ],
+        selectedOptions: [ ],
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        resetInputs: function(){
+          while (this.selectedOptions.length) { 
+            this.selectedOptions.pop(); 
+          }
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q19';
         },
         ranking: function(){
-          return;
-        }
+          this.answer = 0;
+          var selLength = this.selectedOptions.length;
+          for (var i = 0; i < selLength; i++) {
+            this.rank(this.selectedOptions[i].name);
+          }
+        },
+        rank: function(bcname) {
+          switch (bcname)
+          {
+            case 'Birth Control':
+              ranking.ocp.n-=3;
+              break;
+            case 'Mini Pills':
+              break;
+            case 'Ortho Evra':
+              break;
+            case 'Nuva Ring':
+              break;
+            case 'Depo Provera':
+              break;
+            case 'Male Condom':
+              break;
+            case 'Diaphragm':
+              break;
+            case 'Female Condom':
+              break;
+            case 'Sponge':
+              break;
+            case 'Fam':
+              break;
+            case 'EC':
+              break;
+            case 'Paragard':
+              break;
+            case 'Mirena':
+              break;
+            case 'Withdrawal':
+              break;
+            case 'Spermicide':
+              break;
+            case 'Tubes Tied':
+              break;
+            case 'Vasectomy':
+              break;
+            case 'Implant':
+              break;
+            case 'Breast Feeding':
+              break;
+          }
+        },
       },
 
 
@@ -794,13 +1035,23 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q19:[ Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with? ]
        */
       q19:{
-        options: [1,0,999,777,888],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 1) { return 'q19a'; }
           else { return 'q20'; }
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -815,10 +1066,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Ortho Evra',     value : 3  },
           { name : 'Nuva Ring',      value : 4  },
           { name : 'Depo Provera',   value : 5  },
+          { name : 'Male Condom',    value : 6  },
+          { name : 'Diaphragm',      value : 7  },
+          { name : 'Female Condom',  value : 8  },
+          { name : 'Sponge',         value : 9  },
+          { name : 'Fam',            value : 10 },
+          { name : 'EC',             value : 11 },
+          { name : 'Paragard',       value : 12 },
+          { name : 'Mirena',         value : 13 },
+          { name : 'Withdrawal',     value : 14 },
+          { name : 'Spermicide',     value : 15 },
+          { name : 'Tubes Tied',     value : 16 },
+          { name : 'Vasectomy',      value : 17 },
+          { name : 'Implant',        value : 18 },
+          { name : 'Breast Feeding', value : 19 }
         ],
-
         selectedOptions: [],
-
         toggleCheck: function(option) {
           if (this.selectedOptions.indexOf(option) == -1) {
             this.selectedOptions.push(option);
@@ -826,74 +1089,40 @@ angular.module('contraceptionApp').factory('questionService', function () {
             this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
           }
         },
-
         clearSelections: function() {
           while (this.selectedOptions.length) {
             this.selectedOptions.pop();
           }
         },
-
         saveSelections: function() {
           problems.bcProblemList = this.selectedOptions.splice(0);
         },
-
         nextQuestion: function(){
           this.saveSelections();
           this.clearSelections();
           return 'q19ai';
         },
-
         ranking: function(){
           return;
         }
       },
 
       /**
-       * q19ai:flow_23ai:[ What problems did you have while using ___ ? ]
-          div
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='1' type='radio' name='q19ai')
-              label.choice
-                | I didn't like the changes to my body
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='2' type='radio' name='q19ai')
-              label.choice
-                | I had problems getting the birth control
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='3' type='radio' name='q19ai')
-              label.choice
-                | I didn't use it right
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='4' type='radio' name='q19ai')
-              label.choice
-                | I got pregnant
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='5' type='radio' name='q19ai')
-              label.choice
-                | I developed health problems
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='6' type='radio' name='q19ai')
-              label.choice
-                | I didn't like my periods
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='7' type='radio' name='q19ai')
-              label.choice
-                | My partner didn't like it
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='8' type='radio' name='q19ai')
-              label.choice
-                | None of these problems
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='9' type='radio' name='q19ai')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q19ai.answer' value ='10' type='radio' name='q19ai')
-              label.choice
-                | I don't want to answer this question
-
+       * q19ai:[ What problems did you have while using ___ ? ]
        */
       q19ai:{
+        options: [
+          { value : 1, name : "I didn't like the changes to my body" },
+          { value : 2, name : "I had problems getting the birth control" },
+          { value : 3, name : "I didn't use it right" },
+          { value : 4, name : "I got pregnant" },
+          { value : 5, name : "I developed health problems" },
+          { value : 6, name : "I didn't like my periods" },
+          { value : 7, name : "My partner didn't like it" },
+          { value : 8, name : "None of these problems" },
+          { value : 777, name : "I don't know" },
+          { value : 999, name : "I don't want to answer this question" },
+        ],
         curBcProbName : function() {
           var curBcNum = problems.curBcProbNum;
           var listLen = problems.bcProblemList.length;
@@ -911,13 +1140,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         notDone: function() {
           return (problems.curBcProbNum < problems.bcProblemList.length);
         },
-        options: [
-          { name : 'Problem 1',  value : 1  },
-          { name : 'Problem 2',     value : 2  },
-        ],
-
         selectedOptions: [],
-
         toggleCheck: function(option) {
           if (this.selectedOptions.indexOf(option) == -1) {
             this.selectedOptions.push(option);
@@ -925,18 +1148,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
             this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
           }
         },
-
         clearSelections: function() {
           while (this.selectedOptions.length) {
             this.selectedOptions.pop();
           }
         },
-
         saveSelections: function() {
           var curBcProbName = this.curBcProbName();
           problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
         },
-
         nextQuestion: function(){
           this.saveSelections();
           this.clearSelections();
@@ -960,43 +1180,88 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 777, name : "I don't know" },
           { value : 999, name : "I don't want to answer this question" },
         ],        
-
-        selectedOption : { name: 'No', value : 0 },
-
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q21';
         },
-
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
 
 
       /**
-       * q21:flow_q25:[ What is most important when choosing a birth control method? Please select the three most important to you? ]
+       * q21:[ What is most important when choosing a birth control method? Please select the three most important to you? ]
        */
       q21:{
-        options: [1,0,999,777],
-
+        options: [
+          { value : 1, name : 'Easy to use' },
+          { value : 2, name : 'Safe with breast feeding' },
+          { value : 3, name : 'Inexpensive' },
+          { value : 4, name : 'Very effective' },
+          { value : 5, name : 'Able to get pregnant quickly after stopping use of method' },
+          { value : 6, name : 'Not very many side-effects' },
+          { value : 7, name : 'No hormones' },
+          { value : 8, name : 'Effective long term meaning three months or longer' },
+          { value : 9, name : 'Do not need to interrupt sexual activity' },
+          { value : 10, name : 'Able to give regular monthly periods' },
+          { value : 11, name : 'Gives fewer or no periods' },
+          { value : 12, name : 'Decreases symptoms from period' },
+          { value : 777, name : "I don't know" },
+          { value : 999, name : "I don't want to answer this question" },
+        ],        
+        selectedOptions: [ ],
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q22';
         },
         ranking: function(){
+          this.answer = 0;
           return;
         }
       },
 
 
       /**
-       * q22:flow_q26:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
+       * q22:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
        */
       q22:{
-        options: [],
+        options: [
+          { value : 1, name : 'Every time you have sex' },
+          { value : 2, name : 'Every day' },
+          { value : 3, name : 'Once a week' },
+          { value : 4, name : 'Once a month' },
+          { value : 5, name : 'Every three months' },
+          { value : 6, name : 'Longer than every three months' },
+          { value : 7, name : 'Permanent method' },
+          { value : 777, name : "I don't know" },
+          { value : 999, name : "I don't want to answer this question" },
+        ],        
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q23';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
