@@ -1,5 +1,6 @@
-//- header#header.info()
+header#header.info()
 
+//- can switch above it to this:
 div(ng-include="'app/sections/header.html'")
 
 //- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px; margin 10px; padding:20px; font-size:12px; background: #eee") 
@@ -7,64 +8,38 @@ div(ng-include="'app/sections/header.html'")
 
 
 #container
-  h3 WhichMethod_section_01 
+
+  h3 WhichMethod_section_01
   ul
     li#q1(ng-show="currentQuestion == 'q1'")
       label
         | Q1. How old are you?
       div
-        input(ng-model='questions.q1.answer' type='text')
-        span
-          input.field.radio(ng-model='questions.q1.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q1.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question 
 
-    
+        input(ng-model='questions.q1.textInput' type='text')
+        div(ng-repeat='option in questions.q1.options')
+          input(type="radio" name='q1' ng-model="questions.q1.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
+
     li#q2(ng-show="currentQuestion == 'q2'")
       label
         | Q2. How much do you weigh?
       div
-        input(ng-model='questions.q2.answer' type='text', tabindex='1')
-        span
-          input.field.radio(ng-model='questions.q2.answer' value='999' type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q2.answer' value='777' type='radio')
-          label.choice
-            | I don't want to answer this question
+        input(ng-model='questions.q2.textInput' type='text', tabindex='1')
+        div(ng-repeat='option in questions.q2.options')
+          input(type="radio" name='q2' ng-model="questions.q2.selectedOption" ng-value="{{option}}")
+          label.choice {{option.name}}
 
     li#q3(ng-show="currentQuestion == 'q3'")
         label
             | Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
-        div        
-          //- input(ng-disabled="current questions == 'q3'" ng-model='questions.q3.answer' type='radio', tabindex='1')
-          span
-              input.field.radio(ng-model='questions.q3.answer' value='1'  type='radio')
-              label.choice
-                | I do not use tobacco
-            span
-              input.field.radio(ng-model='questions.q3.answer' value='2'  type='radio')
-              label.choice
-                | I use tobacco less than once a day
-            span
-              input.field.radio(ng-model='questions.q3.answer' value='3'  type='radio')
-              label.choice
-                | I use tobacco daily
-            span
-              input.field.radio(ng-model='questions.q3.answer' value='999' type='radio')
-              label.choice
-                | I don't know
-            span
-              input.field.radio(ng-model='questions.q3.answer' value='777' type='radio')
-              label.choice
-                | I don't want to answer this question
-    
-      input(type="button", ng-click="saveAnswers()", value="Continue")
+        div
+          div(ng-repeat='option in questions.q3.options')
+            input(type="radio" name='q3' ng-model="questions.q3.selectedOption" ng-value="{{option}}")
+            label.choice {{option.name}}
+
+
+    input(type="button", ng-click="saveAnswers()", value="Continue")
 
 
 div(ng-include="'app/sections/rankhelp.html'")

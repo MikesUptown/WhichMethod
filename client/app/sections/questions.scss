@@ -11,12 +11,17 @@ font-size:large;
 font-family: Tahoma, Arial, Verdana, sans-serif; 
 }
 */
+
+body {
+background-color: #CECECE;
+padding-bottom: 20px;
+color: #5a5a5a;
+}
+
 #container {
 border: 0 solid #ffffff;
 }
-#container, html.embed {
-background-color: #fff4d4;
-}
+
 #container {
 margin: 0 auto 10px auto;
 margin-top: 0px;
@@ -25,13 +30,20 @@ margin-bottom: 10px;
 margin-left: auto;
 width: 640px;
 }
+
 #container {
 text-align:left;
-background: #fff4d4;
+background: #83A99C;
 border: 1px solid
 #ccc;
 }
+
+
+
 /*
+.ng-scope {
+background-color: #D8C0C0;
+}
 #container, html.embed {
 background-color: #996666;
 }
@@ -44,6 +56,8 @@ margin:20px 14px 0 0px;
 padding:0 0 20px 0;
 position:relative 
 }
+
+
 
 }*/
 /* ----- Logo ----- */

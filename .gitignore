@@ -11,3 +11,4 @@ test-results.xml
 karma_html/
 /nbproject/private/
 *.swp
+*.DS_Store
