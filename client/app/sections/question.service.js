@@ -7,7 +7,7 @@
 angular.module('contraceptionApp').factory('questionService', function () {
 
     /**
-     * Values for each contraception type, updated by 
+     * Values for each contraception type, updated by
      * answers to questions
      */
     var ranking = { };
@@ -16,7 +16,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      * The last question in each section
      */
     var sectionEnd = [
-      'q3','q13','q22', 'q27'
+      'q3','q13','q22','q27','q52'
     ];
 
 
@@ -66,7 +66,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      */
     var questions = {
 
-      /** 
+      /**
        * q1:[ How old are you? ]
        */
       q1:{
@@ -104,7 +104,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-      /** 
+      /**
        * q2:[ How much do you weigh? Please enter your weight in the number keyboard. ]
        */
       q2:{
@@ -141,7 +141,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       },
 
 
-      /** 
+      /**
        * q3:[ How often do you smoke cigarettes or cigars or use smokeless tobacco? ]
        */
       q3:{
@@ -338,7 +338,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-      
+
       /**
        * q8:[ When you are not using birth control, do you have breast tenderness during your period? ]
        */
@@ -403,7 +403,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-      
+
       /**
        * q10:[ When you are no using birth control, do you have bleeding or flouid retention during your period? ]
        */
@@ -664,7 +664,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         }
       },
-  
+
 
       /**
        * q16b:flow_q20b:[ Were you using any method of birth control or doing anything to prevent from getting pregnant the (first) time you had an unplanned pregnancy? ]
@@ -725,8 +725,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         resetInputs: function(){
-          while (this.selectedOptions.length) { 
-            this.selectedOptions.pop(); 
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
           }
         },
         nextQuestion: function(){
@@ -820,8 +820,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         resetInputs: function(){
-          while (this.selectedOptions.length) { 
-            this.selectedOptions.pop(); 
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
           }
         },
         nextQuestion: function(){
@@ -968,8 +968,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         resetInputs: function(){
-          while (this.selectedOptions.length) { 
-            this.selectedOptions.pop(); 
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
           }
         },
         nextQuestion: function(){
@@ -1030,7 +1030,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       },
 
 
-      // 
+      //
       /**
        * q19:[ Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with? ]
        */
@@ -1179,7 +1179,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 5, name : 'Never' },
           { value : 777, name : "I don't know" },
           { value : 999, name : "I don't want to answer this question" },
-        ],        
+        ],
         selectedOption : { },
         resetInputs: function(){
           this.selectedOption = {};
@@ -1214,7 +1214,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 12, name : 'Decreases symptoms from period' },
           { value : 777, name : "I don't know" },
           { value : 999, name : "I don't want to answer this question" },
-        ],        
+        ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
           if (this.selectedOptions.indexOf(option) == -1) {
@@ -1251,7 +1251,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 7, name : 'Permanent method' },
           { value : 777, name : "I don't know" },
           { value : 999, name : "I don't want to answer this question" },
-        ],        
+        ],
         selectedOption : { },
         resetInputs: function(){
           this.selectedOption = {};
@@ -1293,7 +1293,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q24:q28_unschBleeding:[ Would you be okay with unscheduled bleeding and/or spotting? ]
+       * q24:[ Would you be okay with unscheduled bleeding and/or spotting? ]
        */
       q24:{
         options: [
@@ -1429,608 +1429,842 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
- 
-  // *******************************************************
-  //
-  // This begins the first question of the new section
-  //
-  // *******************************************************
-
-
-  // // Have you had a baby in the last 6 months?
-  // q28:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q28a'
-  //       else
-  //         return 'q29'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Was your baby born less than 3 weeks ago?
-  // q28a:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 0,999)
-  //         return 'q28b'
-  //       else(answer == 1)
-  //         return 'q29'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-
-
-  // // Are you breastfeeding a child now?
-  // q28b:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q29'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-
-  // // Has a doctor, nurse or health professional EVER told you that you had high blood pressure, 
-  // // also called hypertension?
-  // q29:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q29a'
-  //       else
-  //         return 'q30'
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Are you currently taking medicine for high blood pressure?
-  // q29a:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q30'
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had blood clots, also called clot
-  // // in a vein or DVT?
-  // q30:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q31'
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus,
-  // // also called a clot in the lung?
-  // q31:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       return 'q32'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Have you had surgery in the past three months?
-  // q32:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q32a'
-  //       else
-  //         return 'q33'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },    
-
-  // // Is it hard moving around because of the surgery?
-  // q32a:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q33'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
-  // q33:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q32a'
-  //       else
-  //         return 'q33'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Have you had diabetes for more than 20 years?
-  // q33a:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q33a'
-  //       else
-  //         return 'q33b'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Do you have problems with your kidneys, eyes or nerves because of diabetes?
-  // q33b:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q34'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
-  // q34:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q35'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had a clotting disorder?
-  // q35:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q36'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Do you have migraine headaches?
-  // q36:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q32a'
-  //       else
-  //         return 'q33'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Do you have migraine headaches with an aura? An aoura is seeing spots or wavy lines
-  // // before or during the migraine headache
-  // q36a:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q32a'
-  //       else
-  //         return 'q33'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had a
-  // // molar pregnancy?
-  // q37:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q38'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
-  // q38:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q39'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
-  // q39:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q40'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // toxic shock syndrome (tss)?
-  // q40:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q41'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // high cholesterol?
-  // q41:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q42'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // In the past 3 monthos has a doctor, nurse, or other health professional told you that you
-  // // had pelvid inflammatory disease (PID)?
-  // q42:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q43'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // endometriosis?
-  // q43:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q44'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // cancer or a malignancy of any kind?
-  // q44:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //       if(answer == 1)
-  //         return 'q44a'
-  //       else
-  //         return 'q45'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Have you ever had breast cancer, liver tumors or liver cancer?
-  // q44a:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q44b'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Haver you ever had endometrial cancer, ovarian cancer, or cervical cancer?
-  // q44b:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q45'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had a heart
-  // // attach, also called a myocardial infarction, heart disease or vascular disease?
-  // q45:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q46'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had complicated
-  // // valvular heart disease?
-  // q46:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q47'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had liver
-  // // or gallbladder problems?
-  // q47:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q46'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // liver or gallbladder disease or gallstones?
-  // q47a:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q46'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis
-  // // or active hepatitis?
-  // q47b:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q48'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had a 
-  // // seizure disorder or epilepsy?
-  // q48:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q49'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you had
-  // // sickle cell anemia?
-  // q49:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q46'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // Has a doctor, nurse, or other health professional EVER told you that you
-  // // had anemia, sometimes called low blood or tired blood?
-  // q50:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q51'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   }, 
-
-  // // ADDING THIS QUESTION BACK IN
-  // // Do you have severe acne?
-  // q51:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return '--'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },   
-
-
-  // // Do you have coarse, dark hairs on your face?
-  // q52:{
-  //   options: [1,0,999,777],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q53'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },     
+
+      // *******************************************************
+      //
+      // This begins the first question of the new section
+      //
+      // *******************************************************
+
+
+      // Have you had a baby in the last 6 months?
+      q28:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q28a'; }
+          else { return 'q29'; }
+        }
+      },
+
+      // Was your baby born less than 3 weeks ago?
+      q28a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q28b'; }
+          else { return 'q29'; }
+        }
+      },
+
+      // Are you breastfeeding a child now?
+      q28b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q29';
+        }
+      },
+
+
+      // Has a doctor, nurse or health professional EVER told you that you had high blood pressure,
+      // also called hypertension?
+      q29:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q29a'; }
+          else { return 'q30'; }
+        }
+      },
+
+      // Are you currently taking medicine for high blood pressure?
+      q29a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q30';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had blood clots, also called clot
+      // in a vein or DVT?
+      q30:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q31';
+        }
+      },
+
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus,
+      // also called a clot in the lung?
+      q31:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q32';
+        }
+      },
+
+      // Have you had surgery in the past three months?
+      q32:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q32a'; }
+          else { return 'q33'; }
+        }
+      },
+
+      // Is it hard moving around because of the surgery?
+      q32a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q33';
+        }
+      },
+
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
+      q33:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q33a'; }
+          else { return 'q34'; }
+        }
+      },
+
+      // Have you had diabetes for more than 20 years?
+      q33a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q33b';
+        }
+      },
+
+
+      // Do you have problems with your kidneys, eyes or nerves because of diabetes?
+      q33b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q34';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
+      q34:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q35';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had a clotting disorder?
+      q35:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q36';
+        }
+      },
+
+      // Do you have migraine headaches?
+      q36:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q36a'; }
+          else { return 'q37'; }
+        }
+      },
+
+
+      // Do you have migraine headaches with an aura? An aoura is seeing spots or wavy lines
+      // before or during the migraine headache
+      q36a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q37';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had a
+      // molar pregnancy?
+      q37:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q38';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
+      q38:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q39';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
+      q39:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q40';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // toxic shock syndrome (tss)?
+      q40:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q41';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // high cholesterol?
+      q41:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q42';
+        }
+      },
+
+      // In the past 3 monthos has a doctor, nurse, or other health professional told you that you
+      // had pelvid inflammatory disease (PID)?
+      q42:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q43';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // endometriosis?
+      q43:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q44';
+        }
+      },
+
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // cancer or a malignancy of any kind?
+      q44:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q44a'; }
+          else { return 'q45'; }
+        }
+      },
+
+
+      // Have you ever had breast cancer, liver tumors or liver cancer?
+      q44a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q44b';
+        }
+      },
+
+      // Haver you ever had endometrial cancer, ovarian cancer, or cervical cancer?
+      q44b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q45';
+        }
+      },
+
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had a heart
+      // attach, also called a myocardial infarction, heart disease or vascular disease?
+      q45:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q46';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had complicated
+      // valvular heart disease?
+      q46:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q47';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had liver
+      // or gallbladder problems?
+      q47:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          if (this.answer == 1) { return 'q47a'; }
+          else { return 'q48'; }
+        }
+      },
+
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // liver or gallbladder disease or gallstones?
+      q47a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q47b';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis
+      // or active hepatitis?
+      q47b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q48';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had a
+      // seizure disorder or epilepsy?
+      q48:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q49';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you had
+      // sickle cell anemia?
+      q49:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q50';
+        }
+      },
+
+      // Has a doctor, nurse, or other health professional EVER told you that you
+      // had anemia, sometimes called low blood or tired blood?
+      q50:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q51';
+        }
+        },
+
+      // ADDING THIS QUESTION BACK IN
+      // Do you have severe acne?
+      q51:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q52';
+        }
+      },
+
+
+      // Do you have coarse, dark hairs on your face?
+      q52:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q53';
+        }
+      },
 
 
   // *******************************************************
@@ -2055,7 +2289,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //       var answer = this.answer
   //         }
   //     }
-  //   }, 
+  //   },
 
   // // Do you take St. John's wort?
   // q53a:{
@@ -2070,7 +2304,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //       var answer = this.answer
   //         }
   //     }
-  //   }, 
+  //   },
 
   // // Do you take Rifampin, Rihadin or Rinactana?
   // q53b:{

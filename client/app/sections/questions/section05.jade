@@ -6,809 +6,257 @@ header#header.info()
 #container
   h2 WhichMethod_05
   ul
-     li#q28(ng-show="currentQuestion == 'q28'")
+    li#q28(ng-show="currentQuestion == 'q28'")
       label
         | Q28. Have you had a baby in the last 6 months?
-      div
-        span
-          input.field.radio(ng-model='questions.q28.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q28.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q28.answer',  value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q28.answer',  value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q28.options')
+        input(type="radio" name='q28' ng-model='questions.q28.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
     li#28a(ng-show="currentQuestion == 'q28a'")
       label
         | Q28a. Was your baby born less than 3 weeks ago?
-      div
-        span
-          input.field.radio(ng-model='questions.q28a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q28a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q28a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q28a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q28a.options')
+        input(type="radio" name='q28a' ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
     li#28b(ng-show="currentQuestion == 'q28b'")
       label
         | Q28b. Are you breastfeeding a child now?
-      div
-        span
-          input.field.radio(ng-model='questions.q28b.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q28b.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q28b.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q28b.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q28b.options')
+        input(type="radio" name='q28b' ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
     li#29(ng-show="currentQuestion == 'q29'")
       label
         | Q29. Has a doctor, nurse, or other health professional EVER told you that you had high blood pressure, also called hypertension?
-      div
-        span
-          input.field.radio(ng-model='questions.q29.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q29.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q29.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q29.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
-
+      div(ng-repeat='option in questions.q29.options')
+        input(type="radio" name='q29' ng-model='questions.q29.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
     li#29a(ng-show="currentQuestion == 'q29a'")
       label
         | Q29a. Are you taking medicine for high blood pressure now?
-      div
-        span
-          input.field.radio(ng-model='questions.q29a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q29a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q29a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q29a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q29a.options')
+        input(type="radio" name='q29a' ng-model='questions.q29a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-            //- p#instruct124.instruct
-              small
-                | High blood pressure (HBP) or hypertension means high pressure (tension) in the arteries. Arteries are vessels that carry blood from the pumping heart to all the tissues and organs of the body. High blood pressure does not mean excessive emotional tension, although emotional tension and stress can temporarily increase blood pressure.
-
-          
-     li#30(ng-show="currentQuestion == 'q30'")
+    li#30(ng-show="currentQuestion == 'q30'")
       label
         | Q30. Has a doctor, nurse, or other health professional EVER told you that you had blood clots, also called clot in a vein or DVT?
-      div
-        span
-          input.field.radio(ng-model='questions.q30.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q30.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q30.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q30.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q30.options')
+        input(type="radio" name='q30' ng-model='questions.q30.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-            //- p#instruct125.instruct
-              small
-                | Deep venous thrombosis (DVT) is a condition in which a blood clot forms in a vein that is deep inside the body.   DVT mainly affects the veins in the lower leg and thigh.
-
-     li#31(ng-show="currentQuestion == 'q31'")
+    li#31(ng-show="currentQuestion == 'q31'")
       label
         | Q31. Has a doctor, nurse, or other health professional EVER told you that you had pulmonary embolus, also called a clot in the lung?
-      div
-        span
-          input.field.radio(ng-model='questions.q31.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q31.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q31.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q31.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q31.options')
+        input(type="radio" name='q31' ng-model='questions.q31.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-            //- p#instruct126.instruct
-              small
-                | A pulmonary embolus is a blockage of an artery in the lungs by fat, air, blood clot, or tumor cells.
-
-     li#32(ng-show="currentQuestion == 'q32'")                
+    li#32(ng-show="currentQuestion == 'q32'")
       label
         | Q32. Have you had surgery in the past three months?
-      div
-        span
-          input.field.radio(ng-model='questions.q32.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q32.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q32.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q32.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q32.options')
+        input(type="radio" name='q32' ng-model='questions.q32.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#32a(ng-show="currentQuestion == 'q32a'")
+    li#32a(ng-show="currentQuestion == 'q32a'")
       label
         | Q32a. Is it hard moving around because of the surgery?
-      div
-        span
-          input.field.radio(ng-model='questions.q32a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q32a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q32a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q32a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q32.options')
+        input(type="radio" name='q32' ng-model='questions.q32.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#33(ng-show="currentQuestion == 'q33'")
+    li#33(ng-show="currentQuestion == 'q33'")
       label
         | Q33. Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
-      div
-        span
-          input.field.radio(ng-model='questions.q33.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q33.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q33.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q33.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q33.options')
+        input(type="radio" name='q33' ng-model='questions.q33.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#33a(ng-show="currentQuestion == 'q33a'")
+    li#33a(ng-show="currentQuestion == 'q33a'")
       label
         | Q33a. Have you had diabetes for more than 20 years?
-      div
-        span
-          input.field.radio(ng-model='questions.q33a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q33a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q33a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q33a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q33a.options')
+        input(type="radio" name='q33a' ng-model='questions.q33a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#33b(ng-show="currentQuestion == 'q33b'")
+    li#33b(ng-show="currentQuestion == 'q33b'")
       label
         | Q33b. Do you have problems with your kidneys, eyes or nerves because of diabetes?
-      div
-        span
-          input.field.radio(ng-model='questions.q33b.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q33b.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q33b.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q33b.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q33b.options')
+        input(type="radio" name='q33b' ng-model='questions.q33b.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#34(ng-show="currentQuestion == 'q34'")
+    li#34(ng-show="currentQuestion == 'q34'")
       label
         | Q34. Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
-      div
-        span
-          input.field.radio(ng-model='questions.q34.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q34.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q34.answer',  value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q34.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q34.options')
+        input(type="radio" name='q34' ng-model='questions.q34.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#35(ng-show="currentQuestion == 'q35'")
+    li#35(ng-show="currentQuestion == 'q35'")
       label
         | Q35. Has a doctor, nurse, or other health prodessional EVER told you that you had a clotting disorder?
-      div
-        span
-          input.field.radio(ng-model='questions.q35.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.radio(ng-model='questions.q35.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q35.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q35.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q35.options')
+        input(type="radio" name='q35' ng-model='questions.q35.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#36(ng-show="currentQuestion == 'q36'")
+    li#36(ng-show="currentQuestion == 'q36'")
       label
         | Q36. Do you have migraine headaches?
-      div
-        span
-          input.field.radio(ng-model='questions.q36.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q36.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q36.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q36.answer', value='I don\'t want to this question', type='radio')
-          label.choice
-            | I don't want to this question
+      div(ng-repeat='option in questions.q36.options')
+        input(type="radio" name='q36' ng-model='questions.q36.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#36a(ng-show="currentQuestion == 'q36a'")
+    li#36a(ng-show="currentQuestion == 'q36a'")
       label
         | Q36a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
-      div
-        span
-          input.field.radio(ng-model='questions.q36a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q36a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q36a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q36a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q36a.options')
+        input(type="radio" name='q36a' ng-model='questions.q36a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#37(ng-show="currentQuestion == 'q37'")
+    li#37(ng-show="currentQuestion == 'q37'")
       label
         | Q37. Has a doctor, nurse, or other health professional EVER told you that you had a molar pregnancy?
-      div
-        span
-          input.field.radio(ng-model='questions.q37.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q37.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q37.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q37.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q37.options')
+        input(type="radio" name='q37' ng-model='questions.q37.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#38(ng-show="currentQuestion == 'q38'")
+    li#38(ng-show="currentQuestion == 'q38'")
       label
         | Q38. Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
-      div
-        span
-          input.field.radio(ng-model='questions.q38.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q38.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q38.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q38.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q38.options')
+        input(type="radio" name='q38' ng-model='questions.q38.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#39(ng-show="currentQuestion == 'q39'")
+    li#39(ng-show="currentQuestion == 'q39'")
       label
         | Q39. Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
-      div
-        span
-          input.field.radio(ng-model='questions.q39.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q39.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q39.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q39.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q39.options')
+        input(type="radio" name='q39' ng-model='questions.q39.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#40(ng-show="currentQuestion == 'q40'")
+    li#40(ng-show="currentQuestion == 'q40'")
       label
         | Q40. Has a doctor, nurse, or other health professional EVER told you that you had toxic shock syndrome (TSS)?
-      div
-        span
-          input.field.radio(ng-model='questions.q40.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q40.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q40.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q40.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
-                    
+      div(ng-repeat='option in questions.q40.options')
+        input(type="radio" name='q40' ng-model='questions.q40.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-     li#41(ng-show="currentQuestion == 'q41'")
+    li#41(ng-show="currentQuestion == 'q41'")
       label
         | Q41. Has a doctor, nurse, or other health professional ever told you that you had high cholesterol?
-      div
-        span
-          input.field.radio(ng-model='questions.q41.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q41.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q41.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q41.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q41.options')
+        input(type="radio" name='q41' ng-model='questions.q41.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#42(ng-show="currentQuestion == 'q42'")
+    li#42(ng-show="currentQuestion == 'q42'")
       label
         | Q42. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
-      div
-        span
-          input.field.radio(ng-model='questions.q42.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q42.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q42.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q42.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q42.options')
+        input(type="radio" name='q42' ng-model='questions.q42.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#43(ng-show="currentQuestion == 'q43'")
+    li#43(ng-show="currentQuestion == 'q43'")
       label
         | Q43. Has a doctor, nurse, or other health professional EVER told you that you had endometriosis?
-      div
-        span
-          input.field.radio(ng-model='questions.q43.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q43.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q43.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q43.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q43.options')
+        input(type="radio" name='q43' ng-model='questions.q43.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#44(ng-show="currentQuestion == 'q44'")
+    li#44(ng-show="currentQuestion == 'q44'")
       label
         | Q44. Has a doctor, nurse, or other health professional EVER told you that you had cancer or a malignancy of any kind?
-      div
-        span
-          input.field.radio(ng-model='questions.q44.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q44.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q44.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q44.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q44.options')
+        input(type="radio" name='q44' ng-model='questions.q44.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#44a(ng-show="currentQuestion == 'q44a'")
+    li#44a(ng-show="currentQuestion == 'q44a'")
       label
         | Q44a. Have you ever had breast cancer, liver tumors or liver cancer?
-      div
-        span
-          input.field.radio(ng-model='questions.q44a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q44a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q44a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q44a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q44a.options')
+        input(type="radio" name='q44a' ng-model='questions.q44a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#44b(ng-show="currentQuestion == 'q44b'")
+    li#44b(ng-show="currentQuestion == 'q44b'")
       label
         | Q.44b. Have you ever had endometrial cancer, ovarian cancer, or cervical cancer?
-      div
-        span
-          input.field.radio(ng-model='questions.q44b.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q44b.answer',  value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q44b.answer',  value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q44b.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q44b.options')
+        input(type="radio" name='q44b' ng-model='questions.q44b.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#45(ng-show="currentQuestion == 'q45'")
+    li#45(ng-show="currentQuestion == 'q45'")
       label
         | Q45. Has a doctor, nurse, or other health professional EVER told you that you had a heart attack, also called a myocardial infarction, heart disease or vascular disease?
-      div
-        span
-          input.field.radio(ng-model='questions.q45.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q45.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q45.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q45.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q45.options')
+        input(type="radio" name='q45' ng-model='questions.q45.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#46(ng-show="currentQuestion == 'q46'")
+    li#46(ng-show="currentQuestion == 'q46'")
       label
         | Q46. Has a doctor, nurse, or other health professional EVER told you that you had complicated valvular heart disease?
-      div
-        span
-          input.field.radio(ng-model='questions.q46.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q46.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q46.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q46.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q46.options')
+        input(type="radio" name='q46' ng-model='questions.q46.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#47(ng-show="currentQuestion == 'q47'")
+    li#47(ng-show="currentQuestion == 'q47'")
       label
         | Q47. Has a doctor, nurse, or other health professional EVER told you that you had liver or gallbladder problems?
-      div
-       span
-          input.field.radio(ng-model='questions.q47.answer', type='radio', value='Yes')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q47.answer', type='radio', value='No')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q47.answer', value='I don\'t know')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q47.answer', type='radio', value='I don\'t want to answer this question')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q47.options')
+        input(type="radio" name='q47' ng-model='questions.q47.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#47a(ng-show="currentQuestion == 'q47a'")
+    li#47a(ng-show="currentQuestion == 'q47a'")
       label
         | Q47a. Has a doctor, nurse, or other health professional EVER told you that you had gallbladder disease or gallstones?
-      div
-        span
-          input.field.radio(ng-model='questions.q47a.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q47a.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q47a.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q47a.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q47a.options')
+        input(type="radio" name='q47a' ng-model='questions.q47a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#47b(ng-show="currentQuestion == 'q47b'")
+    li#47b(ng-show="currentQuestion == 'q47b'")
       label
         | Q47b. Has a doctor, nurse, or other health professional EVER told you that you had cirrhosis or active hepatitis?
-      div
-        span
-          input.field.radio(ng-model='questions.q47b.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q47b.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q47b.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q47b.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q47b.options')
+        input(type="radio" name='q47b' ng-model='questions.q47b.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#48(ng-show="currentQuestion == 'q48'")
+    li#48(ng-show="currentQuestion == 'q48'")
       label
         | Q48. Has a doctor, nurse, or other health professional EVER told you that you had a seizure disorder or epilepsy?
-      div
-        span
-          input.field.radio(ng-model='questions.q48.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q48.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q48.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q48.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q48.options')
+        input(type="radio" name='q48' ng-model='questions.q48.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#49(ng-show="currentQuestion == 'q49'")
+    li#49(ng-show="currentQuestion == 'q49'")
       label
         | Q49. Has a doctor, nurse, or other health professional EVER told you that you had sickle cell anemia?
-      div
-        span
-          input.field.radio(ng-model='questions.q49.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q49.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q49.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q49.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q49.options')
+        input(type="radio" name='q49' ng-model='questions.q49.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#50(ng-show="currentQuestion == 'q50'")
+    li#50(ng-show="currentQuestion == 'q50'")
       label
         | Q50. Has a doctor, nurse, or other health professional EVER told you that you had anemia, sometimes called low blood or tired blood?
-      div
-        span
-          input.field.radio(ng-model='questions.q50.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q50.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q50.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q50.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q50.options')
+        input(type="radio" name='q50' ng-model='questions.q50.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#51(ng-show="currentQuestion == 'q51'")
+    li#51(ng-show="currentQuestion == 'q51'")
       label
         | Q51. Do you have severe acne?
-      div
-        span
-          input.field.radio(ng-model='questions.q51.answer', type='radio', value='Yes')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q51.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q51.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q51.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q51.options')
+        input(type="radio" name='q51' ng-model='questions.q51.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-     li#52(ng-show="currentQuestion == 'q52'")
+    li#52(ng-show="currentQuestion == 'q52'")
       label
         | Q52. Do you have coarse, dark hairs on your face?
-      div
-        span
-          input.field.radio(ng-model='questions.q52.answer', value='Yes', type='radio')
-          label.choice
-            | Yes
-        span
-          input.field.radio(ng-model='questions.q52.answer', value='No', type='radio')
-          label.choice
-            | No
-        span
-          input.field.radio(ng-model='questions.q52.answer', value='I don\'t know', type='radio')
-          label.choice
-            | I don't know
-        span
-          input.field.radio(ng-model='questions.q52.answer', value='I don\'t want to answer this question', type='radio')
-          label.choice
-            | I don't want to answer this question
+      div(ng-repeat='option in questions.q52.options')
+        input(type="radio" name='q52' ng-model='questions.q52.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-    input(type="button",ng-click="saveAnswers()",value="Continue") 
 
+    input(type="button", ng-click="saveAnswers()",value="Continue")
