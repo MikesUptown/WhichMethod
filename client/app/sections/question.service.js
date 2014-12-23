@@ -16,7 +16,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      * The last question in each section
      */
     var sectionEnd = [
-      'q3','q13','q22'
+      'q3','q13','q22', 'q27'
     ];
 
 
@@ -1268,15 +1268,25 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q23:q27_schBleeding:[ Would you be okay with regular scheduled bleeding? ]
+       * q23:[ Would you be okay with regular scheduled bleeding? ]
        */
       q23:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : "Yes", value : 1  },
+          { name : "No", value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q24';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -1286,37 +1296,67 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q24:q28_unschBleeding:[ Would you be okay with unscheduled bleeding and/or spotting? ]
        */
       q24:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q25';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
 
       // Would you be okay with no bleeding at all?
       q25:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q26';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
 
       // Do you need a birth control method which you can keep private?
       q26:{
-        options: [1,0,999,777],
-
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           if(this.answer == 1) { return 'q26a'; }
           else { return 'q27'; }
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -1324,22 +1364,44 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       // Do you want to keep it private from your boyfriend/girlfriend/partner?
       q26a:{
-        options: [1,0,999,777,888],
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
-          return '26b';
+          this.resetInputs();
+          return 'q26b';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
 
       // Do you want to keep it private from your family or your friends?
       q26b:{
-        options: [1,0,999,777,888],
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q27';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -1347,11 +1409,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       // Would it be OK for you to use a birth control method that you have to interrupt sexual activity to use?
       q27:{
-        options: [1,0,999,777],
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
         nextQuestion: function(){
+          this.resetInputs();
           return 'q28';
         },
         ranking: function(){
+          this.answer = this.selectedOption.value;
           return;
         }
       },
@@ -1399,6 +1472,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
   //         }
   //     }
   //   },
+
 
 
   // // Are you breastfeeding a child now?
