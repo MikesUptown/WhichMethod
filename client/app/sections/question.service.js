@@ -71,20 +71,40 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q1:[ How old are you? ]
        */
       q1:{
-        options: [999,777],
+        options: [
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+
+        selectedOption : { },
+
+        resetInputs: function(){
+          this.selectedOption = {};
+          this.textInput = undefined;
+        },
 
         nextQuestion: function(){
+          this.resetInputs();
           return 'q2';
         },
 
         ranking: function(){
-          if (this.answer < 18) {
-            ranking.vas.n -= 999;
-            ranking.btl.n -= 999;
-          }
-          if (this.answer < 21) {
-            ranking.vas.n -= 3;
-            ranking.btl.n -= 3;
+          if (this.textInput != undefined && this.textInput != "")
+          {
+            this.answer = this.textInput;
+            if (this.answer < 18) {
+              ranking.vas.n -= 999;
+              ranking.btl.n -= 999;
+            }
+            if (this.answer < 21) {
+              ranking.vas.n -= 3;
+              ranking.btl.n -= 3;
+            }
+          } else {
+            if (this.selectedOption != undefined)
+            {
+              this.answer = this.selectedOption.value;
+            }
           }
         }
       },
@@ -93,18 +113,38 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q2:[ How much do you weigh? Please enter your weight in the number keyboard. ]
        */
       q2:{
-        options: [999,777],
+        options: [
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+
+        selectedOption : { },
+
+        resetInputs: function(){
+          this.selectedOption = {};
+          this.textInput = undefined;
+        },
 
         nextQuestion: function(){
+          this.resetInputs();
           return 'q3';
         },
 
         ranking: function(){
-          if(this.answer>=200 && this.answer < 555){
-            ranking.ortho_evra.n -= 2;
-          }
-          if(this.answer>=250 && this.answer < 555){
-            ranking.depo.n -= 2;
+          if (this.textInput != undefined && this.textInput != "")
+          {
+            this.answer = this.textInput;
+            if(this.answer>=200 && this.answer < 555){
+              ranking.ortho_evra.n -= 2;
+            }
+            if(this.answer>=250 && this.answer < 555){
+              ranking.depo.n -= 2;
+            }
+          } else {
+            if (this.selectedOption != undefined)
+            {
+              this.answer = this.selectedOption.value;
+            }
           }
         }
       },
@@ -114,13 +154,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        * q3:[ How often do you smoke cigarettes or cigars or use smokeless tobacco? ]
        */
       q3:{
-        options: [1,2,3,999,777,888],
+        options: [
+          { name : 'I do not use tobacco',               value : 1  },
+          { name : 'I use tobacco less than once a day', value : 2  },
+          { name : 'I use tobacco daily',                value : 3  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+
+        selectedOption : { },
 
         nextQuestion: function(){
           return 'q4';
         },
 
         ranking: function(){
+          this.answer = this.selectedOption.value;
           if (this.answer == 2 || this.answer == 3) {
             if(questions.q1.answer > 35) {
               ranking.ocp.n -= 999;
