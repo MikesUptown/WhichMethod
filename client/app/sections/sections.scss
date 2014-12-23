@@ -93,3 +93,24 @@ footer{
   margin-left: 125px;
   /*border: solid;*/
 }
+
+/* this is css for panels on the consent and exit screens */
+.panel-default {
+  border-color: #ddd; 
+}
+.panel-default > .panel-body {
+  width: 80px;
+  height:80px;
+  font-size: 8px;
+}
+.panel-default > .panel-heading {
+  color: #9999ff;
+  background-color: #f5f5f5;
+  border-color: #ddd; 
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd; 
+}
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd; 
+}
