@@ -36,7 +36,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           p.navbar-text Hello {{ getCurrentUser().name }}
 
         li(ng-show='isLoggedIn()')
-          a.button.btn.btn-success.navbar-btn(ng-click="$root.showSettings=!$root.showSettings") Settings
+          a.button.btn.btn-warning.navbar-btn(ng-click="$root.showSettings=!$root.showSettings") Settings
 
 
         //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
@@ -44,7 +44,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
             span.glyphicon.glyphicon-cog
 
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-          a.button.btn.btn-success.navbar-btn(href='', ng-click='logout()') Logout
+          a.button.btn.btn-warning.navbar-btn(href='', ng-click='logout()') Logout
 
     // button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
         | About
