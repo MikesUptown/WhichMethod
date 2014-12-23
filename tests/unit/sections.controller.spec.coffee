@@ -548,37 +548,37 @@ describe 'Controller: SectionsCtrl', ->
 	# q19
 	# Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with?
 	# -----
-	it 'q19:flow_q23 should set nextQuestion = q19a if answer is 1 ...', ->
-		scope.questions.q19.answer = 1
-		nextQ = scope.questions.q19.nextQuestion()
-		expect(nextQ).toBe 'q19a'
+	#it 'q19:flow_q23 should set nextQuestion = q19a if answer is 1 ...', ->
+	#	scope.questions.q19.answer = 1
+	#	nextQ = scope.questions.q19.nextQuestion()
+	#	expect(nextQ).toBe 'q19a'
 
-	it 'q19:flow_q23 should set nextQuestion = q20 if answer is not 1 ...', ->
-		scope.questions.q19.answer = 0
-		nextQ = scope.questions.q19.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19:flow_q23 should set nextQuestion = q20 if answer is not 1 ...', ->
+	#	scope.questions.q19.answer = 0
+	#	nextQ = scope.questions.q19.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q19a
 	# hat method did you have a problem with? I will show you 4 screens 
 	# -----
-	it 'q19a:flow_q23a should set nextQuestion = q19ai if answer is 1 ...', ->
-		scope.questions.q19a.answer = 1
-		nextQ = scope.questions.q19a.nextQuestion()
-		expect(nextQ).toBe 'q19ai'
+	#it 'q19a:flow_q23a should set nextQuestion = q19ai if answer is 1 ...', ->
+	#	scope.questions.q19a.answer = 1
+	#	nextQ = scope.questions.q19a.nextQuestion()
+	#	expect(nextQ).toBe 'q19ai'
 
-	it 'q19a:flow_q23a should set nextQuestion = q20 if answer is not 1 ...', ->
-		scope.questions.q19a.answer = 0
-		nextQ = scope.questions.q19a.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19a:flow_q23a should set nextQuestion = q20 if answer is not 1 ...', ->
+	#	scope.questions.q19a.answer = 0
+	#	nextQ = scope.questions.q19a.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q19ai
 	# What problems did you have while using ___ ?
 	# -----
-	it 'q19ai:flow_q23ai should set nextQuestion = q20 ...', ->
-		nextQ = scope.questions.q19ai.nextQuestion()
-		expect(nextQ).toBe 'q20'
+	#it 'q19ai:flow_q23ai should set nextQuestion = q20 ...', ->
+	#	nextQ = scope.questions.q19ai.nextQuestion()
+	#	expect(nextQ).toBe 'q20'
 
 
 	# q20

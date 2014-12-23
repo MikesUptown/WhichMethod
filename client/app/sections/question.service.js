@@ -68,108 +68,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
     var questions = {
 
       /** 
-       * q1:[ What birth control gave you problems ]
+       * q1:[ How old are you? ]
        */
       q1:{
-        options: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera',   value : 5  },
-        ],
-
-        selectedOptions: [],
-
-        toggleCheck: function(option) {
-          if (this.selectedOptions.indexOf(option) == -1) {
-            this.selectedOptions.push(option);
-          } else {
-            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
-          }
-        },
-
-        clearSelections: function() {
-          while (this.selectedOptions.length) {
-            this.selectedOptions.pop();
-          }
-        },
-
-        saveSelections: function() {
-          problems.bcProblemList = this.selectedOptions.splice(0);
-        },
-
-        nextQuestion: function(){
-          this.saveSelections();
-          this.clearSelections();
-          return 'q1a';
-        },
-
-        ranking: function(){
-          return;
-        }
-      },
-
-      /**
-       * q1a:[ What problems? ]
-       */
-      q1a:{
-        curBcProbName : function() {
-          var curBcNum = problems.curBcProbNum;
-          var listLen = problems.bcProblemList.length;
-          var curBcProbTuple = undefined;
-          if (curBcNum < listLen)
-          {
-            curBcProbTuple = problems.bcProblemList[curBcNum];
-          }
-          if (curBcProbTuple != undefined) {
-            return curBcProbTuple.name;
-          } else {
-            return '';
-          }
-        },
-        notDone: function() {
-          return (problems.curBcProbNum < problems.bcProblemList.length);
-        },
-        options: [
-          { name : 'Problem 1',  value : 1  },
-          { name : 'Problem 2',     value : 2  },
-        ],
-
-        selectedOptions: [],
-
-        toggleCheck: function(option) {
-          if (this.selectedOptions.indexOf(option) == -1) {
-            this.selectedOptions.push(option);
-          } else {
-            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
-          }
-        },
-
-        clearSelections: function() {
-          while (this.selectedOptions.length) {
-            this.selectedOptions.pop();
-          }
-        },
-
-        saveSelections: function() {
-          var curBcProbName = this.curBcProbName();
-          problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
-        },
-
-        nextQuestion: function(){
-          this.saveSelections();
-          this.clearSelections();
-          problems.curBcProbNum += 1;
-          if (this.notDone()) { return 'q1a'; }
-          else { return 'q1z'; }
-        },
-      },
-
-      /** 
-       * q1z:[ How old are you? ]
-       */
-      q1z:{
         options: [999,777],
 
         nextQuestion: function(){
@@ -742,9 +643,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
+
       // 
       /**
-       * q19:flow_23:[ Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with? ]
+       * q19:[ Have you EVER used a birth control method that you didn't like, that didn't work, or that you had other problems with? ]
        */
       q19:{
         options: [1,0,999,777,888],
@@ -758,35 +660,145 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-
       /**
        * q19a:flow_23a:[ What method did you have a problem with? I will show you 4 screens  ]
        */
       q19a:{
-        options: [1,0,999,777],
+        options: [
+          { name : 'Birth Control',  value : 1  },
+          { name : 'Mini Pills',     value : 2  },
+          { name : 'Ortho Evra',     value : 3  },
+          { name : 'Nuva Ring',      value : 4  },
+          { name : 'Depo Provera',   value : 5  },
+        ],
+
+        selectedOptions: [],
+
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+
+        clearSelections: function() {
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
+          }
+        },
+
+        saveSelections: function() {
+          problems.bcProblemList = this.selectedOptions.splice(0);
+        },
 
         nextQuestion: function(){
-          if(this.answer == 1) { return 'q19ai'; }
-          else { return 'q20'; }
+          this.saveSelections();
+          this.clearSelections();
+          return 'q19ai';
         },
+
         ranking: function(){
           return;
         }
       },
 
-
       /**
        * q19ai:flow_23ai:[ What problems did you have while using ___ ? ]
+          div
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='1' type='radio' name='q19ai')
+              label.choice
+                | I didn't like the changes to my body
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='2' type='radio' name='q19ai')
+              label.choice
+                | I had problems getting the birth control
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='3' type='radio' name='q19ai')
+              label.choice
+                | I didn't use it right
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='4' type='radio' name='q19ai')
+              label.choice
+                | I got pregnant
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='5' type='radio' name='q19ai')
+              label.choice
+                | I developed health problems
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='6' type='radio' name='q19ai')
+              label.choice
+                | I didn't like my periods
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='7' type='radio' name='q19ai')
+              label.choice
+                | My partner didn't like it
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='8' type='radio' name='q19ai')
+              label.choice
+                | None of these problems
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='9' type='radio' name='q19ai')
+              label.choice
+                | I don't know
+            span
+              input.field.radio(ng-model='questions.q19ai.answer' value ='10' type='radio' name='q19ai')
+              label.choice
+                | I don't want to answer this question
+
        */
       q19ai:{
-        options: [999,777],
+        curBcProbName : function() {
+          var curBcNum = problems.curBcProbNum;
+          var listLen = problems.bcProblemList.length;
+          var curBcProbTuple = undefined;
+          if (curBcNum < listLen)
+          {
+            curBcProbTuple = problems.bcProblemList[curBcNum];
+          }
+          if (curBcProbTuple != undefined) {
+            return curBcProbTuple.name;
+          } else {
+            return '';
+          }
+        },
+        notDone: function() {
+          return (problems.curBcProbNum < problems.bcProblemList.length);
+        },
+        options: [
+          { name : 'Problem 1',  value : 1  },
+          { name : 'Problem 2',     value : 2  },
+        ],
+
+        selectedOptions: [],
+
+        toggleCheck: function(option) {
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+
+        clearSelections: function() {
+          while (this.selectedOptions.length) {
+            this.selectedOptions.pop();
+          }
+        },
+
+        saveSelections: function() {
+          var curBcProbName = this.curBcProbName();
+          problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
+        },
 
         nextQuestion: function(){
-          return 'q20';
+          this.saveSelections();
+          this.clearSelections();
+          problems.curBcProbNum += 1;
+          if (this.notDone()) { return 'q19ai'; }
+          else { return 'q20'; }
         },
-        ranking: function(){
-          return;
-        }
       },
 
 

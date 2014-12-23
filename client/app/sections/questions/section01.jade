@@ -9,21 +9,6 @@ header#header.info()
   ul
     li#q1(ng-show="currentQuestion == 'q1'")
       label
-        | Q1. What problems?
-      div(ng-repeat='option in questions.q1.options')
-        input(type='checkbox' ng-checked="questions.q1.selectedOptions.indexOf(option) != -1" ng-click="questions.q1.toggleCheck(option)")
-        label {{option.name}}
-   
-    li#q1a(ng-show="currentQuestion == 'q1a'")
-      span
-        label Q1a. What problems with {{questions.q1a.curBcProbName()}}
-      div(ng-repeat='option in questions.q1a.options')
-        input(type='checkbox' ng-checked="questions.q1a.selectedOptions.indexOf(option) != -1" ng-click="questions.q1a.toggleCheck(option)")
-        label {{option.name}}
-   
-
-    li#q1z(ng-show="currentQuestion == 'q1z'")
-      label
         | Q1. How old are you?
       div
         input(ng-model='questions.q1.answer' type='text')
@@ -49,8 +34,6 @@ header#header.info()
           input.field.radio(ng-model='questions.q2.answer' value='777' type='radio')
           label.choice
             | I don't want to answer this question
-
-
 
     li#q3(ng-show="currentQuestion == 'q3'")
         label
