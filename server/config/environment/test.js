@@ -5,6 +5,8 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/contraception-test'
+    uri: 
+        process.env.MONGOLAB_URI || 
+        'mongodb://localhost/contraception-test'
   }
 };

@@ -17,6 +17,22 @@ header{
   /*border: solid;*/
 }
 
+
+
+.rankingHelp{
+  position:absolute;
+  bottom:50px;
+  .pos {
+    color:green;
+  }
+  .neg {
+    color:red;
+  }
+}
+
+
+
+
 #logo{
   width: 150px;
   margin-top: 22px;

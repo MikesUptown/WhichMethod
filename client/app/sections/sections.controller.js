@@ -33,6 +33,7 @@ angular.module('contraceptionApp')
         var q = currentUser.answers[i]
         $scope.questions[q.question].answer = q.answer
       }
+      $scope.updateRanking()
     }
 
 
@@ -40,8 +41,12 @@ angular.module('contraceptionApp')
 
     $scope.saveAnswers = function(){
 
+      $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].answer)
+
       console.log("Answer Saved!")
       $scope.updateRanking()
+
+
 
       var isEnd = sectionEnd.indexOf($scope.currentQuestion)
 
