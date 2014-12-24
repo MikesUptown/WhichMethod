@@ -60,7 +60,11 @@ exports.updateUser = function(req, res) {
   var currentQuestion = String(req.body.currentQuestion);
   var currentSection = String(req.body.currentSection);
 
-  console.log(answers)
+  // console.log(answers)
+  // for(var a in answers){
+  //   var ans = answers[a]
+  //   console.log(ans.answer) 
+  // }
 
 
   User.findById(userId, function (err, user) {

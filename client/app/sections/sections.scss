@@ -20,8 +20,18 @@ header{
 
 
 .rankingHelp{
-  position:absolute;
-  bottom:50px;
+  position:relative;
+  margin:50px auto;
+  width:70%;
+
+  .rankEl{
+    width:300px;
+    display:inline-block;
+    span{
+      display:inline-block;
+      width:80px;
+    }
+  }
   .pos {
     color:green;
   }

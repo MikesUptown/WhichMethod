@@ -1,6 +1,6 @@
 .rankingHelp
-  span(ng-repeat="(key, value) in ranking" style="") 
-    |method: 
+  span.rankEl(ng-repeat="(key, value) in ranking" style="") 
+     
     span.method {{key}} 
     span.pos pos: {{value.p}} 
     span.neg neg: {{value.n}}

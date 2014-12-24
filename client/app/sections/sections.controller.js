@@ -43,13 +43,16 @@ angular.module('contraceptionApp')
     $scope.saveAnswers = function(){
 
       // $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].answer)
+      var thisQ = $scope.questions[$scope.currentQuestion]
 
-      if($scope.questions[$scope.currentQuestion].selectedOption.value != null)
-        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].selectedOption)
-      else if($scope.questions[$scope.currentQuestion].textInput != null){
-        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].textInput)
-        $scope.questions[$scope.currentQuestion].textInput = parseInt($scope.questions[$scope.currentQuestion].textInput)
-
+      if(thisQ.selectedOption && thisQ.selectedOption.value != null)
+        thisQ.answer = parseInt(thisQ.selectedOption.value)
+      else if(thisQ.textInput != null){
+        thisQ.answer = parseInt(thisQ.textInput)
+        thisQ.textInput = parseInt(thisQ.textInput)
+      }
+      else if(thisQ.selectedOptions){
+        thisQ.answer = {'array': thisQ.selectedOptions.slice(0) }
       }
 
 
