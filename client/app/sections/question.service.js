@@ -739,9 +739,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // for (var i = 0; i < selLength; i++) {
           //   this.rank(this.selectedOptions[i].name);
           // }
-          var selLength = this.answer.array.length;
-          for (var i = 0; i < selLength; i++) {
-            this.rank(this.answer.array[i].name);
+          if(this.answer && this.answer.array){
+            var selLength = this.answer.array.length;
+            for (var i = 0; i < selLength; i++) {
+              this.rank(this.answer.array[i].name);
+            }
           }
         },
         rank: function(bcname) {
