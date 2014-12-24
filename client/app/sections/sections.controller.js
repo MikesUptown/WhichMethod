@@ -45,7 +45,7 @@ angular.module('contraceptionApp')
       // $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].answer)
 
       if($scope.questions[$scope.currentQuestion].selectedOption.value != null)
-        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].selectedOption)
+        $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].selectedOption.value)
       else if($scope.questions[$scope.currentQuestion].textInput != null){
         $scope.questions[$scope.currentQuestion].answer = parseInt($scope.questions[$scope.currentQuestion].textInput)
         $scope.questions[$scope.currentQuestion].textInput = parseInt($scope.questions[$scope.currentQuestion].textInput)

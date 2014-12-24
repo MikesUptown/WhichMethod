@@ -84,9 +84,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q2';
         },
         ranking: function(){
-          if (this.textInput != undefined && this.textInput != "")
-          {
-            this.answer = this.textInput;
+          // if (this.textInput != undefined && this.textInput != "")
+          // {
+            
             if (this.answer < 18) {
               ranking.vas.n -= 999;
               ranking.btl.n -= 999;
@@ -95,12 +95,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
               ranking.vas.n -= 3;
               ranking.btl.n -= 3;
             }
-          } else {
-            if (this.selectedOption != undefined)
-            {
-              this.answer = this.selectedOption.value;
-            }
-          }
+          // } else {
+          //   if (this.selectedOption != undefined)
+          //   {
+              
+          //   }
+          // }
         }
       },
 
@@ -122,21 +122,21 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q3';
         },
         ranking: function(){
-          if (this.textInput != undefined && this.textInput != "")
-          {
-            this.answer = this.textInput;
+          // if (this.textInput != undefined && this.textInput != "")
+          // {
+            
             if(this.answer>=200 && this.answer < 555){
               ranking.ortho_evra.n -= 2;
             }
             if(this.answer>=250 && this.answer < 555){
               ranking.depo.n -= 2;
             }
-          } else {
-            if (this.selectedOption != undefined)
-            {
-              this.answer = this.selectedOption.value;
-            }
-          }
+          // } else {
+            // if (this.selectedOption != undefined)
+            // {
+              
+            // }
+          // }
         }
       },
 
@@ -161,7 +161,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q4';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if (this.answer == 2 || this.answer == 3) {
             if(questions.q1.answer > 35) {
               ranking.ocp.n -= 999;
@@ -193,7 +193,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q7'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 2){
             ranking.ocp.p+=1;
             ranking.ortho_evra.p+=1;
@@ -223,7 +223,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q5';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 2){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -257,7 +257,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q6';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -291,7 +291,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q7';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -324,7 +324,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q8';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -358,7 +358,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q9';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.pop.p+=1;
             ranking.ortho_evra.n-=3;
@@ -390,7 +390,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q10';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -423,7 +423,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q11';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if(this.answer == 1){
             ranking.ocp.p+=1;
             ranking.pop.p+=1;
@@ -455,7 +455,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q12';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if (this.answer == 1) {
             ranking.pop.p=+1;
             ranking.depo.p=+1;
@@ -485,7 +485,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q13';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if (this.answer == 1) {
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
@@ -519,7 +519,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q14';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if (this.answer == 1){
             ranking.ocp.p=+1;
             ranking.pop.p=+1;
@@ -563,7 +563,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q15';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           if (this.answer == 2 || this.answer == 1){
             ranking.paragard.n-=1;
             ranking.mirena.n-=1;
@@ -592,7 +592,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         ranking: function(){
           if (this.textInput != undefined && this.textInput != "")
           {
-            this.answer = this.textInput;
+            
             if(this.answer > 10 && this.answer < 555) {
               ranking.paragard.n-=999;
               ranking.mirena.n-=999;
@@ -600,7 +600,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           } else {
             if (this.selectedOption != undefined)
             {
-              this.answer = this.selectedOption.value;
+              
             }
           }
         }
@@ -629,7 +629,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
 
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -655,11 +655,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
         ranking: function(){
           if (this.textInput != undefined && this.textInput != "")
           {
-            this.answer = this.textInput;
+            
           } else {
             if (this.selectedOption != undefined)
             {
-              this.answer = this.selectedOption.value;
+              
             }
           }
         }
@@ -686,7 +686,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q17'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -902,7 +902,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q20'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -928,7 +928,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q19'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1051,7 +1051,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q20'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1189,7 +1189,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q21';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1261,7 +1261,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q23';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1286,7 +1286,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q24';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1311,7 +1311,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q25';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1333,7 +1333,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q26';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1356,7 +1356,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q27'; }
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1379,7 +1379,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q26b';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1401,7 +1401,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q27';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1424,7 +1424,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q28';
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         }
       },
@@ -1450,7 +1450,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1473,7 +1473,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1496,7 +1496,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1520,7 +1520,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1543,7 +1543,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1566,7 +1566,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1590,7 +1590,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1612,7 +1612,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1635,7 +1635,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1658,7 +1658,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1681,7 +1681,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1704,7 +1704,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1726,7 +1726,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1748,7 +1748,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1770,7 +1770,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1795,7 +1795,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1818,7 +1818,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1840,7 +1840,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1862,7 +1862,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1885,7 +1885,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1908,7 +1908,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1931,7 +1931,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1954,7 +1954,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -1978,7 +1978,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2002,7 +2002,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2024,7 +2024,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2048,7 +2048,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2071,7 +2071,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2094,7 +2094,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2119,7 +2119,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2142,7 +2142,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2165,7 +2165,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2188,7 +2188,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2211,7 +2211,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2234,7 +2234,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2257,7 +2257,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2286,7 +2286,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2309,7 +2309,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2331,7 +2331,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
@@ -2385,7 +2385,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          this.answer = this.selectedOption.value;
+          
           return;
         },
         nextQuestion: function(){
