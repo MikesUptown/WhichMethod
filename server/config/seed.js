@@ -28,14 +28,16 @@ var User = require('../api/user/user.model');
 //   );
 // });
 
-User.create( {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin',
-    password: 'admin',
-    zip:999
-  }, function() {
-      console.log('finished populating users');
-    })
+// User.find({}).remove(function() {
+// User.create( {
+//     provider: 'local',
+//     role: 'admin',
+//     name: 'Admin',
+//     email: 'admin',
+//     password: 'admin',
+//     zip:999
+//   }, function() {
+//       console.log('finished populating users');
+//     })
+// })
   

@@ -835,10 +835,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q18';
         },
         ranking: function(){
-          this.answer = 0;
-          var selLength = this.selectedOptions.length;
-          for (var i = 0; i < selLength; i++) {
-            this.rank(this.selectedOptions[i].name);
+          // this.answer = 0;
+          // var selLength = this.selectedOptions.length;
+          // for (var i = 0; i < selLength; i++) {
+          //   this.rank(this.selectedOptions[i].name);
+          // }
+          if(this.answer && this.answer.array){
+            var selLength = this.answer.array.length;
+            for (var i = 0; i < selLength; i++) {
+              this.rank(this.answer.array[i].name);
+            }
           }
         },
         rank: function(bcname) {
@@ -983,10 +989,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q19';
         },
         ranking: function(){
-          this.answer = 0;
-          var selLength = this.selectedOptions.length;
-          for (var i = 0; i < selLength; i++) {
-            this.rank(this.selectedOptions[i].name);
+          // this.answer = 0;
+          // var selLength = this.selectedOptions.length;
+          // for (var i = 0; i < selLength; i++) {
+          //   this.rank(this.selectedOptions[i].name);
+          // }
+          if(this.answer && this.answer.array){
+            var selLength = this.answer.array.length;
+            for (var i = 0; i < selLength; i++) {
+              this.rank(this.answer.array[i].name);
+            }
           }
         },
         rank: function(bcname) {
