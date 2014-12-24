@@ -2292,7 +2292,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         nextQuestion: function(){
           this.resetInputs();
           if (this.answer == 1) { return 'q53a'; }
-          else { return 'q54a'; }
+          else { return 'q58a'; }
         }
       },
 
@@ -2390,7 +2390,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q54a';
+          return 'q58a';
         }
       },
 
@@ -2403,86 +2403,121 @@ angular.module('contraceptionApp').factory('questionService', function () {
   // *******************************************************
 
 
-  // // The birth control pill requires that you take a pill every single day
-  // // Could you remember to take a pill every single day?
-  // q54a:{
-  //   options: [1,0,999,777,888],
+      // The birth control pill requires that you take a pill every single day
+      // Could you remember to take a pill every single day?
+      q58a:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q58b';
+        }
+      },
 
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q54b'
+      // The birth control shot requires that you return to the clinic every three months to get a
+      // shot, would you be able to do this?
+      q58b:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q58c';
+        }
+      },
 
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
+      // The contraceptive ring requires that you place a small bendable ring in your vagina
+      // once per month. Would you feel comfortable using the ring as a birth control method?
+      q58c:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q58d';
+        }
+      },
 
-  // // The birth control shot requires that you return to the clinic every three months to get a
-  // // shot, would you be able to do this?
-  // q54b:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q54c'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // The contraceptive ring requires that you place a small bendable ring in your vagina
-  // // once per month. Would you feel comfortable using the ring as a birth control method?
-  // q54c:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q54d'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
-
-  // // Would you feel comfortable having an IUD, a T-shaped contracpetive, placed by your
-  // // provider inside your uterus that would provide contracpetion for 5-10 years?
-  // q54d:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return 'q54e'
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
+      // Would you feel comfortable having an IUD, a T-shaped contracpetive, placed by your
+      // provider inside your uterus that would provide contracpetion for 5-10 years?
+      q58d:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q58e';
+        }
+      },
 
 
-  // // The contraceptive implant is a small rod placed by your provider under the
-  // // sking of your upper arm that provides contracpetion for up to 3 years?
-  // q54e:{
-  //   options: [1,0,999,777,888],
-
-  //   nextQuestion: function(){
-  //     var answer = this.answer
-  //         return ''
-
-  //       },
-  //       ranking: function(){
-  //       var answer = this.answer
-  //         }
-  //     }
-  //   },
+      // The contraceptive implant is a small rod placed by your provider under the
+      // sking of your upper arm that provides contracpetion for up to 3 years?
+      q58e:{
+        options: [
+          { name : 'Yes', value : 1  },
+          { name : 'No', value : 2  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          this.answer = this.selectedOption.value;
+          return;
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return '';
+        }
+      }
     };
 
     return {
@@ -2494,8 +2529,5 @@ angular.module('contraceptionApp').factory('questionService', function () {
       getRanking: function(){
         return ranking;
       }
-
     };
-  }
-  );
-
+});
