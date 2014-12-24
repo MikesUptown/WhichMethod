@@ -19,7 +19,7 @@ var UserSchema = new Schema({
   zip: Number,
   answers: [{
     question: String,
-    answer: Number
+    answer: Schema.Types.Mixed
   }]
 
 });
