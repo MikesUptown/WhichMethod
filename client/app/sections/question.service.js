@@ -590,19 +590,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q16';
         },
         ranking: function(){
-          if (this.textInput != undefined && this.textInput != "")
-          {
-            
-            if(this.answer > 10 && this.answer < 555) {
-              ranking.paragard.n-=999;
-              ranking.mirena.n-=999;
-            }
-          } else {
-            if (this.selectedOption != undefined)
-            {
-              
-            }
-          }
+          
         }
       },
 
@@ -653,15 +641,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q16b';
         },
         ranking: function(){
-          if (this.textInput != undefined && this.textInput != "")
-          {
-            
-          } else {
-            if (this.selectedOption != undefined)
-            {
-              
-            }
-          }
+          
+          
         }
       },
 
