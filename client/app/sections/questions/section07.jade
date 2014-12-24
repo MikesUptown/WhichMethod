@@ -7,145 +7,49 @@ header
   #menu
     a.logout_btn_01( ng-click='logout()') Log out
 
-#container.ltr
-
-        header#header.info
-          h2 WhichMethod_07
-          div
-        ul
-          li#foli119.notranslate
-            fieldset
-              legend#title119.desc
-                | Q.58.a. The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
-              //if lt IE 8
-                label#title119.desc
-                  | Q.58.a. The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
-              div
-                input#radioDefault_119(name='Field119', type='hidden', value='')
-                span
-                  input#Field119_0.field.radio(name='Field119', type='radio', value='Yes', tabindex='1', checked='checked')
-                  label.choice(for='Field119_0')
-                    | Yes
-                span
-                  input#Field119_1.field.radio(name='Field119', type='radio', value='No', tabindex='2')
-                  label.choice(for='Field119_1')
-                    | No
-                span
-                  input#Field119_2.field.radio(name='Field119', type='radio', value='I don\'t know', tabindex='3')
-                  label.choice(for='Field119_2')
-                    | I don't know
-                span
-                  input#Field119_3.field.radio(name='Field119', type='radio', value='I don\'t want to answer this question', tabindex='4')
-                  label.choice(for='Field119_3')
-                    | I don't want to answer this question
+#container
+  h2 WhichMethod_07
+  ul
+    li#58a(ng-show="currentQuestion == 'q58a'")
+      label
+        | Q.58a. The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
+      div(ng-repeat='option in questions.q58a.options')
+        input(type="radio" name='q58a' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
 
-          li#foli121.notranslate
-            fieldset
-              legend#title121.desc
-                | Q58.b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
-              //if lt IE 8
-                label#title121.desc
-                  | Q58.b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
-              div
-                input#radioDefault_121(name='Field121', type='hidden', value='')
-                span
-                  input#Field121_0.field.radio(name='Field121', type='radio', value='Yes', tabindex='5', checked='checked')
-                  label.choice(for='Field121_0')
-                    | Yes
-                span
-                  input#Field121_1.field.radio(name='Field121', type='radio', value='No', tabindex='6')
-                  label.choice(for='Field121_1')
-                    | No
-                span
-                  input#Field121_2.field.radio(name='Field121', type='radio', value='I don\'t know', tabindex='7')
-                  label.choice(for='Field121_2')
-                    | I don't know
-                span
-                  input#Field121_3.field.radio(name='Field121', type='radio', value='I don\'t want to answer this question', tabindex='8')
-                  label.choice(for='Field121_3')
-                    | I don't want to answer this question
+    li#58b(ng-show="currentQuestion == 'q58b'")
+      label
+        | Q58b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
+      div(ng-repeat='option in questions.q58b.options')
+        input(type="radio" name='q58b' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
+
+      
+    li#58c(ng-show="currentQuestion == 'q58c'")
+      label
+        | Q58c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
+      div(ng-repeat='option in questions.q58c.options')
+        input(type="radio" name='q58c' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
 
-          li#foli122.notranslate
-            fieldset
-              legend#title122.desc
-                | Q58.c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
-              //if lt IE 8
-                label#title122.desc
-                  | Q58.c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
-              div
-                input#radioDefault_122(name='Field122', type='hidden', value='')
-                span
-                  input#Field122_0.field.radio(name='Field122', type='radio', value='Yes', tabindex='9', checked='checked')
-                  label.choice(for='Field122_0')
-                    | Yes
-                span
-                  input#Field122_1.field.radio(name='Field122', type='radio', value='No', tabindex='10')
-                  label.choice(for='Field122_1')
-                    | No
-                span
-                  input#Field122_2.field.radio(name='Field122', type='radio', value='I don\'t know', tabindex='11')
-                  label.choice(for='Field122_2')
-                    | I don't know
-                span
-                  input#Field122_3.field.radio(name='Field122', type='radio', value='I don\'t want to answer this question', tabindex='12')
-                  label.choice(for='Field122_3')
-                    | I don't want to answer this question
+    li#58d(ng-show="currentQuestion == 'q58d'")
+      label
+        | Q58d. Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
+      div(ng-repeat='option in questions.q58d.options')
+        input(type="radio" name='q58d' ng-model='questions.q58d.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
 
-          li#foli123.notranslate
-            fieldset
-              legend#title123.desc
-                | Q58.d. Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
-              //if lt IE 8
-                label#title123.desc
-                  | Q58.d. Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
-              div
-                input#radioDefault_123(name='Field123', type='hidden', value='')
-                span
-                  input#Field123_0.field.radio(name='Field123', type='radio', value='Yes', tabindex='13', checked='checked')
-                  label.choice(for='Field123_0')
-                    | Yes
-                span
-                  input#Field123_1.field.radio(name='Field123', type='radio', value='No', tabindex='14')
-                  label.choice(for='Field123_1')
-                    | No
-                span
-                  input#Field123_2.field.radio(name='Field123', type='radio', value='I don\'t know', tabindex='15')
-                  label.choice(for='Field123_2')
-                    | I don't know
-                span
-                  input#Field123_3.field.radio(name='Field123', type='radio', value='I don\'t want to answer this question', tabindex='16')
-                  label.choice(for='Field123_3')
-                    | I don't want to answer this question
+    li#58e(ng-show="currentQuestion == 'q58e'")
+      label
+        | Q58e. The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
+      div(ng-repeat='option in questions.q58e.options')
+        input(type="radio" name='q58e' ng-model='questions.q58e.selectedOption' ng-value="{{option}}")
+        label {{option.name}}
 
-
-          li#foli124.notranslate
-            fieldset
-              legend#title124.desc
-                | Q58.e. The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
-              //if lt IE 8
-                label#title124.desc
-                  | Q58.e. The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
-              div
-                input#radioDefault_124(name='Field124', type='hidden', value='')
-                span
-                  input#Field124_0.field.radio(name='Field124', type='radio', value='Yes', tabindex='17', checked='checked')
-                  label.choice(for='Field124_0')
-                    | Yes
-                span
-                  input#Field124_1.field.radio(name='Field124', type='radio', value='No', tabindex='18')
-                  label.choice(for='Field124_1')
-                    | No
-                span
-                  input#Field124_2.field.radio(name='Field124', type='radio', value='I don\'t know', tabindex='19')
-                  label.choice(for='Field124_2')
-                    | I don't know
-                span
-                  input#Field124_3.field.radio(name='Field124', type='radio', value='I don\'t want to answer this question', tabindex='20')
-                  label.choice(for='Field124_3')
-                    | I don't want to answer this question
+    input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")
 

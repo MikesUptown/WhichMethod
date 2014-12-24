@@ -16,7 +16,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      * The last question in each section
      */
     var sectionEnd = [
-      'q3','q13','q22','q27','q52','q53h'
+      'q3','q13','q22','q27','q52','q53h', 'q58e'
     ];
 
 
