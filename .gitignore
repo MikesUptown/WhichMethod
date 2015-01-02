@@ -12,3 +12,5 @@ karma_html/
 /nbproject/private/
 *.swp
 *.DS_Store
+*.sublime-project
+*.sublime-workspace
