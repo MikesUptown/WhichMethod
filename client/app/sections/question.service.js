@@ -60,6 +60,145 @@ angular.module('contraceptionApp').factory('questionService', function () {
       problemsPerBc : [],
     }
 
+    var BirthControl = function (name) {
+      this.name = name;
+      this.n = 0;
+      this.p = 0;
+      this.decr = function(num) {
+        console.log(this.name + " -> decr:" + num);
+        this.n -= num;
+      };
+      this.incr = function(num) {
+        console.log(this.name + " -> incr:" + num);
+        this.p += num;
+      };
+      this.score = function() {
+        return this.p + this.n;
+      };
+    }
+
+    var Question = function(name) {
+      this.name = name;
+    }
+
+    Question.prototype.scoreArgs = function(args) {
+      // expecting args.value and args.optionList
+      var foundValue = false;
+      var foundOptions = false;
+
+      console.log("proto.scoreArgs");
+      if (typeof args != "undefined") {
+        if (typeof args.value != "undefined") {
+          console.log('proto.scoreArgs:value:', args.value);
+          foundValue = true;
+        }
+        if (typeof args.optionList != "undefined") {
+          console.log("proto.scoreArgs:optionList", args.optionList);
+          foundOptions = true;
+        }
+      } else {
+        console.log("proto.scoreArgs:undefined", this.name);
+      }
+      return {
+            hasValue: foundValue,
+            hasOptions: foundOptions
+      };
+    };
+
+    Question.prototype.score = function(args) {
+      console.log("proto.score", this.name);
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        console.log("proto.score:value", args.value);
+      }
+      if (argTypes.hasOptions) {
+        console.log("proto.score:options", args.optionList);
+      }
+    };
+
+    var Survey = {
+      bcList : {
+            'abstinence' : new BirthControl('abstinence'),
+            'btl' : new BirthControl('btl'),
+            'ccap' : new BirthControl('ccap'),
+            'depo' : new BirthControl('depo'),
+            'diaph' : new BirthControl('diaph'),
+            'ec' : new BirthControl('ec'),
+            'fam' : new BirthControl('fam'),
+            'fcondom' : new BirthControl('fcondom'),
+            'mcondom' : new BirthControl('mcondom'),
+            'mirena' : new BirthControl('mirena'),
+            'nuvaring' : new BirthControl('nuvaring'),
+            'ocp' : new BirthControl('ocp'),
+            'orthoEvra' : new BirthControl('orthoEvra'),
+            'paragard' : new BirthControl('paragard'),
+            'pop' : new BirthControl('pop'),
+            'sperm' : new BirthControl('sperm'),
+            'sponge' : new BirthControl('sponge'),
+            'vas' : new BirthControl('vas'),
+            'withd' : new BirthControl('withd'),
+      },
+      qList : {},
+      answerList : {},
+      score : function() {
+        console.log("Survey.score");
+        for (var key in this.qList) {
+          if (this.qList.hasOwnProperty(key)) {
+            console.log(key + " -> " + this.qList[key]);
+            this.qList[key].score(this.answerList[key]);
+          }
+        }
+      },
+      results : function() {
+        console.log("Survey.results");
+        this.score();
+        var results = [];
+        for (var key in this.bcList) {
+          if (this.bcList.hasOwnProperty(key)) {
+            var score = this.bcList[key].score();
+            var result = { 'name': key, 'score': score };
+            console.log(result);
+            results.push(result);
+          }
+        }
+        results.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score); });
+        for (var i = 0; i < results.length; i++) {
+            console.log(results[i].name + " -> " + results[i].score);
+        }
+        return results;
+      },
+      newQuestion : function(q) {
+        console.log("Survey.newQuestion", q.name);
+        this.qList[q.name] = q;
+      },
+      answer : function(qName, args) {
+        console.log("Survey.answer", qName, args);
+        this.answerList[qName] = args;
+      },
+      bcDecr: function(bcName, num) {
+        this.bcList[bcName].decr(num);
+      },
+      bcIncr: function(bcName, num) {
+        this.bcList[bcName].incr(num);
+      },
+    }
+
+    // Scoring for 'q1'
+    var q1 = new Question('q1');
+    q1.score = function(args) {
+      console.log("q1.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var age = args.value;
+        console.log("q1 has value", args.value);
+        if (age < 18) {
+          Survey.bcDecr('vas', 999);
+          Survey.bcDecr('btl', 999);
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q1);
 
     /**
      * The questions and the behavior of each
@@ -84,23 +223,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q2';
         },
         ranking: function(){
-          // if (this.textInput != undefined && this.textInput != "")
-          // {
-            
-            if (this.answer < 18) {
-              ranking.vas.n -= 999;
-              ranking.btl.n -= 999;
-            }
-            if (this.answer < 21) {
-              ranking.vas.n -= 3;
-              ranking.btl.n -= 3;
-            }
-          // } else {
-          //   if (this.selectedOption != undefined)
-          //   {
-              
-          //   }
-          // }
+          Survey.answer('q1', {value:this.answer})
         }
       },
 
@@ -2527,6 +2650,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
       problems: problems,
       getRanking: function(){
         return ranking;
-      }
+      },
+      getResults: function() {
+        return Survey.results();
+      },
     };
 });

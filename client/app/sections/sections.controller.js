@@ -107,6 +107,7 @@ angular.module('contraceptionApp')
       }
 
       $scope.ranking = questionService.getRanking()
+      $scope.results = questionService.getResults()
       console.log($scope.ranking)
     }
 
