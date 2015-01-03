@@ -1740,6 +1740,169 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q42score);
 
+    // Scoring for 'q43'
+    var q43score = new Question('q43');
+    q43score.score = function(args) {
+      console.log("q43.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var endometriosis = args.value;
+        console.log("q43 has value", args.value);
+        if (endometriosis == 1) {
+          Survey.bcPos('ocp', 1);
+          Survey.bcPos('pop', 1);
+          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('nuvaring', 1);
+          Survey.bcPos('depo', 1);
+          Survey.bcNeg('paragard', 1);
+          Survey.bcPos('mirena', 1);
+          Survey.bcPos('implanon', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q43score);
+
+    // Scoring for 'q44a'
+    var q44ascore = new Question('q44a');
+    q44ascore.score = function(args) {
+      console.log("q44a.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var breastCancer = args.value;
+        console.log("q44a has value", args.value);
+        if (breastCancer == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('pop', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+          Survey.bcNeg('mirena', 999);
+          Survey.bcNeg('implanon', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q44ascore);
+
+    // Scoring for 'q44b'
+    var q44bscore = new Question('q44b');
+    q44bscore.score = function(args) {
+      console.log("q44b.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var ovarianCancer = args.value;
+        console.log("q44b has value", args.value);
+        if (ovarianCancer == 1) {
+          Survey.bcNeg('paragard', 999);
+          Survey.bcNeg('mirena', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q44bscore);
+
+    // Scoring for 'q45'
+    var q45score = new Question('q45');
+    q45score.score = function(args) {
+      console.log("q45.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var heartAttack = args.value;
+        console.log("q45 has value", args.value);
+        if (heartAttack == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q45score);
+
+    // Scoring for 'q46'
+    var q46score = new Question('q46');
+    q46score.score = function(args) {
+      console.log("q46.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var heartDisease = args.value;
+        console.log("q46 has value", args.value);
+        if (heartDisease == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('depo', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q46score);
+
+    // Scoring for 'q47a'
+    var q47ascore = new Question('q47a');
+    q47ascore.score = function(args) {
+      console.log("q47a.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var gallbladder = args.value;
+        console.log("q47a has value", args.value);
+        if (gallbladder == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q47ascore);
+
+    // Scoring for 'q47b'
+    var q47bscore = new Question('q47b');
+    q47bscore.score = function(args) {
+      console.log("q47b.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var cirrhosis = args.value;
+        console.log("q47b has value", args.value);
+        if (cirrhosis == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('pop', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+          Survey.bcNeg('mirena', 999);
+          Survey.bcNeg('implanon', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q47bscore);
+
+    // Scoring for 'q48'
+    var q48score = new Question('q48');
+    q48score.score = function(args) {
+      console.log("q48.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var epilepsy = args.value;
+        console.log("q48 has value", args.value);
+        if (epilepsy == 1) {
+          Survey.bcPos('depo', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q48score);
+
+    // Scoring for 'q49'
+    var q49score = new Question('q49');
+    q49score.score = function(args) {
+      console.log("q49.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var epilepsy = args.value;
+        console.log("q49 has value", args.value);
+        if (epilepsy == 1) {
+          Survey.bcPos('depo', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q49score);
+
     /**
      * The questions and the behavior of each
      */
@@ -3300,8 +3463,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q43', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3324,7 +3486,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
           return;
         },
         nextQuestion: function(){
@@ -3348,8 +3509,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q44a', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3370,8 +3530,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q44b', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3394,8 +3553,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q45', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3417,8 +3575,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q46', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3440,7 +3597,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
           return;
         },
         nextQuestion: function(){
@@ -3465,8 +3621,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q47a', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3488,8 +3643,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q47b', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3511,8 +3665,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q48', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -3534,8 +3687,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q49', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
