@@ -73,7 +73,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         this.p += num;
       };
       this.score = function() {
-        return this.p + this.n;
+        return { 'p': this.p, 'n': this.n };
       };
       this.resetScore = function() {
         this.n = 0;
@@ -171,14 +171,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
         for (var key in this.bcList) {
           if (this.bcList.hasOwnProperty(key)) {
             var score = this.bcList[key].score();
-            var result = { 'name': key, 'score': score };
+            var result = { 'name': key, 'p': score.p, 'n': score.n };
             console.log(result);
             results.push(result);
           }
-        }
-        results.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score); });
-        for (var i = 0; i < results.length; i++) {
-            console.log(results[i].name + " -> " + results[i].score);
         }
         return results;
       },
