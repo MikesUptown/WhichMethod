@@ -814,9 +814,601 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
     // Scoring for 'q19ai'
     var q19aiscore = new Question('q19ai');
+    q19aiscore.ocp = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.minipills = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.orthoEvra = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.nuvaring = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.depo = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.mcondom = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.diaph = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.fcondom = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.sponge = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.fam = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.ec = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.paragard = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.mirena = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.withd = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.sperm = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.btl = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.vas = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.implanon = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
+    q19aiscore.bf = function(prob) {
+      switch (prob)
+      {
+        // I didn't like the changes to my body
+        case 1:
+          break;
+        // I had problems getting the birth control
+        case 2:
+          break;
+        // I didn't use it right
+        case 3:
+          break;
+        // I got pregnant
+        case 4:
+          break;
+        // I developed health problems
+        case 5:
+          break;
+        // I didn't like my periods
+        case 6:
+          break;
+        // My partner didn't like it
+        case 7:
+          break;
+      }
+    };
+
     q19aiscore.bcProblemScore = function(bc, prob)
     {
         console.log('q19ai bc:' + bc + 'prob:' + prob);
+        switch (bc)
+        {
+            // Birth Control
+            case 1:
+              q19aiscore.ocp(prob);
+              break;
+            // Mini Pills
+            case 2:
+              q19aiscore.minipills(prob);
+              break;
+            // Ortho Evra
+            case 3:
+              q19aiscore.orthoEvra(prob);
+              break;
+            // Nuva Ring
+            case 4:
+              q19aiscore.nuvaring(prob);
+              break;
+            // Depo Provera
+            case 5:
+              q19aiscore.depo(prob);
+              break;
+            // Male Condom
+            case 6:
+              q19aiscore.mcondom(prob);
+              break;
+            // Diaphragm
+            case 7:
+              q19aiscore.diaph(prob);
+              break;
+            // Female Condom
+            case 8:
+              q19aiscore.fcondom(prob);
+              break;
+            // Sponge
+            case 9:
+              q19aiscore.sponge(prob);
+              break;
+            // Fam
+            case 10:
+              q19aiscore.fam(prob);
+              break;
+            // EC
+            case 11:
+              q19aiscore.ec(prob);
+              break;
+            // Paragard
+            case 12:
+              q19aiscore.paragard(prob);
+              break;
+            // Mirena
+            case 13:
+              q19aiscore.mirena(prob);
+              break;
+            // Withdrawal
+            case 14:
+              q19aiscore.withd(prob);
+              break;
+            // Spermicide
+            case 15:
+              q19aiscore.sperm(prob);
+              break;
+            // Tubes Tied
+            case 16:
+              q19aiscore.btl(prob);
+              break;
+            // Vasectomy
+            case 17:
+              q19aiscore.vas(prob);
+              break;
+            // Implant
+            case 18:
+              q19aiscore.implanon(prob);
+              break;
+            // Breast Feeding
+            case 19:
+              q19aiscore.bf(prob);
+              break;
+        }
     };
     q19aiscore.score = function(args) {
       console.log("q19ai.score");
