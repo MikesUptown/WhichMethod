@@ -831,6 +831,151 @@ angular.module('contraceptionApp').factory('questionService', function () {
     console.log("calling Survey.newQuestion");
     Survey.newQuestion(q18aiscore);
 
+    // Scoring for 'q20'
+    var q20score = new Question('q20');
+    q20score.score = function(args) {
+      console.log("q20.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var whenPregnant = args.value;
+        switch (whenPregnant)
+        {
+            case 1:
+              Survey.bcDecr('depo', 2);
+              Survey.bcDecr('paragard', 3);
+              Survey.bcDecr('mirena', 3);
+              Survey.bcDecr('btl', 999);
+              Survey.bcDecr('vas', 999);
+              Survey.bcDecr('implanon', 3);
+              break;
+            case 2:
+              Survey.bcDecr('btl', 999);
+              Survey.bcDecr('vas', 999);
+              break;
+            case 3:
+              Survey.bcIncr('paragard', 1);
+              Survey.bcIncr('mirena', 1);
+              Survey.bcDecr('btl', 999);
+              Survey.bcDecr('vas', 999);
+              Survey.bcIncr('implanon', 1);
+              break;
+            case 4:
+              Survey.bcIncr('paragard', 1);
+              Survey.bcIncr('mirena', 1);
+              Survey.bcDecr('btl', 999);
+              Survey.bcDecr('vas', 999);
+              Survey.bcIncr('implanon', 1);
+              break;
+            case 5:
+              Survey.bcIncr('paragard', 1);
+              Survey.bcIncr('mirena', 1);
+              Survey.bcIncr('btl', 1);
+              Survey.bcIncr('vas', 1);
+              Survey.bcIncr('implanon', 1);
+              break;
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q20score);
+
+
+    // Scoring for 'q21'
+    var q21score = new Question('q21');
+    q21score.score = function(args) {
+      console.log("q21.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasOptions) {
+        var bcList = args.optionList;
+        var len = bcList.length;
+        for (var i = bcList.length - 1; i >= 0; i--) {
+          var bc = bcList[i].value
+          switch (bc)
+          {
+            // Easy to use
+            case 1:
+              Survey.bcDecr('abstinence', 3);
+              Survey.bcIncr('ocp', 1);
+              Survey.bcIncr('pop', 1);
+              Survey.bcIncr('orthoEvra', 1);
+              Survey.bcIncr('nuvaring', 1);
+              Survey.bcIncr('depo', 1);
+              Survey.bcIncr('mcondom', 1);
+              Survey.bcDecr('ccap', 3);
+              Survey.bcDecr('diaph', 3);
+              Survey.bcIncr('ec', 1);
+              Survey.bcIncr('paragard', 1);
+              Survey.bcIncr('mirena', 1);
+              Survey.bcDecr('withd', 3);
+              Survey.bcDecr('sperm', 1);
+              Survey.bcDecr('sponge', 3);
+              Survey.bcDecr('fam', 3);
+              Survey.bcIncr('btl', 1);
+              Survey.bcIncr('vas', 1);
+              Survey.bcIncr('implanon', 1);
+              Survey.bcIncr('bf', 1);
+              break;
+            // Safe with breast feeding
+            case 2:
+              Survey.bcIncr('abstinence', 1);
+              Survey.bcDecr('ocp', 2);
+              Survey.bcIncr('pop', 1);
+              Survey.bcDecr('orthoEvra', 2);
+              Survey.bcDecr('nuvaring', 2);
+              Survey.bcIncr('depo', 1);
+              Survey.bcIncr('mcondom', 1);
+              Survey.bcIncr('fcondom', 1);
+              Survey.bcIncr('ccap', 1);
+              Survey.bcIncr('diaph', 1);
+              Survey.bcIncr('ec', 1);
+              Survey.bcIncr('paragard', 1);
+              Survey.bcIncr('mirena', 1);
+              Survey.bcIncr('withd', 1);
+              Survey.bcIncr('sperm', 1);
+              Survey.bcIncr('sponge', 1);
+              Survey.bcIncr('fam', 1);
+              Survey.bcIncr('btl', 1);
+              Survey.bcIncr('vas', 1);
+              Survey.bcIncr('implanon', 1);
+              Survey.bcIncr('bf', 1);
+              break;
+            // Inexpensive
+            case 3:
+              break;
+            // Very effective
+            case 4:
+              break;
+            // Able to get pregnant quickly
+            case 5:
+              break;
+            // Not very many side-effects
+            case 6:
+              break;
+            // No hormones
+            case 7:
+              break;
+            // Effective long term
+            case 8:
+              break;
+            // Do not need to interrupt
+            case 9:
+              break;
+            // Regular periods
+            case 10:
+              break;
+            // Fewer or no periods
+            case 11:
+              break;
+            // Decreases symptoms from period
+            case 12:
+              break;
+          }
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q21score);
+
     /**
      * The questions and the behavior of each
      */
