@@ -64,12 +64,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
       this.name = name;
       this.n = 0;
       this.p = 0;
-      this.decr = function(num) {
-        console.log(this.name + " -> decr:" + num);
+      this.neg = function(num) {
+        console.log(this.name + " -> neg:" + num);
         this.n -= num;
       };
-      this.incr = function(num) {
-        console.log(this.name + " -> incr:" + num);
+      this.pos = function(num) {
+        console.log(this.name + " -> pos:" + num);
         this.p += num;
       };
       this.score = function() {
@@ -186,11 +186,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("Survey.answer", qName, args);
         this.answerList[qName] = args;
       },
-      bcDecr: function(bcName, num) {
-        this.bcList[bcName].decr(num);
+      bcNeg: function(bcName, num) {
+        this.bcList[bcName].neg(num);
       },
-      bcIncr: function(bcName, num) {
-        this.bcList[bcName].incr(num);
+      bcPos: function(bcName, num) {
+        this.bcList[bcName].pos(num);
       },
     }
 
@@ -203,17 +203,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var age = args.value;
         console.log("q1 has value", args.value);
         if (age < 18) {
-          Survey.bcDecr('vas', 999);
-          Survey.bcDecr('btl', 999);
+          Survey.bcNeg('vas', 999);
+          Survey.bcNeg('btl', 999);
         } else {
           if (age < 21) {
-            Survey.bcDecr('vas', 3);
-            Survey.bcDecr('btl', 3);
+            Survey.bcNeg('vas', 3);
+            Survey.bcNeg('btl', 3);
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q1score);
 
     // Scoring for 'q2'
@@ -225,14 +224,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var weight = args.value;
         console.log("q2 has value", args.value);
         if(weight >= 200 && weight < 555){
-          Survey.bcDecr('orthoEvra', 2);
+          Survey.bcNeg('orthoEvra', 2);
         }
         if(weight >=250 && weight < 555){
-          Survey.bcDecr('depo', 2);
+          Survey.bcNeg('depo', 2);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q2score);
 
 
@@ -247,14 +245,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q3 has value", args.value);
         if (smoke == 2 || smoke == 3) {
           if (age > 35 && age < 555) {
-            Survey.bcDecr('ocp', 999);
-            Survey.bcDecr('orthoEvra', 999);
-            Survey.bcDecr('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q3score);
 
     // Scoring for 'q4'
@@ -266,14 +263,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var regPeriod = args.value;
         console.log("q4 has value", args.value);
         if (regPeriod == 0) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcDecr('fam', 3);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcNeg('fam', 3);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q4score);
 
     // Scoring for 'q4a'
@@ -285,18 +281,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var periodFrequency = args.value;
         console.log("q4a has value", args.value);
         if (periodFrequency == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcDecr('fam', 3);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcNeg('fam', 3);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q4ascore);
 
 
@@ -309,18 +304,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var heavyPeriod = args.value;
         console.log("q5 has value", args.value);
         if (heavyPeriod == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
-            Survey.bcDecr('paragard', 2);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
+            Survey.bcNeg('paragard', 2);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q5score);
 
     // Scoring for 'q6'
@@ -332,17 +326,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var period7days = args.value;
         console.log("q6 has value", args.value);
         if (period7days == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q6score);
 
     // Scoring for 'q7'
@@ -354,18 +347,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var cramps = args.value;
         console.log("q7 has value", args.value);
         if (cramps == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcDecr('paragard', 2);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcNeg('paragard', 2);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q7score);
 
     // Scoring for 'q8'
@@ -377,16 +369,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var tenderBreasts = args.value;
         console.log("q8 has value", args.value);
         if (tenderBreasts == 1) {
-            Survey.bcIncr('pop', 1);
-            Survey.bcDecr('orthoEvra', 3);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcNeg('orthoEvra', 3);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q8score);
 
     // Scoring for 'q9'
@@ -398,17 +389,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var depression = args.value;
         console.log("q9 has value", args.value);
         if (depression == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q9score);
 
     // Scoring for 'q10'
@@ -420,17 +410,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var bloating = args.value;
         console.log("q10 has value", args.value);
         if (bloating == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q10score);
 
     // Scoring for 'q11'
@@ -442,14 +431,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var headaches = args.value;
         console.log("q11 has value", args.value);
         if (headaches == 1) {
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q11score);
 
     // Scoring for 'q12'
@@ -461,17 +449,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var pms = args.value;
         console.log("q12 has value", args.value);
         if (pms == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q12score);
 
     // Scoring for 'q13'
@@ -483,26 +470,25 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var missSchoolWork = args.value;
         console.log("q13 has value", args.value);
         if (missSchoolWork == 1) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
         if (missSchoolWork == 2) {
-            Survey.bcIncr('ocp', 1);
-            Survey.bcIncr('pop', 1);
-            Survey.bcIncr('orthoEvra', 1);
-            Survey.bcIncr('nuvaring', 1);
-            Survey.bcIncr('depo', 1);
-            Survey.bcIncr('mirena', 1);
-            Survey.bcIncr('implanon', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('pop', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q13score);
 
     // Scoring for 'q14'
@@ -514,12 +500,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var sexualRel = args.value;
         console.log("q14 has value", args.value);
         if (sexualRel == 1 || sexualRel == 2) {
-            Survey.bcDecr('paragard', 1);
-            Survey.bcDecr('mirena', 1);
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q14score);
 
     // Scoring for 'q15'
@@ -531,12 +516,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var vaginalSexCount = args.value;
         console.log("q15 has value", args.value);
         if (vaginalSexCount > 10 && vaginalSexCount < 555) {
-            Survey.bcDecr('paragard', 999);
-            Survey.bcDecr('mirena', 999);
+            Survey.bcNeg('paragard', 999);
+            Survey.bcNeg('mirena', 999);
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q15score);
 
     // Scoring for 'q16bi'
@@ -553,82 +537,81 @@ angular.module('contraceptionApp').factory('questionService', function () {
           {
             // Birth Control
             case 1:
-              Survey.bcDecr('ocp', 3);
-              Survey.bcDecr('pop', 2);
+              Survey.bcNeg('ocp', 3);
+              Survey.bcNeg('pop', 2);
               break;
             // Mini Pills
             case 2:
-              Survey.bcDecr('ocp', 2);
-              Survey.bcDecr('pop', 3);
+              Survey.bcNeg('ocp', 2);
+              Survey.bcNeg('pop', 3);
               break;
             // Ortho Evra
             case 3:
-              Survey.bcDecr('orthoEvra', 3);
+              Survey.bcNeg('orthoEvra', 3);
               break;
             // Nuva Ring
             case 4:
-              Survey.bcDecr('nuvaring', 3);
+              Survey.bcNeg('nuvaring', 3);
               break;
             // Depo
             case 5:
-              Survey.bcDecr('depo', 3);
+              Survey.bcNeg('depo', 3);
               break;
             // Male Condom
             case 6:
-              Survey.bcDecr('mcondom', 3);
+              Survey.bcNeg('mcondom', 3);
               break;
             // Diaphram, Female Condom, Sponge
             case 7:
             case 8:
             case 9:
-              Survey.bcDecr('diaph', 3);
-              Survey.bcDecr('fcondom', 3);
-              Survey.bcDecr('ccap', 3);
-              Survey.bcDecr('sponge', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('sponge', 3);
               break;
             // Fam
             case 10:
-              Survey.bcDecr('fam', 3);
+              Survey.bcNeg('fam', 3);
               break;
             // EC / PlanB
             case 11:
-              Survey.bcDecr('ec', 3);
+              Survey.bcNeg('ec', 3);
               break;
             // IUD / Paragard, Mirena
             case 12:
             case 13:
-              Survey.bcDecr('paragard', 3);
-              Survey.bcDecr('mirena', 3);
+              Survey.bcNeg('paragard', 3);
+              Survey.bcNeg('mirena', 3);
               break;
             // Withdrawal
             case 14:
-              Survey.bcDecr('withd', 3);
+              Survey.bcNeg('withd', 3);
               break;
             // Spermicide
             case 15:
-              Survey.bcDecr('sperm', 3);
+              Survey.bcNeg('sperm', 3);
               break;
             // BTL / Tubes Tied
             case 16:
-              Survey.bcDecr('btl', 3);
+              Survey.bcNeg('btl', 3);
               break;
             // Vasectomy
             case 17:
-              Survey.bcDecr('vas', 3);
+              Survey.bcNeg('vas', 3);
               break;
             // Implant
             case 18:
-              Survey.bcDecr('implanon', 3);
+              Survey.bcNeg('implanon', 3);
               break;
             // Breast Feeding
             case 19:
-              Survey.bcDecr('bf', 3);
+              Survey.bcNeg('bf', 3);
               break;
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q16biscore);
 
     // Scoring for 'q17'
@@ -645,91 +628,90 @@ angular.module('contraceptionApp').factory('questionService', function () {
           {
             // Abstinence
             case 1:
-              Survey.bcIncr('abstinence', 1);
+              Survey.bcPos('abstinence', 1);
               break;
             // Birth Control
             case 2:
-              Survey.bcIncr('ocp', 1);
-              Survey.bcIncr('pop', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
               break;
             // Mini Pills
             case 3:
-              Survey.bcIncr('ocp', 1);
-              Survey.bcIncr('pop', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
               break;
             // Ortho Evra
             case 4:
-              Survey.bcIncr('orthoEvra', 1);
+              Survey.bcPos('orthoEvra', 1);
               break;
             // Nuva Ring
             case 5:
-              Survey.bcIncr('nuvaring', 1);
+              Survey.bcPos('nuvaring', 1);
               break;
             // Depo
             case 6:
-              Survey.bcIncr('depo', 1);
+              Survey.bcPos('depo', 1);
               break;
             // Male Condom
             case 7:
-              Survey.bcIncr('mcondom', 1);
+              Survey.bcPos('mcondom', 1);
               break;
             // Diaphram
             case 8:
-              Survey.bcIncr('diaph', 1);
+              Survey.bcPos('diaph', 1);
               break;
             // Female Condom
             case 9:
-              Survey.bcIncr('fcondom', 1);
+              Survey.bcPos('fcondom', 1);
               break;
             // Sponge
             case 10:
-              Survey.bcIncr('sponge', 1);
+              Survey.bcPos('sponge', 1);
               break;
             // Fam
             case 11:
-              Survey.bcIncr('fam', 1);
+              Survey.bcPos('fam', 1);
               break;
             // EC / PlanB
             case 12:
-              Survey.bcIncr('ec', 1);
+              Survey.bcPos('ec', 1);
               break;
             // Paragard
             case 13:
-              Survey.bcIncr('paragard', 1);
+              Survey.bcPos('paragard', 1);
               break;
             // Mirena
             case 14:
-              Survey.bcIncr('mirena', 1);
+              Survey.bcPos('mirena', 1);
               break;
             // Withdrawal
             case 15:
-              Survey.bcIncr('withd', 1);
+              Survey.bcPos('withd', 1);
               break;
             // Spermicide
             case 16:
-              Survey.bcIncr('sperm', 1);
+              Survey.bcPos('sperm', 1);
               break;
             // BTL / Tubes Tied
             case 17:
-              Survey.bcIncr('btl', 1);
+              Survey.bcPos('btl', 1);
               break;
             // Vasectomy
             case 18:
-              Survey.bcIncr('vas', 1);
+              Survey.bcPos('vas', 1);
               break;
             // Implant
             case 19:
-              Survey.bcIncr('implanon', 1);
+              Survey.bcPos('implanon', 1);
               break;
             // Breast Feeding
             case 20:
-              Survey.bcIncr('bf', 1);
+              Survey.bcPos('bf', 1);
               break;
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q17score);
 
     // Scoring for 'q18ai'
@@ -746,89 +728,88 @@ angular.module('contraceptionApp').factory('questionService', function () {
           {
             // Abstinence
             case 1:
-              Survey.bcIncr('abstinence', 1);
+              Survey.bcPos('abstinence', 1);
               break;
             // Birth Control
             case 2:
-              Survey.bcIncr('ocp', 1);
+              Survey.bcPos('ocp', 1);
               break;
             // Mini Pills
             case 3:
-              Survey.bcIncr('pop', 1);
+              Survey.bcPos('pop', 1);
               break;
             // Ortho Evra
             case 4:
-              Survey.bcIncr('orthoEvra', 1);
+              Survey.bcPos('orthoEvra', 1);
               break;
             // Nuva Ring
             case 5:
-              Survey.bcIncr('nuvaring', 1);
+              Survey.bcPos('nuvaring', 1);
               break;
             // Depo
             case 6:
-              Survey.bcIncr('depo', 1);
+              Survey.bcPos('depo', 1);
               break;
             // Male Condom
             case 7:
-              Survey.bcIncr('mcondom', 1);
+              Survey.bcPos('mcondom', 1);
               break;
             // Diaphram
             case 8:
-              Survey.bcIncr('diaph', 1);
+              Survey.bcPos('diaph', 1);
               break;
             // Female Condom
             case 9:
-              Survey.bcIncr('fcondom', 1);
+              Survey.bcPos('fcondom', 1);
               break;
             // Sponge
             case 10:
-              Survey.bcIncr('sponge', 1);
+              Survey.bcPos('sponge', 1);
               break;
             // Fam
             case 11:
-              Survey.bcIncr('fam', 1);
+              Survey.bcPos('fam', 1);
               break;
             // EC / PlanB
             case 12:
-              Survey.bcIncr('ec', 1);
+              Survey.bcPos('ec', 1);
               break;
             // Paragard
             case 13:
-              Survey.bcIncr('paragard', 1);
+              Survey.bcPos('paragard', 1);
               break;
             // Mirena
             case 14:
-              Survey.bcIncr('mirena', 1);
+              Survey.bcPos('mirena', 1);
               break;
             // Withdrawal
             case 15:
-              Survey.bcIncr('withd', 1);
+              Survey.bcPos('withd', 1);
               break;
             // Spermicide
             case 16:
-              Survey.bcIncr('sperm', 1);
+              Survey.bcPos('sperm', 1);
               break;
             // BTL / Tubes Tied
             case 17:
-              Survey.bcIncr('btl', 1);
+              Survey.bcPos('btl', 1);
               break;
             // Vasectomy
             case 18:
-              Survey.bcIncr('vas', 1);
+              Survey.bcPos('vas', 1);
               break;
             // Implant
             case 19:
-              Survey.bcIncr('implanon', 1);
+              Survey.bcPos('implanon', 1);
               break;
             // Breast Feeding
             case 20:
-              Survey.bcIncr('bf', 1);
+              Survey.bcPos('bf', 1);
               break;
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q18aiscore);
 
     // Scoring for 'q20'
@@ -841,42 +822,41 @@ angular.module('contraceptionApp').factory('questionService', function () {
         switch (whenPregnant)
         {
             case 1:
-              Survey.bcDecr('depo', 2);
-              Survey.bcDecr('paragard', 3);
-              Survey.bcDecr('mirena', 3);
-              Survey.bcDecr('btl', 999);
-              Survey.bcDecr('vas', 999);
-              Survey.bcDecr('implanon', 3);
+              Survey.bcNeg('depo', 2);
+              Survey.bcNeg('paragard', 3);
+              Survey.bcNeg('mirena', 3);
+              Survey.bcNeg('btl', 999);
+              Survey.bcNeg('vas', 999);
+              Survey.bcNeg('implanon', 3);
               break;
             case 2:
-              Survey.bcDecr('btl', 999);
-              Survey.bcDecr('vas', 999);
+              Survey.bcNeg('btl', 999);
+              Survey.bcNeg('vas', 999);
               break;
             case 3:
-              Survey.bcIncr('paragard', 1);
-              Survey.bcIncr('mirena', 1);
-              Survey.bcDecr('btl', 999);
-              Survey.bcDecr('vas', 999);
-              Survey.bcIncr('implanon', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('btl', 999);
+              Survey.bcNeg('vas', 999);
+              Survey.bcPos('implanon', 1);
               break;
             case 4:
-              Survey.bcIncr('paragard', 1);
-              Survey.bcIncr('mirena', 1);
-              Survey.bcDecr('btl', 999);
-              Survey.bcDecr('vas', 999);
-              Survey.bcIncr('implanon', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('btl', 999);
+              Survey.bcNeg('vas', 999);
+              Survey.bcPos('implanon', 1);
               break;
             case 5:
-              Survey.bcIncr('paragard', 1);
-              Survey.bcIncr('mirena', 1);
-              Survey.bcIncr('btl', 1);
-              Survey.bcIncr('vas', 1);
-              Survey.bcIncr('implanon', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
               break;
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q20score);
 
 
@@ -894,86 +874,295 @@ angular.module('contraceptionApp').factory('questionService', function () {
           {
             // Easy to use
             case 1:
-              Survey.bcDecr('abstinence', 3);
-              Survey.bcIncr('ocp', 1);
-              Survey.bcIncr('pop', 1);
-              Survey.bcIncr('orthoEvra', 1);
-              Survey.bcIncr('nuvaring', 1);
-              Survey.bcIncr('depo', 1);
-              Survey.bcIncr('mcondom', 1);
-              Survey.bcDecr('ccap', 3);
-              Survey.bcDecr('diaph', 3);
-              Survey.bcIncr('ec', 1);
-              Survey.bcIncr('paragard', 1);
-              Survey.bcIncr('mirena', 1);
-              Survey.bcDecr('withd', 3);
-              Survey.bcDecr('sperm', 1);
-              Survey.bcDecr('sponge', 3);
-              Survey.bcDecr('fam', 3);
-              Survey.bcIncr('btl', 1);
-              Survey.bcIncr('vas', 1);
-              Survey.bcIncr('implanon', 1);
-              Survey.bcIncr('bf', 1);
+              Survey.bcNeg('abstinence', 3);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 1);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Safe with breast feeding
             case 2:
-              Survey.bcIncr('abstinence', 1);
-              Survey.bcDecr('ocp', 2);
-              Survey.bcIncr('pop', 1);
-              Survey.bcDecr('orthoEvra', 2);
-              Survey.bcDecr('nuvaring', 2);
-              Survey.bcIncr('depo', 1);
-              Survey.bcIncr('mcondom', 1);
-              Survey.bcIncr('fcondom', 1);
-              Survey.bcIncr('ccap', 1);
-              Survey.bcIncr('diaph', 1);
-              Survey.bcIncr('ec', 1);
-              Survey.bcIncr('paragard', 1);
-              Survey.bcIncr('mirena', 1);
-              Survey.bcIncr('withd', 1);
-              Survey.bcIncr('sperm', 1);
-              Survey.bcIncr('sponge', 1);
-              Survey.bcIncr('fam', 1);
-              Survey.bcIncr('btl', 1);
-              Survey.bcIncr('vas', 1);
-              Survey.bcIncr('implanon', 1);
-              Survey.bcIncr('bf', 1);
+              Survey.bcPos('abstinence', 1);
+              Survey.bcNeg('ocp', 2);
+              Survey.bcPos('pop', 1);
+              Survey.bcNeg('orthoEvra', 2);
+              Survey.bcNeg('nuvaring', 2);
+              Survey.bcPos('depo', 1);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Inexpensive
             case 3:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Very effective
             case 4:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 3);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Able to get pregnant quickly
             case 5:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcNeg('depo', 3);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcNeg('btl', 999);
+              Survey.bcNeg('vas', 999);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Not very many side-effects
             case 6:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcNeg('depo', 1);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // No hormones
             case 7:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcNeg('ocp', 3);
+              Survey.bcNeg('pop', 3);
+              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('nuvaring', 3);
+              Survey.bcNeg('depo', 3);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcNeg('ec', 3);
+              Survey.bcPos('paragard', 1);
+              Survey.bcNeg('mirena', 3);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcNeg('implanon', 3);
+              Survey.bcPos('bf', 1);
               break;
             // Effective long term
             case 8:
+              Survey.bcNeg('abstinence', 3);
+              Survey.bcNeg('ocp', 3);
+              Survey.bcNeg('pop', 3);
+              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('nuvaring', 3);
+              Survey.bcPos('depo', 1);
+              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcNeg('ec', 3);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 3);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcNeg('btl', 3);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Do not need to interrupt
             case 9:
+              Survey.bcNeg('abstinence', 3);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcPos('ec', 1);
+              Survey.bcPos('paragard', 1);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 3);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Regular periods
             case 10:
+              Survey.bcPos('abstinence', 1);
+              Survey.bcPos('ocp', 1);
+              Survey.bcNeg('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcNeg('depo', 3);
+              Survey.bcPos('mcondom', 1);
+              Survey.bcPos('fcondom', 1);
+              Survey.bcPos('ccap', 1);
+              Survey.bcPos('diaph', 1);
+              Survey.bcNeg('ec', 3);
+              Survey.bcPos('paragard', 1);
+              Survey.bcNeg('mirena', 3);
+              Survey.bcPos('withd', 1);
+              Survey.bcPos('sperm', 1);
+              Survey.bcPos('sponge', 1);
+              Survey.bcPos('fam', 1);
+              Survey.bcPos('btl', 1);
+              Survey.bcPos('vas', 1);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Fewer or no periods
             case 11:
+              Survey.bcNeg('abstinence', 3);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcNeg('ec', 3);
+              Survey.bcNeg('paragard', 3);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 3);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcNeg('btl', 3);
+              Survey.bcNeg('vas', 3);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
             // Decreases symptoms from period
             case 12:
+              Survey.bcNeg('abstinence', 3);
+              Survey.bcPos('ocp', 1);
+              Survey.bcPos('pop', 1);
+              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('nuvaring', 1);
+              Survey.bcPos('depo', 1);
+              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('fcondom', 3);
+              Survey.bcNeg('ccap', 3);
+              Survey.bcNeg('diaph', 3);
+              Survey.bcNeg('ec', 3);
+              Survey.bcNeg('paragard', 3);
+              Survey.bcPos('mirena', 1);
+              Survey.bcNeg('withd', 3);
+              Survey.bcNeg('sperm', 3);
+              Survey.bcNeg('sponge', 3);
+              Survey.bcNeg('fam', 3);
+              Survey.bcNeg('btl', 3);
+              Survey.bcNeg('vas', 3);
+              Survey.bcPos('implanon', 1);
+              Survey.bcPos('bf', 1);
               break;
           }
         }
       }
     };
-    console.log("calling Survey.newQuestion");
     Survey.newQuestion(q21score);
 
     /**

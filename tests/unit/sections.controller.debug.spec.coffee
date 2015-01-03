@@ -24,16 +24,16 @@ describe 'Controller: SectionsCtrl', ->
 	# debug
 	# -----
 	it 'debug: should print scope in debug console log ...', ->
-		seen = [];
-		console.log(
-			JSON.stringify(scope, (key, val) ->
-				if (val != null && typeof val == "object")
-					if (seen.indexOf(val) >= 0)
-						return
-					seen.push(val)
-				return val
-			)
-		);
-		console.log(JSON.stringify(scope.questions));
+		#seen = [];
+		#console.log(
+		#	JSON.stringify(scope, (key, val) ->
+		#		if (val != null && typeof val == "object")
+		#			if (seen.indexOf(val) >= 0)
+		#				return
+		#			seen.push(val)
+		#		return val
+		#	)
+		#);
+		#console.log(JSON.stringify(scope.questions));
 		expect(1).toEqual 1
 
