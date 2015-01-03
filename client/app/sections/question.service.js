@@ -123,6 +123,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     var Survey = {
       bcList : {
             'abstinence' : new BirthControl('abstinence'),
+            'bf' : new BirthControl('bf'),
             'btl' : new BirthControl('btl'),
             'ccap' : new BirthControl('ccap'),
             'depo' : new BirthControl('depo'),
@@ -541,6 +542,98 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     console.log("calling Survey.newQuestion");
     Survey.newQuestion(q15score);
+
+    // Scoring for 'q16bi'
+    var q16biscore = new Question('q16bi');
+    q16biscore.score = function(args) {
+      console.log("q16bi.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasOptions) {
+        var bcList = args.optionList;
+        var len = bcList.length;
+        for (var i = bcList.length - 1; i >= 0; i--) {
+          var bc = bcList[i].value
+          switch (bc)
+          {
+            // Birth Control
+            case 1:
+              Survey.bcDecr('ocp', 3);
+              Survey.bcDecr('pop', 2);
+              break;
+            // Mini Pills
+            case 2:
+              Survey.bcDecr('ocp', 2);
+              Survey.bcDecr('pop', 3);
+              break;
+            // Ortho Evra
+            case 3:
+              Survey.bcDecr('orthoEvra', 3);
+              break;
+            // Nuva Ring
+            case 4:
+              Survey.bcDecr('nuvaring', 3);
+              break;
+            // Depo
+            case 5:
+              Survey.bcDecr('depo', 3);
+              break;
+            // Male Condom
+            case 6:
+              Survey.bcDecr('mcondom', 3);
+              break;
+            // Diaphram, Female Condom, Sponge
+            case 7:
+            case 8:
+            case 9:
+              Survey.bcDecr('diaph', 3);
+              Survey.bcDecr('fcondom', 3);
+              Survey.bcDecr('ccap', 3);
+              Survey.bcDecr('sponge', 3);
+              break;
+            // Fam
+            case 10:
+              Survey.bcDecr('fam', 3);
+              break;
+            // EC / PlanB
+            case 11:
+              Survey.bcDecr('ec', 3);
+              break;
+            // IUD / Paragard, Mirena
+            case 12:
+            case 13:
+              Survey.bcDecr('paragard', 3);
+              Survey.bcDecr('mirena', 3);
+              break;
+            // Withdrawal
+            case 14:
+              Survey.bcDecr('withd', 3);
+              break;
+            // Spermicide
+            case 15:
+              Survey.bcDecr('sperm', 3);
+              break;
+            // BTL / Tubes Tied
+            case 16:
+              Survey.bcDecr('btl', 3);
+              break;
+            // Vasectomy
+            case 17:
+              Survey.bcDecr('vas', 3);
+              break;
+            // Implant
+            case 18:
+              Survey.bcDecr('implanon', 3);
+              break;
+            // Breast Feeding
+            case 19:
+              Survey.bcDecr('bf', 3);
+              break;
+          }
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q16biscore);
 
     /**
      * The questions and the behavior of each
@@ -1054,54 +1147,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           //   this.rank(this.selectedOptions[i].name);
           // }
           if(this.answer && this.answer.array){
-            var selLength = this.answer.array.length;
-            for (var i = 0; i < selLength; i++) {
-              this.rank(this.answer.array[i].name);
-            }
-          }
-        },
-        rank: function(bcname) {
-          switch (bcname)
-          {
-            case 'Birth Control':
-              ranking.ocp.n-=3;
-              break;
-            case 'Mini Pills':
-              break;
-            case 'Ortho Evra':
-              break;
-            case 'Nuva Ring':
-              break;
-            case 'Depo Provera':
-              break;
-            case 'Male Condom':
-              break;
-            case 'Diaphragm':
-              break;
-            case 'Female Condom':
-              break;
-            case 'Sponge':
-              break;
-            case 'Fam':
-              break;
-            case 'EC':
-              break;
-            case 'Paragard':
-              break;
-            case 'Mirena':
-              break;
-            case 'Withdrawal':
-              break;
-            case 'Spermicide':
-              break;
-            case 'Tubes Tied':
-              break;
-            case 'Vasectomy':
-              break;
-            case 'Implant':
-              break;
-            case 'Breast Feeding':
-              break;
+            Survey.answer('q16bi', {optionList:this.answer.array});
           }
         },
       },
