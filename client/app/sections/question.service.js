@@ -635,6 +635,206 @@ angular.module('contraceptionApp').factory('questionService', function () {
     console.log("calling Survey.newQuestion");
     Survey.newQuestion(q16biscore);
 
+    // Scoring for 'q17'
+    var q17score = new Question('q17');
+    q17score.score = function(args) {
+      console.log("q17.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasOptions) {
+        var bcList = args.optionList;
+        var len = bcList.length;
+        for (var i = bcList.length - 1; i >= 0; i--) {
+          var bc = bcList[i].value
+          switch (bc)
+          {
+            // Abstinence
+            case 1:
+              Survey.bcIncr('abstinence', 1);
+              break;
+            // Birth Control
+            case 2:
+              Survey.bcIncr('ocp', 1);
+              Survey.bcIncr('pop', 1);
+              break;
+            // Mini Pills
+            case 3:
+              Survey.bcIncr('ocp', 1);
+              Survey.bcIncr('pop', 1);
+              break;
+            // Ortho Evra
+            case 4:
+              Survey.bcIncr('orthoEvra', 1);
+              break;
+            // Nuva Ring
+            case 5:
+              Survey.bcIncr('nuvaring', 1);
+              break;
+            // Depo
+            case 6:
+              Survey.bcIncr('depo', 1);
+              break;
+            // Male Condom
+            case 7:
+              Survey.bcIncr('mcondom', 1);
+              break;
+            // Diaphram
+            case 8:
+              Survey.bcIncr('diaph', 1);
+              break;
+            // Female Condom
+            case 9:
+              Survey.bcIncr('fcondom', 1);
+              break;
+            // Sponge
+            case 10:
+              Survey.bcIncr('sponge', 1);
+              break;
+            // Fam
+            case 11:
+              Survey.bcIncr('fam', 1);
+              break;
+            // EC / PlanB
+            case 12:
+              Survey.bcIncr('ec', 1);
+              break;
+            // Paragard
+            case 13:
+              Survey.bcIncr('paragard', 1);
+              break;
+            // Mirena
+            case 14:
+              Survey.bcIncr('mirena', 1);
+              break;
+            // Withdrawal
+            case 15:
+              Survey.bcIncr('withd', 1);
+              break;
+            // Spermicide
+            case 16:
+              Survey.bcIncr('sperm', 1);
+              break;
+            // BTL / Tubes Tied
+            case 17:
+              Survey.bcIncr('btl', 1);
+              break;
+            // Vasectomy
+            case 18:
+              Survey.bcIncr('vas', 1);
+              break;
+            // Implant
+            case 19:
+              Survey.bcIncr('implanon', 1);
+              break;
+            // Breast Feeding
+            case 20:
+              Survey.bcIncr('bf', 1);
+              break;
+          }
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q17score);
+
+    // Scoring for 'q18ai'
+    var q18aiscore = new Question('q18ai');
+    q18aiscore.score = function(args) {
+      console.log("q18ai.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasOptions) {
+        var bcList = args.optionList;
+        var len = bcList.length;
+        for (var i = bcList.length - 1; i >= 0; i--) {
+          var bc = bcList[i].value
+          switch (bc)
+          {
+            // Abstinence
+            case 1:
+              Survey.bcIncr('abstinence', 1);
+              break;
+            // Birth Control
+            case 2:
+              Survey.bcIncr('ocp', 1);
+              break;
+            // Mini Pills
+            case 3:
+              Survey.bcIncr('pop', 1);
+              break;
+            // Ortho Evra
+            case 4:
+              Survey.bcIncr('orthoEvra', 1);
+              break;
+            // Nuva Ring
+            case 5:
+              Survey.bcIncr('nuvaring', 1);
+              break;
+            // Depo
+            case 6:
+              Survey.bcIncr('depo', 1);
+              break;
+            // Male Condom
+            case 7:
+              Survey.bcIncr('mcondom', 1);
+              break;
+            // Diaphram
+            case 8:
+              Survey.bcIncr('diaph', 1);
+              break;
+            // Female Condom
+            case 9:
+              Survey.bcIncr('fcondom', 1);
+              break;
+            // Sponge
+            case 10:
+              Survey.bcIncr('sponge', 1);
+              break;
+            // Fam
+            case 11:
+              Survey.bcIncr('fam', 1);
+              break;
+            // EC / PlanB
+            case 12:
+              Survey.bcIncr('ec', 1);
+              break;
+            // Paragard
+            case 13:
+              Survey.bcIncr('paragard', 1);
+              break;
+            // Mirena
+            case 14:
+              Survey.bcIncr('mirena', 1);
+              break;
+            // Withdrawal
+            case 15:
+              Survey.bcIncr('withd', 1);
+              break;
+            // Spermicide
+            case 16:
+              Survey.bcIncr('sperm', 1);
+              break;
+            // BTL / Tubes Tied
+            case 17:
+              Survey.bcIncr('btl', 1);
+              break;
+            // Vasectomy
+            case 18:
+              Survey.bcIncr('vas', 1);
+              break;
+            // Implant
+            case 19:
+              Survey.bcIncr('implanon', 1);
+              break;
+            // Breast Feeding
+            case 20:
+              Survey.bcIncr('bf', 1);
+              break;
+          }
+        }
+      }
+    };
+    console.log("calling Survey.newQuestion");
+    Survey.newQuestion(q18aiscore);
+
     /**
      * The questions and the behavior of each
      */
@@ -1157,25 +1357,26 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q17:{
         options: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera',   value : 5  },
-          { name : 'Male Condom',    value : 6  },
-          { name : 'Diaphragm',      value : 7  },
-          { name : 'Female Condom',  value : 8  },
-          { name : 'Sponge',         value : 9  },
-          { name : 'Fam',            value : 10 },
-          { name : 'EC',             value : 11 },
-          { name : 'Paragard',       value : 12 },
-          { name : 'Mirena',         value : 13 },
-          { name : 'Withdrawal',     value : 14 },
-          { name : 'Spermicide',     value : 15 },
-          { name : 'Tubes Tied',     value : 16 },
-          { name : 'Vasectomy',      value : 17 },
-          { name : 'Implant',        value : 18 },
-          { name : 'Breast Feeding', value : 19 }
+          { name : 'Abstinence',     value : 1  },
+          { name : 'Birth Control',  value : 2  },
+          { name : 'Mini Pills',     value : 3  },
+          { name : 'Ortho Evra',     value : 4  },
+          { name : 'Nuva Ring',      value : 5  },
+          { name : 'Depo Provera',   value : 6  },
+          { name : 'Male Condom',    value : 7  },
+          { name : 'Diaphragm',      value : 8  },
+          { name : 'Female Condom',  value : 9  },
+          { name : 'Sponge',         value : 10  },
+          { name : 'Fam',            value : 11 },
+          { name : 'EC',             value : 12 },
+          { name : 'Paragard',       value : 13 },
+          { name : 'Mirena',         value : 14 },
+          { name : 'Withdrawal',     value : 15 },
+          { name : 'Spermicide',     value : 16 },
+          { name : 'Tubes Tied',     value : 17 },
+          { name : 'Vasectomy',      value : 18 },
+          { name : 'Implant',        value : 19 },
+          { name : 'Breast Feeding', value : 20 }
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -1195,60 +1396,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q18';
         },
         ranking: function(){
-          // this.answer = 0;
-          // var selLength = this.selectedOptions.length;
-          // for (var i = 0; i < selLength; i++) {
-          //   this.rank(this.selectedOptions[i].name);
-          // }
           if(this.answer && this.answer.array){
-            var selLength = this.answer.array.length;
-            for (var i = 0; i < selLength; i++) {
-              this.rank(this.answer.array[i].name);
-            }
-          }
-        },
-        rank: function(bcname) {
-          switch (bcname)
-          {
-            case 'Birth Control':
-              ranking.ocp.n-=3;
-              break;
-            case 'Mini Pills':
-              break;
-            case 'Ortho Evra':
-              break;
-            case 'Nuva Ring':
-              break;
-            case 'Depo Provera':
-              break;
-            case 'Male Condom':
-              break;
-            case 'Diaphragm':
-              break;
-            case 'Female Condom':
-              break;
-            case 'Sponge':
-              break;
-            case 'Fam':
-              break;
-            case 'EC':
-              break;
-            case 'Paragard':
-              break;
-            case 'Mirena':
-              break;
-            case 'Withdrawal':
-              break;
-            case 'Spermicide':
-              break;
-            case 'Tubes Tied':
-              break;
-            case 'Vasectomy':
-              break;
-            case 'Implant':
-              break;
-            case 'Breast Feeding':
-              break;
+            Survey.answer('q17', {optionList:this.answer.array});
           }
         },
       },
@@ -1274,7 +1423,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q20'; }
         },
         ranking: function(){
-          
           return;
         }
       },
@@ -1300,7 +1448,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q19'; }
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1311,25 +1459,26 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q18ai:{
         options: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera',   value : 5  },
-          { name : 'Male Condom',    value : 6  },
-          { name : 'Diaphragm',      value : 7  },
-          { name : 'Female Condom',  value : 8  },
-          { name : 'Sponge',         value : 9  },
-          { name : 'Fam',            value : 10 },
-          { name : 'EC',             value : 11 },
-          { name : 'Paragard',       value : 12 },
-          { name : 'Mirena',         value : 13 },
-          { name : 'Withdrawal',     value : 14 },
-          { name : 'Spermicide',     value : 15 },
-          { name : 'Tubes Tied',     value : 16 },
-          { name : 'Vasectomy',      value : 17 },
-          { name : 'Implant',        value : 18 },
-          { name : 'Breast Feeding', value : 19 }
+          { name : 'Abstinence',     value : 1  },
+          { name : 'Birth Control',  value : 2  },
+          { name : 'Mini Pills',     value : 3  },
+          { name : 'Ortho Evra',     value : 4  },
+          { name : 'Nuva Ring',      value : 5  },
+          { name : 'Depo Provera',   value : 6  },
+          { name : 'Male Condom',    value : 7  },
+          { name : 'Diaphragm',      value : 8  },
+          { name : 'Female Condom',  value : 9  },
+          { name : 'Sponge',         value : 10  },
+          { name : 'Fam',            value : 11 },
+          { name : 'EC',             value : 12 },
+          { name : 'Paragard',       value : 13 },
+          { name : 'Mirena',         value : 14 },
+          { name : 'Withdrawal',     value : 15 },
+          { name : 'Spermicide',     value : 16 },
+          { name : 'Tubes Tied',     value : 17 },
+          { name : 'Vasectomy',      value : 18 },
+          { name : 'Implant',        value : 19 },
+          { name : 'Breast Feeding', value : 20 }
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -1349,60 +1498,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q19';
         },
         ranking: function(){
-          // this.answer = 0;
-          // var selLength = this.selectedOptions.length;
-          // for (var i = 0; i < selLength; i++) {
-          //   this.rank(this.selectedOptions[i].name);
-          // }
           if(this.answer && this.answer.array){
-            var selLength = this.answer.array.length;
-            for (var i = 0; i < selLength; i++) {
-              this.rank(this.answer.array[i].name);
-            }
-          }
-        },
-        rank: function(bcname) {
-          switch (bcname)
-          {
-            case 'Birth Control':
-              ranking.ocp.n-=3;
-              break;
-            case 'Mini Pills':
-              break;
-            case 'Ortho Evra':
-              break;
-            case 'Nuva Ring':
-              break;
-            case 'Depo Provera':
-              break;
-            case 'Male Condom':
-              break;
-            case 'Diaphragm':
-              break;
-            case 'Female Condom':
-              break;
-            case 'Sponge':
-              break;
-            case 'Fam':
-              break;
-            case 'EC':
-              break;
-            case 'Paragard':
-              break;
-            case 'Mirena':
-              break;
-            case 'Withdrawal':
-              break;
-            case 'Spermicide':
-              break;
-            case 'Tubes Tied':
-              break;
-            case 'Vasectomy':
-              break;
-            case 'Implant':
-              break;
-            case 'Breast Feeding':
-              break;
+            Survey.answer('q18ai', {optionList:this.answer.array});
           }
         },
       },
@@ -1429,7 +1526,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q20'; }
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1567,7 +1664,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q21';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1639,7 +1736,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q23';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1664,7 +1761,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q24';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1689,7 +1786,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q25';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1711,7 +1808,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q26';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1734,7 +1831,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           else { return 'q27'; }
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1757,7 +1854,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q26b';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1779,7 +1876,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q27';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1802,7 +1899,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q28';
         },
         ranking: function(){
-          
+
           return;
         }
       },
@@ -1828,7 +1925,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1851,7 +1948,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1874,7 +1971,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1898,7 +1995,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1921,7 +2018,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1944,7 +2041,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1968,7 +2065,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -1990,7 +2087,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2013,7 +2110,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2036,7 +2133,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2059,7 +2156,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2082,7 +2179,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2104,7 +2201,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2126,7 +2223,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2148,7 +2245,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2173,7 +2270,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2196,7 +2293,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2218,7 +2315,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2240,7 +2337,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2263,7 +2360,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2286,7 +2383,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2309,7 +2406,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2332,7 +2429,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2356,7 +2453,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2380,7 +2477,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2402,7 +2499,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2426,7 +2523,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2449,7 +2546,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2472,7 +2569,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2497,7 +2594,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2520,7 +2617,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2543,7 +2640,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2566,7 +2663,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2589,7 +2686,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2612,7 +2709,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2635,7 +2732,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2664,7 +2761,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2687,7 +2784,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2709,7 +2806,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
@@ -2763,7 +2860,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          
+
           return;
         },
         nextQuestion: function(){
