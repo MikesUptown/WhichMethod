@@ -1671,11 +1671,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q17';
         },
         ranking: function(){
-          // this.answer = 0;
-          // var selLength = this.selectedOptions.length;
-          // for (var i = 0; i < selLength; i++) {
-          //   this.rank(this.selectedOptions[i].name);
-          // }
           if(this.answer && this.answer.array){
             Survey.answer('q16bi', {optionList:this.answer.array});
           }
@@ -1994,8 +1989,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q21';
         },
         ranking: function(){
-
-          return;
+          Survey.answer('q20', {value:this.answer});
         }
       },
 
@@ -2036,8 +2030,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
           return 'q22';
         },
         ranking: function(){
-          this.answer = 0;
-          return;
+          if(this.answer && this.answer.array){
+            Survey.answer('q21', {optionList:this.answer.array});
+          }
         }
       },
 
