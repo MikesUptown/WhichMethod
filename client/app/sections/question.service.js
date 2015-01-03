@@ -990,6 +990,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           break;
         // I got pregnant
         case 4:
+          Survey.bcNeg('diaph', 3);
           break;
         // I developed health problems
         case 5:
