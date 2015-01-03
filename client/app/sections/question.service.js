@@ -812,6 +812,27 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q18aiscore);
 
+    // Scoring for 'q19ai'
+    var q19aiscore = new Question('q19ai');
+    q19aiscore.bcProblemScore = function(bc, prob)
+    {
+        console.log('q19ai bc:' + bc + 'prob:' + prob);
+    };
+    q19aiscore.score = function(args) {
+      console.log("q19ai.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue && argTypes.hasOptions) {
+        var bc = args.value;
+        var probList = args.optionList;
+        var len = probList.length;
+        for (var i = probList.length - 1; i >= 0; i--) {
+          var prob = probList[i].value
+          q19aiscore.bcProblemScore(bc, prob);
+        }
+      }
+    };
+    Survey.newQuestion(q19aiscore);
+
     // Scoring for 'q20'
     var q20score = new Question('q20');
     q20score.score = function(args) {
@@ -2916,6 +2937,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
           problems.curBcProbNum += 1;
           if (this.notDone()) { return 'q19ai'; }
           else { return 'q20'; }
+        },
+        ranking: function(){
+          if(this.answer && this.answer.array){
+            var curBcNum = problems.curBcProbNum;
+            var problemValue = problems.bcProblemList[curBcNum].value;
+            Survey.answer('q19ai',
+              {value:problemValue,
+               optionList:this.answer.array});
+          }
         },
       },
 
