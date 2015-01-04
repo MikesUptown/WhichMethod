@@ -817,514 +817,1869 @@ angular.module('contraceptionApp').factory('questionService', function () {
     q19aiscore.ocp = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 3);
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('ocp', 2);
+            break;
+          // Depression or mood swings
+          case 4:
+            Survey.bcNeg('ocp', 1);
+            break;
+          // Nausea or vomiting
+          case 5:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('orthoEvra', 1);
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('depo', 3);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 1);
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
+    // score.pop
     q19aiscore.minipills = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('pop', 2);
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('pop', 1);
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.orthoEvra = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+             Survey.bcNeg('orthoEvra', 3);
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            Survey.bcNeg('orthoEvra', 1);
+            break;
+          // Nausea or vomiting
+          case 5:
+            Survey.bcNeg('orthoEvra', 2);
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('depo', 3);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('orthoEvra', 3);
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.nuvaring = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+              Survey.bcNeg('ocp', 1);
+              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('nuvaring', 1);
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('nuvaring', 1);
+            break;
+          // Depression or mood swings
+          case 4:
+            Survey.bcNeg('nuvaring', 2);
+            break;
+          // Nausea or vomiting
+          case 5:
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('depo', 3);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('nuvaring', 1);
+            break;
+          // Discharge
+          case 8:
+            Survey.bcNeg('nuvaring', 3);
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.depo = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('depo', 2);
+            break;
+          // Depression or mood swings
+          case 4:
+            Survey.bcNeg('depo', 2);
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('depo', 3);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('depo', 2);
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.mcondom = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.diaph = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          Survey.bcNeg('diaph', 3);
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.fcondom = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.sponge = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.fam = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.ec = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.paragard = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            Survey.bcNeg('paragard', 2);
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.mirena = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            Survey.bcNeg('paragard', 2);
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('mirena', 2);
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('depo', 3);
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Discharge
+          case 8:
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.withd = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.sperm = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.btl = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.vas = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.implanon = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            Survey.bcNeg('implanon', 2);
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            Survey.bcNeg('depo', 3);
+            Survey.bcNeg('implanon', 1);
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            Survey.bcNeg('implanon', 1);
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
     q19aiscore.bf = function(prob) {
       switch (prob)
       {
-        // I didn't like the changes to my body
-        case 1:
-          break;
-        // I had problems getting the birth control
-        case 2:
-          break;
-        // I didn't use it right
-        case 3:
-          break;
-        // I got pregnant
-        case 4:
-          break;
-        // I developed health problems
-        case 5:
-          break;
-        // I didn't like my periods
-        case 6:
-          break;
-        // My partner didn't like it
-        case 7:
-          break;
+          // Breast Tenderness
+          case 1:
+              Survey.bcNeg('bf', 2);
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18::
+            break;
+          // "High blood pressure
+          case 19:
+              Survey.bcNeg('ocp', 999);
+              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            break;
+          // "Stroke or heart attack
+          case 21:
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
       }
     };
 
@@ -3488,7 +4843,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 7, name : "Migraines or very bad headaches" },
           { value : 8, name : "Discharge" },
           { value : 9, name : "Other changes to my body" },
-          { value : 10, name : "I couldn't get to the doctor" },
+          { value : 10, name : "I couldn't get to the clinic" },
           { value : 11, name : "I couldn't get to the pharmacy" },
           { value : 12, name : "It was too expensive" },
           { value : 13, name : "I had another problem getting the birth control" },
