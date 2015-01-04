@@ -935,27 +935,35 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('ocp', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcNeg('ocp', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcNeg('ocp', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('ocp', 1);
             break;
       }
     };
@@ -1064,27 +1072,37 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('pop', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('pop', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcNeg('pop', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcNeg('pop', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('ocp', 1);
             break;
       }
     };
@@ -1198,6 +1216,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1207,18 +1229,24 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('orthoEvra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcNeg('pop', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('orthoEvra', 1);
             break;
       }
     };
@@ -1336,27 +1364,38 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('nuvaring', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('nuvaring', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('nuvaring', 1);
             break;
       }
     };
@@ -1449,27 +1488,45 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('ocp', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('depo', 1);
             break;
       }
     };
@@ -1555,6 +1612,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1576,6 +1637,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('mcondom', 1);
             break;
       }
     };
@@ -1660,6 +1722,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1669,6 +1735,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('orthoEvra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -1681,6 +1748,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('diaph', 1);
             break;
       }
     };
@@ -1764,6 +1832,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1773,6 +1845,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('orthoEvra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -1785,6 +1858,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('fcondom', 1);
             break;
       }
     };
@@ -1868,6 +1942,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1877,6 +1955,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('orthoEvra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -1889,6 +1968,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('sponge', 1);
             break;
       }
     };
@@ -1973,6 +2053,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -1994,6 +2078,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
             break;
       }
     };
@@ -2057,9 +2143,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
@@ -2168,18 +2251,36 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('paragard', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('paragard', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
@@ -2189,6 +2290,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
             break;
       }
     };
@@ -2274,18 +2377,37 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('mirena', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('mirena', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('paragard', 1);
+            Survey.bcNeg('mirena', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
@@ -2295,6 +2417,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('mirena', 1);
             break;
       }
     };
@@ -2471,6 +2595,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -2492,6 +2620,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('sperm', 1);
             break;
       }
     };
@@ -2569,6 +2698,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -2590,6 +2723,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('btl', 1);
             break;
       }
     };
@@ -2666,6 +2800,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
@@ -2687,6 +2825,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('vas', 1);
             break;
       }
     };
@@ -2768,27 +2907,47 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('implanon', 999);
             break;
           // "Another health problem
           case 22:
             break;
           // "I didn't like the prolonged breathing
           case 23:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like the heavy bleeding
           case 24:
+            Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('depo', 1);
+            Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
+            Survey.bcNeg('implanon', 1);
             break;
       }
     };
@@ -2854,15 +3013,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             break;
           // "Stroke or heart attack
           case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
           case 22:
