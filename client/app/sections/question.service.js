@@ -890,7 +890,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -996,7 +996,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1105,7 +1105,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1219,7 +1219,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1326,7 +1326,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1419,7 +1419,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1512,7 +1512,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1605,7 +1605,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1698,7 +1698,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1791,7 +1791,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1884,7 +1884,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -1981,7 +1981,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2082,7 +2082,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2175,7 +2175,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2268,7 +2268,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2361,7 +2361,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2454,7 +2454,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2551,7 +2551,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
@@ -2645,7 +2645,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 17:
             break;
           // "I got pregnant
-          case 18::
+          case 18:
             break;
           // "High blood pressure
           case 19:
