@@ -102,7 +102,8 @@ header
 
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
-          | Q19ai. What problems did you have while using {{questions.q19ai.curBcProbName()}}
+          | Q19ai. What problems did you have while using 
+          span(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
           label {{option.name}}

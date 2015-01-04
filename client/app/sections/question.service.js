@@ -3139,6 +3139,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
     q19aiscore.score = function(argsArray) {
       console.log("q19ai.score");
 
+      if(argsArray==undefined)
+        return;
       for(var j=0; j<argsArray.length;j++){
 
         var args = argsArray[j]
@@ -5246,6 +5248,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 999, name : "I don't want to answer this question" },
         ],
         curBcProbName : function() {
+          if(!questions['q19a'].answer)
+            return false;
           var problems = questions['q19a'].answer.problems
           var curBcNum = problems.curBcProbNum;
           var listLen = problems.bcProblemList.length;
@@ -5298,7 +5302,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         ranking: function(){
           //compute ranking only after the loop has finished
           if(this.answer && this.answer.array && questions['q19a'].answer.problems 
-              && !this.notDone()
+              // && !this.notDone()
               ){
 
             var problems = questions['q19a'].answer.problems
