@@ -56,8 +56,7 @@ angular.module('contraceptionApp')
       }
 
 
-      console.log("Answer Saved!")
-      $scope.updateRanking()
+
 
 
 
@@ -72,6 +71,9 @@ angular.module('contraceptionApp')
       }
 
       $scope.currentQuestion = $scope.questions[$scope.currentQuestion].nextQuestion()
+
+      console.log("Answer Saved!")
+      $scope.updateRanking()
 
       updateUser()
 
@@ -102,7 +104,7 @@ angular.module('contraceptionApp')
       questionService.initRanking()
 
       for(var q in $scope.questions){
-        if($scope.questions[q].ranking)
+        if($scope.questions[q].ranking && $scope.questions[q].answer != undefined)
           $scope.questions[q].ranking()
       }
 

@@ -57,7 +57,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     var problems = {
       curBcProbNum : 0,
       bcProblemList : [],
-      problemsPerBc : [],
+      problemsPerBc : {},
     }
 
     var BirthControl = function (name) {
@@ -185,6 +185,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
       answer : function(qName, args) {
         console.log("Survey.answer", qName, args);
         this.answerList[qName] = args;
+
+
       },
       bcNeg: function(bcName, num) {
         this.bcList[bcName].neg(num);
@@ -3134,17 +3136,24 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
         }
     };
-    q19aiscore.score = function(args) {
+    q19aiscore.score = function(argsArray) {
       console.log("q19ai.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue && argTypes.hasOptions) {
-        var bc = args.value;
-        var probList = args.optionList;
-        var len = probList.length;
-        for (var i = probList.length - 1; i >= 0; i--) {
-          var prob = probList[i].value
-          q19aiscore.bcProblemScore(bc, prob);
+
+      for(var j=0; j<argsArray.length;j++){
+
+        var args = argsArray[j]
+    
+        var argTypes = Question.prototype.scoreArgs.call(this, args);
+        if (argTypes.hasValue && argTypes.hasOptions) {
+          var bc = args.value;
+          var probList = args.optionList;
+          var len = probList.length;
+          for (var i = probList.length - 1; i >= 0; i--) {
+            var prob = probList[i].value
+            q19aiscore.bcProblemScore(bc, prob);
+          }
         }
+
       }
     };
     Survey.newQuestion(q19aiscore);
@@ -5185,7 +5194,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         saveSelections: function() {
+          this.answer.problems= problems
           problems.bcProblemList = this.selectedOptions.splice(0);
+
+          // this.answer.problems = this.selectedOptions.splice(0);
         },
         nextQuestion: function(){
           this.saveSelections();
@@ -5234,6 +5246,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 999, name : "I don't want to answer this question" },
         ],
         curBcProbName : function() {
+          var problems = questions['q19a'].answer.problems
           var curBcNum = problems.curBcProbNum;
           var listLen = problems.bcProblemList.length;
           var curBcProbTuple = undefined;
@@ -5248,6 +5261,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         notDone: function() {
+          var problems = questions['q19a'].answer.problems
           return (problems.curBcProbNum < problems.bcProblemList.length);
         },
         selectedOptions: [],
@@ -5264,24 +5278,51 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         },
         saveSelections: function() {
+          var problems = questions['q19a'].answer.problems
           var curBcProbName = this.curBcProbName();
-          problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
+
+          //store answeres from each loop in problems
+          questions['q19a'].answer.problems.problemsPerBc[curBcProbName]= this.selectedOptions.splice(0);
+          // problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
         },
         nextQuestion: function(){
           this.saveSelections();
           this.clearSelections();
+
+          var problems = questions['q19a'].answer.problems
           problems.curBcProbNum += 1;
+          
           if (this.notDone()) { return 'q19ai'; }
           else { return 'q20'; }
         },
         ranking: function(){
-          if(this.answer && this.answer.array){
-            var curBcNum = problems.curBcProbNum;
-            var problemValue = problems.bcProblemList[curBcNum].value;
-            Survey.answer('q19ai',
-              {value:problemValue,
-               optionList:this.answer.array});
-          }
+          //compute ranking only after the loop has finished
+          if(this.answer && this.answer.array && questions['q19a'].answer.problems 
+              && !this.notDone()
+              ){
+
+            var problems = questions['q19a'].answer.problems
+
+            //loop through all problems and push them into an array
+            var answer=[]
+            for(var i=0;i<problems.bcProblemList.length;i++){
+              var curBcNum = i;
+
+              var problemValue = problems.bcProblemList[curBcNum].value;
+              
+              //get the answers for this problem
+              var problemsPerBc = problems.problemsPerBc[problems.bcProblemList[curBcNum].name]
+
+              answer.push(
+                  {value:problemValue,
+                 optionList:problemsPerBc}
+                )
+
+            }
+
+            Survey.answer('q19ai', answer);
+            
+          }  
         },
       },
 
