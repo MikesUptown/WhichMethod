@@ -870,18 +870,47 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I couldn't get to the pharmacy
           case 11:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('ocp', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I failed to restart after break for period
           case 15:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I didn't use it every time I had sex
           case 16:
@@ -894,12 +923,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -976,15 +1008,35 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I couldn't get to the pharmacy
           case 11:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('pop', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I failed to restart after break for period
           case 15:
@@ -1006,6 +1058,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1085,18 +1140,39 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I couldn't get to the pharmacy
           case 11:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('orthoEvra', 2);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
+            Survey.bcNeg('orthoEvra', 2);
             break;
           // "I failed to restart after break for period
           case 15:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 1);
+            Survey.bcPos('depo', 1);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I didn't use it every time I had sex
           case 16:
@@ -1106,15 +1182,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('orthoEvra', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1199,18 +1279,38 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I couldn't get to the pharmacy
           case 11:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('depo', 3);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('nuvaring', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
+            Survey.bcNeg('nuvaring', 1);
             break;
           // "I failed to restart after break for period
           case 15:
+            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('nuvaring', 2);
+            Survey.bcPos('paragard', 1);
+            Survey.bcPos('mirena', 1);
+            Survey.bcPos('btl', 1);
+            Survey.bcPos('vas', 1);
+            Survey.bcPos('implanon', 1);
             break;
           // "I didn't use it every time I had sex
           case 16:
@@ -1220,6 +1320,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('nuvaring', 3);
             break;
           // "High blood pressure
           case 19:
@@ -1229,6 +1330,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1309,12 +1413,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('depo', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
+            Survey.bcNeg('depo', 2);
             break;
           // "I failed to restart after break for period
           case 15:
@@ -1327,6 +1433,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('depo', 3);
             break;
           // "High blood pressure
           case 19:
@@ -1336,6 +1443,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1402,6 +1512,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('mcondom', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
@@ -1414,21 +1525,33 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
+            Survey.bcNeg('fam', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('mcondom', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1507,21 +1630,33 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
+            Survey.bcNeg('fam', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('diaph', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1600,21 +1735,32 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('fcondom', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1693,21 +1839,32 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('sponge', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1786,21 +1943,33 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
+            Survey.bcNeg('fam', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('fam', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -1964,6 +2133,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('paragard', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
@@ -1982,6 +2152,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('paragard', 3);
             break;
           // "High blood pressure
           case 19:
@@ -1991,6 +2162,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2065,6 +2239,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('mirena', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
@@ -2083,15 +2258,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('mirena', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2263,21 +2442,32 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
+            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('fcondom', 3);
+            Survey.bcNeg('ccap', 3);
+            Survey.bcNeg('diaph', 3);
+            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('sponge', 3);
             break;
           // "I had another problem using it correctly
           case 17:
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('sperm', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2344,6 +2534,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('btl', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
@@ -2362,15 +2553,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('btl', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2455,15 +2650,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('vas', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2534,6 +2733,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
+            Survey.bcNeg('implanon', 1);
             break;
           // "I had another problem getting the birth control
           case 13:
@@ -2552,15 +2752,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('implanon', 3);
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -2646,6 +2850,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('bf', 3);
             break;
           // "High blood pressure
           case 19:
