@@ -109,12 +109,21 @@ h3 {
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-body {
-  background-color: #ffffff;
-  /*padding-bottom: 20px;*/
+/* Padding below the footer and lighter body text 
+  body.mainpage {
+  background-color: #ffffff;  
+  padding-bottom: 20px;
   color: #5a5a5a;
 }
+*/
+
+
+/* background image for main page 
+.body.mainpage {
+  
+}
+*/
+
 
 /*Custom Navbar Stylying*/
 .ng-scope{
@@ -130,13 +139,15 @@ body {
 a.main_signin_btn{
   margin-top: 15px;
   margin-right: 15px;
-  background-color: #FFCD05;
-  color: #242424;
+  /* background-color: #FFCD05; */
+  background-color: #F0A890;
+  /* color: #242424; */
 }
 
 /*Main Content*/
-.container{
+.mainContainer{
   background-color: #ffffff;
+  background: url('/assets/images/subtle_background01.png');
 }
 .jumbotron {
   margin-top: -20px;
@@ -208,7 +219,8 @@ footer{
 }
 
 #navbar-main{
-  /*border:solid;*/
+  /* border:solid; */
+  /* background-color: #F0D8A8; */
 }
 .navbar-header{
 
@@ -228,6 +240,7 @@ footer{
 
 .navbar-static-top {
   /*background-color: #A1A1A1;*/
+  background: url('/assets/images/subtle_background01.png');
 }
 
 
@@ -277,6 +290,11 @@ footer{
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.text-justify.center-block {
+background-color: #f0d8a8;
+/* border: solid; */
 }
 
 
