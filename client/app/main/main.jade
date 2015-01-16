@@ -9,14 +9,14 @@ div(ng-include='"components/navbar/navbar.html"')
         .title
           h1 Get WhichMethod
 
-        .description 
-          h3 Confused about today's contraceptive methods?
-          h4 WhichMethod is designed to help women choose a birth control method that is safe, effective and fits your lifestyle. 
-
-        
         .get_start 
           //a.btn.btn-success.btn-lg(ng-click="startServey()") Get WhichMethod »
-          a.start_btn(ng-click="startServey()") Start Here »
+          a.start_btn(ng-click="startServey()") Start today »
+
+
+        .description 
+          h3 Confused about the many contraceptive methods on the market today?
+          h4 WhichMethod is designed to help women choose a birth control method that is safe, effective and fits your lifestyle.
           
     .sub_content
       .row
@@ -24,8 +24,8 @@ div(ng-include='"components/navbar/navbar.html"')
           h3 Step 1: Sign up today
           p.text-justify.center-block
             | There are two ways to use WhichMethod:
-            <mark>Registered User</mark>: Will see recommendations and get a copy via email; and
-            <mark>Guest User</mark>: You will be able to print recommendations, but to save them you must be a Registered User.
+            <strong>Registered User</strong>: Will see recommendations and get a copy via email; and
+            <strong>Guest User</strong>: You will be able to print recommendations, but to save them you must be a Registered User.
           // p
             a.btn.btn-default(href='#') View details »
         
