@@ -19,6 +19,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
       'q3','q13','q22','q27','q52','q53h', 'q58e'
     ];
 
+    
+
 
     /**
      * Initialize (zeroize) the rankings
@@ -5301,9 +5303,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         ranking: function(){
           //compute ranking only after the loop has finished
-          if(this.answer && this.answer.array && questions['q19a'].answer.problems 
-              // && !this.notDone()
-              ){
+          if(this.answer && this.answer.array && questions['q19a'].answer.problems){
 
             var problems = questions['q19a'].answer.problems
 

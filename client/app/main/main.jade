@@ -1,12 +1,13 @@
 div(ng-include='"components/navbar/navbar.html"')
-
 .loginView(ui-view="login")
 
 
 
-div(main)
+div.mainContainer(main)
     .jumbotron(fullscreen)
       .main_content
+
+        i.glyphicon.glyphicon-search
 
         .title
           h1 WhichMethod
