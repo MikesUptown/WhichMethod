@@ -3,29 +3,32 @@ div(ng-include='"components/navbar/navbar.html"')
 
 
 
-div.mainContainer(main)
+
+.mainContainer(main)
     .jumbotron(fullscreen)
       .main_content
 
-        i.glyphicon.glyphicon-search
 
         .title
-          h1 WhichMethod
+          h1 Get WhichMethod
 
-        .description 
-          | Confused about contraceptive methods...? WhichMethod is designed to help women choose a birth control method that is safe, effective and fits their lifestyle. 
-
-        
         .get_start 
           //a.btn.btn-success.btn-lg(ng-click="startServey()") Get WhichMethod »
-          a.start_btn(ng-click="startServey()") Get WhichMethod »
+          a.start_btn(ng-click="startServey()") Start today »
+
+
+        .description 
+          h3 Confused about the many contraceptive methods on the market today?
+          h4 WhichMethod is designed to help women choose a birth control method that is safe, effective and fits your lifestyle.
           
     .sub_content
       .row
         .col-lg-4
           h3 Step 1: Sign up today
           p.text-justify.center-block
-            | There are two ways to take enter WhichMethod: 1. Registered User: Will see recommendations and get a copy via email; and 2. Guest User: You will be able to print recommendations, but to save them you must go ahead and sign-up as a registered user.
+            | There are two ways to use WhichMethod:
+            <strong>Registered User</strong>: Will see recommendations and get a copy via email; and
+            <strong>Guest User</strong>: You will be able to print recommendations, but to save them you must be a Registered User.
           // p
             a.btn.btn-default(href='#') View details »
         
