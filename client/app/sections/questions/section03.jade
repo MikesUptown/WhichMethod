@@ -15,7 +15,7 @@ header
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
       label
-        | Q14. How would you describe your current sexual relationship? Would you say that...
+        | Q14. How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
       div(ng-repeat='option in questions.q14.options')
         input(type="radio" name='q14' ng-model="questions.q14.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
@@ -46,14 +46,14 @@ header
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
-          | Q16b. ...you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
+          | Q16b. When you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
 
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
-          | Q16bi. ...you had an unplanned pregnancy, what method of birth control were you using?
+          | Q16bi. When you had an unplanned pregnancy, what method of birth control were you using?
         div(ng-repeat='option in questions.q16bi.options')
           input(type='checkbox' ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
           label {{option.name}}
@@ -110,7 +110,7 @@ header
 
      li#q20(ng-show="currentQuestion == 'q20'")
         label
-          | Q20. When would you like to become pregnant? In
+          | Q20. How soon do you want to get pregnant? In...
         div(ng-repeat='option in questions.q20.options')
           input(type="radio" name='q20' ng-model="questions.q20.selectedOption" ng-value="{{option}}")
           label {{option.name}}
