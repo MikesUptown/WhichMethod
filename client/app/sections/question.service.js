@@ -3738,6 +3738,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q28score);
 
     // Scoring for 'q28a'
+    // This question is now: "HOW LONG SINCE YOU GAVE BIRTH?"
     var q28ascore = new Question('q28a');
     q28ascore.score = function(args) {
       console.log("q28a.score");
@@ -3762,6 +3763,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q28ascore);
 
+
     // Scoring for 'q28b'
     var q28bscore = new Question('q28b');
     q28bscore.score = function(args) {
@@ -3779,7 +3781,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
       }
     };
     Survey.newQuestion(q28bscore);
+    // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
+    // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
+    // IF YES AND 28A IS > 4 WEEKS (30 DAYS) but < or == 6 weeks = -3
+    // IF YES AND 28A IS > 6 WEEKS (42 DAYS) = -2
+    // IF NO AND 28A IS < 3 WEEKS (21 DAYS) = -999 (OCP, PATCH, RING)
+    // IF NO AND 28A IS > OR == 3 WEEKS BUT < OR == 6 WEEKS = -3
+    // IF NO AND 28A IS > 6 WEEKS (42 DAYS) = -2
 
+    // I'M ASSUMING THERE IS NO RANKING FOR THE QUESTION: "HAVE YOU HAD SURGERY IN THE PAST THREE MONTHS? OR Q29"
+    
     // Scoring for 'q32a'
     // This is now question #29a
     var q32ascore = new Question('q32a');

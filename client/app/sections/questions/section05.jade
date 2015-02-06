@@ -21,12 +21,21 @@ header
         input(type="radio" name='q28' ng-model='questions.q28.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
+    //- li#28a(ng-show="currentQuestion == 'q28a'")
+      //label
+      //  | Q28a. How long since you gave birth?
+      //div(ng-repeat='option in questions.q28a.options')
+      //  input(type="radio" name='q28a' ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
+      //  label {{option.name}}
+        // THIS IS AN ALLTOGETHER NEW Q28a REPLACING THE Q28a BELOW
+
     li#28a(ng-show="currentQuestion == 'q28a'")
       label
         | Q28a. Was your baby born less than 3 weeks ago?
       div(ng-repeat='option in questions.q28a.options')
         input(type="radio" name='q28a' ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
+        // DELETE THIS VERSION OF Q28A ONCE IT HAS BEEN REPLACED WITH NEW Q28A ABOVE
 
     li#28b(ng-show="currentQuestion == 'q28b'")
       label
