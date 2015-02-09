@@ -16,7 +16,7 @@ header
       div(ng-repeat='option in questions.q58a.options')
         input(type="radio" name='q58a' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-
+    //- This is now question #54a
 
     li#58b(ng-show="currentQuestion == 'q58b'")
       label
@@ -24,7 +24,7 @@ header
       div(ng-repeat='option in questions.q58b.options')
         input(type="radio" name='q58b' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-
+    //- This is now question #54b
       
     li#58c(ng-show="currentQuestion == 'q58c'")
       label
@@ -32,7 +32,7 @@ header
       div(ng-repeat='option in questions.q58c.options')
         input(type="radio" name='q58c' ng-model='questions.q58a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-
+    //- This is now question #54c
 
     li#58d(ng-show="currentQuestion == 'q58d'")
       label
@@ -40,7 +40,7 @@ header
       div(ng-repeat='option in questions.q58d.options')
         input(type="radio" name='q58d' ng-model='questions.q58d.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-
+    //- This is now question #54d
 
     li#58e(ng-show="currentQuestion == 'q58e'")
       label
@@ -48,6 +48,7 @@ header
       div(ng-repeat='option in questions.q58e.options')
         input(type="radio" name='q58e' ng-model='questions.q58e.selectedOption' ng-value="{{option}}")
         label {{option.name}}
+    //- This is now question #54d
 
     input(type="button",ng-click="saveAnswers()",value="Continue")
 

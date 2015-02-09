@@ -3740,6 +3740,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q28score);
 
     // Scoring for 'q28a'
+    // This question is now: "HOW LONG SINCE YOU GAVE BIRTH?"
     var q28ascore = new Question('q28a');
     q28ascore.score = function(args) {
       console.log("q28a.score");
@@ -3764,6 +3765,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q28ascore);
 
+
     // Scoring for 'q28b'
     var q28bscore = new Question('q28b');
     q28bscore.score = function(args) {
@@ -3781,8 +3783,36 @@ angular.module('contraceptionApp').factory('questionService', function () {
       }
     };
     Survey.newQuestion(q28bscore);
+    // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
+    // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
+    // IF YES AND 28A IS > 4 WEEKS (30 DAYS) but < or == 6 weeks = -3
+    // IF YES AND 28A IS > 6 WEEKS (42 DAYS) = -2
+    // IF NO AND 28A IS < 3 WEEKS (21 DAYS) = -999 (OCP, PATCH, RING)
+    // IF NO AND 28A IS > OR == 3 WEEKS BUT < OR == 6 WEEKS = -3
+    // IF NO AND 28A IS > 6 WEEKS (42 DAYS) = -2
+
+    // I'M ASSUMING THERE IS NO RANKING FOR THE QUESTION: "HAVE YOU HAD SURGERY IN THE PAST THREE MONTHS? OR Q29"
+    
+    // Scoring for 'q32a'
+    // This is now question #29a
+    var q32ascore = new Question('q32a');
+    q32ascore.score = function(args) {
+      console.log("q32a.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var postSurgeryMoving = args.value;
+        console.log("q32a has value", args.value);
+        if (postSurgeryMoving == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q32ascore);
 
     // Scoring for 'q29'
+    // This is now question #30
     var q29score = new Question('q29');
     q29score.score = function(args) {
       console.log("q29.score");
@@ -3802,6 +3832,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q29score);
 
     // Scoring for 'q29a'
+    // This is now question #30a
     var q29ascore = new Question('q29a');
     q29ascore.score = function(args) {
       console.log("q29a.score");
@@ -3828,6 +3859,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q29ascore);
 
     // Scoring for 'q30'
+    // This is the new question #31
     var q30score = new Question('q30');
     q30score.score = function(args) {
       console.log("q30.score");
@@ -3845,6 +3877,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q30score);
 
     // Scoring for 'q31'
+    // This is the new question #32
     var q31score = new Question('q31');
     q31score.score = function(args) {
       console.log("q31.score");
@@ -3861,60 +3894,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q31score);
 
-    // Scoring for 'q32a'
-    var q32ascore = new Question('q32a');
-    q32ascore.score = function(args) {
-      console.log("q32a.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var postSurgeryMoving = args.value;
-        console.log("q32a has value", args.value);
-        if (postSurgeryMoving == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q32ascore);
-
-    // Scoring for 'q33a'
-    var q33ascore = new Question('q33a');
-    q33ascore.score = function(args) {
-      console.log("q33a.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var diabetes = args.value;
-        console.log("q33a has value", args.value);
-        if (diabetes == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-          Survey.bcNeg('depo', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q33ascore);
-
-    // Scoring for 'q33b'
-    var q33bscore = new Question('q33b');
-    q33bscore.score = function(args) {
-      console.log("q33b.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var diabetes = args.value;
-        console.log("q33b has value", args.value);
-        if (diabetes == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-          Survey.bcNeg('depo', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q33bscore);
-
     // Scoring for 'q34'
+    // This is the new question #Q33
     var q34score = new Question('q34');
     q34score.score = function(args) {
       console.log("q34.score");
@@ -3935,6 +3916,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q34score);
 
     // Scoring for 'q35'
+    // This is the new question #Q34
     var q35score = new Question('q35');
     q35score.score = function(args) {
       console.log("q35.score");
@@ -3953,7 +3935,271 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q35score);
 
+    // Scoring for 'q41'
+    // This is the new question #35
+    var q41score = new Question('q41');
+    q41score.score = function(args) {
+      console.log("q41.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var cholesterol = args.value;
+        console.log("q41 has value", args.value);
+        if (cholesterol == 1) {
+          Survey.bcNeg('ocp', 3);
+          Survey.bcNeg('orthoEvra', 3);
+          Survey.bcNeg('nuvaring', 3);
+        }
+      }
+    };
+    Survey.newQuestion(q41score);
+
+    // Scoring for 'q45'
+    // This is the new question #36
+    var q45score = new Question('q45');
+    q45score.score = function(args) {
+      console.log("q45.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var heartAttack = args.value;
+        console.log("q45 has value", args.value);
+        if (heartAttack == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q45score);
+
+    // Scoring for 'q46'
+    // This is the new question #37
+    var q46score = new Question('q46');
+    q46score.score = function(args) {
+      console.log("q46.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var heartDisease = args.value;
+        console.log("q46 has value", args.value);
+        if (heartDisease == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('depo', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q46score);
+
+    // Scoring for 'q49'
+    // This is the new question #38
+    var q49score = new Question('q49');
+    q49score.score = function(args) {
+      console.log("q49.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var sickle = args.value;
+        console.log("q49 has value", args.value);
+        if (sickle == 1) {
+          Survey.bcPos('depo', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q49score);
+
+    // Scoring for 'q50'
+    // This is the new question #39
+    var q50score = new Question('q50');
+    q50score.score = function(args) {
+      console.log("q50.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var anemia = args.value;
+        console.log("q50 has value", args.value);
+        if (anemia == 1) {
+          Survey.bcPos('ocp', 1);
+          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('nuvaring', 1);
+          Survey.bcPos('depo', 1);
+          Survey.bcNeg('paragard', 2);
+          Survey.bcPos('mirena', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q50score);
+
+    // Scoring for 'q44a'
+    // This is the new question #40a
+    var q44ascore = new Question('q44a');
+    q44ascore.score = function(args) {
+      console.log("q44a.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var breastCancer = args.value;
+        console.log("q44a has value", args.value);
+        if (breastCancer == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('pop', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+          Survey.bcNeg('mirena', 999);
+          Survey.bcNeg('implanon', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q44ascore);
+
+    // Scoring for 'q44b'
+    // This is the new question #40b
+    var q44bscore = new Question('q44b');
+    q44bscore.score = function(args) {
+      console.log("q44b.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var ovarianCancer = args.value;
+        console.log("q44b has value", args.value);
+        if (ovarianCancer == 1) {
+          Survey.bcNeg('paragard', 999);
+          Survey.bcNeg('mirena', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q44bscore);
+
+    // Scoring for 'q37'
+    // This is the new question #41
+    var q37score = new Question('q37');
+    q37score.score = function(args) {
+      console.log("q37.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var molarPreg = args.value;
+        console.log("q37 has value", args.value);
+        if (molarPreg == 1) {
+          Survey.bcNeg('paragard', 999);
+          Survey.bcNeg('mirena', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q37score);
+
+    // Scoring for 'q39'
+    // This is the new question #42
+    var q39score = new Question('q39');
+    q39score.score = function(args) {
+      console.log("q39.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var pelvicTB = args.value;
+        console.log("q39 has value", args.value);
+        if (pelvicTB == 1) {
+          Survey.bcNeg('paragard', 999);
+          Survey.bcNeg('mirena', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q39score);
+
+    // Scoring for 'q40'
+    // This is the new question #43
+    var q40score = new Question('q40');
+    q40score.score = function(args) {
+      console.log("q40.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var tss = args.value;
+        console.log("q40 has value", args.value);
+        if (tss == 1) {
+          Survey.bcNeg('ccap', 3);
+          Survey.bcNeg('diaph', 3);
+          Survey.bcNeg('sponge', 3);
+        }
+      }
+    };
+    Survey.newQuestion(q40score);
+
+    // Scoring for 'q42'
+    // This is the new question #44
+    var q42score = new Question('q42');
+    q42score.score = function(args) {
+      console.log("q42.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var pid = args.value;
+        console.log("q42 has value", args.value);
+        if (pid == 1) {
+          Survey.bcNeg('paragard', 999);
+          Survey.bcNeg('mirena', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q42score);
+
+    // Scoring for 'q43'
+    // This is the new question #45
+    var q43score = new Question('q43');
+    q43score.score = function(args) {
+      console.log("q43.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var endometriosis = args.value;
+        console.log("q43 has value", args.value);
+        if (endometriosis == 1) {
+          Survey.bcPos('ocp', 1);
+          Survey.bcPos('pop', 1);
+          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('nuvaring', 1);
+          Survey.bcPos('depo', 1);
+          Survey.bcNeg('paragard', 1);
+          Survey.bcPos('mirena', 1);
+          Survey.bcPos('implanon', 1);
+        }
+      }
+    };
+    Survey.newQuestion(q43score);
+
+    // Scoring for 'q33a'
+    // This is the new question #46a
+    var q33ascore = new Question('q33a');
+    q33ascore.score = function(args) {
+      console.log("q33a.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var diabetes = args.value;
+        console.log("q33a has value", args.value);
+        if (diabetes == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q33ascore);
+
+    // Scoring for 'q33b'
+    // This is the new question #46b
+    var q33bscore = new Question('q33b');
+    q33bscore.score = function(args) {
+      console.log("q33b.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var diabetes = args.value;
+        console.log("q33b has value", args.value);
+        if (diabetes == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+          Survey.bcNeg('depo', 999);
+        }
+      }
+    };
+    Survey.newQuestion(q33bscore);
+
+
     // Scoring for 'q36a'
+    // This is the new question #47a
     var q36ascore = new Question('q36a');
     q36ascore.score = function(args) {
       console.log("q36a.score");
@@ -3991,23 +4237,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q36ascore);
 
-    // Scoring for 'q37'
-    var q37score = new Question('q37');
-    q37score.score = function(args) {
-      console.log("q37.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var molarPreg = args.value;
-        console.log("q37 has value", args.value);
-        if (molarPreg == 1) {
-          Survey.bcNeg('paragard', 999);
-          Survey.bcNeg('mirena', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q37score);
-
     // Scoring for 'q38'
+    // This is the new question #48
     var q38score = new Question('q38');
     q38score.score = function(args) {
       console.log("q38.score");
@@ -4023,168 +4254,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q38score);
 
-    // Scoring for 'q39'
-    var q39score = new Question('q39');
-    q39score.score = function(args) {
-      console.log("q39.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var pelvicTB = args.value;
-        console.log("q39 has value", args.value);
-        if (pelvicTB == 1) {
-          Survey.bcNeg('paragard', 999);
-          Survey.bcNeg('mirena', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q39score);
-
-    // Scoring for 'q40'
-    var q40score = new Question('q40');
-    q40score.score = function(args) {
-      console.log("q40.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var tss = args.value;
-        console.log("q40 has value", args.value);
-        if (tss == 1) {
-          Survey.bcNeg('ccap', 3);
-          Survey.bcNeg('diaph', 3);
-          Survey.bcNeg('sponge', 3);
-        }
-      }
-    };
-    Survey.newQuestion(q40score);
-
-    // Scoring for 'q41'
-    var q41score = new Question('q41');
-    q41score.score = function(args) {
-      console.log("q41.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var cholesterol = args.value;
-        console.log("q41 has value", args.value);
-        if (cholesterol == 1) {
-          Survey.bcNeg('ocp', 3);
-          Survey.bcNeg('orthoEvra', 3);
-          Survey.bcNeg('nuvaring', 3);
-        }
-      }
-    };
-    Survey.newQuestion(q41score);
-
-    // Scoring for 'q42'
-    var q42score = new Question('q42');
-    q42score.score = function(args) {
-      console.log("q42.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var pid = args.value;
-        console.log("q42 has value", args.value);
-        if (pid == 1) {
-          Survey.bcNeg('paragard', 999);
-          Survey.bcNeg('mirena', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q42score);
-
-    // Scoring for 'q43'
-    var q43score = new Question('q43');
-    q43score.score = function(args) {
-      console.log("q43.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var endometriosis = args.value;
-        console.log("q43 has value", args.value);
-        if (endometriosis == 1) {
-          Survey.bcPos('ocp', 1);
-          Survey.bcPos('pop', 1);
-          Survey.bcPos('orthoEvra', 1);
-          Survey.bcPos('nuvaring', 1);
-          Survey.bcPos('depo', 1);
-          Survey.bcNeg('paragard', 1);
-          Survey.bcPos('mirena', 1);
-          Survey.bcPos('implanon', 1);
-        }
-      }
-    };
-    Survey.newQuestion(q43score);
-
-    // Scoring for 'q44a'
-    var q44ascore = new Question('q44a');
-    q44ascore.score = function(args) {
-      console.log("q44a.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var breastCancer = args.value;
-        console.log("q44a has value", args.value);
-        if (breastCancer == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('pop', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-          Survey.bcNeg('depo', 999);
-          Survey.bcNeg('mirena', 999);
-          Survey.bcNeg('implanon', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q44ascore);
-
-    // Scoring for 'q44b'
-    var q44bscore = new Question('q44b');
-    q44bscore.score = function(args) {
-      console.log("q44b.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var ovarianCancer = args.value;
-        console.log("q44b has value", args.value);
-        if (ovarianCancer == 1) {
-          Survey.bcNeg('paragard', 999);
-          Survey.bcNeg('mirena', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q44bscore);
-
-    // Scoring for 'q45'
-    var q45score = new Question('q45');
-    q45score.score = function(args) {
-      console.log("q45.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var heartAttack = args.value;
-        console.log("q45 has value", args.value);
-        if (heartAttack == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-          Survey.bcNeg('depo', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q45score);
-
-    // Scoring for 'q46'
-    var q46score = new Question('q46');
-    q46score.score = function(args) {
-      console.log("q46.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var heartDisease = args.value;
-        console.log("q46 has value", args.value);
-        if (heartDisease == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('depo', 999);
-          Survey.bcNeg('nuvaring', 999);
-        }
-      }
-    };
-    Survey.newQuestion(q46score);
-
     // Scoring for 'q47a'
+    // This is the new question #48b
     var q47ascore = new Question('q47a');
     q47ascore.score = function(args) {
       console.log("q47a.score");
@@ -4202,6 +4273,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q47ascore);
 
     // Scoring for 'q47b'
+    // This is the new question #49
     var q47bscore = new Question('q47b');
     q47bscore.score = function(args) {
       console.log("q47b.score");
@@ -4223,6 +4295,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q47bscore);
 
     // Scoring for 'q48'
+    // This is now question #50
     var q48score = new Question('q48');
     q48score.score = function(args) {
       console.log("q48.score");
@@ -4236,41 +4309,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
       }
     };
     Survey.newQuestion(q48score);
-
-    // Scoring for 'q49'
-    var q49score = new Question('q49');
-    q49score.score = function(args) {
-      console.log("q49.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var sickle = args.value;
-        console.log("q49 has value", args.value);
-        if (sickle == 1) {
-          Survey.bcPos('depo', 1);
-        }
-      }
-    };
-    Survey.newQuestion(q49score);
-
-    // Scoring for 'q50'
-    var q50score = new Question('q50');
-    q50score.score = function(args) {
-      console.log("q50.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var anemia = args.value;
-        console.log("q50 has value", args.value);
-        if (anemia == 1) {
-          Survey.bcPos('ocp', 1);
-          Survey.bcPos('orthoEvra', 1);
-          Survey.bcPos('nuvaring', 1);
-          Survey.bcPos('depo', 1);
-          Survey.bcNeg('paragard', 2);
-          Survey.bcPos('mirena', 1);
-        }
-      }
-    };
-    Survey.newQuestion(q50score);
 
     // Scoring for 'q51'
     var q51score = new Question('q51');
