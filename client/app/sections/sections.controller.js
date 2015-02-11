@@ -161,8 +161,8 @@ angular.module('contraceptionApp')
 
       if( isEnd > -1  ){
         // if( $scope.currentQuestion == 'q4' && ($state.params.type == 'section' && $state.params.id == 1 )){
-          $state.go('.', {type:'question',id:isEnd+1})
           $scope.currentSection--
+          $state.go('.', {type:'question',id:isEnd+1})
         // }
       }
 
@@ -184,12 +184,12 @@ angular.module('contraceptionApp')
 
       // reset the bc problems list
       $scope.problems.curBcProbNum = 0;
-      while ($scope.problems.bcProblemList.length) { 
-        $scope.problems.bcProblemList.pop(); 
-      }
-      while ($scope.problems.problemsPerBc.length) { 
-        $scope.problems.problemsPerBc.pop(); 
-      }
+      // while ($scope.problems.bcProblemList.length) { 
+      //   $scope.problems.bcProblemList.pop(); 
+      // }
+      // while ($scope.problems.problemsPerBc.length) { 
+      //   $scope.problems.problemsPerBc.pop(); 
+      // }
       User.save(currentUser)
       $state.go('.', {type:'intro',id:1})
     }
