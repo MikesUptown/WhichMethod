@@ -3782,6 +3782,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
+
+    //TOCHECK
     Survey.newQuestion(q28bscore);
     // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
     // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
@@ -5351,13 +5353,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
               var curBcNum = i;
 
               var problemValue = problems.bcProblemList[curBcNum].value;
+              var problemName = problems.bcProblemList[curBcNum].name;
               
               //get the answers for this problem
               var problemsPerBc = problems.problemsPerBc[problems.bcProblemList[curBcNum].name]
 
               answer.push(
                   {value:problemValue,
-                 optionList:problemsPerBc}
+                    name:problemName,
+                    optionList:problemsPerBc}
                 )
 
             }
@@ -6666,7 +6670,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
-          return '';
+          return 'end';
         }
       }
     };
@@ -6677,11 +6681,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
       initRanking: initRanking,
       sectionEnd: sectionEnd,
       problems: problems,
+      survey:Survey,
       getRanking: function(){
         return ranking;
       },
       getResults: function() {
         return Survey.results();
       },
+
     };
 });

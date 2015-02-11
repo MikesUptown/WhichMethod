@@ -14,14 +14,14 @@ angular.module('contraceptionApp')
       .state('sections.questions', {
         url: '/:type/:id',
         templateUrl:  function (stateParams){
-          if(stateParams.type === 'intro')
+          if(stateParams.id == 8){
+            return 'app/sections/intropages/introexit.html';
+          }
+          else if(stateParams.type === 'intro')
             return 'app/sections/intropages/intro' + stateParams.id + '.html';
           else if(stateParams.id < 8){
             return 'app/sections/questions/section0' + stateParams.id + '.html';
           }  
-          else if(stateParams.id == 8){
-            return 'app/sections/intropages/introexit.html';
-          }
         }
         // controller: 'SectionsCtrl'
       });

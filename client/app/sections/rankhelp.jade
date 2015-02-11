@@ -4,4 +4,14 @@
     span.method {{result.name}}
     span.pos pos: {{result.p}}
     span.neg neg: {{result.n}}
+    div.score score: {{score[result.name]}}
     |&nbsp;
+
+  div.colors
+    div
+      span.green(ng-repeat="green in colors.green") {{green }}  
+    div 
+      span.yellow(ng-repeat="yellow in colors.yellow") {{yellow }}  
+    div
+      span.red(ng-repeat="red in colors.red") {{red }}  
+  

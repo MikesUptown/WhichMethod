@@ -1,13 +1,21 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SectionsCtrl', function ($scope, questionService, $state, Auth, User,$location) {
+  .controller('SectionsCtrl', function ($scope,scoreService, questionService, $state, Auth, User,$location) {
 
     //QUESTION LOGIC GOES HERE
+
+    var sectionStart = ['q1','q4','q14','q23','q28','q53','q54']
+
+    var sectionEnd = [
+      'q3','q13','q22','q27','q52','q53h', 'q58e'
+    ];
 
     $scope.questions = questionService.questions
     $scope.ranking = questionService.ranking
     $scope.problems = questionService.problems;
+
+
     var sectionEnd = questionService.sectionEnd
     var currentUser 
 
@@ -23,7 +31,11 @@ angular.module('contraceptionApp')
         $scope.currentQuestion=currentUser.currentQuestion
       else
         $scope.currentQuestion='q1'
+
+      if(currentUser.currentSection == 8)
+        $scope.currentQuestion='end'
       
+
 
       if(currentUser.currentSection)
         $scope.currentSection = currentUser.currentSection
@@ -34,7 +46,17 @@ angular.module('contraceptionApp')
         var q = currentUser.answers[i]
         $scope.questions[q.question].answer = q.answer
       }
+
+
+      if( sectionStart.indexOf($scope.currentQuestion)>-1){
+        $state.go('.', {type:'intro',id:$scope.currentSection})
+      }
+      else
+        $state.go('.', {id:$scope.currentSection})    
+
+
       $scope.updateRanking()
+
     }
 
 
@@ -108,14 +130,21 @@ angular.module('contraceptionApp')
           $scope.questions[q].ranking()
       }
 
-      $scope.ranking = questionService.getRanking()
+      // $scope.ranking = questionService.getRanking()
       $scope.results = questionService.getResults()
+      $scope.score = scoreService.calculateScore($scope.results,questionService.survey)
+      $scope.colors = scoreService.getColors()
+
       console.log($scope.ranking)
+    
     }
 
     $scope.back = function(){
 
-      $scope.questions[$scope.currentQuestion].answer = undefined
+      if($scope.questions[$scope.currentQuestion]){
+        $scope.questions[$scope.currentQuestion].answer = undefined
+      }
+
       for(var i in $scope.questions){
         var q = $scope.questions[i]
         if(q.nextQuestion() == $scope.currentQuestion){
@@ -123,7 +152,10 @@ angular.module('contraceptionApp')
           break
         }
       }
-      updateUser()
+
+      if($scope.currentQuestion=="end")
+        $scope.currentQuestion=i        
+
 
       var isEnd = sectionEnd.indexOf($scope.currentQuestion)
 
@@ -133,6 +165,9 @@ angular.module('contraceptionApp')
           $scope.currentSection--
         // }
       }
+
+      updateUser()
+
 
     }
 
