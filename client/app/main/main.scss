@@ -408,3 +408,12 @@ border-top: 1px solid #9F6D79;
   }
 }
 
+/* this code removes the powered by google text for translate */
+.goog-logo-link {
+   display:none !important;
+} 
+
+.goog-te-gadget{
+   color: transparent !important;
+}
+
