@@ -112,6 +112,10 @@ h3 {
 .continue_btn_03:hover {background-color:#FCC000;}
 // .continue_btn_03:active {position:relative; top:1px;}
 
+/* this hides the google translate toolbar at top */
+.goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text 
