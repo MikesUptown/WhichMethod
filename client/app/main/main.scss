@@ -116,6 +116,19 @@ h3 {
 .goog-te-banner-frame.skiptranslate {display: none !important;} 
 body { top: 0px !important; }
 
+/* this hides the google translate tooltip */
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text 
