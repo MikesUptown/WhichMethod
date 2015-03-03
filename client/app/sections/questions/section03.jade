@@ -60,7 +60,7 @@ header
 
      li#q17(ng-show="currentQuestion == 'q17'")
         label
-          | Q17. What birth control methods are you interested in using now? You will see three screens of methods. Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
+          | Q17. What birth control methods are you interested in using now? Please choose ALL the methods ou are interested in using. If you are not interested in any of these methods, go to the next screen.
         div(ng-repeat='option in questions.q17.options')
           input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
           label {{option.name}}
@@ -81,7 +81,7 @@ header
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
-          | Q18ai. What birth control methods are you using now? You will see three screens of methods. Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          | Q18ai. What birth control methods are you using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
           label {{option.name}}
@@ -95,14 +95,14 @@ header
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
         label
-          | Q19a. Which methods did you have a problem with? You will see three screens of methods. Please choose ALL the methods you had a problem with. If you did not have a problem with any of these methods, go to the next screen.
+          | Q19a. Which methods did you have a problem with? Please choose ALL the methods you had a problem with.
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
           label {{option.name}}
 
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
-          | Q19ai. What problems did you have while using 
+          | Q19ai. What problems did you have while using?
           span(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
