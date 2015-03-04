@@ -4827,10 +4827,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q14:{
         options: [
-          { name : "your partner and you only have sex with each other", value : 0  },
-          { name : "your partner or you have sex with other people as well", value : 1  },
-          { name : "you are not sure about your partner's sexual activity outside your relationship", value : 2  },
-          { name : "you are not currently having sex", value : 3 },
+          { name : "Your partner and you only have sex with each other", value : 0  },
+          { name : "Your partner or you have sex with other people as well", value : 1  },
+          { name : "You are not sure about your partner's sexual activity outside your relationship", value : 2  },
+          { name : "You are not currently having sex", value : 3 },
           //{ name : "I don't know", value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
