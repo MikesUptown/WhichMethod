@@ -59,6 +59,7 @@ header
         label {{option.name}}
     //- TODO This is now question #29a
 
+    //- all questions above Q28 - 29a on single page
     li#30(ng-show="currentQuestion == 'q30'")
       label
         | Q30. High blood pressure, also called hypertension
@@ -131,6 +132,7 @@ header
         label {{option.name}}
     //- TODO This is now question #37
 
+    //- all questions above Q30 - Q37 on a single page
     li#38(ng-show="currentQuestion == 'q38'")
       label
         | Q38. Sickle cell anemia
@@ -195,6 +197,7 @@ header
         label {{option.name}}
     //- TODO This is now question #43
 
+    //- all questions above Q38 - Q43 on single page
     li#44(ng-show="currentQuestion == 'q44'")
       label
         | Q44. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
@@ -251,6 +254,7 @@ header
         label {{option.name}}
     //- TODO This is now question #47a
 
+    //- all questions above Q44 - Q47a on single page
     li#48(ng-show="currentQuestion == 'q48'")
       label
         | Q48. AIDS
@@ -266,7 +270,7 @@ header
         input(type="radio" name='q48a' ng-model='questions.q48a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #48a
-    //- This question has no ranking; only options correct????
+    //- This question should be visible to the participant 
 
     li#48b(ng-show="currentQuestion == 'q48b'")
       label
@@ -275,6 +279,7 @@ header
         input(type="radio" name='q48b' ng-model='questions.q48b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #48b
+    //- This question should be visible to the participant
 
     li#49(ng-show="currentQuestion == 'q49'")
       label
@@ -308,6 +313,7 @@ header
         label {{option.name}}
     //- TODO This is now question #52
 
+    //- all questions above Q48 - Q52 on single page
     input(type="button", ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")

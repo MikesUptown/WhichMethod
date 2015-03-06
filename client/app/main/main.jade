@@ -10,7 +10,8 @@ div(ng-include='"components/navbar/navbar.html"')
 
 
         .title
-          a(href='/signup') WhichMethod?
+          h1 
+            a(href='#signup') WhichMethod?
 
         .get_start 
           //a.btn.btn-success.btn-lg(ng-click="startServey()") Get WhichMethod »
@@ -32,9 +33,10 @@ div(ng-include='"components/navbar/navbar.html"')
           
     .sub_content
       .row
-        .col-lg-4
-          h1 Step 1: Sign up today  
-          span.glyphicon.glyphicon-check.btn-lg(aria-hidden='true')  Sign up today
+        .col-lg-4 
+          h3
+              span.glyphicon.glyphicon-check.btn-lg(aria-hidden='true')
+              | SIGN UP TODAY
           //p.text-justify.center-block
             | There are two ways to use WhichMethod:
             <mark>Registered User</mark>: Will see recommendations and get a copy via email; and
@@ -43,16 +45,18 @@ div(ng-include='"components/navbar/navbar.html"')
             a.btn.btn-default(href='#') View details »
         
         .col-lg-4
-          h1 Step 2: Answer the questions
-          span.glyphicon.glyphicon-edit.btn-lg(aria-hidden='true')  Answer the questions
+          h3
+              span.glyphicon.glyphicon-edit.btn-lg(aria-hidden='true')
+              | ANSWER THE QUESTIONS
           //p.text-justify.center-block
             | WhichMethod is an interactive tool that asks a series of questions about your medical history, preferences and priorities and sexual behavior. WhichMethod is available in both Spanish and English.
           // p
             a.btn.btn-default(href='#') View details »
           
         .col-lg-4
-          h3 Step 3: Get recommendations
-          span.glyphicon.glyphicon-folder-open.btn-lg(aria-hidden='true')  Get recommendations
+          h3 
+              span.glyphicon.glyphicon-folder-open.btn-lg(aria-hidden='true')
+              | GET RECOMMENDATIONS
           //p.text-justify.center-block
             | Once you have completed the questions, WhichMethod will identify birth control methods that are effective, safe and fit your needs. Please share these recommendations with your doctor.
           // p

@@ -35,6 +35,7 @@ header
         input(type="radio" name='q25' ng-model="questions.q25.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
+    //- all questions above Q23-25 on single page
     li#q26(ng-show="currentQuestion == 'q26'")
       label
         | Q26. Do you need a birth control method which you can keep private?
@@ -63,6 +64,7 @@ header
         input(type="radio" name='q27' ng-model="questions.q27.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
+    //- all questions above 26 - 27 on single page
     input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")
