@@ -8,7 +8,7 @@ angular.module('contraceptionApp')
     var sectionStart = ['q1','q4','q14','q23','q28','q53','q54']
 
     var sectionEnd = [
-      'q3','q13','q22','q27','q52','q53h', 'q58e'
+      'q3','q13','q22','q27','q52','q53h', 'q54e'
     ];
 
     $scope.questions = questionService.questions

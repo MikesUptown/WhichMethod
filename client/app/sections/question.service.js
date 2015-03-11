@@ -16,7 +16,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
      * The last question in each section
      */
     var sectionEnd = [
-      'q3','q13','q22','q27','q52','q53h', 'q58e'
+      'q3','q13','q22','q27','q52','q53h', 'q54e'
     ];
 
 
@@ -4389,13 +4389,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
     Survey.newQuestion(q53cscore);
 
     // Scoring for 'q58a'
-    var q58ascore = new Question('q58a');
-    q58ascore.score = function(args) {
-      console.log("q58a.score");
+    var q54ascore = new Question('q54a');
+    q54ascore.score = function(args) {
+      console.log("q54a.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
         var everyDay = args.value;
-        console.log("q58a has value", args.value);
+        console.log("q54a has value", args.value);
         if (everyDay == 1) {
           Survey.bcPos('ocp', 1);
           Survey.bcPos('pop', 1);
@@ -4406,16 +4406,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q58ascore);
+    Survey.newQuestion(q54ascore);
 
     // Scoring for 'q58b'
-    var q58bscore = new Question('q58b');
-    q58bscore.score = function(args) {
-      console.log("q58b.score");
+    var q54bscore = new Question('q54b');
+    q54bscore.score = function(args) {
+      console.log("q54b.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
         var shot3months = args.value;
-        console.log("q58b has value", args.value);
+        console.log("q54b has value", args.value);
         if (shot3months == 1) {
           Survey.bcPos('depo', 1);
         }
@@ -4424,16 +4424,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q58bscore);
+    Survey.newQuestion(q54bscore);
 
     // Scoring for 'q58c'
-    var q58cscore = new Question('q58c');
-    q58cscore.score = function(args) {
-      console.log("q58c.score");
+    var q54cscore = new Question('q54c');
+    q54cscore.score = function(args) {
+      console.log("q54c.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
         var ring = args.value;
-        console.log("q58c has value", args.value);
+        console.log("q54c has value", args.value);
         if (ring == 1) {
           Survey.bcPos('nuvaring', 1);
         }
@@ -4442,16 +4442,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q58cscore);
+    Survey.newQuestion(q54cscore);
 
     // Scoring for 'q58d'
-    var q58dscore = new Question('q58d');
-    q58dscore.score = function(args) {
-      console.log("q58d.score");
+    var q54dscore = new Question('q54d');
+    q54dscore.score = function(args) {
+      console.log("q54d.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
         var iud = args.value;
-        console.log("q58d has value", args.value);
+        console.log("q54d has value", args.value);
         if (iud == 1) {
           Survey.bcPos('paragard', 1);
           Survey.bcPos('mirena', 1);
@@ -4462,16 +4462,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q58dscore);
+    Survey.newQuestion(q54dscore);
 
     // Scoring for 'q58e'
-    var q58escore = new Question('q58e');
-    q58escore.score = function(args) {
-      console.log("q58e.score");
+    var q54escore = new Question('q54e');
+    q54escore.score = function(args) {
+      console.log("q54e.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
         var implant = args.value;
-        console.log("q58e has value", args.value);
+        console.log("q54e has value", args.value);
         if (implant == 1) {
           Survey.bcPos('implanon', 1);
         }
@@ -4480,7 +4480,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q58escore);
+    Survey.newQuestion(q54escore);
 
     /**
      * The questions and the behavior of each
@@ -6518,7 +6518,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q58a';
+          return 'q54a';
         }
       },
 
@@ -6533,7 +6533,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       // The birth control pill requires that you take a pill every single day
       // Could you remember to take a pill every single day?
-      q58a:{
+      q54a:{
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
@@ -6545,17 +6545,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          Survey.answer('q58a', {value:this.answer});
+          Survey.answer('q54a', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q58b';
+          return 'q54b';
         }
       },
 
       // The birth control shot requires that you return to the clinic every three months to get a
       // shot, would you be able to do this?
-      q58b:{
+      q54b:{
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
@@ -6567,17 +6567,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          Survey.answer('q58b', {value:this.answer});
+          Survey.answer('q54b', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q58c';
+          return 'q54c';
         }
       },
 
       // The contraceptive ring requires that you place a small bendable ring in your vagina
       // once per month. Would you feel comfortable using the ring as a birth control method?
-      q58c:{
+      q54c:{
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
@@ -6589,17 +6589,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          Survey.answer('q58c', {value:this.answer});
+          Survey.answer('q54c', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q58d';
+          return 'q54d';
         }
       },
 
       // Would you feel comfortable having an IUD, a T-shaped contracpetive, placed by your
       // provider inside your uterus that would provide contracpetion for 5-10 years?
-      q58d:{
+      q54d:{
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
@@ -6611,18 +6611,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          Survey.answer('q58d', {value:this.answer});
+          Survey.answer('q54d', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q58e';
+          return 'q54e';
         }
       },
 
 
       // The contraceptive implant is a small rod placed by your provider under the
       // sking of your upper arm that provides contracpetion for up to 3 years?
-      q58e:{
+      q54e:{
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
@@ -6634,7 +6634,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           this.selectedOption = {};
         },
         ranking: function(){
-          Survey.answer('q58e', {value:this.answer});
+          Survey.answer('q54e', {value:this.answer});
         },
         nextQuestion: function(){
           this.resetInputs();
