@@ -4,6 +4,8 @@
 $btnText: #000000;
 $btnTextAlt: #000000;
 
+
+
 .loginView{
   position:fixed;
   top:50%;
@@ -23,4 +25,10 @@ $btnTextAlt: #000000;
 // }
 .loginContainer{
   padding:20px;
+}
+
+.signupColumn{
+  width:50%;
+  float:left;
+  padding: 20px 80px;
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SectionsCtrl', function ($scope,scoreService, questionService, $state, Auth, User,$location) {
+  .controller('SectionsCtrl', function ($scope,scoreService, questionService, $state, Auth, User,$location, $http) {
 
     //QUESTION LOGIC GOES HERE
 
@@ -23,6 +23,7 @@ angular.module('contraceptionApp')
     User.get(function(user){
       currentUser = user;
       initUser()
+      $scope.currentUser = currentUser;
 
     });
 
@@ -77,11 +78,6 @@ angular.module('contraceptionApp')
         thisQ.answer = {'array': thisQ.selectedOptions.slice(0) }
       }
 
-
-
-
-
-
       var isEnd = sectionEnd.indexOf($scope.currentQuestion)
 
       if( isEnd > -1  ){
@@ -96,6 +92,12 @@ angular.module('contraceptionApp')
 
       console.log("Answer Saved!")
       $scope.updateRanking()
+
+      if($scope.currentQuestion == "end"){
+        currentUser.recommendation = $scope.colors
+      }
+      else
+        currentUser.recommendation = null;
 
       updateUser()
 
@@ -199,5 +201,25 @@ angular.module('contraceptionApp')
       Auth.logout();
       $location.path('/login');
     };
+
+    $scope.sendingEmail = false
+    $scope.emailPdf = function(){
+
+      $scope.sendingEmail = true;
+      $scope.emailSuccess=false;
+      $scope.emailError = false;
+
+      $http.post('/api/users/emailpdf', {msg:'hello word!'}).
+      success(function(data, status, headers, config) {
+        $scope.emailSuccess = true;
+        $scope.sendingEmail = false;
+      }).
+      error(function(data, status, headers, config) {
+        $scope.emailError = true;
+        $scope.sendingEmail = false;
+      });
+
+    }
+
 
   });

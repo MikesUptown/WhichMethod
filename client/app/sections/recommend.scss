@@ -1,0 +1,42 @@
+.recommend{
+  padding:30px 50px;
+  letter-spacing:.3px;
+  margin:auto;
+  // max-width:1000px;
+}
+.green{
+  color:green;
+}
+.yellow{
+  color:rgb(217, 197, 0)!important;
+}
+.red{
+  color:red;
+}        
+.methods{
+  padding: 5px;
+  color:black;
+  margin:10px 0;
+}
+
+.green .methods{
+  border:1px solid green;
+}
+.yellow .methods{
+  border:1px solid rgb(217, 197, 0);
+}
+.red .methods{
+  border:1px solid red;
+}
+
+.method{
+  margin: 5px 0;
+  font-size: 12px;
+}
+.method img{
+  width: 50px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:20px;
+}

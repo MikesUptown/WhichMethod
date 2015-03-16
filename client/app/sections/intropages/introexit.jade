@@ -23,5 +23,45 @@ div.page-header
     | Use a new condom for each sex act.
 
 
+.pdfButtons
+  a(href="/recommendation/{{currentUser._id}}" target="_blank")
+    .btn.btn-default GO TO PDF
+  button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
+  .prog(ng-show="sendingEmail") sending email...
+  .success(ng-show="emailSuccess") the email has been sent!
+  .error(ng-show="emailError") there was a problem... please try again
+
+.recommend
+  .green(ng-if="colors.green.length>0")
+      b Green = GO!
+      p These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+      .methods       
+          .method(ng-repeat="val in colors.green")
+            img(src='/assets/images/methodsSml/{{val.img}}.jpg')
+            span.text {{val.longText}}
+
+
+  p If you forget to use birth control or your birth control method fails, ask your healthcare provider about Emergency Contraception (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B is available over-the-counter for women age 18 and older. Plan B is available by prescription for women age 17 and younger.
+
+  .yellow(ng-if="colors.yellow.length>0")
+      b Yellow = Slow!
+      br
+      p These birth control methods are not the best for you because of our answers to your questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+      .methods
+          .method(ng-repeat="val in colors.yellow")
+            img(src='/assets/images/methodsSml/{{val.img}}.jpg')
+            span.text {{val.longText}}
+
+
+  .red(ng-if="colors.red.length>0")
+          b Red = Medically Contraindicated!
+          br
+          p These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+          .methods
+            .method(ng-repeat="val in colors.red")
+              img(src='/assets/images/methodsSml/{{val.img}}.jpg')
+              span.text {{val.longText}}
+
+
 div.results
   div(ng-include="'app/sections/rankhelp.html'")

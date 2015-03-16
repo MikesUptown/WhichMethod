@@ -142,3 +142,12 @@ footer{
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd; 
 }
+
+.pdfButtons{
+  .success{
+    color:green;
+  }
+  .error{
+    color:red;
+  }
+}

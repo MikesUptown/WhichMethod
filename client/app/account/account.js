@@ -12,17 +12,17 @@ angular.module('contraceptionApp')
           }
         }
       })
-      .state('main.signup', {
-        url: 'signup',
-        views:{
+      .state('signup', {
+        url: '/signup',
+        // views:{
 
-          login:{
-            templateUrl: 'app/account/signup/signup.html',
-            controller: 'SignupCtrl'
-          }
-        }
-        // templateUrl: 'app/account/signup/signup.html',
-        // controller: 'SignupCtrl'
+        //   login:{
+        //     templateUrl: 'app/account/signup/signup.html',
+        //     controller: 'SignupCtrl'
+        //   }
+        // }
+        templateUrl: 'app/account/signup/signup.html',
+        controller: 'SignupCtrl'
       })
       .state('settings', {
         url: '/settings',

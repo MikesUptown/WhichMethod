@@ -33,6 +33,119 @@ angular.module('contraceptionApp').factory('scoreService', function () {
            'Breast Feeding':  "bf" 
   }
 
+  var methods={
+    abstinence:{
+      name: 'Abstinence',
+      longText: 'Abstinence',
+      img:''
+    },
+    ocp:{
+      name: 'Birth Control',
+      longText: 'The pill or birth control pills (containing both an estrogen and progestin)',
+      img:'OCP'
+    },
+    pop:{
+      name: 'Mini Pills',
+      longText: "Mini-Pills or progestin-only pills",
+      img: 'POP'
+    },
+    ortho_evra:{
+      name:'Ortho Evra',
+      longText: 'Ortho Evra contraceptive patch',
+      img: 'patch',
+    },
+    nuvaring:{
+      name: "Nuva Ring",
+      longText: "Nuva Ring (the vaginal ring)",
+      img: 'nuvaring'
+    },
+    depo:{
+      name:"Depo Provera",
+      longText: "Depo Provera",
+      img:"deprovera",
+    },
+    mcondom:{
+      name:"Male Condom",
+      longText:"Male Condom",
+      img: ""
+    },
+    diaph:{
+      name:"Diaphragm",
+      longText:"Diaphragm",
+      img:'diaphram'
+    },
+    fcondom:{
+      name:'Female Condom',
+      longText: 'Female Condom',
+      img: 'female_condom'
+    },
+    sponge:{
+      name:"Sponge",
+      longText:"Contraceptive Sponge",
+      img:'sponge'
+    },
+    female_barrier:{
+      name:"Female Barrier",
+      longText:"Female barrier methods (Diaphragm, cervical cap, female condom, contraceptive sponge)",
+      img:"female_barrier"
+    },
+    fam:{
+      name:"Fam",
+      longText:"Fertility Awareness-Based Methods",
+      img: 'fam'
+    },
+    ec:{
+      name:"EC",
+      longText:"Emergency Contraception",
+      img: ''
+    },
+    paragard:{
+      name:"Paragard",
+      longText:"Paragard Copper T IUD (Intrauterine Device)",
+      img: 'paraguard'
+    },
+    mirena:{
+      name:"Mirena",
+      longText:"Mirena Hormonal IUD (Intrauterine Device)",
+      img: 'mirena'
+    },
+    withd:{
+      name:"Withdrawal",
+      longText:"Pulling out or withdrawal",
+      img: 'withdraw'
+    },
+    sperm:{
+      name:"Spermicide",
+      longText:"Spermicide",
+      img: 'spermicide'
+    },
+    btl:{
+      name:"Tubes Tied",
+      longText:"Tubal ligation (sterilization for women)",
+      img:'btl'
+    },
+    vas:{
+      name:"Vasectomy",
+      longText:"Vasectomy (sterilization for men)",
+      img:'vasect'
+    },
+    implanon:{
+      name:"Implant",
+      longText:"Contraceptive implant, sometimes called Norplant or Implanon",
+      img:'implanon'
+    },
+    bf:{
+      name:"Breast Feeding",
+      longText:"Breast Feeding",
+      img:'breastfeed'
+    }
+  }
+
+  // var methodsMapLookup={}
+  // Object.keys(methodsMap).forEach(function(key) {
+  //   methodsMapLookup[methodsMap[key]]=key
+  // }); 
+
 
   var scoreParameters = {
     abstinence :null,
@@ -84,13 +197,31 @@ angular.module('contraceptionApp').factory('scoreService', function () {
   }
   
   var calculateColors = function(){
+
+    // var abstinence = {
+    //   key: 'abstinence',
+    //   name: methodsMapLookup['abstinence']
+    // }
+    // var mcondom ={
+    //   key: 'mcondom',
+    //   name: methodsMapLookup['mcondom']
+    // }
+    // var ec = {
+    //   key: 'ec',
+    //   name: methodsMapLookup['ec']
+    // }
     
     colors = {
-      green:["abstinence", "mcondom", "ec"],
+      // green:[abstinence, mcondom, ec],
+      green:[],
       yellow:[],
       red:[]
     }
 
+    //test
+    // Object.keys(methods).forEach(function(key){
+    //   colors.red.push(methods[key])
+    // })
 
     Object.keys(score).map(function(key, index) {
       
@@ -103,25 +234,27 @@ angular.module('contraceptionApp').factory('scoreService', function () {
       var isInterested = (interested.indexOf(key)>-1) ? true : false
       var isUnplanned = (unplanned.indexOf(key)>-1) ? true : false
 
+      var bcMethod = methods[key]
+
       if(sc>=.5){
         if(isUnplanned)
-          colors.yellow.push(key)
-        else colors.green.push(key)     
+          colors.yellow.push(bcMethod)
+        else colors.green.push(bcMethod)     
       }
       else if(sc>=.25){
         if((isInterested || isEffective) && !isUnplanned)
-          colors.green.push(key) 
-        else colors.yellow.push(key)
+          colors.green.push(bcMethod) 
+        else colors.yellow.push(bcMethod)
       }
       else if (sc >= 0){
         if(isInterested || isEffective)
-          colors.yellow.push(key) 
+          colors.yellow.push(bcMethod) 
       }
       else if(sc>=-90 && isEffective){
-        colors.yellow.push(key)
+        colors.yellow.push(bcMethod)
       }
       else{
-        colors.red.push(key)
+        colors.red.push(bcMethod)
       }
     });
 
