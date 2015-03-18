@@ -50,7 +50,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         //- span.glyphicon.glyphicon-cog
 
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-          a.button.btn.btn-warning.navbar-btn(href='', ng-click='logout()') Logout
+          a.button.btn.btn-warning.navbar-btn(href='/logout', ng-click='logout()') Logout
 
     // button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
         | About
