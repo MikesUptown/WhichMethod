@@ -44,28 +44,12 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-show='isLoggedIn()')
           a.button.btn.btn-warning.navbar-btn(ng-click="$root.showSettings=!$root.showSettings") Settings
 
-
+        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
+          a.button.btn.btn-warning.navbar-btn(href='/logout', ng-click='logout()') Logout
         //li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
         //- a(href='/settings')
         //- span.glyphicon.glyphicon-cog
-
-        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-          a.button.btn.btn-warning.navbar-btn(href='/logout', ng-click='logout()') Logout
-
-    // button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
-        | About
-        span.caret
-      ul.dropdown-menu(role='menu')
-        li
-          a(ng-href='#') Action
-        li
-          a(ng-href='#') Another action
-        li
-          a(ng-href='#') Something else here
-        li.divider
-        li
-          a(ng-href='#') Separated link
-
+        
         li(ng-show='isLoggedIn()')
           p.navbar-text Hello {{ getCurrentUser().name }}
 
