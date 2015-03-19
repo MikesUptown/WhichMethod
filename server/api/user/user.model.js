@@ -20,7 +20,12 @@ var UserSchema = new Schema({
   answers: [{
     question: String,
     answer: Schema.Types.Mixed
-  }]
+  }],
+  recommendation:{
+    green:[{longText:String,name:String,img:String}],
+    red:[{longText:String,name:String,img:String}],
+    yellow:[{longText:String,name:String,img:String}]
+  }
 
 });
 

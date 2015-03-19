@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+head
+  meta(charset="utf8")
+  title Recommmendation
+  style.
+    body{
+      background:white;
+      padding:30px 30px;
+      font-family:helvetica, arial;
+      font-size:11px;
+      letter-spacing:.3px;
+    }
+    .green{
+      color:green;
+    }
+    .yellow{
+      color:rgb(217, 197, 0);
+    }
+    .red{
+      color:red;
+    }        
+    .methods{
+      padding: 5px;
+      color:black;
+      margin:10px 0;
+    }
+
+    .green .methods{
+      border:1px solid green;
+    }
+    .yellow .methods{
+      border:1px solid rgb(217, 197, 0);
+    }
+    .red .methods{
+      border:1px solid red;
+    }
+
+    .method{
+      margin: 5px 0;
+      font-size: 9px;
+    }
+    
+    .method img{
+      width: 30px;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px;
+    }
+
+
+
+body
+  h3 CM Patient ID #{user.id} #{date}
+  p Use this paper to talk to your health care provider about which birth control method is best for you.
+  p 
+    b For extra protection no matter what method you choose, condoms are available at this center.
+    br
+    |Condoms can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sex act.
+
+    if green.length>0
+      .green
+        b Green = GO!
+        p These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+        .methods
+          each val in green
+            .method
+              img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
+              span.text #{val.longText}
+
+
+    p If you forget to use birth control or your birth control method fails, ask your healthcare provider about Emergency Contraception (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B is available over-the-counter for women age 18 and older. Plan B is available by prescription for women age 17 and younger.
+  
+    if yellow.length>0
+      .yellow
+        b Yellow = Slow!
+        br
+        p These birth control methods are not the best for you because of our answers to your questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+        .methods
+          each val in yellow
+            .method
+              img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
+              span.text #{val.longText}
+
+
+    if red.length>0
+          .red
+            b Red = Medically Contraindicated!
+            br
+            p These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+            .methods
+              each val in red
+                .method
+                  img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
+                  span.text #{val.longText}
+            
