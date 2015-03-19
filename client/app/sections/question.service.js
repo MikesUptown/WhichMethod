@@ -5418,8 +5418,45 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
 
       /**
-       * q22:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
-       */
+       * q22NEW:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
+      q22:{
+        options: [
+          { value : 1, name : 'Every time you have sex' },
+          { value : 2, name : 'Every day' },
+          { value : 3, name : 'Once a week' },
+          { value : 4, name : 'Once a month' },
+          { value : 5, name : 'Every three months' },
+          { value : 6, name : 'Longer than every three months' },
+          { value : 7, name : 'Permanent method' },
+          //{ value : 777, name : "I don't know" },
+          //{ value : 999, name : "I don't want to answer this question" },
+        ],
+        selectedOptions: [ ],
+        toggleCheck: function(option)
+          if (this.selectedOptions.indexOf(option) == -1) {
+            this.selectedOptions.push(option);
+          } else {
+            this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q23';
+        },
+        ranking: function(){
+          if(this.answer && this.answer.array){
+          Survey.answer('q22', {value:this.answer});
+          }
+        }
+      },
+      **/
+
+      /**
+       * q22OLD:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
+      */
       q22:{
         options: [
           { value : 1, name : 'Every time you have sex' },
@@ -6477,7 +6514,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 4, name : 'Topiramate or Topamax' },
           { value : 5, name : 'Oxycarbazepine or Trileptal' },
           //{ value : 777, name : "I don't know" },
-          //{ value : 999, name : "I don't want to answer this question" },
+          { value : 999, name : "No" },
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
