@@ -6296,7 +6296,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
-          return 'q49';
+          return 'q48a';
         }
       },
 
@@ -6319,7 +6319,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         nextQuestion: function(){
           this.resetInputs();
           if (this.answer == 1) { return 'q48b'; }
-          else { return 'q49'; }
+          else { return 'q48b'; }
         }
       },
 

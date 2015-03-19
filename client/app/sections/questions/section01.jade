@@ -28,6 +28,8 @@ header
         div(ng-repeat='option in questions.q1.options')
           input(type="radio" name='q1' ng-model="questions.q1.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+      input(type="button", ng-click="saveAnswers()", value="Continue")
+
 
     li#q2(ng-show="currentQuestion == 'q2'")
       label
@@ -37,17 +39,18 @@ header
         div(ng-repeat='option in questions.q2.options')
           input(type="radio" name='q2' ng-model="questions.q2.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+      input(type="button", ng-click="saveAnswers()", value="Continue")
+
 
     li#q3(ng-show="currentQuestion == 'q3'")
         label
             | Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
         div
           div(ng-repeat='option in questions.q3.options')
-            input(type="radio" name='q3' ng-model="questions.q3.selectedOption" ng-value="{{option}}")
+            input(type="radio" name='q3' ng-change="saveAnswers()" ng-model="questions.q3.selectedOption" ng-value="{{option}}")
             label.choice {{option.name}}
 
 
-    input(type="button", ng-click="saveAnswers()", value="Continue")
 
 // all questions above on a single page; Q1-Q3
 

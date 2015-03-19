@@ -19,6 +19,7 @@ angular.module('contraceptionApp').factory('scoreService', function () {
            'Male Condom':      "mcondom"  ,
 
            'Diaphragm':        "diaph" ,
+           'Cervical Cap':      "ccap",
            'Female Condom':    "fcondom"   ,
            'Sponge':           "sponge"  ,
            'Fam' :             "fam",
@@ -73,6 +74,11 @@ angular.module('contraceptionApp').factory('scoreService', function () {
       name:"Diaphragm",
       longText:"Diaphragm",
       img:'diaphram'
+    },
+    ccap:{
+      name:"Cervical Cap",
+      longText:"Cervical Cap",
+      img:'female_barrier'
     },
     fcondom:{
       name:'Female Condom',
@@ -235,6 +241,7 @@ angular.module('contraceptionApp').factory('scoreService', function () {
       var isUnplanned = (unplanned.indexOf(key)>-1) ? true : false
 
       var bcMethod = methods[key]
+      if(!bcMethod) return;
 
       if(sc>=.5){
         if(isUnplanned)

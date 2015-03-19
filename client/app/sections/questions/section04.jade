@@ -18,21 +18,21 @@ header
       label
         | Q23. Would you be okay with regular, scheduled bleeding?
       div(ng-repeat='option in questions.q23.options')
-        input(type="radio" name='q23' ng-model='questions.q23.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q23' ng-change="saveAnswers()" ng-model='questions.q23.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q24(ng-show="currentQuestion == 'q24'")
       label
         | Q24. Would you be okay with unscheduled bleeding and/or spotting?
       div(ng-repeat='option in questions.q24.options')
-        input(type="radio" name='q24' ng-model="questions.q24.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q24' ng-change="saveAnswers()" ng-model="questions.q24.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     li#q25(ng-show="currentQuestion == 'q25'")
       label
         | Q25. Would you be okay with no bleeding at all?
       div(ng-repeat='option in questions.q25.options')
-        input(type="radio" name='q25' ng-model="questions.q25.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q25' ng-change="saveAnswers()" ng-model="questions.q25.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     //- all questions above Q23-25 on single page
@@ -40,32 +40,32 @@ header
       label
         | Q26. Do you need a birth control method which you can keep private?
       div(ng-repeat='option in questions.q26.options')
-        input(type="radio" name='q26' ng-model="questions.q26.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q26' ng-change="saveAnswers()" ng-model="questions.q26.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     li#q26a(ng-show="currentQuestion == 'q26a'")
       label
         | Q26a. Do you want to keep it private from your boyfriend/girlfriend/partner?
       div(ng-repeat='option in questions.q26a.options')
-        input(type="radio" name='q26a' ng-model="questions.q26a.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q26a' ng-change="saveAnswers()" ng-model="questions.q26a.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     li#q26b(ng-show="currentQuestion == 'q26b'")
       label
         | Q26b. Do you want to keep it private from your family or your friends?
       div(ng-repeat='option in questions.q26b.options')
-        input(type="radio" name='q26b' ng-model="questions.q26b.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q26b' ng-change="saveAnswers()" ng-model="questions.q26b.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     li#q27(ng-show="currentQuestion == 'q27'")
       label
         | Q27. Would it be OK for you to use a birth control method (like condoms, spermicides, diaphragm or sponge) that you have to interrupt sexual activity to use?
       div(ng-repeat='option in questions.q27.options')
-        input(type="radio" name='q27' ng-model="questions.q27.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q27' ng-change="saveAnswers()" ng-model="questions.q27.selectedOption" ng-value="{{option}}")
         label {{option.name}}
 
     //- all questions above 26 - 27 on single page
-    input(type="button",ng-click="saveAnswers()",value="Continue")
+    //- input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")
 
