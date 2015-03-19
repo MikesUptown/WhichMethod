@@ -5,6 +5,7 @@ public
 .idea
 client/bower_components
 dist
+tmp
 /server/config/local.env.js
 *.log
 test-results.xml
