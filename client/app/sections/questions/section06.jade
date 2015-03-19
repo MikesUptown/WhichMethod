@@ -19,21 +19,21 @@ header
       label
         | Q53. Do you take dietary supplements or prescription medications regularly?
       div(ng-repeat='option in questions.q53.options')
-        input(type="radio" name='q53' ng-model='questions.q53.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q53' ng-change="saveAnswers()" ng-model='questions.q53.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53a(ng-show="currentQuestion == 'q53a'")
       label
         | Q53a. Do you take St. John's wort?
       div(ng-repeat='option in questions.q53a.options')
-        input(type="radio" name='q53a' ng-model='questions.q53a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q53a' ng-change="saveAnswers()" ng-model='questions.q53a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53b(ng-show="currentQuestion == 'q53b'")
       label
         | Q53b. Do you take Rifampin, Rifadin or Rimactane?
       div(ng-repeat='option in questions.q53b.options')
-        input(type="radio" name='q53b' ng-model='questions.q53b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q53b' ng-change="saveAnswers()" ng-model='questions.q53b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53c(ng-show="currentQuestion == 'q53c'")
@@ -42,16 +42,16 @@ header
       div(ng-repeat='option in questions.q53c.options')
         input(type='checkbox' ng-checked="questions.q53c.selectedOptions.indexOf(option) != -1" ng-click="questions.q53c.toggleCheck(option)")
         label {{option.name}}
+      input(type="button",ng-click="saveAnswers()",value="Continue")
 
     li#53h(ng-show="currentQuestion == 'q53h'")
       label
         | Q53.h. Do you take Griseofulvin, Fulvicin or Grisactin?
       div(ng-repeat='option in questions.q53h.options')
-        input(type="radio" name='q53h' ng-model='questions.q53h.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q53h' ng-change="saveAnswers()" ng-model='questions.q53h.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #53d
 
     //- all questions above 53 - 53h on a single page
-    input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")

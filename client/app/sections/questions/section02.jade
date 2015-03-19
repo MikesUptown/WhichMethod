@@ -21,7 +21,7 @@ header
       label
         | Q4. Regular monthly periods?
       div(ng-repeat='option in questions.q4.options')
-        input(type="radio" name='q4' ng-model="questions.q4.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q4' ng-change="saveAnswers()" ng-model="questions.q4.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q4a(ng-show="currentQuestion == 'q4a'")
@@ -30,73 +30,73 @@ header
       label
         | Q4a. Do you have three or fewer periods per year?
       div(ng-repeat='option in questions.q4a.options')
-        input(type="radio" name='q4a' ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q4a' ng-change="saveAnswers()" ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q5(ng-show="currentQuestion == 'q5'")
       label
         | Q5. Very heavy periods
       div(ng-repeat='option in questions.q5.options')
-        input(type="radio" name='q5' ng-model="questions.q5.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q5' ng-change="saveAnswers()" ng-model="questions.q5.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q6(ng-show="currentQuestion == 'q6'")
       label
         | Q6. Periods that last longer than 7 days
       div(ng-repeat='option in questions.q6.options')
-        input(type="radio" name='q6' ng-model="questions.q6.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q6' ng-change="saveAnswers()" ng-model="questions.q6.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q7(ng-show="currentQuestion == 'q7'")
       label
         | Q7. Painful periods or bad cramps
       div(ng-repeat='option in questions.q7.options')
-        input(type="radio" name='q7' ng-model="questions.q7.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q7' ng-change="saveAnswers()" ng-model="questions.q7.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q8(ng-show="currentQuestion == 'q8'")
       label
         | Q8. Breast tenderness during your period
       div(ng-repeat='option in questions.q8.options')
-        input(type="radio" name='q8' ng-model="questions.q8.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q8' ng-change="saveAnswers()" ng-model="questions.q8.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q9(ng-show="currentQuestion == 'q9'")
       label
         | Q9. Depression or anxiety during your period
       div(ng-repeat='option in questions.q9.options')
-        input(type="radio" name='q9' ng-model="questions.q9.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q9' ng-change="saveAnswers()" ng-model="questions.q9.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q10(ng-show="currentQuestion == 'q10'")
       label
         | Q10. Bloating or fluid retention during your period
       div(ng-repeat='option in questions.q10.options')
-        input(type="radio" name='q10' ng-model="questions.q10.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q10' ng-change="saveAnswers()" ng-model="questions.q10.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q11(ng-show="currentQuestion == 'q11'")
       label
         | Q11. Bad headaches with your period
       div(ng-repeat='option in questions.q11.options')
-        input(type="radio" name='q11' ng-model="questions.q11.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q11' ng-change="saveAnswers()" ng-model="questions.q11.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q12(ng-show="currentQuestion == 'q12'")
       label
         | Q12. Significant PMS (premenstrual syndrome)
       div(ng-repeat='option in questions.q12.options')
-        input(type="radio" name='q12' ng-model="questions.q12.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q12' ng-change="saveAnswers()" ng-model="questions.q12.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q13(ng-show="currentQuestion == 'q13'")
       label
         | Q13. How often do these symptoms cause you to miss work or school?
       div(ng-repeat='option in questions.q13.options')
-        input(type="radio" name='q13' ng-model="questions.q13.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q13' ng-change="saveAnswers()" ng-model="questions.q13.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
-    input(type="submit", ng-click="saveAnswers()", value="Continue")
+    //- input(type="submit", ng-click="saveAnswers()", value="Continue")
 
 // all questions above on a single page; Q4-Q13
 //-   //this ends the second set of questions 02

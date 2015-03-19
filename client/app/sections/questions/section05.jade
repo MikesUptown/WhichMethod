@@ -18,7 +18,7 @@ header
       label
         | Q28. Have you had a baby in the last 6 months?
       div(ng-repeat='option in questions.q28.options')
-        input(type="radio" name='q28' ng-model='questions.q28.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q28' ng-change="saveAnswers()" ng-model='questions.q28.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     //- li#28a(ng-show="currentQuestion == 'q28a'")
@@ -33,7 +33,7 @@ header
       label
         | Q28a. Was your baby born less than 3 weeks ago?
       div(ng-repeat='option in questions.q28a.options')
-        input(type="radio" name='q28a' ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q28a' ng-change="saveAnswers()" ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
         // DELETE THIS VERSION OF Q28A ONCE IT HAS BEEN REPLACED WITH NEW Q28A ABOVE
 
@@ -41,21 +41,21 @@ header
       label
         | Q28b. Are you breastfeeding a child now?
       div(ng-repeat='option in questions.q28b.options')
-        input(type="radio" name='q28b' ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q28b' ng-change="saveAnswers()" ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#29(ng-show="currentQuestion == 'q29'")
       label
         | 29. Have you had surgery in the past three months?
       div(ng-repeat='option in questions.q29.options')
-        input(type="radio" name='q29' ng-model='questions.q29.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q29' ng-change="saveAnswers()" ng-model='questions.q29.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#29a(ng-show="currentQuestion == 'q29a'")
       label
         | Q29a. Is it hard moving around because of the surgery?
       div(ng-repeat='option in questions.q29a.options')
-        input(type="radio" name='q29a' ng-model='questions.q32.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q29a' ng-change="saveAnswers()" ng-model='questions.q32.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #29a
 
@@ -64,7 +64,7 @@ header
       label
         | Q30. High blood pressure, also called hypertension
       div(ng-repeat='option in questions.q30.options')
-        input(type="radio" name='q30' ng-model='questions.q30.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q30' ng-change="saveAnswers()" ng-model='questions.q30.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #30
 
@@ -72,7 +72,7 @@ header
       label
         | Q30a. Are you taking medicine for high blood pressure now?
       div(ng-repeat='option in questions.q30a.options')
-        input(type="radio" name='q30a' ng-model='questions.q30a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q30a' ng-change="saveAnswers()" ng-model='questions.q30a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #30a
 
@@ -80,7 +80,7 @@ header
       label
         | Q31. Blood clots, also called clot in a vein or DVT
       div(ng-repeat='option in questions.q31.options')
-        input(type="radio" name='q31' ng-model='questions.q31.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q31' ng-change="saveAnswers()" ng-model='questions.q31.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #31
 
@@ -88,7 +88,7 @@ header
       label
         | Q32. Pulmonary embolus, also called a clot in the lung
       div(ng-repeat='option in questions.q32.options')
-        input(type="radio" name='q32' ng-model='questions.q32.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q32' ng-change="saveAnswers()" ng-model='questions.q32.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #32
 
@@ -96,7 +96,7 @@ header
       label
         | Q33. A stroke
       div(ng-repeat='option in questions.q33.options')
-        input(type="radio" name='q33' ng-model='questions.q33.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q33' ng-change="saveAnswers()" ng-model='questions.q33.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #33
 
@@ -104,7 +104,7 @@ header
       label
         | Q34. A blood clotting disorder
       div(ng-repeat='option in questions.q34.options')
-        input(type="radio" name='q34' ng-model='questions.q34.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q34' ng-change="saveAnswers()" ng-model='questions.q34.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #34
 
@@ -112,7 +112,7 @@ header
       label
         | Q35. High Cholesterol
       div(ng-repeat='option in questions.q35.options')
-        input(type="radio" name='q35' ng-model='questions.q35.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q35' ng-change="saveAnswers()" ng-model='questions.q35.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #35
 
@@ -120,7 +120,7 @@ header
       label
         | Q36. A heart attack, also called a myocardial infarction, heart disease or vascular disease
       div(ng-repeat='option in questions.q36.options')
-        input(type="radio" name='q36' ng-model='questions.q36.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q36' ng-change="saveAnswers()" ng-model='questions.q36.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #36
 
@@ -128,7 +128,7 @@ header
       label
         | Q37. Disease of heart valves
       div(ng-repeat='option in questions.q37.options')
-        input(type="radio" name='q37' ng-model='questions.q37.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q37' ng-change="saveAnswers()" ng-model='questions.q37.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #37
 
@@ -137,7 +137,7 @@ header
       label
         | Q38. Sickle cell anemia
       div(ng-repeat='option in questions.q38.options')
-        input(type="radio" name='q38' ng-model='questions.q38.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q38' ng-change="saveAnswers()" ng-model='questions.q38.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #38
 
@@ -145,7 +145,7 @@ header
       label
         | Q39. Anemia, sometimes called low blood or tired blood
       div(ng-repeat='option in questions.q39.options')
-        input(type="radio" name='q39' ng-model='questions.q39.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q39' ng-change="saveAnswers()" ng-model='questions.q39.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #39
 
@@ -153,7 +153,7 @@ header
       label
         | Q40. Cancer or a malignancy of any kind
       div(ng-repeat='option in questions.q40.options')
-        input(type="radio" name='q40' ng-model='questions.q40.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q40' ng-change="saveAnswers()" ng-model='questions.q40.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #40
 
@@ -161,7 +161,7 @@ header
       label
         | Q40a. Breast cancer, liver tumors or liver cancer
       div(ng-repeat='option in questions.q40a.options')
-        input(type="radio" name='q40a' ng-model='questions.q40a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q40a' ng-change="saveAnswers()" ng-model='questions.q40a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #40a
 
@@ -169,7 +169,7 @@ header
       label
         | Q.40b. Endometrial cancer, ovarian cancer, or cervical cancer
       div(ng-repeat='option in questions.q40b.options')
-        input(type="radio" name='q40b' ng-model='questions.q40b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q40b' ng-change="saveAnswers()" ng-model='questions.q40b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #40b
 
@@ -177,7 +177,7 @@ header
       label
         | Q41. A molar pregnancy
       div(ng-repeat='option in questions.q41.options')
-        input(type="radio" name='q41' ng-model='questions.q41.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q41' ng-change="saveAnswers()" ng-model='questions.q41.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #41
 
@@ -185,7 +185,7 @@ header
       label
         | Q42. Pelvic tuberculosis
       div(ng-repeat='option in questions.q42.options')
-        input(type="radio" name='q42' ng-model='questions.q42.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q42' ng-change="saveAnswers()" ng-model='questions.q42.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #42
 
@@ -193,7 +193,7 @@ header
       label
         | Q43. Toxic shock syndrome (TSS)
       div(ng-repeat='option in questions.q43.options')
-        input(type="radio" name='q43' ng-model='questions.q43.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q43' ng-change="saveAnswers()" ng-model='questions.q43.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #43
 
@@ -202,7 +202,7 @@ header
       label
         | Q44. In the past 3 months has a doctor, nurse, or other health professional told you that you had pelvic inflammatory disease (PID)?
       div(ng-repeat='option in questions.q44.options')
-        input(type="radio" name='q44' ng-model='questions.q44.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q44' ng-change="saveAnswers()" ng-model='questions.q44.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #44
 
@@ -210,7 +210,7 @@ header
       label
         | Q45. Endometriosis
       div(ng-repeat='option in questions.q45.options')
-        input(type="radio" name='q45' ng-model='questions.q45.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q45' ng-change="saveAnswers()" ng-model='questions.q45.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #45
 
@@ -218,7 +218,7 @@ header
       label
         | Q46. Diabetes
       div(ng-repeat='option in questions.q46.options')
-        input(type="radio" name='q46' ng-model='questions.q46.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q46' ng-change="saveAnswers()" ng-model='questions.q46.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #46
 
@@ -226,7 +226,7 @@ header
       label
         | Q46a. Have you had diabetes for more than 20 years?
       div(ng-repeat='option in questions.q46a.options')
-        input(type="radio" name='q46a' ng-model='questions.q46a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q46a' ng-change="saveAnswers()" ng-model='questions.q46a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #46a
 
@@ -234,7 +234,7 @@ header
       label
         | Q46b. Do you have problems with your kidneys, eyes or nerves because of diabetes?
       div(ng-repeat='option in questions.q46b.options')
-        input(type="radio" name='q46b' ng-model='questions.q46b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q46b' ng-change="saveAnswers()" ng-model='questions.q46b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #46b
 
@@ -242,7 +242,7 @@ header
       label
         | Q47. Migraine Headaches
       div(ng-repeat='option in questions.q47.options')
-        input(type="radio" name='q47' ng-model='questions.q47.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q47' ng-change="saveAnswers()" ng-model='questions.q47.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #47
 
@@ -250,7 +250,7 @@ header
       label
         | Q47a. Do you have migraine headaches with an aura? An aura is seeing spots or wavy lines before or during the migraine headache.
       div(ng-repeat='option in questions.q47a.options')
-        input(type="radio" name='q47a' ng-model='questions.q47a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q47a' ng-change="saveAnswers()" ng-model='questions.q47a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #47a
 
@@ -259,7 +259,7 @@ header
       label
         | Q48. AIDS
       div(ng-repeat='option in questions.q48.options')
-        input(type="radio" name='q48' ng-model='questions.q48.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q48' ng-change="saveAnswers()" ng-model='questions.q48.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #48
 
@@ -267,7 +267,7 @@ header
       label
         | Q48a. Liver or Gallbladder problems
       div(ng-repeat='option in questions.q48a.options')
-        input(type="radio" name='q48a' ng-model='questions.q48a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q48a' ng-change="saveAnswers()" ng-model='questions.q48a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #48a
     //- This question should be visible to the participant 
@@ -276,7 +276,7 @@ header
       label
         | Q48b. Gallbladder disease or Gallstones
       div(ng-repeat='option in questions.q48b.options')
-        input(type="radio" name='q48b' ng-model='questions.q48b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q48b' ng-change="saveAnswers()" ng-model='questions.q48b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #48b
     //- This question should be visible to the participant
@@ -285,7 +285,7 @@ header
       label
         | Q49. Cirrhosis or Active Hepatitis
       div(ng-repeat='option in questions.q49.options')
-        input(type="radio" name='q49' ng-model='questions.q49.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q49' ng-change="saveAnswers()" ng-model='questions.q49.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #49
 
@@ -293,7 +293,7 @@ header
       label
         | Q50. A seizure disorder or epilepsy
       div(ng-repeat='option in questions.q50.options')
-        input(type="radio" name='q50' ng-model='questions.q50.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q50' ng-change="saveAnswers()" ng-model='questions.q50.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #50
 
@@ -301,7 +301,7 @@ header
       label
         | Q51. Do you have severe acne?
       div(ng-repeat='option in questions.q51.options')
-        input(type="radio" name='q51' ng-model='questions.q51.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q51' ng-change="saveAnswers()" ng-model='questions.q51.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #51
 
@@ -309,11 +309,11 @@ header
       label
         | Q52. Do you have coarse, dark hairs on your face?
       div(ng-repeat='option in questions.q52.options')
-        input(type="radio" name='q52' ng-model='questions.q52.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q52' ng-change="saveAnswers()" ng-model='questions.q52.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- TODO This is now question #52
 
     //- all questions above Q48 - Q52 on single page
-    input(type="button", ng-click="saveAnswers()",value="Continue")
+    //- input(type="button", ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")

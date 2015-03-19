@@ -14,7 +14,7 @@ header
       label
         | Q.54a. The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
       div(ng-repeat='option in questions.q54a.options')
-        input(type="radio" name='q54a' ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54a' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #54a
 
@@ -22,7 +22,7 @@ header
       label
         | Q54b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
       div(ng-repeat='option in questions.q54b.options')
-        input(type="radio" name='q54b' ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #54b
       
@@ -30,7 +30,7 @@ header
       label
         | Q54c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
       div(ng-repeat='option in questions.q54c.options')
-        input(type="radio" name='q54c' ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #54c
 
@@ -38,7 +38,7 @@ header
       label
         | Q54d. Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
       div(ng-repeat='option in questions.q54d.options')
-        input(type="radio" name='q54d' ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54d' ng-change="saveAnswers()" ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #54d
 
@@ -46,13 +46,13 @@ header
       label
         | Q54e. The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
       div(ng-repeat='option in questions.q54e.options')
-        input(type="radio" name='q54e' ng-model='questions.q54e.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54e' ng-change="saveAnswers()" ng-model='questions.q54e.selectedOption' ng-value="{{option}}")
         label {{option.name}}
     //- This is now question #54e
 
     //- all questions above 58a - 58e on single page
 
-    input(type="button",ng-click="saveAnswers()",value="Continue")
+    //- input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")
 

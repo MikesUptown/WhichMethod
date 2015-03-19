@@ -17,7 +17,7 @@ header
       label
         | Q14. How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
       div(ng-repeat='option in questions.q14.options')
-        input(type="radio" name='q14' ng-model="questions.q14.selectedOption" ng-value="{{option}}")
+        input(type="radio" name='q14' ng-change="saveAnswers()" ng-model="questions.q14.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
      li#q15(ng-show="currentQuestion == 'q15'")
@@ -26,14 +26,15 @@ header
       div
         input(ng-model='questions.q15.textInput' type='text')
         div(ng-repeat='option in questions.q15.options')
-          input(type="radio" name='q15' ng-model="questions.q15.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q15'  ng-model="questions.q15.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
      li#q16(ng-show="currentQuestion == 'q16'")
         label
           | Q16. Have you ever had an unplanned pregnancy?
         div(ng-repeat='option in questions.q16.options')
-          input(type="radio" name='q16' ng-model="questions.q16.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q16' ng-change="saveAnswers()" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
@@ -43,12 +44,13 @@ header
         div(ng-repeat='option in questions.q16a.options')
           input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
           | Q16b. When you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
         div(ng-repeat='option in questions.q16b.options')
-          input(type="radio" name='q16b' ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
 
       //- all questions above Q16 - Q16b on a single page
@@ -56,8 +58,9 @@ header
         label
           | Q16bi. When you had an unplanned pregnancy, what method of birth control were you using?
         div(ng-repeat='option in questions.q16bi.options')
-          input(type='checkbox' ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
+          input(type='checkbox'  ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- Q16bi above on single page
      li#q17(ng-show="currentQuestion == 'q17'")
@@ -66,20 +69,21 @@ header
         div(ng-repeat='option in questions.q17.options')
           input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- Q17 above on single page
      li#q18(ng-show="currentQuestion == 'q18'")
         label
           | Q18. Have you EVER used any method of birth control?
         div(ng-repeat='option in questions.q18.options')
-          input(type="radio" name='q18' ng-model="questions.q18.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q18' ng-change="saveAnswers()" ng-model="questions.q18.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q18a(ng-show="currentQuestion == 'q18a'")
         label
           | Q18a. Are you using birth control now?
         div(ng-repeat='option in questions.q18a.options')
-          input(type="radio" name='q18a' ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q18a' ng-change="saveAnswers()" ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
@@ -88,13 +92,14 @@ header
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- all questions above Q18-Q18ai above on single page
      li#q19(ng-show="currentQuestion == 'q19'")
         label
           | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
         div(ng-repeat='option in questions.q19.options')
-          input(type="radio" name='q19' ng-model="questions.q19.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q19' ng-change="saveAnswers()" ng-model="questions.q19.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
@@ -103,6 +108,7 @@ header
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- Q19 & Q19a on a single page
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
@@ -112,13 +118,14 @@ header
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- Q19ai above on a single page by itself
      li#q20(ng-show="currentQuestion == 'q20'")
         label
           | Q20. How soon do you want to get pregnant? In...
         div(ng-repeat='option in questions.q20.options')
-          input(type="radio" name='q20' ng-model="questions.q20.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q20' ng-change="saveAnswers()" ng-model="questions.q20.selectedOption" ng-value="{{option}}")
           label {{option.name}}
 
      li#q21(ng-show="currentQuestion == 'q21'")
@@ -127,16 +134,17 @@ header
         div(ng-repeat='option in questions.q21.options')
           input(type='checkbox' ng-checked="questions.q21.selectedOptions.indexOf(option) != -1" ng-click="questions.q21.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
 
      li#q22(ng-show="currentQuestion == 'q22'")
         label
           | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
         div(ng-repeat='option in questions.q22.options')
-          input(type="radio" name='q22' ng-model="questions.q22.selectedOption" ng-value="{{option}}")
+          input(type="radio" name='q22' ng-change="saveAnswers()" ng-model="questions.q22.selectedOption" ng-value="{{option}}")
           label {{option.name}}
       
       //- all questions Q20 - Q22 above on a single page
-    input(type="button",ng-click="saveAnswers()",value="Continue")
+    
 
 div(ng-include="'app/sections/rankhelp.html'")
 
