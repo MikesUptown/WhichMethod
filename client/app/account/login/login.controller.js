@@ -23,13 +23,12 @@ angular.module('contraceptionApp')
           Auth.getCurrentUser().$promise.then(function(u){
 
             var section = u.currentSection
-            if(section == undefined)
-              $location.url('/questions/intro/1')
+            var section = user.currentSection
+            if(section == undefined || section==0)
+              $location.url('/questions/intro/0')
             else{
               $state.go('sections.questions', {type:'question',id:section})
             }
-
-
           })            
 
             // var section = user.currentSection

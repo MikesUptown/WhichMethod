@@ -4498,7 +4498,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         selectedOption : { },
         resetInputs: function(){
           this.selectedOption = {};
-          this.textInput = undefined;
+          this.textInput = null;
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -5004,7 +5004,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
             //for each pregnancy add another element of the option
             var convertedArray=[]
             this.answer.array.forEach(function(el){
-              var pregnancies = el.pregnancy.length
+
+              var pregnancies = el.pregnancy? el.pregnancy.length : 0
               pregnancies = Math.max(1,pregnancies)
               for(var p=0;p<pregnancies;p++){
                 convertedArray.push(el)

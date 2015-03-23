@@ -24,10 +24,13 @@ div.page-header
 .pdfButtons
   a(href="/recommendation/{{currentUser._id}}" target="_blank")
     .btn.btn-default GO TO PDF
-  button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
-  .prog(ng-show="sendingEmail") sending email...
-  .success(ng-show="emailSuccess") the email has been sent!
-  .error(ng-show="emailError") there was a problem... please try again
+  
+  span(ng-show="currentUser.name != 'guest'")
+    button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
+    .prog(ng-show="sendingEmail") sending email...
+    .success(ng-show="emailSuccess") the email has been sent!
+    .error(ng-show="emailError") there was a problem... please try again
+  a(href="/settings").btn.btn-default(ng-show="currentUser.name == 'guest'") Register to Recieve the PDF via Email
 
 .recommend
   .green(ng-if="colors.green.length>0")

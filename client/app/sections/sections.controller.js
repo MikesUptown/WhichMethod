@@ -11,6 +11,8 @@ angular.module('contraceptionApp')
       'q3','q13','q22','q27','q52','q53h', 'q54e'
     ];
 
+    $scope.$state = $state
+
     $scope.questions = questionService.questions
     $scope.ranking = questionService.ranking
     $scope.problems = questionService.problems;
@@ -18,6 +20,17 @@ angular.module('contraceptionApp')
 
     var sectionEnd = questionService.sectionEnd
     var currentUser 
+
+    $scope.consent1= false;
+    $scope.consent2= false;
+
+    $scope.saveConsent = function(){
+
+      currentUser.consent1 = $scope.consent1
+      currentUser.consent2 = $scope.consent2
+      User.save(currentUser)
+      navigateToCursor()
+    }
 
 
     User.get(function(user){
@@ -28,7 +41,7 @@ angular.module('contraceptionApp')
     });
 
     function initUser(){
-      if(currentUser.currentQuestion)
+      if(currentUser.currentQuestion && currentUser.currentQuestion!='undefined')
         $scope.currentQuestion=currentUser.currentQuestion
       else
         $scope.currentQuestion='q1'
@@ -49,18 +62,24 @@ angular.module('contraceptionApp')
       }
 
 
-      if( sectionStart.indexOf($scope.currentQuestion)>-1){
-        $state.go('.', {type:'intro',id:$scope.currentSection})
-      }
-      else
-        $state.go('.', {id:$scope.currentSection})    
-
+      
+      navigateToCursor()
 
       $scope.updateRanking()
 
     }
 
 
+    function navigateToCursor(){
+      if(!currentUser.consent1 && !currentUser.consent1){
+        $state.go('.', {type:'intro',id:0})
+      }
+      else if( sectionStart.indexOf($scope.currentQuestion)>-1){
+        $state.go('.', {type:'intro',id:$scope.currentSection})
+      }
+      else
+        $state.go('.', {id:$scope.currentSection})    
+    }
 
 
     $scope.saveAnswers = function(){

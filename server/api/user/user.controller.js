@@ -77,8 +77,13 @@ exports.updateUser = function(req, res) {
 
   var answers = req.body.answers;
   var currentQuestion = String(req.body.currentQuestion);
-  var currentSection = String(req.body.currentSection);
+  var currentSection
+  if(req.body.currentSection)
+    currentSection = req.body.currentSection;
   var recommendation = req.body.recommendation
+  var consent1 = req.body.consent1
+  var consent2 = req.body.consent2
+
   // console.log(answers)
   // for(var a in answers){
   //   var ans = answers[a]
@@ -88,12 +93,28 @@ exports.updateUser = function(req, res) {
 
   User.findById(userId, function (err, user) {
 
-    console.log(user)
+    // console.log(user)
 
     user.answers = answers
     user.currentQuestion = currentQuestion
-    user.currentSection = currentSection
+    
+    if(typeof currentSection == 'undefined'){
+      user.currentSection = currentSection
+      console.log(currentSection)
+      console.log(typeof currentSection)
+    }
+    else if(!user.currentSection){
+      console.log(user.currentSection)
+      if(consent1 || consent1)
+        user.currentSection = 1
+    }else{
+      user.currentSection = currentSection
+    }
+
     user.recommendation = recommendation
+    user.consent1 = consent1
+    user.consent2 = consent2
+
 
     user.save(function(err) {
       if (err) {
@@ -265,6 +286,9 @@ exports.changePassword = function(req, res, next) {
   var userId = req.user._id;
   var oldPass = String(req.body.oldPassword);
   var newPass = String(req.body.newPassword);
+
+  console.log(oldPass)
+  console.log(newPass)
 
   User.findById(userId, function (err, user) {
     if(user.authenticate(oldPass)) {
