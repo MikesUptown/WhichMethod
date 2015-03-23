@@ -307,6 +307,8 @@ function cleanTmpFolder(){
   var path = ''
 
   fs.readdir(uploadsDir, function(err, files) {
+    console.log(err)
+    if(!files) return setTimeout(cleanTmpFolder,3600000*24)
     files.forEach(function(file, index) {
       fs.stat(uploadsDir + '/' + file, function(err, stat) {
         var endTime, now;
@@ -327,7 +329,7 @@ function cleanTmpFolder(){
     });
   });
 
-  setTimeout(cleanTmpFolder,3600000*24)
+  return setTimeout(cleanTmpFolder,3600000*24)
 }
 cleanTmpFolder()
 

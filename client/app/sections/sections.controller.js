@@ -221,5 +221,9 @@ angular.module('contraceptionApp')
 
     }
 
+    $scope.range = function(n) {
+        return new Array(n);
+    };
+
 
   });
