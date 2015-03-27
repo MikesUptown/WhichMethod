@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth) {
+  .controller('SettingsCtrl', function ($scope, User, Auth, $location) {
     $scope.errors = {};
     $scope.user = {};
 
@@ -22,6 +22,8 @@ angular.module('contraceptionApp')
           // Account created, redirect to home
           // $location.path('/questions/intro/1');
           $scope.message = 'Thank you for registering.';
+          $location.url('/questions/intro/1')
+
         })
         .catch( function(err) {
           err = err.data;
@@ -39,7 +41,9 @@ angular.module('contraceptionApp')
     $scope.changePassword = function(form) {
       $scope.submitted = true;
       if(form.$valid) {
-        Auth.changePassword( "guest", $scope.user.newPassword )
+        if(!user.oldPassword || user.oldPassword == '')
+          user.oldPassword=='guest'
+        Auth.changePassword( user.oldPassword, $scope.user.newPassword )
         .then( function() {
           $scope.message = 'Password successfully changed.';
         })

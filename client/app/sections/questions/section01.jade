@@ -22,24 +22,24 @@ header
     li#q1(ng-show="currentQuestion == 'q1'")
       label
         | Q1. How old are you?
-      div
-
-        input(ng-model='questions.q1.textInput' type='text')
-        div(ng-repeat='option in questions.q1.options')
-          input(type="radio" name='q1' ng-model="questions.q1.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
-      input(type="button", ng-click="saveAnswers()", value="Continue")
+      form(name="age")
+        input(ng-model='questions.q1.textInput' name="input" type='number' min='14', max='140' required)        
+        span.error(ng-show="age.input.$error.min") You cannot be younger than 14!
+        span.error(ng-show="age.input.$error.max") You can't possibly be THAT old!
+        span.error(ng-show="age.input.$error.number") Not valid number!
+        br
+        input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
 
 
     li#q2(ng-show="currentQuestion == 'q2'")
       label
         | Q2. How much do you weigh?
-      div
-        input(ng-model='questions.q2.textInput' type='text', tabindex='1')
+      form(name="weight")
+        input(ng-model='questions.q2.textInput' required type='number', tabindex='1')
         div(ng-repeat='option in questions.q2.options')
           input(type="radio" name='q2' ng-model="questions.q2.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-      input(type="button", ng-click="saveAnswers()", value="Continue")
+        input(type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
 
 
     li#q3(ng-show="currentQuestion == 'q3'")

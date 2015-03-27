@@ -21,6 +21,8 @@ var UserSchema = new Schema({
     question: String,
     answer: Schema.Types.Mixed
   }],
+  consent1:Boolean,
+  consent2:Boolean,
   recommendation:{
     green:[{longText:String,name:String,img:String}],
     red:[{longText:String,name:String,img:String}],

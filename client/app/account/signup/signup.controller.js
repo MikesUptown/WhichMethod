@@ -27,7 +27,7 @@ angular.module('contraceptionApp')
       })
       .then( function() {
         // Account created, redirect to home
-        $location.path('/questions/intro/1');
+        $location.path('/questions/intro/0');
       })
       .catch( function(err) {
         err = err.data;
@@ -49,7 +49,7 @@ angular.module('contraceptionApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/questions/intro/1');
+          $location.path('/questions/intro/0');
         })
         .catch( function(err) {
           err = err.data;

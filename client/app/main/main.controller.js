@@ -10,8 +10,8 @@ angular.module('contraceptionApp')
         var user = Auth.getCurrentUser().$promise.then(function(user){
 
           var section = user.currentSection
-          if(section == undefined)
-            $location.url('/questions/intro/1')
+          if(section == undefined || section==0)
+            $location.url('/questions/intro/0')
           else{
             $state.go('sections.questions', {type:'question',id:section})
           }
@@ -21,7 +21,6 @@ angular.module('contraceptionApp')
       }
       else
         $location.url('/signup')
-
     }
 
   });

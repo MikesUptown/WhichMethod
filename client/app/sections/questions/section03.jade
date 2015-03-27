@@ -23,12 +23,12 @@ header
      li#q15(ng-show="currentQuestion == 'q15'")
       label
         | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
-      div
-        input(ng-model='questions.q15.textInput' type='text')
+      form(name="mens")
+        input(ng-model='questions.q15.textInput' type='number' required)
         div(ng-repeat='option in questions.q15.options')
           input(type="radio" name='q15'  ng-model="questions.q15.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(type="button" ng-disabled="mens.$invalid" ng-click="saveAnswers()",value="Continue")
 
      li#q16(ng-show="currentQuestion == 'q16'")
         label
@@ -40,11 +40,12 @@ header
      li#q16a(ng-show="currentQuestion == 'q16a'")
         label
           | Q16a. How many unplanned pregnancies have you had?
-        input(ng-model='questions.q16a.textInput' type='text')
-        div(ng-repeat='option in questions.q16a.options')
-          input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        form(name="unplanned")
+          input(ng-model='questions.q16a.textInput' type='number' required)
+          div(ng-repeat='option in questions.q16a.options')
+            input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
+            label.choice {{option.name}}
+          input(type="button" ng-disabled="unplanned.$invalid" ng-click="saveAnswers()",value="Continue")
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
@@ -57,9 +58,19 @@ header
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
           | Q16bi. When you had an unplanned pregnancy, what method of birth control were you using?
+        
         div(ng-repeat='option in questions.q16bi.options')
           input(type='checkbox'  ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
           label {{option.name}}
+
+          div(ng-if="questions.q16bi.selectedOptions.indexOf(option) != -1" style="padding-left:10px")
+            | Wich unplanned pregnancy was this (mark all that apply)?
+            br
+            span(ng-repeat="n in range( questions.q16a.answer ) track by $index" )
+              label pregnancy {{$index+1}} &nbsp;  
+              input(type='checkbox'  ng-checked="" ng-click="questions.q16bi.togglePregnancy(option,$index+1)" ) 
+              &nbsp; &nbsp;
+
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
       //- Q16bi above on single page

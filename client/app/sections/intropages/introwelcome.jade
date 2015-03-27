@@ -44,7 +44,7 @@ h3.panel-title To get started please consent to the terms and click the "START" 
 .has-success
 .checkbox
 label
-input#checkboxSuccess(type='checkbox', value='option1')
+input#checkboxSuccess(type='checkbox', value='option1' ng-model="$parent.consent1")
 | I am age 14 years or older, and I give my consent to the above.
 br
 | I consent to be contacted 1 or 2 times by email.
@@ -52,6 +52,8 @@ br
 .has-success
 .checkbox
 label
-input#checkboxSuccess(type='checkbox', value='option2')
+input#checkboxSuccess(type='checkbox', value='option2' ng-model="$parent.consent2")
 | I am age 14 years or older, and I give my consent to the above.
-
+br
+.btn.btn-default(ng-disabled="!$parent.consent1 && !$parent.consent2" ng-click="saveConsent()") Start Servey
+br 

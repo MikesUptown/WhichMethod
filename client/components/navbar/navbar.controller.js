@@ -1,11 +1,34 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, $rootScope) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, $rootScope, $state) {
     $scope.menu = [{
       'title': 'WhichMethod Logo',
       // 'link': '/'
     }];
+
+
+
+    $scope.startServey = function(){
+
+      if(Auth.isLoggedIn()){
+
+        var user = Auth.getCurrentUser().$promise.then(function(user){
+
+          var section = user.currentSection
+          if(section == undefined || section==0)
+            $location.url('/questions/intro/0')
+          else{
+            $state.go('sections.questions', {type:'question',id:section})
+          }
+
+
+        })
+      }
+      else
+        $location.url('/signup')
+    }
+
 
 
     $scope.isCollapsed = true;

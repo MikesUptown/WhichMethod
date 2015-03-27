@@ -4498,7 +4498,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         selectedOption : { },
         resetInputs: function(){
           this.selectedOption = {};
-          this.textInput = undefined;
+          this.textInput = null;
         },
         nextQuestion: function(){
           this.resetInputs();
@@ -4950,25 +4950,25 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q16bi:{
         options: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera',   value : 5  },
-          { name : 'Male Condom',    value : 6  },
-          { name : 'Diaphragm',      value : 7  },
-          { name : 'Female Condom',  value : 8  },
-          { name : 'Sponge',         value : 9  },
-          { name : 'Fam',            value : 10 },
-          { name : 'EC',             value : 11 },
-          { name : 'Paragard',       value : 12 },
-          { name : 'Mirena',         value : 13 },
-          { name : 'Withdrawal',     value : 14 },
-          { name : 'Spermicide',     value : 15 },
-          { name : 'Tubes Tied',     value : 16 },
-          { name : 'Vasectomy',      value : 17 },
-          { name : 'Implant',        value : 18 },
-          { name : 'Breast Feeding', value : 19 }
+          { name : 'Birth Control',  value : 1  ,pregnancy:[]},
+          { name : 'Mini Pills',     value : 2  ,pregnancy:[]},
+          { name : 'Ortho Evra',     value : 3  ,pregnancy:[]},
+          { name : 'Nuva Ring',      value : 4  ,pregnancy:[]},
+          { name : 'Depo Provera',   value : 5  ,pregnancy:[]},
+          { name : 'Male Condom',    value : 6  ,pregnancy:[]},
+          { name : 'Diaphragm',      value : 7  ,pregnancy:[]},
+          { name : 'Female Condom',  value : 8  ,pregnancy:[]},
+          { name : 'Sponge',         value : 9  ,pregnancy:[]},
+          { name : 'Fam',            value : 10 ,pregnancy:[]},
+          { name : 'EC',             value : 11 ,pregnancy:[]},
+          { name : 'Paragard',       value : 12 ,pregnancy:[]},
+          { name : 'Mirena',         value : 13 ,pregnancy:[]},
+          { name : 'Withdrawal',     value : 14 ,pregnancy:[]},
+          { name : 'Spermicide',     value : 15 ,pregnancy:[]},
+          { name : 'Tubes Tied',     value : 16 ,pregnancy:[]},
+          { name : 'Vasectomy',      value : 17 ,pregnancy:[]},
+          { name : 'Implant',        value : 18 ,pregnancy:[]},
+          { name : 'Breast Feeding', value : 19 ,pregnancy:[]}
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -4976,6 +4976,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
             this.selectedOptions.push(option);
           } else {
             this.selectedOptions.splice(this.selectedOptions.indexOf(option),1);
+          }
+        },
+        togglePregnancy: function(option,pregnancy){
+          var index = this.selectedOptions.indexOf(option)
+          var optionPreg = this.selectedOptions[index].pregnancy
+         
+          if (optionPreg.indexOf(pregnancy) == -1) {
+            optionPreg.push(pregnancy);
+          } else {
+            optionPreg.splice(optionPreg.indexOf(pregnancy),1);
           }
         },
         resetInputs: function(){
@@ -4989,7 +4999,21 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         ranking: function(){
           if(this.answer && this.answer.array){
-            Survey.answer('q16bi', {optionList:this.answer.array});
+
+            //convert anwer array to account for # of pregnancies
+            //for each pregnancy add another element of the option
+            var convertedArray=[]
+            this.answer.array.forEach(function(el){
+
+              var pregnancies = el.pregnancy? el.pregnancy.length : 0
+              pregnancies = Math.max(1,pregnancies)
+              for(var p=0;p<pregnancies;p++){
+                convertedArray.push(el)
+              }
+            })
+
+
+            Survey.answer('q16bi', {optionList:convertedArray});
           }
         },
       },
