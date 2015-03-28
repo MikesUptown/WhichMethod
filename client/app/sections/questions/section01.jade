@@ -17,15 +17,15 @@ header
 #container
   .body.questionpages
 
-  h3 WhichMethod_section_01
+  h3 WhichMethod Section 1
   ul
     li#q1(ng-show="currentQuestion == 'q1'")
       label
         | Q1. How old are you?
       form(name="age")
         input(ng-model='questions.q1.textInput' name="input" type='number' min='14', max='140' required)        
-        span.error(ng-show="age.input.$error.min") You cannot be younger than 14!
-        span.error(ng-show="age.input.$error.max") You can't possibly be THAT old!
+        span.error(ng-show="age.input.$error.min") You must at least be 14 years of age!
+        span.error(ng-show="age.input.$error.max") This survey is not relevant for this age!
         span.error(ng-show="age.input.$error.number") Not valid number!
         br
         input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")

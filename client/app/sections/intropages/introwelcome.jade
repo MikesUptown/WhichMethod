@@ -5,55 +5,56 @@ header
       // <img ng-src="assets/images/which_method_logo.png" alt=""/>
       //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
+    //a.logout_btn_01( ng-click='logout()') Log out
 
-div.page-header
-  h1
-    | Welcome to WhichMethod
-    small   This is a consent form
+  div.page-header
+    h3
+      | WhichMethod Privacy Policy
 
-h3.panel-heading What is WhichMethod.com?
-.panel-body
-| WhichMethod.com is an app that provides general information and can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment.  You do not need to know anything about birth control methods to use this app. The app is based on the Centers for Disease Control and Prevention’s (CDC) Medical Eligibility Criteria.
+    .panel.panel-default
+    h3.panel-heading
+    .panel-body
+      h3.panel-title What is WhichMethod.com?
+      | WhichMethod.com is an app that provides general information and can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment.  You do not need to know anything about birth control methods to use this app. The app is based on the Centers for Disease Control and Prevention’s (CDC) Medical Eligibility Criteria.
+      br
+      br
+      h3.panel-title Confidentiality
+      | Your answers will be kept completely <mark>confidential</mark>. For your protection, all information provided will be kept confidential by using a randomly-generated ID number instead of your e-mail address. All answers are stored separately from email addresses
+      br
+      br
+      h3.panel-title Use of E-mail address
+      | If you use WhichMethod.com as a <mark>REGISTERED USER</mark>, we will ask you to provide an email address.  Your e-mail address will not be linked to your answers. If you register, you will be able to get a copy of your birth control recommendations sent to your email address.  If you register, we will send you 1 or 2 follow-up emails to ask 2 questions about birth control use since you used the app. We will not use your e-mail address for any other purpose and we will not share it with anyone. Your email and account will be deleted after 90 days.
+      br
+      br
+      | If you use WhichMethod.com as a <mark>GUEST</mark>, you will not need to provide an email address. You will not receive the follow up emails. You will not be able to get a copy of your birth control recommendations sent to your email address.
+      br
+      br
+      h3.panel-title Risks or discomforts
+      | You may feel uncomfortable answering some of the questions.  You may exit from your browser at any time. The only risk is the very small possibility that your e-mail address (if you provided one) might be accidentally disclosed.  To reduce this risk, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 90 days. 
+      br
+      br
+      h3.panel-title Contact information
+      | If you have questions or concerns about WhichMethod.com, please contact Dr. Mary Ann Chiasson at 646-619-6411 or machiasson@healthsolutions.org or Dayana Bermudez, the IRB Administrator, at 646-619-6701 or dbermudez@healthsolutions.org.
+      br
+      br
+      h4.panel-title IMPORTANT INFORMATION ABOUT YOUR USE OF WHICHMETHOD. PLEASE READ BEFORE YOU USE!
+      | This WhichMethod.com app will give you general information only. It will not give you medical advice, diagnosis or treatment. It is meant to provide you with background information before you meet with a medical professional, such as a doctor, physician’s assistant or nurse. If you think you may have an urgent medical problem or might be pregnant, please make an appointment to see a medical professional right away.
+      br
+      br
+      h3.panel-title To get started please consent to the terms and click the "START" button below:
+      .has-success
+      .checkbox
+      label
+      input#checkboxSuccess(type='checkbox', value='option1' ng-model="$parent.consent1")
+      | I am age 14 years or older, and I give my consent to the above. I consent to be contacted 1 or 2 times by email.
 
-.panel.panel-default
-h3.panel-heading
-.panel-body
-h3.panel-title What is WhichMethod.com?
-| WhichMethod.com is an app that provides general information and can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment.  You do not need to know anything about birth control methods to use this app. The app is based on the Centers for Disease Control and Prevention’s (CDC) Medical Eligibility Criteria.
-br
-h3.panel-title Confidentiality
-| Your answers will be kept completely <mark>confidential</mark>. For your protection, all information provided will be kept confidential by using a randomly-generated ID number instead of your e-mail address. All answers are stored separately from email addresses
-br
-h3.panel-title Use of E-mail address
-| If you use WhichMethod.com as a <mark>REGISTERED USER</mark>, we will ask you to provide an email address.  Your e-mail address will not be linked to your answers. If you register, you will be able to get a copy of your birth control recommendations sent to your email address.  If you register, we will send you 1 or 2 follow-up emails to ask 2 questions about birth control use since you used the app. We will not use your e-mail address for any other purpose and we will not share it with anyone. Your email and account will be deleted after 90 days.
-br
-| If you use WhichMethod.com as a <mark>GUEST</mark>, you will not need to provide an email address. You will not receive the follow up emails. You will not be able to get a copy of your birth control recommendations sent to your email address.
-br
-h3.panel-title Risks or discomforts
-| You may feel uncomfortable answering some of the questions.  You may exit from your browser at any time. The only risk is the very small possibility that your e-mail address (if you provided one) might be accidentally disclosed.  To reduce this risk, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 90 days. 
-br
-h3.panel-title Contact information
-| If you have questions or concerns about WhichMethod.com, please contact Dr. Mary Ann Chiasson at 646-619-6411 or machiasson@healthsolutions.org or Dayana Bermudez, the IRB Administrator, at 646-619-6701 or dbermudez@healthsolutions.org.
-br
-h3.panel-title IMPORTANT INFORMATION ABOUT YOUR USE OF WHICHMETHOD. PLEASE READ BEFORE YOU USE!
-| This WhichMethod.com app will give you general information only. It will not give you medical advice, diagnosis or treatment. It is meant to provide you with background information before you meet with a medical professional, such as a doctor, physician’s assistant or nurse. If you think you may have an urgent medical problem or might be pregnant, please make an appointment to see a medical professional right away.
-br
-h3.panel-title To get started please consent to the terms and click the "START" button below:
-
-.has-success
-.checkbox
-label
-input#checkboxSuccess(type='checkbox', value='option1' ng-model="$parent.consent1")
-| I am age 14 years or older, and I give my consent to the above.
-br
-| I consent to be contacted 1 or 2 times by email.
-
-.has-success
-.checkbox
-label
-input#checkboxSuccess(type='checkbox', value='option2' ng-model="$parent.consent2")
-| I am age 14 years or older, and I give my consent to the above.
-br
-.btn.btn-default(ng-disabled="!$parent.consent1 && !$parent.consent2" ng-click="saveConsent()") Start Servey
-br 
+      .has-success
+      .checkbox
+      label
+      input#checkboxSuccess(type='checkbox', value='option2' ng-model="$parent.consent2")
+      | I am age 14 years or older, and I give my consent to the above.
+      br
+      .btn.btn-default(ng-disabled="!$parent.consent1 && !$parent.consent2" ng-click="saveConsent()") Continue
+      br
+      br
+      br

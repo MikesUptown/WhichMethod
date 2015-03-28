@@ -11,7 +11,7 @@ header
 //- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 #container
-  h3 WhichMethod_03
+  h3 WhichMethod Section 3
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
       label
@@ -64,7 +64,7 @@ header
           label {{option.name}}
 
           div(ng-if="questions.q16bi.selectedOptions.indexOf(option) != -1" style="padding-left:10px")
-            | Wich unplanned pregnancy was this (mark all that apply)?
+            | Which unplanned pregnancy was this (mark all that apply)?
             br
             span(ng-repeat="n in range( questions.q16a.answer ) track by $index" )
               label pregnancy {{$index+1}} &nbsp;  
@@ -99,7 +99,7 @@ header
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
-          | Q18ai. What birth control methods are you using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          | Q18ai. What birth control methods are you using now? Please choose ALL the methods you are using now. If you are not using any of these methods, go to the next screen.
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
           label {{option.name}}

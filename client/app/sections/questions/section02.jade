@@ -13,11 +13,12 @@ header
 
 
 #container
-  h3 WhichMethod_section_02
+  h3 WhichMethod Section 2
   ul
     li#q4(ng-show="currentQuestion == 'q4'")
       //- li#q4(ng-show="currentSection == '2'")
-
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q4. Regular monthly periods?
       div(ng-repeat='option in questions.q4.options')
@@ -26,14 +27,17 @@ header
 
     li#q4a(ng-show="currentQuestion == 'q4a'")
       //- li#q4(ng-show="currentSection == '2' && questions.q4.answer == 2 || questions.q4.answer =='2' ")
-
+      h4 When you are not using birth control, do you have:
+      br
       label
-        | Q4a. Do you have three or fewer periods per year?
+        | Q4a. Three or fewer periods per year?
       div(ng-repeat='option in questions.q4a.options')
         input(type="radio" name='q4a' ng-change="saveAnswers()" ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
     li#q5(ng-show="currentQuestion == 'q5'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q5. Very heavy periods
       div(ng-repeat='option in questions.q5.options')
@@ -41,6 +45,8 @@ header
         label.choice {{option.name}}
 
     li#q6(ng-show="currentQuestion == 'q6'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q6. Periods that last longer than 7 days
       div(ng-repeat='option in questions.q6.options')
@@ -48,6 +54,8 @@ header
         label.choice {{option.name}}
 
     li#q7(ng-show="currentQuestion == 'q7'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q7. Painful periods or bad cramps
       div(ng-repeat='option in questions.q7.options')
@@ -55,6 +63,8 @@ header
         label.choice {{option.name}}
 
     li#q8(ng-show="currentQuestion == 'q8'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q8. Breast tenderness during your period
       div(ng-repeat='option in questions.q8.options')
@@ -62,6 +72,8 @@ header
         label.choice {{option.name}}
 
     li#q9(ng-show="currentQuestion == 'q9'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q9. Depression or anxiety during your period
       div(ng-repeat='option in questions.q9.options')
@@ -69,6 +81,8 @@ header
         label.choice {{option.name}}
 
     li#q10(ng-show="currentQuestion == 'q10'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q10. Bloating or fluid retention during your period
       div(ng-repeat='option in questions.q10.options')
@@ -76,6 +90,8 @@ header
         label.choice {{option.name}}
 
     li#q11(ng-show="currentQuestion == 'q11'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q11. Bad headaches with your period
       div(ng-repeat='option in questions.q11.options')
@@ -83,6 +99,8 @@ header
         label.choice {{option.name}}
 
     li#q12(ng-show="currentQuestion == 'q12'")
+      h4 When you are not using birth control, do you have:
+      br
       label
         | Q12. Significant PMS (premenstrual syndrome)
       div(ng-repeat='option in questions.q12.options')
