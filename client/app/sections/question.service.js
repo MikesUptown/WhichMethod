@@ -6483,7 +6483,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         nextQuestion: function(){
           this.resetInputs();
           if (this.answer == 1) { return 'q53a'; }
-          else { return 'q58a'; }
+          else { return 'q53a'; }
         }
       },
 
