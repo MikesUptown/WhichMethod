@@ -147,12 +147,13 @@ header
           label {{option.name}}
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-     li#q22(ng-show="currentQuestion == 'q22'")
+      li#q22(ng-show="currentQuestion == 'q22'")
         label
           | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
         div(ng-repeat='option in questions.q22.options')
-          input(type="radio" name='q22' ng-change="saveAnswers()" ng-model="questions.q22.selectedOption" ng-value="{{option}}")
+          input(type='checkbox' ng-checked="questions.q22.selectedOptions.indexOf(option) != -1" ng-click="questions.q22.toggleCheck(option)")
           label {{option.name}}
+        input(type="button",ng-click="saveAnswers()",value="Continue")
       
       //- all questions Q20 - Q22 above on a single page
     

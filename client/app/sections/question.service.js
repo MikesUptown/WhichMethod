@@ -3739,15 +3739,44 @@ angular.module('contraceptionApp').factory('questionService', function () {
     };
     Survey.newQuestion(q28score);
 
-    // Scoring for 'q28a'
-    // This question is now: "HOW LONG SINCE YOU GAVE BIRTH?"
+
+    // Was scoring for 'q28b'; New Scoring for 28A
+    // Are you breastfeeding a child now?
     var q28ascore = new Question('q28a');
     q28ascore.score = function(args) {
       console.log("q28a.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
-        var baby3weeks = args.value;
+        var breastfeeding = args.value;
         console.log("q28a has value", args.value);
+
+        // Yes
+        if (breastfeeding == 1) {
+          Survey.bcNeg('fam', 3);
+          Survey.bcPos('bf', 1);
+        }
+      }
+    };
+    //TOCHECK
+    Survey.newQuestion(q28ascore);
+    // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
+    // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
+    // IF YES AND 28A IS > 4 WEEKS (30 DAYS) but < or == 6 weeks = -3
+    // IF YES AND 28A IS > 6 WEEKS (42 DAYS) = -2
+    // IF NO AND 28A IS < 3 WEEKS (21 DAYS) = -999 (OCP, PATCH, RING)
+    // IF NO AND 28A IS > OR == 3 WEEKS BUT < OR == 6 WEEKS = -3
+    // IF NO AND 28A IS > 6 WEEKS (42 DAYS) = -2
+
+    // Was scoring for 'q28a'; New Scoring for 28B
+    // This question is now: "HOW LONG SINCE YOU GAVE BIRTH?"
+    // The Scoring on this question looks like scoring for: Was your baby born less than 3 weeks ago?!!!
+    var q28bscore = new Question('q28b');
+    q28bscore.score = function(args) {
+      console.log("q28b.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var baby3weeks = args.value;
+        console.log("q28b has value", args.value);
 
         // Yes
         if (baby3weeks == 1) {
@@ -3763,35 +3792,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    Survey.newQuestion(q28ascore);
-
-
-    // Scoring for 'q28b'
-    var q28bscore = new Question('q28b');
-    q28bscore.score = function(args) {
-      console.log("q28b.score");
-      var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var breastfeeding = args.value;
-        console.log("q28b has value", args.value);
-
-        // Yes
-        if (breastfeeding == 1) {
-          Survey.bcNeg('fam', 3);
-          Survey.bcPos('bf', 1);
-        }
-      }
-    };
-
-    //TOCHECK
     Survey.newQuestion(q28bscore);
-    // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
-    // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
-    // IF YES AND 28A IS > 4 WEEKS (30 DAYS) but < or == 6 weeks = -3
-    // IF YES AND 28A IS > 6 WEEKS (42 DAYS) = -2
-    // IF NO AND 28A IS < 3 WEEKS (21 DAYS) = -999 (OCP, PATCH, RING)
-    // IF NO AND 28A IS > OR == 3 WEEKS BUT < OR == 6 WEEKS = -3
-    // IF NO AND 28A IS > 6 WEEKS (42 DAYS) = -2
 
     // I'M ASSUMING THERE IS NO RANKING FOR THE QUESTION: "HAVE YOU HAD SURGERY IN THE PAST THREE MONTHS? OR Q29"
 
@@ -5443,6 +5444,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
       /**
        * q22NEW:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
+      **/
       q22:{
         options: [
           { value : 1, name : 'Every time you have sex' },
@@ -5456,7 +5458,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOptions: [ ],
-        toggleCheck: function(option)
+        toggleCheck: function(option) {
           if (this.selectedOptions.indexOf(option) == -1) {
             this.selectedOptions.push(option);
           } else {
@@ -5472,15 +5474,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         ranking: function(){
           if(this.answer && this.answer.array){
-          Survey.answer('q22', {value:this.answer});
+          Survey.answer('q22', {optionList:this.answer.array});
           }
         }
       },
-      **/
+      
 
       /**
        * q22OLD:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
-      */
       q22:{
         options: [
           { value : 1, name : 'Every time you have sex' },
@@ -5505,7 +5506,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           Survey.answer('q22', {value:this.answer});
         }
       },
-
+      **/
 
       /**
        * q23:[ Would you be okay with regular scheduled bleeding? ]
@@ -5692,7 +5693,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-      // Was your baby born less than 3 weeks ago?
+      // Are you breastfeeding a child now?
       q28a:{
         options: [
           { name : 'Yes', value : 1  },
@@ -5709,31 +5710,55 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
-          if (this.answer == 1) { return 'q28b'; }
-          else { return 'q29'; }
-        }
-      },
-
-      // Are you breastfeeding a child now?
-      q28b:{
-        options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
-          //{ name : "I don't want to answer this question", value : 777  },
-        ],
-        selectedOption : { },
-        resetInputs: function(){
-          this.selectedOption = {};
-        },
-        ranking: function(){
-          Survey.answer('q28b', {value:this.answer});
-        },
-        nextQuestion: function(){
-          this.resetInputs();
           return 'q29';
         }
       },
+
+
+      // How long since you gave birth?
+      // q28b:{
+      //   options: [
+      //     //{ name : 'Yes', value : 1  },
+      //     //{ name : 'No', value : 2  },
+      //     //{ name : "I don't know",                         value : 999  },
+      //     //{ name : "I don't want to answer this question", value : 777  },
+      //   ],
+      //   selectedOption : { },
+      //   resetInputs: function(){
+      //     this.selectedOption = {};
+      //   },
+      //   ranking: function(){
+      //     Survey.answer('q28b', {value:this.answer});
+      //   },
+      //   nextQuestion: function(){
+      //     this.resetInputs();
+      //     return 'q29';
+      //   }
+      // },
+
+
+      // This is the previous version of 28A
+      // Was your baby born less than 3 weeks ago?
+      // q28a:{
+      //   options: [
+      //     { name : 'Yes', value : 1  },
+      //     { name : 'No', value : 2  },
+      //     //{ name : "I don't know",                         value : 999  },
+      //     //{ name : "I don't want to answer this question", value : 777  },
+      //   ],
+      //   selectedOption : { },
+      //   resetInputs: function(){
+      //     this.selectedOption = {};
+      //   },
+      //   ranking: function(){
+      //     Survey.answer('q28a', {value:this.answer});
+      //   },
+      //   nextQuestion: function(){
+      //     this.resetInputs();
+      //     if (this.answer == 1) { return 'q28b'; }
+      //     else { return 'q29'; }
+      //   }
+      // },
 
       // Have you had surgery in the past three months?
       q29:{
@@ -6538,7 +6563,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 4, name : 'Topiramate or Topamax' },
           { value : 5, name : 'Oxycarbazepine or Trileptal' },
           //{ value : 777, name : "I don't know" },
-          { value : 999, name : "No" },
+          //{ value : 999, name : "No" },
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -6598,8 +6623,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
-          //{ name : "I don't want to answer this question", value : 777  },
+          { name : "I don't know",                         value : 999  },
+          { name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
         resetInputs: function(){

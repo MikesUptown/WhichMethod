@@ -9,16 +9,16 @@ header
 .signupColumn.leftColumn
   ul
     h3  SIGN UP TODAY
-        span.glyphicon.glyphicon-folder-open.btn-lg
-        h5 There are two ways to use WhichMethod: <u>Registered Users</u> will see recommendations and get a copy via email; <u>Guest Users</u> will be able to print recommendations, but must Register to save.
+        span.glyphicon.glyphicon-check.btn-lg
+        h5 There are two ways to use WhichMethod: <u>Registered Users</u> will receive up to 2 emails and will be able to save and email copy of Recommendations. <u>Guest Users</u> will be able to print recommendations, but must Register to email save.
     br
     h3 ANSWER THE QUESTIONS
         span.glyphicon.glyphicon-edit.btn-lg
-        h5 As an interactive tool WhichMethod asks a series of questions about your medical history, preferences and priorities and sexual behavior and is available in both <kbd>Spanish</kbd> and <kbd>English</kbd>.
+        h5 WhichMethod asks questions about your medical history, preferences and priorities and sexual behavior in <kbd>Spanish</kbd> and <kbd>English</kbd>.
     br
     h3 GET RECOMMENDATIONS
         span.glyphicon.glyphicon-folder-open.btn-lg
-        h5 Once completed WhichMethod identifies birth control methods that are <u>effective</u>, <u>safe</u> and <u>fit your needs</u>. Please share Recommendations with your doctor.
+        h5 WhichMethod identifies birth control methods that are <u>effective</u>, <u>safe</u> and <u>fit your needs</u>. Please share Recommendations with your doctor.
 
 
   
@@ -27,21 +27,21 @@ header
     //- button.close &times;
   .row
     .col-sm-12
-      h2 Registered User
+      h2 SIGN UP*for WhichMethod
     .col-sm-12
       form.form(name='form', ng-submit='register(form)', novalidate='')
         .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
         "has-error": form.name.$invalid && submitted }')
-          h3 Username
-          input.form-control(type='text', name='name', ng-model='user.name', required='')
-          p.help-block(ng-show='form.name.$error.required && submitted')
-            | A name is required
+          //h3 Username
+          //input.form-control(type='text', name='name', ng-model='user.name', required='')
+          //p.help-block(ng-show='form.name.$error.required && submitted')
+            //| A name is required
 
         .form-group(ng-class='{ "has-success": form.zip.$valid && submitted,\
         "has-error": form.zip.$invalid && submitted }')
-          h3 First three digits of your zip code
-          input.form-control(type='text', name='zip', ng-model='user.zip', required='',mongoose-error='')
-          p.help-block(ng-show='form.zip.$error.required && submitted')
+          //h3 First three digits of your zip code
+          //input.form-control(type='text', name='zip', ng-model='user.zip', required='',mongoose-error='')
+          //p.help-block(ng-show='form.zip.$error.required && submitted')
             | First 3 digits of zipcode required
           p.help-block(ng-show='form.zip.$error.mongoose')
             | {{ errors.zip }}
@@ -67,8 +67,8 @@ header
             | {{ errors.password }}
 
         div
-          button.btn.btn-inverse.btn-lg.btn-login(type='submit')
-            | Sign up
+          button.btn.btn-default.btn-lg.btn-login(type='submit')
+            | Registered User
 
           = ' '
           a.btn.btn-default.btn-lg.btn-register(href='/login')
@@ -79,7 +79,10 @@ header
             | GUEST USER
 
           a.btn.btn-primary(data-toggle='collapse', ng-click="guestSignin()", aria-expanded='false', aria-controls='collapseExample')
-            | GUEST USER
+            | Start as Guest User
+            br
+        div
+            h5 <mark>* By signing up you agree to WhichMethod.org's Privacy Policy</mark>
 
 
   hr

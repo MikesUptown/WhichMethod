@@ -42,7 +42,7 @@ header
       div(ng-repeat='option in questions.q53c.options')
         input(type='checkbox' ng-checked="questions.q53c.selectedOptions.indexOf(option) != -1" ng-click="questions.q53c.toggleCheck(option)")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Continue")
+      input(type="button",ng-click="saveAnswers()",value="Skip if None")
 
     li#53h(ng-show="currentQuestion == 'q53h'")
       label
