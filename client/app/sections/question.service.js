@@ -3779,17 +3779,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q28b has value", args.value);
 
         // Yes
-        if (baby3weeks == 1) {
-          Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
-          Survey.bcNeg('nuvaring', 999);
-          Survey.bcNeg('ccap', 3);
-          Survey.bcNeg('diaph', 3);
-          Survey.bcNeg('sponge', 3);
-          Survey.bcNeg('fam', 3);
-          Survey.bcNeg('sperm', 3);
-          Survey.bcPos('bf', 1);
-        }
+        // if (baby3weeks == 1) {
+        //   Survey.bcNeg('ocp', 999);
+        //   Survey.bcNeg('orthoEvra', 999);
+        //   Survey.bcNeg('nuvaring', 999);
+        //   Survey.bcNeg('ccap', 3);
+        //   Survey.bcNeg('diaph', 3);
+        //   Survey.bcNeg('sponge', 3);
+        //   Survey.bcNeg('fam', 3);
+        //   Survey.bcNeg('sperm', 3);
+        //   Survey.bcPos('bf', 1);
+        // }
       }
     };
     Survey.newQuestion(q28bscore);
@@ -5714,14 +5714,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-
-      // How long since you gave birth?
+      // // How long since you gave birth?
       // q28b:{
       //   options: [
-      //     //{ name : 'Yes', value : 1  },
-      //     //{ name : 'No', value : 2  },
-      //     //{ name : "I don't know",                         value : 999  },
-      //     //{ name : "I don't want to answer this question", value : 777  },
+      //     { value : 1, name : 'Less than 4 weeks' },
+      //     { value : 2, name : 'More than 4 weeks' },
+      //     { value : 3, name : 'More than 6 weeks' },
       //   ],
       //   selectedOption : { },
       //   resetInputs: function(){
