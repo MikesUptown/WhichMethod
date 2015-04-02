@@ -49,7 +49,7 @@ header
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
-          | Q16b. When you had an unplanned pregnancy, were you using any method of birth control or doing anything to prevent getting pregnant?
+          | Q16b. When you had an unplanned pregnancy or pregnancies were you using any method of birth control or doing anything to prevent getting pregnant?
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
@@ -57,7 +57,7 @@ header
       //- all questions above Q16 - Q16b on a single page
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
-          | Q16bi. When you had an unplanned pregnancy, what method of birth control were you using?
+          | Q16bi. When you had an unplanned pregnancy or pregnancies, what method of birth control were you using?
         
         div(ng-repeat='option in questions.q16bi.options')
           input(type='checkbox'  ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")

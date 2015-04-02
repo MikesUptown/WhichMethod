@@ -3757,42 +3757,63 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       }
     };
-    //TOCHECK
     Survey.newQuestion(q28ascore);
-    // NEW SCORING FOR Q28B / "ARE YOU BREASTFEEDING A CHILD NOW?":
-    // IF YES AND 28A IS < OR == 4 WEEKS (30 DAYS) = -999
-    // IF YES AND 28A IS > 4 WEEKS (30 DAYS) but < or == 6 weeks = -3
-    // IF YES AND 28A IS > 6 WEEKS (42 DAYS) = -2
-    // IF NO AND 28A IS < 3 WEEKS (21 DAYS) = -999 (OCP, PATCH, RING)
-    // IF NO AND 28A IS > OR == 3 WEEKS BUT < OR == 6 WEEKS = -3
-    // IF NO AND 28A IS > 6 WEEKS (42 DAYS) = -2
 
-    // Was scoring for 'q28a'; New Scoring for 28B
-    // This question is now: "HOW LONG SINCE YOU GAVE BIRTH?"
-    // The Scoring on this question looks like scoring for: Was your baby born less than 3 weeks ago?!!!
+    // NEW: This question is now: "HOW LONG SINCE YOU GAVE BIRTH-B?"
     var q28bscore = new Question('q28b');
     q28bscore.score = function(args) {
       console.log("q28b.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
-        var baby3weeks = args.value;
+        var sinceGaveB = args.value;
         console.log("q28b has value", args.value);
 
-        // Yes
-        // if (baby3weeks == 1) {
-        //   Survey.bcNeg('ocp', 999);
-        //   Survey.bcNeg('orthoEvra', 999);
-        //   Survey.bcNeg('nuvaring', 999);
-        //   Survey.bcNeg('ccap', 3);
-        //   Survey.bcNeg('diaph', 3);
-        //   Survey.bcNeg('sponge', 3);
-        //   Survey.bcNeg('fam', 3);
-        //   Survey.bcNeg('sperm', 3);
-        //   Survey.bcPos('bf', 1);
-        // }
+        // If gave birth-b less than 3 weeks
+        if (sinceGaveB == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+         // If gave birth-b more than 3 weeks, but less than 6 weeks       
+        if (sinceGaveB == 2){
+          Survey.bcNeg('ocp', 3)
+          Survey.bcNeg('orthoEvra', 3)
+          Survey.bcNeg('nuvaring', 3)
+        }
       }
     };
     Survey.newQuestion(q28bscore);
+
+    // NEW: This question is now: "HOW LONG SINCE YOU GAVE BIRTH-C?"
+    var q28cscore = new Question('q28c');
+    q28bscore.score = function(args) {
+      console.log("q28c.score");
+      var argTypes = Question.prototype.scoreArgs.call(this, args);
+      if (argTypes.hasValue) {
+        var sinceGaveC = args.value;
+        console.log("q28c has value", args.value);
+
+        // If gave birth-c less than 3 weeks
+        if (sinceGaveC == 1) {
+          Survey.bcNeg('ocp', 999);
+          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('nuvaring', 999);
+        }
+        // If gave birth-c more than 3 weeks, but less than 6 weeks
+        if (sinceGaveC == 2){
+          Survey.bcNeg('ocp', 3)
+          Survey.bcNeg('orthoEvra', 3)
+          Survey.bcNeg('nuvaring', 3)
+        }
+        // If gave birth-c more than 6 weeks
+        if (sinceGaveC == 3){
+          Survey.bcNeg('ocp', 2)
+          Survey.bcNeg('orthoEvra', 2)
+          Survey.bcNeg('nuvaring', 2)
+        }
+      }
+    };
+    Survey.newQuestion(q28cscore);
 
     // I'M ASSUMING THERE IS NO RANKING FOR THE QUESTION: "HAVE YOU HAD SURGERY IN THE PAST THREE MONTHS? OR Q29"
 
@@ -5478,35 +5499,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
           }
         }
       },
-      
-
-      /**
-       * q22OLD:[ Please select on this timeline how often you want to think about and take action for you birth control method? ]
-      q22:{
-        options: [
-          { value : 1, name : 'Every time you have sex' },
-          { value : 2, name : 'Every day' },
-          { value : 3, name : 'Once a week' },
-          { value : 4, name : 'Once a month' },
-          { value : 5, name : 'Every three months' },
-          { value : 6, name : 'Longer than every three months' },
-          { value : 7, name : 'Permanent method' },
-          //{ value : 777, name : "I don't know" },
-          //{ value : 999, name : "I don't want to answer this question" },
-        ],
-        selectedOption : { },
-        resetInputs: function(){
-          this.selectedOption = {};
-        },
-        nextQuestion: function(){
-          this.resetInputs();
-          return 'q23';
-        },
-        ranking: function(){
-          Survey.answer('q22', {value:this.answer});
-        }
-      },
-      **/
 
       /**
        * q23:[ Would you be okay with regular scheduled bleeding? ]
@@ -5693,7 +5685,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         }
       },
 
-      // Are you breastfeeding a child now?
+      // Are you breastfeeding your baby now?
       q28a:{
         options: [
           { name : 'Yes', value : 1  },
@@ -5710,53 +5702,50 @@ angular.module('contraceptionApp').factory('questionService', function () {
         },
         nextQuestion: function(){
           this.resetInputs();
+          if (this.answer == 1) { return 'q28c'}
+            else { return 'q28b'}
+        }
+      },
+
+      // How long since you gave birth-B?
+      q28b:{
+        options: [
+          { value : 1, name : 'Less than 3 weeks' },
+          { value : 2, name : 'More than 3 weeks, but less than 6 weeks' },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          Survey.answer('q28b', {value:this.answer});
+        },
+        nextQuestion: function(){
+          this.resetInputs();
           return 'q29';
         }
       },
 
-      // // How long since you gave birth?
-      // q28b:{
-      //   options: [
-      //     { value : 1, name : 'Less than 4 weeks' },
-      //     { value : 2, name : 'More than 4 weeks' },
-      //     { value : 3, name : 'More than 6 weeks' },
-      //   ],
-      //   selectedOption : { },
-      //   resetInputs: function(){
-      //     this.selectedOption = {};
-      //   },
-      //   ranking: function(){
-      //     Survey.answer('q28b', {value:this.answer});
-      //   },
-      //   nextQuestion: function(){
-      //     this.resetInputs();
-      //     return 'q29';
-      //   }
-      // },
+      // How long since you gave birth-C?
+      q28c:{
+        options: [
+          { value : 1, name : 'Less than 3 weeks' },
+          { value : 2, name : 'More than 3 weeks, but less than 6 weeks' },
+          { value : 3, name : 'More than 6 weeks' },
+        ],
+        selectedOption : { },
+        resetInputs: function(){
+          this.selectedOption = {};
+        },
+        ranking: function(){
+          Survey.answer('q28c', {value:this.answer});
+        },
+        nextQuestion: function(){
+          this.resetInputs();
+          return 'q29';
+        }
+      },
 
-
-      // This is the previous version of 28A
-      // Was your baby born less than 3 weeks ago?
-      // q28a:{
-      //   options: [
-      //     { name : 'Yes', value : 1  },
-      //     { name : 'No', value : 2  },
-      //     //{ name : "I don't know",                         value : 999  },
-      //     //{ name : "I don't want to answer this question", value : 777  },
-      //   ],
-      //   selectedOption : { },
-      //   resetInputs: function(){
-      //     this.selectedOption = {};
-      //   },
-      //   ranking: function(){
-      //     Survey.answer('q28a', {value:this.answer});
-      //   },
-      //   nextQuestion: function(){
-      //     this.resetInputs();
-      //     if (this.answer == 1) { return 'q28b'; }
-      //     else { return 'q29'; }
-      //   }
-      // },
 
       // Have you had surgery in the past three months?
       q29:{
@@ -6621,8 +6610,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
-          { name : "I don't want to answer this question", value : 777  },
+          //{ name : "I don't know",                         value : 999  },
+          //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
         resetInputs: function(){

@@ -29,7 +29,7 @@
 .footer {
     text-align: center;
     padding: 30px 0;
-    margin-top: 70px;
+    margin-top: 90px;
     border-top: 1px solid #E5E5E5;
 }
 
@@ -158,8 +158,8 @@ body { top: 0px !important;
   /*background-color: #ffffff;*/
 }
 #navbar-main{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .main_logo{
   /* width: 85% */
@@ -169,7 +169,8 @@ body { top: 0px !important;
 a.main_signin_btn{
   margin-top: 15px;
   margin-right: 15px;
-  background-color: #FFFF00;
+  /* background-color: #FFFF00; */
+  background-color: #DB2464;
   /* background-color: #9E6876; */
   /* color: #FFFF00; */
   /* color: #F0D8A8; */
@@ -186,7 +187,6 @@ a.main_signin_btn:hover{
   /* color: #986698; */
   /* color: #000000; */
   /* color: #F0D8A8; */
-  background-color: #000000;
 }
 
 /*Main Content */
@@ -244,7 +244,10 @@ a.start_btn:hover{
   /* color: #000000; */
   /* color: #FFFFFF; */
   /* color: #F0D8A8; */
-  color: #858585;
+  /* color: #858585; */
+}
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
 }
 
 /*Sub Content*/
@@ -262,6 +265,8 @@ a.start_btn:hover{
 /* this color is for the footer only; changes entire background */
 footer{
   margin-top: 20px;
+  width: 100%;
+  height: 220px;
   /* background-color: #F0D8A8; */
   background-color: #F0F0F0;
 }
