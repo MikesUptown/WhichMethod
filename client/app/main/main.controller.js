@@ -1,7 +1,17 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('MainCtrl', function ($scope, $http, Auth,$location,$state) {
+  .controller('MainCtrl', function ($scope, $http, Auth,$location,$state,$rootScope) {
+
+
+
+    // $scope.saveConsent = function(){
+
+    //   $rootScope.consent1 = consent1
+    //   $rootScope.consent2 = consent2
+
+    // }
+
 
     $scope.startServey = function(){
 

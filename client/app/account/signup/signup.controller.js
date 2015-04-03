@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location) {
+  .controller('SignupCtrl', function ($scope, Auth, $location,$rootScope) {
     $scope.user = {};
     $scope.errors = {};
+
+    if(!$rootScope.consent1 && !$rootScope.consent2){
+      $location.path('/privacy').replace();
+    }
 
     function randomString(length) {
       var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -23,11 +27,13 @@ angular.module('contraceptionApp')
         name: name,
         email: email,
         password: pass,
+        consent1: $rootScope.consent1,
+        consent2: $rootScope.consent2,
         zip:999,
       })
       .then( function() {
         // Account created, redirect to home
-        $location.path('/questions/intro/0');
+        $location.path('/questions/intro/1');
       })
       .catch( function(err) {
         err = err.data;
@@ -45,11 +51,13 @@ angular.module('contraceptionApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password,
-          zip: $scope.user.zip
+          zip: $scope.user.zip,
+          consent1: $rootScope.consent1,
+          consent2: $rootScope.consent2,
         })
-        .then( function() {
+        .then( function(user) {
           // Account created, redirect to home
-          $location.path('/questions/intro/0');
+          $location.path('/questions/intro/1');
         })
         .catch( function(err) {
           err = err.data;

@@ -71,7 +71,7 @@ angular.module('contraceptionApp')
 
 
     function navigateToCursor(){
-      if(!currentUser.consent1 && !currentUser.consent1){
+      if(!currentUser.consent1 && !currentUser.consent2){
         $state.go('.', {type:'intro',id:0})
       }
       else if( sectionStart.indexOf($scope.currentQuestion)>-1){

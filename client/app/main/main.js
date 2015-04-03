@@ -7,5 +7,10 @@ angular.module('contraceptionApp')
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
-      });
+      })
+      .state('privacy', {
+        url: '/privacy',
+        templateUrl: 'app/main/terms.html',
+        controller: 'MainCtrl'
+      })
   });
