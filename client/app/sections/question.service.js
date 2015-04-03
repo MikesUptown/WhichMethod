@@ -4596,7 +4596,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         nextQuestion: function(){
           this.resetInputs();
           if(this.answer == 2) { return 'q4a'; }
-          else { return 'q7'; }
+          else { return 'q5'; }
         },
         ranking: function(){
           Survey.answer('q4', {value:this.answer});
