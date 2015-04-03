@@ -33,7 +33,7 @@ header
       label
         | Q28b. How long since you gave birth?
       div(ng-repeat='option in questions.q28b.options')
-        input(type="radio" name='q28b' ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q28b' ng-change="saveAnswers()" ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
         // THIS IS AN ALLTOGETHER NEW Q28a REPLACING THE Q28a BELOW
         // THIS SHOULD BE THE NEW 28B... DOUBLE CHECKING
@@ -42,7 +42,7 @@ header
       label
         | Q28c. How long since you gave birth?
       div(ng-repeat='option in questions.q28c.options')
-        input(type="radio" name='q28c' ng-model='questions.q28c.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q28c' ng-change="saveAnswers()" ng-model='questions.q28c.selectedOption' ng-value="{{option}}")
         label {{option.name}}
         // THIS IS THE NEW 28C
 

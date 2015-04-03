@@ -161,17 +161,22 @@ angular.module('contraceptionApp')
     }
 
     $scope.back = function(){
-
+      var lastI
       if($scope.questions[$scope.currentQuestion]){
         $scope.questions[$scope.currentQuestion].answer = undefined
       }
 
       for(var i in $scope.questions){
         var q = $scope.questions[i]
+        if(i == $scope.currentQuestion){
+          $scope.currentQuestion = lastI
+          break
+        }
         if(q.nextQuestion() == $scope.currentQuestion){
           $scope.currentQuestion = i
           break
         }
+        lastI = i
       }
 
       if($scope.currentQuestion=="end")
