@@ -5300,7 +5300,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 20, name : "Blood clot in vein or lungs" },
           { value : 21, name : "Stroke or heart attack" },
           { value : 22, name : "Another health problem" },
-          { value : 23, name : "I didn't like the prolonged breathing" },
+          { value : 23, name : "I didn't like the prolonged bleeding" },
           { value : 24, name : "I didn't like the heavy bleeding" },
           { value : 25, name : "I didn't like the irregular bleeding" },
           { value : 26, name : "I didn't like the absence of bleeding" },
