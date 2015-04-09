@@ -49,6 +49,7 @@ header
           div(ng-repeat='option in questions.q3.options')
             input(type="radio" name='q3' ng-change="saveAnswers()" ng-model="questions.q3.selectedOption" ng-value="{{option}}")
             label.choice {{option.name}}
+          input(type="button",ng-click="saveAnswers()",value="Skip")
 
 
 

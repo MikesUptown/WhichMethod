@@ -612,6 +612,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             case 19:
               Survey.bcNeg('bf', 3);
               break;
+            // Abstinence
+            case 20:
+              Survey.bcNeg('abstinence', 3);
+              break;
           }
         }
       }
@@ -878,7 +882,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcNeg('pop', 2);
             Survey.bcNeg('orthoEvra', 2);
             Survey.bcNeg('nuvaring', 2);
-            Survey.bcNeg('depo', 3);
+            //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
             Survey.bcPos('mirena', 1);
             Survey.bcPos('btl', 1);
@@ -921,13 +925,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I had another problem using it correctly
           case 17:
+            Survey.bcNeg('ocp', 3);
+            Survey.bcNeg('pop', 2);
             break;
           // "I got pregnant
           case 18:
             break;
           // "High blood pressure
           case 19:
-            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('ocp', 2);
             Survey.bcNeg('orthoEvra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
@@ -961,6 +967,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the absence of bleeding
           case 26:
             Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('depo', 1);
             break;
           // "I didn't like something else about my periods
           case 27:
@@ -984,7 +991,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // Hair Loss
           case 3:
-            Survey.bcNeg('pop', 2);
+            Survey.bcNeg('pop', 1);
             break;
           // Depression or mood swings
           case 4:
@@ -1024,7 +1031,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcNeg('pop', 2);
             Survey.bcNeg('orthoEvra', 2);
             Survey.bcNeg('nuvaring', 2);
-            Survey.bcNeg('depo', 3);
+            //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
             Survey.bcPos('mirena', 1);
             Survey.bcPos('btl', 1);
@@ -1061,6 +1068,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
+            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('pop', 3);
             break;
           // "High blood pressure
           case 19:
@@ -1106,7 +1115,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
-            Survey.bcNeg('ocp', 1);
+            Survey.bcNeg('pop', 1);
             break;
       }
     };
@@ -1166,7 +1175,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcNeg('pop', 2);
             Survey.bcNeg('orthoEvra', 2);
             Survey.bcNeg('nuvaring', 2);
-            Survey.bcNeg('depo', 3);
+            //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
             Survey.bcPos('mirena', 1);
             Survey.bcPos('btl', 1);
@@ -1238,19 +1247,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the irregular bleeding
           case 25:
             Survey.bcNeg('orthoEvra', 1);
-            Survey.bcNeg('depo', 1);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
-            Survey.bcNeg('pop', 1);
-            Survey.bcNeg('depo', 1);
+            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like something else about my periods
           case 27:
             break;
           // "My partner didn't like it
           case 28:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('orthoEvra', 2);
             break;
       }
     };
@@ -1273,7 +1282,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // Depression or mood swings
           case 4:
-            Survey.bcNeg('nuvaring', 2);
+            Survey.bcNeg('nuvaring', 1);
             break;
           // Nausea or vomiting
           case 5:
@@ -1315,7 +1324,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcNeg('pop', 2);
             Survey.bcNeg('orthoEvra', 2);
             Survey.bcNeg('nuvaring', 2);
-            Survey.bcNeg('depo', 3);
+            //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
             Survey.bcPos('mirena', 1);
             Survey.bcPos('btl', 1);
@@ -1392,7 +1401,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the absence of bleeding
           case 26:
             Survey.bcNeg('nuvaring', 1);
-            Survey.bcNeg('depo', 1);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like something else about my periods
           case 27:
@@ -1502,10 +1511,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the prolonged breathing
           case 23:
-            Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 1);
-            Survey.bcNeg('nuvaring', 1);
-            Survey.bcNeg('depo', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like the heavy bleeding
           case 24:
@@ -1530,7 +1539,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
-            Survey.bcNeg('depo', 1);
+            Survey.bcNeg('depo', 2);
             break;
       }
     };
@@ -1641,7 +1650,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
-            Survey.bcNeg('mcondom', 1);
+            Survey.bcNeg('mcondom', 2);
             break;
       }
     };
@@ -1696,14 +1705,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
-            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('mcondom', 1);
             Survey.bcNeg('fcondom', 3);
             Survey.bcNeg('ccap', 3);
             Survey.bcNeg('diaph', 3);
-            Survey.bcNeg('withd', 3);
-            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('withd', 2);
+            Survey.bcNeg('sperm', 2);
             Survey.bcNeg('sponge', 3);
-            Survey.bcNeg('fam', 3);
+            //Survey.bcNeg('fam', 3);
             break;
           // "I had another problem using it correctly
           case 17:
@@ -1807,13 +1816,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
-            Survey.bcNeg('mcondom', 3);
-            Survey.bcNeg('fcondom', 3);
-            Survey.bcNeg('ccap', 3);
-            Survey.bcNeg('diaph', 3);
-            Survey.bcNeg('withd', 3);
-            Survey.bcNeg('sperm', 3);
-            Survey.bcNeg('sponge', 3);
+            Survey.bcNeg('mcondom', 1);
+            Survey.bcNeg('fcondom', 2);
+            Survey.bcNeg('ccap', 2);
+            Survey.bcNeg('diaph', 2);
+            Survey.bcNeg('withd', 2);
+            Survey.bcNeg('sperm', 2);
+            Survey.bcNeg('sponge', 2);
             break;
           // "I had another problem using it correctly
           case 17:
@@ -1917,12 +1926,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
-            Survey.bcNeg('mcondom', 3);
+            Survey.bcNeg('mcondom', 1);
             Survey.bcNeg('fcondom', 3);
             Survey.bcNeg('ccap', 3);
             Survey.bcNeg('diaph', 3);
-            Survey.bcNeg('withd', 3);
-            Survey.bcNeg('sperm', 3);
+            Survey.bcNeg('withd', 2);
+            Survey.bcNeg('sperm', 2);
             Survey.bcNeg('sponge', 3);
             break;
           // "I had another problem using it correctly
@@ -2265,17 +2274,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the prolonged breathing
           case 23:
-            Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 1);
-            Survey.bcNeg('nuvaring', 1);
-            Survey.bcNeg('paragard', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcNeg('paragard', 2);
             break;
           // "I didn't like the heavy bleeding
           case 24:
             Survey.bcPos('ocp', 1);
             Survey.bcPos('orthoEvra', 1);
             Survey.bcPos('nuvaring', 1);
-            Survey.bcNeg('paragard', 1);
+            Survey.bcNeg('paragard', 2);
             Survey.bcPos('mirena', 1);
             Survey.bcPos('implanon', 1);
             break;
@@ -2392,10 +2401,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the prolonged breathing
           case 23:
-            Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 1);
-            Survey.bcNeg('nuvaring', 1);
-            Survey.bcNeg('paragard', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
+            Survey.bcPos('paragard', 1);
             Survey.bcNeg('mirena', 1);
             break;
           // "I didn't like the heavy bleeding
@@ -2403,7 +2412,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('orthoEvra', 1);
             Survey.bcPos('nuvaring', 1);
-            Survey.bcPos('mirena', 1);
+            Survey.bcNeg('mirena', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -2411,7 +2420,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcPos('orthoEvra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('paragard', 1);
-            Survey.bcNeg('mirena', 2);
+            Survey.bcNeg('mirena', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
@@ -2486,9 +2495,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "High blood pressure
           case 19:
-              Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
-              Survey.bcNeg('nuvaring', 999);
+              //Survey.bcNeg('ocp', 999);
+              //Survey.bcNeg('orthoEvra', 999);
+              //Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
@@ -2570,13 +2579,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't use it every time I had sex
           case 16:
-            Survey.bcNeg('mcondom', 3);
-            Survey.bcNeg('fcondom', 3);
-            Survey.bcNeg('ccap', 3);
-            Survey.bcNeg('diaph', 3);
-            Survey.bcNeg('withd', 3);
+            Survey.bcNeg('mcondom', 2);
+            Survey.bcNeg('fcondom', 2);
+            Survey.bcNeg('ccap', 2);
+            Survey.bcNeg('diaph', 2);
+            Survey.bcNeg('withd', 2);
             Survey.bcNeg('sperm', 3);
-            Survey.bcNeg('sponge', 3);
+            Survey.bcNeg('sponge', 2);
             break;
           // "I had another problem using it correctly
           case 17:
@@ -2922,9 +2931,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the prolonged breathing
           case 23:
-            Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 1);
-            Survey.bcNeg('nuvaring', 1);
+            Survey.bcPos('ocp', 1);
+            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like the heavy bleeding
@@ -3023,6 +3032,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "Blood clot in vein or lungs
           case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
@@ -3280,7 +3292,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('fcondom', 1);
               Survey.bcPos('ccap', 1);
               Survey.bcPos('diaph', 1);
-              Survey.bcPos('ec', 1);
+              //Survey.bcPos('ec', 1);
               Survey.bcPos('paragard', 1);
               Survey.bcPos('mirena', 1);
               Survey.bcPos('withd', 1);
@@ -3300,11 +3312,11 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('orthoEvra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
-              Survey.bcNeg('mcondom', 3);
+              Survey.bcNeg('mcondom', 2);
               Survey.bcNeg('fcondom', 3);
               Survey.bcNeg('ccap', 3);
-              Survey.bcNeg('diaph', 3);
-              Survey.bcPos('ec', 1);
+              Survey.bcNeg('diaph', 2);
+              //Survey.bcPos('ec', 1);
               Survey.bcPos('paragard', 1);
               Survey.bcPos('mirena', 1);
               Survey.bcNeg('withd', 3);
@@ -3407,10 +3419,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('sperm', 3);
               Survey.bcNeg('sponge', 3);
               Survey.bcNeg('fam', 3);
-              Survey.bcNeg('btl', 3);
+              Survey.bcPos('btl', 1);
               Survey.bcPos('vas', 1);
               Survey.bcPos('implanon', 1);
-              Survey.bcPos('bf', 1);
+              //Survey.bcPos('bf', 1);
               break;
             // Do not need to interrupt
             case 9:
@@ -3457,14 +3469,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('fam', 1);
               Survey.bcPos('btl', 1);
               Survey.bcPos('vas', 1);
-              Survey.bcPos('implanon', 1);
-              Survey.bcPos('bf', 1);
+              Survey.bcNeg('implanon', 3);
+              //Survey.bcPos('bf', 1);
               break;
             // Fewer or no periods
             case 11:
               Survey.bcNeg('abstinence', 3);
               Survey.bcPos('ocp', 1);
-              Survey.bcPos('pop', 1);
+              //Survey.bcPos('pop', 1);
               Survey.bcNeg('orthoEvra', 3);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
@@ -3598,10 +3610,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var unschedBleeding = args.value;
         console.log("q24 has value", args.value);
         if (unschedBleeding == 1) {
-            Survey.bcPos('pop', 1);
-            Survey.bcPos('depo', 1);
-            Survey.bcPos('mirena', 1);
-            Survey.bcPos('implanon', 1);
+            Survey.bcNeg('pop', 1);
+            Survey.bcNeg('depo', 2);
+            Survey.bcNeg('mirena', 2);
+            Survey.bcNeg('implanon', 2);
         }
       }
     };
@@ -4320,7 +4332,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           Survey.bcPos('ocp', 1);
           Survey.bcPos('orthoEvra', 1);
           Survey.bcPos('nuvaring', 1);
-          Survey.bcPos('depo', 1);
+          Survey.bcNeg('depo', 1);
         }
       }
     };
@@ -4990,7 +5002,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Tubes Tied',     value : 16 ,pregnancy:[]},
           { name : 'Vasectomy',      value : 17 ,pregnancy:[]},
           { name : 'Implant',        value : 18 ,pregnancy:[]},
-          { name : 'Breast Feeding', value : 19 ,pregnancy:[]}
+          { name : 'Breast Feeding', value : 19 ,pregnancy:[]},
+          { name : 'Abstinence',     value : 20 ,pregnancy:[]}
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
