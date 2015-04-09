@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * @license AngularJS v1.2.23
+=======
+ * @license AngularJS v1.2.24
+>>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -63,6 +67,11 @@ angular.mock.$Browser = function() {
     return listener;
   };
 
+<<<<<<< HEAD
+=======
+  self.$$checkUrlChange = angular.noop;
+
+>>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   self.cookieHash = {};
   self.lastCookieHash = {};
   self.deferredFns = [];
