@@ -276,12 +276,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-<<<<<<< HEAD
   /*color: #333;*/
   color: #372B15;
-=======
-  color: #333;
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   background-color: #fff;
 }
 input,
@@ -2085,12 +2081,8 @@ fieldset[disabled] .btn-default.active {
   background-color: #333;
 }
 .btn-primary {
-<<<<<<< HEAD
   /*color: #fff;*/
   color: #f0ad4e;
-=======
-  color: #fff;
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   background-color: #428bca;
   border-color: #357ebd;
 }
@@ -2128,19 +2120,12 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-primary .badge {
   color: #428bca;
-<<<<<<< HEAD
   /*color: #49353E;*/
   background-color: #fff;
 }
 .btn-success {
   color: #683933;
   /*color: #fff;*/
-=======
-  background-color: #fff;
-}
-.btn-success {
-  color: #fff;
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
@@ -2173,7 +2158,6 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-<<<<<<< HEAD
   color: #fff;
   background-color: #5cb85c;
   /*background-color: #fff;*/
@@ -2186,17 +2170,6 @@ fieldset[disabled] .btn-success.active {
 .btn-info {
   color: #fff;
   /*color: #683933;*/
-=======
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-}
-.btn-success .badge {
-  color: #5cb85c;
-  background-color: #fff;
-}
-.btn-info {
-  color: #fff;
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   background-color: #5bc0de;
   border-color: #46b8da;
 }
@@ -2357,10 +2330,7 @@ fieldset[disabled] .btn-link:focus {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
-<<<<<<< HEAD
   /*color: #999;*/
-=======
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -3991,7 +3961,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-<<<<<<< HEAD
   /*color: #fff;*/
   color: #683933;
 }
@@ -4002,14 +3971,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #fff;
   /*background-color: transparent;*/
   background-color: #47a447;
-=======
-  color: #777;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #333;
-  background-color: transparent;
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,

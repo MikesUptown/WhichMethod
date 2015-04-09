@@ -25,11 +25,7 @@
   "_resolution": {
     "type": "version",
     "tag": "0.2.11",
-<<<<<<< HEAD
     "commit": "8ee633f45dfac9f809344edd0c89d6e018887e4f"
-=======
-    "commit": "bcaddf58b03394c04971e4fa1bbf94857e905527"
->>>>>>> 4aeaa43499c283f696c1166449f678bfc181811b
   },
   "_source": "git://github.com/angular-ui/ui-router.git",
   "_target": "~0.2.10",
