@@ -929,7 +929,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcNeg('pop', 2);
             break;
           // "I got pregnant
+          //CONFIRM ABSTINENCE SCORING GOES BELOW
           case 18:
+            Survey.bcNeg('abstinence', 3);
             break;
           // "High blood pressure
           case 19:
@@ -1525,7 +1527,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
-            Survey.bcNeg('ocp', 2);
+            Survey.bcNeg('depo', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
