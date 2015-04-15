@@ -138,7 +138,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             'mirena' : new BirthControl('mirena'),
             'nuvaring' : new BirthControl('nuvaring'),
             'ocp' : new BirthControl('ocp'),
-            'orthoEvra' : new BirthControl('orthoEvra'),
+            'ortho_evra' : new BirthControl('ortho_evra'),
             'paragard' : new BirthControl('paragard'),
             'pop' : new BirthControl('pop'),
             'sperm' : new BirthControl('sperm'),
@@ -228,7 +228,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         var weight = args.value;
         console.log("q2 has value", args.value);
         if(weight >= 200 && weight < 555){
-          Survey.bcNeg('orthoEvra', 2);
+          Survey.bcNeg('ortho_evra', 2);
         }
         if(weight >=250 && weight < 555){
           Survey.bcNeg('depo', 2);
@@ -250,7 +250,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (smoke == 2 || smoke == 3) {
           if (age > 35 && age < 555) {
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
           }
         }
@@ -269,7 +269,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (regPeriod == 0) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('nuvaring', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcNeg('fam', 3);
         }
       }
@@ -287,7 +287,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (periodFrequency == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -310,7 +310,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (heavyPeriod == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -332,7 +332,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (period7days == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -353,7 +353,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (cramps == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcNeg('paragard', 2);
@@ -374,7 +374,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q8 has value", args.value);
         if (tenderBreasts == 1) {
             Survey.bcPos('pop', 1);
-            Survey.bcNeg('orthoEvra', 3);
+            Survey.bcNeg('ortho_evra', 3);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -395,7 +395,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (depression == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -416,7 +416,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (bloating == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -455,7 +455,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (pms == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -476,7 +476,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (missSchoolWork == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -485,7 +485,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (missSchoolWork == 2) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('mirena', 1);
@@ -551,7 +551,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
             // Ortho Evra
             case 3:
-              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('ortho_evra', 3);
               break;
             // Nuva Ring
             case 4:
@@ -650,7 +650,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
             // Ortho Evra
             case 4:
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               break;
             // Nuva Ring
             case 5:
@@ -748,7 +748,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
             // Ortho Evra
             case 4:
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               break;
             // Nuva Ring
             case 5:
@@ -828,7 +828,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // Breast Tenderness
           case 1:
             Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 3);
+            Survey.bcNeg('ortho_evra', 3);
             break;
           // Cramping or pain
           case 2:
@@ -844,7 +844,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // Nausea or vomiting
           case 5:
             Survey.bcNeg('ocp', 2);
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // Weight gain
           case 6:
@@ -854,7 +854,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // Migraines or very bad headaches
           case 7:
             Survey.bcNeg('ocp', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 1);
             break;
           // Discharge
@@ -867,7 +867,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 10:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -880,7 +880,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 11:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -911,7 +911,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I failed to restart after break for period
           case 15:
             Survey.bcNeg('ocp', 2);
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             Survey.bcNeg('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('paragard', 1);
@@ -934,20 +934,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 2);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1016,7 +1016,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 10:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1029,7 +1029,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 11:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1074,20 +1074,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
               Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('ortho_evra', 999);
               Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             Survey.bcNeg('pop', 999);
             break;
@@ -1120,12 +1120,12 @@ angular.module('contraceptionApp').factory('questionService', function () {
       }
     };
 
-    q19aiscore.orthoEvra = function(prob) {
+    q19aiscore.ortho_evra = function(prob) {
       switch (prob)
       {
           // Breast Tenderness
           case 1:
-             Survey.bcNeg('orthoEvra', 3);
+             Survey.bcNeg('ortho_evra', 3);
             break;
           // Cramping or pain
           case 2:
@@ -1135,20 +1135,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // Depression or mood swings
           case 4:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // Nausea or vomiting
           case 5:
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             break;
           // Weight gain
           case 6:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             Survey.bcNeg('depo', 3);
             break;
           // Migraines or very bad headaches
           case 7:
-            Survey.bcNeg('orthoEvra', 3);
+            Survey.bcNeg('ortho_evra', 3);
             break;
           // Discharge
           case 8:
@@ -1160,7 +1160,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 10:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1173,7 +1173,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 11:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1184,19 +1184,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "It was too expensive
           case 12:
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             break;
           // "I had another problem getting the birth control
           case 13:
             break;
           // "I forgot to take it or missed too many doses
           case 14:
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             break;
           // "I failed to restart after break for period
           case 15:
             Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 1);
             Survey.bcPos('depo', 1);
             Survey.bcPos('paragard', 1);
@@ -1213,25 +1213,25 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I got pregnant
           case 18:
-            Survey.bcNeg('orthoEvra', 3);
+            Survey.bcNeg('ortho_evra', 3);
             break;
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1242,16 +1242,16 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             Survey.bcNeg('depo', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             Survey.bcNeg('depo', 2);
             break;
           // "I didn't like something else about my periods
@@ -1259,7 +1259,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "My partner didn't like it
           case 28:
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             break;
       }
     };
@@ -1270,7 +1270,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // Breast Tenderness
           case 1:
               Survey.bcNeg('ocp', 1);
-              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('ortho_evra', 3);
               Survey.bcNeg('nuvaring', 1);
             break;
           // Cramping or pain
@@ -1286,7 +1286,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // Nausea or vomiting
           case 5:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             Survey.bcNeg('nuvaring', 1);
             break;
           // Weight gain
@@ -1309,7 +1309,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 10:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1322,7 +1322,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 11:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             //Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1345,7 +1345,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I failed to restart after break for period
           case 15:
             Survey.bcNeg('ocp', 1);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcPos('paragard', 1);
             Survey.bcPos('mirena', 1);
@@ -1366,20 +1366,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
               Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('ortho_evra', 999);
               Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1451,7 +1451,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           case 10:
             Survey.bcNeg('ocp', 2);
             Survey.bcNeg('pop', 2);
-            Survey.bcNeg('orthoEvra', 2);
+            Survey.bcNeg('ortho_evra', 2);
             Survey.bcNeg('nuvaring', 2);
             Survey.bcNeg('depo', 3);
             Survey.bcPos('paragard', 1);
@@ -1490,20 +1490,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
               Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('ortho_evra', 999);
               Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1512,7 +1512,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the prolonged breathing
           case 23:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('depo', 2);
             break;
@@ -1523,14 +1523,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the irregular bleeding
           case 25:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('ocp', 2);
             break;
           // "I didn't like the absence of bleeding
           case 26:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('depo', 2);
             break;
@@ -1614,20 +1614,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1724,20 +1724,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1748,7 +1748,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -1834,20 +1834,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1858,7 +1858,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -1944,20 +1944,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -1968,7 +1968,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             break;
           // "I didn't like the heavy bleeding
           case 24:
-            Survey.bcNeg('orthoEvra', 1);
+            Survey.bcNeg('ortho_evra', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
@@ -2055,20 +2055,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -2253,20 +2253,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
               Survey.bcNeg('ocp', 999);
-              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('ortho_evra', 999);
               Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -2275,14 +2275,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the prolonged breathing
           case 23:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('paragard', 2);
             break;
           // "I didn't like the heavy bleeding
           case 24:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('paragard', 2);
             Survey.bcPos('mirena', 1);
@@ -2291,7 +2291,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the irregular bleeding
           case 25:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('paragard', 2);
             break;
@@ -2379,20 +2379,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             Survey.bcNeg('mirena', 999);
             break;
@@ -2402,7 +2402,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the prolonged breathing
           case 23:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('paragard', 1);
             Survey.bcNeg('mirena', 1);
@@ -2410,14 +2410,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the heavy bleeding
           case 24:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('mirena', 1);
             break;
           // "I didn't like the irregular bleeding
           case 25:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('paragard', 1);
             Survey.bcNeg('mirena', 1);
@@ -2496,7 +2496,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
               //Survey.bcNeg('ocp', 999);
-              //Survey.bcNeg('orthoEvra', 999);
+              //Survey.bcNeg('ortho_evra', 999);
               //Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
@@ -2597,20 +2597,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -2700,20 +2700,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -2802,20 +2802,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -2909,20 +2909,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             Survey.bcNeg('implanon', 999);
             break;
@@ -2932,7 +2932,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the prolonged breathing
           case 23:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('implanon', 1);
             break;
@@ -2943,14 +2943,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "I didn't like the irregular bleeding
           case 25:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('implanon', 1);
             break;
           // "I didn't like the absence of bleeding
           case 26:
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcNeg('depo', 1);
             Survey.bcNeg('implanon', 1);
@@ -3027,20 +3027,20 @@ angular.module('contraceptionApp').factory('questionService', function () {
           // "High blood pressure
           case 19:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Blood clot in vein or lungs
           case 20:
             Survey.bcNeg('ocp', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Stroke or heart attack
           case 21:
             Survey.bcNeg('ocp', 999);
             Survey.bcNeg('depo', 999);
-            Survey.bcNeg('orthoEvra', 999);
+            Survey.bcNeg('ortho_evra', 999);
             Survey.bcNeg('nuvaring', 999);
             break;
           // "Another health problem
@@ -3082,7 +3082,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
             // Ortho Evra
             case 3:
-              q19aiscore.orthoEvra(prob);
+              q19aiscore.ortho_evra(prob);
               break;
             // Nuva Ring
             case 4:
@@ -3238,7 +3238,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('abstinence', 3);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcPos('mcondom', 1);
@@ -3261,7 +3261,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcNeg('ocp', 2);
               Survey.bcPos('pop', 1);
-              Survey.bcNeg('orthoEvra', 2);
+              Survey.bcNeg('ortho_evra', 2);
               Survey.bcNeg('nuvaring', 2);
               Survey.bcPos('depo', 1);
               Survey.bcPos('mcondom', 1);
@@ -3285,7 +3285,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcPos('mcondom', 1);
@@ -3309,7 +3309,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcNeg('mcondom', 2);
@@ -3333,7 +3333,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcNeg('depo', 3);
               Survey.bcPos('mcondom', 1);
@@ -3357,7 +3357,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcNeg('depo', 1);
               Survey.bcPos('mcondom', 1);
@@ -3381,7 +3381,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcNeg('ocp', 3);
               Survey.bcNeg('pop', 3);
-              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('ortho_evra', 3);
               Survey.bcNeg('nuvaring', 3);
               Survey.bcNeg('depo', 3);
               Survey.bcPos('mcondom', 1);
@@ -3405,7 +3405,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('abstinence', 3);
               Survey.bcNeg('ocp', 3);
               Survey.bcNeg('pop', 3);
-              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('ortho_evra', 3);
               Survey.bcNeg('nuvaring', 3);
               Survey.bcPos('depo', 1);
               Survey.bcNeg('mcondom', 3);
@@ -3429,7 +3429,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('abstinence', 3);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcNeg('mcondom', 3);
@@ -3453,7 +3453,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcPos('abstinence', 1);
               Survey.bcPos('ocp', 1);
               Survey.bcNeg('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcNeg('depo', 3);
               Survey.bcPos('mcondom', 1);
@@ -3477,7 +3477,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('abstinence', 3);
               Survey.bcPos('ocp', 1);
               //Survey.bcPos('pop', 1);
-              Survey.bcNeg('orthoEvra', 3);
+              Survey.bcNeg('ortho_evra', 3);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcNeg('mcondom', 3);
@@ -3501,7 +3501,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               Survey.bcNeg('abstinence', 3);
               Survey.bcPos('ocp', 1);
               Survey.bcPos('pop', 1);
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               Survey.bcPos('nuvaring', 1);
               Survey.bcPos('depo', 1);
               Survey.bcNeg('mcondom', 3);
@@ -3554,7 +3554,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
               break;
             // Once a week
             case 3:
-              Survey.bcPos('orthoEvra', 1);
+              Survey.bcPos('ortho_evra', 1);
               break;
             // Once a month
             case 4:
@@ -3593,7 +3593,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q23 has value", args.value);
         if (schedBleeding == 1) {
             Survey.bcPos('ocp', 1);
-            Survey.bcPos('orthoEvra', 1);
+            Survey.bcPos('ortho_evra', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('paragard', 1);
         }
@@ -3646,7 +3646,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (privatePartner == 1) {
           Survey.bcPos('ocp', 1);
           Survey.bcPos('pop', 1);
-          Survey.bcNeg('orthoEvra', 2);
+          Survey.bcNeg('ortho_evra', 2);
           Survey.bcNeg('nuvaring', 2);
           Survey.bcPos('depo', 1);
           Survey.bcNeg('mcondom', 3);
@@ -3678,7 +3678,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q26b has value", args.value);
         if (privateFamily == 1) {
           Survey.bcPos('abstinence', 1);
-          Survey.bcNeg('orthoEvra', 1);
+          Survey.bcNeg('ortho_evra', 1);
           Survey.bcPos('depo', 1);
           Survey.bcPos('paragard', 1);
           Survey.bcPos('mirena', 1);
@@ -3713,7 +3713,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (interrupt == 2) {
           Survey.bcPos('ocp', 1);
           Survey.bcPos('pop', 1);
-          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('ortho_evra', 1);
           Survey.bcPos('nuvaring', 1);
           Survey.bcPos('depo', 1);
           Survey.bcNeg('mcondom', 3);
@@ -3783,13 +3783,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
         // If gave birth-b less than 3 weeks
         if (sinceGaveB == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
          // If gave birth-b more than 3 weeks, but less than 6 weeks       
         if (sinceGaveB == 2){
           Survey.bcNeg('ocp', 3)
-          Survey.bcNeg('orthoEvra', 3)
+          Survey.bcNeg('ortho_evra', 3)
           Survey.bcNeg('nuvaring', 3)
         }
       }
@@ -3808,19 +3808,19 @@ angular.module('contraceptionApp').factory('questionService', function () {
         // If gave birth-c less than 3 weeks
         if (sinceGaveC == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
         // If gave birth-c more than 3 weeks, but less than 6 weeks
         if (sinceGaveC == 2){
           Survey.bcNeg('ocp', 3)
-          Survey.bcNeg('orthoEvra', 3)
+          Survey.bcNeg('ortho_evra', 3)
           Survey.bcNeg('nuvaring', 3)
         }
         // If gave birth-c more than 6 weeks
         if (sinceGaveC == 3){
           Survey.bcNeg('ocp', 2)
-          Survey.bcNeg('orthoEvra', 2)
+          Survey.bcNeg('ortho_evra', 2)
           Survey.bcNeg('nuvaring', 2)
         }
       }
@@ -3839,7 +3839,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q29a has value", args.value);
         if (postSurgeryMoving == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
       }
@@ -3858,7 +3858,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         // Yes
         if (highBP == 1) {
           Survey.bcNeg('ocp', 3);
-          Survey.bcNeg('orthoEvra', 3);
+          Survey.bcNeg('ortho_evra', 3);
           Survey.bcNeg('nuvaring', 3);
         }
       }
@@ -3877,14 +3877,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
         // Yes
         if (medsHighBP == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
 
         // No
         if (medsHighBP == 2) {
           Survey.bcNeg('ocp', 3);
-          Survey.bcNeg('orthoEvra', 3);
+          Survey.bcNeg('ortho_evra', 3);
           Survey.bcNeg('nuvaring', 3);
         }
       }
@@ -3901,7 +3901,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q31 has value", args.value);
         if (bloodClot == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
       }
@@ -3918,7 +3918,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q32 has value", args.value);
         if (bloodClot == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
       }
@@ -3936,7 +3936,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (stroke == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 3);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
           Survey.bcNeg('implanon', 3);
@@ -3956,7 +3956,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (clotting == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 3);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
         }
@@ -3974,7 +3974,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q35 has value", args.value);
         if (cholesterol == 1) {
           Survey.bcNeg('ocp', 3);
-          Survey.bcNeg('orthoEvra', 3);
+          Survey.bcNeg('ortho_evra', 3);
           Survey.bcNeg('nuvaring', 3);
         }
       }
@@ -3991,7 +3991,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q36 has value", args.value);
         if (heartAttack == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
         }
@@ -4009,7 +4009,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q37 has value", args.value);
         if (heartDisease == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('depo', 999);
           Survey.bcNeg('nuvaring', 999);
         }
@@ -4042,7 +4042,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q39 has value", args.value);
         if (anemia == 1) {
           Survey.bcPos('ocp', 1);
-          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('ortho_evra', 1);
           Survey.bcPos('nuvaring', 1);
           Survey.bcPos('depo', 1);
           Survey.bcNeg('paragard', 2);
@@ -4063,7 +4063,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (breastCancer == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
           Survey.bcNeg('mirena', 999);
@@ -4165,7 +4165,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (endometriosis == 1) {
           Survey.bcPos('ocp', 1);
           Survey.bcPos('pop', 1);
-          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('ortho_evra', 1);
           Survey.bcPos('nuvaring', 1);
           Survey.bcPos('depo', 1);
           Survey.bcNeg('paragard', 1);
@@ -4186,7 +4186,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q46a has value", args.value);
         if (diabetes == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
         }
@@ -4204,7 +4204,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q46b has value", args.value);
         if (diabetes == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
         }
@@ -4227,7 +4227,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (aura == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 3);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 3);
           Survey.bcNeg('mirena', 3);
@@ -4237,14 +4237,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
         // No / Migraines / Under 35
         if (aura == 2 && age < 35) {
           Survey.bcNeg('ocp', 3);
-          Survey.bcNeg('orthoEvra', 3);
+          Survey.bcNeg('ortho_evra', 3);
           Survey.bcNeg('nuvaring', 3);
         }
 
         // No / Migraines / Over 35
         if (aura == 2 && age >=35) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
       }
@@ -4277,7 +4277,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q48b has value", args.value);
         if (gallbladder == 1) {
           Survey.bcNeg('ocp', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
         }
       }
@@ -4295,7 +4295,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (cirrhosis == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('depo', 999);
           Survey.bcNeg('mirena', 999);
@@ -4330,7 +4330,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q51 has value", args.value);
         if (acne == 1) {
           Survey.bcPos('ocp', 1);
-          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('ortho_evra', 1);
           Survey.bcPos('nuvaring', 1);
           Survey.bcNeg('depo', 1);
         }
@@ -4348,7 +4348,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         console.log("q52 has value", args.value);
         if (coarseHairs == 1) {
           Survey.bcPos('ocp', 1);
-          Survey.bcPos('orthoEvra', 1);
+          Survey.bcPos('ortho_evra', 1);
           Survey.bcPos('nuvaring', 1);
         }
       }
@@ -4366,7 +4366,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (stJohns == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('implanon', 999);
         }
@@ -4385,7 +4385,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         if (rif == 1) {
           Survey.bcNeg('ocp', 999);
           Survey.bcNeg('pop', 999);
-          Survey.bcNeg('orthoEvra', 999);
+          Survey.bcNeg('ortho_evra', 999);
           Survey.bcNeg('nuvaring', 999);
           Survey.bcNeg('implanon', 999);
         }
@@ -4412,7 +4412,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             case 5:
               Survey.bcNeg('ocp', 999);
               Survey.bcNeg('pop', 999);
-              Survey.bcNeg('orthoEvra', 999);
+              Survey.bcNeg('ortho_evra', 999);
               Survey.bcNeg('nuvaring', 999);
               Survey.bcNeg('implanon', 999);
               break;

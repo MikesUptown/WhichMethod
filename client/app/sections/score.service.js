@@ -312,4 +312,3 @@ angular.module('contraceptionApp').factory('scoreService', function () {
   }
 
 })
-
