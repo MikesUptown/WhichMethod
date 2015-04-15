@@ -3069,6 +3069,108 @@ angular.module('contraceptionApp').factory('questionService', function () {
       }
     };
 
+    // score.abstinence
+    // this is new as of 04/15/15
+    q19aiscore.abstinence = function(prob) {
+      switch (prob)
+      {
+          // Breast Tenderness
+          case 1:
+            break;
+          // Cramping or pain
+          case 2:
+            break;
+          // Hair Loss
+          case 3:
+            break;
+          // Depression or mood swings
+          case 4:
+            break;
+          // Nausea or vomiting
+          case 5:
+            break;
+          // Weight gain
+          case 6:
+            break;
+          // Migraines or very bad headaches
+          case 7:
+            break;
+          // Discharge
+          case 8:
+            break;
+          // Other changes to my body
+          case 9:
+            break;
+          // "I couldn't get to the clinic
+          case 10:
+            break;
+          // "I couldn't get to the pharmacy
+          case 11:
+            break;
+          // "It was too expensive
+          case 12:
+            break;
+          // "I had another problem getting the birth control
+          case 13:
+            break;
+          // "I forgot to take it or missed too many doses
+          case 14:
+            break;
+          // "I failed to restart after break for period
+          case 15:
+            break;
+          // "I didn't use it every time I had sex
+          case 16:
+            break;
+          // "I had another problem using it correctly
+          case 17:
+            break;
+          // "I got pregnant
+          case 18:
+            break;
+          // "High blood pressure
+          case 19:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('ortho_evra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Blood clot in vein or lungs
+          case 20:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('ortho_evra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Stroke or heart attack
+          case 21:
+            Survey.bcNeg('ocp', 999);
+            Survey.bcNeg('depo', 999);
+            Survey.bcNeg('ortho_evra', 999);
+            Survey.bcNeg('nuvaring', 999);
+            break;
+          // "Another health problem
+          case 22:
+            break;
+          // "I didn't like the prolonged breathing
+          case 23:
+            break;
+          // "I didn't like the heavy bleeding
+          case 24:
+            break;
+          // "I didn't like the irregular bleeding
+          case 25:
+            break;
+          // "I didn't like the absence of bleeding
+          case 26:
+            break;
+          // "I didn't like something else about my periods
+          case 27:
+            break;
+          // "My partner didn't like it
+          case 28:
+            break;
+      }
+    };
+
     q19aiscore.bcProblemScore = function(bc, prob)
     {
         console.log('q19ai bc:' + bc + 'prob:' + prob);
@@ -5239,25 +5341,46 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q19a:{
         options: [
-          { name : 'Birth Control',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera',   value : 5  },
-          { name : 'Male Condom',    value : 6  },
-          { name : 'Diaphragm',      value : 7  },
-          { name : 'Female Condom',  value : 8  },
-          { name : 'Sponge',         value : 9  },
-          { name : 'Fam',            value : 10 },
-          { name : 'EC',             value : 11 },
-          { name : 'Paragard',       value : 12 },
-          { name : 'Mirena',         value : 13 },
-          { name : 'Withdrawal',     value : 14 },
-          { name : 'Spermicide',     value : 15 },
-          { name : 'Tubes Tied',     value : 16 },
-          { name : 'Vasectomy',      value : 17 },
-          { name : 'Implant',        value : 18 },
-          { name : 'Breast Feeding', value : 19 }
+          // { name : 'Birth Control',  value : 1  },
+          // { name : 'Mini Pills',     value : 2  },
+          // { name : 'Ortho Evra',     value : 3  },
+          // { name : 'Nuva Ring',      value : 4  },
+          // { name : 'Depo Provera',   value : 5  },
+          // { name : 'Male Condom',    value : 6  },
+          // { name : 'Diaphragm',      value : 7  },
+          // { name : 'Female Condom',  value : 8  },
+          // { name : 'Sponge',         value : 9  },
+          // { name : 'Fam',            value : 10 },
+          // { name : 'EC',             value : 11 },
+          // { name : 'Paragard',       value : 12 },
+          // { name : 'Mirena',         value : 13 },
+          // { name : 'Withdrawal',     value : 14 },
+          // { name : 'Spermicide',     value : 15 },
+          // { name : 'Tubes Tied',     value : 16 },
+          // { name : 'Vasectomy',      value : 17 },
+          // { name : 'Implant',        value : 18 },
+          // { name : 'Breast Feeding', value : 19 }
+          // { name :  'Abstinence',    value : 20 }
+          { name : 'Abstinence',     value : 1  },
+          { name : 'Birth Control',  value : 2  },
+          { name : 'Mini Pills',     value : 3  },
+          { name : 'Ortho Evra',     value : 4  },
+          { name : 'Nuva Ring',      value : 5  },
+          { name : 'Depo Provera',   value : 6  },
+          { name : 'Male Condom',    value : 7  },
+          { name : 'Diaphragm',      value : 8  },
+          { name : 'Female Condom',  value : 9  },
+          { name : 'Sponge',         value : 10  },
+          { name : 'Fam',            value : 11 },
+          { name : 'EC',             value : 12 },
+          { name : 'Paragard',       value : 13 },
+          { name : 'Mirena',         value : 14 },
+          { name : 'Withdrawal',     value : 15 },
+          { name : 'Spermicide',     value : 16 },
+          { name : 'Tubes Tied',     value : 17 },
+          { name : 'Vasectomy',      value : 18 },
+          { name : 'Implant',        value : 19 },
+          { name : 'Breast Feeding', value : 20 }
         ],
         selectedOptions: [],
         toggleCheck: function(option) {
