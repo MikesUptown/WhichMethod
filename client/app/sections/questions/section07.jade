@@ -22,7 +22,7 @@ header
       label
         | Q54b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
       div(ng-repeat='option in questions.q54b.options')
-        input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
       input(type="button",ng-click="saveAnswers()",value="Skip")
       
@@ -30,7 +30,7 @@ header
       label
         | Q54c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
       div(ng-repeat='option in questions.q54c.options')
-        input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54c.selectedOption' ng-value="{{option}}")
         label {{option.name}}
       input(type="button",ng-click="saveAnswers()",value="Skip")
 

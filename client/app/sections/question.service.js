@@ -3713,7 +3713,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       if (argTypes.hasValue) {
         var unschedBleeding = args.value;
         console.log("q24 has value", args.value);
-        if (unschedBleeding == 1) {
+        if (unschedBleeding == 2) {
             Survey.bcNeg('pop', 1);
             Survey.bcNeg('depo', 2);
             Survey.bcNeg('mirena', 2);
