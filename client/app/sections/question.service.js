@@ -3638,54 +3638,65 @@ angular.module('contraceptionApp').factory('questionService', function () {
     q22score.score = function(args) {
       console.log("q22.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
-      if (argTypes.hasValue) {
-        var howOften = args.value;
-        switch (howOften)
-        {
-            // Every time
-            case 1:
-              Survey.bcPos('mcondom', 1);
-              Survey.bcPos('fcondom', 1);
-              Survey.bcPos('ccap', 1);
-              Survey.bcPos('diaph', 1);
-              Survey.bcPos('ec', 1);
-              Survey.bcPos('withd', 1);
-              Survey.bcPos('sperm', 1);
-              Survey.bcPos('sponge', 1);
-              Survey.bcPos('fam', 1);
-              break;
-            // Every day
-            case 2:
-              Survey.bcPos('ocp', 1);
-              Survey.bcPos('pop', 1);
-              break;
-            // Once a week
-            case 3:
-              Survey.bcPos('ortho_evra', 1);
-              break;
-            // Once a month
-            case 4:
-              Survey.bcPos('nuvaring', 1);
-              break;
-            // Every 3 months
-            case 5:
-              Survey.bcPos('depo', 1);
-              break;
-            // Longer than every 3 months
-            case 6:
-              Survey.bcPos('paragard', 1);
-              Survey.bcPos('mirena', 1);
-              Survey.bcPos('implanon', 1);
-              break;
-            // Permanent
-            case 7:
-              Survey.bcPos('paragard', 1);
-              Survey.bcPos('mirena', 1);
-              Survey.bcPos('btl', 1);
-              Survey.bcPos('vas', 1);
-              Survey.bcPos('implanon', 1);
-              break;
-        }
+
+
+      if (argTypes.hasOptions) {
+
+        args.optionList.forEach(function(option){
+
+          var howOften = option.value
+
+   
+
+          // var howOften = args.value;
+
+          switch (howOften)
+          {
+              // Every time
+              case 1:
+                Survey.bcPos('mcondom', 1);
+                Survey.bcPos('fcondom', 1);
+                Survey.bcPos('ccap', 1);
+                Survey.bcPos('diaph', 1);
+                Survey.bcPos('ec', 1);
+                Survey.bcPos('withd', 1);
+                Survey.bcPos('sperm', 1);
+                Survey.bcPos('sponge', 1);
+                Survey.bcPos('fam', 1);
+                break;
+              // Every day
+              case 2:
+                Survey.bcPos('ocp', 1);
+                Survey.bcPos('pop', 1);
+                break;
+              // Once a week
+              case 3:
+                Survey.bcPos('ortho_evra', 1);
+                break;
+              // Once a month
+              case 4:
+                Survey.bcPos('nuvaring', 1);
+                break;
+              // Every 3 months
+              case 5:
+                Survey.bcPos('depo', 1);
+                break;
+              // Longer than every 3 months
+              case 6:
+                Survey.bcPos('paragard', 1);
+                Survey.bcPos('mirena', 1);
+                Survey.bcPos('implanon', 1);
+                break;
+              // Permanent
+              case 7:
+                Survey.bcPos('paragard', 1);
+                Survey.bcPos('mirena', 1);
+                Survey.bcPos('btl', 1);
+                Survey.bcPos('vas', 1);
+                Survey.bcPos('implanon', 1);
+                break;
+          }
+        })    
       }
     };
     Survey.newQuestion(q22score);
