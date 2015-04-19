@@ -266,7 +266,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       if (argTypes.hasValue) {
         var regPeriod = args.value;
         console.log("q4 has value", args.value);
-        if (regPeriod == 0) {
+        if (regPeriod == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('ortho_evra', 1);
@@ -284,7 +284,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       if (argTypes.hasValue) {
         var periodFrequency = args.value;
         console.log("q4a has value", args.value);
-        if (periodFrequency == 1) {
+        if (periodFrequency == 2) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
             Survey.bcPos('ortho_evra', 1);
@@ -3252,6 +3252,9 @@ angular.module('contraceptionApp').factory('questionService', function () {
             case 19:
               q19aiscore.bf(prob);
               break;
+            case 20:
+              q19aiscore.abstinence(prob);
+              break;
         }
     };
     q19aiscore.score = function(argsArray) {
@@ -3902,7 +3905,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
 
     // NEW: This question is now: "HOW LONG SINCE YOU GAVE BIRTH-C?"
     var q28cscore = new Question('q28c');
-    q28bscore.score = function(args) {
+    q28cscore.score = function(args) {
       console.log("q28c.score");
       var argTypes = Question.prototype.scoreArgs.call(this, args);
       if (argTypes.hasValue) {
@@ -5359,8 +5362,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Tubes Tied',     value : 16 },
           { name : 'Vasectomy',      value : 17 },
           { name : 'Implant',        value : 18 },
-          { name : 'Breast Feeding', value : 19 }
-          // { name :  'Abstinence',    value : 20 }
+          { name : 'Breast Feeding', value : 19 },
+          { name :  'Abstinence',    value : 20 }
           // { name : 'Abstinence',     value : 1  },
           // { name : 'Birth Control',  value : 2  },
           // { name : 'Mini Pills',     value : 3  },
