@@ -76,7 +76,7 @@ header
       label
         | Q29a. Is it hard moving around because of the surgery?
       div(ng-repeat='option in questions.q29a.options')
-        input(type="radio" name='q29a' ng-change="saveAnswers()" ng-model='questions.q32.selectedOption' ng-value="{{option}}")
+        input(type="radio" name='q29a' ng-change="saveAnswers()" ng-model='questions.q29a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
       input(type="button",ng-click="saveAnswers()",value="Skip")
     //- TODO This is now question #29a
