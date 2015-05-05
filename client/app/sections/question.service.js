@@ -3645,9 +3645,6 @@ angular.module('contraceptionApp').factory('questionService', function () {
         args.optionList.forEach(function(option){
 
           var howOften = option.value
-
-   
-
           // var howOften = args.value;
 
           switch (howOften)
