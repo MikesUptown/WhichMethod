@@ -266,7 +266,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       if (argTypes.hasValue) {
         var regPeriod = args.value;
         console.log("q4 has value", args.value);
-        if (regPeriod == 1) {
+        if (regPeriod == 2) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('nuvaring', 1);
             Survey.bcPos('ortho_evra', 1);
@@ -284,7 +284,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
       if (argTypes.hasValue) {
         var periodFrequency = args.value;
         console.log("q4a has value", args.value);
-        if (periodFrequency == 2) {
+        if (periodFrequency == 1) {
             Survey.bcPos('ocp', 1);
             Survey.bcPos('pop', 1);
             Survey.bcPos('ortho_evra', 1);
