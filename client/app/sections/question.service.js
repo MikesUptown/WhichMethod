@@ -4689,7 +4689,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'I do not use tobacco',               value : 1  },
           { name : 'I use tobacco less than once a day', value : 2  },
           { name : 'I use tobacco daily',                value : 3  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4713,7 +4713,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4738,7 +4738,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4762,7 +4762,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4786,7 +4786,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4810,7 +4810,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4834,7 +4834,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4858,7 +4858,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4882,7 +4882,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4905,7 +4905,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4929,7 +4929,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4954,7 +4954,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : 'Rarely/Never', value : 0  },
           { name : 'Sometimes', value : 1  },
           { name : 'Almost every month', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4980,7 +4980,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { name : "Your partner or you have sex with other people as well", value : 1  },
           { name : "You are not sure about your partner's sexual activity outside your relationship", value : 2  },
           { name : "You are not currently having sex", value : 3 },
-          //{ name : "I don't know", value : 999  },
+          { name : "I don't know", value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5002,7 +5002,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q15:{
         options: [
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5027,7 +5027,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes',                                  value : 1  },
           { name : 'No',                                   value : 0  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5077,7 +5077,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes',                                  value : 1  },
           { name : 'No',                                   value : 0  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5226,7 +5226,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5251,7 +5251,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5329,7 +5329,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5552,7 +5552,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 3, name : 'In three or more years' },
           { value : 4, name : 'Not sure when but definitely want a baby' },
           { value : 5, name : 'Never' },
-          //{ value : 777, name : "I don't know" },
+          { value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOption : { },
@@ -5586,7 +5586,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 10, name : 'Able to give regular monthly periods' },
           { value : 11, name : 'Gives fewer or no periods' },
           { value : 12, name : 'Decreases symptoms from period' },
-          //{ value : 777, name : "I don't know" },
+          { value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOptions: [ ],
@@ -5624,7 +5624,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 5, name : 'Every three months' },
           { value : 6, name : 'Longer than every three months' },
           { value : 7, name : 'Permanent method' },
-          //{ value : 777, name : "I don't know" },
+          { value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOptions: [ ],
@@ -5656,7 +5656,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : "Yes", value : 1  },
           { name : "No", value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5680,7 +5680,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5701,7 +5701,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5722,7 +5722,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5745,7 +5745,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5766,7 +5766,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5788,7 +5788,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5817,7 +5817,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5839,7 +5839,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5901,7 +5901,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5923,7 +5923,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5945,7 +5945,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5967,7 +5967,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5989,7 +5989,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6011,7 +6011,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6032,7 +6032,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6053,7 +6053,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6075,7 +6075,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6098,7 +6098,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6120,7 +6120,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6142,7 +6142,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6164,7 +6164,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6186,7 +6186,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6208,7 +6208,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6229,7 +6229,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6251,7 +6251,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6273,7 +6273,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6295,7 +6295,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6316,7 +6316,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6338,7 +6338,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6359,7 +6359,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6382,7 +6382,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6403,7 +6403,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6424,7 +6424,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6448,7 +6448,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6469,7 +6469,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6491,7 +6491,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6515,7 +6515,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6537,7 +6537,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6559,7 +6559,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6581,7 +6581,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6603,7 +6603,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6631,7 +6631,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6653,7 +6653,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6674,7 +6674,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6698,7 +6698,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           { value : 3, name : 'Primadone or Mysoline' },
           { value : 4, name : 'Topiramate or Topamax' },
           { value : 5, name : 'Oxycarbazepine or Trileptal' },
-          //{ value : 777, name : "I don't know" },
+          { value : 777, name : "I don't know" },
           //{ value : 999, name : "No" },
         ],
         selectedOptions: [ ],
@@ -6728,7 +6728,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6759,7 +6759,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6781,7 +6781,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6803,7 +6803,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6825,7 +6825,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6848,7 +6848,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
         options: [
           { name : 'Yes', value : 1  },
           { name : 'No', value : 2  },
-          //{ name : "I don't know",                         value : 999  },
+          { name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
