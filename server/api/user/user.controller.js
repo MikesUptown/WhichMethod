@@ -12,12 +12,13 @@ var rimraf = require('rimraf');
 
 var nodemailer = require('nodemailer');
 
+// DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'username@gmail.com',
-        pass: 'password'
+        user: 'whichmethod@healthsolutions.org',
+        pass: 'IcC4010013'
     }
 });
 
