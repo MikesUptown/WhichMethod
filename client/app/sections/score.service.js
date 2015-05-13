@@ -10,8 +10,8 @@ angular.module('contraceptionApp').factory('scoreService', function () {
 
 
   var methodsMap={
-           'Abstinence' :      'abstinence'  ,
-           'Birth Control':    'ocp'  ,
+           'Abstinence' :      "abstinence"  ,
+           'Birth Control':    "ocp"  ,
            'Mini Pills':       "pop"    ,
            'Ortho Evra':       "ortho_evra",
            'Nuva Ring':        "nuvaring" ,
@@ -272,7 +272,7 @@ angular.module('contraceptionApp').factory('scoreService', function () {
   }
 
   var interested = []
-  var effective = ["ocp","pop","orthoevra","nuvaring","depo","vas","btl","implanon","paragard","mirena"]
+  var effective = ["ocp","pop","ortho_evra","nuvaring","depo","vas","btl","implanon","paragard","mirena"]
   var unplanned = []
   function convertAnwers(survey){
     if(survey.answerList.q17 && survey.answerList.q17.optionList){
