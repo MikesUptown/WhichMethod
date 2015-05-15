@@ -17,6 +17,22 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     padding: 0.2em 0;
 }
 
+.es {
+	display: none;
+}
+
+.spanish-version {
+
+	.es {
+		display: inline-block;
+	}
+
+	.en {
+		display: none;
+	}
+
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/account.scss';
