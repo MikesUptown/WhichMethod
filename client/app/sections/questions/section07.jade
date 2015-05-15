@@ -16,7 +16,7 @@ header
       div(ng-repeat='option in questions.q54a.options')
         input(type="radio" name='q54a' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#54b(ng-show="currentQuestion == 'q54b'")
       label
@@ -24,7 +24,7 @@ header
       div(ng-repeat='option in questions.q54b.options')
         input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
       
     li#54c(ng-show="currentQuestion == 'q54c'")
       label
@@ -32,7 +32,7 @@ header
       div(ng-repeat='option in questions.q54c.options')
         input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54c.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#54d(ng-show="currentQuestion == 'q54d'")
       label
@@ -40,7 +40,7 @@ header
       div(ng-repeat='option in questions.q54d.options')
         input(type="radio" name='q54d' ng-change="saveAnswers()" ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#54e(ng-show="currentQuestion == 'q54e'")
       label
@@ -48,7 +48,7 @@ header
       div(ng-repeat='option in questions.q54e.options')
         input(type="radio" name='q54e' ng-change="saveAnswers()" ng-model='questions.q54e.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
 
     //- all questions above 58a - 58e on single page

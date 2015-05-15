@@ -6,18 +6,21 @@ header
 
   #menu
     a.logout_btn_01( ng-click='logout()') Log out
-      
+
 section
   #main_wrapper
     #main_content
-      p.main_title
-        h1 Landing Page 2: Question 4-13
-      //img.main_img(src="assets/images/girl_bronx.jpg", alt="Landing Page Main Image")
-      img.img-rounded(src='assets/images/whichmethod_landing2.jpg', alt='Woman Mobile', width='304', height='236')
-      p.main_title
-        h2 Your Period
-        kbd 8 Questions
-      a.save_btn_02(href="#") Save
+      .col-md-8
+        .media
+          .media-left
+            img.img-rounded(src='assets/images/whichmethod_landing2.jpg', alt='Woman Mobile', width='504', height='436')
+      .col-md-4
+        .media-body
+          h1.media-heading Questions 4-13
+          h1.media-heading Your period.
+          br
+          //kbd 3 Questions
+      
       a.continue_btn_03(href="/questions/section/2") Continue &#62;&#62;
         // main_content
       // main_wrapper

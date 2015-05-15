@@ -19,7 +19,7 @@ header
       div(ng-repeat='option in questions.q14.options')
         input(type="radio" name='q14' ng-change="saveAnswers()" ng-model="questions.q14.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
-      input(type="button",ng-click="saveAnswers()",value="Skip")
+      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q15(ng-show="currentQuestion == 'q15'")
       label
@@ -37,7 +37,7 @@ header
         div(ng-repeat='option in questions.q16.options')
           input(type="radio" name='q16' ng-change="saveAnswers()" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
         label
@@ -55,7 +55,7 @@ header
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
       //- all questions above Q16 - Q16b on a single page
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
@@ -92,7 +92,7 @@ header
         div(ng-repeat='option in questions.q18.options')
           input(type="radio" name='q18' ng-change="saveAnswers()" ng-model="questions.q18.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q18a(ng-show="currentQuestion == 'q18a'")
         label
@@ -100,7 +100,7 @@ header
         div(ng-repeat='option in questions.q18a.options')
           input(type="radio" name='q18a' ng-change="saveAnswers()" ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
@@ -117,7 +117,7 @@ header
         div(ng-repeat='option in questions.q19.options')
           input(type="radio" name='q19' ng-change="saveAnswers()" ng-model="questions.q19.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
         label
@@ -144,7 +144,7 @@ header
         div(ng-repeat='option in questions.q20.options')
           input(type="radio" name='q20' ng-change="saveAnswers()" ng-model="questions.q20.selectedOption" ng-value="{{option}}")
           label {{option.name}}
-        input(type="button",ng-click="saveAnswers()",value="Skip")
+        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q21(ng-show="currentQuestion == 'q21'")
         label

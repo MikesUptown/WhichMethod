@@ -7,19 +7,22 @@ header
       // logo
   #menu
         a.logout_btn_01(href="#") Log out
-      // menu
-  
+
 section
   #main_wrapper
     #main_content
-      p.main_title
-        h1 Landing Page 7: Question 54a-54e
-      //img.main_img(src="assets/images/spanish-couple.jpg", alt="Landing Page Main Image")
-      img.img-rounded(src='assets/images/whichmethod_landing7.jpg', alt='Woman Mobile', width='304', height='236')
-      p.main_title
-        h2 Last step - it's time to give your opinion! What do you think about the following birth control methods?
-        kbd 5 Questions
-      a.save_btn_02(href="#") SAVE
+      .col-md-8
+        .media
+          .media-left
+            img.img-rounded(src='assets/images/woman_mobile-phone.png', alt='Woman Mobile', width='504', height='436')
+      .col-md-4
+        .media-body
+          h1.media-heading Questions 54a-54e
+          br
+          h3.media-heading Last step - it's time to give your opinion!
+          h3.media-heading What do you think about the following birth control methods?
+
+      //a.save_btn_02(href="#") SAVE
       a.continue_btn_03(href="/questions/section/7", title='') CONTINUE
         // main_content
       // main_wrapper

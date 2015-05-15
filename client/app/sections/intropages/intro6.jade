@@ -7,19 +7,22 @@ header
       // logo
   #menu
         a.logout_btn_01(href="#") Log out
-      // menu
-  
+
 section
   #main_wrapper
     #main_content
-      p.main_title
-        h1 Landing Page 6: Question 53
-      //img.main_img(src="assets/images/latina_physician2.jpg", alt="Landing Page Main Image")
-      img.img-rounded(src='assets/images/whichmethod_landing6.jpg', alt='Woman Mobile', width='304', height='236')
-      p.main_title
-        h2 Taking vitamins or medication? It's important to note any dietary supplements and prescription medications that are part of your routine.
-        kbd 1 Question
-      a.save_btn_02(href="#") SAVE
+      .col-md-8
+        .media
+          .media-left
+            img.img-rounded(src='assets/images/whichmethod_landing6.jpg', alt='Woman Mobile', width='504', height='436')
+      .col-md-4
+        .media-body
+          h1.media-heading Question 53
+          br
+          h3.media-heading Taking vitamins or medication?
+          h3.media-heading It's important to note any dietary supplements and prescription medications that are part of your routine.
+
+      //a.save_btn_02(href="#") SAVE
       a.continue_btn_03(href="/questions/section/6", title='') CONTINUE
         // main_content
       // main_wrapper
