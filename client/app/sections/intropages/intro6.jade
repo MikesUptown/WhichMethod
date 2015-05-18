@@ -11,19 +11,21 @@ header
 section
   #main_wrapper
     #main_content
-      .col-md-8
+      .col-md-6
         .media
           .media-left
             img.img-rounded(src='assets/images/whichmethod_landing6.jpg', alt='Woman Mobile', width='504', height='436')
-      .col-md-4
+      .col-md-6
         .media-body
           h1.media-heading Question 53
           br
-          h3.media-heading Taking vitamins or medication?
-          h3.media-heading It's important to note any dietary supplements and prescription medications that are part of your routine.
+          br
+          p.lead Taking vitamins or medication?
+          p.lead It's important to note any dietary supplements and prescription medications that are part of your routine.
 
       //a.save_btn_02(href="#") SAVE
-      a.continue_btn_03(href="/questions/section/6", title='') CONTINUE
+      p
+        a.btn.btn-default.btn-lg(href='#/questions/section/6', role='button') Continue
         // main_content
       // main_wrapper
 footer
