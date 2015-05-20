@@ -14,10 +14,10 @@ var nodemailer = require('nodemailer');
 
 // DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
-var transporter = nodemailer.createTransport({
-    service: 'Gmail',
+var transporter = nodemailer.createTransport( "SMTP",{
+    service: 'Office 365',
     auth: {
-        user: 'whichmethod@healthsolutions.org',
+        user: 'Whichmethod@healthsolutions.org',
         pass: 'IcC4010013'
     }
 });
@@ -187,7 +187,7 @@ exports.emailpdf = function(req,res,next){
 
   function sendMail(email, path){
     var mailOptions = {
-      from: 'Which Method <noreply@contraception.com>', // sender address
+      from: 'WhichMethod App <Whichmethod@healthsolutions.org>', // sender address
       to: email, // list of receivers
       subject: 'Your Contraception Recommendations', // Subject line
       text: 'Please see attached pdf', // plaintext body
