@@ -11,16 +11,29 @@ var pdf = require('html-pdf');
 var rimraf = require('rimraf');
 
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 // DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
-var transporter = nodemailer.createTransport( "SMTP",{
-    service: 'Office 365',
+
+var transporter = nodemailer.createTransport(smtpTransport({
+    host: 'smtp.office365.com',
+    port: '587',
+    secureConnection: 'false',
+    tls: { ciphers: 'SSLv3' },
     auth: {
         user: 'Whichmethod@healthsolutions.org',
         pass: 'IcC4010013'
     }
-});
+}));
+
+// var transporter = nodemailer.createTransport( "SMTP",{
+//     // service: 'Office 365',
+//     auth: {
+//         user: 'Whichmethod@healthsolutions.org',
+//         pass: 'IcC4010013'
+//     }
+// });
 
 
 require("date-format-lite")
