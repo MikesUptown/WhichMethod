@@ -58,7 +58,7 @@ exports.convertGuest = function(req,res){
     user.name = newName;
     user.email = email;
     user.password = pass;
-    user.zip = zip;
+    // user.zip = zip;
     user.save(function(err) {
       if (err) return validationError(res, err);
       res.send(200);
@@ -99,19 +99,20 @@ exports.updateUser = function(req, res) {
     user.answers = answers
     user.currentQuestion = currentQuestion
     
-    if(typeof currentSection == 'undefined'){
-      user.currentSection = currentSection
-      console.log(currentSection)
-      console.log(typeof currentSection)
-    }
-    else if(!user.currentSection){
-      console.log(user.currentSection)
-      if(consent1 || consent1)
-        user.currentSection = 1
-    }else{
-      user.currentSection = currentSection
-    }
+    // if(typeof currentSection !== "undefined"){
+    //   user.currentSection = currentSection
+    //   console.log(currentSection)
+    //   console.log(typeof currentSection)
+    // }
+    // else if(!user.currentSection){
+    //   console.log(user.currentSection)
+    //   if(consent1 || consent1)
+    //     user.currentSection = 1
+    // }else{
+    //   user.currentSection = currentSection
+    // }
 
+    user.currentSection = currentSection
     user.recommendation = recommendation
     user.consent1 = consent1
     user.consent2 = consent2

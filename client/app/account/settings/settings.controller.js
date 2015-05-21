@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth, $location) {
+  .controller('SettingsCtrl', function ($scope, User, Auth, $location, $state) {
     $scope.errors = {};
     $scope.user = {};
 
@@ -15,14 +15,24 @@ angular.module('contraceptionApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password,
-          zip:$scope.user.zip,
+          // zip:$scope.user.zip,
           // oldpassword: 'guest'
         })
         .then( function() {
           // Account created, redirect to home
           // $location.path('/questions/intro/1');
           $scope.message = 'Thank you for registering.';
-          $location.url('/questions/intro/1')
+
+          Auth.getCurrentUser().$promise.then(function(u){
+
+            var section = u.currentSection
+            if(section == undefined || section==0)
+              $location.url('/questions/intro/0')
+            else{
+              $state.go('sections.questions', {type:'question',id:section})
+            }
+          })       
+
 
         })
         .catch( function(err) {
