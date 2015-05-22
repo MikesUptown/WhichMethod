@@ -192,9 +192,10 @@ angular.module('contraceptionApp').factory('scoreService', function () {
       var nd = scoreParameters[bc].nd
       var eff = scoreParameters[bc].effectiveness
 
-      score[bc]= (p/pd - n/nd)*eff
-
-      score[bc] = Math.max(score[bc],-99);
+      if(n<=-99)
+        score[bc] = -99
+      else
+        score[bc]= (p/pd - n/nd)*eff
     }
     convertAnwers(survey)
     calculateColors()
