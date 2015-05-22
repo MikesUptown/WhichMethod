@@ -11,15 +11,29 @@ var pdf = require('html-pdf');
 var rimraf = require('rimraf');
 
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
+// DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
-var transporter = nodemailer.createTransport({
-    service: 'Gmail',
+
+var transporter = nodemailer.createTransport(smtpTransport({
+    host: 'smtp.office365.com',
+    port: '587',
+    secureConnection: 'false',
+    tls: { ciphers: 'SSLv3' },
     auth: {
-        user: 'username@gmail.com',
-        pass: 'password'
+        user: 'Whichmethod@healthsolutions.org',
+        pass: 'IcC4010013'
     }
-});
+}));
+
+// var transporter = nodemailer.createTransport( "SMTP",{
+//     // service: 'Office 365',
+//     auth: {
+//         user: 'Whichmethod@healthsolutions.org',
+//         pass: 'IcC4010013'
+//     }
+// });
 
 
 require("date-format-lite")
@@ -57,7 +71,7 @@ exports.convertGuest = function(req,res){
     user.name = newName;
     user.email = email;
     user.password = pass;
-    user.zip = zip;
+    // user.zip = zip;
     user.save(function(err) {
       if (err) return validationError(res, err);
       res.send(200);
@@ -98,19 +112,20 @@ exports.updateUser = function(req, res) {
     user.answers = answers
     user.currentQuestion = currentQuestion
     
-    if(typeof currentSection == 'undefined'){
-      user.currentSection = currentSection
-      console.log(currentSection)
-      console.log(typeof currentSection)
-    }
-    else if(!user.currentSection){
-      console.log(user.currentSection)
-      if(consent1 || consent1)
-        user.currentSection = 1
-    }else{
-      user.currentSection = currentSection
-    }
+    // if(typeof currentSection !== "undefined"){
+    //   user.currentSection = currentSection
+    //   console.log(currentSection)
+    //   console.log(typeof currentSection)
+    // }
+    // else if(!user.currentSection){
+    //   console.log(user.currentSection)
+    //   if(consent1 || consent1)
+    //     user.currentSection = 1
+    // }else{
+    //   user.currentSection = currentSection
+    // }
 
+    user.currentSection = currentSection
     user.recommendation = recommendation
     user.consent1 = consent1
     user.consent2 = consent2
@@ -186,7 +201,7 @@ exports.emailpdf = function(req,res,next){
 
   function sendMail(email, path){
     var mailOptions = {
-      from: 'Which Method <noreply@contraception.com>', // sender address
+      from: 'WhichMethod App <Whichmethod@healthsolutions.org>', // sender address
       to: email, // list of receivers
       subject: 'Your Contraception Recommendations', // Subject line
       text: 'Please see attached pdf', // plaintext body
