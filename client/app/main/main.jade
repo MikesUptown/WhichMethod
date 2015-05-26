@@ -45,43 +45,18 @@ div(ng-include='"components/navbar/navbar.html"')
 
         .description 
 
-
-
-          
-    .sub_content
-      .row
-        .col-lg-4 
-          // h3
-              // span.glyphicon.glyphicon-check.btn-lg(aria-hidden='true')
-              // | SIGN UP TODAY
-          //p.text-justify.center-block
-            | There are two ways to use WhichMethod:
-            <mark>Registered User</mark>: Will see recommendations and get a copy via email; and
-            <mark>Guest User</mark>: You will be able to print recommendations, but to save them you must be a Registered User.
-          // p
-            a.btn.btn-default(href='#') View details »
-        
-        .col-lg-4
-          // h3
-              // span.glyphicon.glyphicon-edit.btn-lg(aria-hidden='true')
-              // | ANSWER THE QUESTIONS
-          //p.text-justify.center-block
-            | WhichMethod is an interactive tool that asks a series of questions about your medical history, preferences and priorities and sexual behavior. WhichMethod is available in both Spanish and English.
-          // p
-            a.btn.btn-default(href='#') View details »
-          
-        .col-lg-4
-          // h3
-              // span.glyphicon.glyphicon-folder-open.btn-lg(aria-hidden='true')
-              // | GET RECOMMENDATIONS
-          //p.text-justify.center-block
-            | Once you have completed the questions, WhichMethod will identify birth control methods that are effective, safe and fit your needs. Please share these recommendations with your doctor.
-          // p
-            a.btn.btn-default(href='#') View details »
-      hr
     
     footer
-      p.lists &copy;Public Health Solutions 2014 | About WhichMethod | Clinical Partners | Privacy Policy | Learn More | Contact Us
+      .container
+        p
+          | @Public Health Solutions 2015 
+          a(href='#/client/app/sections/info/about.jade') About WhichMethod | 
+          a(href='#/client/app/sections/info/outreachpartners.jade') Outreach Partners | 
+          a(href='#/client/app/sections/info/privacypolicy.jade') Privacy Policy | 
+          a(href='#/client/app/sections/info/learnmore.jade') Learn More | 
+          a(href='#/client/app/sections/info/contact.jade') Contact Us |
+
+
           
 
     //
