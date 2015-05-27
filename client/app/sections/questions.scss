@@ -23,7 +23,7 @@ color: #5a5a5a;
 
 
 #container {
-border: 0 solid #ffffff;
+border: 1px solid #986698;
 }
 
 #container {
@@ -37,13 +37,17 @@ max-width: 640px;
 
 #container {
 text-align:left;
-background: #83A99C;
-border: 1px solid
-#ccc;
+background: #FFFFFF;
 }
 
 .body.questionpages {
 background-color: #CECECE;
 padding-bottom: 20px;
 color: #5a5a5a;
+}
+
+.highlightMyMethod{
+background-color: #000000;
+color: #FFFFFF;
+font-size: 18px;
 }

@@ -12,6 +12,8 @@ header
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 #container
+  .body.questionpages
+  
   h4 WhichMethod Section 5
   ul
     li#28(ng-show="currentQuestion == 'q28'")
@@ -267,7 +269,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#45(ng-show="currentQuestion == 'q45'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q45. Endometriosis
@@ -277,7 +279,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#46(ng-show="currentQuestion == 'q46'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q46. Diabetes
@@ -303,7 +305,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#47(ng-show="currentQuestion == 'q47'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q47. Migraine Headaches
@@ -322,7 +324,7 @@ header
 
     //- all questions above Q44 - Q47a on single page
     li#48(ng-show="currentQuestion == 'q48'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q48. AIDS
@@ -332,7 +334,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#48a(ng-show="currentQuestion == 'q48a'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q48a. Liver or Gallbladder problems
@@ -342,7 +344,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#48b(ng-show="currentQuestion == 'q48b'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q48b. Gallbladder disease or Gallstones
@@ -352,7 +354,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#49(ng-show="currentQuestion == 'q49'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q49. Cirrhosis or Active Hepatitis
@@ -362,7 +364,7 @@ header
       //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#50(ng-show="currentQuestion == 'q50'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 Have you ever been told by a doctor or nurse that you have:
       br
       label
         | Q50. A seizure disorder or epilepsy

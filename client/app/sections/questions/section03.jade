@@ -11,6 +11,8 @@ header
 //- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 #container
+  .body.questionpages
+
   h3 WhichMethod Section 3
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
@@ -131,7 +133,7 @@ header
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
           | Q19ai. What problems did you have while using: 
-          span(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
+          span.highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
           label {{option.name}}

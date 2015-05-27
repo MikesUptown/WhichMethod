@@ -8,28 +8,11 @@ header
 
 //div(ng-include='"components/navbar/navbar.html"')
 .col-md-6
-  ul
-    h3  SIGN UP TODAY
-        span.glyphicon.glyphicon-check.btn-lg
-        h5 There are two ways to use WhichMethod: <u>Registered Users</u> will receive up to 2 emails and will be able to save and email copy of Recommendations. <u>Guest Users</u> will be able to print recommendations, but must Register to email save.
-    br
-    h3 ANSWER THE QUESTIONS
-        span.glyphicon.glyphicon-edit.btn-lg
-        h5 WhichMethod asks questions about your medical history, preferences and priorities and sexual behavior in <kbd>Spanish</kbd> and <kbd>English</kbd>.
-    br
-    h3 GET RECOMMENDATIONS
-        span.glyphicon.glyphicon-folder-open.btn-lg
-        h5 WhichMethod identifies birth control methods that are <u>effective</u>, <u>safe</u> and <u>fit your needs</u>. Please share Recommendations with your doctor.
-    br
-
-
-  
-.col-md-6
   //- a(href="/")
     //- button.close &times;
   .row
     .col-sm-12
-      h2 SIGN UP*for WhichMethod
+      h1 SIGN UP*for WhichMethod
     .col-sm-12
       form.form(name='form', ng-submit='register(form)', novalidate='')
         .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
@@ -87,5 +70,18 @@ header
             h5 <mark>* By signing up you agree to WhichMethod.org's Privacy Policy</mark>
             br
             br
-
+.col-md-6
+  ul
+    h4  SIGN UP TODAY
+        span.glyphicon.glyphicon-check.btn-lg
+        h6 There are two ways to use WhichMethod: <u>Registered Users</u> will receive up to 2 emails and will be able to save and email copy of Recommendations. <u>Guest Users</u> will be able to print recommendations, but must Register to email save.
+    br
+    h4 ANSWER THE QUESTIONS
+        span.glyphicon.glyphicon-edit.btn-lg
+        h6 WhichMethod asks questions about your medical history, preferences and priorities and sexual behavior in <kbd>Spanish</kbd> and <kbd>English</kbd>.
+    br
+    h4 GET RECOMMENDATIONS
+        span.glyphicon.glyphicon-folder-open.btn-lg
+        h6 WhichMethod identifies birth control methods that are <u>effective</u>, <u>safe</u> and <u>fit your needs</u>. Please share Recommendations with your doctor.
+    br
   hr

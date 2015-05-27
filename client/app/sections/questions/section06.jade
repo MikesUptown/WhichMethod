@@ -13,11 +13,13 @@ header
     method: {{key}} pos: {{value.p}} neg: {{value.n}}
 
 #container
+  .body.questionpages
+
   h2 WhichMethod Section 6
   ul
     li#53(ng-show="currentQuestion == 'q53'")
       label
-        | Q53. Do you take dietary supplements or prescription medications regularly?
+        | Q53. Do you take ANY prescription medications or dietary supplements regularly?
       div(ng-repeat='option in questions.q53.options')
         input(type="radio" name='q53' ng-change="saveAnswers()" ng-model='questions.q53.selectedOption' ng-value="{{option}}")
         label {{option.name}}
