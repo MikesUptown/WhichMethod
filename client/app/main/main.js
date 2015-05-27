@@ -13,4 +13,5 @@ angular.module('contraceptionApp')
         templateUrl: 'app/main/terms.html',
         controller: 'MainCtrl'
       })
-  });
+    });
+

@@ -32,18 +32,12 @@ angular.module('contraceptionApp')
   });
 
   //     .state('info',{
-  //       url: '/info/:page',
+  //       url:'/info/about',
   //       templateUrl:  function (stateParams){
-  //           return "app/sections/info/" + stateParams.page + ".html";
+  //         return 'app/sections/info/about' + stateParams.info + '.html';
   //     });
   // });
 
-  //     .state('info',{
-  //       url:'/info/:page',
-  //       templateUrl:  function (stateParams){
-  //           return "app/sections/info/about/" + stateParams.page + ".html";
-  //     });
-  // });
 
 //   addEvent(window, 'load', initForm);
 
