@@ -54,7 +54,11 @@
   border-color: #dbdbdb;
 }
 .btn-primary {
+<<<<<<< HEAD
   background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #2d6ca2 100%);
+=======
+  background-image: -webkit-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
+>>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
   background-image:         linear-gradient(to bottom, #428bca 0%, #2d6ca2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);

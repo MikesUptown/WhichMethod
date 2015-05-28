@@ -1,8 +1,15 @@
 {
   "name": "angular-resource",
+<<<<<<< HEAD
   "version": "1.2.23",
   "main": "./angular-resource.js",
   "dependencies": {
     "angular": "1.2.23"
+=======
+  "version": "1.2.24",
+  "main": "./angular-resource.js",
+  "dependencies": {
+    "angular": "1.2.24"
+>>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
   }
 }

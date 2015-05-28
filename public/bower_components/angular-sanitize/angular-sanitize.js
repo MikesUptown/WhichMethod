@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * @license AngularJS v1.2.23
+=======
+ * @license AngularJS v1.2.24
+>>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
