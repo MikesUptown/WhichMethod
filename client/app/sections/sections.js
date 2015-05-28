@@ -28,15 +28,18 @@ angular.module('contraceptionApp')
           }  
         }
         // controller: 'SectionsCtrl'
+      })
+
+      .state('info',{
+        url:'/info/:page',
+        templateUrl:  function (stateParams){
+          return 'app/sections/info/' + stateParams.page + '.html';
+        }
       });
+  
   });
 
-  //     .state('info',{
-  //       url:'/info/about',
-  //       templateUrl:  function (stateParams){
-  //         return 'app/sections/info/about' + stateParams.info + '.html';
-  //     });
-  // });
+
 
 
 //   addEvent(window, 'load', initForm);
