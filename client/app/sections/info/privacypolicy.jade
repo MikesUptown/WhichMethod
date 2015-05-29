@@ -2,14 +2,15 @@ header
   #logo
     a(href="landing_01.html")
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
-  #menu
-    //a.logout_btn_01( ng-click='logout()') Log out
+
+div
+    ol.breadcrumb
+        li
+        a(href='/main')
+            h5 WhichMethod Main Page
 
   div.page-header
     h3
-      | Welcome to WhichMethod 
       | Privacy Policy
 
     .panel.panel-default
@@ -31,7 +32,7 @@ header
       br
       br
       h3.panel-title Risks or discomforts
-      | You may feel uncomfortable answering some of the questions. You may exit from your browser at any time. To reduce risk of any possibly email disclosure, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 90 days. 
+      | You may feel uncomfortable answering some of the questions. You may exit from your browser at any time. To reduce risk of any possibly email disclosure, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 24 hours. 
       br
       br
       h3.panel-title Contact information
