@@ -1,21 +1,24 @@
 header
   #logo
     a(href="landing_01.html")
+      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
-
-//- header#header.info()
-
-//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
-    method: {{key}} pos: {{value.p}} neg: {{value.n}}
-
+      .col-md-6
+      a.btn.btn-primary(ng-click='logout()') Log out
+  br
+  br
+#container-top
+  h3 
+    span.en WhichMethod Section 6 
+    span.es WhichMethod Sección 6 
+    span.glyphicon.glyphicon-play(style='color:#986698') 
+  br
+  br
 #container
   .body.questionpages
-
-  h2 WhichMethod Section 6
+  br
+  br
   ul
     li#53(ng-show="currentQuestion == 'q53'")
       label
@@ -23,7 +26,6 @@ header
       div(ng-repeat='option in questions.q53.options')
         input(type="radio" name='q53' ng-change="saveAnswers()" ng-model='questions.q53.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#53a(ng-show="currentQuestion == 'q53a'")
       label
@@ -31,7 +33,6 @@ header
       div(ng-repeat='option in questions.q53a.options')
         input(type="radio" name='q53a' ng-change="saveAnswers()" ng-model='questions.q53a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#53b(ng-show="currentQuestion == 'q53b'")
       label
@@ -39,7 +40,6 @@ header
       div(ng-repeat='option in questions.q53b.options')
         input(type="radio" name='q53b' ng-change="saveAnswers()" ng-model='questions.q53b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#53c(ng-show="currentQuestion == 'q53c'")
       label
@@ -47,6 +47,9 @@ header
       div(ng-repeat='option in questions.q53c.options')
         input(type='checkbox' ng-checked="questions.q53c.selectedOptions.indexOf(option) != -1" ng-click="questions.q53c.toggleCheck(option)")
         label {{option.name}}
+      br
+      br
+      br
       input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
 
     li#53h(ng-show="currentQuestion == 'q53h'")
@@ -55,9 +58,5 @@ header
       div(ng-repeat='option in questions.q53h.options')
         input(type="radio" name='q53h' ng-change="saveAnswers()" ng-model='questions.q53h.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
-
-    //- This is now question #53d
-    //- all questions above 53 - 53h on a single page
 
 div(ng-include="'app/sections/rankhelp.html'")

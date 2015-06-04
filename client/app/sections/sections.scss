@@ -1,4 +1,3 @@
-
 .resetQ{
   position:absolute;
   bottom:25px;
@@ -41,9 +40,6 @@ header{
     color:red;
   }
 }
-
-
-
 
 #logo{
   width: 150px;
@@ -122,6 +118,7 @@ footer{
   /*border: solid;*/
 }
 
+
 /* this is css for panels on the consent and exit screens */
 .panel-default {
   border-color: #ddd; 
@@ -150,4 +147,15 @@ footer{
   .error{
     color:red;
   }
+}
+/* logout button */
+.btn-primary {
+  color: #fff;
+  background-color: #986698;
+  border-color: #986698;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  color: #000;
+  background-color: #986698;
+  border-color: #986698;
 }

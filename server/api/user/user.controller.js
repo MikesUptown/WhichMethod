@@ -203,7 +203,7 @@ exports.emailpdf = function(req,res,next){
     var mailOptions = {
       from: 'WhichMethod App <Whichmethod@healthsolutions.org>', // sender address
       to: email, // list of receivers
-      subject: 'Your Contraception Recommendations', // Subject line
+      subject: 'Your Recommendations', // Subject line
       text: 'Please see attached pdf', // plaintext body
       html: 'Please see attached pdf', // html body
       attachments: [

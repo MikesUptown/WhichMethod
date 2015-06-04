@@ -1,11 +1,11 @@
 header
   #logo
     a(href="landing_01.html")
+      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
+      .col-md-6
+      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
 
 div.page-header
   h1
@@ -26,8 +26,8 @@ div.page-header
   
   span(ng-show="currentUser.name != 'guest'")
     button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
-    .prog(ng-show="sendingEmail") sending email...
-    .success(ng-show="emailSuccess") the email has been sent!
+    .prog(ng-show="sendingEmail") Sending email now...please be patient
+    .success(ng-show="emailSuccess") Your email has been sent!
     .error(ng-show="emailError") there was a problem... please try again
   a(href="/settings").btn.btn-default(ng-show="currentUser.name == 'guest'") Register to Receive your PDF via Email
 

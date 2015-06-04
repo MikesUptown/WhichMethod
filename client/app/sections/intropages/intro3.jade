@@ -1,12 +1,11 @@
 header
   #logo
     a(href="landing_03.html")
-          img.logo_img(src="assets/images/which_method_logo.png", alt="")
-          //<img ng-src="assets/images/which_method_logo.png" alt=""/>
-          //img(ng-src='assets/images/which_method_logo.png', alt='')
-      // logo
+      .col-md-6
+      img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-        a.logout_btn_01(href="#") Log out
+      .col-md-6
+      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
 
 section
   #main_wrapper
@@ -20,21 +19,14 @@ section
           h1.media-heading Questions 14-22
           br
           br
-          mark
-            | Sexual behavior
+          h4.media-heading Sexual behavior
           br
           br
           p.lead Your sexual history can help to narrow down the kind of birth control that works best for you. 
-          p.lead Don't worry, all answers are completely confidential
-          br
-          //kbd 3 Questions
-    
-      //a.save_btn_02(href="#") Save
+          p.lead Don't worry, all answers are completely confidential.
+          br    
       p
-      //a.continue_btn_03(href="/questions/section/3") Continue &#62;&#62;
       a.btn.btn-default.btn-lg(href='#/questions/section/3', role='button') Continue
-        // main_content
-      // main_wrapper
 footer
   p.footer &#169; Public Health Solutions 2014
 

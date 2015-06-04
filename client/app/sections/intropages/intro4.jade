@@ -1,13 +1,11 @@
 header
   #logo
       a(href="landing_04.html")
-          img.logo_img(src="assets/images/which_method_logo.png", alt="")
-          // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-          //img(ng-src='assets/images/which_method_logo.png', alt='')
-      // logo
+      .col-md-6
+      img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-        a.logout_btn_01(href="#") Log out
-      // menu
+      .col-md-6
+      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
 
 section
   #main_wrapper
@@ -21,19 +19,13 @@ section
           h1.media-heading Questions 23-27
           br
           br
-          mark
-            | Regular, unscheduled or absent periods
+          h4.media-heading Regular, unscheduled or absent periods
           br
           br
           p.lead Some birth control methods may affect your periods. 
           p.lead This won't hurt you, but it is something to keep in mind.
-
-      //a.save_btn_02(href="#") SAVE
       p
         a.btn.btn-default.btn-lg(href='#/questions/section/4', role='button') Continue
-      //a.continue_btn_03(href="/questions/section/4", title='') CONTINUE
-        // main_content
-      // main_wrapper
 footer
   p.footer &#169; Public Health Solutions 2014
 

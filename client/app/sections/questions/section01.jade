@@ -1,25 +1,24 @@
 header
   #logo
     a(href="landing_01.html")
+      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
-
-//- can switch above it to this:
-//- div(ng-include="'app/sections/header.html'")
-
-//- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px; margin 10px; padding:20px; font-size:12px; background: #eee") 
-//-  method: {{key}} pos: {{value.p}} neg: {{value.n}}
-
-
+      .col-md-6
+      a.btn.btn-primary(ng-click='logout()') Log out
+  br
+  br
+#container-top
+  h3 
+    span.en WhichMethod Section 1 
+    span.es | WhichMethod Sección 1
+    span.glyphicon.glyphicon-play(style='color:#986698')
+  br
+  br
 #container
   .body.questionpages
-
-  h3 
-    span.en WhichMethod Section 1
-    span.es WhichMethod Sección 1
+  br
+  br
   ul
     li#q1(ng-show="currentQuestion == 'q1'")
       label
@@ -34,6 +33,8 @@ header
         span.error.en(ng-show="age.input.$error.number") Not valid number!
         span.error.es(ng-show="age.input.$error.number") No número válido!
         br
+        br
+        br
         input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
 
 
@@ -45,6 +46,9 @@ header
         div(ng-repeat='option in questions.q2.options')
           input(type="radio" name='q2' ng-model="questions.q2.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+        br
+        br
+        br
         input(type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
 
 
@@ -55,11 +59,4 @@ header
           div(ng-repeat='option in questions.q3.options')
             input(type="radio" name='q3' ng-change="saveAnswers()" ng-model="questions.q3.selectedOption" ng-value="{{option}}")
             label.choice {{option.name}}
-          //input(type="button",ng-click="saveAnswers()",value="Skip")
 
-
-
-// all questions above on a single page; Q1-Q3
-
-div(ng-include="'app/sections/rankhelp.html'")
-//-     // end of first set of questions 01

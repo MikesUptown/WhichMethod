@@ -39,9 +39,24 @@ max-width: 640px;
 text-align:left;
 background: #FFFFFF;
 }
+#container-top {
+border: none;
+}
+#container-top {
+margin: 0 auto 10px auto;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 10px;
+margin-left: auto;
+max-width: 640px;
+}
+#container-top {
+text-align:left;
+background: #FFFFFF;
+}
 
 .body.questionpages {
-background-color: #CECECE;
+background-color: #986698;
 padding-bottom: 20px;
 color: #5a5a5a;
 }
@@ -50,4 +65,16 @@ color: #5a5a5a;
 background-color: #000000;
 color: #FFFFFF;
 font-size: 18px;
+}
+
+/* logout button */
+.btn-primary {
+  color: #fff;
+  background-color: #986698;
+  border-color: #986698;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  color: #000;
+  background-color: #986698;
+  border-color: #986698;
 }

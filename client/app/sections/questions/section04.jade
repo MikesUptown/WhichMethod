@@ -1,20 +1,24 @@
 header
   #logo
     a(href="landing_01.html")
+      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
-// header#header.info()
-
-//-  div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
-    method: {{key}} pos: {{value.p}} neg: {{value.n}}
-
+      .col-md-6
+      a.btn.btn-primary(ng-click='logout()') Log out
+  br
+  br
+#container-top
+  h3 
+    span.en WhichMethod Section 4 
+    span.es WhichMethod Sección 4
+    span.glyphicon.glyphicon-play(style='color:#986698')
+  br
+  br
 #container
   .body.questionpages
-  
-  h2 WhichMethod Section 4
+  br
+  br
   ul
     li#q23(ng-show="currentQuestion == 'q23'")
       label
@@ -22,7 +26,6 @@ header
       div(ng-repeat='option in questions.q23.options')
         input(type="radio" name='q23' ng-change="saveAnswers()" ng-model='questions.q23.selectedOption' ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q24(ng-show="currentQuestion == 'q24'")
       label
@@ -30,7 +33,6 @@ header
       div(ng-repeat='option in questions.q24.options')
         input(type="radio" name='q24' ng-change="saveAnswers()" ng-model="questions.q24.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q25(ng-show="currentQuestion == 'q25'")
       label
@@ -38,16 +40,13 @@ header
       div(ng-repeat='option in questions.q25.options')
         input(type="radio" name='q25' ng-change="saveAnswers()" ng-model="questions.q25.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
-    //- all questions above Q23-25 on single page
     li#q26(ng-show="currentQuestion == 'q26'")
       label
         | Q26. Do you need a birth control method which you can keep private?
       div(ng-repeat='option in questions.q26.options')
         input(type="radio" name='q26' ng-change="saveAnswers()" ng-model="questions.q26.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q26a(ng-show="currentQuestion == 'q26a'")
       label
@@ -55,7 +54,6 @@ header
       div(ng-repeat='option in questions.q26a.options')
         input(type="radio" name='q26a' ng-change="saveAnswers()" ng-model="questions.q26a.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q26b(ng-show="currentQuestion == 'q26b'")
       label
@@ -63,7 +61,6 @@ header
       div(ng-repeat='option in questions.q26b.options')
         input(type="radio" name='q26b' ng-change="saveAnswers()" ng-model="questions.q26b.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q27(ng-show="currentQuestion == 'q27'")
       label
@@ -71,11 +68,6 @@ header
       div(ng-repeat='option in questions.q27.options')
         input(type="radio" name='q27' ng-change="saveAnswers()" ng-model="questions.q27.selectedOption" ng-value="{{option}}")
         label {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
-
-    //- all questions above 26 - 27 on single page
-    //- input(type="button",ng-click="saveAnswers()",value="Continue")
 
 div(ng-include="'app/sections/rankhelp.html'")
 
-// this is the end of the 4th section of questions 04

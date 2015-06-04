@@ -1,19 +1,24 @@
 header
   #logo
     a(href="landing_01.html")
+      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
-      // <img ng-src="assets/images/which_method_logo.png" alt=""/>
-      //img(ng-src='assets/images/which_method_logo.png', alt='')
   #menu
-    a.logout_btn_01( ng-click='logout()') Log out
-
-
-//- div(ng-repeat="(key, value) in ranking" style="display:inline-block; width:170px")
-    method: {{key}} pos: {{value.p}} neg: {{value.n}}
+      .col-md-6
+      a.btn.btn-primary(ng-click='logout()') Log out
+  br
+  br
+#container-top
+  h3 
+    span.en WhichMethod Section 3 
+    span.es WhichMethod Sección 3
+    span.glyphicon.glyphicon-play(style='color:#986698') 
+  br
+  br
 #container
   .body.questionpages
-
-  h3 WhichMethod Section 3
+  br
+  br
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
       label
@@ -21,7 +26,6 @@ header
       div(ng-repeat='option in questions.q14.options')
         input(type="radio" name='q14' ng-change="saveAnswers()" ng-model="questions.q14.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
-      //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q15(ng-show="currentQuestion == 'q15'")
       label
@@ -31,6 +35,9 @@ header
         div(ng-repeat='option in questions.q15.options')
           input(type="radio" name='q15'  ng-model="questions.q15.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
+        br
+        br
+        br
         input(type="button" ng-disabled="mens.$invalid" ng-click="saveAnswers()",value="Continue")
 
      li#q16(ng-show="currentQuestion == 'q16'")
@@ -39,7 +46,6 @@ header
         div(ng-repeat='option in questions.q16.options')
           input(type="radio" name='q16' ng-change="saveAnswers()" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
         label
@@ -49,6 +55,9 @@ header
           div(ng-repeat='option in questions.q16a.options')
             input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
             label.choice {{option.name}}
+          br
+          br
+          br
           input(type="button" ng-disabled="unplanned.$invalid" ng-click="saveAnswers()",value="Continue")
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
@@ -57,9 +66,7 @@ header
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
-      //- all questions above Q16 - Q16b on a single page
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
           | Q16bi. When you had an unplanned pregnancy or pregnancies, what method of birth control were you using?
@@ -75,26 +82,28 @@ header
               label pregnancy {{$index+1}} &nbsp;  
               input(type='checkbox'  ng-checked="" ng-click="questions.q16bi.togglePregnancy(option,$index+1)" ) 
               &nbsp; &nbsp;
-
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-      //- Q16bi above on single page
      li#q17(ng-show="currentQuestion == 'q17'")
         label
           | Q17. What birth control methods are you interested in using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
         div(ng-repeat='option in questions.q17.options')
           input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-      //- Q17 above on single page
      li#q18(ng-show="currentQuestion == 'q18'")
         label
           | Q18. Have you EVER used any method of birth control?
         div(ng-repeat='option in questions.q18.options')
           input(type="radio" name='q18' ng-change="saveAnswers()" ng-model="questions.q18.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q18a(ng-show="currentQuestion == 'q18a'")
         label
@@ -102,7 +111,6 @@ header
         div(ng-repeat='option in questions.q18a.options')
           input(type="radio" name='q18a' ng-change="saveAnswers()" ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
@@ -110,16 +118,17 @@ header
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-      //- all questions above Q18-Q18ai above on single page
      li#q19(ng-show="currentQuestion == 'q19'")
         label
           | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
         div(ng-repeat='option in questions.q19.options')
           input(type="radio" name='q19' ng-change="saveAnswers()" ng-model="questions.q19.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
         label
@@ -127,9 +136,11 @@ header
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-      //- Q19 & Q19a on a single page
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
           | Q19ai. What problems did you have while using this method? 
@@ -137,16 +148,17 @@ header
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
-      //- Q19ai above on a single page by itself
      li#q20(ng-show="currentQuestion == 'q20'")
         label
           | Q20. How soon do you want to get pregnant? In...
         div(ng-repeat='option in questions.q20.options')
           input(type="radio" name='q20' ng-change="saveAnswers()" ng-model="questions.q20.selectedOption" ng-value="{{option}}")
           label {{option.name}}
-        //input(type="button",ng-click="saveAnswers()",value="Skip")
 
      li#q21(ng-show="currentQuestion == 'q21'")
         label
@@ -154,6 +166,9 @@ header
         div(ng-repeat='option in questions.q21.options')
           input(type='checkbox' ng-checked="questions.q21.selectedOptions.indexOf(option) != -1" ng-click="questions.q21.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
 
       li#q22(ng-show="currentQuestion == 'q22'")
@@ -162,12 +177,10 @@ header
         div(ng-repeat='option in questions.q22.options')
           input(type='checkbox' ng-checked="questions.q22.selectedOptions.indexOf(option) != -1" ng-click="questions.q22.toggleCheck(option)")
           label {{option.name}}
+        br
+        br
+        br
         input(type="button",ng-click="saveAnswers()",value="Continue")
-      
-      //- all questions Q20 - Q22 above on a single page
     
 
 div(ng-include="'app/sections/rankhelp.html'")
-
-// this ends the third set of questions 03
-//- li(ng-show="currentQuestion == 'q18'")
