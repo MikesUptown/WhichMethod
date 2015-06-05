@@ -13,12 +13,6 @@ header
         .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
         "has-error": form.name.$invalid && submitted }')
 
-        .form-group(ng-class='{ "has-success": form.zip.$valid && submitted,\
-        "has-error": form.zip.$invalid && submitted }')
-            | First 3 digits of zipcode required
-          p.help-block(ng-show='form.zip.$error.mongoose')
-            | {{ errors.zip }}
-
         .form-group(ng-class='{ "has-success": form.email.$valid && submitted,\
         "has-error": form.email.$invalid && submitted }')
           h3 Email

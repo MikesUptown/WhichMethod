@@ -277,11 +277,16 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*color: #333;*/
   color: #372B15;
 =======
   color: #333;
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+  /*color: #333;*/
+  color: #372B15;
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   background-color: #fff;
 }
 input,
@@ -2086,11 +2091,16 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*color: #fff;*/
   color: #f0ad4e;
 =======
   color: #fff;
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+  /*color: #fff;*/
+  color: #f0ad4e;
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   background-color: #428bca;
   border-color: #357ebd;
 }
@@ -2129,18 +2139,24 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary .badge {
   color: #428bca;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   /*color: #49353E;*/
   background-color: #fff;
 }
 .btn-success {
   color: #683933;
   /*color: #fff;*/
+<<<<<<< HEAD
 =======
   background-color: #fff;
 }
 .btn-success {
   color: #fff;
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
@@ -2174,6 +2190,9 @@ fieldset[disabled] .btn-success:active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   color: #fff;
   background-color: #5cb85c;
   /*background-color: #fff;*/
@@ -2186,6 +2205,7 @@ fieldset[disabled] .btn-success.active {
 .btn-info {
   color: #fff;
   /*color: #683933;*/
+<<<<<<< HEAD
 =======
   background-color: #5cb85c;
   border-color: #4cae4c;
@@ -2197,6 +2217,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info {
   color: #fff;
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   background-color: #5bc0de;
   border-color: #46b8da;
 }
@@ -2358,9 +2380,13 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.33;
   border-radius: 6px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*color: #999;*/
 =======
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+  /*color: #999;*/
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -3992,6 +4018,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   /*color: #fff;*/
   color: #683933;
 }
@@ -4002,6 +4031,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #fff;
   /*background-color: transparent;*/
   background-color: #47a447;
+<<<<<<< HEAD
 =======
   color: #777;
 }
@@ -4010,6 +4040,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
   background-color: transparent;
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,

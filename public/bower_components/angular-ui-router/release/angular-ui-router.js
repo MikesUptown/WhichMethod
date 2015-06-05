@@ -2827,10 +2827,14 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *    first parameter, then the constructed href url will be built from the first navigable ancestor (aka
      *    ancestor with a valid url).
 <<<<<<< HEAD
+<<<<<<< HEAD
      * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
 =======
      * - **`inherit`** - {boolean=false}, If `true` will inherit url parameters from current url.
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+     * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
      * - **`relative`** - {object=$state.$current}, When transitioning with relative path (e.g '^'), 
      *    defines which state to be relative from.
      * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
@@ -2841,10 +2845,14 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
       options = extend({
         lossy:    true,
 <<<<<<< HEAD
+<<<<<<< HEAD
         inherit:  true,
 =======
         inherit:  false,
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+        inherit:  true,
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
         absolute: false,
         relative: $state.$current
       }, options || {});
@@ -3272,18 +3280,26 @@ function $ViewDirective(   $state,   $injector,   $uiViewScroll) {
 
         function updateView(firstTime) {
 <<<<<<< HEAD
+<<<<<<< HEAD
           var newScope,
 =======
           var newScope        = scope.$new(),
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+          var newScope,
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
               name            = getUiViewName(attrs, $element.inheritedData('$uiView')),
               previousLocals  = name && $state.$current && $state.$current.locals[name];
 
           if (!firstTime && previousLocals === latestLocals) return; // nothing to do
 <<<<<<< HEAD
+<<<<<<< HEAD
           newScope = scope.$new();
 =======
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+          newScope = scope.$new();
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
           latestLocals = $state.$current.locals[name];
 
           var clone = $transclude(newScope, function(clone) {
@@ -3671,7 +3687,11 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 <<<<<<< HEAD
+<<<<<<< HEAD
 })(window, window.angular);
 =======
 })(window, window.angular);
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+})(window, window.angular);
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e

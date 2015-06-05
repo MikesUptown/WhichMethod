@@ -1,15 +1,21 @@
 {
   "name": "angular-cookies",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   "version": "1.2.23",
   "main": "./angular-cookies.js",
   "dependencies": {
     "angular": "1.2.23"
+<<<<<<< HEAD
 =======
   "version": "1.2.24",
   "main": "./angular-cookies.js",
   "dependencies": {
     "angular": "1.2.24"
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   }
 }

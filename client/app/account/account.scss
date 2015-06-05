@@ -10,7 +10,7 @@ $btnTextAlt: #000000;
   // margin-top:-200px;
   // margin-left:-200px;
   @include translate3d(-50%,-50%,0);
-  width:400px;
+  max-width:400px;
   // height:400px;
   background: #986698;
   z-index:100;
@@ -18,7 +18,7 @@ $btnTextAlt: #000000;
 .loginContainer{
   padding:20px;
   background-color:#FF5E5E;
-  width:400px;
+  max-width:400px;
 }
 
 .signupColumn{

@@ -1,6 +1,9 @@
 {
   "name": "angular-mocks",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   "version": "1.2.23",
   "main": "./angular-mocks.js",
   "dependencies": {
@@ -12,6 +15,7 @@
     "type": "version",
     "tag": "v1.2.23",
     "commit": "f15ecc4f747ba1df3e75374a8d76494086dbcb38"
+<<<<<<< HEAD
 =======
   "version": "1.2.24",
   "main": "./angular-mocks.js",
@@ -25,6 +29,8 @@
     "tag": "v1.2.24",
     "commit": "f6d21654a97dda1e173c4e7cf1d7e74024a375d0"
 >>>>>>> 5d1ac423b276dafdca8f3aad0cd79661cca82b8e
+=======
+>>>>>>> 8641ab5d1c9b414a99527a929e40117a24b68f0e
   },
   "_source": "git://github.com/angular/bower-angular-mocks.git",
   "_target": ">=1.2.*",
