@@ -97,6 +97,10 @@ angular.module('contraceptionApp')
         thisQ.answer = {'array': thisQ.selectedOptions.slice(0) }
       }
 
+      // if($scope.currentQuestion == 'q21'){
+        
+      // }
+
       var isEnd = sectionEnd.indexOf($scope.currentQuestion)
 
       if( isEnd > -1  ){

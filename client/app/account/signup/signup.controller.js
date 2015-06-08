@@ -4,10 +4,17 @@ angular.module('contraceptionApp')
   .controller('SignupCtrl', function ($scope, Auth, $location,$rootScope) {
     $scope.user = {};
     $scope.errors = {};
+    $rootScope.consent1 = false;
+    $rootScope.consent2 = false;
 
-    if(!$rootScope.consent1 && !$rootScope.consent2){
+    if(!$rootScope.consent){
       $location.path('/privacy').replace();
     }
+
+    if($rootScope.consent == "option1")
+      $rootScope.consent1 = true
+    else if($rootScope.consent == "option2")
+      $rootScope.consent2 = true
 
     function randomString(length) {
       var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'

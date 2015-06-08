@@ -45,16 +45,16 @@ header
       .has-success
       .checkbox
       label
-      input#checkboxSuccess(type='checkbox', value='option1' ng-model="$parent.consent1")
+      input#checkboxSuccess(type='radio', value='option1' ng-model="$parent.consent")
       | REGISTERED USER: I am age 14 years or older, and I understand and agree to the privacy policy above. I agree to be contacted 1 or 2 times by email.
 
       .has-success
       .checkbox
       label
-      input#checkboxSuccess(type='checkbox', value='option2' ng-model="$parent.consent2")
+      input#checkboxSuccess(type='radio', value='option2' ng-model="$parent.consent")
       | GUEST USER: I am age 14 years or older, and I understand and agree to the privacy policy above.
       br
-      a.btn.btn-default(href="/signup" ng-disabled="!$parent.consent1 && !$parent.consent2" ng-click="saveConsent()") Continue
+      a.btn.btn-default(href="/signup" ng-disabled="!$parent.consent" ng-click="saveConsent()") Continue
       br
       br
       br
