@@ -170,7 +170,7 @@ header
         br
         .error(ng-show="questions.q21.selectedOptions.length < 3") *Please Select 3 Options
         br
-        input(type="button", ng-disabled="questions.q21.selectedOptions.length < 3" ng-click="saveAnswers()",value="Continue")
+        input(type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continue")
 
       li#q22(ng-show="currentQuestion == 'q22'")
         label
