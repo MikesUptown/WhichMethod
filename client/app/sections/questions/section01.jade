@@ -40,7 +40,7 @@ header
 
     li#q2(ng-show="currentQuestion == 'q2'")
       label
-        | Q2. How much do you weigh "lbs."?
+        span.en Q2. How much do you weigh "lbs."?
       form(name="weight")
         input(ng-model='questions.q2.textInput' required type='number', tabindex='1')
         div(ng-repeat='option in questions.q2.options')
@@ -53,8 +53,8 @@ header
 
 
     li#q3(ng-show="currentQuestion == 'q3'")
-        label
-            | Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
+      label
+        span.en Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
         div
           div(ng-repeat='option in questions.q3.options')
             input(type="radio" name='q3' ng-change="saveAnswers()" ng-model="questions.q3.selectedOption" ng-value="{{option}}")
