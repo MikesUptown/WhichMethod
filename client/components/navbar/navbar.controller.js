@@ -1,12 +1,19 @@
 'use strict';
 
 angular.module('contraceptionApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, $rootScope, $state) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, $rootScope, $state, $cookies) {
     $scope.menu = [{
       'title': 'WhichMethod Logo',
       // 'link': '/'
     }];
 
+
+      
+
+    $scope.setLanguage = function(lang){
+      $rootScope.language = lang;
+      $cookies.put('lang', lang);
+    }
 
 
     $scope.startServey = function(){

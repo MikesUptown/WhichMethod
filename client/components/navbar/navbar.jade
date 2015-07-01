@@ -33,9 +33,9 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
       br
       ul.nav.nabar-nav.navbar-right#lang-switch.clearfix
         li.en
-          a(href='/') english
+          a(href='' ng-click="setLanguage('en')") english
         li.es
-          a(href='/es/') español
+          a(href='' ng-click="setLanguage('es')") español
 
           //#google_translate_element
           script(type='text/javascript').

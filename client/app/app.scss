@@ -18,17 +18,22 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 
 
-.es {
-	display: none;
-}
-#lang-switch {
-	.es {
-		display: inline-block;
-	}
-	.en {
-		display: inline-block;
-	}
-}
+// .es {
+// 	// display: none;
+//   visibility:hidden;
+// }
+// .en{
+//   visibility:visible;
+// }
+
+// #lang-switch {
+// 	.es {
+// 		display: inline-block;
+// 	}
+// 	.en {
+// 		display: inline-block;
+// 	}
+// }
 
 /* this is the language switch css in navbar */
 #lang-switch {

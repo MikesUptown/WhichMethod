@@ -4686,9 +4686,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q3:{
         options: [
-          { name : 'I do not use tobacco',               value : 1  },
-          { name : 'I use tobacco less than once a day', value : 2  },
-          { name : 'I use tobacco daily',                value : 3  },
+          { name : 'I do not use tobacco',
+            nameES : 'I do not use tobacco IN SPANISH',               
+            value : 1  
+          },
+          { name : 'I use tobacco less than once a day', 
+            nameES : 'I use tobacco less than once a day IN SPANISH',     
+            value : 2  
+          },
+          { name : 'I use tobacco daily',
+            nameES : 'I use tobacco less than once a day IN SPANISH',                     
+            value : 3  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
