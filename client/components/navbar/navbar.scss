@@ -20,40 +20,4 @@
   border-radius: 4px;
 }
 
-/* this is the language switch css in navbar */
-#lang-switch {
-  /* position: absolute;
-  right: 0;
-  top: 10px;
-  margin: 0;
-  padding: 0;
-  list-style:none;
-  z-index: 999; */
 
-  position: relative;
-  float: right;
-  margin-right: 15px;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-#lang-switch li {
-  float: left;
-  font-size: 8.5px;
-  line-height: 1em;
-}
-#lang-switch li a {
-  padding: 0 10px;
-  font-size: 8.5px;
-  color: #000000;
-  border-left: 1px solid #b7b7b7;
-}
-#lang-switch li a:hover, html.en #lang-switch li.en a, html.es #lang-switch li.es a {
-  color: #986698;
-}
-#lang-switch li:first-child a{
-  border: 0;
-}
-#lang-switch li:last-child a {
-  padding-right: 0;
-}
