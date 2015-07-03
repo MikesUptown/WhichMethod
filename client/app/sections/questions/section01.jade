@@ -10,8 +10,8 @@ header
   br
 #container-top
   h3 
-    span.en WhichMethod Section 1 
-    span.es | WhichMethod Sección 1
+    span(ng-show="language=='en'") WhichMethod Section 1 
+    span(ng-show="language=='es'") WhichMethod Sección 1
     span.glyphicon.glyphicon-play(style='color:#986698')
   br
   br
@@ -40,7 +40,8 @@ header
 
     li#q2(ng-show="currentQuestion == 'q2'")
       label
-        span.en Q2. How much do you weigh "lbs."?
+        span(ng-show="language=='en'") Q2. How much do you weigh "lbs."?
+        span(ng-show="language=='es'") Q2. ¿Cuánto pesa?
       form(name="weight")
         input(ng-model='questions.q2.textInput' required type='number', tabindex='1')
         div(ng-repeat='option in questions.q2.options')
@@ -54,7 +55,8 @@ header
 
     li#q3(ng-show="currentQuestion == 'q3'")
       label
-        span.en Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
+        span(ng-show="language=='en'") Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
+        span(ng-show="language=='es'") Q3. ¿Con que frecuencia fuma usted cigarrillos, cigarros o usa usted tabaco sin humo?
         div
           div(ng-repeat='option in questions.q3.options')
             input(type="radio" name='q3' ng-change="saveAnswers()" ng-model="questions.q3.selectedOption" ng-value="{{option}}")

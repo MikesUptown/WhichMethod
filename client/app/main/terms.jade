@@ -7,9 +7,13 @@ header
     //a.logout_btn_01( ng-click='logout()') Log out
 
   div.page-header
+    h2
+      span(ng-show="language=='en'") Welcome to WhichMethod
+      span(ng-show="language=='es'") Bienvenida a WhichMethod
     h3
-      | Welcome to WhichMethod 
-      | Privacy Policy
+      span(ng-show="language=='en'") Privacy Policy
+      span(ng-show="language=='es'") Política De Privacidad
+
 
     .panel.panel-default
     h3.panel-heading
