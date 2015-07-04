@@ -10,8 +10,8 @@ header
   br
 #container-top
   h3 
-    span.en WhichMethod Section 2 
-    span.es WhichMethod Sección 2
+    span(ng-show="language=='en'") WhichMethod Section 2
+    span(ng-show="language=='es'") WhichMethod Sección 2
     span.glyphicon.glyphicon-play(style='color:#986698')
   br
   br
