@@ -53,9 +53,8 @@ header
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
       br
       label
-        Q5.
-        span(lang='en') Very heavy periods?
-        span(lang='es') Períodos muy abundantes?
+        span(lang='en') Q5. Very heavy periods?
+        span(lang='es') Q5. Períodos muy abundantes?
       div(ng-repeat='option in questions.q5.options')
         input(type="radio" name='q5' ng-change="saveAnswers()" ng-model="questions.q5.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
@@ -66,7 +65,7 @@ header
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
       br
       label
-        | Q6.
+        | Q6. 
         span(lang='en') Periods that last longer than 7 days?
         span(lang='es') Períodos que duran más de 7 días?
       div(ng-repeat='option in questions.q6.options')
@@ -146,7 +145,7 @@ header
       label
         | Q12. 
         span(lang='en') Significant PMS (premenstrual syndrome)?
-        span(lang='es')  Sufre usted del síndrome pre-menstrual fuertemente?
+        span(lang='es') Sufre usted del síndrome pre-menstrual fuertemente?
       div(ng-repeat='option in questions.q12.options')
         input(type="radio" name='q12' ng-change="saveAnswers()" ng-model="questions.q12.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
