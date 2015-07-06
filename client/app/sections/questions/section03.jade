@@ -22,14 +22,19 @@ header
   ul
      li#q14(ng-show="currentQuestion == 'q14'")
       label
-        | Q14. How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
+        | Q14. 
+        span(lang='en') How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
+        span(lang='es') ¿Cómo describiría su actual relación sexual (Sexo, se refiere a sexo vaginal)? ¿Diría usted que:
+        
       div(ng-repeat='option in questions.q14.options')
         input(type="radio" name='q14' ng-change="saveAnswers()" ng-model="questions.q14.selectedOption" ng-value="{{option}}")
         label.choice {{option.name}}
 
      li#q15(ng-show="currentQuestion == 'q15'")
       label
-        | Q15. During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
+        | Q15. 
+        span(lang='en') During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
+        span(lang='es') ¿En los últimos 12 meses, con cuántos hombres, si es el caso, ha tenido usted relaciones sexuales?  Por favor cuente cada compañero sexual  que haya tenido así solo haya ocurrido una vez.
       form(name="mens")
         input(ng-model='questions.q15.textInput' type='number' required)
         div(ng-repeat='option in questions.q15.options')
@@ -42,14 +47,18 @@ header
 
      li#q16(ng-show="currentQuestion == 'q16'")
         label
-          | Q16. Have you ever had an unplanned pregnancy?
+          | Q16. 
+          span(lang='en') Have you ever had an unplanned pregnancy?
+          span(lang='es') ¿Ha tenido alguna vez un embarazo no planeado?
         div(ng-repeat='option in questions.q16.options')
           input(type="radio" name='q16' ng-change="saveAnswers()" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
         label
-          | Q16a. How many unplanned pregnancies have you had?
+          | Q16a. 
+          span(lang='en') How many unplanned pregnancies have you had?
+          span(lang='es') ¿Cuántos embarazos no planeados ha tenido usted?
         form(name="unplanned")
           input(ng-model='questions.q16a.textInput' type='number' required)
           div(ng-repeat='option in questions.q16a.options')
@@ -62,21 +71,25 @@ header
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
-          | Q16b. When you had an unplanned pregnancy or pregnancies were you using any method of birth control or doing anything to prevent getting pregnant?
+          | Q16b. 
+          span(lang='en') When you had an unplanned pregnancy or pregnancies were you using any method of birth control or doing anything to prevent getting pregnant?
+          span(lang='es') ¿Cuándo usted tuvo un embarazo o embarazos no planeados, estaba usando algún método anticonceptivo o haciendo algo para prevenir el embarazo?
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
           label {{option.name}}
 
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
-          | Q16bi. When you had an unplanned pregnancy or pregnancies, what method of birth control were you using?
-        
+          | Q16bi. 
+          span(lang='en') When you had an unplanned pregnancy or pregnancies, what method of birth control were you using?
+          span(lang='es') ¿Cuándo usted tuvo un embarazo o embarazos no planeados, que método anticonceptivo estaba usted usando?
         div(ng-repeat='option in questions.q16bi.options')
           input(type='checkbox'  ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
           label {{option.name}}
 
           div(ng-if="questions.q16bi.selectedOptions.indexOf(option) != -1" style="padding-left:10px")
-            | Which unplanned pregnancy was this (mark all that apply)?
+            span(lang='en') Which unplanned pregnancy was this (mark all that apply)?
+            span(lang='es') Need spanish translation for: "Which unplanned pregnancy was this (mark all that apply)?"
             br
             span(ng-repeat="n in range( questions.q16a.answer ) track by $index" )
               label pregnancy {{$index+1}} &nbsp;  
@@ -89,7 +102,9 @@ header
 
      li#q17(ng-show="currentQuestion == 'q17'")
         label
-          | Q17. What birth control methods are you interested in using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          | Q17. 
+          span(lang='en') What birth control methods are you interested in using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
+          span(lang='es') ¿Qué métodos anticonceptivos está usted interesada en usar ahora? Por favor escoja TODOS los métodos que usted está interesada en usar. Si usted no está interesada en ninguno de estos métodos, valla a la siguiente pantalla.
         div(ng-repeat='option in questions.q17.options')
           input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
           label {{option.name}}
@@ -100,21 +115,27 @@ header
 
      li#q18(ng-show="currentQuestion == 'q18'")
         label
-          | Q18. Have you EVER used any method of birth control?
+          | Q18. 
+          span(lang='en') Have you EVER used any method of birth control?
+          span(lang='es') ¿Alguna vez ha usado algún método anticonceptivo?
         div(ng-repeat='option in questions.q18.options')
           input(type="radio" name='q18' ng-change="saveAnswers()" ng-model="questions.q18.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q18a(ng-show="currentQuestion == 'q18a'")
         label
-          | Q18a. Are you using birth control now?
+          | Q18a. 
+          span(lang='en') Are you using birth control now?
+          span(lang='es') ¿Está usted usando algún método anticonceptivo ahora?
         div(ng-repeat='option in questions.q18a.options')
           input(type="radio" name='q18a' ng-change="saveAnswers()" ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
-          | Q18ai. What birth control methods are you using now? Please choose ALL the methods you are using now. If you are not using any of these methods, go to the next screen.
+          | Q18ai. 
+          span(lang='en') What birth control methods are you using now? Please choose ALL the methods you are using now. If you are not using any of these methods, go to the next screen.
+          span(lang='es') ¿Qué método anticonceptivo está usted usando ahora? Por favor escoja TODOS los métodos que usted está usando ahora. Si usted no está usando ninguno de estos métodos, valla a la siguiente pantalla.
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
           label {{option.name}}
@@ -125,14 +146,18 @@ header
 
      li#q19(ng-show="currentQuestion == 'q19'")
         label
-          | Q19. Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
+          | Q19. 
+          span(lang='en') Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
+          span(lang='es') ¿Ha usado alguna vez un método anticonceptivo que no le gusto, que no le funciono o que le presento otros problemas?
         div(ng-repeat='option in questions.q19.options')
           input(type="radio" name='q19' ng-change="saveAnswers()" ng-model="questions.q19.selectedOption" ng-value="{{option}}")
           label.choice {{option.name}}
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
         label
-          | Q19a. Which methods did you have a problem with? Please choose ALL the methods you had a problem with.
+          | Q19a. 
+          span(lang='en') Which methods did you have a problem with? Please choose ALL the methods you had a problem with.
+          span(lang='es') ¿Con cuales métodos tuvo usted problemas? Por favor escoja TODOS los métodos que usted tuvo problema.
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
           label {{option.name}}
@@ -143,7 +168,9 @@ header
 
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
-          | Q19ai. What problems did you have while using this method? 
+          | Q19ai. 
+          span(lang='en') What problems did you have while using this method?
+          span(lang='es') ¿Qué problemas tuviste durante el uso de este método? 
           span.highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
@@ -155,14 +182,18 @@ header
 
      li#q20(ng-show="currentQuestion == 'q20'")
         label
-          | Q20. How soon do you want to get pregnant? In...
+          | Q20. 
+          span(lang='en') How soon do you want to get pregnant? In...
+          span(lang='es') ¿En cuánto tiempo quiere usted salir embarazada?
         div(ng-repeat='option in questions.q20.options')
           input(type="radio" name='q20' ng-change="saveAnswers()" ng-model="questions.q20.selectedOption" ng-value="{{option}}")
           label {{option.name}}
 
      li#q21(ng-show="currentQuestion == 'q21'")
         label
-          | Q21. What is most important to you when choosing a birth control method? (Select 3)
+          | Q21. 
+          span(lang='en') What is most important to you when choosing a birth control method? (Select 3)
+          span(lang='es') ¿Qué es lo más importante para usted a la hora de escoger un método anticonceptivo? (Seleccione tres)
         div(ng-repeat='option in questions.q21.options')
           input(type='checkbox' ng-checked="questions.q21.selectedOptions.indexOf(option) != -1" ng-click="questions.q21.toggleCheck(option)")
           label {{option.name}}
@@ -174,7 +205,9 @@ header
 
       li#q22(ng-show="currentQuestion == 'q22'")
         label
-          | Q22. How often do you want to actively do something for your birth control? You may choose more than one answer.
+          | Q22. 
+          span(lang='en') How often do you want to actively do something for your birth control? You may choose more than one answer.
+          span(lang='es') ¿Con qué frecuencia quiere usted tomar acción sobre su método
         div(ng-repeat='option in questions.q22.options')
           input(type='checkbox' ng-checked="questions.q22.selectedOptions.indexOf(option) != -1" ng-click="questions.q22.toggleCheck(option)")
           label {{option.name}}
