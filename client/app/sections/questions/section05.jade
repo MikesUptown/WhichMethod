@@ -22,310 +22,434 @@ header
   ul
     li#28(ng-show="currentQuestion == 'q28'")
       label
-        | Q28. Have you had a baby in the last 6 months?
+        | Q28. 
+        span(ng-show="language=='en'") Have you had a baby in the last 6 months?
+        span(ng-show="language=='es'") ¿Ha tenido usted un bebé en los últimos 6 meses?
       div(ng-repeat='option in questions.q28.options')
         input(type="radio" name='q28' ng-change="saveAnswers()" ng-model='questions.q28.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#28a(ng-show="currentQuestion == 'q28a'")
       label
-        | Q28a. Are you breastfeeding your baby now?
+        | Q28a. 
+        span(ng-show="language=='en'") Are you breastfeeding your baby now?
+        span(ng-show="language=='es'") ¿Está usted lactando en este momento?
       div(ng-repeat='option in questions.q28a.options')
         input(type="radio" name='q28a' ng-change="saveAnswers()" ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#28b(ng-show="currentQuestion == 'q28b'")
       label
-        | Q28b. How long since you gave birth?
+        | Q28b. 
+        span(ng-show="language=='en'") How long since you gave birth?
+        span(ng-show="language=='es'") ¿Cuánto tiempo ha pasado desde de que nació su bebe?
       div(ng-repeat='option in questions.q28b.options')
         input(type="radio" name='q28b' ng-change="saveAnswers()" ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#28c(ng-show="currentQuestion == 'q28c'")
       label
-        | Q28c. How long since you gave birth?
+        | Q28c. 
+        span(ng-show="language=='en'") How long since you gave birth?
+        span(ng-show="language=='es'") ¿Cuánto tiempo ha pasado desde de que nació su bebe?
       div(ng-repeat='option in questions.q28c.options')
         input(type="radio" name='q28c' ng-change="saveAnswers()" ng-model='questions.q28c.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q29(ng-show="currentQuestion == 'q29'")
       label
-        | Q29. Have you had surgery in the past three months?
+        | Q29. 
+        span(ng-show="language=='en'") Have you had surgery in the past three months?
+        span(ng-show="language=='es'") ¿Ha tenido usted una cirugía en los últimos tres meses?
       div(ng-repeat='option in questions.q29.options')
         input(type="radio" name='q29' ng-change="saveAnswers()" ng-model='questions.q29.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q29a(ng-show="currentQuestion == 'q29a'")
       label
-        | Q29a. Is it hard moving around because of the surgery?
+        | Q29a. 
+        span(ng-show="language=='en'") Is it hard moving around because of the surgery?
+        span(ng-show="language=='es'") ¿Es difícil moverse a causa de la cirugía?
       div(ng-repeat='option in questions.q29a.options')
         input(type="radio" name='q29a' ng-change="saveAnswers()" ng-model='questions.q29a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q30(ng-show="currentQuestion == 'q30'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have:
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q30. High blood pressure, also called hypertension
+        | Q30. 
+        span(ng-show="language=='en'") High blood pressure, also called hypertension
+        span(ng-show="language=='es'") ¿Hipertensión?
       div(ng-repeat='option in questions.q30.options')
         input(type="radio" name='q30' ng-change="saveAnswers()" ng-model='questions.q30.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q30a(ng-show="currentQuestion == 'q30a'")
       label
-        | Q30a. Are you taking medicine for high blood pressure now?
+        | Q30a. 
+        span(ng-show="language=='en'") Are you taking medicine for high blood pressure now?
+        span(ng-show="language=='es'") ¿Está tomando medicina para la presión arterial alta ahora?
       div(ng-repeat='option in questions.q30a.options')
         input(type="radio" name='q30a' ng-change="saveAnswers()" ng-model='questions.q30a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q31(ng-show="currentQuestion == 'q31'")
-      h4 Have you ever been told by a doctor or nurse that you have: 
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q31. Blood clots, also called clot in a vein or DVT
+        | Q31. 
+        span(ng-show="language=='en'") Blood clots, also called clot in a vein or DVT
+        span(ng-show="language=='es'") Coágulos sanguíneos, también llamados coágulos en las venas o TVP?
       div(ng-repeat='option in questions.q31.options')
         input(type="radio" name='q31' ng-change="saveAnswers()" ng-model='questions.q31.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q32(ng-show="currentQuestion == 'q32'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q32. Pulmonary embolus, also called a clot in the lung
+        | Q32. 
+        span(ng-show="language=='en'") Pulmonary embolus, also called a clot in the lung
+        span(ng-show="language=='es'") Embolia pulmonar, también llamado un coágulo sanguíneo en los pulmones?
       div(ng-repeat='option in questions.q32.options')
         input(type="radio" name='q32' ng-change="saveAnswers()" ng-model='questions.q32.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
 
     li#q33(ng-show="currentQuestion == 'q33'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q33. A stroke
+        | Q33. 
+        span(ng-show="language=='en'") A stroke
+        span(ng-show="language=='es'") Un derrame cerebral?
       div(ng-repeat='option in questions.q33.options')
         input(type="radio" name='q33' ng-change="saveAnswers()" ng-model='questions.q33.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q34(ng-show="currentQuestion == 'q34'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q34. A blood clotting disorder
+        | Q34. 
+        span(ng-show="language=='en'") A blood clotting disorder
+        span(ng-show="language=='es'") Problemas de coagulación de la sangre?
       div(ng-repeat='option in questions.q34.options')
         input(type="radio" name='q34' ng-change="saveAnswers()" ng-model='questions.q34.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#q35(ng-show="currentQuestion == 'q35'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q35. High Cholesterol
+        | Q35. 
+        span(ng-show="language=='en'") High Cholesterol
+        span(ng-show="language=='es'") Colesterol alto?
       div(ng-repeat='option in questions.q35.options')
         input(type="radio" name='q35' ng-change="saveAnswers()" ng-model='questions.q35.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#36(ng-show="currentQuestion == 'q36'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q36. A heart attack, also called a myocardial infarction, heart disease or vascular disease
+        | Q36. 
+        span(ng-show="language=='en'") A heart attack, also called a myocardial infarction, heart disease or vascular disease
+        span(ng-show="language=='es'") Infarto de miocardio, enfermedad cardíaca o enfermedad vascular?
       div(ng-repeat='option in questions.q36.options')
         input(type="radio" name='q36' ng-change="saveAnswers()" ng-model='questions.q36.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#37(ng-show="currentQuestion == 'q37'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q37. Disease of heart valves
+        | Q37. 
+        span(ng-show="language=='en'") Disease of heart valves
+        span(ng-show="language=='es'") Enfermedad de las válvulas cardíacas?
       div(ng-repeat='option in questions.q37.options')
         input(type="radio" name='q37' ng-change="saveAnswers()" ng-model='questions.q37.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#38(ng-show="currentQuestion == 'q38'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q38. Sickle cell anemia
+        | Q38. 
+        span(ng-show="language=='en'") Sickle cell anemia
+        span(ng-show="language=='es'") Anemia de células falciformes?
       div(ng-repeat='option in questions.q38.options')
         input(type="radio" name='q38' ng-change="saveAnswers()" ng-model='questions.q38.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#39(ng-show="currentQuestion == 'q39'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q39. Anemia, sometimes called low blood or tired blood
+        | Q39. 
+        span(ng-show="language=='en'") Anemia, sometimes called low blood or tired blood
+        span(ng-show="language=='es'") Anemia?
       div(ng-repeat='option in questions.q39.options')
         input(type="radio" name='q39' ng-change="saveAnswers()" ng-model='questions.q39.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#40(ng-show="currentQuestion == 'q40'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q40. Cancer or a malignancy of any kind
+        | Q40. 
+        span(ng-show="language=='en'") Cancer or a malignancy of any kind
+        span(ng-show="language=='es'") Cáncer o un tumor maligno de algún tipo?
       div(ng-repeat='option in questions.q40.options')
         input(type="radio" name='q40' ng-change="saveAnswers()" ng-model='questions.q40.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#40a(ng-show="currentQuestion == 'q40a'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q40a. Breast cancer, liver tumors or liver cancer
+        | Q40a. 
+        span(ng-show="language=='en'") Breast cancer, liver tumors or liver cancer
+        span(ng-show="language=='es'") Cáncer del seno, tumores en el hígado o cáncer del hígado?
       div(ng-repeat='option in questions.q40a.options')
         input(type="radio" name='q40a' ng-change="saveAnswers()" ng-model='questions.q40a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#40b(ng-show="currentQuestion == 'q40b'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q.40b. Endometrial cancer, ovarian cancer, or cervical cancer
+        | Q40b. 
+        span(ng-show="language=='en'") Endometrial cancer, ovarian cancer, or cervical cancer
+        span(ng-show="language=='es'") Cáncer de endometrio, cáncer en los ovarios  o cáncer del cuello uterino?
       div(ng-repeat='option in questions.q40b.options')
         input(type="radio" name='q40b' ng-change="saveAnswers()" ng-model='questions.q40b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#41(ng-show="currentQuestion == 'q41'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q41. A molar pregnancy
+        | Q41. 
+        span(ng-show="language=='en'") A molar pregnancy
+        span(ng-show="language=='es'") Un embarazo molar?
       div(ng-repeat='option in questions.q41.options')
         input(type="radio" name='q41' ng-change="saveAnswers()" ng-model='questions.q41.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#42(ng-show="currentQuestion == 'q42'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q42. Pelvic tuberculosis
+        | Q42. 
+        span(ng-show="language=='en'") Pelvic tuberculosis
+        span(ng-show="language=='es'") Tuberculosis pélvica?
       div(ng-repeat='option in questions.q42.options')
         input(type="radio" name='q42' ng-change="saveAnswers()" ng-model='questions.q42.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#43(ng-show="currentQuestion == 'q43'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q43. Toxic shock syndrome (TSS)
+        | Q43. 
+        span(ng-show="language=='en'") Toxic shock syndrome (TSS)
+        span(ng-show="language=='es'") Síndrome de Shock Tóxico (TSS en inglés)?
       div(ng-repeat='option in questions.q43.options')
         input(type="radio" name='q43' ng-change="saveAnswers()" ng-model='questions.q43.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#44(ng-show="currentQuestion == 'q44'")
-      h4 In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+      h4 
+        span(ng-show="language=='en'") In the past 3 months has a doctor, nurse, or other health professional told you that you had:
+        span(ng-show="language=='es'") ¿En los últimos tres meses algún médico, enfermera(o) u otro profesional de la salud le ha dicho que tenía
       br
       label
-        | Q44. Pelvic Inflammatory Disease (PID)?
+        | Q44. 
+        span(ng-show="language=='en'") Pelvic Inflammatory Disease (PID)?
+        span(ng-show="language=='es'") Enfermedad inflamatoria pélvica (PID en inglés)?
       div(ng-repeat='option in questions.q44.options')
         input(type="radio" name='q44' ng-change="saveAnswers()" ng-model='questions.q44.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#45(ng-show="currentQuestion == 'q45'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q45. Endometriosis
+        | Q45. 
+        span(ng-show="language=='en'") Endometriosis
+        span(ng-show="language=='es'") Endometriosis
       div(ng-repeat='option in questions.q45.options')
         input(type="radio" name='q45' ng-change="saveAnswers()" ng-model='questions.q45.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#46(ng-show="currentQuestion == 'q46'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q46. Diabetes
+        | Q46. 
+        span(ng-show="language=='en'") Diabetes
+        span(ng-show="language=='es'") Diabetes
       div(ng-repeat='option in questions.q46.options')
         input(type="radio" name='q46' ng-change="saveAnswers()" ng-model='questions.q46.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#46a(ng-show="currentQuestion == 'q46a'")
       label
-        | Q46a. Have you had diabetes for more than 20 years?
+        | Q46a. 
+        span(ng-show="language=='en'") Have you had diabetes for more than 20 years?
+        span(ng-show="language=='es'") ¿Ha tenido usted diabetes por más de 20 años?
       div(ng-repeat='option in questions.q46a.options')
         input(type="radio" name='q46a' ng-change="saveAnswers()" ng-model='questions.q46a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#46b(ng-show="currentQuestion == 'q46b'")
       label
-        | Q46b. Do you have problems with your kidneys, eyes or nerves because of diabetes?
+        | Q46b. 
+        span(ng-show="language=='en'") Do you have problems with your kidneys, eyes or nerves because of diabetes?
+        span(ng-show="language=='es'") ¿Tiene usted problemas con sus riñones, ojos o nervios a causa de la diabetes?
       div(ng-repeat='option in questions.q46b.options')
         input(type="radio" name='q46b' ng-change="saveAnswers()" ng-model='questions.q46b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#47(ng-show="currentQuestion == 'q47'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q47. Migraine Headaches
+        | Q47. 
+        span(ng-show="language=='en'") Migraine Headaches
+        span(ng-show="language=='es'") Migrañas
       div(ng-repeat='option in questions.q47.options')
         input(type="radio" name='q47' ng-change="saveAnswers()" ng-model='questions.q47.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#47a(ng-show="currentQuestion == 'q47a'")
       label
-        | Q47a. Do you have migraine headaches with an aura? (An aura is seeing spots or wavy lines before or during the migraine headache.)
+        | Q47a. 
+        span(ng-show="language=='en'") Do you have migraine headaches with an aura? (An aura is seeing spots or wavy lines before or during the migraine headache.)
+        span(ng-show="language=='es'") ¿Tiene usted Dolores de migraña con auras? El aura se manifiesta viendo puntitos u líneas ondulantes antes o durante la migraña.
       div(ng-repeat='option in questions.q47a.options')
         input(type="radio" name='q47a' ng-change="saveAnswers()" ng-model='questions.q47a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#48(ng-show="currentQuestion == 'q48'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q48. AIDS
+        | Q48. 
+        span(ng-show="language=='en'") AIDS
+        span(ng-show="language=='es'") SIDA
       div(ng-repeat='option in questions.q48.options')
         input(type="radio" name='q48' ng-change="saveAnswers()" ng-model='questions.q48.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#48a(ng-show="currentQuestion == 'q48a'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q48a. Liver or Gallbladder problems
+        | Q48a. 
+        span(ng-show="language=='en'") Liver or Gallbladder problems
+        span(ng-show="language=='es'") Problemas del hígado o de la vesícula biliar
       div(ng-repeat='option in questions.q48a.options')
         input(type="radio" name='q48a' ng-change="saveAnswers()" ng-model='questions.q48a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#48b(ng-show="currentQuestion == 'q48b'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q48b. Gallbladder disease or Gallstones
+        | Q48b. 
+        span(ng-show="language=='en'") Gallbladder disease or Gallstones
+        span(ng-show="language=='es'") Enfermedad de la vesícula o cálculos biliares
       div(ng-repeat='option in questions.q48b.options')
         input(type="radio" name='q48b' ng-change="saveAnswers()" ng-model='questions.q48b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#49(ng-show="currentQuestion == 'q49'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q49. Cirrhosis or Active Hepatitis
+        | Q49. 
+        span(ng-show="language=='en'") Cirrhosis or Active Hepatitis
+        span(ng-show="language=='es'") Cirrosis o hepatitis activa
       div(ng-repeat='option in questions.q49.options')
         input(type="radio" name='q49' ng-change="saveAnswers()" ng-model='questions.q49.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#50(ng-show="currentQuestion == 'q50'")
-      h4 Have you ever been told by a doctor or nurse that you have:
+      h4 
+        span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
+        span(ng-show="language=='es'") ¿Alguna vez ha dicho un médico o enfermera que usted tiene :
       br
       label
-        | Q50. A seizure disorder or epilepsy
+        | Q50. 
+        span(ng-show="language=='en'") A seizure disorder or epilepsy
+        span(ng-show="language=='es'") De convulsiones o epilepsia
       div(ng-repeat='option in questions.q50.options')
         input(type="radio" name='q50' ng-change="saveAnswers()" ng-model='questions.q50.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#51(ng-show="currentQuestion == 'q51'")
       label
-        | Q51. Do you have severe acne?
+        | Q51. 
+        span(ng-show="language=='en'") Do you have severe acne?
+        span(ng-show="language=='es'") ¿Tiene usted acné severo?
       div(ng-repeat='option in questions.q51.options')
         input(type="radio" name='q51' ng-change="saveAnswers()" ng-model='questions.q51.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#52(ng-show="currentQuestion == 'q52'")
       label
-        | Q52. Do you have coarse, dark hairs on your face?
+        | Q52. 
+        span(ng-show="language=='en'") Do you have coarse, dark hairs on your face?
+        span(ng-show="language=='es'") ¿Tiene usted pelos oscuros y gruesos en la cara?
       div(ng-repeat='option in questions.q52.options')
         input(type="radio" name='q52' ng-change="saveAnswers()" ng-model='questions.q52.selectedOption' ng-value="{{option}}")
         label {{option.name}}
