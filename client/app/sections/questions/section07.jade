@@ -22,35 +22,45 @@ header
   ul
     li#54a(ng-show="currentQuestion == 'q54a'")
       label
-        | Q.54a. The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
+        | Q.54a. 
+        span(ng-show="language=='en'") The birth control pill requires that you take a pill every single day. Could you remember to take a pill every single day?
+        span(ng-show="language=='es'") El método de la píldora anticonceptiva requiere que usted se tome una píldora cada día.  ¿Podría usted acordarse en tomar una píldora todos los días?
       div(ng-repeat='option in questions.q54a.options')
         input(type="radio" name='q54a' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#54b(ng-show="currentQuestion == 'q54b'")
       label
-        | Q54b. The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
+        | Q54b. 
+        span(ng-show="language=='en'") The birth control shot requires that you return to the clinic every three months to get a shot, would you be able to do this?
+        span(ng-show="language=='es'") La inyección anticonceptiva requiere que usted regrese a la clínica cada tres meses para que le den una inyección. ¿Podría usted hacer esto?
       div(ng-repeat='option in questions.q54b.options')
         input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
       
     li#54c(ng-show="currentQuestion == 'q54c'")
       label
-        | Q54c. The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
+        | Q54c. 
+        span(ng-show="language=='en'") The contraceptive ring requires that you place a small bendable ring in your vagina once per month. Would you feel comfortable using the ring as a birth control method?
+        span(ng-show="language=='es'") El anillo anticonceptivo requiere que usted se ponga un pequeño anillo flexible en la vagina una vez al mes.  ¿Se sentiría usted cómoda usando el anillo como método anticonceptivo?
       div(ng-repeat='option in questions.q54c.options')
         input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54c.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#54d(ng-show="currentQuestion == 'q54d'")
       label
-        | Q54d. Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
+        | Q54d. 
+        span(ng-show="language=='en'") Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
+        span(ng-show="language=='es'") ¿Se sentiría usted cómoda con un DIU (Dispositivo Intra Uterino) un anticonceptivo en forma de T, que ubica su proveedor de salud, dentro de su útero?  Este método puede prevenir un embarazo por 5 a 10 años.
       div(ng-repeat='option in questions.q54d.options')
         input(type="radio" name='q54d' ng-change="saveAnswers()" ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#54e(ng-show="currentQuestion == 'q54e'")
       label
-        | Q54e. The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
+        | Q54e. 
+        span(ng-show="language=='en'") The contraceptive implant is a small rod placed by your provider under the skin of your upper arm that provides contraception for up to 3 years. Would you feel comfortable using the contraceptive implant as a birth control method?
+        span(ng-show="language=='es'") El implante contraceptivo es una pequeña barra que su proveedor de salud le coloca bajo la piel en la parte superior del brazo. Le brinda protección contra el embarazo hasta por 3 años. ¿Se sentiría cómoda usando el implante anticonceptivo como método anticonceptivo?
       div(ng-repeat='option in questions.q54e.options')
         input(type="radio" name='q54e' ng-change="saveAnswers()" ng-model='questions.q54e.selectedOption' ng-value="{{option}}")
         label {{option.name}}

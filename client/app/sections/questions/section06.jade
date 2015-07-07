@@ -22,28 +22,36 @@ header
   ul
     li#53(ng-show="currentQuestion == 'q53'")
       label
-        | Q53. Do you take ANY prescription medications or dietary supplements regularly?
+        | Q53. 
+        span(ng-show="language=='en'") Do you take ANY prescription medications or dietary supplements regularly?
+        span(ng-show="language=='es'") ¿Toma usted suplementos dietéticos o medicamentos recetados con regularidad?
       div(ng-repeat='option in questions.q53.options')
         input(type="radio" name='q53' ng-change="saveAnswers()" ng-model='questions.q53.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53a(ng-show="currentQuestion == 'q53a'")
       label
-        | Q53a. Do you take St. John's wort?
+        | Q53a. 
+        span(ng-show="language=='en'") Do you take St. John's wort?
+        span(ng-show="language=='es'") ¿Toma usted St. John’s Wort (también conocido como hierba de San Juan)?
       div(ng-repeat='option in questions.q53a.options')
         input(type="radio" name='q53a' ng-change="saveAnswers()" ng-model='questions.q53a.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53b(ng-show="currentQuestion == 'q53b'")
       label
-        | Q53b. Do you take Rifampin, Rifadin or Rimactane?
+        | Q53b. 
+        span(ng-show="language=='en'") Do you take Rifampin, Rifadin or Rimactane?
+        span(ng-show="language=='es'") ¿Toma usted Rifampin, Rifadin o Rimactane?
       div(ng-repeat='option in questions.q53b.options')
         input(type="radio" name='q53b' ng-change="saveAnswers()" ng-model='questions.q53b.selectedOption' ng-value="{{option}}")
         label {{option.name}}
 
     li#53c(ng-show="currentQuestion == 'q53c'")
       label
-        | Q53c. Do you take any of these medications for seizure disorders or epilepsy?
+        | Q53c. 
+        span(ng-show="language=='en'") Do you take any of these medications for seizure disorders or epilepsy?
+        span(ng-show="language=='es'") ¿Toma usted alguno de estos medicamentos para convulsiones o epilepsia?
       div(ng-repeat='option in questions.q53c.options')
         input(type='checkbox' ng-checked="questions.q53c.selectedOptions.indexOf(option) != -1" ng-click="questions.q53c.toggleCheck(option)")
         label {{option.name}}
@@ -54,7 +62,9 @@ header
 
     li#53h(ng-show="currentQuestion == 'q53h'")
       label
-        | Q53.h. Do you take Griseofulvin, Fulvicin or Grisactin?
+        | Q53.h. 
+        span(ng-show="language=='en'") Do you take Griseofulvin, Fulvicin or Grisactin?
+        span(ng-show="language=='es'") ¿Toma usted Griseofulvin, Fulvicin o Grisactin?
       div(ng-repeat='option in questions.q53h.options')
         input(type="radio" name='q53h' ng-change="saveAnswers()" ng-model='questions.q53h.selectedOption' ng-value="{{option}}")
         label {{option.name}}
