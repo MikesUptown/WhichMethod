@@ -27,7 +27,8 @@ header
         span(ng-show="language=='es'") ¿Estaría usted de acuerdo con sangrar regularmente, con una fecha prevista?
       div(ng-repeat='option in questions.q23.options')
         input(type="radio" name='q23' ng-change="saveAnswers()" ng-model='questions.q23.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q24(ng-show="currentQuestion == 'q24'")
       label
@@ -36,7 +37,8 @@ header
         span(ng-show="language=='es'") ¿Estaría usted de acuerdo con sangrar y/o manchar sin fecha prevista?
       div(ng-repeat='option in questions.q24.options')
         input(type="radio" name='q24' ng-change="saveAnswers()" ng-model="questions.q24.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q25(ng-show="currentQuestion == 'q25'")
       label
@@ -45,7 +47,8 @@ header
         span(ng-show="language=='es'") ¿Estaría usted de acuerdo con no sangrar nunca?
       div(ng-repeat='option in questions.q25.options')
         input(type="radio" name='q25' ng-change="saveAnswers()" ng-model="questions.q25.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q26(ng-show="currentQuestion == 'q26'")
       label
@@ -54,7 +57,8 @@ header
         span(ng-show="language=='es'") ¿Necesita usted un método anticonceptivo que pueda mantener en privado?
       div(ng-repeat='option in questions.q26.options')
         input(type="radio" name='q26' ng-change="saveAnswers()" ng-model="questions.q26.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q26a(ng-show="currentQuestion == 'q26a'")
       label
@@ -63,7 +67,8 @@ header
         span(ng-show="language=='es'") ¿Quiere mantenerlo en privado de su novio/ novia/ compañero(a)?
       div(ng-repeat='option in questions.q26a.options')
         input(type="radio" name='q26a' ng-change="saveAnswers()" ng-model="questions.q26a.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q26b(ng-show="currentQuestion == 'q26b'")
       label
@@ -72,7 +77,8 @@ header
         span(ng-show="language=='es'") ¿Quiere mantenerlo en privado de su familia o sus amigos?
       div(ng-repeat='option in questions.q26b.options')
         input(type="radio" name='q26b' ng-change="saveAnswers()" ng-model="questions.q26b.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q27(ng-show="currentQuestion == 'q27'")
       label
@@ -81,7 +87,8 @@ header
         span(ng-show="language=='es'") ¿Estaría usted de acuerdo en usar un método anticonceptivo (como condones, espermicidas diafragma o esponja) en el cual tenga que interrumpir la actividad sexual para usarlo?
       div(ng-repeat='option in questions.q27.options')
         input(type="radio" name='q27' ng-change="saveAnswers()" ng-model="questions.q27.selectedOption" ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 div(ng-include="'app/sections/rankhelp.html'")
 

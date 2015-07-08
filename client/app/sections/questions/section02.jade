@@ -31,7 +31,8 @@ header
         span(lang='es') Q4. Períodos mensuales regularmente?
       div(ng-repeat='option in questions.q4.options')
         input(type="radio" name='q4' ng-change="saveAnswers()" ng-model="questions.q4.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q4a(ng-show="currentQuestion == 'q4a'")
       //- li#q4(ng-show="currentSection == '2' && questions.q4.answer == 2 || questions.q4.answer =='2' ")
@@ -44,7 +45,8 @@ header
         span(lang='es') Q4a. Tres o menos períodos al año?
       div(ng-repeat='option in questions.q4a.options')
         input(type="radio" name='q4a' ng-change="saveAnswers()" ng-model="questions.q4a.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
       input(type="button",ng-click="saveAnswers()",value="Skip")
 
     li#q5(ng-show="currentQuestion == 'q5'")
@@ -57,7 +59,8 @@ header
         span(lang='es') Q5. Períodos muy abundantes?
       div(ng-repeat='option in questions.q5.options')
         input(type="radio" name='q5' ng-change="saveAnswers()" ng-model="questions.q5.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q6(ng-show="currentQuestion == 'q6'")
       h4 
@@ -70,7 +73,8 @@ header
         span(lang='es') Períodos que duran más de 7 días?
       div(ng-repeat='option in questions.q6.options')
         input(type="radio" name='q6' ng-change="saveAnswers()" ng-model="questions.q6.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q7(ng-show="currentQuestion == 'q7'")
       h4 
@@ -83,7 +87,8 @@ header
         span(lang='es') Períodos acompañados de dolor o cólicos?
       div(ng-repeat='option in questions.q7.options')
         input(type="radio" name='q7' ng-change="saveAnswers()" ng-model="questions.q7.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q8(ng-show="currentQuestion == 'q8'")
       h4 
@@ -96,7 +101,8 @@ header
         span(lang='es') Más sensibilidad en los senos?
       div(ng-repeat='option in questions.q8.options')
         input(type="radio" name='q8' ng-change="saveAnswers()" ng-model="questions.q8.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q9(ng-show="currentQuestion == 'q9'")
       h4 
@@ -109,7 +115,8 @@ header
         span(lang='es') Depresión o ansiedad durante su período?
       div(ng-repeat='option in questions.q9.options')
         input(type="radio" name='q9' ng-change="saveAnswers()" ng-model="questions.q9.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q10(ng-show="currentQuestion == 'q10'")
       h4 
@@ -122,7 +129,8 @@ header
         span(lang='es') Hinchazón o retención de líquidos?
       div(ng-repeat='option in questions.q10.options')
         input(type="radio" name='q10' ng-change="saveAnswers()" ng-model="questions.q10.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q11(ng-show="currentQuestion == 'q11'")
       h4 
@@ -135,7 +143,8 @@ header
         span(lang='es') Fuertes dolores de cabeza con su período?
       div(ng-repeat='option in questions.q11.options')
         input(type="radio" name='q11' ng-change="saveAnswers()" ng-model="questions.q11.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q12(ng-show="currentQuestion == 'q12'")
       h4 
@@ -148,7 +157,8 @@ header
         span(lang='es') Sufre usted del síndrome pre-menstrual fuertemente?
       div(ng-repeat='option in questions.q12.options')
         input(type="radio" name='q12' ng-change="saveAnswers()" ng-model="questions.q12.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q13(ng-show="currentQuestion == 'q13'")
       label
@@ -156,7 +166,8 @@ header
         span(lang='es') Q13. ¿Qué tan frecuentemente se ausenta usted del trabajo o la escuela a causa de estos síntomas?
       div(ng-repeat='option in questions.q13.options')
         input(type="radio" name='q13' ng-change="saveAnswers()" ng-model="questions.q13.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 div(ng-include="'app/sections/rankhelp.html'")
 

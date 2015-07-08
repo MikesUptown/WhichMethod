@@ -27,7 +27,8 @@ header
         span(ng-show="language=='es'") ¿Ha tenido usted un bebé en los últimos 6 meses?
       div(ng-repeat='option in questions.q28.options')
         input(type="radio" name='q28' ng-change="saveAnswers()" ng-model='questions.q28.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#28a(ng-show="currentQuestion == 'q28a'")
       label
@@ -36,7 +37,8 @@ header
         span(ng-show="language=='es'") ¿Está usted lactando en este momento?
       div(ng-repeat='option in questions.q28a.options')
         input(type="radio" name='q28a' ng-change="saveAnswers()" ng-model='questions.q28a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#28b(ng-show="currentQuestion == 'q28b'")
       label
@@ -45,7 +47,8 @@ header
         span(ng-show="language=='es'") ¿Cuánto tiempo ha pasado desde de que nació su bebe?
       div(ng-repeat='option in questions.q28b.options')
         input(type="radio" name='q28b' ng-change="saveAnswers()" ng-model='questions.q28b.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#28c(ng-show="currentQuestion == 'q28c'")
       label
@@ -54,7 +57,8 @@ header
         span(ng-show="language=='es'") ¿Cuánto tiempo ha pasado desde de que nació su bebe?
       div(ng-repeat='option in questions.q28c.options')
         input(type="radio" name='q28c' ng-change="saveAnswers()" ng-model='questions.q28c.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q29(ng-show="currentQuestion == 'q29'")
       label
@@ -63,7 +67,8 @@ header
         span(ng-show="language=='es'") ¿Ha tenido usted una cirugía en los últimos tres meses?
       div(ng-repeat='option in questions.q29.options')
         input(type="radio" name='q29' ng-change="saveAnswers()" ng-model='questions.q29.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q29a(ng-show="currentQuestion == 'q29a'")
       label
@@ -72,7 +77,8 @@ header
         span(ng-show="language=='es'") ¿Es difícil moverse a causa de la cirugía?
       div(ng-repeat='option in questions.q29a.options')
         input(type="radio" name='q29a' ng-change="saveAnswers()" ng-model='questions.q29a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q30(ng-show="currentQuestion == 'q30'")
       h4 
@@ -85,7 +91,8 @@ header
         span(ng-show="language=='es'") ¿Hipertensión?
       div(ng-repeat='option in questions.q30.options')
         input(type="radio" name='q30' ng-change="saveAnswers()" ng-model='questions.q30.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q30a(ng-show="currentQuestion == 'q30a'")
       label
@@ -94,7 +101,8 @@ header
         span(ng-show="language=='es'") ¿Está tomando medicina para la presión arterial alta ahora?
       div(ng-repeat='option in questions.q30a.options')
         input(type="radio" name='q30a' ng-change="saveAnswers()" ng-model='questions.q30a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q31(ng-show="currentQuestion == 'q31'")
       h4 
@@ -107,7 +115,8 @@ header
         span(ng-show="language=='es'") Coágulos sanguíneos, también llamados coágulos en las venas o TVP?
       div(ng-repeat='option in questions.q31.options')
         input(type="radio" name='q31' ng-change="saveAnswers()" ng-model='questions.q31.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q32(ng-show="currentQuestion == 'q32'")
       h4 
@@ -120,7 +129,8 @@ header
         span(ng-show="language=='es'") Embolia pulmonar, también llamado un coágulo sanguíneo en los pulmones?
       div(ng-repeat='option in questions.q32.options')
         input(type="radio" name='q32' ng-change="saveAnswers()" ng-model='questions.q32.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 
     li#q33(ng-show="currentQuestion == 'q33'")
@@ -134,7 +144,8 @@ header
         span(ng-show="language=='es'") Un derrame cerebral?
       div(ng-repeat='option in questions.q33.options')
         input(type="radio" name='q33' ng-change="saveAnswers()" ng-model='questions.q33.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q34(ng-show="currentQuestion == 'q34'")
       h4 
@@ -147,7 +158,8 @@ header
         span(ng-show="language=='es'") Problemas de coagulación de la sangre?
       div(ng-repeat='option in questions.q34.options')
         input(type="radio" name='q34' ng-change="saveAnswers()" ng-model='questions.q34.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#q35(ng-show="currentQuestion == 'q35'")
       h4 
@@ -160,7 +172,8 @@ header
         span(ng-show="language=='es'") Colesterol alto?
       div(ng-repeat='option in questions.q35.options')
         input(type="radio" name='q35' ng-change="saveAnswers()" ng-model='questions.q35.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#36(ng-show="currentQuestion == 'q36'")
       h4 
@@ -173,7 +186,8 @@ header
         span(ng-show="language=='es'") Infarto de miocardio, enfermedad cardíaca o enfermedad vascular?
       div(ng-repeat='option in questions.q36.options')
         input(type="radio" name='q36' ng-change="saveAnswers()" ng-model='questions.q36.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#37(ng-show="currentQuestion == 'q37'")
       h4 
@@ -186,7 +200,8 @@ header
         span(ng-show="language=='es'") Enfermedad de las válvulas cardíacas?
       div(ng-repeat='option in questions.q37.options')
         input(type="radio" name='q37' ng-change="saveAnswers()" ng-model='questions.q37.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#38(ng-show="currentQuestion == 'q38'")
       h4 
@@ -199,7 +214,8 @@ header
         span(ng-show="language=='es'") Anemia de células falciformes?
       div(ng-repeat='option in questions.q38.options')
         input(type="radio" name='q38' ng-change="saveAnswers()" ng-model='questions.q38.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#39(ng-show="currentQuestion == 'q39'")
       h4 
@@ -212,7 +228,8 @@ header
         span(ng-show="language=='es'") Anemia?
       div(ng-repeat='option in questions.q39.options')
         input(type="radio" name='q39' ng-change="saveAnswers()" ng-model='questions.q39.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#40(ng-show="currentQuestion == 'q40'")
       h4 
@@ -225,7 +242,8 @@ header
         span(ng-show="language=='es'") Cáncer o un tumor maligno de algún tipo?
       div(ng-repeat='option in questions.q40.options')
         input(type="radio" name='q40' ng-change="saveAnswers()" ng-model='questions.q40.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#40a(ng-show="currentQuestion == 'q40a'")
       h4 
@@ -238,7 +256,8 @@ header
         span(ng-show="language=='es'") Cáncer del seno, tumores en el hígado o cáncer del hígado?
       div(ng-repeat='option in questions.q40a.options')
         input(type="radio" name='q40a' ng-change="saveAnswers()" ng-model='questions.q40a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#40b(ng-show="currentQuestion == 'q40b'")
       h4 
@@ -251,7 +270,8 @@ header
         span(ng-show="language=='es'") Cáncer de endometrio, cáncer en los ovarios  o cáncer del cuello uterino?
       div(ng-repeat='option in questions.q40b.options')
         input(type="radio" name='q40b' ng-change="saveAnswers()" ng-model='questions.q40b.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#41(ng-show="currentQuestion == 'q41'")
       h4 
@@ -264,7 +284,8 @@ header
         span(ng-show="language=='es'") Un embarazo molar?
       div(ng-repeat='option in questions.q41.options')
         input(type="radio" name='q41' ng-change="saveAnswers()" ng-model='questions.q41.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#42(ng-show="currentQuestion == 'q42'")
       h4 
@@ -277,7 +298,8 @@ header
         span(ng-show="language=='es'") Tuberculosis pélvica?
       div(ng-repeat='option in questions.q42.options')
         input(type="radio" name='q42' ng-change="saveAnswers()" ng-model='questions.q42.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#43(ng-show="currentQuestion == 'q43'")
       h4 
@@ -290,7 +312,8 @@ header
         span(ng-show="language=='es'") Síndrome de Shock Tóxico (TSS en inglés)?
       div(ng-repeat='option in questions.q43.options')
         input(type="radio" name='q43' ng-change="saveAnswers()" ng-model='questions.q43.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#44(ng-show="currentQuestion == 'q44'")
       h4 
@@ -303,7 +326,8 @@ header
         span(ng-show="language=='es'") Enfermedad inflamatoria pélvica (PID en inglés)?
       div(ng-repeat='option in questions.q44.options')
         input(type="radio" name='q44' ng-change="saveAnswers()" ng-model='questions.q44.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#45(ng-show="currentQuestion == 'q45'")
       h4 
@@ -316,7 +340,8 @@ header
         span(ng-show="language=='es'") Endometriosis
       div(ng-repeat='option in questions.q45.options')
         input(type="radio" name='q45' ng-change="saveAnswers()" ng-model='questions.q45.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#46(ng-show="currentQuestion == 'q46'")
       h4 
@@ -329,7 +354,8 @@ header
         span(ng-show="language=='es'") Diabetes
       div(ng-repeat='option in questions.q46.options')
         input(type="radio" name='q46' ng-change="saveAnswers()" ng-model='questions.q46.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#46a(ng-show="currentQuestion == 'q46a'")
       label
@@ -338,7 +364,8 @@ header
         span(ng-show="language=='es'") ¿Ha tenido usted diabetes por más de 20 años?
       div(ng-repeat='option in questions.q46a.options')
         input(type="radio" name='q46a' ng-change="saveAnswers()" ng-model='questions.q46a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#46b(ng-show="currentQuestion == 'q46b'")
       label
@@ -347,7 +374,8 @@ header
         span(ng-show="language=='es'") ¿Tiene usted problemas con sus riñones, ojos o nervios a causa de la diabetes?
       div(ng-repeat='option in questions.q46b.options')
         input(type="radio" name='q46b' ng-change="saveAnswers()" ng-model='questions.q46b.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#47(ng-show="currentQuestion == 'q47'")
       h4 
@@ -360,7 +388,8 @@ header
         span(ng-show="language=='es'") Migrañas
       div(ng-repeat='option in questions.q47.options')
         input(type="radio" name='q47' ng-change="saveAnswers()" ng-model='questions.q47.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#47a(ng-show="currentQuestion == 'q47a'")
       label
@@ -369,7 +398,8 @@ header
         span(ng-show="language=='es'") ¿Tiene usted Dolores de migraña con auras? El aura se manifiesta viendo puntitos u líneas ondulantes antes o durante la migraña.
       div(ng-repeat='option in questions.q47a.options')
         input(type="radio" name='q47a' ng-change="saveAnswers()" ng-model='questions.q47a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#48(ng-show="currentQuestion == 'q48'")
       h4 
@@ -382,7 +412,8 @@ header
         span(ng-show="language=='es'") SIDA
       div(ng-repeat='option in questions.q48.options')
         input(type="radio" name='q48' ng-change="saveAnswers()" ng-model='questions.q48.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#48a(ng-show="currentQuestion == 'q48a'")
       h4 
@@ -395,7 +426,8 @@ header
         span(ng-show="language=='es'") Problemas del hígado o de la vesícula biliar
       div(ng-repeat='option in questions.q48a.options')
         input(type="radio" name='q48a' ng-change="saveAnswers()" ng-model='questions.q48a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#48b(ng-show="currentQuestion == 'q48b'")
       h4 
@@ -408,7 +440,8 @@ header
         span(ng-show="language=='es'") Enfermedad de la vesícula o cálculos biliares
       div(ng-repeat='option in questions.q48b.options')
         input(type="radio" name='q48b' ng-change="saveAnswers()" ng-model='questions.q48b.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#49(ng-show="currentQuestion == 'q49'")
       h4 
@@ -421,7 +454,8 @@ header
         span(ng-show="language=='es'") Cirrosis o hepatitis activa
       div(ng-repeat='option in questions.q49.options')
         input(type="radio" name='q49' ng-change="saveAnswers()" ng-model='questions.q49.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#50(ng-show="currentQuestion == 'q50'")
       h4 
@@ -434,7 +468,8 @@ header
         span(ng-show="language=='es'") De convulsiones o epilepsia
       div(ng-repeat='option in questions.q50.options')
         input(type="radio" name='q50' ng-change="saveAnswers()" ng-model='questions.q50.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#51(ng-show="currentQuestion == 'q51'")
       label
@@ -443,7 +478,8 @@ header
         span(ng-show="language=='es'") ¿Tiene usted acné severo?
       div(ng-repeat='option in questions.q51.options')
         input(type="radio" name='q51' ng-change="saveAnswers()" ng-model='questions.q51.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#52(ng-show="currentQuestion == 'q52'")
       label
@@ -452,6 +488,7 @@ header
         span(ng-show="language=='es'") ¿Tiene usted pelos oscuros y gruesos en la cara?
       div(ng-repeat='option in questions.q52.options')
         input(type="radio" name='q52' ng-change="saveAnswers()" ng-model='questions.q52.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 div(ng-include="'app/sections/rankhelp.html'")

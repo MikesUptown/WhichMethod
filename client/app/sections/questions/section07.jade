@@ -27,7 +27,8 @@ header
         span(ng-show="language=='es'") El método de la píldora anticonceptiva requiere que usted se tome una píldora cada día.  ¿Podría usted acordarse en tomar una píldora todos los días?
       div(ng-repeat='option in questions.q54a.options')
         input(type="radio" name='q54a' ng-change="saveAnswers()" ng-model='questions.q54a.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#54b(ng-show="currentQuestion == 'q54b'")
       label
@@ -36,7 +37,8 @@ header
         span(ng-show="language=='es'") La inyección anticonceptiva requiere que usted regrese a la clínica cada tres meses para que le den una inyección. ¿Podría usted hacer esto?
       div(ng-repeat='option in questions.q54b.options')
         input(type="radio" name='q54b' ng-change="saveAnswers()" ng-model='questions.q54b.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
       
     li#54c(ng-show="currentQuestion == 'q54c'")
       label
@@ -45,7 +47,8 @@ header
         span(ng-show="language=='es'") El anillo anticonceptivo requiere que usted se ponga un pequeño anillo flexible en la vagina una vez al mes.  ¿Se sentiría usted cómoda usando el anillo como método anticonceptivo?
       div(ng-repeat='option in questions.q54c.options')
         input(type="radio" name='q54c' ng-change="saveAnswers()" ng-model='questions.q54c.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#54d(ng-show="currentQuestion == 'q54d'")
       label
@@ -54,7 +57,8 @@ header
         span(ng-show="language=='es'") ¿Se sentiría usted cómoda con un DIU (Dispositivo Intra Uterino) un anticonceptivo en forma de T, que ubica su proveedor de salud, dentro de su útero?  Este método puede prevenir un embarazo por 5 a 10 años.
       div(ng-repeat='option in questions.q54d.options')
         input(type="radio" name='q54d' ng-change="saveAnswers()" ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
     li#54e(ng-show="currentQuestion == 'q54e'")
       label
@@ -63,7 +67,8 @@ header
         span(ng-show="language=='es'") El implante contraceptivo es una pequeña barra que su proveedor de salud le coloca bajo la piel en la parte superior del brazo. Le brinda protección contra el embarazo hasta por 3 años. ¿Se sentiría cómoda usando el implante anticonceptivo como método anticonceptivo?
       div(ng-repeat='option in questions.q54e.options')
         input(type="radio" name='q54e' ng-change="saveAnswers()" ng-model='questions.q54e.selectedOption' ng-value="{{option}}")
-        label {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 div(ng-include="'app/sections/rankhelp.html'")
 

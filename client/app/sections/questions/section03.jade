@@ -28,7 +28,8 @@ header
         
       div(ng-repeat='option in questions.q14.options')
         input(type="radio" name='q14' ng-change="saveAnswers()" ng-model="questions.q14.selectedOption" ng-value="{{option}}")
-        label.choice {{option.name}}
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q15(ng-show="currentQuestion == 'q15'")
       label
@@ -39,7 +40,8 @@ header
         input(ng-model='questions.q15.textInput' type='number' required)
         div(ng-repeat='option in questions.q15.options')
           input(type="radio" name='q15'  ng-model="questions.q15.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
@@ -52,7 +54,8 @@ header
           span(lang='es') ¿Ha tenido alguna vez un embarazo no planeado?
         div(ng-repeat='option in questions.q16.options')
           input(type="radio" name='q16' ng-change="saveAnswers()" ng-model="questions.q16.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q16a(ng-show="currentQuestion == 'q16a'")
         label
@@ -63,7 +66,8 @@ header
           input(ng-model='questions.q16a.textInput' type='number' required)
           div(ng-repeat='option in questions.q16a.options')
             input(type="radio" name='q16a' ng-model="questions.q16a.selectedOption" ng-value="{{option}}")
-            label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
           br
           br
           br
@@ -76,7 +80,8 @@ header
           span(lang='es') ¿Cuándo usted tuvo un embarazo o embarazos no planeados, estaba usando algún método anticonceptivo o haciendo algo para prevenir el embarazo?
         div(ng-repeat='option in questions.q16b.options')
           input(type="radio" name='q16b' ng-change="saveAnswers()" ng-model="questions.q16b.selectedOption" ng-value="{{option}}")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q16bi(ng-show="currentQuestion == 'q16bi'")
         label
@@ -85,14 +90,16 @@ header
           span(lang='es') ¿Cuándo usted tuvo un embarazo o embarazos no planeados, que método anticonceptivo estaba usted usando?
         div(ng-repeat='option in questions.q16bi.options')
           input(type='checkbox'  ng-checked="questions.q16bi.selectedOptions.indexOf(option) != -1" ng-click="questions.q16bi.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
           div(ng-if="questions.q16bi.selectedOptions.indexOf(option) != -1" style="padding-left:10px")
             span(lang='en') Which unplanned pregnancy was this (mark all that apply)?
-            span(lang='es') Need spanish translation for: "Which unplanned pregnancy was this (mark all that apply)?"
+            span(lang='es') Que embarazo no planeado fue este (marque todas las que correspondan)?
             br
             span(ng-repeat="n in range( questions.q16a.answer ) track by $index" )
-              label pregnancy {{$index+1}} &nbsp;  
+              span(lang='en') pregnancy {{$index+1}} &nbsp;
+              span(lang='es') embarazo {{$index+1}} &nbsp;
               input(type='checkbox'  ng-checked="" ng-click="questions.q16bi.togglePregnancy(option,$index+1)" ) 
               &nbsp; &nbsp;
         br
@@ -107,7 +114,8 @@ header
           span(lang='es') ¿Qué métodos anticonceptivos está usted interesada en usar ahora? Por favor escoja TODOS los métodos que usted está interesada en usar. Si usted no está interesada en ninguno de estos métodos, valla a la siguiente pantalla.
         div(ng-repeat='option in questions.q17.options')
           input(type='checkbox' ng-checked="questions.q17.selectedOptions.indexOf(option) != -1" ng-click="questions.q17.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
@@ -120,7 +128,8 @@ header
           span(lang='es') ¿Alguna vez ha usado algún método anticonceptivo?
         div(ng-repeat='option in questions.q18.options')
           input(type="radio" name='q18' ng-change="saveAnswers()" ng-model="questions.q18.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q18a(ng-show="currentQuestion == 'q18a'")
         label
@@ -129,7 +138,8 @@ header
           span(lang='es') ¿Está usted usando algún método anticonceptivo ahora?
         div(ng-repeat='option in questions.q18a.options')
           input(type="radio" name='q18a' ng-change="saveAnswers()" ng-model="questions.q18a.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q18ai(ng-show="currentQuestion == 'q18ai'")
         label
@@ -138,7 +148,8 @@ header
           span(lang='es') ¿Qué método anticonceptivo está usted usando ahora? Por favor escoja TODOS los métodos que usted está usando ahora. Si usted no está usando ninguno de estos métodos, valla a la siguiente pantalla.
         div(ng-repeat='option in questions.q18ai.options')
           input(type='checkbox' ng-checked="questions.q18ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q18ai.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
@@ -151,7 +162,8 @@ header
           span(lang='es') ¿Ha usado alguna vez un método anticonceptivo que no le gusto, que no le funciono o que le presento otros problemas?
         div(ng-repeat='option in questions.q19.options')
           input(type="radio" name='q19' ng-change="saveAnswers()" ng-model="questions.q19.selectedOption" ng-value="{{option}}")
-          label.choice {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q19a(ng-show="currentQuestion == 'q19a'")
         label
@@ -160,7 +172,8 @@ header
           span(lang='es') ¿Con cuales métodos tuvo usted problemas? Por favor escoja TODOS los métodos que usted tuvo problema.
         div(ng-repeat='option in questions.q19a.options')
           input(type='checkbox' ng-checked="questions.q19a.selectedOptions.indexOf(option) != -1" ng-click="questions.q19a.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
@@ -174,7 +187,8 @@ header
           span.highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
@@ -187,7 +201,8 @@ header
           span(lang='es') ¿En cuánto tiempo quiere usted salir embarazada?
         div(ng-repeat='option in questions.q20.options')
           input(type="radio" name='q20' ng-change="saveAnswers()" ng-model="questions.q20.selectedOption" ng-value="{{option}}")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q21(ng-show="currentQuestion == 'q21'")
         label
@@ -196,7 +211,8 @@ header
           span(lang='es') ¿Qué es lo más importante para usted a la hora de escoger un método anticonceptivo? (Seleccione tres)
         div(ng-repeat='option in questions.q21.options')
           input(type='checkbox' ng-checked="questions.q21.selectedOptions.indexOf(option) != -1" ng-click="questions.q21.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         .error(ng-show="questions.q21.selectedOptions.length < 3") *Please Select 3 Options
@@ -210,7 +226,8 @@ header
           span(lang='es') ¿Con qué frecuencia quiere usted tomar acción sobre su método
         div(ng-repeat='option in questions.q22.options')
           input(type='checkbox' ng-checked="questions.q22.selectedOptions.indexOf(option) != -1" ng-click="questions.q22.toggleCheck(option)")
-          label {{option.name}}
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br

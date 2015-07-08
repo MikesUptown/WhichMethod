@@ -4687,15 +4687,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
       q3:{
         options: [
           { name : 'I do not use tobacco',
-            nameES : 'I do not use tobacco', /* spanish version goes here */               
+            nameES : 'No uso tabaco', /* spanish version goes here */               
             value : 1  
           },
           { name : 'I use tobacco less than once a day', 
-            nameES : 'I use tobacco less than once a day', /* spanish version goes here */
+            nameES : 'Uso tabaco menos de una vez al día', /* spanish version goes here */
             value : 2  
           },
           { name : 'I use tobacco daily',
-            nameES : 'I use tobacco less than once a day', /* spanish version goes here */                     
+            nameES : 'Uso tabaco a diario', /* spanish version goes here */                     
             value : 3  
           },
           //{ name : "I don't know",                         value : 999  },
@@ -4720,9 +4720,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q4:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes',
+            nameES : 'Si',
+            value : 1
+          },
+          { name : 'No',
+            nameES : 'No',
+            value : 2 
+          },
+          { name : 'I dont know',
+            nameES : 'No lo sé',
+            value : 999
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4745,9 +4754,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q4a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes',
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",
+            nameES : "No lo sé",                         
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4769,9 +4787,15 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q5:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes',
+            nameES : 'Si', 
+            value : 1  },
+          { name : 'No',
+            nameES : 'No',
+            value : 2  },
+          { name : "I don't know",
+            nameES : "No lo sé",                        
+            value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4793,8 +4817,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q6:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes',
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No',
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4817,8 +4847,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q7:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes',
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No',
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4841,8 +4877,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q8:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4865,9 +4907,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q9:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                           
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -4889,8 +4940,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q10:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes',
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4912,8 +4969,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q11:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1,
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2, 
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4936,8 +4999,13 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q12:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4960,9 +5028,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q13:{
         options: [
-          { name : 'Rarely/Never', value : 0  },
-          { name : 'Sometimes', value : 1  },
-          { name : 'Almost every month', value : 2  },
+          { name : 'Rarely/Never',
+            nameES : 'Rara vez/Nunca', 
+            value : 0  
+          },
+          { name : 'Sometimes',
+            nameES : 'A veces', 
+            value : 1  
+          },
+          { name : 'Almost every month',
+            nameES : 'Casi todos los meses', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -4985,10 +5062,22 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q14:{
         options: [
-          { name : "Your partner and you only have sex with each other", value : 0  },
-          { name : "Your partner or you have sex with other people as well", value : 1  },
-          { name : "You are not sure about your partner's sexual activity outside your relationship", value : 2  },
-          { name : "You are not currently having sex", value : 3 },
+          { name : "Your partner and you only have sex with each other", 
+            nameES : "Su pareja y usted tienen relaciones sexuales el uno con el otro",
+            value : 0  
+          },
+          { name : "Your partner or you have sex with other people as well", 
+            nameES : "Su pareja o usted mantienen relaciones sexuales con otras personas también",
+            value : 1  
+          },
+          { name : "You are not sure about your partner's sexual activity outside your relationship", 
+            nameES : "Usted no está segura de la actividad sexual de su pareja fuera de su relación",
+            value : 2  
+          },
+          { name : "You are not currently having sex", 
+            nameES : "Por el momento usted no mantiene relaciones sexuales",
+            value : 3 
+          },
           //{ name : "I don't know", value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5034,9 +5123,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q16:{
         options: [
-          { name : 'Yes',                                  value : 1  },
-          { name : 'No',                                   value : 0  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes',
+            nameES : 'Si',                                  
+            value : 1  
+          },
+          { name : 'No',
+            nameES : 'No',                                   
+            value : 0  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5084,9 +5182,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q16b:{
         options: [
-          { name : 'Yes',                                  value : 1  },
-          { name : 'No',                                   value : 0  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes',
+            nameES : 'Si',                                  
+            value : 1  
+          },
+          { name : 'No',
+            nameES : 'No',                                   
+            value : 0  
+          },
+          { name : "I don't know",
+            nameES : "No lo sé",                         
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5108,26 +5215,106 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q16bi:{
         options: [
-          { name : 'Birth Control Pill',  value : 1  ,pregnancy:[]},
-          { name : 'Mini Pills',     value : 2  ,pregnancy:[]},
-          { name : 'Ortho Evra (Patch)',     value : 3  ,pregnancy:[]},
-          { name : 'Nuva Ring',      value : 4  ,pregnancy:[]},
-          { name : 'Depo Provera (Shot)',   value : 5  ,pregnancy:[]},
-          { name : 'Male Condom',    value : 6  ,pregnancy:[]},
-          { name : 'Diaphragm',      value : 7  ,pregnancy:[]},
-          { name : 'Female Condom',  value : 8  ,pregnancy:[]},
-          { name : 'Sponge',         value : 9  ,pregnancy:[]},
-          { name : 'Natural Family Planning',            value : 10 ,pregnancy:[]},
-          { name : 'Emergency Contraceptive Pills',             value : 11 ,pregnancy:[]},
-          { name : 'Paragard (Copper T IUD)',       value : 12 ,pregnancy:[]},
-          { name : 'Mirena (Hormonal IUD)',         value : 13 ,pregnancy:[]},
-          { name : 'Withdrawal',     value : 14 ,pregnancy:[]},
-          { name : 'Spermicide',     value : 15 ,pregnancy:[]},
-          { name : 'Tubes Tied (Sterilization for Women)',     value : 16 ,pregnancy:[]},
-          { name : 'Vasectomy (Sterilization for Men)',      value : 17 ,pregnancy:[]},
-          { name : 'Implant (Norplant, Implanon)',        value : 18 ,pregnancy:[]},
-          { name : 'Breast Feeding', value : 19 ,pregnancy:[]},
-          { name : 'Abstinence',     value : 20 ,pregnancy:[]}
+          { name : 'Birth Control Pill',
+            nameES : 'Píldoras anticonceptivas',  
+            value : 1,
+            pregnancy:[]
+          },
+          { name : 'Mini Pills',     
+            nameES : 'Mini-píldoras',
+            value : 2,
+            pregnancy:[]
+          },
+          { name : 'Ortho Evra (Patch)',     
+            nameES : 'Ortho Evra (Parche anticonceptivos)',
+            value : 3,
+            pregnancy:[]
+          },
+          { name : 'Nuva Ring',      
+            nameES : 'NuvaRing',
+            value : 4,
+            pregnancy:[]
+          },
+          { name : 'Depo Provera (Shot)',   
+            nameES : 'Depo Provera, (Inyección)',
+            value : 5,
+            pregnancy:[]
+          },
+          { name : 'Male Condom',    
+            nameES : 'Condón masculino',
+            value : 6,
+            pregnancy:[]
+          },
+          { name : 'Diaphragm',      
+            nameES : 'Diafragma',
+            value : 7,
+            pregnancy:[]
+          },
+          { name : 'Female Condom',  
+            nameES : 'Condón femenino',
+            value : 8,
+            pregnancy:[]
+          },
+          { name : 'Sponge',         
+            nameES : 'Esponja anticonceptiva',
+            value : 9,
+            pregnancy:[]
+          },
+          { name : 'Natural Family Planning',            
+            nameES : 'Planificación Familiar Natural',
+            value : 10,
+            pregnancy:[]
+          },
+          { name : 'Emergency Contraceptive Pills',             
+            nameES : 'Píldoras anticonceptivas de emergencia',
+            value : 11,
+            pregnancy:[]
+          },
+          { name : 'Paragard (Copper T IUD)',       
+            nameES : 'Paragard  (T de cobre DIU)',
+            value : 12,
+            pregnancy:[]
+          },
+          { name : 'Mirena (Hormonal IUD)',         
+            nameES : 'Mirena (DIU hormonal)',
+            value : 13,
+            pregnancy:[]
+          },
+          { name : 'Withdrawal',     
+            nameES : 'Retiro el pene antes de la eyaculación',
+            value : 14,
+            pregnancy:[]
+          },
+          { name : 'Spermicide',     
+            nameES : 'Espermicidas',
+            value : 15,
+            pregnancy:[]
+          },
+          { name : 'Tubes Tied (Sterilization for Women)',     
+            nameES : 'Ligamiento de Tubos (Esterilización permanente para mujeres)',
+            value : 16,
+            pregnancy:[]
+          },
+          { name : 'Vasectomy (Sterilization for Men)',      
+            nameES : 'Vasectomía (Esterilización permanente para hombres)',
+            value : 17,
+            pregnancy:[]
+          },
+          { name : 'Implant (Norplant, Implanon)',        
+            nameES : 'Implante anticonceptivo (Norplant o Implanon)',
+            value : 18,
+            pregnancy:[]
+          },
+          { name : 'Breast Feeding', 
+            nameES : 'Lactancia',
+            value : 19,
+            pregnancy:[]
+          },
+          { name : 'Abstinence',     
+            nameES : 'Abstinencia',
+            value : 20,
+            pregnancy:[]
+        }
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -5182,26 +5369,86 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q17:{
         options: [
-          { name : 'Abstinence',     value : 1  },
-          { name : 'Birth Control Pill',  value : 2  },
-          { name : 'Mini Pills',     value : 3  },
-          { name : 'Ortho Evra (Patch)',     value : 4  },
-          { name : 'Nuva Ring',      value : 5  },
-          { name : 'Depo Provera (Shot)',   value : 6  },
-          { name : 'Male Condom',    value : 7  },
-          { name : 'Diaphragm',      value : 8  },
-          { name : 'Female Condom',  value : 9  },
-          { name : 'Sponge',         value : 10  },
-          { name : 'Natural Family Planning',            value : 11 },
-          { name : 'Emergency Contraceptive Pills',             value : 12 },
-          { name : 'Paragard (Copper T IUD)',       value : 13 },
-          { name : 'Mirena (Hormonal IUD)',         value : 14 },
-          { name : 'Withdrawal',     value : 15 },
-          { name : 'Spermicide',     value : 16 },
-          { name : 'Tubes Tied (Sterilization for Women)',     value : 17 },
-          { name : 'Vasectomy (Sterilization for Men)',      value : 18 },
-          { name : 'Implant (Norplant, Impanon)',        value : 19 },
-          { name : 'Breast Feeding', value : 20 }
+          { name : 'Abstinence',     
+            nameES : 'Abstinencia',
+            value : 1  
+          },
+          { name : 'Birth Control Pill',  
+            nameES : 'Píldoras anticonceptivas', 
+            value : 2  
+          },
+          { name : 'Mini Pills',     
+            nameES : 'Mini-píldoras',
+            value : 3  
+          },
+          { name : 'Ortho Evra (Patch)',     
+            nameES : 'Ortho Evra (Parche anticonceptivos)',
+            value : 4  
+            },
+          { name : 'Nuva Ring',      
+            nameES : 'NuvaRing',
+            value : 5  
+          },
+          { name : 'Depo Provera (Shot)',   
+            nameES : 'Depo Provera, (Inyección)',
+            value : 6  
+          },
+          { name : 'Male Condom',    
+            nameES : 'Condón masculino',
+            value : 7  
+          },
+          { name : 'Diaphragm',      
+            nameES : 'Diafragma',
+            value : 8  
+          },
+          { name : 'Female Condom',  
+            nameES : 'Condón femenino',
+            value : 9  
+          },
+          { name : 'Sponge',         
+            nameES : 'Esponja anticonceptiva',
+            value : 10  
+          },
+          { name : 'Natural Family Planning',            
+            nameES : 'Planificación Familiar Natural',
+            value : 11 
+          },
+          { name : 'Emergency Contraceptive Pills',             
+            nameES : 'Píldoras anticonceptivas de emergencia',
+            value : 12 
+          },
+          { name : 'Paragard (Copper T IUD)',       
+            nameES : 'Paragard  (T de cobre DIU)',
+            value : 13 
+          },
+          { name : 'Mirena (Hormonal IUD)',         
+            nameES : 'Mirena (DIU hormonal)',
+            value : 14 
+          },
+          { name : 'Withdrawal',     
+            nameES : 'Retiro el pene antes de la eyaculación',
+            value : 15 
+          },
+          { name : 'Spermicide',     
+            nameES : 'Espermicidas',
+            value : 16 
+          },
+          { name : 'Tubes Tied (Sterilization for Women)',     
+            nameES : 'Ligamiento de Tubos (Esterilización permanente para mujeres)',
+            value : 17 
+          },
+          { name : 'Vasectomy (Sterilization for Men)',      
+            nameES : 'Vasectomía (Esterilización permanente para hombres)',
+            value : 18 
+          },
+          { name : 'Implant (Norplant, Impanon)',        
+            nameES : 'Implante anticonceptivo (Norplant o Implanon)',
+            value : 19 
+          },
+          { name : 'Breast Feeding', 
+            nameES : 'Lactancia',
+            value : 20 
+          }
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -5233,9 +5480,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q18:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5258,8 +5514,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q18a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5284,26 +5546,86 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q18ai:{
         options: [
-          { name : 'Abstinence',     value : 1  },
-          { name : 'Birth Control Pill',  value : 2  },
-          { name : 'Mini Pills',     value : 3  },
-          { name : 'Ortho Evra (Patch)',     value : 4  },
-          { name : 'Nuva Ring',      value : 5  },
-          { name : 'Depo Provera (Shot)',   value : 6  },
-          { name : 'Male Condom',    value : 7  },
-          { name : 'Diaphragm',      value : 8  },
-          { name : 'Female Condom',  value : 9  },
-          { name : 'Sponge',         value : 10  },
-          { name : 'Natural Family Planning',            value : 11 },
-          { name : 'Emergency Contraceptive Pills',             value : 12 },
-          { name : 'Paragard (Copper T IUD)',       value : 13 },
-          { name : 'Mirena (Hormonal IUD)',         value : 14 },
-          { name : 'Withdrawal',     value : 15 },
-          { name : 'Spermicide',     value : 16 },
-          { name : 'Tubes Tied (Sterilization for Women)',     value : 17 },
-          { name : 'Vasectomy (Sterilization for Men)',      value : 18 },
-          { name : 'Implant (Norplant, Implanon)',        value : 19 },
-          { name : 'Breast Feeding', value : 20 }
+          { name : 'Abstinence',     
+            nameES : 'Abstinencia',
+            value : 1  
+          },
+          { name : 'Birth Control Pill',  
+            nameES : 'Píldoras anticonceptivas',
+            value : 2  
+          },
+          { name : 'Mini Pills',     
+            nameES : 'Mini-píldoras',
+            value : 3  
+          },
+          { name : 'Ortho Evra (Patch)',     
+            nameES : 'Ortho Evra (Parche anticonceptivos)',
+            value : 4  
+          },
+          { name : 'Nuva Ring',      
+            nameES : 'NuvaRing',
+            value : 5  
+          },
+          { name : 'Depo Provera (Shot)',   
+            nameES : 'Depo Provera, (Inyección)',
+            value : 6  
+          },
+          { name : 'Male Condom',    
+            nameES : 'Condón masculino',
+            value : 7  
+          },
+          { name : 'Diaphragm',      
+            nameES : 'Diafragma',
+            value : 8  
+          },
+          { name : 'Female Condom',  
+            nameES : 'Condón femenino',
+            value : 9  
+          },
+          { name : 'Sponge',         
+            nameES : 'Esponja anticonceptiva',
+            value : 10  
+          },
+          { name : 'Natural Family Planning',            
+            nameES : 'Planificación Familiar Natural',
+            value : 11 
+          },
+          { name : 'Emergency Contraceptive Pills',             
+            nameES : 'Píldoras anticonceptivas de emergencia',
+            value : 12 
+          },
+          { name : 'Paragard (Copper T IUD)',       
+            nameES : 'Paragard  (T de cobre DIU)',
+            value : 13 
+          },
+          { name : 'Mirena (Hormonal IUD)',         
+            nameES : 'Mirena (DIU hormonal)',
+            value : 14 
+          },
+          { name : 'Withdrawal',     
+            nameES : 'Retiro el pene antes de la eyaculación',
+            value : 15 
+          },
+          { name : 'Spermicide',     
+            nameES : 'Espermicidas',
+            value : 16 
+          },
+          { name : 'Tubes Tied (Sterilization for Women)',     
+            nameES : 'Ligamiento de Tubos (Esterilización permanente para mujeres)',
+            value : 17 
+          },
+          { name : 'Vasectomy (Sterilization for Men)',      
+            nameES : 'Vasectomía (Esterilización permanente para hombres)',
+            value : 18 
+          },
+          { name : 'Implant (Norplant, Implanon)',        
+            nameES : 'Implante anticonceptivo (Norplant o Implanon)',
+            value : 19 
+          },
+          { name : 'Breast Feeding', 
+            nameES : 'Lactancia',
+            value : 20 
+          }
         ],
         selectedOptions: [ ],
         toggleCheck: function(option) {
@@ -5336,9 +5658,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q19:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5361,26 +5692,86 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q19a:{
         options: [
-          { name : 'Birth Control Pill',  value : 1  },
-          { name : 'Mini Pills',     value : 2  },
-          { name : 'Ortho Evra (Patch)',     value : 3  },
-          { name : 'Nuva Ring',      value : 4  },
-          { name : 'Depo Provera (Shot)',   value : 5  },
-          { name : 'Male Condom',    value : 6  },
-          { name : 'Diaphragm',      value : 7  },
-          { name : 'Female Condom',  value : 8  },
-          { name : 'Sponge',         value : 9  },
-          { name : 'Natural Family Planning',            value : 10 },
-          { name : 'Emergency Contraceptive Pills',             value : 11 },
-          { name : 'Paragard (Copper T IUD)',       value : 12 },
-          { name : 'Mirena (Hormonal IUD)',         value : 13 },
-          { name : 'Withdrawal',     value : 14 },
-          { name : 'Spermicide',     value : 15 },
-          { name : 'Tubes Tied (Sterilization for Women)',     value : 16 },
-          { name : 'Vasectomy (Sterilization for Men)',      value : 17 },
-          { name : 'Implant (Norplant, Implanon)',        value : 18 },
-          { name : 'Breast Feeding', value : 19 },
-          { name :  'Abstinence',    value : 20 }
+          { name : 'Birth Control Pill',  
+            nameES : 'Píldoras anticonceptivas',
+            value : 1  
+          },
+          { name : 'Mini Pills',     
+            nameES : 'Mini-píldoras',
+            value : 2  
+          },
+          { name : 'Ortho Evra (Patch)',     
+            nameES : 'Ortho Evra (Parche anticonceptivos)',
+            value : 3  
+          },
+          { name : 'Nuva Ring',      
+            nameES : 'NuvaRing',
+            value : 4  
+          },
+          { name : 'Depo Provera (Shot)',   
+            nameES : 'Depo Provera, (Inyección)',
+            value : 5  
+          },
+          { name : 'Male Condom',    
+            nameES : 'Condón masculino',
+            value : 6  
+          },
+          { name : 'Diaphragm',      
+            nameES : 'Diafragma',
+            value : 7  
+          },
+          { name : 'Female Condom',  
+            nameES : 'Condón femenino',
+            value : 8  
+          },
+          { name : 'Sponge',         
+            nameES : 'Esponja anticonceptiva',
+            value : 9  
+          },
+          { name : 'Natural Family Planning',            
+            nameES : 'Planificación Familiar Natural',
+            value : 10 
+          },
+          { name : 'Emergency Contraceptive Pills',             
+            nameES : 'Píldoras anticonceptivas de emergencia',
+            value : 11 
+          },
+          { name : 'Paragard (Copper T IUD)',       
+            nameES : 'Paragard  (T de cobre DIU)',
+            value : 12 
+          },
+          { name : 'Mirena (Hormonal IUD)',         
+            nameES : 'Mirena (DIU hormonal)',
+            value : 13 
+          },
+          { name : 'Withdrawal',     
+            nameES : 'Retiro el pene antes de la eyaculación',
+            value : 14 
+          },
+          { name : 'Spermicide',     
+            nameES : 'Espermicidas',
+            value : 15 
+          },
+          { name : 'Tubes Tied (Sterilization for Women)',     
+            nameES : 'Ligamiento de Tubos (Esterilización permanente para mujeres)',
+            value : 16 
+          },
+          { name : 'Vasectomy (Sterilization for Men)',      
+            nameES : 'Vasectomía (Esterilización permanente para hombres)',
+            value : 17 
+          },
+          { name : 'Implant (Norplant, Implanon)',        
+            nameES : 'Implante anticonceptivo (Norplant o Implanon)',
+            value : 18 
+          },
+          { name : 'Breast Feeding', 
+            nameES : 'Lactancia',
+            value : 19 
+          },
+          { name :  'Abstinence',    
+            nameES : 'Abstinencia',
+            value : 20 
+          }
           // { name : 'Abstinence',     value : 1  },
           // { name : 'Birth Control',  value : 2  },
           // { name : 'Mini Pills',     value : 3  },
@@ -5436,34 +5827,118 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q19ai:{
         options: [
-          { value : 1, name : "Breast Tenderness" },
-          { value : 2, name : "Cramping or pain" },
-          { value : 3, name : "Hair Loss" },
-          { value : 4, name : "Depression or mood swings" },
-          { value : 5, name : "Nausea or vomiting" },
-          { value : 6, name : "Weight gain" },
-          { value : 7, name : "Migraines or very bad headaches" },
-          { value : 8, name : "Discharge" },
-          { value : 9, name : "Other changes to my body" },
-          { value : 10, name : "I couldn't get to the clinic" },
-          { value : 11, name : "I couldn't get to the pharmacy" },
-          { value : 12, name : "It was too expensive" },
-          { value : 13, name : "I had another problem getting the birth control" },
-          { value : 14, name : "I forgot to take it or missed too many doses" },
-          { value : 15, name : "I failed to restart after break for period" },
-          { value : 16, name : "I didn't use it every time I had sex" },
-          { value : 17, name : "I had another problem using it correctly" },
-          { value : 18, name : "I got pregnant" },
-          { value : 19, name : "High blood pressure" },
-          { value : 20, name : "Blood clot in vein or lungs" },
-          { value : 21, name : "Stroke or heart attack" },
-          { value : 22, name : "Another health problem" },
-          { value : 23, name : "I didn't like the prolonged bleeding" },
-          { value : 24, name : "I didn't like the heavy bleeding" },
-          { value : 25, name : "I didn't like the irregular bleeding" },
-          { value : 26, name : "I didn't like the absence of bleeding" },
-          { value : 27, name : "I didn't like something else about my periods" },
-          { value : 28, name : "My partner didn't like it" },
+          { name : "Breast Tenderness",
+            nameES : "Senos sensibles",
+            value : 1
+          },
+          { name : "Cramping or pain",
+            nameES : "Cólicos o dolor",
+            value : 2
+          },
+          { name : "Hair Loss", 
+            nameES : "Pérdida de cabello",
+            value : 3
+          },
+          { name : "Depression or mood swings",
+            nameES : "Depresión o cambios en el estado de ánimo que claramente empeoraron con el método",
+            value : 4
+          },
+          { name : "Nausea or vomiting",
+            nameES : "Naúsea o vómito",
+            value : 5
+          },
+          { name : "Weight gain",
+            nameES : "Aumento de Peso",
+            value : 6
+          },
+          { name : "Migraines or very bad headaches",
+            nameES : "Migrañas o fuertes dolores de cabeza",
+            value : 7
+          },
+          { name : "Discharge",
+            nameES : "Flujo",
+            value : 8 
+          },
+          { name : "Other changes to my body",
+            nameES : "Otros cambios en su cuerpo",
+            value : 9 
+          },
+          { name : "I couldn't get to the clinic",
+            nameES : "No podía llegar a la clínica o a la oficina del médico para obtenerlo",
+            value : 10
+          },
+          { name : "I couldn't get to the pharmacy",
+            nameES : "No podía llegar a la farmacia para recoger la receta",
+            value : 11
+          },
+          { name : "It was too expensive",
+            nameES : "Demasiado caro",
+            value : 12
+          },
+          { name : "I had another problem getting the birth control",
+            nameES : "Otros problemas para obtener el método de control de la natalidad",
+            value : 13
+          },
+          { name : "I forgot to take it or missed too many doses",
+            nameES : "Olvidó tomarlo u olvidó tomar la dosis demasiadas veces",
+            value : 14
+          },
+          { name : "I failed to restart after break for period",
+            nameES : "No volvió a tomar la dosis después que terminó su período de menstruación",
+            value : 15
+          },
+          { name : "I didn't use it every time I had sex",
+            nameES : "No lo usó cada vez que tuvo relaciones sexuales",
+            value : 16
+          },
+          { name : "I had another problem using it correctly",
+            nameES : "Otros problemas para usarlo correctamente",
+            value : 17
+          },
+          { name : "I got pregnant",
+            nameES : "Salió embarazada",
+            value : 18
+          },
+          { name : "High blood pressure",
+            nameES : "Presión arterial alta",
+            value : 19
+          },
+          { name : "Blood clot in vein or lungs",
+            nameES : "Coágulos de sangre en las venas o en los pulmones",
+            value : 20
+          },
+          { name : "Stroke or heart attack",
+            nameES : "Derrame cerebral o ataque al corazón",
+            value : 21
+          },
+          { name : "Another health problem",
+            nameES : "Otros problemas de salud",
+            value : 22
+          },
+          { name : "I didn't like the prolonged bleeding",
+            nameES : "No le gustaba sangrar por tanto tiempo",
+            value : 23
+          },
+          { name : "I didn't like the heavy bleeding",
+            nameES : "No le gustaba sangrar tanto",
+            value : 24
+          },
+          { name : "I didn't like the irregular bleeding",
+            nameES : "No le gustaba sangrar tan irregularmente",
+            value : 25
+          },
+          { name : "I didn't like the absence of bleeding",
+            nameES : "No le gustaba no sangrar",
+            value : 26
+          },
+          { name : "I didn't like something else about my periods",
+            nameES : "No le gustaba otra cosa acerca de sus periodos",
+            value : 27
+          },
+          { name : "My partner didn't like it",
+            nameES : "A su pareja no le gustaba",
+            value : 28
+          },
           //{ value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
@@ -5556,11 +6031,27 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q20:{
         options: [
-          { value : 1, name : 'Less than one year' },
-          { value : 2, name : 'In one to three years' },
-          { value : 3, name : 'In three or more years' },
-          { value : 4, name : 'Not sure when but definitely want a baby' },
-          { value : 5, name : 'Never' },
+          { value : 1, 
+            name : 'Less than one year', 
+            nameES : 'Menos de un año',
+          },
+          { value : 2, 
+            name : 'In one to three years',
+            nameES : 'Entre uno a tres años',
+          },
+          { value : 3, 
+            name : 'In three or more years',
+            nameES : 'En tres años o más',
+          },
+          { value : 4, 
+            name : 'Not sure when but definitely want a baby',
+            nameES : 'No está segura pero definitivamente quiere tener un bebé',
+          },
+          { value : 5, 
+            name : 'Never',
+            nameES : 'Nunca',
+
+          },
           //{ value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
@@ -5583,19 +6074,58 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q21:{
         options: [
-          { value : 1, name : 'Easy to use' },
-          { value : 2, name : 'Safe with breast feeding' },
-          { value : 3, name : 'Inexpensive' },
-          { value : 4, name : 'Very effective' },
-          { value : 5, name : 'Able to get pregnant quickly after stopping use of method' },
-          { value : 6, name : 'Not very many side-effects' },
-          { value : 7, name : 'No hormones' },
-          { value : 8, name : 'Effective long term meaning three months or longer' },
-          { value : 9, name : 'Do not need to interrupt sexual activity' },
-          { value : 10, name : 'Able to give regular monthly periods' },
-          { value : 11, name : 'Gives fewer or no periods' },
-          { value : 12, name : 'Decreases symptoms from period' },
-          { value : 777, name : "I don't know" },
+          { value : 1, 
+            name : 'Easy to use', 
+            nameES : 'Fácil de usar',
+          },
+          { value : 2, 
+            name : 'Safe with breast feeding',
+            nameES : 'Seguro para uso durante la lactancia',
+          },
+          { value : 3, 
+            name : 'Inexpensive',
+            nameES : 'Barato',
+          },
+          { value : 4, 
+            name : 'Very effective',
+            nameES : 'Muy efectivo',
+          },
+          { value : 5, 
+            name : 'Able to get pregnant quickly after stopping use of method',
+            nameES : 'Facilidad en quedar embarazada una vez de dejar de usar el método',
+          },
+          { value : 6, 
+            name : 'Not very many side-effects',
+            nameES : 'No muchos efectos secundarios',
+          },
+          { value : 7, 
+            name : 'No hormones', 
+            nameES : 'Sin hormonas',
+          },
+          { value : 8, 
+            name : 'Effective long term meaning three months or longer',
+            nameES : 'Efectivo a largo plazo, es decir tres meses o más',
+          },
+          { value : 9, 
+            name : 'Do not need to interrupt sexual activity',
+            nameES : 'Sin necesidad de interrumpir la actividad sexual',
+          },
+          { value : 10, 
+            name : 'Able to give regular monthly periods',
+            nameES : 'Habilidad de tener períodos mensuales regulares',
+          },
+          { value : 11, 
+            name : 'Gives fewer or no periods',
+            nameES : 'Da menos o ningún período',
+          },
+          { value : 12, 
+            name : 'Decreases symptoms from period',
+            nameES : 'Disminuye los síntomas del período',
+          },
+          { value : 777, 
+            name : "I don't know",
+            nameES : "No lo sé",
+          },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOptions: [ ],
@@ -5626,14 +6156,38 @@ angular.module('contraceptionApp').factory('questionService', function () {
       **/
       q22:{
         options: [
-          { value : 1, name : 'Every time you have sex' },
-          { value : 2, name : 'Every day' },
-          { value : 3, name : 'Once a week' },
-          { value : 4, name : 'Once a month' },
-          { value : 5, name : 'Every three months' },
-          { value : 6, name : 'Longer than every three months' },
-          { value : 7, name : 'Permanent method' },
-          { value : 777, name : "I don't know" },
+          { value : 1, 
+            name : 'Every time you have sex',
+            nameES : 'Cada vez que tenga relaciones sexuales',
+          },
+          { value : 2, 
+            name : 'Every day',
+            nameES : 'Todos los días',
+          },
+          { value : 3, 
+            name : 'Once a week',
+            nameES : 'Una vez a la semana',
+          },
+          { value : 4, 
+            name : 'Once a month',
+            nameES : 'Una vez al mes',
+          },
+          { value : 5, 
+            name : 'Every three months',
+            nameES : 'Cada tres meses',
+          },
+          { value : 6, 
+            name : 'Longer than every three months',
+            nameES : 'Más de tres meses',
+          },
+          { value : 7, 
+            name : 'Permanent method',
+            nameES : 'Como método permanente',
+          },
+          { value : 777, 
+            name : "I don't know",
+            nameES : 'No lo sé',
+          },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
         selectedOptions: [ ],
@@ -5663,9 +6217,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q23:{
         options: [
-          { name : "Yes", value : 1  },
-          { name : "No", value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : "Yes", 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : "No", 
+            nameES : "No",
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5687,9 +6250,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
        */
       q24:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5708,9 +6279,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Would you be okay with no bleeding at all?
       q25:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : "Si",
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : "No",
+            value : 2  
+        },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+        },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5729,9 +6309,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you need a birth control method which you can keep private?
       q26:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5752,9 +6341,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you want to keep it private from your boyfriend/girlfriend/partner?
       q26a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know", 
+            nameES : "No lo sé",                        
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5773,9 +6371,17 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you want to keep it private from your family or your friends?
       q26b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5795,9 +6401,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Would it be OK for you to use a birth control method that you have to interrupt sexual activity to use?
       q27:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",
+            nameES : "No lo sé",                         
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5824,8 +6439,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Have you had a baby in the last 6 months?
       q28:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5846,8 +6467,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Are you breastfeeding your baby now?
       q28a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5868,8 +6495,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // How long since you gave birth-B?
       q28b:{
         options: [
-          { value : 1, name : 'Less than 3 weeks' },
-          { value : 2, name : 'More than 3 weeks, but less than 6 weeks' },
+          { name : 'Less than 3 weeks',
+            nameES : 'Menos de 3 semanas',
+            value : 1
+          },
+          { name : 'More than 3 weeks but less than 6 weeks',
+            nameES : 'Más de 3 semanas pero menos de 6 semanas',
+            value : 2
+          },
         ],
         selectedOption : { },
         resetInputs: function(){
@@ -5887,9 +6520,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // How long since you gave birth-C?
       q28c:{
         options: [
-          { value : 1, name : 'Less than 3 weeks' },
-          { value : 2, name : 'More than 3 weeks, but less than 6 weeks' },
-          { value : 3, name : 'More than 6 weeks' },
+          { name : 'Less than 3 weeks', 
+            nameES : 'Menos de 3 semanas',
+            value : 1
+          },
+          { name : 'More than 3 weeks but less than 6 weeks',
+            nameES : 'Más de 3 semanas pero menos de 6 semanas',
+            value : 2
+          },
+          { name : 'More than 6 weeks', 
+            nameES : 'Más de 6 semanas',
+            value : 3
+          },
         ],
         selectedOption : { },
         resetInputs: function(){
@@ -5908,8 +6550,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Have you had surgery in the past three months?
       q29:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5930,8 +6578,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Is it hard moving around because of the surgery?
       q29a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5952,8 +6606,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // also called hypertension?
       q30:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -5974,9 +6634,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Are you currently taking medicine for high blood pressure?
       q30a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé", 
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -5996,8 +6665,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // in a vein or DVT?
       q31:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6018,8 +6693,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // also called a clot in the lung?
       q32:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6039,8 +6720,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Has a doctor, nurse, or other health professional EVER told you that you had a stroke?
       q33:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6060,8 +6747,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Has a doctor, nurse, or other health professional EVER told you that you had a clotting disorder?
       q34:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6082,8 +6775,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // high cholesterol?
       q35:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6105,8 +6804,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // attach, also called a myocardial infarction, heart disease or vascular disease?
       q36:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6127,8 +6832,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // valvular heart disease?
       q37:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6149,8 +6860,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // sickle cell anemia?
       q38:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6171,8 +6888,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // had anemia, sometimes called low blood or tired blood?
       q39:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6193,8 +6916,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // cancer or a malignancy of any kind?
       q40:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2 
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6215,8 +6944,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Have you ever had breast cancer, liver tumors or liver cancer?
       q40a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6236,8 +6971,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Haver you ever had endometrial cancer, ovarian cancer, or cervical cancer?
       q40b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6258,8 +6999,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // molar pregnancy?
       q41:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6280,8 +7027,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // had pelvid inflammatory disease (PID)?
       q42:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6302,8 +7055,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // toxic shock syndrome (tss)?
       q43:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6323,8 +7082,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Has a doctor, nurse, or other health professional EVER told you that you had pelvic tuberculosis?
       q44:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6345,8 +7110,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // endometriosis?
       q45:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6366,8 +7137,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Has a doctor, nurse, or other health professional EVER told you that you had diabetes?
       q46:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6389,8 +7166,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Have you had diabetes for more than 20 years?
       q46a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6410,8 +7193,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you have problems with your kidneys, eyes or nerves because of diabetes?
       q46b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6431,8 +7220,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you have migraine headaches?
       q47:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6455,8 +7250,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // before or during the migraine headache
       q47a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6476,8 +7277,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Has a doctor, nurse, or other health professional EVER told you that you had AIDS?
       q48:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6498,8 +7305,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // or gallbladder problems?
       q48a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6522,8 +7335,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // liver or gallbladder disease or gallstones?
       q48b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6544,8 +7363,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // or active hepatitis?
       q49:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6566,8 +7391,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // seizure disorder or epilepsy?
       q50:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6588,8 +7419,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you have severe acne?
       q51:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6610,8 +7447,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you have coarse, dark hairs on your face?
       q52:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6638,8 +7481,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you take dietary supplements or prescription medications regularly?
       q53:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6660,8 +7509,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you take St. John's wort?
       q53a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6681,8 +7536,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you take Rifampin, Rihadin or Rinactana?
       q53b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6702,12 +7563,30 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you take any of these seizure medications?
       q53c:{
         options: [
-          { value : 1, name : 'Phenytoin or Dilantin' },
-          { value : 2, name : 'Carbamazepine or Tegretol' },
-          { value : 3, name : 'Primadone or Mysoline' },
-          { value : 4, name : 'Topiramate or Topamax' },
-          { value : 5, name : 'Oxycarbazepine or Trileptal' },
-          { value : 777, name : "None" },
+          { name : 'Phenytoin or Dilantin', 
+            nameES : 'Phenytoin or Dilantin', 
+            value : 1
+          },
+          { name : 'Carbamazepine or Tegretol', 
+            nameES : 'Carbamazepine or Tegretol',
+            value : 2
+          },
+          { name : 'Primadone or Mysoline', 
+            nameES : 'Primadone or Mysoline',
+            value : 3
+          },
+          { name : 'Topiramate or Topamax', 
+            nameES : 'Topiramate or Topamax',
+            value : 4
+          },
+          { name : 'Oxycarbazepine or Trileptal',
+            nameES : 'Oxycarbazepine or Trileptal',
+            value : 5
+          },
+          { name : "None",
+            nameES : 'Ninguno',
+            value : 777
+          },
           //{ value : 999, name : "No" },
         ],
         selectedOptions: [ ],
@@ -6735,8 +7614,14 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Do you take Griseofulvin, Fulvicin or Grisactin?
       q53h:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
           //{ name : "I don't know",                         value : 999  },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
@@ -6766,9 +7651,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // Could you remember to take a pill every single day?
       q54a:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si',
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No',
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé",
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6788,9 +7682,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // shot, would you be able to do this?
       q54b:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé", 
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6810,9 +7713,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // once per month. Would you feel comfortable using the ring as a birth control method?
       q54c:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé", 
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6832,9 +7744,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // provider inside your uterus that would provide contracpetion for 5-10 years?
       q54d:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
+          { name : "I dont know",                         
+            nameES : "No lo sé", 
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
@@ -6855,9 +7776,18 @@ angular.module('contraceptionApp').factory('questionService', function () {
       // sking of your upper arm that provides contracpetion for up to 3 years?
       q54e:{
         options: [
-          { name : 'Yes', value : 1  },
-          { name : 'No', value : 2  },
-          { name : "I don't know",                         value : 999  },
+          { name : 'Yes', 
+            nameES : 'Si', 
+            value : 1  
+          },
+          { name : 'No', 
+            nameES : 'No', 
+            value : 2  
+          },
+          { name : "I don't know",                         
+            nameES : "No lo sé", 
+            value : 999  
+          },
           //{ name : "I don't want to answer this question", value : 777  },
         ],
         selectedOption : { },
