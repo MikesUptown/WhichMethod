@@ -17,13 +17,21 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Questions 28-52
+          h2.media-heading 
+            span(lang='en') Questions 28-52
+            span(lang='es') Preguntas 28-52
           br
-          h4.media-heading Medical history
+          h3.media-heading 
+            span(lang='en') Medical history
+            span(lang='es') Historia médica
           br
-          p.lead Knowing your medical history makes a difference when choosing birth control - some methods cannot be used by women with certain medical conditions.
+          p.lead 
+            span(lang='en') Knowing your medical history makes a difference when choosing birth control - some methods cannot be used by women with certain medical conditions.
+            span(lang='es') Saber su historia médica hace una diferencia cuando va a escoger un método anticonceptivo. Hay algunos métodos que algunas mujeres no pueden usar porque tienen ciertas condiciones médicas.
           br
           a.btn.btn-default.btn-md(href='/questions/section/5', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014

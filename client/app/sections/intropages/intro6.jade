@@ -17,12 +17,20 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Question 53
+          h2.media-heading 
+            span(lang='en') Question 53
+            span(lang='es') Preguntas 53
           br
-          p.lead Taking vitamins or medication?
-          p.lead It's important to note any dietary supplements and prescription medications that are part of your routine.
+          p.lead 
+            span(lang='en') Taking vitamins or medication?
+            span(lang='es') ¿Está tomando vitaminas o medicinas?
+          p.lead 
+            span(lang='en') It's important to note any dietary supplements and prescription medications that are part of your routine.
+            span(lang='es') Es importante saber cuáles vitaminas y medicinas son parte de su rutina.
           br
           a.btn.btn-default.btn-md(href='/questions/section/6', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014

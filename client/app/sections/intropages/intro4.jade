@@ -17,14 +17,24 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Questions 23-27
+          h2.media-heading 
+            span(lang='en') Questions 23-27
+            span(lang='es') Preguntas 23-27
           br
-          h4.media-heading Regular, unscheduled or absent periods
+          h3.media-heading 
+            span(lang='en') Regular, unscheduled or absent periods
+            span(lang='es') Períodos regulares , no programados o ausentes
           br
-          p.lead Some birth control methods may affect your periods. 
-          p.lead This won't hurt you, but it is something to keep in mind.
+          p.lead 
+            span(lang='en') Some birth control methods may affect your periods.
+            span(lang='es') Algunos métodos anticonceptivos pueden cambiar su período menstrual.
+          p.lead 
+            span(lang='en') This won't hurt you, but it is something to keep in mind.
+            span(lang='es') Esto no es dañino para su cuerpo, pero es algo que debe de tener en cuenta.
           br
           a.btn.btn-default.btn-md(href='/questions/section/4', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014

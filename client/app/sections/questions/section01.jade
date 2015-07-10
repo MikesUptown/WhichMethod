@@ -23,11 +23,11 @@ header
     li#q1(ng-show="currentQuestion == 'q1'")
       label
         span(lang='en') Q1. How old are you?
-        span(lang='es') Q1. Cuántos años tienes?
+        span(lang='es') Q1. ¿Cuántos años tienes?
       form(name="age")
         input(ng-model='questions.q1.textInput' name="input" type='number' min='14', max='140' required)        
         span.error.en(ng-show="age.input.$error.min") You must at least be 14 years of age!
-        span.error.es(ng-show="age.input.$error.min") Usted debe ser al menos 14 años de edad!
+        span.error.es(ng-show="age.input.$error.min") ¡Usted debe de tener al menos 14 años de edad!
         span.error.en(ng-show="age.input.$error.max") This survey is not relevant for this age!
         span.error.es(ng-show="age.input.$error.max") Esta encuesta no es relevante para esta edad!
         span.error.en(ng-show="age.input.$error.number") Not valid number!
@@ -36,12 +36,14 @@ header
         br
         br
         input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
 
     li#q2(ng-show="currentQuestion == 'q2'")
       label
         span(ng-show="language=='en'") Q2. How much do you weigh "lbs."?
-        span(ng-show="language=='es'") Q2. ¿Cuánto pesa?
+        span(ng-show="language=='es'") Q2. ¿Cuánto pesa "lbs."?
       form(name="weight")
         input(ng-model='questions.q2.textInput' required type='number', tabindex='1')
         div(ng-repeat='option in questions.q2.options')

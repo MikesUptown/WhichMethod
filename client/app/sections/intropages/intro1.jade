@@ -17,13 +17,21 @@ section
     .col-xs-6 
       .responsive-container
         .content-container
-          h2.media-heading Questions 1-3
+          h2.media-heading
+            span(lang='en') Questions 1-3
+            span(lang='es') Preguntas 1-3
           br
-          h4.media-heading Age, weight, smoker
+          h3.media-heading
+            span(lang='en') Age, weight, smoker
+            span(lang='es') Edad , peso , fumador
           br
-          p.lead First, let's cover the basics.
+          p.lead 
+            span(lang='en') First, let's cover the basics.
+            span(lang='es') Primero, vamos a empezar con lo básico. 
           br
           a.btn.btn-default.btn-md(href='/questions/section/1', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 
 footer

@@ -17,14 +17,24 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Questions 14-22
+          h2.media-heading 
+            span(lang='en') Questions 14-22
+            span(lang='es') Preguntas 14-22
           br
-          h4.media-heading Sexual behavior
+          h3.media-heading 
+            span(lang='en') Sexual behavior
+            span(lang='es') Comportamiento sexual
           br
-          p.lead Your sexual history can help to narrow down the kind of birth control that works best for you. 
-          p.lead Don't worry, all answers are completely confidential.
+          p.lead 
+            span(lang='en') Your sexual history can help to narrow down the kind of birth control that works best for you.
+            span(lang='es') Su historia sexual puede ayudar escoger el mejor método anticonceptivo para usted. 
+          p.lead 
+            span(lang='en') Don't worry, all answers are completely confidential.
+            span(lang='es') Por favor recuerde que sus respuestas son totalmente confidenciales.
           br
           a.btn.btn-default.btn-md(href='/questions/section/3', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014

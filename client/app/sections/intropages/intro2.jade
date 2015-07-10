@@ -17,11 +17,17 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Questions 4-13
+          h2.media-heading
+            span(lang='en') Questions 4-13
+            span(lang='es') Preguntas 4-13
           br
-          p.lead The next questions are about your period.
+          p.lead 
+            span(lang='en') The next questions are about your period.
+            span(lang='es') Las siguientes preguntas son sobre su periodo menstrual.
           br
           a.btn.btn-default.btn-md(href='/questions/section/2', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014

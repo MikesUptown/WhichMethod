@@ -17,12 +17,20 @@ section
     .col-xs-6
       .responsive-container
         .content-container
-          h2.media-heading Questions 54a-54e
+          h2.media-heading 
+            span(lang='en') Questions 54a-54e
+            span(lang='es') Preguntas 54a-54e
           br
-          p.lead Last step - it's time to give your opinion!
-          p.lead What do you think about the following birth control methods?
+          p.lead 
+            span(lang='en') Last step - it's time to give your opinion!
+            span(lang='es') ¡Último paso --  es tiempo para que usted de su opinión!
+          p.lead 
+            span(lang='en') What do you think about the following birth control methods?
+            span(lang='es') ¿Qué piensa sobre los siguientes métodos anticonceptivos?
           br
           a.btn.btn-default.btn-md(href='/questions/section/7', role='button') Continue
+          label.choice(ng-if="language=='en'") {{option.nameEN}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
 footer
   p.footer &#169; Public Health Solutions 2014
