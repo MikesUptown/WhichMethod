@@ -5281,7 +5281,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             pregnancy:[]
           },
           { name : 'Withdrawal',     
-            nameES : 'Retiro el pene antes de la eyaculación',
+            nameES : 'Retiro del pene antes de la eyaculación',
             value : 14,
             pregnancy:[]
           },
@@ -5426,7 +5426,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             value : 14 
           },
           { name : 'Withdrawal',     
-            nameES : 'Retiro el pene antes de la eyaculación',
+            nameES : 'Retiro del pene antes de la eyaculación',
             value : 15 
           },
           { name : 'Spermicide',     
@@ -5603,7 +5603,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             value : 14 
           },
           { name : 'Withdrawal',     
-            nameES : 'Retiro el pene antes de la eyaculación',
+            nameES : 'Retiro del pene antes de la eyaculación',
             value : 15 
           },
           { name : 'Spermicide',     
@@ -5745,7 +5745,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
             value : 13 
           },
           { name : 'Withdrawal',     
-            nameES : 'Retiro el pene antes de la eyaculación',
+            nameES : 'Retiro del pene antes de la eyaculación',
             value : 14 
           },
           { name : 'Spermicide',     
