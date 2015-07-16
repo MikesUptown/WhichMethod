@@ -14,15 +14,22 @@ div.page-header
 
   .panel.panel-default
     .panel-body
-    h3.panel-title Next Steps
-    | Please press "Go to PDF" button below to receive your printout of the birth control methods recommended for you.
+    h3.panel-title
+      span(lang='en') Next Steps
+      span(lang='es') Siguientes Pasos
     br
-    | For extra protection no matter what method you choose, use condoms to prevent STIs.
+    span(lang='en') Please press "Go to PDF" button below to receive your printout of the birth control methods recommended for you.
+    span(lang='es') Por favor oprima el botón “PDF” para recibir su copia de los métodos anticonceptivos que son recomendados.
+    br
+    span(lang='en') For extra protection no matter what method you choose, use condoms to prevent STIs.
+    span(lang='es') Como protección adicional, no importa que método escoja, use condones para prevenir infecciones de transmisión sexual (ITS).
 
 
 .pdfButtons
   a(href="/recommendation/{{currentUser._id}}" target="_blank")
-    .btn.btn-default GO TO PDF
+    .btn.btn-default 
+      span(lang='en') GO TO PDF
+      span(lang='es') BLAH BLAH BLAH
   
   span(ng-show="currentUser.name != 'guest'")
     button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
@@ -33,22 +40,37 @@ div.page-header
 
 .recommend
   .green(ng-if="colors.green.length>0")
-      b Green = GO!
-      p These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+      b 
+      span(lang='en') Green = GO!
+      span(lang='es') SPANISH / Green = GO!
+      p 
+        span(lang='en') These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+        span(lang='es') spanish spanish spanish
       .methods       
           .method(ng-repeat="val in colors.green")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
             span.text {{val.longText}}
 
 
-  p <strong>Condoms</strong> can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sext act.
-
-  p If you forget to use birth control or your birth control method fails, ask your healthcare provider about <strong>Emergency Contraception</strong> (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B One-Step, Next Choice Once Dose and some other brands of emergency contraception can be purchased over the counter without a prescription.
+  p 
+  span(lang='en') <strong>Condoms</strong> can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sext act.
+  br
+  span(lang='es') <strong>Condones</strong> pueden ser usados en combinación con otros métodos anticonceptivos. Los condones pueden prevenir el embarazo. Condones látex pueden protegerla contra infecciones de transmisión sexual (ITS) como el VIH, clamidia, sífilis y la gonorrea. Para protegerse contra el VIH y otras ITS, use un condón nuevo por cada acto sexual.
+  br
+  p 
+  span(lang='en') If you forget to use birth control or your birth control method fails, ask your healthcare provider about <strong>Emergency Contraception</strong> (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B One-Step, Next Choice Once Dose and some other brands of emergency contraception can be purchased over the counter without a prescription.
+  br
+  span(lang='es') Si a usted se le olvida usar el método anticonceptivo o si su método le falla, pregúntele a su proveedor de salud sobre el anticonceptivo de emergencia (AE, también llamado Plan B). El anticonceptivo de emergencia NO es un método de control de la natalidad regular. Usted tiene que tomarse las pastillas anticonceptivas de emergencia en un plazo de tres días (72 horas) después de haber tenido relaciones sexuales sin protección. El Plan B One- Step, Next Choice Once Dose y otras marcas están disponibles sin receta médica en las farmacias.
+  br
 
   .yellow(ng-if="colors.yellow.length>0")
-      b Yellow = Slow!
+      b 
+        span(lang='en') Yellow = Slow!
+        span(lang='es') SPANISH / Yellow = Slow!
       br
-      p These birth control methods are not the best for you because of your answers to the questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+      p 
+      span(lang='en') These birth control methods are not the best for you because of your answers to the questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+      span(lang='es') spanish spanish spanish
       .methods
           .method(ng-repeat="val in colors.yellow")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
@@ -56,9 +78,13 @@ div.page-header
 
 
   .red(ng-if="colors.red.length>0")
-          b Red = Medically Contraindicated!
+          b 
+            span(lang='en') Red = Medically Contraindicated!
+            span(lang='es') SPANISH / Red = Medically Contraindicated!
           br
-          p These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+          p 
+          span(lang='en') These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+          span(lang='es') spanish spanish spanish
           .methods
             .method(ng-repeat="val in colors.red")
               img(src='/assets/images/methodsSml/{{val.img}}.jpg')
