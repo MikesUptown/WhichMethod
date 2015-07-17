@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
+      a.btn.btn-primary.btn-lg(ng-click='logout()') 
+        span(lang='en') Log out
+        span(lang='es') Salir
 
 section
     #main_content
@@ -32,7 +34,9 @@ section
             span(lang='en') Don't worry, all answers are completely confidential.
             span(lang='es') Por favor recuerde que sus respuestas son totalmente confidenciales.
           br
-          a.btn.btn-default.btn-md(href='/questions/section/3', role='button') Continue
+          a.btn.btn-default.btn-md(href='/questions/section/3', role='button')
+            span(lang='en') Continue
+            span(lang='es') Continuar
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 

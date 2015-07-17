@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary(ng-click='logout()') Log out
+      a.btn.btn-primary(ng-click='logout()')
+        span(lang='en') Log out
+        span(lang='es') Salir
   br
   br
 #container-top
@@ -183,7 +185,7 @@ header
       label
         | Q36. 
         span(ng-show="language=='en'") A heart attack, also called a myocardial infarction, heart disease or vascular disease
-        span(ng-show="language=='es'") Infarto de miocardio, enfermedad cardíaca o enfermedad vascular?
+        span(ng-show="language=='es'") Ataque al corazón también llamado infarto de miocardio, enfermedad cardíaca o enfermedad vascular?
       div(ng-repeat='option in questions.q36.options')
         input(type="radio" name='q36' ng-change="saveAnswers()" ng-model='questions.q36.selectedOption' ng-value="{{option}}")
         label.choice(ng-if="language=='en'") {{option.name}}

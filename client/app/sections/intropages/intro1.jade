@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
     .col-md-6
-    a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
+    a.btn.btn-primary.btn-lg(ng-click='logout()') 
+      span(lang='en') Log out
+      span(lang='es') Salir
 
 section
     #main_content
@@ -27,9 +29,13 @@ section
           br
           p.lead 
             span(lang='en') First, let's cover the basics.
-            span(lang='es') Primero, vamos a empezar con lo básico. 
+            span(lang='es') Primero, vamos a empezar con lo básico.
+          p.lead 
+            span(lang='es') Oprima Continuar para empezar.             
           br
-          a.btn.btn-default.btn-md(href='/questions/section/1', role='button') Continue
+          a.btn.btn-default.btn-md(href='/questions/section/1', role='button') 
+            span(lang='en') Continue
+            span(lang='es') Continuar
           label.choice(ng-if="language=='en'") {{option.nameEN}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 

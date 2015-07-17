@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary(ng-click='logout()') Log out
+      a.btn.btn-primary(ng-click='logout()') 
+        span(lang='en') Log out
+        span(lang='es') Salir
   br
   br
 #container-top
@@ -26,16 +28,20 @@ header
         span(lang='es') Q1. ¿Cuántos años tienes?
       form(name="age")
         input(ng-model='questions.q1.textInput' name="input" type='number' min='14', max='140' required)        
-        span.error.en(ng-show="age.input.$error.min") You must at least be 14 years of age!
-        span.error.es(ng-show="age.input.$error.min") ¡Usted debe de tener al menos 14 años de edad!
-        span.error.en(ng-show="age.input.$error.max") This survey is not relevant for this age!
-        span.error.es(ng-show="age.input.$error.max") Esta encuesta no es relevante para esta edad!
-        span.error.en(ng-show="age.input.$error.number") Not valid number!
-        span.error.es(ng-show="age.input.$error.number") No número válido!
+        span.error(ng-show="age.input.$error.min") 
+          span(lang='en') You must at least be 14 years of age!
+          span(lang='es') ¡Usted debe de tener al menos 14 años de edad!
+        span.error(ng-show="age.input.$error.max") 
+          span(lang='en') This survey is not relevant for this age!
+          span(lang='es') Esta encuesta no es relevante para esta edad!
+        span.error(ng-show="age.input.$error.number") 
+          span(lang='en') Not valid number!
+          span(lang='es') No número válido!
         br
         br
         br
-        input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
+        input(lang="en",type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
+        input(lang="es",type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continuar")
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
@@ -52,7 +58,8 @@ header
         br
         br
         br
-        input(type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
+        input(lang="en",type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
+        input(lang="es",type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continuar")
 
 
     li#q3(ng-show="currentQuestion == 'q3'")

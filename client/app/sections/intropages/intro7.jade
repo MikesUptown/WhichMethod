@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
+      a.btn.btn-primary.btn-lg(ng-click='logout()') 
+        span(lang='en') Log out
+        span(lang='es') Salir
 
 section
     #main_content
@@ -28,7 +30,9 @@ section
             span(lang='en') What do you think about the following birth control methods?
             span(lang='es') ¿Qué piensa sobre los siguientes métodos anticonceptivos?
           br
-          a.btn.btn-default.btn-md(href='/questions/section/7', role='button') Continue
+          a.btn.btn-default.btn-md(href='/questions/section/7', role='button')
+            span(lang='en') Continue
+            span(lang='es') Continuar
           label.choice(ng-if="language=='en'") {{option.nameEN}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 

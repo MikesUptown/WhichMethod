@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
+      a.btn.btn-primary.btn-lg(ng-click='logout()') 
+        span(lang='en') Log out
+        span(lang='es') Salir
 
 div.page-header
   h1
@@ -29,23 +31,31 @@ div.page-header
   a(href="/recommendation/{{currentUser._id}}" target="_blank")
     .btn.btn-default 
       span(lang='en') GO TO PDF
-      span(lang='es') BLAH BLAH BLAH
+      span(lang='es') PDF
   
   span(ng-show="currentUser.name != 'guest'")
-    button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") EMAIL ME THE RECOMMENDATIONS
-    .prog(ng-show="sendingEmail") Sending email now...please be patient
-    .success(ng-show="emailSuccess") Your email has been sent!
+    button.btn.btn-default.emailButton( ng-disabled="sendingEmail" ng-click="emailPdf()") 
+      span(lang='en') EMAIL ME THE RECOMMENDATIONS
+      span(lang='es') Mándeme por E-Mail mis recomendaciones
+    .prog(ng-show="sendingEmail") 
+      span(lang='en') Sending email now...please be patient
+      span(lang='es') Mandando e-mail ahora...por favor sea paciente 
+    .success(ng-show="emailSuccess") 
+      span(lang='en') Your email has been sent!
+      span(lang='es') ¡Su e-mail ha sido enviado! 
     .error(ng-show="emailError") there was a problem... please try again
-  a(href="/settings").btn.btn-default(ng-show="currentUser.name == 'guest'") Register to Receive your PDF via Email
+  a(href="/settings").btn.btn-default(ng-show="currentUser.name == 'guest'") 
+    span(lang='en') Register to Receive your PDF via Email
+    span(lang='es') Regístrese para recibir por E-Mail su PDF
 
 .recommend
   .green(ng-if="colors.green.length>0")
       b 
       span(lang='en') Green = GO!
-      span(lang='es') SPANISH / Green = GO!
+      span(lang='es') Verde= ¡Sigue!
       p 
         span(lang='en') These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
-        span(lang='es') spanish spanish spanish
+        span(lang='es') Estos son los mejores métodos anticonceptivos para usted. Son los más adecuados para su estilo de vida, metas y los que mejor previenen un embarazo.
       .methods       
           .method(ng-repeat="val in colors.green")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
@@ -62,15 +72,15 @@ div.page-header
   br
   span(lang='es') Si a usted se le olvida usar el método anticonceptivo o si su método le falla, pregúntele a su proveedor de salud sobre el anticonceptivo de emergencia (AE, también llamado Plan B). El anticonceptivo de emergencia NO es un método de control de la natalidad regular. Usted tiene que tomarse las pastillas anticonceptivas de emergencia en un plazo de tres días (72 horas) después de haber tenido relaciones sexuales sin protección. El Plan B One- Step, Next Choice Once Dose y otras marcas están disponibles sin receta médica en las farmacias.
   br
-
+  br
   .yellow(ng-if="colors.yellow.length>0")
       b 
         span(lang='en') Yellow = Slow!
-        span(lang='es') SPANISH / Yellow = Slow!
+        span(lang='es') Amarillo = ¡DESPACIO!
       br
       p 
       span(lang='en') These birth control methods are not the best for you because of your answers to the questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
-      span(lang='es') spanish spanish spanish
+      span(lang='es') Por su respuestas a las preguntas, estos métodos anticonceptivos no son los mejores en prevenir un embarazo o pueden ser un problema para usted.
       .methods
           .method(ng-repeat="val in colors.yellow")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
@@ -80,11 +90,11 @@ div.page-header
   .red(ng-if="colors.red.length>0")
           b 
             span(lang='en') Red = Medically Contraindicated!
-            span(lang='es') SPANISH / Red = Medically Contraindicated!
+            span(lang='es') Rojo = ¡ALTO!
           br
           p 
           span(lang='en') These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
-          span(lang='es') spanish spanish spanish
+          span(lang='es') Por su respuestas a las preguntas, estos métodos anticonceptivos no son los mejor para usted.  No los debe de usar sin antes tener una cuidadosa conversación con su proveedor de salud médica.
           .methods
             .method(ng-repeat="val in colors.red")
               img(src='/assets/images/methodsSml/{{val.img}}.jpg')

@@ -16,31 +16,61 @@ div
     .panel.panel-default
     h3.panel-heading
     .panel-body
-      h3.panel-title What is WhichMethod.org?
-      | WhichMethod.org is an app that provides general information about birth control methods. It can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment. You do not need to know anything about birth control methods to use this app.
+    h3.panel-title 
+      span(ng-show="language=='en'") What is WhichMethod.org?
+      span(ng-show="language=='es'") ¿Que es WhichMethod.org?
+      br
+      span(ng-show="language=='en'") WhichMethod.org is an app that provides general information about birth control methods. It can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment. You do not need to know anything about birth control methods to use this app.
+      br
+      span(ng-show="language=='es'") WhichMethod.org es una aplicación que ofrece información general sobre métodos anticonceptivos. Le puede ayudar a escoger un  método anticonceptivo que sea seguro, efectivo y adecuado para su estilo de vida. No reemplaza consejos de médicos profesionales, ni diagnosis o tratamiento. Usted no necesita saber de métodos anticonceptivos para usar esta aplicación. 
       br
       br
-      h3.panel-title Confidentiality
-      | For your protection, all information you provide will be kept confidential by using a randomly-generated ID number instead of your e-mail address. All answers are stored separately from email addresses.
+    h3.panel-title 
+      span(ng-show="language=='en'") Confidentiality
+      span(ng-show="language=='es'") Confidencialidad
+      br
+      span(ng-show="language=='en'") For your protection, all information you provide will be kept confidential by using a randomly-generated ID number instead of your e-mail address. All answers are stored separately from email addresses.
+      br
+      span(ng-show="language=='es'") Para su protección, toda información que usted comparta va a ser completamente confidencial usando un número generado al azar en lugar de su correo electrónico. Todas las repuestas van a ser separadas de su correo electrónico.
       br
       br
-      h3.panel-title Use of E-mail address
-      | If you use WhichMethod.org as a <mark>REGISTERED USER</mark>, we will ask you to provide an email address. <strong>Your e-mail address will not be linked to your answers.</strong> If you register, you will be able to get a copy of your birth control recommendations sent to your email address. As a Registered User, we will send you 1 or 2 follow-up emails to ask 2 questions about birth control use since you used the app. We will not use your e-mail address for any other purpose and we will not share it with anyone. Your email and account will be deleted after 24 hours.
+    h3.panel-title 
+      span(ng-show="language=='en'") Use of E-mail address
+      span(ng-show="language=='es'") Su Correo Electrónico
+      br
+      span(ng-show="language=='en'") If you use WhichMethod.org as a <mark>REGISTERED USER</mark>, we will ask you to provide an email address. <strong>Your e-mail address will not be linked to your answers.</strong> If you register, you will be able to get a copy of your birth control recommendations sent to your email address. As a Registered User, we will send you 1 or 2 follow-up emails to ask 2 questions about birth control use since you used the app. We will not use your e-mail address for any other purpose and we will not share it with anyone. Your email and account will be deleted after 24 hours.
+      br
+      span(ng-show="language=='es'") Si usted usa WhichMethod.org como un <mark>USUARIO REGISTRADO</mark>, le vamos a pedir su correo electrónico (e-mail). Su correo electrónico no va a ser vinculado con sus respuestas. Si se registra, usted va a recibir una copia de sus recomendaciones a su correo electrónico. Como Usuario Registrado, nosotros le mandaremos 1 o 2 correos electrónicos sobre su uso de anticonceptivos desde que uso la aplicación. Nosotros no usaremos su correo electrónico para ninguna otra razón y no la compartiremos con nadie. Su correo electrónico va a ser borrado después de 24 horas.
       br
       br
-      | If you use WhichMethod.org as a <mark>GUEST</mark>, you will not need to provide an email address. You will not receive the follow up emails or a copy of your birth control recommendations sent to your email address.
+      span(ng-show="language=='en'") If you use WhichMethod.org as a <mark>GUEST</mark>, you will not need to provide an email address. You will not receive the follow up emails or a copy of your birth control recommendations sent to your email address.
+      br
+      span(ng-show="language=='es'") Si usted usa WhichMethod.org como <mark>USUARIO INVITADO</mark>, usted no necesita compartir su correo electrónico (e-mail). Usted no va a recibir correos electrónicos de nosotros y no recibirá una copia de sus recomendaciones.
+      br
+    h3.panel-title 
+      span(ng-show="language=='en'") Risks or discomforts
+      span(ng-show="language=='es'") Riesgos o incomodidades
+      br
+      span(ng-show="language=='en'") You may feel uncomfortable answering some of the questions. You may exit from your browser at any time. To reduce risk of any possibly email disclosure, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 24 hours.
+      br
+      span(ng-show="language=='es'") Usted podrá sentirse incomoda respondiendo algunas preguntas. Usted puede salirse de su navegador en cualquier momento. Para minimizar el riesgo de que su correo electrónico sea revelado, todos los usuarios van a ser asignados con números, las respuestas van a ser separadas de los correos electrónicos, todos los correos electrónicos van a ser borrados después de 24 horas. 
       br
       br
-      h3.panel-title Risks or discomforts
-      | You may feel uncomfortable answering some of the questions. You may exit from your browser at any time. To reduce risk of any possibly email disclosure, all users are assigned an ID number, answers are stored separately from emails, and emails are destroyed after 24 hours. 
+    h3.panel-title 
+      span(ng-show="language=='en'") Contact
+      span(ng-show="language=='es'") Contacto
+      br
+      span(ng-show="language=='en'") If you have questions or concerns about WhichMethod.org, please contact Dr. Mary Ann Chiasson at 646-619-6411 or machiasson@healthsolutions.org or Dayana Bermudez, the IRB Administrator, at 646-619-6701 or dbermudez@healthsolutions.org.
+      br
+      span(ng-show="language=='es'") Si tiene alguna pregunta o inquietud de WhichMethod.org, por favor contacte a Dr. Mary Ann Chiasson a 646-619-6411 o a machiasson@healthsolutions.org. También puede llamar a Dayana Bermudez, administradora del IRB a 646-619-6701 o dbermudez@healthsolutions.org.
       br
       br
-      h3.panel-title Contact information
-      | If you have questions or concerns about WhichMethod.org, please contact Dr. Mary Ann Chiasson at 646-619-6411 or machiasson@healthsolutions.org or Dayana Bermudez, the IRB Administrator, at 646-619-6701 or dbermudez@healthsolutions.org.
+    h4.panel-title 
+      span(ng-show="language=='en'") <mark>IMPORTANT INFORMATION ABOUT YOUR USE OF WHICHMETHOD. PLEASE READ BEFORE YOU USE!</mark>
+      span(ng-show="language=='es'") <mark>INFORMACION IMPORTANTE SOBRE SU USO DE WHICHMETHOD.ORG POR FAVOR LEER ANTES DE USAR</mark>
+      span(ng-show="language=='en'") WhichMethod.org app will give you general information only. It will not give you medical advice, diagnosis or treatment. It is meant to provide you with background information before you meet with a medical professional, such as a doctor, physician’s assistant or nurse. If you think you may have an urgent medical problem or might be pregnant, please make an appointment to see a medical professional right away.
       br
-      br
-      h4.panel-title <mark>IMPORTANT INFORMATION ABOUT YOUR USE OF WHICHMETHOD. PLEASE READ BEFORE YOU USE!</mark>
-      | WhichMethod.org app will give you general information only. It will not give you medical advice, diagnosis or treatment. It is meant to provide you with background information before you meet with a medical professional, such as a doctor, physician’s assistant or nurse. If you think you may have an urgent medical problem or might be pregnant, please make an appointment to see a medical professional right away.
+      span(ng-show="language=='es'") WhichMethod.org solamente dará información general. No le dará consejos médicos, diagnósticos o tratamiento. El propósito es compartir información general sobre métodos anticonceptivos antes de visitar su proveedor médico, como: doctor, asistente médico o enfermera. Si usted piensa que tiene una emergencia médica o puede estar embarazada, por favor haga una cita médica inmediatamente.
       br
       br
       br

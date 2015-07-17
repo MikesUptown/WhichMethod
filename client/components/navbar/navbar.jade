@@ -21,21 +21,24 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           // a(href='/login') Log In
           // a(href='/login') Log in
-          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/login') Log In
-
+          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/login') 
+            span(lang='en') Log In
+            span(lang='es') Ingresar
       ul.nav.navbar-nav.navbar-right
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
           // a(href='/signup') Sign up
           // a.btn.btn-primary.btn-xs(href='/signup') Sign up
           // a.button.btn.btn-success.navbar-btn(href='/signup') Sign up
           // a.button.btn.btn-warning-lg.navbar-btn(type='button') Sign in
-          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/signup') Start Now
+          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/signup') 
+            span(lang='en') Start Now
+            span(lang='es') Empezar Ahora
       br
       ul.nav.nabar-nav.navbar-right#lang-switch.clearfix
         li.en
-          a(href='' ng-click="setLanguage('en')") english
+          a(href='' ng-click="setLanguage('en')") English
         li.es
-          a(href='' ng-click="setLanguage('es')") español
+          a(href='' ng-click="setLanguage('es')") Español
 
           //#google_translate_element
           script(type='text/javascript').
@@ -61,7 +64,9 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         //- span.glyphicon.glyphicon-cog
 
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-          a.button.btn.btn-warning.navbar-btn(href='', ng-click='logout()') Logout
+          a.button.btn.btn-warning.navbar-btn(href='', ng-click='logout()') 
+            span(lang='en') Logout
+            span(lang='es') Salir
           
 
    

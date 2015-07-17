@@ -5,7 +5,9 @@ header
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
       .col-md-6
-      a.btn.btn-primary.btn-lg(ng-click='logout()') Log out
+      a.btn.btn-primary.btn-lg(ng-click='logout()') 
+        span(lang='en') Log out
+        span(lang='es') Salir
 
 section
     #main_content
@@ -28,7 +30,9 @@ section
             span(lang='en') It's important to note any dietary supplements and prescription medications that are part of your routine.
             span(lang='es') Es importante saber cuáles vitaminas y medicinas son parte de su rutina.
           br
-          a.btn.btn-default.btn-md(href='/questions/section/6', role='button') Continue
+          a.btn.btn-default.btn-md(href='/questions/section/6', role='button')
+            span(lang='en') Continue
+            span(lang='es') Continuar
           label.choice(ng-if="language=='en'") {{option.nameEN}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 

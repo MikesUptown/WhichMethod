@@ -20,7 +20,7 @@ header
     .panel-body
     h3.panel-title 
       span(ng-show="language=='en'") What is WhichMethod.org?
-      span(ng-show="language=='es'") Que es WhichMethod.org?
+      span(ng-show="language=='es'") ¿Que es WhichMethod.org?
       br
       span(ng-show="language=='en'") WhichMethod.org is an app that provides general information about birth control methods. It can help you choose a birth control method that is effective, safe, and best fits your needs. It does not replace professional medical advice, diagnosis or treatment. You do not need to know anything about birth control methods to use this app.
       br
@@ -69,7 +69,7 @@ header
       br
     h4.panel-title 
       span(ng-show="language=='en'") <mark>IMPORTANT INFORMATION ABOUT YOUR USE OF WHICHMETHOD. PLEASE READ BEFORE YOU USE!</mark>
-      span(ng-show="language=='es'") <mark>INFORMACION IMPORTANT SOBRE SU USO DE WHICHMETHOD.ORG POR FAVOR LEER ANTES DE USAR</mark>
+      span(ng-show="language=='es'") <mark>INFORMACION IMPORTANTE SOBRE SU USO DE WHICHMETHOD.ORG POR FAVOR LEER ANTES DE USAR</mark>
       span(ng-show="language=='en'") WhichMethod.org app will give you general information only. It will not give you medical advice, diagnosis or treatment. It is meant to provide you with background information before you meet with a medical professional, such as a doctor, physician’s assistant or nurse. If you think you may have an urgent medical problem or might be pregnant, please make an appointment to see a medical professional right away.
       br
       span(ng-show="language=='es'") WhichMethod.org solamente dará información general. No le dará consejos médicos, diagnósticos o tratamiento. El propósito es compartir información general sobre métodos anticonceptivos antes de visitar su proveedor médico, como: doctor, asistente médico o enfermera. Si usted piensa que tiene una emergencia médica o puede estar embarazada, por favor haga una cita médica inmediatamente. 
@@ -97,7 +97,9 @@ header
       input#checkboxSuccess(type='radio', value='option2' ng-model="$parent.consent")
       span(ng-show="language=='es'") USUARIO INVITADO: Yo tengo 14 años o más, y entiendo y estoy de acuerdo con los términos de la política de privacidad.
       br
-      a.btn.btn-default(href="/signup" ng-disabled="!$parent.consent" ng-click="saveConsent()") Continue
+      a.btn.btn-default(href="/signup" ng-disabled="!$parent.consent" ng-click="saveConsent()") 
+        span(lang='en') Continue
+        span(lang='es') Continuar
       label.choice(ng-if="language=='en'") {{option.name}}
       label.choice(ng-if="language=='es'") {{option.nameES}}
       br
