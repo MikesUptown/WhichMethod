@@ -53,7 +53,10 @@ head
 
 body
   h3 #{date}
-  h3 Use this paper to talk to your health care provider about which birth control method is best for you.
+  if lang=='en'
+    h3 Use this paper to talk to your health care provider about which birth control method is best for you.
+  if lang=='es'
+    h3 Use este papel para hablar con su proveedor médico sobre cual método de control de la natalidad es mejor para usted.
   p 
     //b For extra protection no matter what method you choose, condoms are available at this center.
     //br

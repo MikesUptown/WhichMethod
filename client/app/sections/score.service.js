@@ -35,8 +35,6 @@ angular.module('contraceptionApp').factory('scoreService', function () {
   }
 
 
-
-
   var methods={
     abstinence:{
       name: 'Abstinence',
