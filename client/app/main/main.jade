@@ -9,8 +9,8 @@ div(ng-include='"components/navbar/navbar.html"')
         .title
           h1
             a(href='signup') 
-              span(lang='en') WhichMethod?
-              span(lang='es') WhichMethod?
+              span(ng-show="language=='en'") WhichMethod?
+              span(ng-show="language=='es'") WhichMethod?
         .description 
           h2
             span(ng-show="language=='en'") Confused about contraception? Need to find the birth control that works for you?
@@ -51,20 +51,20 @@ div(ng-include='"components/navbar/navbar.html"')
         p(ng-class="{'checkedClass': team.isChecked, 'uncheckedClass': !team.isChecked}")
           | @Public Health Solutions 2015  |  
           a(href='/info/about') 
-            span(lang='en') About WhichMethod  |
-            span(lang='es') Sobre WhichMethod  |
+            span(ng-show="language=='en'") About WhichMethod  |
+            span(ng-show="language=='es'") Sobre WhichMethod  |
           a(href='/info/outreachpartners')  
-            span(lang='en') Outreach Partners  |  
-            span(lang='es') Organizaciones Comunitarias  |
+            span(ng-show="language=='en'") Outreach Partners  |  
+            span(ng-show="language=='es'") Organizaciones Comunitarias  |
           a(href='/info/privacypolicy')   
-            span(lang='en') Privacy Policy  |  
-            span(lang='es') Política De Privacidad  |
+            span(ng-show="language=='en'") Privacy Policy  |  
+            span(ng-show="language=='es'") Política De Privacidad  |
           a(href='/info/contactus')    
-            span(lang='en') Contact Us  |
-            span(lang='es') Contáctenos  |
+            span(ng-show="language=='en'") Contact Us  |
+            span(ng-show="language=='es'") Contáctenos  |
           a.btn-link(href='http://www.plannedparenthood.org/learn/birth-control', target='_blank') 
-            span(lang='en') Learn More  |
-            span(lang='es') Aprende Mas  |
+            span(ng-show="language=='en'") Learn More  |
+            span(ng-show="language=='es'") Aprende Mas  |
         br
         br
         br

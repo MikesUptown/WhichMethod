@@ -22,8 +22,8 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           // a(href='/login') Log In
           // a(href='/login') Log in
           a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/login') 
-            span(lang='en') Log In
-            span(lang='es') Ingresar
+            span(ng-show="language=='en'") Log In
+            span(ng-show="language=='es'") Ingresar
       ul.nav.navbar-nav.navbar-right
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
           // a(href='/signup') Sign up
@@ -31,8 +31,8 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           // a.button.btn.btn-success.navbar-btn(href='/signup') Sign up
           // a.button.btn.btn-warning-lg.navbar-btn(type='button') Sign in
           a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/signup') 
-            span(lang='en') Start Now
-            span(lang='es') Empezar Ahora
+            span(ng-show="language=='en'") Start Now
+            span(ng-show="language=='es'") Empezar Ahora
       br
       ul.nav.nabar-nav.navbar-right#lang-switch.clearfix
         li.en
