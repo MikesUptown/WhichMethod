@@ -64,7 +64,9 @@ header
       br
       br
       br
-      input(type="submit", ng-disabled="age.$invalid" ng-click="saveAnswers()", value="Continue")
+      input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+      input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
+
 
     li#53h(ng-show="currentQuestion == 'q53h'")
       label

@@ -42,12 +42,13 @@ header
         input(ng-model='questions.q15.textInput' type='number' required)
         div(ng-repeat='option in questions.q15.options')
           input(type="radio" name='q15'  ng-model="questions.q15.selectedOption" ng-value="{{option}}")
-          label.choice(ng-if="language=='en'") {{option.name}}
-          label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
         br
-        input(type="button" ng-disabled="mens.$invalid" ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
+        input(lang='es',type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continuar")
+        label.choice(ng-if="language=='en'") {{option.name}}
+        label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q16(ng-show="currentQuestion == 'q16'")
         label
@@ -73,7 +74,10 @@ header
           br
           br
           br
-          input(type="button" ng-disabled="unplanned.$invalid" ng-click="saveAnswers()",value="Continue")
+          input(lang='en',type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continue")
+          input(lang='es',type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continuar")
+          label.choice(ng-if="language=='en'") {{option.name}}
+          label.choice(ng-if="language=='es'") {{option.nameES}}
 
      li#q16b(ng-show="currentQuestion == 'q16b'")
         label
@@ -107,7 +111,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      li#q17(ng-show="currentQuestion == 'q17'")
         label
@@ -121,7 +126,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      li#q18(ng-show="currentQuestion == 'q18'")
         label
@@ -155,7 +161,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      li#q19(ng-show="currentQuestion == 'q19'")
         label
@@ -179,7 +186,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      li#q19ai(ng-show="currentQuestion == 'q19ai'")
         label
@@ -194,7 +202,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      li#q20(ng-show="currentQuestion == 'q20'")
         label
@@ -219,7 +228,8 @@ header
         br
         .error(ng-show="questions.q21.selectedOptions.length < 3") *Please Select 3 Options
         br
-        input(type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continuar")
 
       li#q22(ng-show="currentQuestion == 'q22'")
         label
@@ -233,7 +243,8 @@ header
         br
         br
         br
-        input(type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
+        input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
     
 
 div(ng-include="'app/sections/rankhelp.html'")
