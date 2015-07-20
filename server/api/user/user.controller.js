@@ -174,13 +174,16 @@ exports.show = function (req, res, next) {
 exports.emailpdf = function(req,res,next){
   var userId = req.user._id;
 
-  var path = './tmp/'+userId+'.pdf'
+  var lang = req.cookies.lang ? req.cookies.lang : 'en'
+
+
+  var path  = './tmp/'+ user.id+'_'+lang+'.pdf'
   var host = 'http://'+req.headers.host
 
 
   User.findById(userId, function (err, user) {
     if (err) return next(err);
-      console.log(user.email)
+      // console.log(user.email)
       
       //for testing
       // user.email = 'byslava@gmail.com'
@@ -232,13 +235,15 @@ function createPdf(path, user, host,callback){
   var date = new Date()
 
 
+
   var params = {
     date: date.format('MMM-DD-YYYY'),
     user: user,
     red: user.recommendation.red,
     green: user.recommendation.green,
     yellow: user.recommendation.yellow,
-    host: host
+    host: host,
+    lang: user.lang
   }
 
   var fn = jade.compileFile('./server/views/recommendation.jade');
@@ -253,18 +258,21 @@ exports.showRecommendation = function(req,res,next){
 
   var userId = req.params.id
 
+  var lang = req.cookies.lang ? req.cookies.lang : 'en'
+
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
     
+    user.lang=lang
     var host = 'http://'+req.headers.host
     // return res.render('recommendation', params)
 
-    var path  = './tmp/'+ user.id+'.pdf'
+    var path  = './tmp/'+ user.id+'_'+lang+'.pdf'
 
     var exists = fs.existsSync(path)
       
-    if(exists) returnPdf(path)
+    if(false) returnPdf(path)
     else createPdf(path, user, host, function(err, pdf){
         if (err) return console.log(err);
         returnPdf(pdf.filename)

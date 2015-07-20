@@ -24,9 +24,9 @@ var UserSchema = new Schema({
   consent1:Boolean,
   consent2:Boolean,
   recommendation:{
-    green:[{longText:String,name:String,img:String}],
-    red:[{longText:String,name:String,img:String}],
-    yellow:[{longText:String,name:String,img:String}]
+    green:[{longText:String,name:String,img:String,nameES:String}],
+    red:[{longText:String,name:String,img:String,nameES:String}],
+    yellow:[{longText:String,name:String,img:String,nameES:String}]
   }
 
 });

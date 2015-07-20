@@ -80,23 +80,17 @@ header
       span(ng-show="language=='es'") Para empezar por favor seleccione una de las opciones abajo y oprima “Empezar”:
       .has-success
       .checkbox
-      label
-      input#checkboxSuccess(type='radio', value='option1' ng-model="$parent.consent")
-      span(ng-show="language=='en'") REGISTERED USER: I am age 14 years or older, and I understand and agree to the privacy policy above. I agree to be contacted 1 or 2 times by email.
-      br
-      label
-      input#checkboxSuccess(type='radio', value='option1' ng-model="$parent.consent")
-      span(ng-show="language=='es'") USUARIO REGISTRADO: Yo tengo 14 años o más, y entiendo y estoy de acuerdo con los términos de la política de privacidad. Estoy de acuerdo en que me contacte por correo electrónico 1 o 2 veces.
+        input#checkboxSuccess(type='radio', value='option1' ng-model="$parent.consent")
+        span(ng-show="language=='en'") REGISTERED USER: I am age 14 years or older, and I understand and agree to the privacy policy above. I agree to be contacted 1 or 2 times by email.
+        span(ng-show="language=='es'") USUARIO REGISTRADO: Yo tengo 14 años o más, y entiendo y estoy de acuerdo con los términos de la política de privacidad. Estoy de acuerdo en que me contacte por correo electrónico 1 o 2 veces.
       br
       .has-success
       .checkbox
-      label
-      input#checkboxSuccess(type='radio', value='option2' ng-model="$parent.consent")
-      span(ng-show="language=='en'") GUEST USER: I am age 14 years or older, and I understand and agree to the privacy policy above.
-      br
-      input#checkboxSuccess(type='radio', value='option2' ng-model="$parent.consent")
-      span(ng-show="language=='es'") USUARIO INVITADO: Yo tengo 14 años o más, y entiendo y estoy de acuerdo con los términos de la política de privacidad.
-      br
+        input#checkboxSuccess(type='radio', value='option2' ng-model="$parent.consent")
+        span(ng-show="language=='es'") USUARIO INVITADO: Yo tengo 14 años o más, y entiendo y estoy de acuerdo con los términos de la política de privacidad.
+        span(ng-show="language=='en'") GUEST USER: I am age 14 years or older, and I understand and agree to the privacy policy above.
+
+
       a.btn.btn-default(href="/signup" ng-disabled="!$parent.consent" ng-click="saveConsent()") 
         span(lang='en') Continue
         span(lang='es') Continuar

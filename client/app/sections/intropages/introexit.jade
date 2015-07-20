@@ -59,7 +59,8 @@ div.page-header
       .methods       
           .method(ng-repeat="val in colors.green")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
-            span.text {{val.longText}}
+            span.text(lang='en') {{val.longText}}
+            span.text(lang='es') {{val.nameES}}
 
 
   p 
@@ -84,7 +85,8 @@ div.page-header
       .methods
           .method(ng-repeat="val in colors.yellow")
             img(src='/assets/images/methodsSml/{{val.img}}.jpg')
-            span.text {{val.longText}}
+            span.text(lang='en') {{val.longText}}
+            span.text(lang='es') {{val.nameES}}
 
 
   .red(ng-if="colors.red.length>0")
@@ -98,7 +100,8 @@ div.page-header
           .methods
             .method(ng-repeat="val in colors.red")
               img(src='/assets/images/methodsSml/{{val.img}}.jpg')
-              span.text {{val.longText}}
+              span.text(lang='en') {{val.longText}}
+              span.text(lang='es') {{val.nameES}}
 
 
 div.results

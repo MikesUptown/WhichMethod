@@ -34,46 +34,59 @@ angular.module('contraceptionApp').factory('scoreService', function () {
            'Breast Feeding':  "bf" 
   }
 
+
+
+
   var methods={
     abstinence:{
       name: 'Abstinence',
       longText: 'Abstinence',
-      img:''
+      img:'',
+      nameES : 'Abstinencia',
     },
     ocp:{
       name: 'Birth Control',
       longText: 'The pill or birth control pills (containing both an estrogen and progestin)',
-      img:'OCP'
+      img:'OCP',
+      nameES : 'Píldoras anticonceptivas',
+
     },
     pop:{
       name: 'Mini Pills',
       longText: "Mini-Pills or progestin-only pills",
-      img: 'POP'
+      img: 'POP',
+      nameES : 'Mini-píldoras',
+
     },
     ortho_evra:{
       name:'Ortho Evra',
       longText: 'Ortho Evra contraceptive patch',
       img: 'patch',
+      nameES : 'Ortho Evra (Parche anticonceptivos)',
     },
     nuvaring:{
       name: "Nuva Ring",
       longText: "Nuva Ring (the vaginal ring)",
-      img: 'nuvaring'
+      img: 'nuvaring',
+      nameES : 'NuvaRing',
     },
     depo:{
       name:"Depo Provera",
       longText: "Depo Provera",
       img:"deprovera",
+      nameES : 'Depo Provera, (Inyección)',
     },
     mcondom:{
       name:"Male Condom",
       longText:"Male Condom",
-      img: ""
+      img: "",
+      nameES : 'Condón masculino',
     },
     diaph:{
       name:"Diaphragm",
       longText:"Diaphragm",
-      img:'diaphram'
+      img:'diaphram',
+      nameES : 'Diafragma',
     },
     ccap:{
       name:"Cervical Cap",
@@ -83,12 +96,14 @@ angular.module('contraceptionApp').factory('scoreService', function () {
     fcondom:{
       name:'Female Condom',
       longText: 'Female Condom',
-      img: 'female_condom'
+      img: 'female_condom',
+      nameES : 'Condón femenino',
     },
     sponge:{
       name:"Sponge",
       longText:"Contraceptive Sponge",
-      img:'sponge'
+      img:'sponge',
+      nameES : 'Esponja anticonceptiva',
     },
     female_barrier:{
       name:"Female Barrier",
@@ -98,52 +113,63 @@ angular.module('contraceptionApp').factory('scoreService', function () {
     fam:{
       name:"Fam",
       longText:"Fertility Awareness-Based Methods",
-      img: 'fam'
+      img: 'fam',
+      nameES : 'Planificación Familiar Natural',
     },
     ec:{
       name:"EC",
       longText:"Emergency Contraception",
-      img: ''
+      img: '',
+      nameES : 'Píldoras anticonceptivas de emergencia',
     },
     paragard:{
       name:"Paragard",
       longText:"Paragard Copper T IUD (Intrauterine Device)",
-      img: 'paraguard'
+      img: 'paraguard',
+      nameES : 'Paragard  (T de cobre DIU)',
     },
     mirena:{
       name:"Mirena",
       longText:"Mirena Hormonal IUD (Intrauterine Device)",
-      img: 'mirena'
+      img: 'mirena',
+      nameES : 'Mirena (DIU hormonal)',
     },
     withd:{
       name:"Withdrawal",
       longText:"Pulling out or withdrawal",
-      img: 'withdraw'
+      img: 'withdraw',
+      nameES : 'Retiro del pene antes de la eyaculación',
     },
     sperm:{
       name:"Spermicide",
       longText:"Spermicide",
-      img: 'spermicide'
+      img: 'spermicide',
+      nameES : 'Espermicidas',
     },
     btl:{
       name:"Tubes Tied",
       longText:"Tubal ligation (sterilization for women)",
-      img:'btl'
+      img:'btl',
+      nameES : 'Ligamiento de Tubos (Esterilización permanente para mujeres)',
     },
     vas:{
       name:"Vasectomy",
       longText:"Vasectomy (sterilization for men)",
-      img:'vasect'
+      img:'vasect',
+      nameES : 'Vasectomía (Esterilización permanente para hombres)',
     },
     implanon:{
       name:"Implant",
       longText:"Contraceptive implant, sometimes called Norplant or Implanon",
-      img:'implanon'
+      img:'implanon',
+      nameES : 'Implante anticonceptivo (Norplant o Implanon)',
+
     },
     bf:{
       name:"Breast Feeding",
       longText:"Breast Feeding",
-      img:'breastfeed'
+      img:'breastfeed',
+      nameES : 'Lactancia',
     }
   }
 

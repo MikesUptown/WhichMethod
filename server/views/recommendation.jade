@@ -55,43 +55,81 @@ body
   h3 #{date}
   h3 Use this paper to talk to your health care provider about which birth control method is best for you.
   p 
-    b For extra protection no matter what method you choose, condoms are available at this center.
-    br
-    |Condoms can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sex act.
+    //b For extra protection no matter what method you choose, condoms are available at this center.
+    //br
+    //|Condoms can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sex act.
 
     if green.length>0
       .green
-        b Green = GO!
-        p These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+        if lang=='en'
+          b Green = GO!
+        if lang=='es'
+          b(lang='es') Verde= ¡Sigue!
+
+        if lang=='en'
+          p These are the best birth control methods for you. They fit your life and goals well and prevent pregnancy best.
+        if lang=='es'
+          p Estos son los mejores métodos anticonceptivos para usted. Son los más adecuados para su estilo de vida, metas y los que mejor previenen un embarazo.
+        
         .methods
           each val in green
             .method
               img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
-              span.text #{val.longText}
+              if lang=='en'
+                span.text #{val.longText}
+              if lang=='es'
+                span.text #{val.nameES}
+    if lang=='en'
+      p <strong>Condoms</strong> can be used by themselves or with other birth control methods. Condoms can prevent pregnancy. Latex condoms can protect you from HIV and other sexually transmitted infections (STIs) like chlamydia, syphilis and gonorrhea. Use a new condom for each sext act.
+    if lang=='es'
+      p <strong>Condones</strong> pueden ser usados en combinación con otros métodos anticonceptivos. Los condones pueden prevenir el embarazo. Condones látex pueden protegerla contra infecciones de transmisión sexual (ITS) como el VIH, clamidia, sífilis y la gonorrea. Para protegerse contra el VIH y otras ITS, use un condón nuevo por cada acto sexual.
+    
+    if lang=='en'
+      p If you forget to use birth control or your birth control method fails, ask your healthcare provider about Emergency Contraception (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B One-Step, Next Choice Once Dose and some other brands of emergency contraception can be purchased over the counter without a prescription.
+    if lang=='es'
+      p Si a usted se le olvida usar el método anticonceptivo o si su método le falla, pregúntele a su proveedor de salud sobre el anticonceptivo de emergencia (AE, también llamado Plan B). El anticonceptivo de emergencia NO es un método de control de la natalidad regular. Usted tiene que tomarse las pastillas anticonceptivas de emergencia en un plazo de tres días (72 horas) después de haber tenido relaciones sexuales sin protección. El Plan B One- Step, Next Choice Once Dose y otras marcas están disponibles sin receta médica en las farmacias.
 
 
-    p If you forget to use birth control or your birth control method fails, ask your healthcare provider about Emergency Contraception (EC, also called Plan B). Emergency contraception is NOT a regular method of birth control. You have to take the EC pills starting within three days (72 hours) after having unprotected sex. Plan B One-Step, Next Choice Once Dose and some other brands of emergency contraception can be purchased over the counter without a prescription.
-  
     if yellow.length>0
       .yellow
-        b Yellow = Slow!
+        if lang=='en'  
+          b Yellow = Slow!
+        if lang=='es'  
+          b Amarillo = ¡DESPACIO!
+
         br
-        p These birth control methods are not the best for you because of our answers to your questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+        if lang=='en'  
+          p These birth control methods are not the best for you because of our answers to your questions or they are less good at preventing pregnancy. You should have a careful discussion with your health care provider before using them.
+        if lang=='es'    
+          p Por su respuestas a las preguntas, estos métodos anticonceptivos no son los mejores en prevenir un embarazo o pueden ser un problema para usted.
+
         .methods
           each val in yellow
             .method
               img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
-              span.text #{val.longText}
-
+              if lang=='en'
+                span.text #{val.longText}
+              if lang=='es'
+                span.text #{val.nameES}
 
     if red.length>0
           .red
-            b Red = Medically Contraindicated!
+            if lang=='en'  
+              b Red = Medically Contraindicated!
+            if lang=='es'
+              b Rojo = ¡ALTO!
             br
-            p These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+            if lang=='en'    
+              p These birth control methods are not the best for you because of your answers to the questions. You should have a careful discussion with your health care provider before using them.
+            if lang=='es'  
+              p Por su respuestas a las preguntas, estos métodos anticonceptivos no son los mejor para usted.  No los debe de usar sin antes tener una cuidadosa conversación con su proveedor de salud médica.
+
             .methods
               each val in red
                 .method
                   img(src=host+'/assets/images/methodsSml/'+val.img+'.jpg')
-                  span.text #{val.longText}
+                  if lang=='en'
+                    span.text #{val.longText}
+                  if lang=='es'
+                    span.text #{val.nameES}
             
