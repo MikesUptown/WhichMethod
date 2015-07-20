@@ -272,7 +272,7 @@ exports.showRecommendation = function(req,res,next){
 
     var exists = fs.existsSync(path)
       
-    if(false) returnPdf(path)
+    if(exists) returnPdf(path)
     else createPdf(path, user, host, function(err, pdf){
         if (err) return console.log(err);
         returnPdf(pdf.filename)
