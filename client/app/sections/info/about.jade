@@ -10,7 +10,8 @@ div
 
   div.page-header
     h3
-      | About WhichMethod.org
+      span(ng-show="language=='en'") About WhichMethod.org
+      span(ng-show="language=='es'") Sobre WhichMethod.org
 
     #lang-switch
     .panel.panel-default
@@ -21,20 +22,12 @@ div
       span(ng-show="language=='es'") Sobre WhichMethod.org
       p 
       span(ng-show="language=='en'") Public Health Solutions and Emory University collaborated to create a bilingual (English/Spanish) online application (app) to help teens and young women engage in the contraceptive decision-making process. WhichMethod.org is a decision-making tool that helps young women choose a contraceptive method that is effective, medically appropriate, and best fits their preferences and priorities. Users do not need to know anything about contraceptive methods to use the app. 
-      span(ng-show="language=='es'") Public Health Solutions y Emory University colaboraron en crear una aplicación bilingüe (Ingles/Español) para ayudar a jóvenes y mujeres a participar en el proceso de decidir sobre un método anticonceptivo.  WhichMethod.org ayuda a las mujeres a escoger un método anticonceptivo apropiado, efectivo, y adecuado para su estilo de vida (preferencias y prioridades). Usuarios no necesitan saber de métodos anticonceptivos para usar la aplicación. 
-      br
-      br
-      h3.panel-title 
-      span(ng-show="language=='en'") About the App
-      span(ng-show="language=='es'") About the App/Spanish Title
-      p 
-      span(ng-show="language=='en'") WhichMethod.org includes two key components: an interactive contraceptive assessment and tailored feedback. It’s available in both Spanish and English, includes approximately 50 questions on sexual risk factors, contraceptive history, preferences and priorities, and medical history.
-      span(ng-show="language=='es'") Public Health Solutions y Emory University colaboraron en crear una aplicación bilingüe (Ingles/Español) para ayudar a jóvenes y mujeres a participar en el proceso de decidir sobre un método anticonceptivo.  WhichMethod.org ayuda a las mujeres a escoger un método anticonceptivo apropiado, efectivo, y adecuado para su estilo de vida (preferencias y prioridades). Usuarios no necesitan saber de métodos anticonceptivos para usar la aplicación. 
+      span(ng-show="language=='es'") Public Health Solutions y Emory University colaboraron en crear una aplicación bilingüe (Ingles/Español) para ayudar a jóvenes y mujeres a participar en el proceso de decidir sobre un método anticonceptivo.  WhichMethod.org ayuda a las mujeres a escoger un método anticonceptivo apropiado, efectivo, y adecuado para su estilo de vida (preferencias y prioridades). Usuarios no necesitan saber de métodos anticonceptivos para usar la aplicación.
       br
       br
       h3.panel-title 
       span(ng-show="language=='en'") How it works
-      span(ng-show="language=='es'") How it works/Spanish Title
+      span(ng-show="language=='es'") Como funciona
       p 
       span(ng-show="language=='en'") The app incorporates the CDC’s Medical Eligibility Criteria as well as a woman’s individual preferences and priorities (such as when she wants to become pregnant, or whether she needs to keep her method private from her family and/or partner) and makes more than 500 ranking decisions for 19 different contraceptive methods.
       span(ng-show="language=='es'") La aplicación incorpora los criterios médicos de elegibilidad para el uso de anticonceptivos en los Estados Unidos [United States Medical Eligibility Criteria for Contraceptive Use (USMEC)] de los Centros para el Control y la Prevención de Enfermedades (CDC).  También incluye las preferencias y prioridades de la mujer (como: cuando quiere quedar embarazada o si necesita mantener en privado su uso de anticonceptivos de su familia o pareja) y hace más de 500 decisiones para clasificar 19 anticonceptivos diferentes.
@@ -42,7 +35,7 @@ div
       br
       h3.panel-title 
       span(ng-show="language=='en'") Effectiveness
-      span(ng-show="language=='es'") Effectiveness/Spanish Version
+      span(ng-show="language=='es'") Efectividad
       p 
       span(ng-show="language=='en'") The application was rigorously tested in a randomized controlled trial among more than 2,000 family planning patients. In the trial, women who used the app (compared to a control group) were significantly more likely to choose an effective contraceptive method, and were significantly more likely to continue using it 4 months later (Garbers et al., Contraception 2012). 
       span(ng-show="language=='es'") La aplicación fue rigorosamente probada en un estudio controlado aleatorio con más de 2,000 pacientes de planificación familiar.  En el estudio, las mujeres que usaron la aplicación (comparadas a las del grupo control) fueron significativamente más probables en escoger un método anticonceptivo efectivo y significativamente más probable en seguir usándolo 4 meses después (Garbers et al., Contraception 2012).
@@ -50,7 +43,7 @@ div
       br
       h3.panel-title 
       span(ng-show="language=='en'") Who can use the WhichMethod.org?
-      span(ng-show="language=='es'") Who can use the WhichMethod.org?/Spanish Title
+      span(ng-show="language=='es'") Quien puede usar WhichMethod.org?
       p 
       span(ng-show="language=='en'") Any woman who does not want to become pregnant right now. It can be used on any smartphone, tablet, or desktop computer that can access the internet.
       span(ng-show="language=='es'") Cualquier mujer que no quiere quedar embarazada en este momento. Pueden usar la aplicación en un celular, una tableta o computadora que tenga acceso al internet.

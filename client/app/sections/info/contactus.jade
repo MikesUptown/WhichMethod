@@ -11,7 +11,9 @@ div
 
   div.page-header
     h3
-      | Contact Us
+      span(ng-show="language=='en'") Contact Us
+      span(ng-show="language=='es'") Contáctenos
+      br
     .panel.panel-default
     h3.panel-heading
     .panel-body

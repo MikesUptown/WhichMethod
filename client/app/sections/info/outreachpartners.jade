@@ -11,7 +11,9 @@ div
 
   div.page-header
     h3
-      | Outreach Partners
+        span(ng-show="language=='en'") Outreach Partners
+        span(ng-show="language=='es'") Organizaciones Comunitarias
+    br    
     .panel.panel-default
     h3.panel-heading
     .panel-body

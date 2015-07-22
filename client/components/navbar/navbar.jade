@@ -51,7 +51,9 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           p.navbar-text Hello {{ getCurrentUser().name }}
 
         li(ng-show='isLoggedIn()')
-          a.button.btn.btn-warning.navbar-btn(ng-click="startServey()") Go To Survey
+          a.button.btn.btn-warning.navbar-btn(ng-click="startServey()") 
+            span(lang='en') Continue
+            span(lang='es') Continuar
 
         //- li(ng-show='isLoggedIn()')
         //-   a.button.btn.btn-warning.navbar-btn(ng-click="$root.showSettings=!$root.showSettings") Settings
