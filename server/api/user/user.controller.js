@@ -177,8 +177,8 @@ exports.emailpdf = function(req,res,next){
   var lang = req.cookies.lang ? req.cookies.lang : 'en'
 
 
-  var path  = './tmp/'+ user.id+'_'+lang+'.pdf'
   var host = 'http://'+req.headers.host
+  var path  = './tmp/'+ userId+'_'+lang+'.pdf'
 
 
   User.findById(userId, function (err, user) {
@@ -188,6 +188,7 @@ exports.emailpdf = function(req,res,next){
       //for testing
       // user.email = 'byslava@gmail.com'
 
+      user.lang = lang
       var exists = fs.existsSync(path)
       
       if(exists){
