@@ -89,7 +89,8 @@ angular.module('contraceptionApp').factory('scoreService', function () {
     ccap:{
       name:"Cervical Cap",
       longText:"Cervical Cap",
-      img:'female_barrier'
+      img:'female_barrier',
+      nameES : 'Capuchón Cervical',
     },
     fcondom:{
       name:'Female Condom',

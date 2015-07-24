@@ -226,7 +226,8 @@ header
           label.choice(ng-if="language=='es'") {{option.nameES}}
         br
         br
-        .error(ng-show="questions.q21.selectedOptions.length < 3") *Please Select 3 Options
+        span.error(lang='en',ng-show="questions.q21.selectedOptions.length < 3") *Please Select 3 Options
+        span.error(lang='es',ng-show="questions.q21.selectedOptions.length < 3") *Seleccione tres
         br
         input(lang='en',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continuar")

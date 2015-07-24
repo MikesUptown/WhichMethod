@@ -7,11 +7,14 @@ div
     ol.breadcrumb
         li
         a(href='/main')
-            h5 WhichMethod Main Page
+            h5
+            span(lang='en') WhichMethod Main Page
+            span(lang='es') WhichMethod Página Inicial
 
   div.page-header
     h3
-      | Privacy Policy
+      span(ng-show="language=='en'") Privacy Policy
+      span(ng-show="language=='es'") Política de Privacidad
 
     .panel.panel-default
     h3.panel-heading
@@ -47,6 +50,7 @@ div
       br
       span(ng-show="language=='es'") Si usted usa WhichMethod.org como <mark>USUARIO INVITADO</mark>, usted no necesita compartir su correo electrónico (e-mail). Usted no va a recibir correos electrónicos de nosotros y no recibirá una copia de sus recomendaciones.
       br
+      br
     h3.panel-title 
       span(ng-show="language=='en'") Risks or discomforts
       span(ng-show="language=='es'") Riesgos o incomodidades
@@ -57,8 +61,8 @@ div
       br
       br
     h3.panel-title 
-      span(ng-show="language=='en'") Contact
-      span(ng-show="language=='es'") Contacto
+      span(ng-show="language=='en'") Contact Us
+      span(ng-show="language=='es'") Contáctenos
       br
       span(ng-show="language=='en'") If you have questions or concerns about WhichMethod.org, please contact Dr. Mary Ann Chiasson at 646-619-6411 or machiasson@healthsolutions.org or Dayana Bermudez, the IRB Administrator, at 646-619-6701 or dbermudez@healthsolutions.org.
       br

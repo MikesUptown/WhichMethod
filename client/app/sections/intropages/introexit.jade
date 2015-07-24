@@ -11,8 +11,12 @@ header
 
 div.page-header
   h1
-    | Congratulations! 
-    small   You have completed the WhichMethod assessment.
+    span(ng-show="language=='en'") Congratulations!
+    span(ng-show="language=='es'") ¡Felicitaciones!
+    br
+    small   
+      span(ng-show="language=='en'") You have completed the WhichMethod assessment.
+      span(ng-show="language=='es'") Usted ha terminado con las preguntas de WhichMethod.
 
   .panel.panel-default
     .panel-body
@@ -43,7 +47,9 @@ div.page-header
     .success(ng-show="emailSuccess") 
       span(lang='en') Your email has been sent!
       span(lang='es') ¡Su e-mail ha sido enviado! 
-    .error(ng-show="emailError") there was a problem... please try again
+    .error(ng-show="emailError") 
+      span(lang='en') there was a problem... please try again
+      span(lang='es') Hubo un problema...por favor vuelva a intentarlo
   a(href="/settings").btn.btn-default(ng-show="currentUser.name == 'guest'") 
     span(lang='en') Register to Receive your PDF via Email
     span(lang='es') Regístrese para recibir por E-Mail su PDF
