@@ -21,7 +21,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           // a(href='/login') Log In
           // a(href='/login') Log in
-          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/login') 
+          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/login')
             span(ng-show="language=='en'") Log In
             span(ng-show="language=='es'") Ingresar
       ul.nav.navbar-nav.navbar-right
@@ -30,7 +30,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
           // a.btn.btn-primary.btn-xs(href='/signup') Sign up
           // a.button.btn.btn-success.navbar-btn(href='/signup') Sign up
           // a.button.btn.btn-warning-lg.navbar-btn(type='button') Sign in
-          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/signup') 
+          a.button.btn-lg.btn-warning.navbar-btn.main_signin_btn(href='/signup')
             span(ng-show="language=='en'") Start Now
             span(ng-show="language=='es'") Empezar Ahora
       br

@@ -4,18 +4,19 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .mainContainer(main)
     .jumbotron(fullscreen)
+      #lang-switch
       .main_content
         .title
-          h1
-            a(href='signup') 
+          h1 
+            a(href='/signup') 
               span(ng-show="language=='en'") WhichMethod?
               span(ng-show="language=='es'") WhichMethod?
         .description 
-          h2
+          h2 
             span(ng-show="language=='en'") Confused about contraception? Need to find the birth control that works for you?
-            span(ng-show="language=='es'") ¿Confundida sobre métodos anticonceptivos? ¿Necesita encontrar el mejor método anticonceptivo para usted?
+            span(ng-show="language=='es'")  ¿Confundida sobre métodos anticonceptivos? ¿Necesita encontrar el mejor método anticonceptivo para usted?
 
-          h4 
+          h4
             span(ng-show="language=='en'") WhichMethod is designed to help you choose a birth control method that is safe, effective and fits your lifestyle.
             span(ng-show="language=='es'") WhichMethod está diseñado para ayudarla a escoger un método anticonceptivo que sea seguro, efectivo y adecuado para su estilo de vida.
         br
@@ -49,21 +50,22 @@ div(ng-include='"components/navbar/navbar.html"')
       .container
         p(ng-class="{'checkedClass': team.isChecked, 'uncheckedClass': !team.isChecked}")
           | @Public Health Solutions 2015  |  
-          a(href='/info/about') 
+          a(href='/info/about')
             span(ng-show="language=='en'") About WhichMethod.org  |
             span(ng-show="language=='es'") Sobre WhichMethod.org  |
-          a(href='/info/outreachpartners')  
+          a(href='/info/outreachpartners')
             span(ng-show="language=='en'") Outreach Partners  |  
             span(ng-show="language=='es'") Organizaciones Comunitarias  |
-          a(href='/info/privacypolicy')   
+          a(href='/info/privacypolicy')
             span(ng-show="language=='en'") Privacy Policy  |  
             span(ng-show="language=='es'") Política de Privacidad  |
-          a(href='/info/contactus')    
+          a(href='/info/contactus')
             span(ng-show="language=='en'") Contact Us  |
             span(ng-show="language=='es'") Contáctenos  |
-          a.btn-link(href='http://www.plannedparenthood.org/learn/birth-control', target='_blank') 
+          a.btn-link(href='http://www.plannedparenthood.org/learn/birth-control', target='_blank')
             span(ng-show="language=='en'") Learn More  |
             span(ng-show="language=='es'") Aprende Mas  |
+        br
         br
         br
         br
