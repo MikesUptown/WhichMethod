@@ -194,7 +194,9 @@ header
           | Q19ai. 
           span(lang='en') What problems did you have while using this method?
           span(lang='es') ¿Qué problemas tuviste durante el uso de este método? 
-          span.highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName()}}
+          span(lang='en').highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName('en')}}
+          span(lang='es').highlightMyMethod(ng-show="questions.q19ai.curBcProbName()") {{questions.q19ai.curBcProbName('es')}}
+        
         div(ng-repeat='option in questions.q19ai.options')
           input(type='checkbox' ng-checked="questions.q19ai.selectedOptions.indexOf(option) != -1" ng-click="questions.q19ai.toggleCheck(option)")
           label.choice(ng-if="language=='en'") {{option.name}}

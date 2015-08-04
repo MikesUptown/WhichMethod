@@ -5942,7 +5942,7 @@ angular.module('contraceptionApp').factory('questionService', function () {
           //{ value : 777, name : "I don't know" },
           //{ value : 999, name : "I don't want to answer this question" },
         ],
-        curBcProbName : function() {
+        curBcProbName : function(lang) {
           if(!questions['q19a'].answer)
             return false;
           var problems = questions['q19a'].answer.problems
@@ -5954,7 +5954,10 @@ angular.module('contraceptionApp').factory('questionService', function () {
             curBcProbTuple = problems.bcProblemList[curBcNum];
           }
           if (curBcProbTuple != undefined) {
-            return curBcProbTuple.name;
+            if(!lang || lang == 'en')
+              return curBcProbTuple.name;
+            else if(lang == 'es')
+              return curBcProbTuple.nameES;
           } else {
             return '';
           }
@@ -5981,6 +5984,8 @@ angular.module('contraceptionApp').factory('questionService', function () {
           var curBcProbName = this.curBcProbName();
 
           //store answeres from each loop in problems
+          if(!questions['q19a'].answer.problems.problemsPerBc)
+            questions['q19a'].answer.problems.problemsPerBc = {}
           questions['q19a'].answer.problems.problemsPerBc[curBcProbName]= this.selectedOptions.splice(0);
           // problems.problemsPerBc[curBcProbName] = this.selectedOptions.splice(0);
         },
