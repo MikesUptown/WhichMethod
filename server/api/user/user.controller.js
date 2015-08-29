@@ -13,6 +13,11 @@ var rimraf = require('rimraf');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
+
+// var csv = require('csv')
+var json2csv = require('json2csv');
+var csv = require('express-csv')
+
 // DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
 
@@ -41,6 +46,50 @@ require("date-format-lite")
 var validationError = function(res, err) {
   return res.json(422, err);
 };
+
+
+
+exports.csv = function(req,res){
+
+  var type = req.params.type
+  if(type == 1){
+    User.find({}, '-salt -hashedPassword -email -role -provider -answers', function (err, users) {
+      if(err) return res.send(500, err);
+
+      // var newU=[]
+      // users.forEach(function(u){
+      //   u=u.toObject()
+      //   if(u.recommendation){
+      //     u.green = u.recommendation.green
+      //     u.yellow = u.recommendation.yellow
+      //     u.red = u.recommendation.red
+      //   }
+      //   if(u.green){
+      //     u.green.forEach
+      //   }
+      //   newU.push(u)
+      // })
+      // console.log(users)
+
+      var fields = ['name', 'currentQuestion', 'currentSection','zip','consent1','consent1'];
+
+      json2csv({ data: users, fields: fields }, function(err, csv_text) {
+        if (err) console.log(err);
+
+        // res.set('Content-Type', 'text/csv');
+        // res.set("Content-Disposition", "attachment;filename=whichmethod-data.csv")
+        res.contentType('csv');
+        res.send(csv_text);
+
+
+        // res.send(new Buffer(csv_text));
+      });
+
+    });
+  }
+  else return res.json(422, err);
+}
+
 
 /**
  * Get list of users
@@ -207,6 +256,7 @@ exports.emailpdf = function(req,res,next){
     var mailOptions = {
       from: 'WhichMethod App <Whichmethod@healthsolutions.org>', // sender address
       to: email, // list of receivers
+      cc: 'whichmethod@healthsolutions.org',
       subject: 'Your Recommendations', // Subject line
       text: 'Please see attached pdf', // plaintext body
       html: 'Please see attached pdf', // html body

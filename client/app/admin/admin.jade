@@ -1,6 +1,8 @@
 div(ng-include='"components/navbar/navbar.html"')
 .container
 
+  a(href="/api/users/csv/1" target="blank") Get CSV of user data
+
   .sAdminOuter
     .sectionA(ng-repeat="s in sections")
       .heading.inner Section {{$index+1}}
