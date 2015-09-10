@@ -55,7 +55,7 @@ header
     li#54d(ng-show="currentQuestion == 'q54d'")
       label
         | Q54d. 
-        span(ng-show="language=='en'") Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider insider your uterus that would provide contraception for 5-10 years?
+        span(ng-show="language=='en'") Would you feel comfortable having an IUD, a T-shaped contraceptive, placed by your provider inside your uterus that would provide contraception for 5-10 years?
         span(ng-show="language=='es'") ¿Se sentiría usted cómoda con un DIU (Dispositivo Intra Uterino) un anticonceptivo en forma de T, que ubica su proveedor de salud, dentro de su útero?  Este método puede prevenir un embarazo por 5 a 10 años.
       div(ng-repeat='option in questions.q54d.options')
         input(type="radio" name='q54d' ng-change="saveAnswers()" ng-model='questions.q54d.selectedOption' ng-value="{{option}}")
