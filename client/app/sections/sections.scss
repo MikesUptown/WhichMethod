@@ -64,7 +64,7 @@ header{
 
 section{
   max-width: 100%;
-  height: 610px;
+  height: 710px;
   background-color: #986698;
 }
 #main_content{
@@ -194,4 +194,13 @@ footer{
   color: #000;
   background-color: #986698;
   border-color: #986698;
+}
+
+/* this changes the top menu; in particular on landing pages and location of LOGOUT button */
+#menu {
+    float: right;
+    margin-right: 55px;
+    margin-top: -50px;
+    width: 48px;
+    height: 35px;
 }
