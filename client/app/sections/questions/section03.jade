@@ -23,8 +23,13 @@ header
   br
   ul
      #q14(ng-show="currentQuestion == 'q14'")
+      br
+      span.glyphicon.glyphicon-refresh(lang='en', style='color:#FF5E5E') please rotate device
+      span.glyphicon.glyphicon-refresh(lang='es', style='color:#FF5E5E') pro favor gire dispositivo
+      br
+      br
       label
-        | Q14. 
+        | Q14.
         span(lang='en') How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
         span(lang='es') ¿Cómo describiría su actual relación sexual (Sexo, se refiere a sexo vaginal)? ¿Diría usted que:
         
@@ -208,6 +213,11 @@ header
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
      #q20(ng-show="currentQuestion == 'q20'")
+        br
+        span.glyphicon.glyphicon-refresh(lang='en', style='color:#FF5E5E') please rotate device
+        span.glyphicon.glyphicon-refresh(lang='es', style='color:#FF5E5E') pro favor gire dispositivo
+        br
+        br
         label
           | Q20. 
           span(lang='en') How soon do you want to get pregnant? In...
@@ -218,6 +228,11 @@ header
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
      #q21(ng-show="currentQuestion == 'q21'")
+        br
+        span.glyphicon.glyphicon-refresh(lang='en', style='color:#FF5E5E') please rotate device
+        span.glyphicon.glyphicon-refresh(lang='es', style='color:#FF5E5E') pro favor gire dispositivo
+        br
+        br
         label
           | Q21. 
           span(lang='en') What is most important to you when choosing a birth control method? (Select 3)
