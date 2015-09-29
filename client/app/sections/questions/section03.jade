@@ -34,6 +34,11 @@ header
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
      #q15(ng-show="currentQuestion == 'q15'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         | Q15. 
         span(lang='en') During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
@@ -61,6 +66,12 @@ header
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
      #q16a(ng-show="currentQuestion == 'q16a'")
+        br
+        span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+        span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+        br
+        br
+        br
         label
           | Q16a. 
           span(lang='en') How many unplanned pregnancies have you had?

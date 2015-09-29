@@ -23,6 +23,11 @@ header
   br
   ul
     #q1(ng-show="currentQuestion == 'q1'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         span(lang='en') Q1. How old are you?
         span(lang='es') Q1. ¿Cuántos años tienes?
@@ -47,6 +52,11 @@ header
 
 
     #q2(ng-show="currentQuestion == 'q2'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         span(ng-show="language=='en'") Q2. How much do you weigh "lbs."?
         span(ng-show="language=='es'") Q2. ¿Cuánto pesa "lbs."?
