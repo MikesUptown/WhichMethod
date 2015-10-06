@@ -11,9 +11,8 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   function requireHTTPS(req, res, next) {
-      console.log(req.secure);
-      console.log(req.url);
-      if (!req.secure && process.env.NODE_ENV == 'production') {
+      console.log(req.protocol);
+      if ('https' != req.protocol && process.env.NODE_ENV == 'production') {
           //FYI this should work for local development as well
           return res.redirect('https://' + req.get('host') + req.url);
       }
@@ -25,7 +24,7 @@ module.exports = function(app) {
   // Insert routes below
   // router.get('/api/recommendation', userController.showRecommendation);
 
-  app.route('/recommendation/:id').get( userController.showRecommendation)
+  app.route('/recommendation/:id').get(userController.showRecommendation);
 
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
