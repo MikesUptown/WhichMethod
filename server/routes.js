@@ -11,6 +11,8 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   function requireHTTPS(req, res, next) {
+      console.log(req.secure);
+      console.log(req.url);
       if (!req.secure && process.env.NODE_ENV == 'production') {
           //FYI this should work for local development as well
           return res.redirect('https://' + req.get('host') + req.url);
