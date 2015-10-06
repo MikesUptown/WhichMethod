@@ -9,5 +9,5 @@ module.exports = {
     // uri: 'mongodb://localhost/whichmethod-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

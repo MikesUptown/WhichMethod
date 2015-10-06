@@ -10,6 +10,16 @@ var errors = require('./components/errors');
 
 module.exports = function(app) {
 
+  function requireHTTPS(req, res, next) {
+      if (!req.secure && process.env.NODE_ENV == 'production') {
+          //FYI this should work for local development as well
+          return res.redirect('https://' + req.get('host') + req.url);
+      }
+      next();
+  }
+
+  app.use(requireHTTPS);
+
   // Insert routes below
   // router.get('/api/recommendation', userController.showRecommendation);
 
@@ -27,6 +37,6 @@ module.exports = function(app) {
   // All other routes should redirect to the index.html
   app.route('/*')
     .get(function(req, res) {
-      res.sendfile(app.get('appPath') + '/index.html');
+      res.sendfile(app.get('appPath') + '/main.html');
     });
 };

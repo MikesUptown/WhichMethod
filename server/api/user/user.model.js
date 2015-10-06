@@ -6,11 +6,13 @@ var crypto = require('crypto');
 
 var UserSchema = new Schema({
   name: String,
+  timeStamp: Date,
   email: { type: String, lowercase: true },
   role: {
     type: String,
     default: 'user'
   },
+  hideFromAdmin: Boolean,
   hashedPassword: String,
   provider: String,
   salt: String,
@@ -24,9 +26,9 @@ var UserSchema = new Schema({
   consent1:Boolean,
   consent2:Boolean,
   recommendation:{
-    green:[{longText:String,name:String,img:String}],
-    red:[{longText:String,name:String,img:String}],
-    yellow:[{longText:String,name:String,img:String}]
+    green:[{longText:String,name:String,img:String,nameES:String}],
+    red:[{longText:String,name:String,img:String,nameES:String}],
+    yellow:[{longText:String,name:String,img:String,nameES:String}]
   }
 
 });

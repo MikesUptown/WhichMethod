@@ -13,6 +13,11 @@ var rimraf = require('rimraf');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
+
+// var csv = require('csv')
+var json2csv = require('json2csv');
+var csv = require('express-csv')
+
 // DOES EMAIL GO HERE OR BELOW; LINE 190
 // create reusable transporter object using SMTP transport
 
@@ -42,6 +47,78 @@ var validationError = function(res, err) {
   return res.json(422, err);
 };
 
+
+
+exports.csv = function(req,res){
+
+  var type = req.params.type
+  if(type == 2){
+    User.find({}, '-salt -hashedPassword -email -role -provider', function (err, users) {
+      if(err) return res.send(500, err);
+
+      var newU=[]
+      users.forEach(function(u){
+        u=u.toObject()
+        if(u.recommendation){
+          var green = ""
+          u.recommendation.green.forEach(function(bc){
+            green+=bc.name+", "
+          })
+          u.green = green
+
+          var yellow = ""
+          u.recommendation.yellow.forEach(function(bc){
+            yellow+=bc.name+", "
+          })
+          u.yellow = green
+
+          var red = ""
+          u.recommendation.red.forEach(function(bc){
+            red+=bc.name+", "
+          })
+          u.red = red
+        }
+        if(u.green){
+          u.green.forEach
+        }
+
+        if(u.answers){
+          var answer = ""
+          u.answers.forEach(function(ans){
+            var a = ans.answer
+            if(typeof ans.answer === 'object')
+              a = JSON.stringify(ans.answer)
+            if(ans.answer)
+              answer+= ans.question + " : " + a + ", "
+          })
+          u.userAnswers = answer
+        }
+
+        newU.push(u)
+      })
+      // console.log(users)
+
+      var fields = ['timeStamp', 'currentQuestion', 'currentSection', 'userAnswers', 'green', 'yellow', 'red'];
+
+      json2csv({ data: newU, fields: fields }, function(err, csv_text) {
+        if (err) console.log(err);
+
+        // res.set('Content-Type', 'text/csv');
+        res.set("Content-Disposition", "attachment;filename=whichmethod-user-data.csv")
+        res.contentType('csv');
+        // res.contentType('csv');
+        res.send(csv_text);
+
+
+        // res.send(new Buffer(csv_text));
+      });
+
+    });
+  }
+  else return res.json(422, err);
+}
+
+
 /**
  * Get list of users
  * restriction: 'admin'
@@ -63,9 +140,8 @@ exports.convertGuest = function(req,res){
   var pass = String(req.body.password);
   var zip = String(req.body.zip);
 
-  console.log(newName)
-  console.log(email)
-  console.log(pass)
+
+
   User.findById(userId, function (err, user) {
 
     user.name = newName;
@@ -150,7 +226,8 @@ exports.create = function (req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  console.log(newUser)
+  newUser.timeStamp = new Date();
+  // console.log(newUser)
   newUser.save(function(err, user) {
     if (err) return validationError(res, err);
     var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
@@ -174,17 +251,21 @@ exports.show = function (req, res, next) {
 exports.emailpdf = function(req,res,next){
   var userId = req.user._id;
 
-  var path = './tmp/'+userId+'.pdf'
+  var lang = req.cookies.lang ? req.cookies.lang : 'en'
+
+
   var host = 'http://'+req.headers.host
+  var path  = './tmp/'+ userId+'_'+lang+'.pdf'
 
 
   User.findById(userId, function (err, user) {
     if (err) return next(err);
-      console.log(user.email)
+      // console.log(user.email)
       
       //for testing
       // user.email = 'byslava@gmail.com'
 
+      user.lang = lang
       var exists = fs.existsSync(path)
       
       if(exists){
@@ -203,7 +284,8 @@ exports.emailpdf = function(req,res,next){
     var mailOptions = {
       from: 'WhichMethod App <Whichmethod@healthsolutions.org>', // sender address
       to: email, // list of receivers
-      subject: 'Your Contraception Recommendations', // Subject line
+      cc: 'whichmethod@healthsolutions.org',
+      subject: 'Your Recommendations', // Subject line
       text: 'Please see attached pdf', // plaintext body
       html: 'Please see attached pdf', // html body
       attachments: [
@@ -232,13 +314,15 @@ function createPdf(path, user, host,callback){
   var date = new Date()
 
 
+
   var params = {
     date: date.format('MMM-DD-YYYY'),
     user: user,
     red: user.recommendation.red,
     green: user.recommendation.green,
     yellow: user.recommendation.yellow,
-    host: host
+    host: host,
+    lang: user.lang
   }
 
   var fn = jade.compileFile('./server/views/recommendation.jade');
@@ -253,14 +337,17 @@ exports.showRecommendation = function(req,res,next){
 
   var userId = req.params.id
 
+  var lang = req.cookies.lang ? req.cookies.lang : 'en'
+
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
     
+    user.lang=lang
     var host = 'http://'+req.headers.host
     // return res.render('recommendation', params)
 
-    var path  = './tmp/'+ user.id+'.pdf'
+    var path  = './tmp/'+ user.id+'_'+lang+'.pdf'
 
     var exists = fs.existsSync(path)
       
