@@ -1,33 +1,35 @@
 div(ng-include='"components/navbar/navbar.html"')
 .container
 
-  a(href="/api/users/csv/1" target="blank") Get CSV of user data
+  a.btn.btn-primary(href="/api/users/csv/1" target="blank") Get User Emails CSV
+  &nbsp;
+  a.btn.btn-primary(href="/api/users/csv/2" target="blank") Get User Data CSV 
 
   .sAdminOuter
     .sectionA(ng-repeat="s in sections")
       .heading.inner Section {{$index+1}}
       .info.inner
         div.h5 Section Totals:
-        .clearfix
-          span.alabel completion:
-          span.data {{s.completed}} out of {{users.length}} ({{s.cpercent}} )
-        //- .clearfix
-          //- span.alabel percentage:
-          //- span.data {{s.cpercent}} 
-        .clearfix
-          span.alabel abandonment:
-          span.data {{s.abandonded}} out of {{users.length}} ({{s.apercent}})
+        table.table-striped.table-bordered
+          tr
+            td.alabel completion:
+            td.data {{s.completed}} out of {{users.length}} ({{s.cpercent}} )
+
+          tr
+            td.alabel abandonment:
+            td.data {{s.abandonded}} out of {{users.length}} ({{s.apercent}})
         br
         .clearfix 
           div.h5 Abandonded on Question:
-          .clearfix.questions(ng-repeat="(key,value) in s.q")
-            span.alabel {{key}}
-            span.data {{value.number}} out of {{s.abandonded}} ({{value.percent}})
+          table.table-striped.table-bordered
+            tr.questions(ng-repeat="(key,value) in s.q")
+              td {{key}}
+              td.data {{value.number}} out of {{s.abandonded}} ({{value.percent}})
 
   br
-  p
-    | ALL USERS
-  ul.list-group
+  //- p
+    //- | ALL USERS
+  //- ul.list-group
     li.list-group-item(ng-repeat='user in users')
       strong {{user.name}} {{user.currentSection}} {{user.currentQuestion}}
       br
