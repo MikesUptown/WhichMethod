@@ -11,12 +11,10 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   function requireHTTPS(req, res, next) {
-      console.log(req.protocol);
-      if ('https' != req.protocol && process.env.NODE_ENV == 'production') {
-          //FYI this should work for local development as well
-          return res.redirect('https://' + req.get('host') + req.url);
-      }
-      next();
+    if(req.headers['x-forwarded-proto']!='https')
+      res.redirect('https://mypreferreddomain.com'+req.url);
+    else
+      next(); /* Continue to other routes if we're not redirecting */
   }
 
   app.use(requireHTTPS);
