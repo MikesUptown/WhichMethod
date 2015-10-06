@@ -1,13 +1,13 @@
 header
   #logo
+    .col-xs-6  
     a(href="landing_01.html")
-      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-      .col-md-6
-      a.btn.btn-primary(ng-click='logout()')
-        span(lang='en') Log out
-        span(lang='es') Salir
+    .col-xs-6
+    a.btn.btn-primary(ng-click='logout()')
+      span(lang='en') Log out
+      span(lang='es') Salir
   br
   br
 #container-top
@@ -22,7 +22,7 @@ header
   br
   br
   ul
-    li#53(ng-show="currentQuestion == 'q53'")
+    #53(ng-show="currentQuestion == 'q53'")
       label
         | Q53. 
         span(ng-show="language=='en'") Do you take ANY prescription medications or dietary supplements regularly?
@@ -32,7 +32,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#53a(ng-show="currentQuestion == 'q53a'")
+    #53a(ng-show="currentQuestion == 'q53a'")
       label
         | Q53a. 
         span(ng-show="language=='en'") Do you take St. John's wort?
@@ -42,7 +42,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#53b(ng-show="currentQuestion == 'q53b'")
+    #53b(ng-show="currentQuestion == 'q53b'")
       label
         | Q53b. 
         span(ng-show="language=='en'") Do you take Rifampin, Rifadin or Rimactane?
@@ -52,7 +52,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#53c(ng-show="currentQuestion == 'q53c'")
+    #53c(ng-show="currentQuestion == 'q53c'")
       label
         | Q53c. 
         span(ng-show="language=='en'") Do you take any of these medications for seizure disorders or epilepsy?
@@ -68,7 +68,7 @@ header
       input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
 
-    li#53h(ng-show="currentQuestion == 'q53h'")
+    #53h(ng-show="currentQuestion == 'q53h'")
       label
         | Q53.h. 
         span(ng-show="language=='en'") Do you take Griseofulvin, Fulvicin or Grisactin?

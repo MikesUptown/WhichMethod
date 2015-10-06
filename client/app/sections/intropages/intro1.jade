@@ -1,22 +1,24 @@
 header
   #logo
-    .col-md-6
+    .col-xs-6
     a(href="landing_02.html")
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-    .col-md-6
+    .col-xs-6
     a.btn.btn-primary.btn-lg(ng-click='logout()') 
       span(lang='en') Log out
       span(lang='es') Salir
 
 section
     #main_content
+    .row
     .col-xs-6
       .responsive-container
         .dummy
           .img-container
             img.img-rounded.img-responsive(src='assets/images/whichmethod_landing1.jpg', alt='Responsive image', width='604', height='536')
-    .col-xs-6 
+          br
+    .col-xs-6
       .responsive-container
         .content-container
           h2.media-heading

@@ -1,13 +1,13 @@
 header
   #logo
+    .col-xs-6  
     a(href="landing_01.html")
-      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-      .col-md-6
-      a.btn.btn-primary(ng-click='logout()') 
-        span(lang='en') Log out
-        span(lang='es') Salir
+    .col-xs-6
+    a.btn.btn-primary(ng-click='logout()') 
+      span(lang='en') Log out
+      span(lang='es') Salir
   br
   br
 #container-top
@@ -22,9 +22,9 @@ header
   br
   br
   ul
-     li#q14(ng-show="currentQuestion == 'q14'")
+     #q14(ng-show="currentQuestion == 'q14'")
       label
-        | Q14. 
+        | Q14.
         span(lang='en') How would you describe your current sexual relationship (By sex, I mean vaginal sex)? Would you say that:
         span(lang='es') ¿Cómo describiría su actual relación sexual (Sexo, se refiere a sexo vaginal)? ¿Diría usted que:
         
@@ -33,7 +33,12 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q15(ng-show="currentQuestion == 'q15'")
+     #q15(ng-show="currentQuestion == 'q15'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         | Q15. 
         span(lang='en') During the last 12 months how many men, if any, have you had sexual intercourse with? Please count every male sexual partner, even those you had sex with only once.
@@ -50,7 +55,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q16(ng-show="currentQuestion == 'q16'")
+     #q16(ng-show="currentQuestion == 'q16'")
         label
           | Q16. 
           span(lang='en') Have you ever had an unplanned pregnancy?
@@ -60,7 +65,13 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q16a(ng-show="currentQuestion == 'q16a'")
+     #q16a(ng-show="currentQuestion == 'q16a'")
+        br
+        span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+        span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+        br
+        br
+        br
         label
           | Q16a. 
           span(lang='en') How many unplanned pregnancies have you had?
@@ -79,7 +90,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q16b(ng-show="currentQuestion == 'q16b'")
+     #q16b(ng-show="currentQuestion == 'q16b'")
         label
           | Q16b. 
           span(lang='en') When you had an unplanned pregnancy or pregnancies were you using any method of birth control or doing anything to prevent getting pregnant?
@@ -89,7 +100,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q16bi(ng-show="currentQuestion == 'q16bi'")
+     #q16bi(ng-show="currentQuestion == 'q16bi'")
         label
           | Q16bi. 
           span(lang='en') When you had an unplanned pregnancy or pregnancies, what method of birth control were you using?
@@ -114,7 +125,7 @@ header
         input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
-     li#q17(ng-show="currentQuestion == 'q17'")
+     #q17(ng-show="currentQuestion == 'q17'")
         label
           | Q17. 
           span(lang='en') What birth control methods are you interested in using now? Please choose ALL the methods you are interested in using. If you are not interested in any of these methods, go to the next screen.
@@ -129,7 +140,7 @@ header
         input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
-     li#q18(ng-show="currentQuestion == 'q18'")
+     #q18(ng-show="currentQuestion == 'q18'")
         label
           | Q18. 
           span(lang='en') Have you EVER used any method of birth control?
@@ -139,7 +150,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q18a(ng-show="currentQuestion == 'q18a'")
+     #q18a(ng-show="currentQuestion == 'q18a'")
         label
           | Q18a. 
           span(lang='en') Are you using birth control now?
@@ -149,7 +160,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q18ai(ng-show="currentQuestion == 'q18ai'")
+     #q18ai(ng-show="currentQuestion == 'q18ai'")
         label
           | Q18ai. 
           span(lang='en') What birth control methods are you using now? Please choose ALL the methods you are using now. If you are not using any of these methods, go to the next screen.
@@ -164,7 +175,7 @@ header
         input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
-     li#q19(ng-show="currentQuestion == 'q19'")
+     #q19(ng-show="currentQuestion == 'q19'")
         label
           | Q19. 
           span(lang='en') Have you ever used a birth control method that you didn't like, that didn't work for you, or that you had other problems with?
@@ -174,7 +185,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q19a(ng-show="currentQuestion == 'q19a'")
+     #q19a(ng-show="currentQuestion == 'q19a'")
         label
           | Q19a. 
           span(lang='en') Which methods did you have a problem with? Please choose ALL the methods you had a problem with.
@@ -189,7 +200,7 @@ header
         input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
-     li#q19ai(ng-show="currentQuestion == 'q19ai'")
+     #q19ai(ng-show="currentQuestion == 'q19ai'")
         label
           | Q19ai. 
           span(lang='en') What problems did you have while using this method?
@@ -207,7 +218,7 @@ header
         input(lang='en',type="button",ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button",ng-click="saveAnswers()",value="Continuar")
 
-     li#q20(ng-show="currentQuestion == 'q20'")
+     #q20(ng-show="currentQuestion == 'q20'")
         label
           | Q20. 
           span(lang='en') How soon do you want to get pregnant? In...
@@ -217,7 +228,7 @@ header
           label.choice(ng-if="language=='en'") {{option.name}}
           label.choice(ng-if="language=='es'") {{option.nameES}}
 
-     li#q21(ng-show="currentQuestion == 'q21'")
+     #q21(ng-show="currentQuestion == 'q21'")
         label
           | Q21. 
           span(lang='en') What is most important to you when choosing a birth control method? (Select 3)
@@ -234,7 +245,7 @@ header
         input(lang='en',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continue")
         input(lang='es',type="button", ng-disabled="questions.q21.selectedOptions.length < 3 && questions.q21.selectedOptions[0].value != 777" ng-click="saveAnswers()",value="Continuar")
 
-      li#q22(ng-show="currentQuestion == 'q22'")
+      #q22(ng-show="currentQuestion == 'q22'")
         label
           | Q22. 
           span(lang='en') How often do you want to actively do something for your birth control? You may choose more than one answer.

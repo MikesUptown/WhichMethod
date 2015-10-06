@@ -1,13 +1,13 @@
 header
   #logo
+    .col-xs-6  
     a(href="landing_01.html")
-      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-      .col-md-6
-      a.btn.btn-primary(ng-click='logout()')
-        span(lang='en') Log out
-        span(lang='es') Salir
+    .col-xs-6
+    a.btn.btn-primary(ng-click='logout()')
+      span(lang='en') Log out
+      span(lang='es') Salir
   br
   br
 #container-top
@@ -22,7 +22,7 @@ header
   br
   br
   ul
-    li#28(ng-show="currentQuestion == 'q28'")
+    #28(ng-show="currentQuestion == 'q28'")
       label
         | Q28. 
         span(ng-show="language=='en'") Have you had a baby in the last 6 months?
@@ -32,7 +32,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#28a(ng-show="currentQuestion == 'q28a'")
+    #28a(ng-show="currentQuestion == 'q28a'")
       label
         | Q28a. 
         span(ng-show="language=='en'") Are you breastfeeding your baby now?
@@ -42,7 +42,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#28b(ng-show="currentQuestion == 'q28b'")
+    #28b(ng-show="currentQuestion == 'q28b'")
       label
         | Q28b. 
         span(ng-show="language=='en'") How long since you gave birth?
@@ -52,7 +52,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#28c(ng-show="currentQuestion == 'q28c'")
+    #28c(ng-show="currentQuestion == 'q28c'")
       label
         | Q28c. 
         span(ng-show="language=='en'") How long since you gave birth?
@@ -62,7 +62,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q29(ng-show="currentQuestion == 'q29'")
+    #q29(ng-show="currentQuestion == 'q29'")
       label
         | Q29. 
         span(ng-show="language=='en'") Have you had surgery in the past three months?
@@ -72,7 +72,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q29a(ng-show="currentQuestion == 'q29a'")
+    #q29a(ng-show="currentQuestion == 'q29a'")
       label
         | Q29a. 
         span(ng-show="language=='en'") Is it hard moving around because of the surgery?
@@ -82,7 +82,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q30(ng-show="currentQuestion == 'q30'")
+    #q30(ng-show="currentQuestion == 'q30'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have:
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -96,7 +96,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q30a(ng-show="currentQuestion == 'q30a'")
+    #q30a(ng-show="currentQuestion == 'q30a'")
       label
         | Q30a. 
         span(ng-show="language=='en'") Are you taking medicine for high blood pressure now?
@@ -106,7 +106,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q31(ng-show="currentQuestion == 'q31'")
+    #q31(ng-show="currentQuestion == 'q31'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -120,7 +120,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q32(ng-show="currentQuestion == 'q32'")
+    #q32(ng-show="currentQuestion == 'q32'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -135,7 +135,7 @@ header
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
 
-    li#q33(ng-show="currentQuestion == 'q33'")
+    #q33(ng-show="currentQuestion == 'q33'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -149,7 +149,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q34(ng-show="currentQuestion == 'q34'")
+    #q34(ng-show="currentQuestion == 'q34'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -163,7 +163,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q35(ng-show="currentQuestion == 'q35'")
+    #q35(ng-show="currentQuestion == 'q35'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -177,7 +177,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#36(ng-show="currentQuestion == 'q36'")
+    #36(ng-show="currentQuestion == 'q36'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -191,7 +191,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#37(ng-show="currentQuestion == 'q37'")
+    #37(ng-show="currentQuestion == 'q37'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -205,7 +205,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#38(ng-show="currentQuestion == 'q38'")
+    #38(ng-show="currentQuestion == 'q38'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -219,7 +219,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#39(ng-show="currentQuestion == 'q39'")
+    #39(ng-show="currentQuestion == 'q39'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -233,7 +233,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#40(ng-show="currentQuestion == 'q40'")
+    #40(ng-show="currentQuestion == 'q40'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -247,7 +247,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#40a(ng-show="currentQuestion == 'q40a'")
+    #40a(ng-show="currentQuestion == 'q40a'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -261,7 +261,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#40b(ng-show="currentQuestion == 'q40b'")
+    #40b(ng-show="currentQuestion == 'q40b'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -275,7 +275,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#41(ng-show="currentQuestion == 'q41'")
+    #41(ng-show="currentQuestion == 'q41'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -289,7 +289,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#42(ng-show="currentQuestion == 'q42'")
+    #42(ng-show="currentQuestion == 'q42'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -303,7 +303,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#43(ng-show="currentQuestion == 'q43'")
+    #43(ng-show="currentQuestion == 'q43'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -317,7 +317,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#44(ng-show="currentQuestion == 'q44'")
+    #44(ng-show="currentQuestion == 'q44'")
       h4 
         span(ng-show="language=='en'") In the past 3 months has a doctor, nurse, or other health professional told you that you had:
         span(ng-show="language=='es'") ¿En los últimos tres meses algún médico, enfermera(o) u otro profesional de la salud le ha dicho que tenía:
@@ -331,7 +331,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#45(ng-show="currentQuestion == 'q45'")
+    #45(ng-show="currentQuestion == 'q45'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -345,7 +345,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#46(ng-show="currentQuestion == 'q46'")
+    #46(ng-show="currentQuestion == 'q46'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -359,7 +359,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#46a(ng-show="currentQuestion == 'q46a'")
+    #46a(ng-show="currentQuestion == 'q46a'")
       label
         | Q46a. 
         span(ng-show="language=='en'") Have you had diabetes for more than 20 years?
@@ -369,7 +369,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#46b(ng-show="currentQuestion == 'q46b'")
+    #46b(ng-show="currentQuestion == 'q46b'")
       label
         | Q46b. 
         span(ng-show="language=='en'") Do you have problems with your kidneys, eyes or nerves because of diabetes?
@@ -379,7 +379,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#47(ng-show="currentQuestion == 'q47'")
+    #47(ng-show="currentQuestion == 'q47'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -393,7 +393,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#47a(ng-show="currentQuestion == 'q47a'")
+    #47a(ng-show="currentQuestion == 'q47a'")
       label
         | Q47a. 
         span(ng-show="language=='en'") Do you have migraine headaches with an aura? (An aura is seeing spots or wavy lines before or during the migraine headache.)
@@ -403,7 +403,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#48(ng-show="currentQuestion == 'q48'")
+    #48(ng-show="currentQuestion == 'q48'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -417,7 +417,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#48a(ng-show="currentQuestion == 'q48a'")
+    #48a(ng-show="currentQuestion == 'q48a'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -431,7 +431,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#48b(ng-show="currentQuestion == 'q48b'")
+    #48b(ng-show="currentQuestion == 'q48b'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -445,7 +445,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#49(ng-show="currentQuestion == 'q49'")
+    #49(ng-show="currentQuestion == 'q49'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -459,7 +459,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#50(ng-show="currentQuestion == 'q50'")
+    #50(ng-show="currentQuestion == 'q50'")
       h4 
         span(ng-show="language=='en'") Have you ever been told by a doctor or nurse that you have: 
         span(ng-show="language=='es'") ¿ALGUNA vez le ha dicho un médico o enfermera (o) que usted tiene:
@@ -473,7 +473,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#51(ng-show="currentQuestion == 'q51'")
+    #51(ng-show="currentQuestion == 'q51'")
       label
         | Q51. 
         span(ng-show="language=='en'") Do you have severe acne?
@@ -483,7 +483,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#52(ng-show="currentQuestion == 'q52'")
+    #52(ng-show="currentQuestion == 'q52'")
       label
         | Q52. 
         span(ng-show="language=='en'") Do you have coarse, dark hairs on your face?

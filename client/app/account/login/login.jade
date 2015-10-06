@@ -4,10 +4,10 @@
     button.close &times;
   .row
     .col-sm-12
-      h3 
+      h2
         span(lang='en') WhichMethod Log in
         span(lang='es') WhichMethod Ingresa
-
+      br
     .col-sm-12
       form.form(name='form', ng-submit='login(form)', novalidate='')
         .form-group
@@ -15,6 +15,8 @@
             span(lang='en') Email Address
             span(lang='es') Correo Electrónico
           input.form-control(type='text', name='email', ng-model='user.email')
+        br
+        br
         .form-group
           label 
             span(lang='en') Password
@@ -25,6 +27,8 @@
           p.help-block(ng-show='form.email.$error.required && form.password.$error.required && submitted')
             | Please enter your email and password.
           p.help-block {{ errors.other }}
+        br
+        br
 
         div
           button.btn.btn-inverse.btn-lg.btn-login(type='submit')
@@ -34,5 +38,6 @@
           a.btn.btn-default.btn-lg.btn-register(href='/signup')
             span(lang='en') Sign up
             span(lang='es') Inscríbase
+        br
 
   hr

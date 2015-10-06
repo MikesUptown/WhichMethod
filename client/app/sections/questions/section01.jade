@@ -1,13 +1,13 @@
 header
   #logo
+    .col-xs-6 
     a(href="landing_01.html")
-      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-      .col-md-6
-      a.btn.btn-primary(ng-click='logout()') 
-        span(lang='en') Log out
-        span(lang='es') Salir
+    .col-xs-6
+    a.btn.btn-primary(ng-click='logout()') 
+      span(lang='en') Log out
+      span(lang='es') Salir
   br
   br
 #container-top
@@ -22,7 +22,12 @@ header
   br
   br
   ul
-    li#q1(ng-show="currentQuestion == 'q1'")
+    #q1(ng-show="currentQuestion == 'q1'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         span(lang='en') Q1. How old are you?
         span(lang='es') Q1. ¿Cuántos años tienes?
@@ -46,7 +51,12 @@ header
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
 
-    li#q2(ng-show="currentQuestion == 'q2'")
+    #q2(ng-show="currentQuestion == 'q2'")
+      br
+      span.glyphicon.glyphicon-zoom-in(lang='en', style='color:#FF5E5E') Zoom in or Zoom out if needed.
+      span.glyphicon.glyphicon-zoom-in(lang='es', style='color:#FF5E5E') Utilice Zoom para ajustar la página.
+      br
+      br
       label
         span(ng-show="language=='en'") Q2. How much do you weigh "lbs."?
         span(ng-show="language=='es'") Q2. ¿Cuánto pesa "lbs."?
@@ -62,7 +72,7 @@ header
         input(lang="es",type="submit" ng-disabled="weight.$invalid" ng-click="saveAnswers()", value="Continuar")
 
 
-    li#q3(ng-show="currentQuestion == 'q3'")
+    #q3(ng-show="currentQuestion == 'q3'")
       label
         span(ng-show="language=='en'") Q3. How often do you smoke cigarettes or cigars or use smokeless tobacco?
         span(ng-show="language=='es'") Q3. ¿Con que frecuencia fuma usted cigarrillos, cigarros o usa usted tabaco sin humo?

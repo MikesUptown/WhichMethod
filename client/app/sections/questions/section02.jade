@@ -1,13 +1,13 @@
 header
   #logo
+    .col-xs-6  
     a(href="landing_01.html")
-      .col-md-6
       img.logo_img(src="assets/images/which_method_logo.png", alt="")
   #menu
-      .col-md-6
-      a.btn.btn-primary(ng-click='logout()')
-        span(lang='en') Log out
-        span(lang='es') Salir
+    .col-xs-6
+    a.btn.btn-primary(ng-click='logout()')
+      span(lang='en') Log out
+      span(lang='es') Salir
   br
   br
 #container-top
@@ -22,7 +22,7 @@ header
   br
   br
   ul
-    li#q4(ng-show="currentQuestion == 'q4'")
+    #q4(ng-show="currentQuestion == 'q4'")
       //- li#q4(ng-show="currentSection == '2'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
@@ -36,7 +36,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q4a(ng-show="currentQuestion == 'q4a'")
+    #q4a(ng-show="currentQuestion == 'q4a'")
       //- li#q4(ng-show="currentSection == '2' && questions.q4.answer == 2 || questions.q4.answer =='2' ")
       h4 
         span(lang='en') When you are not using birth control, do you have:
@@ -51,7 +51,7 @@ header
         label.choice(ng-if="language=='es'") {{option.nameES}}
       input(type="button",ng-click="saveAnswers()",value="Skip")
 
-    li#q5(ng-show="currentQuestion == 'q5'")
+    #q5(ng-show="currentQuestion == 'q5'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -64,7 +64,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q6(ng-show="currentQuestion == 'q6'")
+    #q6(ng-show="currentQuestion == 'q6'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -78,7 +78,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q7(ng-show="currentQuestion == 'q7'")
+    #q7(ng-show="currentQuestion == 'q7'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -92,7 +92,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q8(ng-show="currentQuestion == 'q8'")
+    #q8(ng-show="currentQuestion == 'q8'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -106,7 +106,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q9(ng-show="currentQuestion == 'q9'")
+    #q9(ng-show="currentQuestion == 'q9'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -120,7 +120,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q10(ng-show="currentQuestion == 'q10'")
+    #q10(ng-show="currentQuestion == 'q10'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -134,7 +134,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q11(ng-show="currentQuestion == 'q11'")
+    #q11(ng-show="currentQuestion == 'q11'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -148,7 +148,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q12(ng-show="currentQuestion == 'q12'")
+    #q12(ng-show="currentQuestion == 'q12'")
       h4 
         span(lang='en') When you are not using birth control, do you have:
         span(lang='es') Cuando no usa métodos anticonceptivos (métodos de planificación familiar), tiene:
@@ -162,7 +162,7 @@ header
         label.choice(ng-if="language=='en'") {{option.name}}
         label.choice(ng-if="language=='es'") {{option.nameES}}
 
-    li#q13(ng-show="currentQuestion == 'q13'")
+    #q13(ng-show="currentQuestion == 'q13'")
       label
         span(lang='en') Q13. How often do these symptoms cause you to miss work or school?
         span(lang='es') Q13. ¿Qué tan frecuentemente se ausenta usted del trabajo o la escuela a causa de estos síntomas?
