@@ -11,7 +11,7 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   function requireHTTPS(req, res, next) {
-    if(req.headers['x-forwarded-proto']!='https')
+    if(req.headers['x-forwarded-proto']!='https' && !req.get('host').match('localhost'))
       res.redirect('https://' + req.get('host') + req.url);
     else
       next(); /* Continue to other routes if we're not redirecting */
